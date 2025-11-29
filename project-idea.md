@@ -424,6 +424,486 @@ Explain in 2–3 sections:
 
 This is a great place to be direct with the recruiter.
 
+## 3.5. Component Specifications (Props & Types)
+
+### Hero Component
+
+```typescript
+interface HeroProps {
+  title: string;
+  subtitle: string;
+  ctaPrimary: {
+    text: string;
+    href: string;
+    onClick?: () => void;
+  };
+  ctaSecondary: {
+    text: string;
+    href: string;
+    onClick?: () => void;
+  };
+  note?: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
+}
+```
+
+### FeatureCard Component
+
+```typescript
+interface FeatureCardProps {
+  icon?: React.ReactNode;
+  title: string;
+  description: string;
+  className?: string;
+}
+```
+
+### SpecsSection Component
+
+```typescript
+interface SpecsSectionProps {
+  title: string;
+  columns: {
+    title: string;
+    items: string[];
+  }[];
+  footerNote?: string;
+}
+```
+
+### UseCaseCard Component
+
+```typescript
+interface UseCaseCardProps {
+  question: string;
+  answer: string;
+  icon?: React.ReactNode;
+}
+```
+
+### StatCard Component
+
+```typescript
+interface StatCardProps {
+  title: string;
+  description: string;
+  icon?: React.ReactNode;
+}
+```
+
+### TestimonialCard Component
+
+```typescript
+interface TestimonialCardProps {
+  quote: string;
+  author?: string;
+  role?: string;
+  company?: string;
+}
+```
+
+### Button Component
+
+```typescript
+interface ButtonProps {
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  children: React.ReactNode;
+  href?: string;
+  onClick?: () => void;
+  disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+  ariaLabel?: string;
+  className?: string;
+}
+```
+
+### Card Component
+
+```typescript
+interface CardProps {
+  title?: string;
+  description?: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
+  footer?: React.ReactNode;
+  children?: React.ReactNode;
+  className?: string;
+  variant?: 'default' | 'feature' | 'content';
+}
+```
+
+### Tag Component
+
+```typescript
+interface TagProps {
+  text: string;
+  variant?: 'default' | 'primary' | 'secondary';
+  size?: 'sm' | 'md';
+  className?: string;
+}
+```
+
+### Badge Component
+
+```typescript
+interface BadgeProps {
+  text: string;
+  status: 'live' | 'upcoming' | 'draft';
+  className?: string;
+}
+```
+
+### Input Component
+
+```typescript
+interface InputProps {
+  id: string;
+  label: string;
+  type?: 'text' | 'email' | 'search' | 'password';
+  placeholder?: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  error?: string;
+  required?: boolean;
+  ariaDescribedBy?: string;
+  className?: string;
+}
+```
+
+### Select Component
+
+```typescript
+interface SelectProps {
+  id: string;
+  label: string;
+  options: {
+    value: string;
+    label: string;
+  }[];
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  className?: string;
+}
+```
+
+### ContentCard Component
+
+```typescript
+interface ContentCardProps {
+  id: number;
+  title: string;
+  category: string;
+  status: 'live' | 'upcoming' | 'draft';
+  publishedAt: string;
+  summary: string;
+  tags: string[];
+}
+```
+
+### ContentFilters Component
+
+```typescript
+interface ContentFiltersProps {
+  categories: string[];
+  selectedCategory: string;
+  onCategoryChange: (category: string) => void;
+  searchQuery: string;
+  onSearchChange: (query: string) => void;
+  showOnlyLive: boolean;
+  onToggleLive: (show: boolean) => void;
+}
+```
+
+## 3.6. Complete Copy (Ready to Use)
+
+### Hero Section Copy
+
+**Title (H1):**
+```
+Meet Steven Morales: Your Next Front-End Experience Engine.
+```
+
+**Subtitle:**
+```
+A human-first, code-driven product designed to translate beautiful designs into responsive, accessible, high-quality web experiences.
+```
+
+**Primary CTA:**
+```
+View Features
+```
+
+**Secondary CTA:**
+```
+See Live Content
+```
+
+**Note (small text):**
+```
+No monthly subscription. Just coffee and interesting problems.
+```
+
+### Core Features Section Copy
+
+**Section Title:**
+```
+Core Features
+```
+
+**Feature 1:**
+- **Title:** `Design-to-Code Translation`
+- **Description:** `Converts Figma and wireframes into clean, semantic HTML/CSS and reusable React components.`
+
+**Feature 2:**
+- **Title:** `Responsive & Mobile-First Layout Engine`
+- **Description:** `Optimized for all breakpoints. Designed to behave nicely on phones your stakeholders actually use.`
+
+**Feature 3:**
+- **Title:** `API Integration Module`
+- **Description:** `Speaks fluent REST, JSON and HTTP. Comfortable integrating with CMSs and external web services.`
+
+**Feature 4:**
+- **Title:** `Accessibility & Performance Optimizer`
+- **Description:** `Focuses on semantic structure, keyboard navigation and fast load times. Because pretty is not enough.`
+
+### Tech Specs Section Copy
+
+**Section Title:**
+```
+Tech Specs
+```
+
+**Column 1 - Supported Technologies:**
+- React
+- Next.js
+- TypeScript
+- HTML5
+- CSS3
+- SASS
+- Git
+- Jest
+- RTL
+
+**Column 2 - Protocols & Data:**
+- HTTP
+- JSON
+- Basic XML
+- REST APIs
+
+**Column 3 - Integrations:**
+- CMS-like data
+- 3rd-party APIs
+- Webhooks
+
+**Footer Note:**
+```
+Backwards-compatible with legacy codebases (with patience).
+```
+
+### Use Cases Section Copy
+
+**Section Title:**
+```
+Use Cases
+```
+
+**Use Case 1:**
+- **Question:** `Need a pixel-perfect build from a Figma file?`
+- **Answer:** `Steven FE-01 converts design tokens, grids and components into maintainable front-end architecture.`
+
+**Use Case 2:**
+- **Question:** `Need a component library your design team actually likes?`
+- **Answer:** `Can build accessible, reusable components and document them clearly.`
+
+**Use Case 3:**
+- **Question:** `Need someone to debug that weird layout in Safari?`
+- **Answer:** `Comfortable with cross-browser issues and digging into root causes instead of patching symptoms.`
+
+### Performance & Reliability Section Copy
+
+**Section Title:**
+```
+Performance & Reliability
+```
+
+**Stat Card 1:**
+- **Title:** `Lighthouse Focus`
+- **Description:** `Focus on Lighthouse scores & perceived performance.`
+
+**Stat Card 2:**
+- **Title:** `Optimization Built-In`
+- **Description:** `Works with lazy loading, image optimization and bundle awareness.`
+
+**Stat Card 3:**
+- **Title:** `Data-Driven Approach`
+- **Description:** `Approach: profile, measure, then optimize – not guess.`
+
+**Paragraph:**
+```
+I approach debugging with a systematic mindset: identify the root cause, not just the symptom. When working with teams, I provide clear progress updates and realistic estimates, ensuring transparency throughout the development process. I believe in measuring performance before optimizing, using tools like Lighthouse and browser DevTools to make informed decisions.
+```
+
+### Testimonials Section Copy
+
+**Section Title:**
+```
+What Teams Say
+```
+
+**Testimonial 1:**
+```
+"Working with Steven FE-01 felt like plugging a specialized module into our team – fast to understand the brief, calm under pressure, and always pushing for cleaner code."
+```
+
+**Testimonial 2 (optional):**
+```
+"Delivers on time, communicates clearly, and writes code that's easy to maintain. Exactly what you want in a front-end developer."
+```
+
+**Testimonial 3 (optional):**
+```
+"Brought fresh ideas to our component architecture while respecting existing patterns. Great balance of innovation and pragmatism."
+```
+
+### Pricing Section Copy
+
+**Section Title:**
+```
+Availability & Pricing
+```
+
+**Main Copy:**
+```
+Available for full-time integration into your team. Salary expectations available upon request. Refunds not available, but continuous improvement is included by default.
+```
+
+### Final CTA Section Copy
+
+**Section Title:**
+```
+Ready to Explore?
+```
+
+**Button 1:**
+```
+Explore Components
+```
+
+**Button 2:**
+```
+View Content in Action
+```
+
+**Note:**
+```
+This prototype was crafted specifically with the Critical Mass Front-End Developer role in mind.
+```
+
+### Components Page Copy
+
+**Page Title:**
+```
+UI Component Library
+```
+
+**Intro Text:**
+```
+A small set of reusable components used across this prototype, documented with their intended usage and accessibility notes.
+```
+
+**Buttons Section:**
+- **Title:** `Buttons`
+- **Description:** `Primary, secondary, and ghost variants with full accessibility support.`
+
+**Cards Section:**
+- **Title:** `Cards`
+- **Description:** `Flexible card components for features, content, and general use cases.`
+
+**Tags & Badges Section:**
+- **Title:** `Tags & Badges`
+- **Description:** `Categorization and status indicators with semantic color coding.`
+
+**Form Elements Section:**
+- **Title:** `Form Elements`
+- **Description:** `Accessible form controls with proper labeling and error handling.`
+
+**Feedback States Section:**
+- **Title:** `Feedback States`
+- **Description:** `Loading, error, and success states for better user experience.`
+
+### Content Page Copy
+
+**Page Title:**
+```
+Content Feed
+```
+
+**Description:**
+```
+Data fetched from a JSON endpoint, filtered on the client.
+```
+
+**Filter Labels:**
+- Category: `Category`
+- Search: `Search content`
+- Toggle: `Show only live`
+
+**Empty State:**
+```
+No content matches your filters yet.
+```
+
+**Error State:**
+```
+Failed to load content. Please try again.
+```
+
+**Retry Button:**
+```
+Retry
+```
+
+### About Page Copy
+
+**Page Title:**
+```
+About This Prototype
+```
+
+**Context Section:**
+- **Title:** `Context`
+- **Content:** 
+```
+I'm applying for the Front-End Developer position at Critical Mass. This prototype serves as a practical demonstration of my skills and approach to front-end development in an agency environment.
+```
+
+**Objective Section:**
+- **Title:** `Objective`
+- **Content:**
+```
+This prototype demonstrates skills aligned with the Critical Mass job posting:
+- Design-to-code translation with attention to detail
+- Responsive, mobile-first development
+- Accessibility best practices (WCAG compliance)
+- Performance optimization
+- API integration and data handling
+- SASS preprocessing with organized architecture
+- Unit testing with Jest and React Testing Library
+```
+
+**How It's Built Section:**
+- **Title:** `How It's Built`
+- **Content:**
+```
+Built with Next.js 14 (App Router) and TypeScript for type safety. Styled with SASS using BEM methodology and SMACSS architecture principles. Includes unit tests for critical components and follows accessibility guidelines throughout. Optimized for performance with lazy loading, image optimization, and efficient component composition.
+```
+
 ## 4. Visual Design and Style System
 
 ### 4.1. Color Palette
