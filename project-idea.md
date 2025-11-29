@@ -60,30 +60,30 @@ This project needs to clearly respond to the job posting:
 - **SASS / preprocessors → Real use of SCSS with BEM/SMACSS.**
 - **Testing → At least 2–3 unit tests (Jest + RTL).**
 - **Performance → Lazy loading, good image practices, efficient components.**
-- **Design system / reusable components → /components page.**
+- **Design system / reusable components → `/components` page.**
 - **Optimized prototype / POC → Small but very polished project.**
 
 ## 2. General Application Architecture
 
 ### 2.1. Pages (Next.js App Router)
 
-- **/** → Product Landing
+- **`/`** → Product Landing
   - Main page where I present myself as a product.
 
-- **/components** → Component Library / Design System
+- **`/components`** → Component Library / Design System
   - Showcase of reusable UI components.
 
-- **/content** → Content / CMS View
+- **`/content`** → Content / CMS View
   - Screen that simulates integration with dynamic content via JSON.
 
-- **/about** (optional but recommended) → About the Prototype
+- **`/about`** (optional but recommended) → About the Prototype
   - Page to explain, in a professional tone, the purpose of the project for Critical Mass.
 
-- **/api/content** → Internal API that returns JSON with "use cases / projects / campaigns".
+- **`/api/content`** → Internal API that returns JSON with "use cases / projects / campaigns".
 
 ### 2.2. Folder Structure
 
-```
+```plaintext
 src/
   app/
     layout.tsx
@@ -195,8 +195,8 @@ public/
 - **Subtitle:**
   - "A human-first, code-driven product designed to translate beautiful designs into responsive, accessible, high-quality web experiences."
 - **CTAs:**
-  - View Features → scroll to Features section.
-  - See Live Content → navigate to /content.
+- View Features → scroll to Features section.
+- See Live Content → navigate to `/content`.
 - **Small ironic copy:**
   - "No monthly subscription. Just coffee and interesting problems."
 - **Visual:**
@@ -225,7 +225,7 @@ Present my skills as product features. 3–4 cards:
 - Decorative icon.
 - Title.
 - Brief description.
-- BEM class: .feature-card, .feature-card__icon, etc.
+- BEM class: `.feature-card`, `.feature-card__icon`, etc.
 
 #### 3.1.3. "Specs & Tech Stack" Section
 
@@ -292,13 +292,13 @@ I can use fictional testimonials or refer to "teams" generically (without lying,
 #### 3.1.8. "Final CTA" Section
 
 **Buttons:**
-- Explore Components → /components
-- View Content in Action → /content
+- Explore Components → `/components`
+- View Content in Action → `/content`
 
 **Small note:**
 - "This prototype was crafted specifically with the Critical Mass Front-End Developer role in mind."
 
-### 3.2. /components Page – Component Library
+### 3.2. `/components` Page – Component Library
 
 **Objective:** Make it look like a mini Storybook / design system docs.
 
@@ -310,9 +310,9 @@ I can use fictional testimonials or refer to "teams" generically (without lying,
 
 #### Buttons
 I'll show variants:
-- .btn--primary
-- .btn--secondary
-- .btn--ghost
+- `.btn--primary`
+- `.btn--secondary`
+- `.btn--ghost`
 
 States: normal, hover, focus, disabled. All important states for accessibility.
 
@@ -320,7 +320,7 @@ States: normal, hover, focus, disabled. All important states for accessibility.
 - Preview.
 - **Notes:**
   - Recommended usage.
-  - Accessibility (use of <button>, aria-label when there's only an icon).
+  - Accessibility (use of `<button>`, `aria-label` when there's only an icon).
 
 #### Cards
 - Basic Card.
@@ -341,15 +341,15 @@ States: normal, hover, focus, disabled. All important states for accessibility.
 - Toggle (dark mode / preference).
 
 **I'll include:**
-- Associated <label>.
-- aria-invalid and aria-describedby as examples.
+- Associated `<label>`.
+- `aria-invalid` and `aria-describedby` as examples.
 
 #### Feedback States
 - Loader (spinner or skeleton).
 - ErrorMessage.
 - Toast (notification message).
 
-### 3.3. /content Page – CMS-like View
+### 3.3. `/content` Page – CMS-like View
 
 **Objective:** Simulate CMS / API integration to show I know how to work with dynamic data.
 
@@ -365,9 +365,9 @@ States: normal, hover, focus, disabled. All important states for accessibility.
 - "Show only live" toggle.
 
 **Content area:**
-- If loading === true → skeletons / loader.
-- If error → message with "Retry" button.
-- If data.length === 0 → empty state: "No content matches your filters yet."
+- If `loading === true` → skeletons / loader.
+- If `error` → message with "Retry" button.
+- If `data.length === 0` → empty state: "No content matches your filters yet."
 
 **Card list (ContentCard):**
 Each item shows:
@@ -380,7 +380,7 @@ Each item shows:
 
 #### 3.3.2. API / Data
 
-**In app/api/content/route.ts:**
+**In `app/api/content/route.ts`:**
 GET endpoint that returns an array of objects.
 
 **Something like:**
@@ -416,7 +416,7 @@ export async function GET() {
 }
 ```
 
-**In lib/api/contentApi.ts:**
+**In `lib/api/contentApi.ts`:**
 
 ```typescript
 export async function fetchContent() {
@@ -426,14 +426,14 @@ export async function fetchContent() {
 }
 ```
 
-**In hooks/useFetchContent.ts:**
+**In `hooks/useFetchContent.ts`:**
 I'll handle:
-- data
-- loading
-- error
-- refetch() optional (if I have time).
+- `data`
+- `loading`
+- `error`
+- `refetch()` optional (if I have time).
 
-### 3.4. /about Page – Project Purpose
+### 3.4. `/about` Page – Project Purpose
 
 **Content I'll include:**
 
@@ -654,26 +654,31 @@ interface ContentFiltersProps {
 ### Hero Section Copy
 
 **Title (H1):**
+
 ```
 Meet Steven Morales: Your Next Front-End Experience Engine.
 ```
 
 **Subtitle:**
+
 ```
 A human-first, code-driven product designed to translate beautiful designs into responsive, accessible, high-quality web experiences.
 ```
 
 **Primary CTA:**
+
 ```
 View Features
 ```
 
 **Secondary CTA:**
+
 ```
 See Live Content
 ```
 
 **Note (small text):**
+
 ```
 No monthly subscription. Just coffee and interesting problems.
 ```
@@ -681,6 +686,7 @@ No monthly subscription. Just coffee and interesting problems.
 ### Core Features Section Copy
 
 **Section Title:**
+
 ```
 Core Features
 ```
@@ -704,6 +710,7 @@ Core Features
 ### Tech Specs Section Copy
 
 **Section Title:**
+
 ```
 Tech Specs
 ```
@@ -731,6 +738,7 @@ Tech Specs
 - Webhooks
 
 **Footer Note:**
+
 ```
 Backwards-compatible with legacy codebases (with patience).
 ```
@@ -738,6 +746,7 @@ Backwards-compatible with legacy codebases (with patience).
 ### Use Cases Section Copy
 
 **Section Title:**
+
 ```
 Use Cases
 ```
@@ -757,6 +766,7 @@ Use Cases
 ### Performance & Reliability Section Copy
 
 **Section Title:**
+
 ```
 Performance & Reliability
 ```
@@ -774,6 +784,7 @@ Performance & Reliability
 - **Description:** `Approach: profile, measure, then optimize – not guess.`
 
 **Paragraph:**
+
 ```
 I approach debugging with a systematic mindset: identify the root cause, not just the symptom. When working with teams, I provide clear progress updates and realistic estimates, ensuring transparency throughout the development process. I believe in measuring performance before optimizing, using tools like Lighthouse and browser DevTools to make informed decisions.
 ```
@@ -781,21 +792,25 @@ I approach debugging with a systematic mindset: identify the root cause, not jus
 ### Testimonials Section Copy
 
 **Section Title:**
+
 ```
 What Teams Say
 ```
 
 **Testimonial 1:**
+
 ```
 "Working with Steven FE-01 felt like plugging a specialized module into our team – fast to understand the brief, calm under pressure, and always pushing for cleaner code."
 ```
 
 **Testimonial 2 (optional):**
+
 ```
 "Delivers on time, communicates clearly, and writes code that's easy to maintain. Exactly what you want in a front-end developer."
 ```
 
 **Testimonial 3 (optional):**
+
 ```
 "Brought fresh ideas to our component architecture while respecting existing patterns. Great balance of innovation and pragmatism."
 ```
@@ -803,11 +818,13 @@ What Teams Say
 ### Pricing Section Copy
 
 **Section Title:**
+
 ```
 Availability & Pricing
 ```
 
 **Main Copy:**
+
 ```
 Available for full-time integration into your team. Salary expectations available upon request. Refunds not available, but continuous improvement is included by default.
 ```
@@ -815,21 +832,25 @@ Available for full-time integration into your team. Salary expectations availabl
 ### Final CTA Section Copy
 
 **Section Title:**
+
 ```
 Ready to Explore?
 ```
 
 **Button 1:**
+
 ```
 Explore Components
 ```
 
 **Button 2:**
+
 ```
 View Content in Action
 ```
 
 **Note:**
+
 ```
 This prototype was crafted specifically with the Critical Mass Front-End Developer role in mind.
 ```
@@ -837,11 +858,13 @@ This prototype was crafted specifically with the Critical Mass Front-End Develop
 ### Components Page Copy
 
 **Page Title:**
+
 ```
 UI Component Library
 ```
 
 **Intro Text:**
+
 ```
 A small set of reusable components used across this prototype, documented with their intended usage and accessibility notes.
 ```
@@ -869,31 +892,36 @@ A small set of reusable components used across this prototype, documented with t
 ### Content Page Copy
 
 **Page Title:**
+
 ```
 Content Feed
 ```
 
 **Description:**
+
 ```
 Data fetched from a JSON endpoint, filtered on the client.
 ```
 
 **Filter Labels:**
-- Category: `Category`
-- Search: `Search content`
-- Toggle: `Show only live`
+- **Category:** `Category`
+- **Search:** `Search content`
+- **Toggle:** `Show only live`
 
 **Empty State:**
+
 ```
 No content matches your filters yet.
 ```
 
 **Error State:**
+
 ```
 Failed to load content. Please try again.
 ```
 
 **Retry Button:**
+
 ```
 Retry
 ```
@@ -901,13 +929,15 @@ Retry
 ### About Page Copy
 
 **Page Title:**
+
 ```
 About This Prototype
 ```
 
 **Context Section:**
 - **Title:** `Context`
-- **Content:** 
+- **Content:**
+
 ```
 I'm applying for the Front-End Developer position at Critical Mass. This prototype serves as a practical demonstration of my skills and approach to front-end development in an agency environment.
 ```
@@ -946,28 +976,28 @@ Built with Next.js 14 (App Router) and TypeScript for type safety. Styled with S
 - **Primary:** #111827 (if light background) or #F9FAFB (if dark background).
 - **Secondary:** gray #6B7280.
 
-Define all this in _variables.scss.
+Define all this in `_variables.scss`.
 
 ### 4.2. Typography
 
 - **Headings:** sans-serif bold font (e.g. Inter / Poppins / system font).
 - **Body:** sans-serif regular.
 
-**In _typography.scss:**
-- Font-size scales (--fs-xs, --fs-sm, --fs-md, etc.).
+**In `_typography.scss`:**
+- Font-size scales (`--fs-xs`, `--fs-sm`, `--fs-md`, etc.).
 - Consistent line-height.
 
-Note: I'll use Inter or Poppins, haven't decided yet.
+**Note:** I'll use Inter or Poppins, haven't decided yet.
 
 ### 4.3. Layout and Spacing
 
-**In _layout.scss:**
+**In `_layout.scss`:**
 - Utility classes:
-  - .container
-  - .grid, .grid--2, .grid--3, with media queries.
+  - `.container`
+  - `.grid`, `.grid--2`, `.grid--3`, with media queries.
 
 **Spacing variables:**
-- --space-xs, --space-sm, --space-md, --space-lg, etc.
+- `--space-xs`, `--space-sm`, `--space-md`, `--space-lg`, etc.
 
 ### 4.4. BEM + SMACSS
 
@@ -1013,32 +1043,32 @@ Note: I'll use Inter or Poppins, haven't decided yet.
 ### Checklist I Need to Incorporate:
 
 #### Semantic Structure
-- <header>, <main>, <section>, <footer>.
-- One <h1> per page, clear hierarchy of h2, h3.
+- `<header>`, `<main>`, `<section>`, `<footer>`.
+- One `<h1>` per page, clear hierarchy of h2, h3.
 
 #### Keyboard Navigation
 - **Skip link at the start:**
   ```html
   <a href="#main-content" class="skip-link">Skip to main content</a>
   ```
-- .skip-link classes with styles to be visible when :focus.
+- `.skip-link` classes with styles to be visible when `:focus`.
 
 #### Correct Links and Buttons
-- Don't use <div onClick>.
-- For actions → <button>.
-- For navigation → <a>.
+- Don't use `<div onClick>`.
+- For actions → `<button>`.
+- For navigation → `<a>`.
 
 #### Visible Focus
-- Specific styles for :focus on buttons, links, inputs.
+- Specific styles for `:focus` on buttons, links, inputs.
 
 #### Alternative Text
 - All key images with meaningful alt.
-- Decorative images with alt="" and aria-hidden="true" if applicable.
+- Decorative images with `alt=""` and `aria-hidden="true"` if applicable.
 
 #### Accessible Forms
-- <label for="search">Search content</label>
-- Corresponding id in the input.
-- For errors: aria-describedby, aria-invalid.
+- `<label for="search">Search content</label>`
+- Corresponding `id` in the input.
+- For errors: `aria-describedby`, `aria-invalid`.
 
 #### Contrast
 - Make sure text vs background meets contrast (minimum 4.5:1 for normal text).
@@ -1047,11 +1077,11 @@ Note: I'll use Inter or Poppins, haven't decided yet.
 
 ### Concrete Measures:
 
-- Use next/image for images.
-- Add loading="lazy" where I don't use next/image.
+- Use `next/image` for images.
+- Add `loading="lazy"` where I don't use `next/image`.
 - Avoid unnecessary heavy libraries.
 - Divide the page into small components.
-- If I want, use React.Suspense for some deferred loaded sections (not mandatory).
+- If I want, use `React.Suspense` for some deferred loaded sections (not mandatory).
 
 **In the README, I'll add a section:**
 
@@ -1076,7 +1106,7 @@ Note: I'll use Inter or Poppins, haven't decided yet.
 
 #### Content.test.tsx
 - Mock fetchContent to return data.
-- Render /content (or the main component of the view).
+- Render `/content` (or the main component of the view).
 - Verify:
   - That it shows loading.
   - Then shows content cards.
@@ -1124,10 +1154,10 @@ List of objectives connected to the job posting. This is key so they see I read 
 Next.js, TypeScript, SASS, Jest, etc.
 
 #### Pages
-- / – Product landing
-- /components – UI Component Library
-- /content – CMS-like API-driven view
-- /about – Project context
+- `/` – Product landing
+- `/components` – UI Component Library
+- `/content` – CMS-like API-driven view
+- `/about` – Project context
 
 #### How to Run
 Requirements, npm install, npm run dev, npm run test.
@@ -1144,10 +1174,10 @@ Implemented measures. Lighthouse scores if I can.
 Small table or bullet list connecting each job posting requirement with what I implemented:
 - "Translate graphic designs…" → sections X, use of CSS Grid, etc.
 - "Mobile-first, responsive…" → layout, breakpoints.
-- "APIs, JSON, HTTP…" → /api/content, /content.
-- "SASS, pre-processing tools…" → styles/ with SCSS.
-- "Design systems & reusable components" → /components.
-- "Testing" → tests/ folder.
+- "APIs, JSON, HTTP…" → `/api/content`, `/content`.
+- "SASS, pre-processing tools…" → `styles/` with SCSS.
+- "Design systems & reusable components" → `/components`.
+- "Testing" → `tests/` folder.
 
 ## 10. How I'll Present It to Critical Mass
 
@@ -1212,4 +1242,3 @@ We are seeking an experienced and motivated Developer, Front End to join our tea
 - Enterprise-wide employee discounts
 
 The Talent Team at Critical Mass is focused on ensuring we provide the best training, onboarding, and employee experience possible! Our new hires & employees are the future of our organization, and we want to set you up for long-term success. In an effort to do so, we expect our team to work from an office a minimum of 3 days a week.
-
