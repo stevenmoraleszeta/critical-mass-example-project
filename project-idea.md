@@ -1,64 +1,64 @@
 # Steven Morales FE-01 – Human Front-End Experience Engine
 
-## 0. Concepto general del proyecto
+## 0. General Project Concept
 
-### Nombre tentativo:
+### Tentative Name:
 **"Steven Morales FE-01 – Human Front-End Experience Engine"**
 
-### Idea central:
-Una single-brand experience donde yo soy el "producto", presentado como si fuera una herramienta SaaS / producto digital diseñada para agencias como Critical Mass.
+### Core Idea:
+A single-brand experience where I am the "product", presented as if I were a SaaS tool / digital product designed for agencies like Critical Mass.
 
-### Lo que quiero demostrar:
+### What I Want to Demonstrate:
 
-**Mis capacidades:**
-- Traducir un diseño (que yo mismo defino) a código responsive y accesible.
-- Crear un mini design system / component library.
-- Integrar datos desde una API JSON.
-- Pensar en performance, testing, arquitectura CSS, etc.
+**My Capabilities:**
+- Translate a design (that I define myself) into responsive and accessible code.
+- Create a mini design system / component library.
+- Integrate data from a JSON API.
+- Think about performance, testing, CSS architecture, etc.
 
-**Y al mismo tiempo:**
-- Tener un tono divertido, irónico suave, pero profesional.
-- Mostrar que entiendo branding, UX, narrativa y microcopy.
+**And at the same time:**
+- Have a fun, subtly ironic but professional tone.
+- Show that I understand branding, UX, narrative and microcopy.
 
-## 1. Objetivo del proyecto (ligado al puesto)
+## 1. Project Objective (Linked to the Position)
 
-Este proyecto tiene que responder claramente al job posting:
+This project needs to clearly respond to the job posting:
 
-- **Traducir diseños / Figma → Tu diseño propio convertido en HTML/CSS/React/Next.**
-- **Responsive / Mobile-first / Cross-browser → Layout impecable en móvil/tablet/desktop.**
-- **Accesibilidad → HTML semántico, ARIA, focus states, etc.**
-- **APIs / JSON / HTTP → Consumo de un endpoint (interno) como si fuera CMS.**
-- **SASS / preprocesadores → Uso real de SCSS con BEM/SMACSS.**
-- **Testing → Al menos 2–3 tests unitarios (Jest + RTL).**
-- **Performance → Lazy loading, buenas prácticas de imágenes, componentes eficientes.**
-- **Design system / componentes reutilizables → Página /components.**
-- **Prototipo / POC optimizado → Proyecto pequeño pero muy pulido.**
+- **Translate designs / Figma → My own design converted to HTML/CSS/React/Next.**
+- **Responsive / Mobile-first / Cross-browser → Flawless layout on mobile/tablet/desktop.**
+- **Accessibility → Semantic HTML, ARIA, focus states, etc.**
+- **APIs / JSON / HTTP → Consuming an (internal) endpoint as if it were a CMS.**
+- **SASS / preprocessors → Real use of SCSS with BEM/SMACSS.**
+- **Testing → At least 2–3 unit tests (Jest + RTL).**
+- **Performance → Lazy loading, good image practices, efficient components.**
+- **Design system / reusable components → /components page.**
+- **Optimized prototype / POC → Small but very polished project.**
 
-## 2. Arquitectura general de la aplicación
+## 2. General Application Architecture
 
-### 2.1. Páginas (App Router Next.js)
+### 2.1. Pages (Next.js App Router)
 
 - **/** → Product Landing
-  - Página principal donde me presento como producto.
+  - Main page where I present myself as a product.
 
 - **/components** → Component Library / Design System
-  - Showcase de los componentes UI reutilizables.
+  - Showcase of reusable UI components.
 
 - **/content** → Content / CMS View
-  - Pantalla que simula integración con contenido dinámico vía JSON.
+  - Screen that simulates integration with dynamic content via JSON.
 
-- **/about** (opcional pero recomendado) → About the Prototype
-  - Página para explicar, en tono profesional, el propósito del proyecto para Critical Mass.
+- **/about** (optional but recommended) → About the Prototype
+  - Page to explain, in a professional tone, the purpose of the project for Critical Mass.
 
-- **/api/content** → API interna que devuelve JSON con "casos de uso / proyectos / campañas".
+- **/api/content** → Internal API that returns JSON with "use cases / projects / campaigns".
 
-### 2.2. Estructura de carpetas
+### 2.2. Folder Structure
 
 ```
 src/
   app/
     layout.tsx
-    globals.scss              # importa main.scss si lo prefieres así
+    globals.scss              # imports main.scss if you prefer it that way
     page.tsx                  # Landing /
     components/
       page.tsx                # /components
@@ -109,7 +109,7 @@ src/
 
   lib/
     api/
-      contentApi.ts           # función fetchContent()
+      contentApi.ts           # fetchContent() function
     hooks/
       useFetchContent.ts      # custom hook
 
@@ -133,7 +133,7 @@ src/
       _components-page.scss
       _content-page.scss
       _about-page.scss
-    main.scss                  # importa base, components, pages
+    main.scss                  # imports base, components, pages
 
   tests/
     Hero.test.tsx
@@ -151,37 +151,37 @@ public/
     ...
 ```
 
-## 3. Concepto narrativo y contenido de cada página
+## 3. Narrative Concept and Content for Each Page
 
 ### 3.1. Landing / – "Steven Morales: Front-End Experience Engine"
 
-#### 3.1.1. Sección Hero
+#### 3.1.1. Hero Section
 
-**Objetivo:** Presentarme como producto y dejar claro el tono.
+**Objective:** Present myself as a product and establish the tone.
 
-**Elementos:**
-- Logo (puede ser "SM" estilizado).
-- **Título (H1):**
+**Elements:**
+- Logo (could be stylized "SM").
+- **Title (H1):**
   - "Meet Steven Morales: Your Next Front-End Experience Engine."
-- **Subtítulo:**
+- **Subtitle:**
   - "A human-first, code-driven product designed to translate beautiful designs into responsive, accessible, high-quality web experiences."
 - **CTAs:**
-  - View Features → scroll a sección Features.
-  - See Live Content → navega a /content.
-- **Copy pequeño irónico:**
+  - View Features → scroll to Features section.
+  - See Live Content → navigate to /content.
+- **Small ironic copy:**
   - "No monthly subscription. Just coffee and interesting problems."
 - **Visual:**
-  - Imagen mía estilo ilustración/blurred o un mock tipo interfaz con código + UI superpuesta.
-  - Fondo con ligero gradient.
+  - Image of me in illustration/blurred style or a mock interface with code + UI overlay.
+  - Background with subtle gradient.
 
-#### 3.1.2. Sección "Core Features"
+#### 3.1.2. "Core Features" Section
 
-**Título:** "Core Features"
+**Title:** "Core Features"
 
-Presentar mis skills como features de producto. 3–4 tarjetas:
+Present my skills as product features. 3–4 cards:
 
 1. **Design-to-Code Translation**
-   - **Subtexto:** "Converts Figma and wireframes into clean, semantic HTML/CSS and reusable React components."
+   - **Subtext:** "Converts Figma and wireframes into clean, semantic HTML/CSS and reusable React components."
 
 2. **Responsive & Mobile-First Layout Engine**
    - "Optimized for all breakpoints. Designed to behave nicely on phones your stakeholders actually use."
@@ -192,17 +192,17 @@ Presentar mis skills como features de producto. 3–4 tarjetas:
 4. **Accessibility & Performance Optimizer**
    - "Focuses on semantic structure, keyboard navigation and fast load times. Because pretty is not enough."
 
-**Cada tarjeta incluirá:**
-- Ícono decorativo.
-- Título.
-- Breve descripción.
-- Clase BEM: .feature-card, .feature-card__icon, etc.
+**Each card will include:**
+- Decorative icon.
+- Title.
+- Brief description.
+- BEM class: .feature-card, .feature-card__icon, etc.
 
-#### 3.1.3. Sección "Specs & Tech Stack"
+#### 3.1.3. "Specs & Tech Stack" Section
 
-**Título:** "Tech Specs"
+**Title:** "Tech Specs"
 
-Dividido en columnas:
+Divided into columns:
 
 - **Supported Technologies**
   - React, Next.js, TypeScript, HTML5, CSS3, SASS, Git, Jest, RTL.
@@ -211,16 +211,16 @@ Dividido en columnas:
   - HTTP, JSON, basic XML, REST APIs.
 
 - **Integrations**
-  - CMS-like data, 3rd-party APIs, webhooks (mencionado a nivel conceptual).
+  - CMS-like data, 3rd-party APIs, webhooks (mentioned at conceptual level).
 
-**Copy con guiño:**
+**Copy with a wink:**
 - "Backwards-compatible with legacy codebases (with patience)."
 
-#### 3.1.4. Sección "Use Cases"
+#### 3.1.4. "Use Cases" Section
 
-**Título:** "Use Cases"
+**Title:** "Use Cases"
 
-Lista de situaciones típicas en una agencia:
+List of typical situations in an agency:
 
 - "Need a pixel-perfect build from a Figma file?"
   - "Steven FE-01 converts design tokens, grids and components into maintainable front-end architecture."
@@ -231,130 +231,130 @@ Lista de situaciones típicas en una agencia:
 - "Need someone to debug that weird layout in Safari?"
   - "Comfortable with cross-browser issues and digging into root causes instead of patching symptoms."
 
-Lo voy a renderizar como tarjetas o timeline, todavía no decidí.
+I'll render it as cards or timeline, haven't decided yet.
 
-#### 3.1.5. Sección "Performance & Reliability"
+#### 3.1.5. "Performance & Reliability" Section
 
-**Título:** "Performance & Reliability"
+**Title:** "Performance & Reliability"
 
-**Contenido sugerido:**
-- Bloques tipo "stats cards":
+**Suggested Content:**
+- "Stats cards" type blocks:
   - "Focus on Lighthouse scores & perceived performance."
   - "Works with lazy loading, image optimization and bundle awareness."
   - "Approach: profile, measure, then optimize – not guess."
 
-- Pequeño párrafo más serio explicando:
-  - Cómo abordo debugging y root cause analysis.
-  - Cómo me comunico con el equipo (estimaciones, updates, etc.).
+- Small more serious paragraph explaining:
+  - How I approach debugging and root cause analysis.
+  - How I communicate with the team (estimates, updates, etc.).
 
-#### 3.1.6. Sección "Testimonials / Social Proof" (ficticio pero creíble)
+#### 3.1.6. "Testimonials / Social Proof" Section (fictional but credible)
 
-Puedo usar testimonios ficticios o referir a "teams" de forma genérica (sin mentir, pero sin nombres reales). Algo muy neutral, tipo:
+I can use fictional testimonials or refer to "teams" generically (without lying, but without real names). Something very neutral, like:
 
 - "Working with Steven FE-01 felt like plugging a specialized module into our team – fast to understand the brief, calm under pressure, and always pushing for cleaner code."
 
-#### 3.1.7. Sección "Pricing" (guiño suave)
+#### 3.1.7. "Pricing" Section (soft wink)
 
-**Título:** "Availability & Pricing"
+**Title:** "Availability & Pricing"
 
 **Copy:**
 - "Available for full-time integration into your team. Salary expectations available upon request. Refunds not available, but continuous improvement is included by default."
 
-#### 3.1.8. Sección "Final CTA"
+#### 3.1.8. "Final CTA" Section
 
-**Botones:**
+**Buttons:**
 - Explore Components → /components
 - View Content in Action → /content
 
-**Pequeña nota:**
+**Small note:**
 - "This prototype was crafted specifically with the Critical Mass Front-End Developer role in mind."
 
-### 3.2. Página /components – Component Library
+### 3.2. /components Page – Component Library
 
-**Objetivo:** Que parezca una mini Storybook / design system docs.
+**Objective:** Make it look like a mini Storybook / design system docs.
 
-**Secciones:**
+**Sections:**
 
 #### Intro
-- **Título:** "UI Component Library"
-- **Texto:** "A small set of reusable components used across this prototype, documented with their intended usage and accessibility notes."
+- **Title:** "UI Component Library"
+- **Text:** "A small set of reusable components used across this prototype, documented with their intended usage and accessibility notes."
 
 #### Buttons
-Voy a mostrar variantes:
+I'll show variants:
 - .btn--primary
 - .btn--secondary
 - .btn--ghost
 
-Estados: normal, hover, focus, disabled. Todos los estados importantes para accesibilidad.
+States: normal, hover, focus, disabled. All important states for accessibility.
 
-**Para cada variante incluiré:**
+**For each variant I'll include:**
 - Preview.
-- **Notas:**
-  - Uso recomendado.
-  - Accesibilidad (uso de <button>, aria-label cuando hay solo ícono).
+- **Notes:**
+  - Recommended usage.
+  - Accessibility (use of <button>, aria-label when there's only an icon).
 
 #### Cards
-- Card básica.
+- Basic Card.
 - FeatureCard.
 - ContentCard.
 
-**Voy a mostrar:**
-- Diferentes layouts (con imagen, sin imagen).
-- Responsividad (cómo se comporta en pantallas pequeñas).
+**I'll show:**
+- Different layouts (with image, without image).
+- Responsiveness (how it behaves on small screens).
 
 #### Tags / Badges / Pills
-- Tags para categorías.
-- Badges de estado (Live, Upcoming, Draft).
+- Tags for categories.
+- Status badges (Live, Upcoming, Draft).
 
 #### Form Elements
-- Input (búsqueda).
+- Input (search).
 - Select (filter).
-- Toggle (modo oscuro / preferencia).
+- Toggle (dark mode / preference).
 
-**Incluiré:**
-- <label> asociado.
-- aria-invalid y aria-describedby como ejemplo.
+**I'll include:**
+- Associated <label>.
+- aria-invalid and aria-describedby as examples.
 
 #### Feedback States
-- Loader (spinner o skeleton).
+- Loader (spinner or skeleton).
 - ErrorMessage.
-- Toast (mensaje de notificación).
+- Toast (notification message).
 
-### 3.3. Página /content – CMS-like View
+### 3.3. /content Page – CMS-like View
 
-**Objetivo:** Simular integración con CMS / API para mostrar que sé trabajar con datos dinámicos.
+**Objective:** Simulate CMS / API integration to show I know how to work with dynamic data.
 
 #### 3.3.1. Layout
 
-**Barra superior:**
-- Título: "Content Feed".
-- Descripción: "Data fetched from a JSON endpoint, filtered on the client."
+**Top bar:**
+- Title: "Content Feed".
+- Description: "Data fetched from a JSON endpoint, filtered on the client."
 
-**Fila de filtros:**
-- Dropdown de categoría (Campaign, Case Study, Experiment, Learning).
-- Input de búsqueda (por título / keywords).
-- Toggle de "Show only live".
+**Filter row:**
+- Category dropdown (Campaign, Case Study, Experiment, Learning).
+- Search input (by title / keywords).
+- "Show only live" toggle.
 
-**Zona de contenido:**
-- Si loading === true → skeletons / loader.
-- Si error → mensaje con botón "Retry".
-- Si data.length === 0 → estado vacío: "No content matches your filters yet."
+**Content area:**
+- If loading === true → skeletons / loader.
+- If error → message with "Retry" button.
+- If data.length === 0 → empty state: "No content matches your filters yet."
 
-**Lista de tarjetas (ContentCard):**
-Cada item muestra:
-- Título.
-- Categoría (Tag).
-- Estado (Live/Upcoming/Draft) como Badge color-coded.
-- Fecha.
+**Card list (ContentCard):**
+Each item shows:
+- Title.
+- Category (Tag).
+- Status (Live/Upcoming/Draft) as color-coded Badge.
+- Date.
 - Small summary.
-- Tags (chips) con keywords.
+- Tags (chips) with keywords.
 
-#### 3.3.2. API / Datos
+#### 3.3.2. API / Data
 
-**En app/api/content/route.ts:**
-Endpoint GET que retorna un array de objetos.
+**In app/api/content/route.ts:**
+GET endpoint that returns an array of objects.
 
-**Algo así:**
+**Something like:**
 
 ```typescript
 // app/api/content/route.ts
@@ -387,7 +387,7 @@ export async function GET() {
 }
 ```
 
-**En lib/api/contentApi.ts:**
+**In lib/api/contentApi.ts:**
 
 ```typescript
 export async function fetchContent() {
@@ -397,72 +397,72 @@ export async function fetchContent() {
 }
 ```
 
-**En hooks/useFetchContent.ts:**
-Voy a manejar:
+**In hooks/useFetchContent.ts:**
+I'll handle:
 - data
 - loading
 - error
-- refetch() opcional (si tengo tiempo).
+- refetch() optional (if I have time).
 
-### 3.4. Página /about – Propósito del proyecto
+### 3.4. /about Page – Project Purpose
 
-**Contenido que voy a incluir:**
+**Content I'll include:**
 
-Explicar en 2–3 secciones:
+Explain in 2–3 sections:
 
-#### Contexto
-- Estoy aplicando al puesto de Front-End Developer en Critical Mass.
+#### Context
+- I'm applying for the Front-End Developer position at Critical Mass.
 
-#### Objetivo del prototipo
-- Demostrar habilidades alineadas al job posting:
-  - Design-to-code, responsive, accesibilidad, performance, APIs, SASS, testing.
+#### Prototype Objective
+- Demonstrate skills aligned with the job posting:
+  - Design-to-code, responsive, accessibility, performance, APIs, SASS, testing.
 
-#### Cómo está construido
+#### How It's Built
 - Next.js + TypeScript + SASS.
-- Mención de tests.
-- Mención de accesibilidad y performance.
+- Mention of tests.
+- Mention of accessibility and performance.
 
-Es un lugar muy bueno para ser directo con el reclutador.
+This is a great place to be direct with the recruiter.
 
-## 4. Diseño visual y sistema de estilos
+## 4. Visual Design and Style System
 
-### 4.1. Paleta de colores
+### 4.1. Color Palette
 
-- **Primario:** #4B3FFF (azul/violeta vibrante).
-- **Secundario:** #00D4B5 (turquesa suave).
-- **Acento:** #FFB347 (naranja suave) para badges o highlights.
-- **Fondo principal:** #050818 (tono oscuro) o fondo claro tipo #F5F7FB, elegir uno y mantenerse consistente.
+- **Primary:** #4B3FFF (vibrant blue/violet).
+- **Secondary:** #00D4B5 (soft turquoise).
+- **Accent:** #FFB347 (soft orange) for badges or highlights.
+- **Main background:** #050818 (dark tone) or light background like #F5F7FB, choose one and stay consistent.
 
-**Textos:**
-- **Principal:** #111827 (si fondo claro) o #F9FAFB (si fondo oscuro).
-- **Secundario:** gris #6B7280.
+**Texts:**
+- **Primary:** #111827 (if light background) or #F9FAFB (if dark background).
+- **Secondary:** gray #6B7280.
 
-Define todo esto en _variables.scss.
+Define all this in _variables.scss.
 
-### 4.2. Tipografía
+### 4.2. Typography
 
-- **Headings:** fuente sans-serif bold (ej. Inter / Poppins / system font).
+- **Headings:** sans-serif bold font (e.g. Inter / Poppins / system font).
 - **Body:** sans-serif regular.
 
-**En _typography.scss:**
-- Escalas de font-size (--fs-xs, --fs-sm, --fs-md, etc.).
-- line-height consistente.
+**In _typography.scss:**
+- Font-size scales (--fs-xs, --fs-sm, --fs-md, etc.).
+- Consistent line-height.
 
-Nota: Voy a usar Inter o Poppins, todavía no decidí.
+Note: I'll use Inter or Poppins, haven't decided yet.
 
-### 4.3. Layout y spacing
+### 4.3. Layout and Spacing
 
-**En _layout.scss:**
-- Clases utilitarias:
+**In _layout.scss:**
+- Utility classes:
   - .container
-  - .grid, .grid--2, .grid--3, con media queries.
+  - .grid, .grid--2, .grid--3, with media queries.
 
 **Spacing variables:**
 - --space-xs, --space-sm, --space-md, --space-lg, etc.
 
 ### 4.4. BEM + SMACSS
 
-**Ejemplo para Hero en _hero.scss:**
+**Example for Hero in _hero.scss:**
 
 ```scss
 .hero {
@@ -499,117 +499,117 @@ Nota: Voy a usar Inter o Poppins, todavía no decidí.
 }
 ```
 
-## 5. Accesibilidad (plan claro)
+## 5. Accessibility (Clear Plan)
 
-### Checklist que tengo que incorporar:
+### Checklist I Need to Incorporate:
 
-#### Estructura semántica
+#### Semantic Structure
 - <header>, <main>, <section>, <footer>.
-- Un solo <h1> por página, jerarquía clara de h2, h3.
+- One <h1> per page, clear hierarchy of h2, h3.
 
-#### Navegación por teclado
-- **Skip link al inicio:**
+#### Keyboard Navigation
+- **Skip link at the start:**
   ```html
   <a href="#main-content" class="skip-link">Skip to main content</a>
   ```
-- Clases .skip-link con estilos para estar visible al tener :focus.
+- .skip-link classes with styles to be visible when :focus.
 
-#### Enlaces y botones correctos
-- No usar <div onClick>.
-- Para acciones → <button>.
-- Para navegación → <a>.
+#### Correct Links and Buttons
+- Don't use <div onClick>.
+- For actions → <button>.
+- For navigation → <a>.
 
-#### Focus visible
-- Estilos específicos para :focus en botones, links, inputs.
+#### Visible Focus
+- Specific styles for :focus on buttons, links, inputs.
 
-#### Texto alternativo
-- Todas las imágenes clave con alt significativo.
-- Imágenes decorativas con alt="" y aria-hidden="true" si aplica.
+#### Alternative Text
+- All key images with meaningful alt.
+- Decorative images with alt="" and aria-hidden="true" if applicable.
 
-#### Formularios accesibles
+#### Accessible Forms
 - <label for="search">Search content</label>
-- id correspondiente en el input.
-- Para errores: aria-describedby, aria-invalid.
+- Corresponding id in the input.
+- For errors: aria-describedby, aria-invalid.
 
-#### Contraste
-- Asegurarme de que texto vs fondo cumplan contraste (mínimo 4.5:1 para texto normal).
+#### Contrast
+- Make sure text vs background meets contrast (minimum 4.5:1 for normal text).
 
-## 6. Performance (plan)
+## 6. Performance (Plan)
 
-### Medidas concretas:
+### Concrete Measures:
 
-- Usar next/image para imágenes.
-- Añadir loading="lazy" donde no use next/image.
-- Evitar librerías pesadas innecesarias.
-- Dividir la página en componentes pequeños.
-- Si quiero, usar React.Suspense para algunas secciones cargadas diferido (no obligatorio).
+- Use next/image for images.
+- Add loading="lazy" where I don't use next/image.
+- Avoid unnecessary heavy libraries.
+- Divide the page into small components.
+- If I want, use React.Suspense for some deferred loaded sections (not mandatory).
 
-**En el README, voy a añadir una sección:**
+**In the README, I'll add a section:**
 
 ### Performance Notes
 - Lazy loading on non-critical images.
 - Optimized layout and minimal re-renders via simple composition.
 - Focus on small bundle by avoiding unnecessary libraries.
 
-## 7. Testing (mínimo viable)
+## 7. Testing (Minimum Viable)
 
-- Configurar Jest + React Testing Library.
+- Set up Jest + React Testing Library.
 
-### Tests sugeridos:
+### Suggested Tests:
 
 #### Hero.test.tsx
-- Verificar que el título "Meet Steven Morales…" se renderiza.
-- Verificar que existen botones con texto View Features y See Live Content.
+- Verify that the title "Meet Steven Morales…" renders.
+- Verify that buttons with text View Features and See Live Content exist.
 
 #### Button.test.tsx
-- Renderizar un botón con texto dado.
-- Simular click y verificar que llama al handler.
+- Render a button with given text.
+- Simulate click and verify it calls the handler.
 
 #### Content.test.tsx
-- Mock de fetchContent para devolver datos.
-- Renderizar /content (o el componente principal de la vista).
-- Verificar:
-  - Que muestra loading.
-  - Luego muestra tarjetas de contenido.
+- Mock fetchContent to return data.
+- Render /content (or the main component of the view).
+- Verify:
+  - That it shows loading.
+  - Then shows content cards.
 
-## 8. Git & flujo de trabajo
+## 8. Git & Workflow
 
-### Flujo que voy a seguir:
+### Flow I'll Follow:
 
-- Crear repo en GitHub.
+- Create repo on GitHub.
 
-### Ramas:
-- main → estable.
+### Branches:
+- main → stable.
 - feature/landing-page
 - feature/components-page
 - feature/content-api
 - feature/accessibility
 - chore/tests
 
-### Commits descriptivos:
+### Descriptive Commits:
 - feat: add hero section layout
 - feat: implement content API integration
 - style: refine responsive grid on home
 - test: add button component tests
 
-Esto refleja buenas prácticas de version control como piden en el job posting.
+This reflects good version control practices as requested in the job posting.
 
-## 9. README – estructura que voy a usar
+## 9. README – Structure I'll Use
 
-### Contenido que incluiré:
+### Content I'll Include:
 
-#### Título
+#### Title
 "Steven Morales FE-01 – Front-End Experience Engine (Critical Mass Prototype)"
 
-(Probablemente lo acorte un poco, pero esa es la idea)
+(I'll probably shorten it a bit, but that's the idea)
 
-#### Descripción
-2–3 párrafos explicando:
-- Es un micro-sitio tipo producto personal.
-- Construido específicamente pensando en el rol de Developer, Front End en Critical Mass.
+#### Description
+2–3 paragraphs explaining:
+- It's a personal product-type microsite.
+- Built specifically thinking about the Developer, Front End role at Critical Mass.
 
 #### Objectives
-Lista de objetivos conectados al job posting. Esto es clave para que vean que leí bien el posting.
+List of objectives connected to the job posting. This is key so they see I read the posting well.
 
 #### Tech Stack
 Next.js, TypeScript, SASS, Jest, etc.
@@ -621,49 +621,49 @@ Next.js, TypeScript, SASS, Jest, etc.
 - /about – Project context
 
 #### How to Run
-Requisitos, npm install, npm run dev, npm run test.
+Requirements, npm install, npm run dev, npm run test.
 
-Básico pero claro.
+Basic but clear.
 
 #### Accessibility
-Lista corta de medidas implementadas. No quiero que sea muy largo.
+Short list of implemented measures. I don't want it to be too long.
 
 #### Performance
-Medidas implementadas. Lighthouse scores si puedo.
+Implemented measures. Lighthouse scores if I can.
 
 #### How this maps to the job description
-Pequeña tabla o bullet list conectando cada requisito del job posting con lo que implementé:
-- "Translate graphic designs…" → secciones X, uso de CSS Grid, etc.
+Small table or bullet list connecting each job posting requirement with what I implemented:
+- "Translate graphic designs…" → sections X, use of CSS Grid, etc.
 - "Mobile-first, responsive…" → layout, breakpoints.
 - "APIs, JSON, HTTP…" → /api/content, /content.
-- "SASS, pre-processing tools…" → styles/ con SCSS.
+- "SASS, pre-processing tools…" → styles/ with SCSS.
 - "Design systems & reusable components" → /components.
-- "Testing" → carpeta tests/.
+- "Testing" → tests/ folder.
 
-## 10. Cómo lo presento a Critical Mass
+## 10. How I'll Present It to Critical Mass
 
-Cuando lo tenga deployado en Vercel:
+When I have it deployed on Vercel:
 
-**En la entrevista o por mail, puedo decir:**
+**In the interview or by email, I can say:**
 
 "I built a small front-end prototype to show how I think about design translation, component systems and API integration in an agency context. It's a playful 'me-as-a-product' microsite, but the underlying code, accessibility and performance work are very serious."
 
-**Mandar:**
+**Send:**
 - Live demo URL.
-- Repo GitHub.
+- GitHub repo.
 
 ---
 
 ## 11. Job Posting - Critical Mass
 
-**Puesto:** Developer, Front End  
-**Ubicación:** San Jose, Costa Rica
+**Position:** Developer, Front End  
+**Location:** San Jose, Costa Rica
 
-### Descripción del rol
+### Role Description
 
 We are seeking an experienced and motivated Developer, Front End to join our team. The Developer, Front End will be responsible for delivering front-end tasks, supporting web applications, and translating graphic designs into efficient, high-quality, responsive, and accessible code. This role requires both independent ownership of basic tasks and the ability to collaborate on more complex projects, seeking guidance from senior team members as needed.
 
-### Responsabilidades (You Will)
+### Responsibilities (You Will)
 
 - Translate graphic designs and wireframes from tools like Figma (or similar) into standard-compliant HTML, CSS, and responsive components.
 - Collaborate with Creative, Business, Technology, and QA teams to ensure the delivery of high-quality, punctual web development.
@@ -677,7 +677,7 @@ We are seeking an experienced and motivated Developer, Front End to join our tea
 - Identify and resolve performance and scalability issues, and drive efforts to reduce technical debt.
 - Provide progress updates and task estimates to senior or technology leads as required.
 
-### Requisitos (You Have)
+### Requirements (You Have)
 
 - Minimum 2+ years of experience working with front-end technologies (HTML/CSS/JavaScript).
 - Excellent knowledge of modern development practices (Mobile First, MVC, Object-Oriented Development).
@@ -692,7 +692,7 @@ We are seeking an experienced and motivated Developer, Front End to join our tea
 - Expertise in troubleshooting, debugging, and root cause analysis.
 - Resourceful, critical thinker with a curiosity mindset and strong problem-solving skills.
 
-### Beneficios (What We Offer)
+### Benefits (What We Offer)
 
 - Global maternity and parental leave
 - Competitive benefits packages
@@ -703,5 +703,4 @@ We are seeking an experienced and motivated Developer, Front End to join our tea
 - Enterprise-wide employee discounts
 
 The Talent Team at Critical Mass is focused on ensuring we provide the best training, onboarding, and employee experience possible! Our new hires & employees are the future of our organization, and we want to set you up for long-term success. In an effort to do so, we expect our team to work from an office a minimum of 3 days a week.
-
 
