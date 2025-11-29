@@ -1,5 +1,34 @@
 # Steven Morales FE-01 – Human Front-End Experience Engine
 
+## Table of Contents
+
+- [0. General Project Concept](#0-general-project-concept)
+- [1. Project Objective (Linked to the Position)](#1-project-objective-linked-to-the-position)
+- [2. General Application Architecture](#2-general-application-architecture)
+  - [2.1. Pages (Next.js App Router)](#21-pages-nextjs-app-router)
+  - [2.2. Folder Structure](#22-folder-structure)
+- [3. Narrative Concept and Content for Each Page](#3-narrative-concept-and-content-for-each-page)
+  - [3.1. Landing / – "Steven Morales: Front-End Experience Engine"](#31-landing--steven-morales-front-end-experience-engine)
+  - [3.2. /components Page – Component Library](#32-components-page--component-library)
+  - [3.3. /content Page – CMS-like View](#33-content-page--cms-like-view)
+  - [3.4. /about Page – Project Purpose](#34-about-page--project-purpose)
+  - [3.5. Component Specifications (Props & Types)](#35-component-specifications-props--types)
+  - [3.6. Complete Copy (Ready to Use)](#36-complete-copy-ready-to-use)
+- [4. Visual Design and Style System](#4-visual-design-and-style-system)
+  - [4.1. Color Palette](#41-color-palette)
+  - [4.2. Typography](#42-typography)
+  - [4.3. Layout and Spacing](#43-layout-and-spacing)
+  - [4.4. BEM + SMACSS](#44-bem--smacss)
+- [5. Accessibility (Clear Plan)](#5-accessibility-clear-plan)
+- [6. Performance (Plan)](#6-performance-plan)
+- [7. Testing (Minimum Viable)](#7-testing-minimum-viable)
+- [8. Git & Workflow](#8-git--workflow)
+- [9. README – Structure I'll Use](#9-readme--structure-ill-use)
+- [10. How I'll Present It to Critical Mass](#10-how-ill-present-it-to-critical-mass)
+- [11. Job Posting - Critical Mass](#11-job-posting---critical-mass)
+
+---
+
 ## 0. General Project Concept
 
 ### Tentative Name:
