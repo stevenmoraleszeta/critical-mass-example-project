@@ -121,16 +121,17 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test layout utilities work correctly
 
 ### Main SCSS File
-- [ ] Create `styles/main.scss`
-- [ ] Import `_reset.scss`
-- [ ] Import `_variables.scss`
-- [ ] Import `_mixins.scss`
-- [ ] Import `_typography.scss`
-- [ ] Import `_layout.scss`
-- [ ] Import component styles (will add later)
-- [ ] Import page styles (will add later)
-- [ ] Import `main.scss` in `app/globals.scss` or `app/layout.tsx`
-- [ ] Verify all styles compile without errors
+- [x] Create `styles/main.scss`
+- [x] Import `_reset.scss` (in correct order: after variables and mixins)
+- [x] Import `_variables.scss` (first - used by all other files)
+- [x] Import `_mixins.scss` (second - uses variables, used by other files)
+- [x] Import `_typography.scss` (after reset)
+- [x] Import `_layout.scss` (after typography)
+- [x] Import component styles (commented out, will add later)
+- [x] Import page styles (commented out, will add later)
+- [x] Create `app/globals.scss` that imports `main.scss` (following project-idea.md)
+- [x] Update `app/layout.tsx` to import `globals.scss` instead of `globals.css`
+- [ ] Verify all styles compile without errors (test with `npm run build`)
 
 ### BEM Methodology
 - [ ] Document BEM naming convention for team reference

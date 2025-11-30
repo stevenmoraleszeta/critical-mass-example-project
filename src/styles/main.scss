@@ -1,0 +1,51 @@
+// ============================================================================
+// Main SCSS File
+// Following Critical Mass requirements: SASS, Organized Architecture
+// Following SMACSS architecture and project-idea.md structure
+// ============================================================================
+
+// ============================================================================
+// Base Layer (SMACSS)
+// Import order is important: variables first, then mixins, then everything else
+// ============================================================================
+
+// 1. Variables - Must be imported first (used by all other files)
+@import 'base/variables';
+
+// 2. Mixins - Imported second (may use variables, used by other files)
+@import 'base/mixins';
+
+// 3. Reset - Base styles and resets
+@import 'base/reset';
+
+// 4. Typography - Base typography styles
+@import 'base/typography';
+
+// 5. Layout - Layout utilities
+@import 'base/layout';
+
+// ============================================================================
+// Components Layer (SMACSS)
+// Component-specific styles
+// Will be added as components are created
+// ============================================================================
+
+// @import 'components/buttons';
+// @import 'components/cards';
+// @import 'components/tags';
+// @import 'components/navbar';
+// @import 'components/hero';
+// @import 'components/forms';
+// @import 'components/content';
+
+// ============================================================================
+// Pages Layer (SMACSS)
+// Page-specific styles
+// Will be added as pages are created
+// ============================================================================
+
+// @import 'pages/home';
+// @import 'pages/components-page';
+// @import 'pages/content-page';
+// @import 'pages/about-page';
+
