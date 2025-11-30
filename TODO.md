@@ -217,14 +217,14 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test input works with screen reader
 
 ### Select Component
-- [ ] Create `components/ui/Select.tsx`
-- [ ] Define `SelectProps` interface
-- [ ] Implement dropdown functionality
-- [ ] Add label association
-- [ ] Add options rendering
-- [ ] Style select component
-- [ ] Add focus states
-- [ ] Test select is accessible
+- [x] Create `components/ui/Select.tsx`
+- [x] Define `SelectProps` interface
+- [x] Implement dropdown functionality
+- [x] Add label association
+- [x] Add options rendering
+- [x] Style select component
+- [x] Add focus states
+- [x] Test select is accessible
 
 ### Toggle Component
 - [ ] Create `components/ui/Toggle.tsx`

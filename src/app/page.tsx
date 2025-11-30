@@ -6,6 +6,7 @@ import Card from "@/components/ui/Card";
 import Tag from "@/components/ui/Tag";
 import Badge from "@/components/ui/Badge";
 import Input from "@/components/ui/Input";
+import Select from "@/components/ui/Select";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -20,6 +21,12 @@ export default function Home() {
   const [passwordValue, setPasswordValue] = React.useState('');
   const [emailError, setEmailError] = React.useState('');
   const [requiredValue, setRequiredValue] = React.useState('');
+
+  // Select state management
+  const [categoryValue, setCategoryValue] = React.useState('all');
+  const [statusValue, setStatusValue] = React.useState('live');
+  const [requiredSelectValue, setRequiredSelectValue] = React.useState('');
+  const [selectError, setSelectError] = React.useState('');
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -600,6 +607,126 @@ export default function Home() {
                   onChange={() => {}}
                   required
                   error="This required field has an error"
+                />
+              </div>
+            </section>
+          </section>
+
+          {/* Select Component Showcase */}
+          <section>
+            <h1 className={styles['section-title']}>Select Component Showcase</h1>
+            
+            {/* Basic Select Section */}
+            <section>
+              <h2>Basic Select</h2>
+              <div className={styles['input-group']}>
+                <Select
+                  id="select-category"
+                  label="Category"
+                  options={[
+                    { value: 'all', label: 'All Categories' },
+                    { value: 'campaign', label: 'Campaign' },
+                    { value: 'case-study', label: 'Case Study' },
+                    { value: 'experiment', label: 'Experiment' },
+                    { value: 'learning', label: 'Learning' }
+                  ]}
+                  value={categoryValue}
+                  onChange={(e) => setCategoryValue(e.target.value)}
+                />
+                <Select
+                  id="select-status"
+                  label="Status"
+                  options={[
+                    { value: 'live', label: 'Live' },
+                    { value: 'upcoming', label: 'Upcoming' },
+                    { value: 'draft', label: 'Draft' }
+                  ]}
+                  value={statusValue}
+                  onChange={(e) => setStatusValue(e.target.value)}
+                />
+              </div>
+            </section>
+
+            {/* Required Select Section */}
+            <section>
+              <h2>Required Select</h2>
+              <div className={styles['input-group']}>
+                <Select
+                  id="select-required"
+                  label="Required Category"
+                  options={[
+                    { value: '', label: 'Select a category...' },
+                    { value: 'campaign', label: 'Campaign' },
+                    { value: 'case-study', label: 'Case Study' },
+                    { value: 'experiment', label: 'Experiment' }
+                  ]}
+                  value={requiredSelectValue}
+                  onChange={(e) => setRequiredSelectValue(e.target.value)}
+                  required
+                />
+              </div>
+            </section>
+
+            {/* Error States Section */}
+            <section>
+              <h2>Error States</h2>
+              <div className={styles['input-group']}>
+                <Select
+                  id="select-error"
+                  label="Select with Error"
+                  options={[
+                    { value: 'option1', label: 'Option 1' },
+                    { value: 'option2', label: 'Option 2' },
+                    { value: 'option3', label: 'Option 3' }
+                  ]}
+                  value=""
+                  onChange={() => {}}
+                  error="Please select an option"
+                />
+                <Select
+                  id="select-required-error"
+                  label="Required with Error"
+                  options={[
+                    { value: '', label: 'Select...' },
+                    { value: 'option1', label: 'Option 1' },
+                    { value: 'option2', label: 'Option 2' }
+                  ]}
+                  value=""
+                  onChange={() => {}}
+                  required
+                  error="This field is required"
+                />
+              </div>
+            </section>
+
+            {/* Usage Examples */}
+            <section>
+              <h2>Usage Examples</h2>
+              <div className={styles['input-group']}>
+                <Select
+                  id="select-filter"
+                  label="Filter by Category"
+                  options={[
+                    { value: 'all', label: 'All Categories' },
+                    { value: 'campaign', label: 'Campaign' },
+                    { value: 'case-study', label: 'Case Study' },
+                    { value: 'experiment', label: 'Experiment' },
+                    { value: 'learning', label: 'Learning' }
+                  ]}
+                  value={categoryValue}
+                  onChange={(e) => setCategoryValue(e.target.value)}
+                />
+                <Select
+                  id="select-sort"
+                  label="Sort By"
+                  options={[
+                    { value: 'newest', label: 'Newest First' },
+                    { value: 'oldest', label: 'Oldest First' },
+                    { value: 'title', label: 'Title A-Z' },
+                    { value: 'title-desc', label: 'Title Z-A' }
+                  ]}
+                  value="newest"
+                  onChange={() => {}}
                 />
               </div>
             </section>
