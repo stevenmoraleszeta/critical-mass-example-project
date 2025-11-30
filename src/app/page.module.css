@@ -102,6 +102,36 @@
   }
 }
 
+/* Tag group styles */
+.content .tag-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.content .tag-group--vertical {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.content .tag-group--align-center {
+  align-items: center;
+}
+
+/* Tag examples */
+.content .tag-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content .tag-example {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 /* Section title */
 .section-title {
   margin-top: var(--space-3xl);

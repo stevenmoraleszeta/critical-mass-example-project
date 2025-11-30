@@ -2,6 +2,7 @@
 
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
+import Tag from "@/components/ui/Tag";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -289,6 +290,91 @@ export default function Home() {
                     </div>
                   }
                 />
+              </div>
+            </section>
+          </section>
+
+          {/* Tag Component Showcase */}
+          <section>
+            <h1 className={styles['section-title']}>Tag Component Showcase</h1>
+            
+            {/* Variants Section */}
+            <section>
+              <h2>Variants</h2>
+              <div className={styles['tag-group']}>
+                <Tag text="Default Tag" variant="default" />
+                <Tag text="Primary Tag" variant="primary" />
+                <Tag text="Secondary Tag" variant="secondary" />
+              </div>
+            </section>
+
+            {/* Sizes Section */}
+            <section>
+              <h2>Sizes</h2>
+              <div className={`${styles['tag-group']} ${styles['tag-group--align-center']}`}>
+                <Tag text="Small Tag" size="sm" />
+                <Tag text="Medium Tag" size="md" />
+              </div>
+            </section>
+
+            {/* All Variants with All Sizes */}
+            <section>
+              <h2>All Variants × All Sizes</h2>
+              <div className={`${styles['tag-group']} ${styles['tag-group--vertical']}`}>
+                <div>
+                  <h3>Default</h3>
+                  <div className={`${styles['tag-group']} ${styles['tag-group--align-center']}`}>
+                    <Tag text="Small" variant="default" size="sm" />
+                    <Tag text="Medium" variant="default" size="md" />
+                  </div>
+                </div>
+                <div>
+                  <h3>Primary</h3>
+                  <div className={`${styles['tag-group']} ${styles['tag-group--align-center']}`}>
+                    <Tag text="Small" variant="primary" size="sm" />
+                    <Tag text="Medium" variant="primary" size="md" />
+                  </div>
+                </div>
+                <div>
+                  <h3>Secondary</h3>
+                  <div className={`${styles['tag-group']} ${styles['tag-group--align-center']}`}>
+                    <Tag text="Small" variant="secondary" size="sm" />
+                    <Tag text="Medium" variant="secondary" size="md" />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Usage Examples */}
+            <section>
+              <h2>Usage Examples</h2>
+              <div className={styles['tag-examples']}>
+                <div className={styles['tag-example']}>
+                  <h3>Categories</h3>
+                  <div className={styles['tag-group']}>
+                    <Tag text="React" variant="primary" />
+                    <Tag text="TypeScript" variant="secondary" />
+                    <Tag text="Next.js" variant="default" />
+                    <Tag text="SCSS" variant="primary" />
+                  </div>
+                </div>
+                <div className={styles['tag-example']}>
+                  <h3>Technologies</h3>
+                  <div className={styles['tag-group']}>
+                    <Tag text="Frontend" variant="default" size="sm" />
+                    <Tag text="Backend" variant="default" size="sm" />
+                    <Tag text="Full Stack" variant="primary" size="sm" />
+                    <Tag text="DevOps" variant="secondary" size="sm" />
+                  </div>
+                </div>
+                <div className={styles['tag-example']}>
+                  <h3>Skills</h3>
+                  <div className={styles['tag-group']}>
+                    <Tag text="Responsive Design" variant="primary" />
+                    <Tag text="Accessibility" variant="secondary" />
+                    <Tag text="Performance" variant="default" />
+                  </div>
+                </div>
               </div>
             </section>
           </section>
