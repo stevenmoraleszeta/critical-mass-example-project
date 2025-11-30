@@ -149,6 +149,7 @@ $space-3xl: 4rem;    // 64px
 // ============================================================================
 
 // Mobile-first breakpoints
+// Note: Breakpoint mixins are defined in _mixins.scss
 $breakpoint-xs: 320px;
 $breakpoint-sm: 640px;
 $breakpoint-md: 768px;
@@ -156,68 +157,6 @@ $breakpoint-lg: 1024px;
 $breakpoint-xl: 1280px;
 $breakpoint-2xl: 1536px;
 
-// Breakpoint mixins (for use in components)
-@mixin breakpoint-xs {
-  @media (min-width: #{$breakpoint-xs}) {
-    @content;
-  }
-}
-
-@mixin breakpoint-sm {
-  @media (min-width: #{$breakpoint-sm}) {
-    @content;
-  }
-}
-
-@mixin breakpoint-md {
-  @media (min-width: #{$breakpoint-md}) {
-    @content;
-  }
-}
-
-@mixin breakpoint-lg {
-  @media (min-width: #{$breakpoint-lg}) {
-    @content;
-  }
-}
-
-@mixin breakpoint-xl {
-  @media (min-width: #{$breakpoint-xl}) {
-    @content;
-  }
-}
-
-@mixin breakpoint-2xl {
-  @media (min-width: #{$breakpoint-2xl}) {
-    @content;
-  }
-}
-
-// ============================================================================
-// Typography Variables (for reference, will be in _typography.scss)
-// ============================================================================
-
-$font-size-xs: 0.75rem;    // 12px
-$font-size-sm: 0.875rem;   // 14px
-$font-size-base: 1rem;     // 16px
-$font-size-lg: 1.125rem;   // 18px
-$font-size-xl: 1.25rem;    // 20px
-$font-size-2xl: 1.5rem;    // 24px
-$font-size-3xl: 1.875rem;  // 30px
-$font-size-4xl: 2.25rem;   // 36px
-$font-size-5xl: 3rem;      // 48px
-
-:root {
-  --fs-xs: #{$font-size-xs};
-  --fs-sm: #{$font-size-sm};
-  --fs-base: #{$font-size-base};
-  --fs-lg: #{$font-size-lg};
-  --fs-xl: #{$font-size-xl};
-  --fs-2xl: #{$font-size-2xl};
-  --fs-3xl: #{$font-size-3xl};
-  --fs-4xl: #{$font-size-4xl};
-  --fs-5xl: #{$font-size-5xl};
-}
 
 // ============================================================================
 // Border Radius

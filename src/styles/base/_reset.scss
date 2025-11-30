@@ -21,22 +21,16 @@ html {
   -webkit-text-size-adjust: 100%;
   // Smooth scrolling (if supported)
   scroll-behavior: smooth;
-  // Better font rendering
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  // Reset body styles - will be overridden by typography
+  // Reset body styles - typography styles are in _typography.scss
   margin: 0;
   padding: 0;
   // Prevent horizontal scroll
   overflow-x: hidden;
-  // Use color variables from _variables.scss
-  color: var(--color-text-primary);
+  // Background color (typography color is in _typography.scss)
   background-color: var(--color-bg-light);
-  // Font rendering
-  text-rendering: optimizeLegibility;
 }
 
 // ============================================================================
@@ -67,7 +61,7 @@ ol {
 // ============================================================================
 
 a {
-  // Remove default link styling
+  // Remove default link styling (base reset)
   text-decoration: none;
   color: inherit;
   // Better touch targets on mobile (Critical Mass mobile-first requirement)
@@ -101,6 +95,9 @@ a {
     }
   }
 }
+
+// Note: Link colors, hover states, and typography-specific link styles
+// are defined in _typography.scss
 
 // ============================================================================
 // Buttons - Reset Styles
@@ -249,34 +246,8 @@ main {
   }
 }
 
-// ============================================================================
-// Hidden/Visually Hidden Utilities
-// Following SMACSS utilities and accessibility best practices
-// ============================================================================
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-// Show visually hidden content when focused (for skip links, etc.)
-.visually-hidden:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: inherit;
-  margin: inherit;
-  overflow: visible;
-  clip: auto;
-  white-space: normal;
-}
+// Note: .visually-hidden utility class is defined in _layout.scss
+// (utilities layer, not base layer)
 
 // ============================================================================
 // Print Styles (Basic)
