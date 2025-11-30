@@ -1,0 +1,99 @@
+// ============================================================================
+// Badge Component Styles
+// Following Critical Mass requirements: BEM, Mobile-First, Accessibility
+// Following project-idea.md: Badge component specifications
+// ============================================================================
+
+// Import base files for variables and mixins
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Badge Block (BEM)
+// Base styles for all badges
+// ============================================================================
+
+.badge {
+  // Base badge styles
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  // Typography
+  font-family: var(--font-family-sans);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-normal);
+  text-align: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.05em;
+  
+  // Layout
+  border-radius: var(--radius-md);
+  padding: var(--space-xs) var(--space-sm);
+  min-height: 1.5rem; // 24px
+  
+  // Transitions
+  @include transition-base(all);
+  
+  // Prevent text selection on badges
+  user-select: none;
+  
+  @include breakpoint-md {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--fs-sm);
+    min-height: 1.75rem; // 28px
+  }
+  
+  // ============================================================================
+  // Badge Status Variants (BEM Modifiers)
+  // Following project-idea.md: live, upcoming, draft statuses
+  // Color coding: Live (green/success), Upcoming (yellow/accent), Draft (red/secondary)
+  // ============================================================================
+  
+  // Live Status
+  // Green background with white text (using success color)
+  &--live {
+    background-color: var(--color-success); // Green
+    color: var(--color-white); // White text
+    border: 1px solid var(--color-success);
+  }
+  
+  // Upcoming Status
+  // Yellow background with blue text (using accent color)
+  &--upcoming {
+    background-color: var(--color-accent); // Yellow
+    color: var(--color-primary); // Blue text
+    border: 1px solid var(--color-primary);
+  }
+  
+  // Draft Status
+  // Red background with white text (using secondary color)
+  &--draft {
+    background-color: var(--color-secondary); // Red
+    color: var(--color-white); // White text
+    border: 1px solid var(--color-secondary);
+  }
+  
+  // ============================================================================
+  // Responsive Enhancements (Mobile-First)
+  // Following Critical Mass requirement: Mobile-First approach
+  // ============================================================================
+  
+  // Base styles are mobile-first (defined above)
+  // Additional responsive adjustments can be added here if needed
+  
+  // ============================================================================
+  // Reduced Motion Support (Accessibility)
+  // Following Critical Mass accessibility requirements
+  // ============================================================================
+  
+  @media (prefers-reduced-motion: reduce) {
+    & {
+      transition: none;
+      animation: none;
+    }
+  }
+}
+

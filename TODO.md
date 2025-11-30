@@ -188,14 +188,14 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test tag renders correctly
 
 ### Badge Component
-- [ ] Create `components/ui/Badge.tsx`
-- [ ] Define `BadgeProps` interface
-- [ ] Implement live status
-- [ ] Implement upcoming status
-- [ ] Implement draft status
-- [ ] Add color coding for each status
-- [ ] Style badge component
-- [ ] Test badge renders correctly
+- [x] Create `components/ui/Badge.tsx`
+- [x] Define `BadgeProps` interface
+- [x] Implement live status
+- [x] Implement upcoming status
+- [x] Implement draft status
+- [x] Add color coding for each status
+- [x] Style badge component
+- [x] Test badge renders correctly
 
 ### Input Component
 - [ ] Create `components/ui/Input.tsx`
