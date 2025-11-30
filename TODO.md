@@ -17,15 +17,15 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Create Next.js 14 project with TypeScript: `npx create-next-app@latest --typescript --app`
 - [x] Choose project name and initialize
 - [x] Verify project structure is created correctly
-- [ ] Test that `npm run dev` works and shows default Next.js page
+- [x] Test that `npm run dev` works and shows default Next.js page
 
 ### Configuration Files
-- [ ] Review and configure `tsconfig.json`
-- [ ] Review and configure `next.config.js`
-- [ ] Create `.gitignore` file (if not auto-generated)
-- [ ] Create `.eslintrc.json` or configure ESLint
-- [ ] Create `.prettierrc` or configure Prettier
-- [ ] Set up environment variables file `.env.local` (if needed)
+- [x] Review and configure `tsconfig.json`
+- [x] Review and configure `next.config.js`
+- [x] Create `.gitignore` file (if not auto-generated)
+- [x] Create `.eslintrc.json` or configure ESLint
+- [x] Create `.prettierrc` or configure Prettier
+- [x] Set up environment variables file `.env.local` (if needed)
 
 ### Testing Setup
 - [ ] Install Jest: `npm install --save-dev jest @types/jest`
