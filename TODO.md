@@ -28,12 +28,12 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Set up environment variables file `.env.local` (if needed)
 
 ### Testing Setup
-- [ ] Install Jest: `npm install --save-dev jest @types/jest`
-- [ ] Install React Testing Library: `npm install --save-dev @testing-library/react @testing-library/jest-dom`
-- [ ] Install Jest environment for Next.js: `npm install --save-dev jest-environment-jsdom`
-- [ ] Create `jest.config.js` or configure Jest in `package.json`
-- [ ] Create `jest.setup.js` for test setup
-- [ ] Verify test setup works with a simple test
+- [x] Install Jest: `npm install --save-dev jest @types/jest`
+- [x] Install React Testing Library: `npm install --save-dev @testing-library/react @testing-library/jest-dom`
+- [x] Install Jest environment for Next.js: `npm install --save-dev jest-environment-jsdom`
+- [x] Create `jest.config.js` or configure Jest in `package.json`
+- [x] Create `jest.setup.js` for test setup
+- [x] Verify test setup works with a simple test
 
 ### SASS/SCSS Setup
 - [ ] Install SASS: `npm install --save-dev sass`
