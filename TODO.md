@@ -227,14 +227,14 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test select is accessible
 
 ### Toggle Component
-- [ ] Create `components/ui/Toggle.tsx`
-- [ ] Define `ToggleProps` interface
-- [ ] Implement toggle functionality
-- [ ] Add label association
-- [ ] Add checked/unchecked states
-- [ ] Style toggle component
-- [ ] Add focus states
-- [ ] Test toggle is accessible
+- [x] Create `components/ui/Toggle.tsx`
+- [x] Define `ToggleProps` interface
+- [x] Implement toggle functionality
+- [x] Add label association
+- [x] Add checked/unchecked states
+- [x] Style toggle component
+- [x] Add focus states
+- [x] Test toggle is accessible
 
 ### Loader Component
 - [ ] Create `components/feedback/Loader.tsx`

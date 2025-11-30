@@ -357,3 +357,190 @@
   // Additional wrapper styles can be added here if needed
 }
 
+// ============================================================================
+// Toggle Wrapper (BEM)
+// Container for toggle and its associated elements
+// ============================================================================
+
+.toggle-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+// ============================================================================
+// Toggle Block (BEM)
+// Base styles for all toggles
+// ============================================================================
+
+.toggle {
+  // Base toggle styles (the switch track)
+  position: relative;
+  display: inline-block;
+  width: 3rem; // 48px
+  height: 1.5rem; // 24px
+  flex-shrink: 0;
+  
+  // Layout
+  background-color: var(--color-white);
+  border: 1px solid var(--color-primary); // Blue border
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  
+  // Transitions
+  @include transition-base(all);
+  
+  // ============================================================================
+  // Toggle Elements (BEM)
+  // ============================================================================
+  
+  // Label element
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    cursor: pointer;
+    user-select: none;
+    
+    // Remove default label styles
+    margin: 0;
+  }
+  
+  // Label text
+  &__label-text {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-normal);
+    color: var(--color-primary); // Blue text
+    line-height: var(--lh-normal);
+  }
+  
+  // Hidden input (visually hidden, but accessible)
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    
+    // Accessibility: Focus states on the toggle track
+    &:focus-visible ~ .toggle {
+      @include focus-visible;
+      outline-offset: 2px;
+    }
+    
+    // When checked, move slider to the right
+    &:checked ~ .toggle {
+      background-color: var(--color-accent); // Yellow background when checked
+      border-color: var(--color-primary); // Blue border
+      
+      .toggle__slider {
+        transform: translateY(-50%) translateX(1.5rem); // Center vertically and move to the right (24px)
+        background-color: var(--color-primary); // Blue slider when checked
+      }
+    }
+    
+    // Disabled state
+    &:disabled ~ .toggle {
+      background-color: var(--color-accent); // Yellow background when disabled
+      border-color: var(--color-primary); // Blue border
+      cursor: not-allowed;
+      opacity: 0.7;
+      
+      .toggle__slider {
+        background-color: var(--color-primary); // Blue slider when disabled
+        opacity: 0.7;
+      }
+    }
+    
+    // Disabled label text
+    &:disabled ~ .toggle__label-text {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+  
+  // Slider (the moving part)
+  &__slider {
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    width: 1.25rem; // 20px
+    height: 1.25rem; // 20px
+    background-color: var(--color-primary); // Blue slider when unchecked
+    border-radius: var(--radius-full);
+    transform: translateY(-50%);
+    transition: transform var(--transition-base);
+    pointer-events: none;
+  }
+  
+  // ============================================================================
+  // Toggle Modifiers (BEM)
+  // ============================================================================
+  
+  // Checked state
+  &--checked {
+    background-color: var(--color-accent); // Yellow background when checked
+    border-color: var(--color-primary); // Blue border
+    
+    .toggle__slider {
+      transform: translateY(-50%) translateX(1.5rem); // Center vertically and move to the right
+      background-color: var(--color-primary); // Blue slider when checked
+    }
+  }
+  
+  // Disabled state
+  &--disabled {
+    background-color: var(--color-accent); // Yellow background when disabled
+    border-color: var(--color-primary); // Blue border
+    cursor: not-allowed;
+    opacity: 0.7;
+    
+    .toggle__slider {
+      background-color: var(--color-primary); // Blue slider when disabled
+      opacity: 0.7;
+    }
+  }
+  
+  // ============================================================================
+  // Responsive Enhancements (Mobile-First)
+  // Following Critical Mass requirement: Mobile-First approach
+  // ============================================================================
+  
+  @include breakpoint-md {
+    width: 3.5rem; // 56px
+    height: 1.75rem; // 28px
+    
+    &__slider {
+      width: 1.5rem; // 24px
+      height: 1.5rem; // 24px
+    }
+    
+    // Adjust slider position for larger size
+    &--checked .toggle__slider,
+    &__input:checked ~ & .toggle__slider {
+      transform: translateY(-50%) translateX(1.75rem); // Center vertically and move to the right (28px)
+    }
+  }
+  
+  // ============================================================================
+  // Reduced Motion Support (Accessibility)
+  // Following Critical Mass accessibility requirements
+  // ============================================================================
+  
+  @media (prefers-reduced-motion: reduce) {
+    &,
+    &__slider {
+      transition: none;
+    }
+  }
+}
+
+// ============================================================================
+// Toggle Wrapper Modifiers (if needed)
+// ============================================================================
+
+.toggle-wrapper {
+  // Additional wrapper styles can be added here if needed
+}
+

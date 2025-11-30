@@ -7,6 +7,7 @@ import Tag from "@/components/ui/Tag";
 import Badge from "@/components/ui/Badge";
 import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
+import Toggle from "@/components/ui/Toggle";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -27,6 +28,11 @@ export default function Home() {
   const [statusValue, setStatusValue] = React.useState('live');
   const [requiredSelectValue, setRequiredSelectValue] = React.useState('');
   const [selectError, setSelectError] = React.useState('');
+
+  // Toggle state management
+  const [darkMode, setDarkMode] = React.useState(false);
+  const [notifications, setNotifications] = React.useState(true);
+  const [autoSave, setAutoSave] = React.useState(false);
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -726,6 +732,94 @@ export default function Home() {
                     { value: 'title-desc', label: 'Title Z-A' }
                   ]}
                   value="newest"
+                  onChange={() => {}}
+                />
+              </div>
+            </section>
+          </section>
+
+          {/* Toggle Component Showcase */}
+          <section>
+            <h1 className={styles['section-title']}>Toggle Component Showcase</h1>
+            
+            {/* Basic Toggle Section */}
+            <section>
+              <h2>Basic Toggle</h2>
+              <div className={styles['input-group']}>
+                <Toggle
+                  id="toggle-dark-mode"
+                  label="Dark Mode"
+                  checked={darkMode}
+                  onChange={(e) => setDarkMode(e.target.checked)}
+                />
+                <Toggle
+                  id="toggle-notifications"
+                  label="Enable Notifications"
+                  checked={notifications}
+                  onChange={(e) => setNotifications(e.target.checked)}
+                />
+                <Toggle
+                  id="toggle-auto-save"
+                  label="Auto Save"
+                  checked={autoSave}
+                  onChange={(e) => setAutoSave(e.target.checked)}
+                />
+              </div>
+            </section>
+
+            {/* Toggle States Section */}
+            <section>
+              <h2>Toggle States</h2>
+              <div className={styles['input-group']}>
+                <Toggle
+                  id="toggle-checked"
+                  label="Checked Toggle"
+                  checked={true}
+                  onChange={() => {}}
+                />
+                <Toggle
+                  id="toggle-unchecked"
+                  label="Unchecked Toggle"
+                  checked={false}
+                  onChange={() => {}}
+                />
+                <Toggle
+                  id="toggle-disabled-checked"
+                  label="Disabled (Checked)"
+                  checked={true}
+                  onChange={() => {}}
+                  disabled
+                />
+                <Toggle
+                  id="toggle-disabled-unchecked"
+                  label="Disabled (Unchecked)"
+                  checked={false}
+                  onChange={() => {}}
+                  disabled
+                />
+              </div>
+            </section>
+
+            {/* Usage Examples */}
+            <section>
+              <h2>Usage Examples</h2>
+              <div className={styles['input-group']}>
+                <Toggle
+                  id="toggle-show-live"
+                  label="Show only live content"
+                  checked={false}
+                  onChange={() => {}}
+                />
+                <Toggle
+                  id="toggle-email-alerts"
+                  label="Email alerts"
+                  checked={true}
+                  onChange={() => {}}
+                />
+                <Toggle
+                  id="toggle-public-profile"
+                  label="Make profile public"
+                  checked={false}
                   onChange={() => {}}
                 />
               </div>
