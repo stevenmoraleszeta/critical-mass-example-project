@@ -27,7 +27,7 @@ $color-text-muted: $color-blue;          // Blue for muted text (same as primary
 
 // Semantic Colors (using base RGB colors)
 // All colors in their base RGB form - no variations
-$color-success: #00FF00;   // Green base (RGB: 0, 255, 0) for success
+// Only using: Blue, Red, Yellow, Black, White
 $color-warning: $color-yellow; // Yellow base (RGB: 255, 255, 0) for warning
 $color-error: $color-red;      // Red base (RGB: 255, 0, 0) for error
 $color-info: $color-blue;      // Blue base (RGB: 0, 0, 255) for info
@@ -58,7 +58,6 @@ $color-info: $color-blue;      // Blue base (RGB: 0, 0, 255) for info
   --color-text-muted: #{$color-text-muted};           // Blue
 
   // Semantic Colors
-  --color-success: #{$color-success};
   --color-warning: #{$color-warning};
   --color-error: #{$color-error};
   --color-info: #{$color-info};

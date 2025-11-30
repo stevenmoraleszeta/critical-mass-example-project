@@ -49,15 +49,15 @@
   // ============================================================================
   // Badge Status Variants (BEM Modifiers)
   // Following project-idea.md: live, upcoming, draft statuses
-  // Color coding: Live (green/success), Upcoming (yellow/accent), Draft (red/secondary)
+  // Color coding: Live (blue/primary), Upcoming (yellow/accent), Draft (red/secondary)
   // ============================================================================
   
   // Live Status
-  // Green background with white text (using success color)
+  // Blue background with white text (using primary color)
   &--live {
-    background-color: var(--color-success); // Green
+    background-color: var(--color-primary); // Blue
     color: var(--color-white); // White text
-    border: 1px solid var(--color-success);
+    border: 1px solid var(--color-primary);
   }
   
   // Upcoming Status
