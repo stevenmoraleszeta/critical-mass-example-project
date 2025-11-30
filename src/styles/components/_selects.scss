@@ -1,0 +1,171 @@
+// ============================================================================
+// Select Component Styles
+// Following Critical Mass requirements: BEM, Mobile-First, Accessibility
+// Following project-idea.md: Select component specifications
+// ============================================================================
+
+// Import base files for variables and mixins
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Select Wrapper (BEM)
+// Container for select and its associated elements
+// ============================================================================
+
+.select-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+// ============================================================================
+// Select Block (BEM)
+// Base styles for all selects
+// ============================================================================
+
+.select {
+  // Base select styles
+  display: block;
+  width: 100%;
+  
+  // Typography
+  font-family: var(--font-family-sans);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-normal);
+  line-height: var(--lh-normal);
+  color: var(--color-primary); // Blue text
+  
+  // Layout
+  padding: var(--space-sm) var(--space-md);
+  padding-right: var(--space-2xl); // Extra padding for dropdown arrow
+  border: 1px solid var(--color-primary); // Blue border
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23FFFF00' stroke='%230000FF' stroke-width='1'/%3E%3Cpath fill='%230000FF' d='M8 11L4 7h8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-md) center;
+  background-size: 16px 16px;
+  appearance: none; // Remove default arrow
+  cursor: pointer;
+  
+  // Transitions
+  @include transition-base(all);
+  
+  // Accessibility: Focus states
+  @include focus-visible;
+  
+  // Remove default select styles
+  outline: none;
+  
+  // Hover state
+  &:hover:not(:disabled):not(.select--error) {
+    border-color: var(--color-primary);
+    @include shadow-sm;
+  }
+  
+  // Focus state (handled by focus-visible mixin)
+  &:focus-visible {
+    outline-color: var(--color-accent); // Yellow outline
+    border-color: var(--color-primary);
+    @include shadow-md;
+  }
+  
+  // Disabled state
+  &:disabled {
+    background-color: var(--color-accent); // Yellow background when disabled
+    color: var(--color-primary); // Blue text
+    border-color: var(--color-primary);
+    cursor: not-allowed;
+    opacity: 0.7;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23FFFF00' stroke='%230000FF' stroke-width='1'/%3E%3Cpath fill='%230000FF' d='M8 11L4 7h8z'/%3E%3C/svg%3E");
+  }
+  
+  // ============================================================================
+  // Select Elements (BEM)
+  // ============================================================================
+  
+  // Label element
+  &__label {
+    display: block;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--color-primary); // Blue text
+    margin-bottom: var(--space-xs);
+    line-height: var(--lh-normal);
+  }
+  
+  // Required indicator
+  &__required {
+    color: var(--color-secondary); // Red for required indicator
+    margin-left: var(--space-xs);
+    font-weight: var(--fw-bold);
+  }
+  
+  // Error message
+  &__error {
+    display: block;
+    font-size: var(--fs-sm);
+    color: var(--color-secondary); // Red for errors
+    margin-top: var(--space-xs);
+    line-height: var(--lh-normal);
+  }
+  
+  // ============================================================================
+  // Select Modifiers (BEM)
+  // ============================================================================
+  
+  // Error state
+  &--error {
+    border-color: var(--color-secondary); // Red border for errors
+    background-color: var(--color-white);
+    
+    &:focus-visible {
+      outline-color: var(--color-secondary); // Red outline when in error state
+      border-color: var(--color-secondary);
+    }
+    
+    &:hover:not(:disabled) {
+      border-color: var(--color-secondary);
+    }
+  }
+  
+  // Required state (visual indicator already handled by __required element)
+  &--required {
+    // Additional styles for required selects if needed
+  }
+  
+  // ============================================================================
+  // Select Options Styling
+  // ============================================================================
+  
+  option {
+    padding: var(--space-sm);
+    background-color: var(--color-white);
+    color: var(--color-primary);
+  }
+  
+  // ============================================================================
+  // Responsive Enhancements (Mobile-First)
+  // Following Critical Mass requirement: Mobile-First approach
+  // ============================================================================
+  
+  @include breakpoint-md {
+    padding: var(--space-sm) var(--space-lg);
+    padding-right: var(--space-3xl); // Extra padding for dropdown arrow
+    font-size: var(--fs-base);
+  }
+  
+  // ============================================================================
+  // Reduced Motion Support (Accessibility)
+  // Following Critical Mass accessibility requirements
+  // ============================================================================
+  
+  @media (prefers-reduced-motion: reduce) {
+    & {
+      transition: none;
+    }
+  }
+}
+
