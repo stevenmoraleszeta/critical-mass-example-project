@@ -10,6 +10,7 @@ import Select from "@/components/ui/Select";
 import Toggle from "@/components/ui/Toggle";
 import Loader from "@/components/feedback/Loader";
 import ErrorMessage from "@/components/feedback/ErrorMessage";
+import Toast from "@/components/feedback/Toast";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -39,6 +40,33 @@ export default function Home() {
   // Error message handlers
   const handleRetry = () => {
     alert("Retry clicked!");
+  };
+
+  // Toast state management
+  const [toasts, setToasts] = React.useState<{
+    id: string;
+    message: string;
+    variant: 'success' | 'error' | 'info' | 'warning';
+    position: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
+    size: 'sm' | 'md' | 'lg';
+    autoDismiss: boolean;
+    duration: number;
+  }[]>([]);
+
+  const showToast = (
+    message: string,
+    variant: 'success' | 'error' | 'info' | 'warning' = 'info',
+    position: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' = 'top-right',
+    size: 'sm' | 'md' | 'lg' = 'md',
+    autoDismiss: boolean = true,
+    duration: number = 5000
+  ) => {
+    const id = Math.random().toString(36).substring(7);
+    setToasts((prev) => [...prev, { id, message, variant, position, size, autoDismiss, duration }]);
+  };
+
+  const removeToast = (id: string) => {
+    setToasts((prev) => prev.filter((toast) => toast.id !== id));
   };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -983,8 +1011,173 @@ export default function Home() {
               </div>
             </section>
           </section>
+
+          {/* Toast Component Showcase */}
+          <section>
+            <h1 className={styles['section-title']}>Toast Component Showcase</h1>
+            
+            {/* Toast Variants Section */}
+            <section>
+              <h2>Toast Variants</h2>
+              <div className={styles['toast-group']}>
+                <button
+                  className={styles['toast-trigger']}
+                  onClick={() => showToast('Operation completed successfully!', 'success')}
+                >
+                  Show Success Toast
+                </button>
+                <button
+                  className={styles['toast-trigger']}
+                  onClick={() => showToast('An error occurred. Please try again.', 'error')}
+                >
+                  Show Error Toast
+                </button>
+                <button
+                  className={styles['toast-trigger']}
+                  onClick={() => showToast('Here is some information for you.', 'info')}
+                >
+                  Show Info Toast
+                </button>
+                <button
+                  className={styles['toast-trigger']}
+                  onClick={() => showToast('Warning: This action cannot be undone.', 'warning')}
+                >
+                  Show Warning Toast
+                </button>
+              </div>
+            </section>
+
+            {/* Toast Sizes Section */}
+            <section>
+              <h2>Toast Sizes</h2>
+              <div className={styles['toast-group']}>
+                <button
+                  className={styles['toast-trigger']}
+                  onClick={() => showToast('Small toast message', 'info', 'top-right', 'sm')}
+                >
+                  Show Small Toast
+                </button>
+                <button
+                  className={styles['toast-trigger']}
+                  onClick={() => showToast('Medium toast message', 'info', 'top-right', 'md')}
+                >
+                  Show Medium Toast
+                </button>
+                <button
+                  className={styles['toast-trigger']}
+                  onClick={() => showToast('Large toast message with more content', 'info', 'top-right', 'lg')}
+                >
+                  Show Large Toast
+                </button>
+              </div>
+            </section>
+
+            {/* Toast Positions Section */}
+            <section>
+              <h2>Toast Positions</h2>
+              <div className={styles['toast-group']}>
+                <button
+                  className={styles['toast-trigger']}
+                  onClick={() => showToast('Top Right Toast', 'info', 'top-right')}
+                >
+                  Top Right
+                </button>
+                <button
+                  className={styles['toast-trigger']}
+                  onClick={() => showToast('Top Left Toast', 'info', 'top-left')}
+                >
+                  Top Left
+                </button>
+                <button
+                  className={styles['toast-trigger']}
+                  onClick={() => showToast('Bottom Right Toast', 'info', 'bottom-right')}
+                >
+                  Bottom Right
+                </button>
+                <button
+                  className={styles['toast-trigger']}
+                  onClick={() => showToast('Bottom Left Toast', 'info', 'bottom-left')}
+                >
+                  Bottom Left
+                </button>
+              </div>
+            </section>
+
+            {/* Auto-Dismiss Section */}
+            <section>
+              <h2>Auto-Dismiss Options</h2>
+              <div className={styles['toast-group']}>
+                <button
+                  className={styles['toast-trigger']}
+                  onClick={() => showToast('This toast will auto-dismiss in 5 seconds', 'info', 'top-right', 'md', true, 5000)}
+                >
+                  Auto-Dismiss (5s)
+                </button>
+                <button
+                  className={styles['toast-trigger']}
+                  onClick={() => showToast('This toast will auto-dismiss in 3 seconds', 'success', 'top-right', 'md', true, 3000)}
+                >
+                  Auto-Dismiss (3s)
+                </button>
+                <button
+                  className={styles['toast-trigger']}
+                  onClick={() => showToast('This toast will not auto-dismiss. Click X to close.', 'warning', 'top-right', 'md', false, 0)}
+                >
+                  No Auto-Dismiss
+                </button>
+              </div>
+            </section>
+
+            {/* Usage Examples */}
+            <section>
+              <h2>Usage Examples</h2>
+              <div className={styles['toast-examples']}>
+                <div className={styles['toast-example']}>
+                  <h3>Success Notification</h3>
+                  <button
+                    className={styles['toast-trigger']}
+                    onClick={() => showToast('Your changes have been saved successfully!', 'success', 'top-right', 'md', true, 4000)}
+                  >
+                    Save Success
+                  </button>
+                </div>
+                <div className={styles['toast-example']}>
+                  <h3>Error Notification</h3>
+                  <button
+                    className={styles['toast-trigger']}
+                    onClick={() => showToast('Failed to connect to server. Please check your connection.', 'error', 'top-right', 'md', true, 6000)}
+                  >
+                    Show Error
+                  </button>
+                </div>
+                <div className={styles['toast-example']}>
+                  <h3>Info Notification</h3>
+                  <button
+                    className={styles['toast-trigger']}
+                    onClick={() => showToast('New features are available. Check them out!', 'info', 'bottom-right', 'md', true, 5000)}
+                  >
+                    Show Info
+                  </button>
+                </div>
+              </div>
+            </section>
+          </section>
         </div>
       </main>
+
+      {/* Render all active toasts */}
+      {toasts.map((toast) => (
+        <Toast
+          key={toast.id}
+          message={toast.message}
+          variant={toast.variant}
+          position={toast.position}
+          size={toast.size}
+          autoDismiss={toast.autoDismiss}
+          duration={toast.duration}
+          onDismiss={() => removeToast(toast.id)}
+        />
+      ))}
     </div>
   );
 }
