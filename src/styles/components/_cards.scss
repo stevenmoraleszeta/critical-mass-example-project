@@ -1,0 +1,339 @@
+// ============================================================================
+// Card Component Styles
+// Following Critical Mass requirements: BEM, Mobile-First, Accessibility
+// Following project-idea.md: Card component specifications
+// ============================================================================
+
+// Import base files for variables and mixins
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Card Block (BEM)
+// Base styles for all cards
+// ============================================================================
+
+.card {
+  // Base card styles
+  display: flex;
+  flex-direction: column;
+  
+  // Layout
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  
+  // Spacing
+  overflow: hidden;
+  
+  // Transitions
+  @include transition-base(all);
+  
+  // Shadow (subtle on default)
+  @include shadow-sm;
+  
+  // Hover effect
+  &:hover {
+    @include shadow-md;
+    transform: translateY(-2px);
+  }
+  
+  // ============================================================================
+  // Card Elements (BEM)
+  // ============================================================================
+  
+  // Image Container
+  &__image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-gray-100);
+    
+    // Aspect ratio for images (16:9 default)
+    @include aspect-ratio(16, 9);
+    
+    // Ensure image fills container
+    img,
+    .card__img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  // Image Element
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  // Content Container
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: var(--space-md);
+    gap: var(--space-sm);
+    
+    @include breakpoint-md {
+      padding: var(--space-lg);
+      gap: var(--space-md);
+    }
+  }
+  
+  // Title
+  &__title {
+    margin: 0;
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    color: var(--color-text-primary);
+    
+    @include breakpoint-md {
+      font-size: var(--fs-xl);
+    }
+  }
+  
+  // Description
+  &__description {
+    margin: 0;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-relaxed);
+    color: var(--color-text-secondary);
+  }
+  
+  // Body Content (for children)
+  &__body {
+    margin-top: var(--space-xs);
+    font-size: var(--fs-base);
+    line-height: var(--lh-relaxed);
+    color: var(--color-text-primary);
+    
+    // Adjust margin when body follows title or description
+    // This will be handled by the card__content gap, but we can add specific styling if needed
+  }
+  
+  // Footer
+  &__footer {
+    display: flex;
+    align-items: center;
+    padding: var(--space-md);
+    border-top: 1px solid var(--color-gray-200);
+    background-color: var(--color-gray-50);
+    gap: var(--space-sm);
+    
+    @include breakpoint-md {
+      padding: var(--space-lg);
+    }
+  }
+  
+  // ============================================================================
+  // Card Variants (BEM Modifiers)
+  // Following project-idea.md: default, feature, content variants
+  // ============================================================================
+  
+  // Default Variant
+  &--default {
+    // Default styles are already applied in base .card
+    // This variant can be used for explicit styling or overrides
+  }
+  
+  // Feature Variant
+  &--feature {
+    // Feature cards are typically used for showcasing features
+    // Slightly enhanced styling
+    
+    .card__title {
+      color: var(--color-primary);
+    }
+    
+    .card__content {
+      // Slightly more padding for feature cards
+      @include breakpoint-md {
+        padding: var(--space-xl);
+      }
+    }
+    
+    // Feature cards might have icons or enhanced visuals
+    .card__image {
+      // Can add overlay or gradient for feature cards
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 30%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+        pointer-events: none;
+      }
+    }
+  }
+  
+  // Content Variant
+  &--content {
+    // Content cards are used for displaying content items (articles, posts, etc.)
+    // More compact, optimized for content feeds
+    
+    border-color: var(--color-gray-300);
+    
+    .card__content {
+      padding: var(--space-md);
+      
+      @include breakpoint-md {
+        padding: var(--space-lg);
+      }
+    }
+    
+    .card__title {
+      font-size: var(--fs-base);
+      font-weight: var(--fw-semibold);
+      
+      @include breakpoint-md {
+        font-size: var(--fs-lg);
+      }
+    }
+    
+    .card__description {
+      font-size: var(--fs-sm);
+      line-height: var(--lh-normal);
+      
+      @include breakpoint-md {
+        font-size: var(--fs-base);
+      }
+    }
+    
+    // Content cards often have more compact images
+    .card__image {
+      @include aspect-ratio(4, 3); // Different aspect ratio for content cards
+    }
+    
+    // Footer in content cards is more subtle
+    .card__footer {
+      padding: var(--space-sm) var(--space-md);
+      background-color: transparent;
+      border-top-color: var(--color-gray-200);
+      
+      @include breakpoint-md {
+        padding: var(--space-md) var(--space-lg);
+      }
+    }
+  }
+  
+  // ============================================================================
+  // Responsive Enhancements (Mobile-First)
+  // Following Critical Mass requirement: Mobile-First approach
+  // ============================================================================
+  
+  // Base styles are mobile-first (defined above)
+  // Additional responsive adjustments for larger screens
+  
+  @include breakpoint-lg {
+    // Cards in a grid might need different spacing
+    // This is handled by parent containers
+  }
+  
+  // ============================================================================
+  // States and Interactions
+  // ============================================================================
+  
+  // Card with no image (content-only)
+  &:not(:has(.card__image)) {
+    .card__content {
+      // Adjust padding when no image
+      padding: var(--space-lg);
+      
+      @include breakpoint-md {
+        padding: var(--space-xl);
+      }
+    }
+  }
+  
+  // Card with no footer
+  &:not(:has(.card__footer)) {
+    .card__content {
+      // Remove bottom padding adjustment when no footer
+    }
+  }
+  
+  // ============================================================================
+  // Reduced Motion Support (Accessibility)
+  // Following Critical Mass accessibility requirements
+  // ============================================================================
+  
+  @media (prefers-reduced-motion: reduce) {
+    &,
+    &__image,
+    &__content,
+    &__footer {
+      transition: none;
+      animation: none;
+    }
+    
+    &:hover {
+      transform: none;
+    }
+  }
+  
+  // ============================================================================
+  // Focus States (Accessibility)
+  // Cards should be focusable if they're interactive (links, buttons)
+  // This is for cards that might be wrapped in links or buttons
+  // ============================================================================
+  
+  // If card is interactive (wrapped in link/button), it should have focus styles
+  // This is typically handled by the wrapper element, not the card itself
+  // But we provide a modifier for interactive cards
+  &--interactive {
+    cursor: pointer;
+    
+    @include focus-visible;
+    
+    &:focus-visible {
+      outline-offset: 4px;
+    }
+  }
+}
+
+// ============================================================================
+// Dark Mode Support
+// ============================================================================
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    background-color: var(--color-bg-dark);
+    border-color: var(--color-gray-700);
+    color: var(--color-text-primary);
+    
+    &__title {
+      color: var(--color-text-primary);
+    }
+    
+    &__description {
+      color: var(--color-text-secondary);
+    }
+    
+    &__footer {
+      background-color: var(--color-gray-800);
+      border-top-color: var(--color-gray-700);
+    }
+    
+    &--feature {
+      .card__title {
+        color: var(--color-primary);
+      }
+    }
+    
+    &--content {
+      border-color: var(--color-gray-600);
+      
+      .card__footer {
+        background-color: transparent;
+        border-top-color: var(--color-gray-700);
+      }
+    }
+  }
+}
+

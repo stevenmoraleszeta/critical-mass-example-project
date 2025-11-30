@@ -163,18 +163,18 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test button works with screen reader
 
 ### Card Component
-- [ ] Create `components/ui/Card.tsx`
-- [ ] Define `CardProps` interface
-- [ ] Implement default variant
-- [ ] Implement feature variant
-- [ ] Implement content variant
-- [ ] Add image support
-- [ ] Add footer support
-- [ ] Add children support
-- [ ] Create `styles/components/_cards.scss`
-- [ ] Style all card variants
-- [ ] Add responsive behavior
-- [ ] Test card renders correctly
+- [x] Create `components/ui/Card.tsx`
+- [x] Define `CardProps` interface
+- [x] Implement default variant
+- [x] Implement feature variant
+- [x] Implement content variant
+- [x] Add image support
+- [x] Add footer support
+- [x] Add children support
+- [x] Create `styles/components/_cards.scss`
+- [x] Style all card variants
+- [x] Add responsive behavior
+- [x] Test card renders correctly
 
 ### Tag Component
 - [ ] Create `components/ui/Tag.tsx`
