@@ -3,6 +3,7 @@
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import Tag from "@/components/ui/Tag";
+import Badge from "@/components/ui/Badge";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -373,6 +374,71 @@ export default function Home() {
                     <Tag text="Responsive Design" variant="primary" />
                     <Tag text="Accessibility" variant="secondary" />
                     <Tag text="Performance" variant="default" />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          {/* Badge Component Showcase */}
+          <section>
+            <h1 className={styles['section-title']}>Badge Component Showcase</h1>
+            
+            {/* Status Variants Section */}
+            <section>
+              <h2>Status Variants</h2>
+              <div className={styles['badge-group']}>
+                <Badge text="Live" status="live" />
+                <Badge text="Upcoming" status="upcoming" />
+                <Badge text="Draft" status="draft" />
+              </div>
+            </section>
+
+            {/* All Statuses Section */}
+            <section>
+              <h2>All Status Types</h2>
+              <div className={`${styles['badge-group']} ${styles['badge-group--align-center']}`}>
+                <Badge text="Live" status="live" />
+                <Badge text="Upcoming" status="upcoming" />
+                <Badge text="Draft" status="draft" />
+              </div>
+            </section>
+
+            {/* Usage Examples */}
+            <section>
+              <h2>Usage Examples</h2>
+              <div className={styles['badge-examples']}>
+                <div className={styles['badge-example']}>
+                  <h3>Content Status</h3>
+                  <div className={styles['badge-group']}>
+                    <Badge text="Live" status="live" />
+                    <Badge text="Published" status="live" />
+                    <Badge text="Active" status="live" />
+                  </div>
+                </div>
+                <div className={styles['badge-example']}>
+                  <h3>Upcoming Content</h3>
+                  <div className={styles['badge-group']}>
+                    <Badge text="Upcoming" status="upcoming" />
+                    <Badge text="Scheduled" status="upcoming" />
+                    <Badge text="Coming Soon" status="upcoming" />
+                  </div>
+                </div>
+                <div className={styles['badge-example']}>
+                  <h3>Draft Content</h3>
+                  <div className={styles['badge-group']}>
+                    <Badge text="Draft" status="draft" />
+                    <Badge text="In Review" status="draft" />
+                    <Badge text="Pending" status="draft" />
+                  </div>
+                </div>
+                <div className={styles['badge-example']}>
+                  <h3>Mixed Statuses</h3>
+                  <div className={styles['badge-group']}>
+                    <Badge text="Live" status="live" />
+                    <Badge text="Upcoming" status="upcoming" />
+                    <Badge text="Draft" status="draft" />
+                    <Badge text="Published" status="live" />
                   </div>
                 </div>
               </div>

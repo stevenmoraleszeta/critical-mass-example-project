@@ -132,6 +132,31 @@
   gap: 0.75rem;
 }
 
+/* Badge group styles */
+.content .badge-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.content .badge-group--align-center {
+  align-items: center;
+}
+
+/* Badge examples */
+.content .badge-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content .badge-example {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 /* Section title */
 .section-title {
   margin-top: var(--space-3xl);
