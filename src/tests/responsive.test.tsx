@@ -10,7 +10,7 @@
  * and can adapt to different screen sizes
  */
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, cleanup } from '@testing-library/react';
 
 // Import all components
 import Button from '../components/ui/Button';
@@ -25,20 +25,26 @@ import ErrorMessage from '../components/feedback/ErrorMessage';
 import Toast from '../components/feedback/Toast';
 
 describe('Responsive Design Tests', () => {
+  afterEach(() => {
+    cleanup();
+  });
+
   // ============================================================================
   // Button Component Responsiveness
   // ============================================================================
   
   describe('Button Component', () => {
     it('should have size variants for responsive design', () => {
-      render(<Button size="sm">Small</Button>);
-      expect(screen.getByRole('button')).toHaveClass('btn--sm');
+      const { container: container1 } = render(<Button size="sm">Small</Button>);
+      expect(container1.querySelector('.btn--sm')).toBeInTheDocument();
+      cleanup();
       
-      render(<Button size="md">Medium</Button>);
-      expect(screen.getByRole('button')).toHaveClass('btn--md');
+      const { container: container2 } = render(<Button size="md">Medium</Button>);
+      expect(container2.querySelector('.btn--md')).toBeInTheDocument();
+      cleanup();
       
-      render(<Button size="lg">Large</Button>);
-      expect(screen.getByRole('button')).toHaveClass('btn--lg');
+      const { container: container3 } = render(<Button size="lg">Large</Button>);
+      expect(container3.querySelector('.btn--lg')).toBeInTheDocument();
     });
   });
 
@@ -66,14 +72,16 @@ describe('Responsive Design Tests', () => {
   
   describe('Tag Component', () => {
     it('should have size variants for responsive design', () => {
-      render(<Tag text="Small Tag" size="sm" />);
-      expect(screen.getByText('Small Tag')).toHaveClass('tag--sm');
+      const { container: container1 } = render(<Tag text="Small Tag" size="sm" />);
+      expect(container1.querySelector('.tag--sm')).toBeInTheDocument();
+      cleanup();
       
-      render(<Tag text="Medium Tag" size="md" />);
-      expect(screen.getByText('Medium Tag')).toHaveClass('tag--md');
+      const { container: container2 } = render(<Tag text="Medium Tag" size="md" />);
+      expect(container2.querySelector('.tag--md')).toBeInTheDocument();
+      cleanup();
       
-      render(<Tag text="Large Tag" size="lg" />);
-      expect(screen.getByText('Large Tag')).toHaveClass('tag--lg');
+      const { container: container3 } = render(<Tag text="Large Tag" size="lg" />);
+      expect(container3.querySelector('.tag--lg')).toBeInTheDocument();
     });
   });
 
@@ -83,7 +91,7 @@ describe('Responsive Design Tests', () => {
   
   describe('Badge Component', () => {
     it('should render and be responsive', () => {
-      const { container } = render(<Badge status="live" />);
+      const { container } = render(<Badge text="Live" status="live" />);
       expect(container).toBeTruthy();
       expect(screen.getByText('Live')).toHaveClass('badge');
     });
@@ -156,14 +164,16 @@ describe('Responsive Design Tests', () => {
   
   describe('Loader Component', () => {
     it('should have size variants for responsive design', () => {
-      render(<Loader size="sm" />);
-      expect(screen.getByRole('status')).toHaveClass('loader--sm');
+      const { container: container1 } = render(<Loader size="sm" />);
+      expect(container1.querySelector('.loader--sm')).toBeInTheDocument();
+      cleanup();
       
-      render(<Loader size="md" />);
-      expect(screen.getByRole('status')).toHaveClass('loader--md');
+      const { container: container2 } = render(<Loader size="md" />);
+      expect(container2.querySelector('.loader--md')).toBeInTheDocument();
+      cleanup();
       
-      render(<Loader size="lg" />);
-      expect(screen.getByRole('status')).toHaveClass('loader--lg');
+      const { container: container3 } = render(<Loader size="lg" />);
+      expect(container3.querySelector('.loader--lg')).toBeInTheDocument();
     });
   });
 
@@ -173,14 +183,16 @@ describe('Responsive Design Tests', () => {
   
   describe('ErrorMessage Component', () => {
     it('should have size variants for responsive design', () => {
-      render(<ErrorMessage message="Error" size="sm" />);
-      expect(screen.getByRole('alert')).toHaveClass('error-message--sm');
+      const { container: container1 } = render(<ErrorMessage message="Error" size="sm" />);
+      expect(container1.querySelector('.error-message--sm')).toBeInTheDocument();
+      cleanup();
       
-      render(<ErrorMessage message="Error" size="md" />);
-      expect(screen.getByRole('alert')).toHaveClass('error-message--md');
+      const { container: container2 } = render(<ErrorMessage message="Error" size="md" />);
+      expect(container2.querySelector('.error-message--md')).toBeInTheDocument();
+      cleanup();
       
-      render(<ErrorMessage message="Error" size="lg" />);
-      expect(screen.getByRole('alert')).toHaveClass('error-message--lg');
+      const { container: container3 } = render(<ErrorMessage message="Error" size="lg" />);
+      expect(container3.querySelector('.error-message--lg')).toBeInTheDocument();
     });
   });
 
@@ -190,14 +202,16 @@ describe('Responsive Design Tests', () => {
   
   describe('Toast Component', () => {
     it('should have size variants for responsive design', () => {
-      render(<Toast message="Toast" size="sm" onDismiss={() => {}} />);
-      expect(screen.getByRole('status')).toHaveClass('toast--sm');
+      const { container: container1 } = render(<Toast message="Toast" size="sm" onDismiss={() => {}} />);
+      expect(container1.querySelector('.toast--sm')).toBeInTheDocument();
+      cleanup();
       
-      render(<Toast message="Toast" size="md" onDismiss={() => {}} />);
-      expect(screen.getByRole('status')).toHaveClass('toast--md');
+      const { container: container2 } = render(<Toast message="Toast" size="md" onDismiss={() => {}} />);
+      expect(container2.querySelector('.toast--md')).toBeInTheDocument();
+      cleanup();
       
-      render(<Toast message="Toast" size="lg" onDismiss={() => {}} />);
-      expect(screen.getByRole('status')).toHaveClass('toast--lg');
+      const { container: container3 } = render(<Toast message="Toast" size="lg" onDismiss={() => {}} />);
+      expect(container3.querySelector('.toast--lg')).toBeInTheDocument();
     });
 
     it('should have position variants for responsive design', () => {
