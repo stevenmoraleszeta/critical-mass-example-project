@@ -93,11 +93,13 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test typography renders correctly
 
 ### Reset & Base Styles
-- [ ] Create `styles/base/_reset.scss`
-- [ ] Add CSS reset or normalize styles
-- [ ] Set base body styles
-- [ ] Set base link styles
-- [ ] Set base button styles (reset)
+- [x] Create `styles/base/_reset.scss`
+- [x] Add CSS reset or normalize styles (modern CSS reset following Critical Mass requirements)
+- [x] Set base body styles (using variables from _variables.scss)
+- [x] Set base link styles (with focus states for accessibility)
+- [x] Set base button styles (reset with accessibility focus states)
+- [x] Include skip-link styles (project-idea.md accessibility requirement)
+- [x] Include reduced-motion support (accessibility best practice)
 - [ ] Test reset styles work correctly
 
 ### Mixins

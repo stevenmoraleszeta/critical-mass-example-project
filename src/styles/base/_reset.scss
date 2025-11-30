@@ -1,0 +1,322 @@
+// ============================================================================
+// CSS Reset & Base Styles
+// Following Critical Mass requirements: SASS, Mobile-First, Accessibility
+// Following SMACSS base layer architecture
+// ============================================================================
+
+// ============================================================================
+// Modern CSS Reset
+// ============================================================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  // Prevent font size adjustment on iOS
+  -webkit-text-size-adjust: 100%;
+  // Smooth scrolling (if supported)
+  scroll-behavior: smooth;
+  // Better font rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  // Reset body styles - will be overridden by typography
+  margin: 0;
+  padding: 0;
+  // Prevent horizontal scroll
+  overflow-x: hidden;
+  // Use color variables from _variables.scss
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-light);
+  // Font rendering
+  text-rendering: optimizeLegibility;
+}
+
+// ============================================================================
+// Remove default margins and padding from common elements
+// ============================================================================
+
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, dd,
+figure,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+// ============================================================================
+// Lists
+// ============================================================================
+
+ul,
+ol {
+  list-style: none;
+}
+
+// ============================================================================
+// Links - Base Styles
+// Following project-idea.md: Correct Links and Buttons
+// ============================================================================
+
+a {
+  // Remove default link styling
+  text-decoration: none;
+  color: inherit;
+  // Better touch targets on mobile (Critical Mass mobile-first requirement)
+  -webkit-tap-highlight-color: transparent;
+  
+  // Focus styles for accessibility (Critical Mass requirement)
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+  
+  // Skip link for keyboard navigation (project-idea.md requirement)
+  &.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: var(--color-ivory-whisper);
+    padding: var(--space-sm) var(--space-md);
+    z-index: 1000;
+    border-radius: 0 0 var(--radius-md) 0;
+    font-weight: var(--fw-semibold);
+    transition: top var(--transition-base);
+    
+    // Visible when focused (Critical Mass accessibility requirement)
+    &:focus {
+      top: 0;
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+  }
+}
+
+// ============================================================================
+// Buttons - Reset Styles
+// Following project-idea.md: Correct Links and Buttons (use <button> for actions)
+// ============================================================================
+
+button {
+  // Reset button styles
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  // Remove default button styling
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  // Better touch targets
+  -webkit-tap-highlight-color: transparent;
+  
+  // Focus styles for accessibility (Critical Mass requirement)
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+  
+  // Disabled state
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+// ============================================================================
+// Form Elements - Base Reset
+// Following Critical Mass: Accessible Forms
+// ============================================================================
+
+input,
+textarea,
+select {
+  // Reset form element styles
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  // Remove default styling
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  // Focus styles for accessibility (Critical Mass requirement)
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+  
+  // Remove number input spinners
+  &[type="number"]::-webkit-inner-spin-button,
+  &[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  // Remove search input clear button
+  &[type="search"]::-webkit-search-cancel-button,
+  &[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+}
+
+// Remove default styling from select
+select {
+  cursor: pointer;
+}
+
+// ============================================================================
+// Images and Media
+// Following Critical Mass: Performance and Accessibility
+// ============================================================================
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// Remove border from images inside links
+img {
+  border-style: none;
+}
+
+// ============================================================================
+// Tables
+// ============================================================================
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// ============================================================================
+// Accessibility: Remove animations for users who prefer reduced motion
+// Following Critical Mass: Accessibility requirements
+// ============================================================================
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// ============================================================================
+// Remove outline for mouse users, keep for keyboard users
+// Following Critical Mass: Visible Focus requirement
+// ============================================================================
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+// ============================================================================
+// Semantic HTML Elements - Base Styles
+// Following project-idea.md: Semantic Structure
+// ============================================================================
+
+main {
+  // Ensure main is focusable for skip link
+  &:focus {
+    outline: none;
+  }
+}
+
+// ============================================================================
+// Hidden/Visually Hidden Utilities
+// Following SMACSS utilities and accessibility best practices
+// ============================================================================
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Show visually hidden content when focused (for skip links, etc.)
+.visually-hidden:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+// ============================================================================
+// Print Styles (Basic)
+// ============================================================================
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  
+  img {
+    page-break-inside: avoid;
+  }
+  
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
