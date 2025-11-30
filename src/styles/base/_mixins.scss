@@ -1,0 +1,509 @@
+// ============================================================================
+// SCSS Mixins
+// Following Critical Mass requirements: SASS, Mobile-First, Accessibility
+// Following SMACSS architecture
+// Using modern @use syntax
+// ============================================================================
+
+// Import variables to use breakpoints and other values
+@use 'variables' as *;
+
+// ============================================================================
+// Responsive Breakpoint Mixins
+// Mobile-First approach (Critical Mass requirement)
+// Note: Breakpoint variables are defined in _variables.scss
+// ============================================================================
+
+// These mixins use the breakpoint variables from _variables.scss
+// They follow mobile-first approach: base styles for mobile, enhance for larger screens
+
+@mixin breakpoint-xs {
+  @media (min-width: #{$breakpoint-xs}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-sm {
+  @media (min-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-md {
+  @media (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-lg {
+  @media (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xl {
+  @media (min-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-2xl {
+  @media (min-width: #{$breakpoint-2xl}) {
+    @content;
+  }
+}
+
+// Max-width breakpoints (for specific use cases)
+@mixin breakpoint-max-xs {
+  @media (max-width: #{$breakpoint-xs - 1px}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-max-sm {
+  @media (max-width: #{$breakpoint-sm - 1px}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-max-md {
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-max-lg {
+  @media (max-width: #{$breakpoint-lg - 1px}) {
+    @content;
+  }
+}
+
+// Range breakpoint (between two breakpoints)
+@mixin breakpoint-between($min, $max) {
+  @media (min-width: #{$min}) and (max-width: #{$max - 1px}) {
+    @content;
+  }
+}
+
+// ============================================================================
+// Flexbox Utility Mixins
+// Following project-idea.md: Layout utilities
+// ============================================================================
+
+// Flex container
+@mixin flex {
+  display: flex;
+}
+
+// Flex direction
+@mixin flex-row {
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  flex-direction: column;
+}
+
+@mixin flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+@mixin flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+// Flex wrap
+@mixin flex-wrap {
+  flex-wrap: wrap;
+}
+
+@mixin flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+// Justify content
+@mixin justify-start {
+  justify-content: flex-start;
+}
+
+@mixin justify-end {
+  justify-content: flex-end;
+}
+
+@mixin justify-center {
+  justify-content: center;
+}
+
+@mixin justify-between {
+  justify-content: space-between;
+}
+
+@mixin justify-around {
+  justify-content: space-around;
+}
+
+@mixin justify-evenly {
+  justify-content: space-evenly;
+}
+
+// Align items
+@mixin align-start {
+  align-items: flex-start;
+}
+
+@mixin align-end {
+  align-items: flex-end;
+}
+
+@mixin align-center {
+  align-items: center;
+}
+
+@mixin align-stretch {
+  align-items: stretch;
+}
+
+@mixin align-baseline {
+  align-items: baseline;
+}
+
+// Align self
+@mixin align-self-start {
+  align-self: flex-start;
+}
+
+@mixin align-self-end {
+  align-self: flex-end;
+}
+
+@mixin align-self-center {
+  align-self: center;
+}
+
+@mixin align-self-stretch {
+  align-self: stretch;
+}
+
+// Gap (using spacing variables)
+@mixin gap($size) {
+  gap: var(--space-#{$size});
+}
+
+// Flex grow/shrink
+@mixin flex-grow($value: 1) {
+  flex-grow: $value;
+}
+
+@mixin flex-shrink($value: 1) {
+  flex-shrink: $value;
+}
+
+// Complete flexbox utility mixin
+@mixin flexbox($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+// ============================================================================
+// Grid Utility Mixins
+// Following project-idea.md: Grid utilities (.grid, .grid--2, .grid--3)
+// ============================================================================
+
+// Grid container
+@mixin grid {
+  display: grid;
+}
+
+// Grid columns (using CSS Grid)
+@mixin grid-cols($columns) {
+  grid-template-columns: repeat($columns, 1fr);
+}
+
+// Grid rows
+@mixin grid-rows($rows) {
+  grid-template-rows: repeat($rows, 1fr);
+}
+
+// Grid gap (using spacing variables)
+@mixin grid-gap($size) {
+  gap: var(--space-#{$size});
+}
+
+@mixin grid-gap-x($size) {
+  column-gap: var(--space-#{$size});
+}
+
+@mixin grid-gap-y($size) {
+  row-gap: var(--space-#{$size});
+}
+
+// Grid auto-fit/auto-fill
+@mixin grid-auto-fit($min-width) {
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+}
+
+@mixin grid-auto-fill($min-width) {
+  grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+}
+
+// Grid area
+@mixin grid-area($name) {
+  grid-area: $name;
+}
+
+// Complete grid utility mixin
+@mixin grid-layout($columns: 1, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// Responsive grid mixin (mobile-first)
+@mixin responsive-grid($mobile: 1, $tablet: 2, $desktop: 3, $gap-size: md) {
+  @include grid;
+  @include grid-cols($mobile);
+  @include grid-gap($gap-size);
+
+  @include breakpoint-md {
+    @include grid-cols($tablet);
+  }
+
+  @include breakpoint-lg {
+    @include grid-cols($desktop);
+  }
+}
+
+// ============================================================================
+// Transition Mixins
+// Using transition variables from _variables.scss
+// ============================================================================
+
+@mixin transition($property: all, $duration: base, $timing: ease-in-out) {
+  $transition-duration: var(--transition-#{$duration});
+  transition: $property $transition-duration $timing;
+}
+
+@mixin transition-fast($property: all) {
+  transition: $property var(--transition-fast);
+}
+
+@mixin transition-base($property: all) {
+  transition: $property var(--transition-base);
+}
+
+@mixin transition-slow($property: all) {
+  transition: $property var(--transition-slow);
+}
+
+// Multiple properties transition
+@mixin transition-multiple($properties...) {
+  $transitions: ();
+  @each $prop in $properties {
+    $transitions: append($transitions, $prop var(--transition-base) ease-in-out, comma);
+  }
+  transition: $transitions;
+}
+
+// ============================================================================
+// Focus-Visible Mixin for Accessibility
+// Following Critical Mass requirement: Visible Focus
+// Following project-idea.md section 5: Accessibility
+// ============================================================================
+
+@mixin focus-visible {
+  // Remove default outline
+  outline: none;
+  
+  // Add visible focus ring for keyboard users
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+  
+  // Remove outline for mouse users
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+// Focus-visible with custom color
+@mixin focus-visible-custom($color: var(--color-accent), $width: 2px, $offset: 2px) {
+  outline: none;
+  
+  &:focus-visible {
+    outline: $width solid $color;
+    outline-offset: $offset;
+    border-radius: var(--radius-sm);
+  }
+  
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+// Focus-visible with box-shadow (alternative style)
+@mixin focus-visible-shadow($color: var(--color-accent)) {
+  outline: none;
+  
+  &:focus-visible {
+    box-shadow: 0 0 0 2px $color;
+    border-radius: var(--radius-sm);
+  }
+  
+  &:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+// ============================================================================
+// Additional Utility Mixins
+// ============================================================================
+
+// Truncate text (ellipsis)
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Line clamp (multi-line truncate)
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Aspect ratio
+@mixin aspect-ratio($width: 16, $height: 9) {
+  aspect-ratio: #{$width} / #{$height};
+}
+
+// Center content (absolute positioning)
+@mixin center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Center content (flexbox)
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Visually hidden (for accessibility)
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Container mixin (responsive max-width)
+@mixin container($max-width: 1280px, $padding: var(--space-md)) {
+  width: 100%;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+// ============================================================================
+// Spacing Mixins (using spacing variables)
+// ============================================================================
+
+@mixin padding($size) {
+  padding: var(--space-#{$size});
+}
+
+@mixin padding-x($size) {
+  padding-left: var(--space-#{$size});
+  padding-right: var(--space-#{$size});
+}
+
+@mixin padding-y($size) {
+  padding-top: var(--space-#{$size});
+  padding-bottom: var(--space-#{$size});
+}
+
+@mixin margin($size) {
+  margin: var(--space-#{$size});
+}
+
+@mixin margin-x($size) {
+  margin-left: var(--space-#{$size});
+  margin-right: var(--space-#{$size});
+}
+
+@mixin margin-y($size) {
+  margin-top: var(--space-#{$size});
+  margin-bottom: var(--space-#{$size});
+}
+
+// ============================================================================
+// Shadow Mixins (using shadow variables)
+// ============================================================================
+
+@mixin shadow($size: md) {
+  box-shadow: var(--shadow-#{$size});
+}
+
+@mixin shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+@mixin shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+@mixin shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+@mixin shadow-xl {
+  box-shadow: var(--shadow-xl);
+}
+
+// ============================================================================
+// Border Radius Mixins (using radius variables)
+// ============================================================================
+
+@mixin radius($size: md) {
+  border-radius: var(--radius-#{$size});
+}
+
+@mixin radius-sm {
+  border-radius: var(--radius-sm);
+}
+
+@mixin radius-md {
+  border-radius: var(--radius-md);
+}
+
+@mixin radius-lg {
+  border-radius: var(--radius-lg);
+}
+
+@mixin radius-xl {
+  border-radius: var(--radius-xl);
+}
+
+@mixin radius-full {
+  border-radius: var(--radius-full);
+}
+

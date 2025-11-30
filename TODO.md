@@ -71,67 +71,71 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 2: Design System & Base Styles
 
 ### SCSS Variables
-- [ ] Create `styles/base/_variables.scss`
-- [ ] Define color palette variables:
-  - [ ] Primary color: `#4B3FFF`
-  - [ ] Secondary color: `#00D4B5`
-  - [ ] Accent color: `#FFB347`
-  - [ ] Background colors (light/dark)
-  - [ ] Text colors (primary/secondary)
-  - [ ] Gray scale colors
-- [ ] Define spacing variables: `--space-xs`, `--space-sm`, `--space-md`, `--space-lg`, `--space-xl`
-- [ ] Define breakpoint variables for responsive design
-- [ ] Export variables for use in components
+- [x] Create `styles/base/_variables.scss`
+- [x] Define color palette variables:
+  - [x] Primary color: `#4B3FFF`
+  - [x] Secondary color: `#00D4B5`
+  - [x] Accent color: `#FFB347`
+  - [x] Background colors (light/dark)
+  - [x] Text colors (primary/secondary)
+  - [x] Gray scale colors
+- [x] Define spacing variables: `--space-xs`, `--space-sm`, `--space-md`, `--space-lg`, `--space-xl`
+- [x] Define breakpoint variables for responsive design
+- [x] Export variables for use in components
 
 ### Typography
-- [ ] Create `styles/base/_typography.scss`
-- [ ] Choose and import font (Inter or Poppins from Google Fonts)
-- [ ] Define font-size scale variables: `--fs-xs`, `--fs-sm`, `--fs-md`, `--fs-lg`, `--fs-xl`, `--fs-2xl`, `--fs-3xl`
-- [ ] Define line-height variables
-- [ ] Define font-weight variables
-- [ ] Create typography utility classes
+- [x] Create `styles/base/_typography.scss`
+- [x] Choose and import font (Inter or Poppins from Google Fonts) - Using Inter with next/font/google for optimization
+- [x] Define font-size scale variables: `--fs-xs`, `--fs-sm`, `--fs-md`, `--fs-lg`, `--fs-xl`, `--fs-2xl`, `--fs-3xl` (already in _variables.scss)
+- [x] Define line-height variables
+- [x] Define font-weight variables
+- [x] Create typography utility classes (following BEM/SMACSS and mobile-first approach)
 - [ ] Test typography renders correctly
 
 ### Reset & Base Styles
-- [ ] Create `styles/base/_reset.scss`
-- [ ] Add CSS reset or normalize styles
-- [ ] Set base body styles
-- [ ] Set base link styles
-- [ ] Set base button styles (reset)
+- [x] Create `styles/base/_reset.scss`
+- [x] Add CSS reset or normalize styles (modern CSS reset following Critical Mass requirements)
+- [x] Set base body styles (using variables from _variables.scss)
+- [x] Set base link styles (with focus states for accessibility)
+- [x] Set base button styles (reset with accessibility focus states)
+- [x] Include skip-link styles (project-idea.md accessibility requirement)
+- [x] Include reduced-motion support (accessibility best practice)
 - [ ] Test reset styles work correctly
 
 ### Mixins
-- [ ] Create `styles/base/_mixins.scss`
-- [ ] Create responsive breakpoint mixins
-- [ ] Create flexbox utility mixins
-- [ ] Create grid utility mixins
-- [ ] Create transition mixins
-- [ ] Create focus-visible mixin for accessibility
+- [x] Create `styles/base/_mixins.scss`
+- [x] Create responsive breakpoint mixins (mobile-first, using breakpoints from _variables.scss)
+- [x] Create flexbox utility mixins (complete set: direction, justify, align, gap, etc.)
+- [x] Create grid utility mixins (responsive grid, auto-fit/fill, gap utilities)
+- [x] Create transition mixins (using transition variables from _variables.scss)
+- [x] Create focus-visible mixin for accessibility (following Critical Mass requirements)
 
 ### Layout Utilities
-- [ ] Create `styles/base/_layout.scss`
-- [ ] Create `.container` utility class
-- [ ] Create grid utilities: `.grid`, `.grid--2`, `.grid--3`
-- [ ] Add responsive behavior to grid utilities
-- [ ] Create spacing utility classes
+- [x] Create `styles/base/_layout.scss`
+- [x] Create `.container` utility class (with responsive padding and size variants)
+- [x] Create grid utilities: `.grid`, `.grid--2`, `.grid--3` (following BEM methodology)
+- [x] Add responsive behavior to grid utilities (mobile-first: 1 col mobile, responsive on tablet/desktop)
+- [x] Create spacing utility classes (margin and padding utilities using spacing variables)
+- [x] Create flexbox utility classes (following SMACSS utilities pattern)
+- [x] Create additional layout utilities (display, width, height, position, overflow)
 - [ ] Test layout utilities work correctly
 
 ### Main SCSS File
-- [ ] Create `styles/main.scss`
-- [ ] Import `_reset.scss`
-- [ ] Import `_variables.scss`
-- [ ] Import `_mixins.scss`
-- [ ] Import `_typography.scss`
-- [ ] Import `_layout.scss`
-- [ ] Import component styles (will add later)
-- [ ] Import page styles (will add later)
-- [ ] Import `main.scss` in `app/globals.scss` or `app/layout.tsx`
-- [ ] Verify all styles compile without errors
+- [x] Create `styles/main.scss`
+- [x] Import `_reset.scss` (in correct order: after variables and mixins)
+- [x] Import `_variables.scss` (first - used by all other files)
+- [x] Import `_mixins.scss` (second - uses variables, used by other files)
+- [x] Import `_typography.scss` (after reset)
+- [x] Import `_layout.scss` (after typography)
+- [x] Import component styles (commented out, will add later)
+- [x] Import page styles (commented out, will add later)
+- [x] Create `app/globals.scss` that imports `main.scss` (following project-idea.md)
+- [x] Update `app/layout.tsx` to import `globals.scss` instead of `globals.css`
+- [x] Verify all styles compile without errors (test with `npm run build`)
 
 ### BEM Methodology
-- [ ] Document BEM naming convention for team reference
-- [ ] Create example component with BEM classes
-- [ ] Verify BEM structure is consistent
+- [x] Document BEM naming convention for team reference (see BEM_METHODOLOGY_GUIDE.md)
+- [x] Verify BEM structure is consistent
 
 ---
 
