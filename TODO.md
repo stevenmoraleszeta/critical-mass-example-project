@@ -7,11 +7,11 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 1: Project Setup & Initialization
 
 ### Environment Setup
-- [ ] Install Node.js (v18 or higher)
-- [ ] Install npm or yarn package manager
-- [ ] Verify Git is installed and configured
-- [ ] Set up code editor (VS Code recommended)
-- [ ] Install recommended VS Code extensions (ESLint, Prettier, SCSS IntelliSense)
+- [x] Install Node.js (v18 or higher)
+- [x] Install npm or yarn package manager
+- [x] Verify Git is installed and configured
+- [x] Set up code editor (VS Code recommended)
+- [x] Install recommended VS Code extensions (ESLint, Prettier, SCSS IntelliSense)
 
 ### Next.js Project Creation
 - [ ] Create Next.js 14 project with TypeScript: `npx create-next-app@latest --typescript --app`
