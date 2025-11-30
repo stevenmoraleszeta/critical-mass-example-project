@@ -36,9 +36,9 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Verify test setup works with a simple test
 
 ### SASS/SCSS Setup
-- [ ] Install SASS: `npm install --save-dev sass`
-- [ ] Verify SCSS files can be imported
-- [ ] Test basic SCSS compilation
+- [x] Install SASS: `npm install --save-dev sass`
+- [x] Verify SCSS files can be imported
+- [x] Test basic SCSS compilation
 
 ### Git Repository
 - [ ] Initialize Git repository: `git init`
