@@ -223,10 +223,10 @@
   border: 1px solid var(--color-primary); // Blue border
   border-radius: var(--radius-md);
   background-color: var(--color-white);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%230000FF' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23FFFF00' stroke='%230000FF' stroke-width='1'/%3E%3Cpath fill='%230000FF' d='M8 11L4 7h8z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right var(--space-md) center;
-  background-size: 12px 12px;
+  background-size: 16px 16px;
   appearance: none; // Remove default arrow
   cursor: pointer;
   
@@ -259,7 +259,7 @@
     border-color: var(--color-primary);
     cursor: not-allowed;
     opacity: 0.7;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%230000FF' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23FFFF00' stroke='%230000FF' stroke-width='1'/%3E%3Cpath fill='%230000FF' d='M8 11L4 7h8z'/%3E%3C/svg%3E");
   }
   
   // ============================================================================
