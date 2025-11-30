@@ -177,15 +177,15 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test card renders correctly
 
 ### Tag Component
-- [ ] Create `components/ui/Tag.tsx`
-- [ ] Define `TagProps` interface
-- [ ] Implement default variant
-- [ ] Implement primary variant
-- [ ] Implement secondary variant
-- [ ] Implement size variants
-- [ ] Create `styles/components/_tags.scss`
-- [ ] Style all tag variants
-- [ ] Test tag renders correctly
+- [x] Create `components/ui/Tag.tsx`
+- [x] Define `TagProps` interface
+- [x] Implement default variant
+- [x] Implement primary variant
+- [x] Implement secondary variant
+- [x] Implement size variants
+- [x] Create `styles/components/_tags.scss`
+- [x] Style all tag variants
+- [x] Test tag renders correctly
 
 ### Badge Component
 - [ ] Create `components/ui/Badge.tsx`
