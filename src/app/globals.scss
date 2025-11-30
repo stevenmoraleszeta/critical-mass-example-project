@@ -13,14 +13,15 @@
 // ============================================================================
 
 // Force light theme for the app (override dark mode)
+// Using white background for maximum accessibility and clean appearance
 body {
-  background-color: var(--color-lime-cream) !important;
+  background-color: #ffffff !important; /* Explicit white background */
   color: var(--color-yale-blue) !important;
 }
 
 // Ensure main content area has light background
 main {
-  background-color: var(--color-lime-cream) !important;
+  background-color: #ffffff !important; /* Explicit white background */
   color: var(--color-yale-blue) !important;
 }
 
