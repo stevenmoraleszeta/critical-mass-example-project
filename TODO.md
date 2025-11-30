@@ -84,12 +84,12 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Export variables for use in components
 
 ### Typography
-- [ ] Create `styles/base/_typography.scss`
-- [ ] Choose and import font (Inter or Poppins from Google Fonts)
-- [ ] Define font-size scale variables: `--fs-xs`, `--fs-sm`, `--fs-md`, `--fs-lg`, `--fs-xl`, `--fs-2xl`, `--fs-3xl`
-- [ ] Define line-height variables
-- [ ] Define font-weight variables
-- [ ] Create typography utility classes
+- [x] Create `styles/base/_typography.scss`
+- [x] Choose and import font (Inter or Poppins from Google Fonts) - Using Inter with next/font/google for optimization
+- [x] Define font-size scale variables: `--fs-xs`, `--fs-sm`, `--fs-md`, `--fs-lg`, `--fs-xl`, `--fs-2xl`, `--fs-3xl` (already in _variables.scss)
+- [x] Define line-height variables
+- [x] Define font-weight variables
+- [x] Create typography utility classes (following BEM/SMACSS and mobile-first approach)
 - [ ] Test typography renders correctly
 
 ### Reset & Base Styles
