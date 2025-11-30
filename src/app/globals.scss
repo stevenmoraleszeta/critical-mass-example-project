@@ -12,3 +12,30 @@
 // Any global overrides or additional styles can go here
 // ============================================================================
 
+// Force light theme for the app (override dark mode)
+body {
+  background-color: var(--color-ivory-whisper) !important;
+  color: var(--color-deep-navy) !important;
+}
+
+// Ensure main content area has light background
+main {
+  background-color: var(--color-ivory-whisper) !important;
+  color: var(--color-deep-navy) !important;
+}
+
+// Ensure all headings are visible with proper contrast
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-deep-navy) !important;
+}
+
+// Ensure paragraphs and text are visible
+p {
+  color: var(--color-deep-navy) !important;
+}
+
+// Ensure sections are visible
+section {
+  color: var(--color-deep-navy) !important;
+}
+

@@ -79,15 +79,18 @@
   // Primary Variant
   &--primary {
     background-color: var(--color-primary);
-    color: var(--color-bg-light);
+    color: var(--color-bg-white); // Use pure white for better contrast
     
     &:hover:not(:disabled):not(.btn--disabled) {
       background-color: var(--color-ocean-teal);
+      color: var(--color-bg-white); // Ensure white text on hover
       transform: translateY(-1px);
       @include shadow-md;
     }
     
     &:active:not(:disabled):not(.btn--disabled) {
+      background-color: var(--color-ocean-teal);
+      color: var(--color-bg-white); // Ensure white text on active
       transform: translateY(0);
       @include shadow-sm;
     }
@@ -263,10 +266,11 @@
   .btn {
     &--primary {
       background-color: var(--color-primary);
-      color: var(--color-bg-light);
+      color: var(--color-bg-white); // Use pure white for better contrast
       
       &:hover:not(:disabled):not(.btn--disabled) {
         background-color: var(--color-ocean-teal);
+        color: var(--color-bg-white); // Ensure white text on hover
       }
     }
     
@@ -285,7 +289,7 @@
       
       &:hover:not(:disabled):not(.btn--disabled) {
         background-color: var(--color-primary);
-        color: var(--color-bg-light);
+        color: var(--color-bg-white); // Use white text on hover for better contrast
       }
     }
   }
