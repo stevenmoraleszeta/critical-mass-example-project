@@ -1,6 +1,6 @@
 :root {
-  --background: var(--color-ivory-whisper); /* Use Ivory Whisper from design system */
-  --foreground: var(--color-deep-navy); /* Use Deep Navy from design system */
+  --background: var(--color-lime-cream); /* Use lime-cream from design system */
+  --foreground: var(--color-yale-blue); /* Use Yale Blue from design system */
 }
 
 @media (prefers-color-scheme: dark) {

@@ -79,18 +79,18 @@
   // Primary Variant
   &--primary {
     background-color: var(--color-primary);
-    color: var(--color-ivory-whisper); // Use Ivory Whisper from design system
+    color: var(--color-lime-cream); // Use lime-cream from design system
     
     &:hover:not(:disabled):not(.btn--disabled) {
-      background-color: var(--color-ocean-teal);
-      color: var(--color-ivory-whisper); // Use Ivory Whisper from design system
+      background-color: var(--color-cerulean);
+      color: var(--color-lime-cream); // Use lime-cream from design system
       transform: translateY(-1px);
       @include shadow-md;
     }
     
     &:active:not(:disabled):not(.btn--disabled) {
-      background-color: var(--color-ocean-teal);
-      color: var(--color-ivory-whisper); // Use Ivory Whisper from design system
+      background-color: var(--color-cerulean);
+      color: var(--color-lime-cream); // Use lime-cream from design system
       transform: translateY(0);
       @include shadow-sm;
     }
@@ -107,7 +107,7 @@
     color: var(--color-text-primary);
     
     &:hover:not(:disabled):not(.btn--disabled) {
-      background-color: var(--color-sky-mist);
+      background-color: var(--color-tropical-teal);
       transform: translateY(-1px);
       @include shadow-md;
     }
@@ -266,11 +266,11 @@
   .btn {
     &--primary {
       background-color: var(--color-primary);
-      color: var(--color-ivory-whisper); // Use Ivory Whisper from design system
+      color: var(--color-lime-cream); // Use lime-cream from design system
       
       &:hover:not(:disabled):not(.btn--disabled) {
-        background-color: var(--color-ocean-teal);
-        color: var(--color-ivory-whisper); // Use Ivory Whisper from design system
+        background-color: var(--color-cerulean);
+        color: var(--color-lime-cream); // Use lime-cream from design system
       }
     }
     
@@ -279,7 +279,7 @@
       color: var(--color-text-primary);
       
       &:hover:not(:disabled):not(.btn--disabled) {
-        background-color: var(--color-sky-mist);
+        background-color: var(--color-tropical-teal);
       }
     }
     
@@ -289,7 +289,7 @@
       
       &:hover:not(:disabled):not(.btn--disabled) {
         background-color: var(--color-primary);
-        color: var(--color-ivory-whisper); // Use Ivory Whisper from design system
+        color: var(--color-lime-cream); // Use lime-cream from design system
       }
     }
   }

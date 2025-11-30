@@ -12,41 +12,30 @@
 // Any global overrides or additional styles can go here
 // ============================================================================
 
-// Set color-scheme to support both light and dark modes
-html {
-  color-scheme: light dark;
-}
-
-// Default to light mode, but allow dark mode via prefers-color-scheme
-
-// Base theme styles (default: light mode)
-// Dark mode is available via prefers-color-scheme: dark media query
-// Variables are defined in _variables.scss and switch automatically
-
+// Force light theme for the app (override dark mode)
 body {
-  background-color: var(--color-bg-light);
-  color: var(--color-text-primary);
-  transition: background-color var(--transition-base), color var(--transition-base);
+  background-color: var(--color-lime-cream) !important;
+  color: var(--color-yale-blue) !important;
 }
 
-// Ensure main content area uses theme colors
+// Ensure main content area has light background
 main {
-  background-color: var(--color-bg-light);
-  color: var(--color-text-primary);
+  background-color: var(--color-lime-cream) !important;
+  color: var(--color-yale-blue) !important;
 }
 
-// Ensure all headings use theme text color
+// Ensure all headings are visible with proper contrast
 h1, h2, h3, h4, h5, h6 {
-  color: var(--color-text-primary);
+  color: var(--color-yale-blue) !important;
 }
 
-// Ensure paragraphs use theme text color
+// Ensure paragraphs and text are visible
 p {
-  color: var(--color-text-primary);
+  color: var(--color-yale-blue) !important;
 }
 
-// Ensure sections use theme text color
+// Ensure sections are visible
 section {
-  color: var(--color-text-primary);
+  color: var(--color-yale-blue) !important;
 }
 

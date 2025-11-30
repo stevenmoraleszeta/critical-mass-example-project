@@ -1,15 +1,13 @@
 .page {
-  /* Use system design variables that automatically switch with dark mode */
-  --background: var(--color-bg-light);
-  --foreground: var(--color-bg-light);
+  --background: var(--color-lime-cream);
+  --foreground: var(--color-lime-cream);
 
-  --text-primary: var(--color-text-primary);
-  --text-secondary: var(--color-text-secondary);
+  --text-primary: var(--color-yale-blue);
+  --text-secondary: var(--color-ocean-mist);
 
-  /* Button hover colors - adjust for dark mode */
-  --button-primary-hover: var(--color-ocean-teal);
-  --button-secondary-hover: var(--color-gray-200);
-  --button-secondary-border: var(--color-gray-300);
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+  --button-secondary-border: #ebebeb;
 
   display: flex;
   min-height: 100vh;
@@ -18,7 +16,6 @@
   font-family: var(--font-inter);
   background-color: var(--background);
   color: var(--text-primary);
-  transition: background-color var(--transition-base), color var(--transition-base);
 }
 
 .main {
@@ -198,12 +195,21 @@ a.secondary {
   }
 }
 
-/* Dark mode support - variables automatically switch via _variables.scss */
-/* Additional dark mode adjustments for page-specific styles */
-@media (prefers-color-scheme: dark) {
-  .page {
-    /* Variables already switch automatically via _variables.scss, but we can add page-specific adjustments */
-    --button-secondary-hover: var(--color-gray-700);
-    --button-secondary-border: var(--color-gray-600);
+/* Dark mode disabled for now - keeping light theme */
+/* @media (prefers-color-scheme: dark) {
+  .logo {
+    filter: invert();
   }
-}
+
+  .page {
+    --background: var(--color-yale-blue);
+    --foreground: var(--color-yale-blue);
+
+    --text-primary: #ededed;
+    --text-secondary: #999;
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+    --button-secondary-border: #1a1a1a;
+  }
+} */

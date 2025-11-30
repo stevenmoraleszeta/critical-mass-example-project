@@ -80,7 +80,7 @@ a {
     top: -40px;
     left: 0;
     background: var(--color-primary);
-    color: var(--color-ivory-whisper);
+    color: var(--color-lime-cream);
     padding: var(--space-sm) var(--space-md);
     z-index: 1000;
     border-radius: 0 0 var(--radius-md) 0;
@@ -258,7 +258,7 @@ main {
   *::before,
   *::after {
     background: transparent !important;
-    color: var(--color-deep-navy) !important; // Use Deep Navy from design system
+    color: var(--color-yale-blue) !important; // Use Yale Blue from design system
     box-shadow: none !important;
     text-shadow: none !important;
   }

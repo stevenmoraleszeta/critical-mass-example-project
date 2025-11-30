@@ -1,62 +1,93 @@
 // ============================================================================
 // Color Palette
+// Nueva paleta verde-azul: desde lime-cream hasta yale-blue
 // ============================================================================
 
-// Brand Colors (from palette)
-$color-ocean-teal: #204F56;
-$color-sky-mist: #003EDB;
-$color-lemon-zest: #E6FD53;
-$color-ivory-whisper: #f7fae9;
-$color-deep-navy: #1B263F;
+// Brand Colors (from new palette)
+// Colores principales de la paleta en orden de claro a oscuro
+$color-lime-cream: #d9ed92;      // Más claro - fondo claro, accent
+$color-light-green: #b5e48c;     // Verde claro
+$color-light-green-2: #99d98c;   // Verde medio-claro
+$color-emerald: #76c893;         // Verde esmeralda
+$color-ocean-mist: #52b69a;      // Verde-azul claro (ocean mist)
+$color-tropical-teal: #34a0a4;   // Verde-azul medio (tropical teal)
+$color-bondi-blue: #168aad;      // Azul claro (bondi blue)
+$color-cerulean: #1a759f;        // Azul medio (cerulean)
+$color-baltic-blue: #1e6091;     // Azul oscuro medio (baltic blue)
+$color-yale-blue: #184e77;       // Más oscuro - fondo oscuro, texto
 
 // Primary Colors (mapped from palette)
-$color-primary: $color-ocean-teal;
-$color-secondary: $color-sky-mist;
-$color-accent: $color-lemon-zest;
+// Primary: azul principal (bondi-blue o cerulean)
+$color-primary: $color-bondi-blue;
+// Secondary: verde-azul (ocean-mist o tropical-teal)
+$color-secondary: $color-ocean-mist;
+// Accent: verde claro para destacar (lime-cream)
+$color-accent: $color-lime-cream;
 
 // Background Colors
-$color-bg-light: $color-ivory-whisper;
-$color-bg-dark: $color-deep-navy;
+$color-bg-light: $color-lime-cream;  // Fondo claro (lime-cream)
+$color-bg-dark: $color-yale-blue;    // Fondo oscuro (yale-blue)
 
 // Text Colors
-$color-text-primary-light: $color-deep-navy; // For light backgrounds (Ivory Whisper)
-$color-text-primary-dark: $color-ivory-whisper;  // For dark backgrounds (Deep Navy)
-$color-text-secondary: $color-ocean-teal;
-$color-text-muted: $color-ocean-teal;
+$color-text-primary-light: $color-yale-blue;     // Texto en fondo claro (yale-blue)
+$color-text-primary-dark: $color-lime-cream;     // Texto en fondo oscuro (lime-cream)
+$color-text-secondary: $color-baltic-blue;       // Texto secundario
+$color-text-muted: $color-cerulean;              // Texto muted
 
 // Gray Scale
-// Scale from Ivory Whisper (#f7fae9) to Deep Navy (#1B263F)
-// Following design system: first color is Ivory Whisper, last is Deep Navy
-// Maintaining blue tones in darker values to match Deep Navy's blue hue (#1B263F = RGB 27, 38, 63)
-// Deep Navy has B > G > R ratio, maintaining this in darker grays
-$color-gray-50: $color-ivory-whisper; // #f7fae9 - Lightest (Ivory Whisper - beige/cream)
-$color-gray-100: #E5E8D5; // Slightly darker beige
-$color-gray-200: #CED2BE; // Light gray-beige
-$color-gray-300: #B0B5A0; // Medium-light gray-beige
-$color-gray-400: #8B9280; // Medium gray with slight blue undertone
-$color-gray-500: #6A7265; // Medium-dark gray with blue undertone
-$color-gray-600: #4F5A66; // Dark gray with blue tones (B > G > R, maintaining Deep Navy's blue hue)
-$color-gray-700: #3D4858; // Darker gray-blue (B > G > R, stronger blue component)
-$color-gray-800: #2D3645; // Very dark blue-gray (B > G > R, approaching Deep Navy's RGB ratio)
-$color-gray-900: $color-deep-navy; // #1B263F - Darkest (Deep Navy - RGB 27, 38, 63)
+// Escala derivada de la paleta: desde lime-cream (#d9ed92) hasta yale-blue (#184e77)
+// Manteniendo los tonos verde-azul de la paleta
+$color-gray-50: $color-lime-cream;        // #d9ed92 - Más claro (lime-cream)
+$color-gray-100: #c7e682;                 // Verde lima más oscuro
+$color-gray-200: #b5df72;                 // Verde claro
+$color-gray-300: #a3d862;                 // Verde medio-claro
+$color-gray-400: #91d152;                 // Verde
+$color-gray-500: #7fca42;                 // Verde más intenso
+$color-gray-600: #6dbd52;                 // Verde-verde
+$color-gray-700: #5bb062;                 // Verde-azul claro
+$color-gray-800: #49a372;                 // Verde-azul medio
+$color-gray-900: #389682;                 // Verde-azul oscuro
+$color-gray-950: $color-yale-blue;        // #184e77 - Más oscuro (yale-blue)
+
+// Gray Scale Alternative (más neutra, basada en mezcla de la paleta)
+// Para elementos que necesitan ser más neutros manteniendo coherencia
+$color-neutral-50: $color-lime-cream;
+$color-neutral-100: #c8e08a;
+$color-neutral-200: #b7d382;
+$color-neutral-300: #9fb57a;
+$color-neutral-400: #7a9170;
+$color-neutral-500: #5f6d66;
+$color-neutral-600: #4a5659;
+$color-neutral-700: #3a454d;
+$color-neutral-800: #2d3540;
+$color-neutral-900: $color-yale-blue;
 
 // Semantic Colors (derived from palette)
-$color-success: #2D8F7F; // Lighter, more vibrant variation of Ocean Teal
-$color-warning: #D4C847; // Darker, muted variation of Lemon Zest
-$color-error: #C84A5A; // Muted red with blue undertones to match palette tone
-$color-info: $color-sky-mist; // Uses Sky Mist from palette
+// Success: verde de la paleta (emerald u ocean-mist)
+$color-success: $color-emerald;
+// Warning: verde claro-amarillo (light-green-2)
+$color-warning: $color-light-green-2;
+// Error: rojo con tonos azules para mantener coherencia con la paleta
+$color-error: #c84a5a; // Rojo con tonos que complementan la paleta verde-azul
+// Info: azul de la paleta (bondi-blue o cerulean)
+$color-info: $color-cerulean;
 
 // ============================================================================
 // CSS Custom Properties (CSS Variables)
 // ============================================================================
 
 :root {
-  // Brand Colors (named palette)
-  --color-ocean-teal: #{$color-ocean-teal};
-  --color-sky-mist: #{$color-sky-mist};
-  --color-lemon-zest: #{$color-lemon-zest};
-  --color-ivory-whisper: #{$color-ivory-whisper};
-  --color-deep-navy: #{$color-deep-navy};
+  // Brand Colors (named palette) - Nueva paleta verde-azul
+  --color-lime-cream: #{$color-lime-cream};
+  --color-light-green: #{$color-light-green};
+  --color-light-green-2: #{$color-light-green-2};
+  --color-emerald: #{$color-emerald};
+  --color-ocean-mist: #{$color-ocean-mist};
+  --color-tropical-teal: #{$color-tropical-teal};
+  --color-bondi-blue: #{$color-bondi-blue};
+  --color-cerulean: #{$color-cerulean};
+  --color-baltic-blue: #{$color-baltic-blue};
+  --color-yale-blue: #{$color-yale-blue};
 
   // Primary Colors
   --color-primary: #{$color-primary};
@@ -72,7 +103,7 @@ $color-info: $color-sky-mist; // Uses Sky Mist from palette
   --color-text-secondary: #{$color-text-secondary};
   --color-text-muted: #{$color-text-muted};
 
-  // Gray Scale
+  // Gray Scale (derivada de la paleta)
   --color-gray-50: #{$color-gray-50};
   --color-gray-100: #{$color-gray-100};
   --color-gray-200: #{$color-gray-200};
@@ -83,6 +114,19 @@ $color-info: $color-sky-mist; // Uses Sky Mist from palette
   --color-gray-700: #{$color-gray-700};
   --color-gray-800: #{$color-gray-800};
   --color-gray-900: #{$color-gray-900};
+  --color-gray-950: #{$color-gray-950};
+
+  // Neutral Scale (para elementos que necesitan ser más neutros)
+  --color-neutral-50: #{$color-neutral-50};
+  --color-neutral-100: #{$color-neutral-100};
+  --color-neutral-200: #{$color-neutral-200};
+  --color-neutral-300: #{$color-neutral-300};
+  --color-neutral-400: #{$color-neutral-400};
+  --color-neutral-500: #{$color-neutral-500};
+  --color-neutral-600: #{$color-neutral-600};
+  --color-neutral-700: #{$color-neutral-700};
+  --color-neutral-800: #{$color-neutral-800};
+  --color-neutral-900: #{$color-neutral-900};
 
   // Semantic Colors
   --color-success: #{$color-success};
@@ -95,24 +139,24 @@ $color-info: $color-sky-mist; // Uses Sky Mist from palette
 @media (prefers-color-scheme: dark) {
   :root {
     // Background Colors - switch to dark theme
-    --color-bg-light: #{$color-deep-navy};
-    --color-bg-dark: #{$color-deep-navy};
+    --color-bg-light: #{$color-yale-blue};
+    --color-bg-dark: #{$color-yale-blue};
     
     // Text Colors - use light text for dark backgrounds
     --color-text-primary: #{$color-text-primary-dark};
-    --color-text-secondary: #{$color-sky-mist};
-    --color-text-muted: #{$color-gray-400};
+    --color-text-secondary: #{$color-ocean-mist};
+    --color-text-muted: #{$color-tropical-teal};
     
     // Primary Colors - slightly lighter for better visibility on dark
-    --color-primary: #{$color-ocean-teal};
-    --color-secondary: #{$color-sky-mist};
-    --color-accent: #{$color-lemon-zest};
+    --color-primary: #{$color-bondi-blue};
+    --color-secondary: #{$color-tropical-teal};
+    --color-accent: #{$color-lime-cream};
     
     // Semantic Colors - adjusted for dark mode visibility
-    --color-success: #3DAF9F; // Lighter teal-green for dark backgrounds
-    --color-warning: #E6D547; // Lighter yellow for dark backgrounds
+    --color-success: #{$color-emerald}; // Emerald green for dark backgrounds
+    --color-warning: #{$color-light-green-2}; // Light green for dark backgrounds
     --color-error: #E85A6B; // Lighter red for dark backgrounds
-    --color-info: #{$color-sky-mist};
+    --color-info: #{$color-cerulean};
     
     // Shadows - lighter shadows for dark mode
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
