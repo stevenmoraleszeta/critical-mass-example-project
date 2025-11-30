@@ -41,11 +41,11 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test basic SCSS compilation
 
 ### Git Repository
-- [ ] Initialize Git repository: `git init`
-- [ ] Create initial commit with project setup
-- [ ] Create GitHub repository (or other Git hosting)
-- [ ] Add remote origin
-- [ ] Push initial commit to remote
+- [x] Initialize Git repository: `git init`
+- [x] Create initial commit with project setup
+- [x] Create GitHub repository (or other Git hosting)
+- [x] Add remote origin
+- [x] Push initial commit to remote
 
 ### Folder Structure Creation
 - [ ] Create `src/app/` directory structure
