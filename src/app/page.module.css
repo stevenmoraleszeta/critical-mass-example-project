@@ -157,6 +157,21 @@
   gap: 0.75rem;
 }
 
+/* Input group styles */
+.content .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  max-width: 600px;
+}
+
+@media (min-width: 768px) {
+  .content .input-group {
+    max-width: 800px;
+  }
+}
+
 /* Section title */
 .section-title {
   margin-top: var(--space-3xl);

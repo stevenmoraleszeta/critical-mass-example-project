@@ -1,14 +1,35 @@
 'use client';
 
+import React from 'react';
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import Tag from "@/components/ui/Tag";
 import Badge from "@/components/ui/Badge";
+import Input from "@/components/ui/Input";
 import styles from "./page.module.css";
 
 export default function Home() {
   const handleClick = () => {
     alert("Button clicked!");
+  };
+
+  // Input state management
+  const [textValue, setTextValue] = React.useState('');
+  const [emailValue, setEmailValue] = React.useState('');
+  const [searchValue, setSearchValue] = React.useState('');
+  const [passwordValue, setPasswordValue] = React.useState('');
+  const [emailError, setEmailError] = React.useState('');
+  const [requiredValue, setRequiredValue] = React.useState('');
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmailValue(value);
+    // Simple email validation
+    if (value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      setEmailError('Please enter a valid email address');
+    } else {
+      setEmailError('');
+    }
   };
 
   return (
@@ -441,6 +462,145 @@ export default function Home() {
                     <Badge text="Published" status="live" />
                   </div>
                 </div>
+              </div>
+            </section>
+          </section>
+
+          {/* Input Component Showcase */}
+          <section>
+            <h1 className={styles['section-title']}>Input Component Showcase</h1>
+            
+            {/* Input Types Section */}
+            <section>
+              <h2>Input Types</h2>
+              <div className={styles['input-group']}>
+                <Input
+                  id="input-text"
+                  label="Text Input"
+                  type="text"
+                  placeholder="Enter text..."
+                  value={textValue}
+                  onChange={(e) => setTextValue(e.target.value)}
+                />
+                <Input
+                  id="input-email"
+                  label="Email Input"
+                  type="email"
+                  placeholder="Enter email..."
+                  value={emailValue}
+                  onChange={handleEmailChange}
+                  error={emailError}
+                />
+                <Input
+                  id="input-search"
+                  label="Search Input"
+                  type="search"
+                  placeholder="Search content..."
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
+                />
+                <Input
+                  id="input-password"
+                  label="Password Input"
+                  type="password"
+                  placeholder="Enter password..."
+                  value={passwordValue}
+                  onChange={(e) => setPasswordValue(e.target.value)}
+                />
+              </div>
+            </section>
+
+            {/* Required Inputs Section */}
+            <section>
+              <h2>Required Inputs</h2>
+              <div className={styles['input-group']}>
+                <Input
+                  id="input-required"
+                  label="Required Field"
+                  type="text"
+                  placeholder="This field is required"
+                  value={requiredValue}
+                  onChange={(e) => setRequiredValue(e.target.value)}
+                  required
+                />
+                <Input
+                  id="input-required-email"
+                  label="Required Email"
+                  type="email"
+                  placeholder="email@example.com"
+                  value={emailValue}
+                  onChange={handleEmailChange}
+                  required
+                  error={emailError}
+                />
+              </div>
+            </section>
+
+            {/* Error States Section */}
+            <section>
+              <h2>Error States</h2>
+              <div className={styles['input-group']}>
+                <Input
+                  id="input-error-1"
+                  label="Input with Error"
+                  type="text"
+                  placeholder="Enter value..."
+                  value=""
+                  onChange={() => {}}
+                  error="This field is required"
+                />
+                <Input
+                  id="input-error-2"
+                  label="Email Validation Error"
+                  type="email"
+                  placeholder="email@example.com"
+                  value="invalid-email"
+                  onChange={handleEmailChange}
+                  error="Please enter a valid email address"
+                />
+              </div>
+            </section>
+
+            {/* All States Combined */}
+            <section>
+              <h2>All States Combined</h2>
+              <div className={styles['input-group']}>
+                <Input
+                  id="input-normal"
+                  label="Normal Input"
+                  type="text"
+                  placeholder="Normal state"
+                  value={textValue}
+                  onChange={(e) => setTextValue(e.target.value)}
+                />
+                <Input
+                  id="input-required-state"
+                  label="Required Input"
+                  type="text"
+                  placeholder="Required field"
+                  value={requiredValue}
+                  onChange={(e) => setRequiredValue(e.target.value)}
+                  required
+                />
+                <Input
+                  id="input-error-state"
+                  label="Error Input"
+                  type="text"
+                  placeholder="Has error"
+                  value=""
+                  onChange={() => {}}
+                  error="This field has an error"
+                />
+                <Input
+                  id="input-required-error"
+                  label="Required with Error"
+                  type="text"
+                  placeholder="Required and has error"
+                  value=""
+                  onChange={() => {}}
+                  required
+                  error="This required field has an error"
+                />
               </div>
             </section>
           </section>
