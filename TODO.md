@@ -131,12 +131,11 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Import page styles (commented out, will add later)
 - [x] Create `app/globals.scss` that imports `main.scss` (following project-idea.md)
 - [x] Update `app/layout.tsx` to import `globals.scss` instead of `globals.css`
-- [ ] Verify all styles compile without errors (test with `npm run build`)
+- [x] Verify all styles compile without errors (test with `npm run build`)
 
 ### BEM Methodology
-- [ ] Document BEM naming convention for team reference
-- [ ] Create example component with BEM classes
-- [ ] Verify BEM structure is consistent
+- [x] Document BEM naming convention for team reference (see BEM_METHODOLOGY_GUIDE.md)
+- [x] Verify BEM structure is consistent
 
 ---
 
