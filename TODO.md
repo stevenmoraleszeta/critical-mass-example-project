@@ -111,11 +111,13 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Create focus-visible mixin for accessibility (following Critical Mass requirements)
 
 ### Layout Utilities
-- [ ] Create `styles/base/_layout.scss`
-- [ ] Create `.container` utility class
-- [ ] Create grid utilities: `.grid`, `.grid--2`, `.grid--3`
-- [ ] Add responsive behavior to grid utilities
-- [ ] Create spacing utility classes
+- [x] Create `styles/base/_layout.scss`
+- [x] Create `.container` utility class (with responsive padding and size variants)
+- [x] Create grid utilities: `.grid`, `.grid--2`, `.grid--3` (following BEM methodology)
+- [x] Add responsive behavior to grid utilities (mobile-first: 1 col mobile, responsive on tablet/desktop)
+- [x] Create spacing utility classes (margin and padding utilities using spacing variables)
+- [x] Create flexbox utility classes (following SMACSS utilities pattern)
+- [x] Create additional layout utilities (display, width, height, position, overflow)
 - [ ] Test layout utilities work correctly
 
 ### Main SCSS File
