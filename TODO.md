@@ -103,12 +103,12 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test reset styles work correctly
 
 ### Mixins
-- [ ] Create `styles/base/_mixins.scss`
-- [ ] Create responsive breakpoint mixins
-- [ ] Create flexbox utility mixins
-- [ ] Create grid utility mixins
-- [ ] Create transition mixins
-- [ ] Create focus-visible mixin for accessibility
+- [x] Create `styles/base/_mixins.scss`
+- [x] Create responsive breakpoint mixins (mobile-first, using breakpoints from _variables.scss)
+- [x] Create flexbox utility mixins (complete set: direction, justify, align, gap, etc.)
+- [x] Create grid utility mixins (responsive grid, auto-fit/fill, gap utilities)
+- [x] Create transition mixins (using transition variables from _variables.scss)
+- [x] Create focus-visible mixin for accessibility (following Critical Mass requirements)
 
 ### Layout Utilities
 - [ ] Create `styles/base/_layout.scss`
