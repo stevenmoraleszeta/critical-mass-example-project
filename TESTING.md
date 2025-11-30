@@ -25,13 +25,12 @@ Generates a coverage report showing which parts of your code are tested.
 ### Run a Specific Test File
 ```bash
 npm test -- setup.test.tsx
-npm test -- scss.test.tsx
 ```
 
 ### Run Tests Matching a Pattern
 ```bash
-npm test -- --testNamePattern="SCSS"
-npm test -- --testPathPattern="scss"
+npm test -- --testNamePattern="Setup"
+npm test -- --testPathPattern="setup"
 ```
 
 ## Current Test Suites
@@ -40,11 +39,6 @@ npm test -- --testPathPattern="scss"
 - Verifies Jest and React Testing Library are configured correctly
 - Tests basic component rendering
 - Tests jest-dom matchers (like `toBeInTheDocument`, `toBeDisabled`)
-
-### 2. SCSS Integration (`src/__tests__/scss.test.tsx`)
-- Verifies SCSS files can be imported in components
-- Tests that SCSS classes are applied correctly
-- Confirms SCSS compilation works in the test environment
 
 ## Testing SCSS Setup
 
@@ -61,10 +55,10 @@ This will fail if SCSS has syntax errors.
 Import SCSS in a component and test the component renders:
 ```typescript
 // Import SCSS as side effect for global styles
-import '../styles/test.scss';
+import '../styles/my-component.scss';
 
 export function MyComponent() {
-  return <div className="test-scss">Content</div>;
+  return <div className="my-component">Content</div>;
 }
 ```
 
@@ -77,9 +71,12 @@ Then open `http://localhost:3000` and inspect elements to see if SCSS styles are
 
 ## SCSS File Structure
 
-Your SCSS files are set up in:
-- `src/styles/test.scss` - Test SCSS file demonstrating variables, nesting, and media queries
-- SCSS files can be imported as:
+Your SCSS files are organized in:
+- `src/styles/base/` - Base styles (reset, variables, typography, etc.)
+- `src/styles/components/` - Component-specific styles
+- `src/styles/pages/` - Page-specific styles
+
+SCSS files can be imported as:
   - **Global styles**: `import './styles/file.scss'` (side effect)
   - **CSS Modules**: `import styles from './styles/file.module.scss'` (returns class names)
 
