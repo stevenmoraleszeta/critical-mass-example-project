@@ -91,11 +91,34 @@ $color-info: $color-sky-mist; // Uses Sky Mist from palette
   --color-info: #{$color-info};
 }
 
-// Dark mode overrides (if needed)
+// Dark mode overrides
 @media (prefers-color-scheme: dark) {
   :root {
+    // Background Colors - switch to dark theme
+    --color-bg-light: #{$color-deep-navy};
+    --color-bg-dark: #{$color-deep-navy};
+    
+    // Text Colors - use light text for dark backgrounds
     --color-text-primary: #{$color-text-primary-dark};
-    // Add other dark mode overrides as needed
+    --color-text-secondary: #{$color-sky-mist};
+    --color-text-muted: #{$color-gray-400};
+    
+    // Primary Colors - slightly lighter for better visibility on dark
+    --color-primary: #{$color-ocean-teal};
+    --color-secondary: #{$color-sky-mist};
+    --color-accent: #{$color-lemon-zest};
+    
+    // Semantic Colors - adjusted for dark mode visibility
+    --color-success: #3DAF9F; // Lighter teal-green for dark backgrounds
+    --color-warning: #E6D547; // Lighter yellow for dark backgrounds
+    --color-error: #E85A6B; // Lighter red for dark backgrounds
+    --color-info: #{$color-sky-mist};
+    
+    // Shadows - lighter shadows for dark mode
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
   }
 }
 
