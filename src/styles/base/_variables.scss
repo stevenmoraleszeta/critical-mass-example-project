@@ -17,8 +17,6 @@ $color-accent: $color-lemon-zest;
 // Background Colors
 $color-bg-light: $color-ivory-whisper;
 $color-bg-dark: $color-deep-navy;
-$color-bg-white: #FFFFFF;
-$color-bg-black: #000000;
 
 // Text Colors
 $color-text-primary-light: $color-deep-navy; // For light backgrounds (Ivory Whisper)
@@ -64,8 +62,6 @@ $color-info: $color-sky-mist; // Uses Sky Mist from palette
   // Background Colors
   --color-bg-light: #{$color-bg-light};
   --color-bg-dark: #{$color-bg-dark};
-  --color-bg-white: #{$color-bg-white};
-  --color-bg-black: #{$color-bg-black};
 
   // Text Colors
   --color-text-primary: #{$color-text-primary-light};

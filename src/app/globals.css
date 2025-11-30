@@ -1,6 +1,6 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FEFFFD; /* Use Ivory Whisper from design system */
+  --foreground: #1B263F; /* Use Deep Navy from design system */
 }
 
 @media (prefers-color-scheme: dark) {

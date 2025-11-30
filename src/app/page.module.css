@@ -182,8 +182,8 @@ a.secondary {
   }
 
   .page {
-    --background: #000;
-    --foreground: #000;
+    --background: var(--color-deep-navy);
+    --foreground: var(--color-deep-navy);
 
     --text-primary: #ededed;
     --text-secondary: #999;

@@ -258,7 +258,7 @@ main {
   *::before,
   *::after {
     background: transparent !important;
-    color: #000 !important;
+    color: var(--color-deep-navy) !important; // Use Deep Navy from design system
     box-shadow: none !important;
     text-shadow: none !important;
   }
