@@ -14,9 +14,9 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Install recommended VS Code extensions (ESLint, Prettier, SCSS IntelliSense)
 
 ### Next.js Project Creation
-- [ ] Create Next.js 14 project with TypeScript: `npx create-next-app@latest --typescript --app`
-- [ ] Choose project name and initialize
-- [ ] Verify project structure is created correctly
+- [x] Create Next.js 14 project with TypeScript: `npx create-next-app@latest --typescript --app`
+- [x] Choose project name and initialize
+- [x] Verify project structure is created correctly
 - [ ] Test that `npm run dev` works and shows default Next.js page
 
 ### Configuration Files

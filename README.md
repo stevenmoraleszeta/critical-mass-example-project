@@ -20,7 +20,7 @@ This project has been initialized with the following foundation:
 ### Project Structure
 
 ```
-steven-morales-portfolio/
+.
 ├── src/
 │   └── app/
 │       ├── layout.tsx
@@ -30,7 +30,11 @@ steven-morales-portfolio/
 ├── public/
 ├── next.config.ts
 ├── tsconfig.json
-└── package.json
+├── package.json
+├── .gitignore
+├── .prettierrc
+├── .editorconfig
+└── .env.example
 ```
 
 ### Configuration
@@ -49,7 +53,6 @@ steven-morales-portfolio/
 ### Installation
 
 ```bash
-cd steven-morales-portfolio
 npm install
 ```
 
