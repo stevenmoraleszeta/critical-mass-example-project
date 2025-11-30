@@ -12,30 +12,41 @@
 // Any global overrides or additional styles can go here
 // ============================================================================
 
-// Force light theme for the app (override dark mode)
+// Set color-scheme to support both light and dark modes
+html {
+  color-scheme: light dark;
+}
+
+// Default to light mode, but allow dark mode via prefers-color-scheme
+
+// Base theme styles (default: light mode)
+// Dark mode is available via prefers-color-scheme: dark media query
+// Variables are defined in _variables.scss and switch automatically
+
 body {
-  background-color: var(--color-ivory-whisper) !important;
-  color: var(--color-deep-navy) !important;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-primary);
+  transition: background-color var(--transition-base), color var(--transition-base);
 }
 
-// Ensure main content area has light background
+// Ensure main content area uses theme colors
 main {
-  background-color: var(--color-ivory-whisper) !important;
-  color: var(--color-deep-navy) !important;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-primary);
 }
 
-// Ensure all headings are visible with proper contrast
+// Ensure all headings use theme text color
 h1, h2, h3, h4, h5, h6 {
-  color: var(--color-deep-navy) !important;
+  color: var(--color-text-primary);
 }
 
-// Ensure paragraphs and text are visible
+// Ensure paragraphs use theme text color
 p {
-  color: var(--color-deep-navy) !important;
+  color: var(--color-text-primary);
 }
 
-// Ensure sections are visible
+// Ensure sections use theme text color
 section {
-  color: var(--color-deep-navy) !important;
+  color: var(--color-text-primary);
 }
 
