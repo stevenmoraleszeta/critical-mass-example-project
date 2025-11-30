@@ -22,8 +22,8 @@ import Link from 'next/link';
  */
 
 export interface ButtonProps {
-  /** Button variant: primary, secondary, or ghost */
-  variant?: 'primary' | 'secondary' | 'ghost';
+  /** Button variant: primary, secondary, ghost, save, or exit */
+  variant?: 'primary' | 'secondary' | 'ghost' | 'save' | 'exit';
   /** Button size: sm, md, or lg */
   size?: 'sm' | 'md' | 'lg';
   /** Button content */

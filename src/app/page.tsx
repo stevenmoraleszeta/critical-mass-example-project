@@ -102,15 +102,27 @@ export default function Home() {
           <section>
             <h2>Accessibility</h2>
             <div className={styles['button-group']}>
-              <Button ariaLabel="Close dialog" onClick={handleClick}>×</Button>
-              <Button ariaLabel="Save changes" variant="primary" onClick={handleClick}>💾</Button>
-              <Button ariaLabel="Delete item" variant="secondary" onClick={handleClick}>🗑️</Button>
+              <Button ariaLabel="Close dialog" onClick={handleClick}>
+                <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Button>
+              <Button ariaLabel="Save changes" variant="save" onClick={handleClick}>
+                <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M13.333 4V13.333H2.667V2.667H10.667L13.333 4ZM8 11.333C9.473 11.333 10.667 10.139 10.667 8.667C10.667 7.194 9.473 6 8 6C6.527 6 5.333 7.194 5.333 8.667C5.333 10.139 6.527 11.333 8 11.333ZM4 2.667V4H2.667V2.667H4Z" fill="currentColor"/>
+                </svg>
+              </Button>
+              <Button ariaLabel="Delete item" variant="exit" onClick={handleClick}>
+                <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M5.333 3.333V2.667C5.333 2.313 5.474 1.974 5.724 1.724C5.974 1.474 6.313 1.333 6.667 1.333H9.333C9.687 1.333 10.026 1.474 10.276 1.724C10.526 1.974 10.667 2.313 10.667 2.667V3.333H13.333V4.667H12.667V13.333C12.667 13.687 12.526 14.026 12.276 14.276C12.026 14.526 11.687 14.667 11.333 14.667H4.667C4.313 14.667 3.974 14.526 3.724 14.276C3.474 14.026 3.333 13.687 3.333 13.333V4.667H2.667V3.333H5.333ZM6.667 2.667V3.333H9.333V2.667H6.667ZM4.667 4.667V13.333H11.333V4.667H4.667ZM6.667 6.667V11.333H8V6.667H6.667ZM8 6.667V11.333H9.333V6.667H8Z" fill="currentColor"/>
+                </svg>
+              </Button>
             </div>
           </section>
 
           {/* Card Component Showcase */}
           <section>
-            <h1 style={{ marginTop: '4rem', marginBottom: '2rem' }}>Card Component Showcase</h1>
+            <h1 className={styles['section-title']}>Card Component Showcase</h1>
             
             {/* Variants Section */}
             <section>
@@ -183,7 +195,7 @@ export default function Home() {
                   title="Card with Footer"
                   description="This card includes a footer section with action buttons."
                   footer={
-                    <div style={{ display: 'flex', gap: '0.5rem', width: '100%' }}>
+                    <div className={styles['card-footer-actions']}>
                       <Button size="sm" variant="primary" onClick={handleClick}>Action</Button>
                       <Button size="sm" variant="ghost" onClick={handleClick}>Cancel</Button>
                     </div>
@@ -202,8 +214,8 @@ export default function Home() {
                   title="Content with Footer"
                   description="Content cards often have footers with metadata or actions."
                   footer={
-                    <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
-                      <span style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)' }}>Published: Today</span>
+                    <div className={styles['card-footer-meta']}>
+                      <span className={styles['card-footer-meta__text']}>Published: Today</span>
                       <Button size="sm" variant="ghost" onClick={handleClick}>Read More</Button>
                     </div>
                   }
@@ -216,10 +228,10 @@ export default function Home() {
               <h2>Cards with Custom Children</h2>
               <div className={styles['card-group']}>
                 <Card variant="default">
-                  <div>
-                    <h3 style={{ marginTop: 0, marginBottom: '0.5rem' }}>Custom Content Card</h3>
+                  <div className={styles['card-custom-content']}>
+                    <h3 className={styles['card-custom-content__title']}>Custom Content Card</h3>
                     <p>This card uses custom children instead of title and description props.</p>
-                    <ul style={{ marginTop: '1rem', paddingLeft: '1.5rem' }}>
+                    <ul className={styles['card-custom-content__list']}>
                       <li>Flexible content structure</li>
                       <li>Full control over layout</li>
                       <li>Perfect for complex content</li>
@@ -227,10 +239,10 @@ export default function Home() {
                   </div>
                 </Card>
                 <Card variant="feature">
-                  <div>
-                    <h3 style={{ marginTop: 0, marginBottom: '0.5rem', color: 'var(--color-primary)' }}>Feature with Custom Content</h3>
+                  <div className={styles['card-custom-content']}>
+                    <h3 className={`${styles['card-custom-content__title']} ${styles['card-custom-content__title--primary']}`}>Feature with Custom Content</h3>
                     <p>You can combine custom children with other props for maximum flexibility.</p>
-                    <div style={{ marginTop: '1rem', padding: '0.75rem', backgroundColor: 'var(--color-gray-50)', borderRadius: '0.5rem' }}>
+                    <div className={styles['card-custom-content__tip']}>
                       <strong>Pro tip:</strong> Use children for complex layouts!
                     </div>
                   </div>
@@ -256,7 +268,7 @@ export default function Home() {
                     <Button variant="primary" onClick={handleClick}>View Details</Button>
                   }
                 >
-                  <p style={{ marginTop: '0.5rem' }}>
+                  <p className={styles['card-additional-text']}>
                     This card also includes custom children content in addition to the title and description.
                   </p>
                 </Card>
@@ -271,7 +283,7 @@ export default function Home() {
                     height: 300
                   }}
                   footer={
-                    <div style={{ display: 'flex', gap: '0.5rem', width: '100%' }}>
+                    <div className={styles['card-footer-actions']}>
                       <Button size="sm" variant="primary" onClick={handleClick}>Get Started</Button>
                       <Button size="sm" variant="ghost" onClick={handleClick}>Learn More</Button>
                     </div>

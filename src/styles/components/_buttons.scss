@@ -59,6 +59,18 @@
     display: inline-flex;
     align-items: center;
     gap: var(--space-xs);
+    
+    // Inherit color from parent button by default
+    // This allows variant styles to override when needed
+    color: inherit;
+    
+    // Ensure SVG icons inherit color and align properly
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+      flex-shrink: 0;
+      color: inherit;
+    }
   }
   
   &__spinner {
@@ -77,46 +89,74 @@
   // ============================================================================
   
   // Primary Variant
-  // Using white text on primary background for WCAG AA compliance
-  // Bondi-blue (#168aad) with white text: contrast ~4.6:1 ✅ (meets WCAG AA for interactive elements)
   &--primary {
-    background-color: var(--color-primary);
-    color: #ffffff; // White text for maximum contrast and WCAG AA compliance
+    background-color: var(--color-primary); // Blue base
+    color: var(--color-white);
+    
+    // Ensure text element inherits white color
+    .btn__text {
+      color: var(--color-white);
+    }
     
     &:hover:not(:disabled):not(.btn--disabled) {
-      background-color: var(--color-cerulean);
-      color: #ffffff; // White text maintained for accessibility
+      background-color: var(--color-primary); // Blue base - always same
+      color: var(--color-white);
+      
+      .btn__text {
+        color: var(--color-white);
+      }
+      
       transform: translateY(-1px);
       @include shadow-md;
     }
     
     &:active:not(:disabled):not(.btn--disabled) {
-      background-color: var(--color-cerulean);
-      color: #ffffff; // White text maintained for accessibility
+      background-color: var(--color-primary); // Blue base - always same
+      color: var(--color-white);
+      
+      .btn__text {
+        color: var(--color-white);
+      }
+      
       transform: translateY(0);
       @include shadow-sm;
     }
     
     // Focus state uses accent color for visibility
     &:focus-visible {
-      outline-color: var(--color-accent);
+      outline-color: var(--color-accent); // Yellow outline
     }
   }
   
   // Secondary Variant
-  // Ocean-mist (#52b69a) with yale-blue text: contrast ~4.7:1 ✅ (meets WCAG AA)
   &--secondary {
-    background-color: var(--color-secondary);
-    color: var(--color-text-primary); // Yale-blue for good contrast
+    background-color: var(--color-secondary); // Red base
+    color: var(--color-white);
+    
+    // Ensure text element inherits white color
+    .btn__text {
+      color: var(--color-white);
+    }
     
     &:hover:not(:disabled):not(.btn--disabled) {
-      background-color: var(--color-tropical-teal);
-      color: #ffffff; // White text on darker hover for better contrast
+      background-color: var(--color-secondary); // Red base - always same
+      color: var(--color-white);
+      
+      .btn__text {
+        color: var(--color-white);
+      }
+      
       transform: translateY(-1px);
       @include shadow-md;
     }
     
     &:active:not(:disabled):not(.btn--disabled) {
+      color: var(--color-white);
+      
+      .btn__text {
+        color: var(--color-white);
+      }
+      
       transform: translateY(0);
       @include shadow-sm;
     }
@@ -140,6 +180,84 @@
     }
     
     &:active:not(:disabled):not(.btn--disabled) {
+      transform: translateY(0);
+      @include shadow-sm;
+    }
+    
+    &:focus-visible {
+      outline-color: var(--color-accent);
+    }
+  }
+  
+  // Save Variant - Yellow background with blue text
+  &--save {
+    background-color: var(--color-accent); // Yellow
+    color: var(--color-primary); // Blue text
+    
+    // Ensure text element is blue
+    .btn__text {
+      color: var(--color-primary); // Blue text
+    }
+    
+    &:hover:not(:disabled):not(.btn--disabled) {
+      background-color: var(--color-accent); // Stay yellow
+      color: var(--color-primary); // Stay blue
+      
+      .btn__text {
+        color: var(--color-primary); // Stay blue
+      }
+      
+      transform: translateY(-1px);
+      @include shadow-md;
+    }
+    
+    &:active:not(:disabled):not(.btn--disabled) {
+      background-color: var(--color-accent); // Stay yellow
+      color: var(--color-primary); // Stay blue
+      
+      .btn__text {
+        color: var(--color-primary); // Stay blue
+      }
+      
+      transform: translateY(0);
+      @include shadow-sm;
+    }
+    
+    &:focus-visible {
+      outline-color: var(--color-primary);
+    }
+  }
+  
+  // Exit Variant - Red background with white text
+  &--exit {
+    background-color: var(--color-secondary); // Red
+    color: var(--color-white); // White text
+    
+    // Ensure text element is white
+    .btn__text {
+      color: var(--color-white); // White text
+    }
+    
+    &:hover:not(:disabled):not(.btn--disabled) {
+      background-color: var(--color-secondary); // Stay red
+      color: var(--color-white); // Stay white
+      
+      .btn__text {
+        color: var(--color-white); // Stay white
+      }
+      
+      transform: translateY(-1px);
+      @include shadow-md;
+    }
+    
+    &:active:not(:disabled):not(.btn--disabled) {
+      background-color: var(--color-secondary); // Stay red
+      color: var(--color-white); // Stay white
+      
+      .btn__text {
+        color: var(--color-white); // Stay white
+      }
+      
       transform: translateY(0);
       @include shadow-sm;
     }
@@ -196,26 +314,50 @@
   // ============================================================================
   
   // Disabled State
+  // Yellow background with blue text
   &--disabled,
   &:disabled {
-    opacity: 0.5;
+    background-color: var(--color-accent); // Yellow
+    color: var(--color-primary); // Blue text
     cursor: not-allowed;
     pointer-events: none;
+    
+    // Ensure text element is blue
+    .btn__text {
+      color: var(--color-primary); // Blue text
+    }
     
     &:hover,
     &:active {
       transform: none;
       box-shadow: none;
+      background-color: var(--color-accent); // Stay yellow
+      color: var(--color-primary); // Stay blue
+      
+      .btn__text {
+        color: var(--color-primary); // Stay blue
+      }
     }
   }
   
   // Loading State
+  // Yellow background with blue text
   &--loading {
+    background-color: var(--color-accent); // Yellow
+    color: var(--color-primary); // Blue text
     cursor: wait;
     pointer-events: none;
     
+    // Ensure text element is blue
     .btn__text {
-      opacity: 0.7;
+      color: var(--color-primary); // Blue text
+      opacity: 0.9; // Slightly reduced opacity but still visible
+    }
+    
+    // Spinner should match blue text color
+    .btn__spinner {
+      border-color: var(--color-primary);
+      border-right-color: transparent;
     }
   }
   
@@ -262,41 +404,4 @@
 // Base styles are mobile-first (defined above)
 // Additional responsive enhancements can be added here if needed
 
-// ============================================================================
-// Dark Mode Support
-// ============================================================================
-
-@media (prefers-color-scheme: dark) {
-  .btn {
-    &--primary {
-      background-color: var(--color-primary);
-      color: #ffffff; // White text for WCAG compliance
-      
-      &:hover:not(:disabled):not(.btn--disabled) {
-        background-color: var(--color-cerulean);
-        color: #ffffff; // White text maintained
-      }
-    }
-    
-    &--secondary {
-      background-color: var(--color-secondary);
-      color: var(--color-text-primary);
-      
-      &:hover:not(:disabled):not(.btn--disabled) {
-        background-color: var(--color-tropical-teal);
-        color: #ffffff; // White text on darker hover
-      }
-    }
-    
-    &--ghost {
-      border-color: var(--color-primary);
-      color: var(--color-primary);
-      
-      &:hover:not(:disabled):not(.btn--disabled) {
-        background-color: var(--color-primary);
-        color: #ffffff; // White text for accessibility
-      }
-    }
-  }
-}
 

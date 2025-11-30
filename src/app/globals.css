@@ -1,13 +1,6 @@
 :root {
-  --background: var(--color-bg-light); /* Use white from design system for maximum accessibility */
-  --foreground: var(--color-yale-blue); /* Use Yale Blue from design system */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: var(--color-white);
+  --foreground: var(--color-primary);
 }
 
 html,
@@ -35,8 +28,3 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}

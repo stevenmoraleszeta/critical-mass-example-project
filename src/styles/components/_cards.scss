@@ -18,9 +18,9 @@
   display: flex;
   flex-direction: column;
   
-  // Layout
-  background-color: var(--color-bg-light); // White background
-  border: 1px solid var(--color-gray-200); // Light gray border for subtle definition
+  // Layout - Cards must be white with borders
+  background-color: var(--color-white);
+  border: 1px solid var(--color-primary);
   border-radius: var(--radius-lg);
   
   // Spacing
@@ -47,7 +47,7 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: var(--color-gray-100);
+    background-color: var(--color-white);
     
     // Aspect ratio for images (16:9 default)
     @include aspect-ratio(16, 9);
@@ -83,12 +83,13 @@
   }
   
   // Title
+  // All text in cards must be blue
   &__title {
     margin: 0;
     font-size: var(--fs-lg);
     font-weight: var(--fw-bold);
     line-height: var(--lh-tight);
-    color: var(--color-text-primary);
+    color: var(--color-primary); // Blue text always
     
     @include breakpoint-md {
       font-size: var(--fs-xl);
@@ -96,33 +97,51 @@
   }
   
   // Description
+  // All text in cards must be blue
   &__description {
     margin: 0;
     font-size: var(--fs-base);
     font-weight: var(--fw-normal);
     line-height: var(--lh-relaxed);
-    color: var(--color-text-secondary);
+    color: var(--color-primary); // Blue text always
   }
   
   // Body Content (for children)
+  // All text in cards must be blue
   &__body {
     margin-top: var(--space-xs);
     font-size: var(--fs-base);
     line-height: var(--lh-relaxed);
-    color: var(--color-text-primary);
+    color: var(--color-primary); // Blue text always
     
-    // Adjust margin when body follows title or description
-    // This will be handled by the card__content gap, but we can add specific styling if needed
+    // Ensure all nested elements also use blue text
+    * {
+      color: var(--color-primary);
+    }
   }
   
   // Footer
+  // Footer must use yellow background
   &__footer {
     display: flex;
     align-items: center;
     padding: var(--space-md);
-    border-top: 1px solid var(--color-gray-200);
-    background-color: var(--color-gray-50);
+    border-top: 1px solid var(--color-primary);
+    background-color: var(--color-accent); // Yellow footer
     gap: var(--space-sm);
+    
+    // Ensure text in footer is blue for contrast
+    color: var(--color-primary);
+    
+    // Ensure all nested elements in footer use blue (except buttons)
+    // Using :not() to exclude buttons from the universal selector
+    > *:not(.btn):not(a.btn) {
+      color: var(--color-primary);
+    }
+    
+    // Buttons maintain their own colors (higher specificity)
+    // Primary and secondary buttons already have white text in their styles
+    // No need to override here - button styles have sufficient specificity
     
     @include breakpoint-md {
       padding: var(--space-lg);
@@ -135,18 +154,17 @@
   // ============================================================================
   
   // Default Variant
-  &--default {
-    // Default styles are already applied in base .card
-    // This variant can be used for explicit styling or overrides
-  }
+  // Default styles are already applied in base .card
+  // No additional styles needed - this variant uses base card styles
   
   // Feature Variant
   &--feature {
     // Feature cards are typically used for showcasing features
     // Slightly enhanced styling
     
+    // Title stays blue as per requirements - all text in cards must be blue
     .card__title {
-      color: var(--color-primary);
+      color: var(--color-primary); // Blue text always
     }
     
     .card__content {
@@ -156,20 +174,8 @@
       }
     }
     
-    // Feature cards might have icons or enhanced visuals
-    .card__image {
-      // Can add overlay or gradient for feature cards
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 30%;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
-        pointer-events: none;
-      }
-    }
+    // Feature cards - image styles handled by base .card__image
+    // No additional overlay needed - using only base colors
   }
   
   // Content Variant
@@ -177,7 +183,7 @@
     // Content cards are used for displaying content items (articles, posts, etc.)
     // More compact, optimized for content feeds
     
-    border-color: var(--color-gray-300);
+    border-color: var(--color-primary);
     
     .card__content {
       padding: var(--space-md);
@@ -210,11 +216,16 @@
       @include aspect-ratio(4, 3); // Different aspect ratio for content cards
     }
     
-    // Footer in content cards is more subtle
+    // Footer in content cards - still uses yellow background
     .card__footer {
       padding: var(--space-sm) var(--space-md);
-      background-color: transparent;
-      border-top-color: var(--color-gray-200);
+      background-color: var(--color-accent); // Yellow footer always
+      border-top-color: var(--color-primary);
+      
+      // Text elements use blue, buttons maintain their own colors
+      > *:not(.btn):not(a.btn) {
+        color: var(--color-primary);
+      }
       
       @include breakpoint-md {
         padding: var(--space-md) var(--space-lg);
@@ -251,12 +262,7 @@
     }
   }
   
-  // Card with no footer
-  &:not(:has(.card__footer)) {
-    .card__content {
-      // Remove bottom padding adjustment when no footer
-    }
-  }
+  // Card with no footer - handled by base styles, no additional adjustments needed
   
   // ============================================================================
   // Reduced Motion Support (Accessibility)
@@ -297,43 +303,4 @@
   }
 }
 
-// ============================================================================
-// Dark Mode Support
-// ============================================================================
-
-@media (prefers-color-scheme: dark) {
-  .card {
-    background-color: var(--color-bg-dark);
-    border-color: var(--color-gray-700);
-    color: var(--color-text-primary);
-    
-    &__title {
-      color: var(--color-text-primary);
-    }
-    
-    &__description {
-      color: var(--color-text-secondary);
-    }
-    
-    &__footer {
-      background-color: var(--color-gray-800);
-      border-top-color: var(--color-gray-700);
-    }
-    
-    &--feature {
-      .card__title {
-        color: var(--color-primary);
-      }
-    }
-    
-    &--content {
-      border-color: var(--color-gray-600);
-      
-      .card__footer {
-        background-color: transparent;
-        border-top-color: var(--color-gray-700);
-      }
-    }
-  }
-}
 

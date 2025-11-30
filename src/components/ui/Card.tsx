@@ -9,8 +9,13 @@ import Image from 'next/image';
  * A reusable card component with multiple variants and flexible content support.
  * Supports image, footer, and custom children content with full accessibility.
  * 
+ * **IMPORTANT:** Always use the Button component for buttons in the footer prop.
+ * Never use native HTML `<button>` elements.
+ * 
  * @example
  * ```tsx
+ * import Button from '@/components/ui/Button';
+ * 
  * <Card variant="default" title="Card Title" description="Card description">
  *   Card content
  * </Card>
@@ -22,9 +27,22 @@ import Image from 'next/image';
  *   image={{ src: "/image.jpg", alt: "Feature image" }}
  * />
  * 
- * <Card variant="content" footer={<Button>Action</Button>}>
+ * <Card 
+ *   variant="content" 
+ *   footer={<Button variant="primary">Action</Button>}
+ * >
  *   <p>Content card with footer</p>
  * </Card>
+ * 
+ * // Multiple buttons in footer
+ * <Card 
+ *   footer={
+ *     <>
+ *       <Button variant="primary">Primary</Button>
+ *       <Button variant="ghost">Cancel</Button>
+ *     </>
+ *   }
+ * />
  * ```
  */
 
