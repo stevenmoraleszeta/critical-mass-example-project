@@ -105,4 +105,8 @@ See `TODO.md` for the complete development checklist and project phases.
 
 ## License
 
-Private project - All rights reserved.
+Copyright (c) 2025 Steven Morales. All rights reserved.
+
+This project is provided for evaluation purposes only. Permission is granted to view, use, and share this project with team members and technical staff solely for recruitment evaluation and technical assessment purposes.
+
+See `LICENSE` file for full terms and conditions.
