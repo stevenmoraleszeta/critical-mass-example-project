@@ -84,6 +84,15 @@ export default function Button({
     .filter(Boolean)
     .join(' ');
 
+  // Handle keyboard events for accessibility
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
+    // Allow Enter and Space to trigger click
+    if ((e.key === 'Enter' || e.key === ' ') && !disabled && !loading && onClick) {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
   // If href is provided, render as Next.js Link
   if (href && !disabled) {
     return (
@@ -93,6 +102,8 @@ export default function Button({
         aria-label={ariaLabel}
         aria-disabled={disabled}
         tabIndex={disabled ? -1 : 0}
+        onKeyDown={handleKeyDown}
+        onClick={onClick}
       >
         {loading && <span className="btn__spinner" aria-hidden="true" />}
         <span className="btn__text">{children}</span>
@@ -106,6 +117,7 @@ export default function Button({
       type={type}
       className={classNames}
       onClick={onClick}
+      onKeyDown={handleKeyDown}
       disabled={disabled || loading}
       aria-label={ariaLabel}
       aria-busy={loading}

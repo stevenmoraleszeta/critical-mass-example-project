@@ -74,6 +74,21 @@ export default function Toggle({
     .filter(Boolean)
     .join(' ');
 
+  // Handle keyboard events for accessibility (Enter and Space)
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (disabled) return;
+    
+    // Allow Enter and Space to toggle
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      // Create a synthetic change event
+      const syntheticEvent = {
+        target: { checked: !checked },
+      } as React.ChangeEvent<HTMLInputElement>;
+      onChange(syntheticEvent);
+    }
+  };
+
   return (
     <div className="toggle-wrapper">
       <label htmlFor={id} className="toggle__label">
@@ -84,6 +99,7 @@ export default function Toggle({
           className="toggle__input"
           checked={checked}
           onChange={onChange}
+          onKeyDown={handleKeyDown}
           disabled={disabled}
           role="switch"
           aria-checked={checked}

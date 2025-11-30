@@ -1021,24 +1021,28 @@ export default function Home() {
               <h2>Toast Variants</h2>
               <div className={styles['toast-group']}>
                 <button
+                  type="button"
                   className={styles['toast-trigger']}
                   onClick={() => showToast('Operation completed successfully!', 'success')}
                 >
                   Show Success Toast
                 </button>
                 <button
+                  type="button"
                   className={styles['toast-trigger']}
                   onClick={() => showToast('An error occurred. Please try again.', 'error')}
                 >
                   Show Error Toast
                 </button>
                 <button
+                  type="button"
                   className={styles['toast-trigger']}
                   onClick={() => showToast('Here is some information for you.', 'info')}
                 >
                   Show Info Toast
                 </button>
                 <button
+                  type="button"
                   className={styles['toast-trigger']}
                   onClick={() => showToast('Warning: This action cannot be undone.', 'warning')}
                 >
@@ -1052,18 +1056,21 @@ export default function Home() {
               <h2>Toast Sizes</h2>
               <div className={styles['toast-group']}>
                 <button
+                  type="button"
                   className={styles['toast-trigger']}
                   onClick={() => showToast('Small toast message', 'info', 'top-right', 'sm')}
                 >
                   Show Small Toast
                 </button>
                 <button
+                  type="button"
                   className={styles['toast-trigger']}
                   onClick={() => showToast('Medium toast message', 'info', 'top-right', 'md')}
                 >
                   Show Medium Toast
                 </button>
                 <button
+                  type="button"
                   className={styles['toast-trigger']}
                   onClick={() => showToast('Large toast message with more content', 'info', 'top-right', 'lg')}
                 >
@@ -1077,24 +1084,28 @@ export default function Home() {
               <h2>Toast Positions</h2>
               <div className={styles['toast-group']}>
                 <button
+                  type="button"
                   className={styles['toast-trigger']}
                   onClick={() => showToast('Top Right Toast', 'info', 'top-right')}
                 >
                   Top Right
                 </button>
                 <button
+                  type="button"
                   className={styles['toast-trigger']}
                   onClick={() => showToast('Top Left Toast', 'info', 'top-left')}
                 >
                   Top Left
                 </button>
                 <button
+                  type="button"
                   className={styles['toast-trigger']}
                   onClick={() => showToast('Bottom Right Toast', 'info', 'bottom-right')}
                 >
                   Bottom Right
                 </button>
                 <button
+                  type="button"
                   className={styles['toast-trigger']}
                   onClick={() => showToast('Bottom Left Toast', 'info', 'bottom-left')}
                 >
@@ -1108,18 +1119,21 @@ export default function Home() {
               <h2>Auto-Dismiss Options</h2>
               <div className={styles['toast-group']}>
                 <button
+                  type="button"
                   className={styles['toast-trigger']}
                   onClick={() => showToast('This toast will auto-dismiss in 5 seconds', 'info', 'top-right', 'md', true, 5000)}
                 >
                   Auto-Dismiss (5s)
                 </button>
                 <button
+                  type="button"
                   className={styles['toast-trigger']}
                   onClick={() => showToast('This toast will auto-dismiss in 3 seconds', 'success', 'top-right', 'md', true, 3000)}
                 >
                   Auto-Dismiss (3s)
                 </button>
                 <button
+                  type="button"
                   className={styles['toast-trigger']}
                   onClick={() => showToast('This toast will not auto-dismiss. Click X to close.', 'warning', 'top-right', 'md', false, 0)}
                 >
@@ -1135,6 +1149,7 @@ export default function Home() {
                 <div className={styles['toast-example']}>
                   <h3>Success Notification</h3>
                   <button
+                    type="button"
                     className={styles['toast-trigger']}
                     onClick={() => showToast('Your changes have been saved successfully!', 'success', 'top-right', 'md', true, 4000)}
                   >
@@ -1144,6 +1159,7 @@ export default function Home() {
                 <div className={styles['toast-example']}>
                   <h3>Error Notification</h3>
                   <button
+                    type="button"
                     className={styles['toast-trigger']}
                     onClick={() => showToast('Failed to connect to server. Please check your connection.', 'error', 'top-right', 'md', true, 6000)}
                   >
@@ -1153,6 +1169,7 @@ export default function Home() {
                 <div className={styles['toast-example']}>
                   <h3>Info Notification</h3>
                   <button
+                    type="button"
                     className={styles['toast-trigger']}
                     onClick={() => showToast('New features are available. Check them out!', 'info', 'bottom-right', 'md', true, 5000)}
                   >

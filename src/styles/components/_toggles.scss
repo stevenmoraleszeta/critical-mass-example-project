@@ -75,8 +75,9 @@
     pointer-events: none;
     
     // Accessibility: Focus states on the toggle track
+    // Always red focus for better visibility (20% thinner)
     &:focus-visible ~ .toggle {
-      @include focus-visible;
+      outline: 1.6px solid var(--color-secondary); // Red outline - always visible, 20% thinner
       outline-offset: 2px;
     }
     

@@ -420,6 +420,7 @@ a.secondary {
   font-weight: var(--fw-medium);
   cursor: pointer;
   transition: all 0.2s ease;
+  outline: none;
 }
 
 .toast-trigger:hover {
@@ -429,6 +430,16 @@ a.secondary {
 
 .toast-trigger:active {
   transform: translateY(0);
+}
+
+/* Toast trigger focus - always red for better visibility (20% thinner) */
+.toast-trigger:focus-visible {
+  outline: 1.6px solid var(--color-secondary); /* Red outline - always visible, 20% thinner */
+  outline-offset: 2px;
+}
+
+.toast-trigger:focus:not(:focus-visible) {
+  outline: none;
 }
 
 /* Toast examples */

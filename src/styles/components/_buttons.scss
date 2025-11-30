@@ -36,7 +36,18 @@
   @include transition-base(all);
   
   // Accessibility: Focus states
-  @include focus-visible;
+  // Always red focus for better visibility (20% thinner than before)
+  outline: none;
+  
+  &:focus-visible {
+    outline: 1.6px solid var(--color-secondary); // Red outline - always visible, 20% thinner
+    outline-offset: 2px;
+    border-radius: var(--radius-md);
+  }
+  
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
   
   // Remove default button styles
   background: none;
@@ -122,9 +133,10 @@
       @include shadow-sm;
     }
     
-    // Focus state uses accent color for visibility
+    // Focus state - Red outline (always visible, 20% thinner)
     &:focus-visible {
-      outline-color: var(--color-accent); // Yellow outline
+      outline: 1.6px solid var(--color-secondary); // Red outline
+      outline-offset: 2px;
     }
   }
   
@@ -161,8 +173,10 @@
       @include shadow-sm;
     }
     
+    // Focus state - Red outline (always visible, 20% thinner)
     &:focus-visible {
-      outline-color: var(--color-accent);
+      outline: 1.6px solid var(--color-secondary); // Red outline
+      outline-offset: 2px;
     }
   }
   
@@ -184,8 +198,10 @@
       @include shadow-sm;
     }
     
+    // Focus state - Red outline (always visible, 20% thinner)
     &:focus-visible {
-      outline-color: var(--color-accent);
+      outline: 1.6px solid var(--color-secondary); // Red outline
+      outline-offset: 2px;
     }
   }
   
@@ -224,8 +240,10 @@
       @include shadow-sm;
     }
     
+    // Focus state - Red outline (always visible, 20% thinner)
     &:focus-visible {
-      outline-color: var(--color-primary);
+      outline: 1.6px solid var(--color-secondary); // Red outline
+      outline-offset: 2px;
     }
   }
   
@@ -263,8 +281,10 @@
       @include shadow-sm;
     }
     
+    // Focus state - Red outline (always visible, 20% thinner)
     &:focus-visible {
-      outline-color: var(--color-accent);
+      outline: 1.6px solid var(--color-secondary); // Red outline
+      outline-offset: 2px;
     }
   }
   
