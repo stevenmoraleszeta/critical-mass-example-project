@@ -80,13 +80,16 @@
       outline-offset: 2px;
     }
     
-    // When checked, move slider to the right
+    // When checked, move slider to the right and animate color change
     &:checked ~ .toggle {
-      background-color: var(--color-accent); // Yellow background when checked
+      // Animation: first red, then yellow (runs once when activated)
+      // Smooth color transition similar to loader
+      animation: toggle-activate 0.8s ease-in-out forwards;
       border-color: var(--color-primary); // Blue border
       
       .toggle__slider {
-        transform: translateY(-50%) translateX(1.5rem); // Center vertically and move to the right (24px)
+        // Slider moves quickly, color changes smoothly
+        animation: toggle-slider-move 0.6s ease-out forwards;
         background-color: var(--color-primary); // Blue slider when checked
       }
     }
@@ -131,12 +134,52 @@
   
   // Checked state
   &--checked {
-    background-color: var(--color-accent); // Yellow background when checked
+    // Animation: first red, then yellow (runs once when activated)
+    // Smooth color transition similar to loader
+    animation: toggle-activate 0.8s ease-in-out forwards;
     border-color: var(--color-primary); // Blue border
     
     .toggle__slider {
-      transform: translateY(-50%) translateX(1.5rem); // Center vertically and move to the right
+      // Slider moves quickly, color changes smoothly
+      animation: toggle-slider-move 0.6s ease-out forwards;
       background-color: var(--color-primary); // Blue slider when checked
+    }
+  }
+  
+  // ============================================================================
+  // Toggle Animations
+  // ============================================================================
+  
+  // Animation for toggle activation: red first, then yellow
+  // Smooth transition similar to loader color change
+  @keyframes toggle-activate {
+    0% {
+      background-color: var(--color-secondary); // Red (initial state when activating)
+    }
+    30% {
+      background-color: var(--color-secondary); // Red (hold red while slider moves)
+    }
+    50% {
+      background-color: var(--color-secondary); // Red (slider at middle, transition starts)
+    }
+    70% {
+      background-color: var(--color-accent); // Transition to Yellow (smooth blend)
+    }
+    100% {
+      background-color: var(--color-accent); // Yellow (final state)
+    }
+  }
+  
+  // Slider movement animation - fast and smooth
+  @keyframes toggle-slider-move {
+    0% {
+      transform: translateY(-50%) translateX(0); // Start position (left)
+    }
+    50% {
+      transform: translateY(-50%) translateX(0.75rem); // Middle position (halfway)
+    }
+    100% {
+      transform: translateY(-50%) translateX(1.5rem); // End position (right)
     }
   }
   
@@ -168,9 +211,24 @@
     }
     
     // Adjust slider position for larger size
+    // Animation handles the movement, but we need to override for responsive
     &--checked .toggle__slider,
     &__input:checked ~ & .toggle__slider {
-      transform: translateY(-50%) translateX(1.75rem); // Center vertically and move to the right (28px)
+      // Animation will handle the movement, but final position needs adjustment
+      animation: toggle-slider-move-md 0.6s ease-out forwards;
+    }
+  }
+  
+  // Responsive slider animation for medium screens
+  @keyframes toggle-slider-move-md {
+    0% {
+      transform: translateY(-50%) translateX(0); // Start position (left)
+    }
+    50% {
+      transform: translateY(-50%) translateX(0.875rem); // Middle position (halfway for md)
+    }
+    100% {
+      transform: translateY(-50%) translateX(1.75rem); // End position (right for md)
     }
   }
   
