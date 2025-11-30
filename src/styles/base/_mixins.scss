@@ -2,10 +2,11 @@
 // SCSS Mixins
 // Following Critical Mass requirements: SASS, Mobile-First, Accessibility
 // Following SMACSS architecture
+// Using modern @use syntax
 // ============================================================================
 
-// Note: This file assumes _variables.scss is imported before this file
-// Breakpoint variables ($breakpoint-xs, $breakpoint-sm, etc.) are defined in _variables.scss
+// Import variables to use breakpoints and other values
+@use 'variables' as *;
 
 // ============================================================================
 // Responsive Breakpoint Mixins

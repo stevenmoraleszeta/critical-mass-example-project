@@ -2,27 +2,29 @@
 // Main SCSS File
 // Following Critical Mass requirements: SASS, Organized Architecture
 // Following SMACSS architecture and project-idea.md structure
+// Using modern @use syntax (replaces deprecated @import)
 // ============================================================================
 
 // ============================================================================
 // Base Layer (SMACSS)
 // Import order is important: variables first, then mixins, then everything else
+// Using @use with 'as *' to maintain global scope compatibility
 // ============================================================================
 
 // 1. Variables - Must be imported first (used by all other files)
-@import 'base/variables';
+@use 'base/variables' as *;
 
 // 2. Mixins - Imported second (may use variables, used by other files)
-@import 'base/mixins';
+@use 'base/mixins' as *;
 
 // 3. Reset - Base styles and resets
-@import 'base/reset';
+@use 'base/reset' as *;
 
 // 4. Typography - Base typography styles
-@import 'base/typography';
+@use 'base/typography' as *;
 
 // 5. Layout - Layout utilities
-@import 'base/layout';
+@use 'base/layout' as *;
 
 // ============================================================================
 // Components Layer (SMACSS)
@@ -30,13 +32,13 @@
 // Will be added as components are created
 // ============================================================================
 
-// @import 'components/buttons';
-// @import 'components/cards';
-// @import 'components/tags';
-// @import 'components/navbar';
-// @import 'components/hero';
-// @import 'components/forms';
-// @import 'components/content';
+// @use 'components/buttons' as *;
+// @use 'components/cards' as *;
+// @use 'components/tags' as *;
+// @use 'components/navbar' as *;
+// @use 'components/hero' as *;
+// @use 'components/forms' as *;
+// @use 'components/content' as *;
 
 // ============================================================================
 // Pages Layer (SMACSS)
@@ -44,8 +46,8 @@
 // Will be added as pages are created
 // ============================================================================
 
-// @import 'pages/home';
-// @import 'pages/components-page';
-// @import 'pages/content-page';
-// @import 'pages/about-page';
+// @use 'pages/home' as *;
+// @use 'pages/components-page' as *;
+// @use 'pages/content-page' as *;
+// @use 'pages/about-page' as *;
 

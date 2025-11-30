@@ -1,10 +1,11 @@
 // ============================================================================
 // Global Styles
 // Following project-idea.md: globals.scss imports main.scss
+// Using modern @use syntax (replaces deprecated @import)
 // ============================================================================
 
 // Import main SCSS file which includes all base styles, components, and pages
-@import '../styles/main';
+@use '../styles/main' as *;
 
 // ============================================================================
 // Additional Global Styles (if needed)
