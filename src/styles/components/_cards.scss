@@ -52,12 +52,33 @@
     // Aspect ratio for images (16:9 default)
     @include aspect-ratio(16, 9);
     
+    // Red overlay for red and white effect
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--color-secondary); // Red
+      mix-blend-mode: color;
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
     // Ensure image fills container
     img,
     .card__img {
       object-fit: cover;
       width: 100%;
       height: 100%;
+      position: relative;
+      z-index: 0;
+      
+      // Filter to show images only in red and white
+      // Convert to grayscale for white/black base, then overlay will add red
+      filter: grayscale(100%) contrast(1.3) brightness(0.95);
     }
   }
   
