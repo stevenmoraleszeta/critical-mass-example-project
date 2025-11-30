@@ -9,6 +9,7 @@ import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
 import Toggle from "@/components/ui/Toggle";
 import Loader from "@/components/feedback/Loader";
+import ErrorMessage from "@/components/feedback/ErrorMessage";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -34,6 +35,11 @@ export default function Home() {
   const [darkMode, setDarkMode] = React.useState(false);
   const [notifications, setNotifications] = React.useState(true);
   const [autoSave, setAutoSave] = React.useState(false);
+
+  // Error message handlers
+  const handleRetry = () => {
+    alert("Retry clicked!");
+  };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -876,6 +882,103 @@ export default function Home() {
                 <div className={styles['loader-example']}>
                   <h3>Fetching Data</h3>
                   <Loader text="Fetching data..." size="lg" />
+                </div>
+              </div>
+            </section>
+          </section>
+
+          {/* ErrorMessage Component Showcase */}
+          <section>
+            <h1 className={styles['section-title']}>ErrorMessage Component Showcase</h1>
+            
+            {/* Basic Error Message Section */}
+            <section>
+              <h2>Basic Error Message</h2>
+              <div className={styles['error-group']}>
+                <ErrorMessage message="Something went wrong" />
+                <ErrorMessage message="Failed to load content" />
+                <ErrorMessage message="Network error occurred" />
+              </div>
+            </section>
+
+            {/* Error Message with Retry Section */}
+            <section>
+              <h2>Error Message with Retry Button</h2>
+              <div className={styles['error-group']}>
+                <ErrorMessage 
+                  message="Failed to load data" 
+                  onRetry={handleRetry}
+                />
+                <ErrorMessage 
+                  message="Connection timeout" 
+                  onRetry={handleRetry}
+                  retryLabel="Try Again"
+                />
+                <ErrorMessage 
+                  message="Server error. Please try again later." 
+                  onRetry={handleRetry}
+                  retryLabel="Retry"
+                />
+              </div>
+            </section>
+
+            {/* Error Message Sizes Section */}
+            <section>
+              <h2>Error Message Sizes</h2>
+              <div className={styles['error-group']}>
+                <ErrorMessage 
+                  size="sm" 
+                  message="Small error message" 
+                  onRetry={handleRetry}
+                />
+                <ErrorMessage 
+                  size="md" 
+                  message="Medium error message" 
+                  onRetry={handleRetry}
+                />
+                <ErrorMessage 
+                  size="lg" 
+                  message="Large error message" 
+                  onRetry={handleRetry}
+                />
+              </div>
+            </section>
+
+            {/* Error Message Without Retry */}
+            <section>
+              <h2>Error Message Without Retry</h2>
+              <div className={styles['error-group']}>
+                <ErrorMessage size="sm" message="Small error without retry" />
+                <ErrorMessage size="md" message="Medium error without retry" />
+                <ErrorMessage size="lg" message="Large error without retry" />
+              </div>
+            </section>
+
+            {/* Usage Examples */}
+            <section>
+              <h2>Usage Examples</h2>
+              <div className={styles['error-examples']}>
+                <div className={styles['error-example']}>
+                  <h3>API Error</h3>
+                  <ErrorMessage 
+                    message="Failed to fetch data from server" 
+                    onRetry={handleRetry}
+                    retryLabel="Retry Request"
+                  />
+                </div>
+                <div className={styles['error-example']}>
+                  <h3>Network Error</h3>
+                  <ErrorMessage 
+                    message="No internet connection" 
+                    onRetry={handleRetry}
+                    retryLabel="Check Connection"
+                  />
+                </div>
+                <div className={styles['error-example']}>
+                  <h3>Validation Error</h3>
+                  <ErrorMessage 
+                    message="Invalid input. Please check your data." 
+                  />
                 </div>
               </div>
             </section>

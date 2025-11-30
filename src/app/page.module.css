@@ -193,6 +193,41 @@
   background-color: var(--color-white);
 }
 
+/* Error message group styles */
+.content .error-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .content .error-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+/* Error message examples */
+.content .error-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content .error-example {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: var(--space-lg);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+}
+
 /* Input group styles */
 .content .input-group {
   display: flex;
