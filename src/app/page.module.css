@@ -13,7 +13,7 @@
   min-height: 100vh;
   align-items: flex-start;
   justify-content: center;
-  font-family: var(--font-inter);
+  font-family: var(--font-mono), 'Roboto Mono', 'SF Mono', Monaco, 'Cascadia Code', Consolas, 'Courier New', monospace;
   background-color: var(--background);
   color: var(--text-primary);
 }
