@@ -1,9 +1,9 @@
 .page {
-  --background: #FEFFFD;
-  --foreground: #FEFFFD;
+  --background: var(--color-ivory-whisper);
+  --foreground: var(--color-ivory-whisper);
 
-  --text-primary: #1B263F;
-  --text-secondary: #204F56;
+  --text-primary: var(--color-deep-navy);
+  --text-secondary: var(--color-ocean-teal);
 
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
