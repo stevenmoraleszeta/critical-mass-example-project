@@ -1,0 +1,293 @@
+// ============================================================================
+// Button Component Styles
+// Following Critical Mass requirements: BEM, Mobile-First, Accessibility
+// Following project-idea.md: Button component specifications
+// ============================================================================
+
+// Import base files for variables and mixins
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Button Block (BEM)
+// Base styles for all buttons
+// ============================================================================
+
+.btn {
+  // Base button styles
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  
+  // Typography
+  font-family: var(--font-family-sans);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-normal);
+  text-align: center;
+  text-decoration: none;
+  
+  // Layout
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  
+  // Transitions
+  @include transition-base(all);
+  
+  // Accessibility: Focus states
+  @include focus-visible;
+  
+  // Remove default button styles
+  background: none;
+  padding: 0;
+  margin: 0;
+  
+  // Prevent text selection on buttons
+  user-select: none;
+  
+  // Ensure buttons are accessible
+  &:focus {
+    outline: none;
+  }
+  
+  // ============================================================================
+  // Button Elements (BEM)
+  // ============================================================================
+  
+  &__text {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+  
+  &__spinner {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: btn-spin 0.6s linear infinite;
+  }
+  
+  // ============================================================================
+  // Button Variants (BEM Modifiers)
+  // Following project-idea.md: primary, secondary, ghost variants
+  // ============================================================================
+  
+  // Primary Variant
+  &--primary {
+    background-color: var(--color-primary);
+    color: var(--color-bg-light);
+    
+    &:hover:not(:disabled):not(.btn--disabled) {
+      background-color: var(--color-ocean-teal);
+      transform: translateY(-1px);
+      @include shadow-md;
+    }
+    
+    &:active:not(:disabled):not(.btn--disabled) {
+      transform: translateY(0);
+      @include shadow-sm;
+    }
+    
+    // Focus state uses accent color for visibility
+    &:focus-visible {
+      outline-color: var(--color-accent);
+    }
+  }
+  
+  // Secondary Variant
+  &--secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-text-primary);
+    
+    &:hover:not(:disabled):not(.btn--disabled) {
+      background-color: var(--color-sky-mist);
+      transform: translateY(-1px);
+      @include shadow-md;
+    }
+    
+    &:active:not(:disabled):not(.btn--disabled) {
+      transform: translateY(0);
+      @include shadow-sm;
+    }
+    
+    &:focus-visible {
+      outline-color: var(--color-accent);
+    }
+  }
+  
+  // Ghost Variant
+  &--ghost {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    
+    &:hover:not(:disabled):not(.btn--disabled) {
+      background-color: var(--color-primary);
+      color: var(--color-bg-light);
+      transform: translateY(-1px);
+      @include shadow-md;
+    }
+    
+    &:active:not(:disabled):not(.btn--disabled) {
+      transform: translateY(0);
+      @include shadow-sm;
+    }
+    
+    &:focus-visible {
+      outline-color: var(--color-accent);
+    }
+  }
+  
+  // ============================================================================
+  // Button Sizes (BEM Modifiers)
+  // Following project-idea.md: sm, md, lg sizes
+  // Mobile-first: base styles for mobile, enhance for larger screens
+  // ============================================================================
+  
+  // Small Size
+  &--sm {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--fs-sm);
+    min-height: 2rem; // 32px
+    
+    @include breakpoint-md {
+      padding: var(--space-xs) var(--space-md);
+      min-height: 2.25rem; // 36px
+    }
+  }
+  
+  // Medium Size (default)
+  &--md {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--fs-base);
+    min-height: 2.5rem; // 40px
+    
+    @include breakpoint-md {
+      padding: var(--space-sm) var(--space-lg);
+      min-height: 2.75rem; // 44px
+    }
+  }
+  
+  // Large Size
+  &--lg {
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--fs-lg);
+    min-height: 3rem; // 48px
+    
+    @include breakpoint-md {
+      padding: var(--space-md) var(--space-xl);
+      min-height: 3.25rem; // 52px
+    }
+  }
+  
+  // ============================================================================
+  // Button States (BEM Modifiers)
+  // ============================================================================
+  
+  // Disabled State
+  &--disabled,
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    
+    &:hover,
+    &:active {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+  
+  // Loading State
+  &--loading {
+    cursor: wait;
+    pointer-events: none;
+    
+    .btn__text {
+      opacity: 0.7;
+    }
+  }
+  
+  // ============================================================================
+  // Animations
+  // ============================================================================
+  
+  @keyframes btn-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  // ============================================================================
+  // Reduced Motion Support (Accessibility)
+  // Following Critical Mass accessibility requirements
+  // ============================================================================
+  
+  @media (prefers-reduced-motion: reduce) {
+    &,
+    &__spinner {
+      animation: none;
+      transition: none;
+    }
+    
+    &:hover:not(:disabled):not(.btn--disabled) {
+      transform: none;
+    }
+    
+    &:active:not(:disabled):not(.btn--disabled) {
+      transform: none;
+    }
+  }
+}
+
+// ============================================================================
+// Responsive Enhancements (Mobile-First)
+// Following Critical Mass requirement: Mobile-First approach
+// ============================================================================
+
+// Base styles are mobile-first (defined above)
+// Additional responsive enhancements can be added here if needed
+
+// ============================================================================
+// Dark Mode Support
+// ============================================================================
+
+@media (prefers-color-scheme: dark) {
+  .btn {
+    &--primary {
+      background-color: var(--color-primary);
+      color: var(--color-bg-light);
+      
+      &:hover:not(:disabled):not(.btn--disabled) {
+        background-color: var(--color-ocean-teal);
+      }
+    }
+    
+    &--secondary {
+      background-color: var(--color-secondary);
+      color: var(--color-text-primary);
+      
+      &:hover:not(:disabled):not(.btn--disabled) {
+        background-color: var(--color-sky-mist);
+      }
+    }
+    
+    &--ghost {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      
+      &:hover:not(:disabled):not(.btn--disabled) {
+        background-color: var(--color-primary);
+        color: var(--color-bg-light);
+      }
+    }
+  }
+}
+

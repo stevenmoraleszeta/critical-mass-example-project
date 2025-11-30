@@ -142,25 +142,25 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 3: Core UI Components
 
 ### Button Component
-- [ ] Create `components/ui/Button.tsx`
-- [ ] Define `ButtonProps` interface (from specifications)
-- [ ] Implement primary variant
-- [ ] Implement secondary variant
-- [ ] Implement ghost variant
-- [ ] Implement size variants (sm, md, lg)
-- [ ] Add disabled state
-- [ ] Add loading state (optional)
-- [ ] Handle `href` prop for link buttons
-- [ ] Handle `onClick` prop
-- [ ] Add `aria-label` support
-- [ ] Create `styles/components/_buttons.scss`
-- [ ] Style all button variants with BEM
-- [ ] Add hover states
-- [ ] Add focus states (accessibility)
-- [ ] Add active states
-- [ ] Test button renders correctly
-- [ ] Test button is keyboard accessible
-- [ ] Test button works with screen reader
+- [x] Create `components/ui/Button.tsx`
+- [x] Define `ButtonProps` interface (from specifications)
+- [x] Implement primary variant
+- [x] Implement secondary variant
+- [x] Implement ghost variant
+- [x] Implement size variants (sm, md, lg)
+- [x] Add disabled state
+- [x] Add loading state (optional)
+- [x] Handle `href` prop for link buttons
+- [x] Handle `onClick` prop
+- [x] Add `aria-label` support
+- [x] Create `styles/components/_buttons.scss`
+- [x] Style all button variants with BEM
+- [x] Add hover states
+- [x] Add focus states (accessibility)
+- [x] Add active states
+- [x] Test button renders correctly
+- [x] Test button is keyboard accessible
+- [x] Test button works with screen reader
 
 ### Card Component
 - [ ] Create `components/ui/Card.tsx`
