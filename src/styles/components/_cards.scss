@@ -1,0 +1,327 @@
+// ============================================================================
+// Card Component Styles
+// Following Critical Mass requirements: BEM, Mobile-First, Accessibility
+// Following project-idea.md: Card component specifications
+// ============================================================================
+
+// Import base files for variables and mixins
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Card Block (BEM)
+// Base styles for all cards
+// ============================================================================
+
+.card {
+  // Base card styles
+  display: flex;
+  flex-direction: column;
+  
+  // Layout - Cards must be white with borders
+  background-color: var(--color-white);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  
+  // Spacing
+  overflow: hidden;
+  
+  // Transitions
+  @include transition-base(all);
+  
+  // Shadow (subtle on default)
+  @include shadow-sm;
+  
+  // Hover effect
+  &:hover {
+    @include shadow-md;
+    transform: translateY(-2px);
+  }
+  
+  // ============================================================================
+  // Card Elements (BEM)
+  // ============================================================================
+  
+  // Image Container
+  &__image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-white);
+    
+    // Aspect ratio for images (16:9 default)
+    @include aspect-ratio(16, 9);
+    
+    // Red overlay for red and white effect
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--color-secondary); // Red
+      mix-blend-mode: color;
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    // Ensure image fills container
+    img,
+    .card__img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 0;
+      
+      // Filter to show images only in red and white
+      // Convert to grayscale for white/black base, then overlay will add red
+      filter: grayscale(100%) contrast(1.3) brightness(0.95);
+    }
+  }
+  
+  // Image Element
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  // Content Container
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: var(--space-md);
+    gap: var(--space-sm);
+    
+    @include breakpoint-md {
+      padding: var(--space-lg);
+      gap: var(--space-md);
+    }
+  }
+  
+  // Title
+  // All text in cards must be blue
+  &__title {
+    margin: 0;
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    color: var(--color-primary); // Blue text always
+    
+    @include breakpoint-md {
+      font-size: var(--fs-xl);
+    }
+  }
+  
+  // Description
+  // All text in cards must be blue
+  &__description {
+    margin: 0;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-relaxed);
+    color: var(--color-primary); // Blue text always
+  }
+  
+  // Body Content (for children)
+  // All text in cards must be blue
+  &__body {
+    margin-top: var(--space-xs);
+    font-size: var(--fs-base);
+    line-height: var(--lh-relaxed);
+    color: var(--color-primary); // Blue text always
+    
+    // Ensure all nested elements also use blue text
+    * {
+      color: var(--color-primary);
+    }
+  }
+  
+  // Footer
+  // Footer must use yellow background
+  &__footer {
+    display: flex;
+    align-items: center;
+    padding: var(--space-md);
+    border-top: 1px solid var(--color-primary);
+    background-color: var(--color-accent); // Yellow footer
+    gap: var(--space-sm);
+    
+    // Ensure text in footer is blue for contrast
+    color: var(--color-primary);
+    
+    // Ensure all nested elements in footer use blue (except buttons)
+    // Using :not() to exclude buttons from the universal selector
+    > *:not(.btn):not(a.btn) {
+      color: var(--color-primary);
+    }
+    
+    // Buttons maintain their own colors (higher specificity)
+    // Primary and secondary buttons already have white text in their styles
+    // No need to override here - button styles have sufficient specificity
+    
+    @include breakpoint-md {
+      padding: var(--space-lg);
+    }
+  }
+  
+  // ============================================================================
+  // Card Variants (BEM Modifiers)
+  // Following project-idea.md: default, feature, content variants
+  // ============================================================================
+  
+  // Default Variant
+  // Default styles are already applied in base .card
+  // No additional styles needed - this variant uses base card styles
+  
+  // Feature Variant
+  &--feature {
+    // Feature cards are typically used for showcasing features
+    // Slightly enhanced styling
+    
+    // Title stays blue as per requirements - all text in cards must be blue
+    .card__title {
+      color: var(--color-primary); // Blue text always
+    }
+    
+    .card__content {
+      // Slightly more padding for feature cards
+      @include breakpoint-md {
+        padding: var(--space-xl);
+      }
+    }
+    
+    // Feature cards - image styles handled by base .card__image
+    // No additional overlay needed - using only base colors
+  }
+  
+  // Content Variant
+  &--content {
+    // Content cards are used for displaying content items (articles, posts, etc.)
+    // More compact, optimized for content feeds
+    
+    border-color: var(--color-primary);
+    
+    .card__content {
+      padding: var(--space-md);
+      
+      @include breakpoint-md {
+        padding: var(--space-lg);
+      }
+    }
+    
+    .card__title {
+      font-size: var(--fs-base);
+      font-weight: var(--fw-semibold);
+      
+      @include breakpoint-md {
+        font-size: var(--fs-lg);
+      }
+    }
+    
+    .card__description {
+      font-size: var(--fs-sm);
+      line-height: var(--lh-normal);
+      
+      @include breakpoint-md {
+        font-size: var(--fs-base);
+      }
+    }
+    
+    // Content cards often have more compact images
+    .card__image {
+      @include aspect-ratio(4, 3); // Different aspect ratio for content cards
+    }
+    
+    // Footer in content cards - still uses yellow background
+    .card__footer {
+      padding: var(--space-sm) var(--space-md);
+      background-color: var(--color-accent); // Yellow footer always
+      border-top-color: var(--color-primary);
+      
+      // Text elements use blue, buttons maintain their own colors
+      > *:not(.btn):not(a.btn) {
+        color: var(--color-primary);
+      }
+      
+      @include breakpoint-md {
+        padding: var(--space-md) var(--space-lg);
+      }
+    }
+  }
+  
+  // ============================================================================
+  // Responsive Enhancements (Mobile-First)
+  // Following Critical Mass requirement: Mobile-First approach
+  // ============================================================================
+  
+  // Base styles are mobile-first (defined above)
+  // Additional responsive adjustments for larger screens
+  
+  @include breakpoint-lg {
+    // Cards in a grid might need different spacing
+    // This is handled by parent containers
+  }
+  
+  // ============================================================================
+  // States and Interactions
+  // ============================================================================
+  
+  // Card with no image (content-only)
+  &:not(:has(.card__image)) {
+    .card__content {
+      // Adjust padding when no image
+      padding: var(--space-lg);
+      
+      @include breakpoint-md {
+        padding: var(--space-xl);
+      }
+    }
+  }
+  
+  // Card with no footer - handled by base styles, no additional adjustments needed
+  
+  // ============================================================================
+  // Reduced Motion Support (Accessibility)
+  // Following Critical Mass accessibility requirements
+  // ============================================================================
+  
+  @media (prefers-reduced-motion: reduce) {
+    &,
+    &__image,
+    &__content,
+    &__footer {
+      transition: none;
+      animation: none;
+    }
+    
+    &:hover {
+      transform: none;
+    }
+  }
+  
+  // ============================================================================
+  // Focus States (Accessibility)
+  // Cards should be focusable if they're interactive (links, buttons)
+  // This is for cards that might be wrapped in links or buttons
+  // ============================================================================
+  
+  // If card is interactive (wrapped in link/button), it should have focus styles
+  // This is typically handled by the wrapper element, not the card itself
+  // But we provide a modifier for interactive cards
+  &--interactive {
+    cursor: pointer;
+    
+    @include focus-visible;
+    
+    &:focus-visible {
+      outline-offset: 4px;
+    }
+  }
+}
+
+

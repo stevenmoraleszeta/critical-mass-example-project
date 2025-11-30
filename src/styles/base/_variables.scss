@@ -1,126 +1,68 @@
 // ============================================================================
 // Color Palette
+// Following user requirements: Primary colors in base RGB form
+// Blue (primary), Red (secondary), Yellow (tertiary), Black, White
 // ============================================================================
 
-// Brand Colors (from palette)
-$color-ocean-teal: #204F56;
-$color-sky-mist: #9EB8F9;
-$color-lemon-zest: #E6FD53;
-$color-ivory-whisper: #FEFFFD;
-$color-deep-navy: #1B263F;
+// Primary Colors (RGB base colors)
+$color-blue: #0000FF; // Blue - Primary color (RGB: 0, 0, 255)
+$color-red: #FF0000;  // Red - Secondary color (RGB: 255, 0, 0)
+$color-yellow: #FFFF00; // Yellow - Tertiary color (RGB: 255, 255, 0)
+$color-black: #000000;  // Black (RGB: 0, 0, 0)
+$color-white: #FFFFFF;  // White (RGB: 255, 255, 255)
 
-// Primary Colors (mapped from palette)
-$color-primary: $color-ocean-teal;
-$color-secondary: $color-sky-mist;
-$color-accent: $color-lemon-zest;
+// Primary Colors (mapped - Blue is primary, Red is secondary, Yellow is accent)
+$color-primary: $color-blue;    // Blue - Primary
+$color-secondary: $color-red;   // Red - Secondary
+$color-accent: $color-yellow;   // Yellow - Tertiary/Accent
 
 // Background Colors
-$color-bg-light: $color-ivory-whisper;
-$color-bg-dark: $color-deep-navy;
-$color-bg-white: #FFFFFF;
-$color-bg-black: #000000;
+$color-bg-light: $color-white;
 
 // Text Colors
-$color-text-primary-light: $color-deep-navy; // For light backgrounds (Ivory Whisper)
-$color-text-primary-dark: $color-ivory-whisper;  // For dark backgrounds (Deep Navy)
-$color-text-secondary: $color-ocean-teal;
-$color-text-muted: $color-ocean-teal;
+// Using blue as primary text color
+$color-text-primary: $color-blue;        // Blue text on white background
+$color-text-secondary: $color-blue;      // Blue for secondary text (same as primary)
+$color-text-muted: $color-blue;          // Blue for muted text (same as primary)
 
-// Gray Scale
-$color-gray-50: #F9FAFB;
-$color-gray-100: #F3F4F6;
-$color-gray-200: #E5E7EB;
-$color-gray-300: #D1D5DB;
-$color-gray-400: #9CA3AF;
-$color-gray-500: #6B7280;
-$color-gray-600: #4B5563;
-$color-gray-700: #374151;
-$color-gray-800: #1F2937;
-$color-gray-900: #111827;
-
-// Semantic Colors (derived from palette)
-$color-success: #2D8F7F; // Lighter, more vibrant variation of Ocean Teal
-$color-warning: #D4C847; // Darker, muted variation of Lemon Zest
-$color-error: #C84A5A; // Muted red with blue undertones to match palette tone
-$color-info: $color-sky-mist; // Uses Sky Mist from palette
+// Semantic Colors (using base RGB colors)
+// All colors in their base RGB form - no variations
+// Only using: Blue, Red, Yellow, Black, White
+$color-warning: $color-yellow; // Yellow base (RGB: 255, 255, 0) for warning
+$color-error: $color-red;      // Red base (RGB: 255, 0, 0) for error
+$color-info: $color-blue;      // Blue base (RGB: 0, 0, 255) for info
 
 // ============================================================================
 // CSS Custom Properties (CSS Variables)
 // ============================================================================
 
 :root {
-  // Brand Colors (named palette)
-  --color-ocean-teal: #{$color-ocean-teal};
-  --color-sky-mist: #{$color-sky-mist};
-  --color-lemon-zest: #{$color-lemon-zest};
-  --color-ivory-whisper: #{$color-ivory-whisper};
-  --color-deep-navy: #{$color-deep-navy};
+  // Brand Colors (primary RGB colors)
+  --color-blue: #{$color-blue};
+  --color-red: #{$color-red};
+  --color-yellow: #{$color-yellow};
+  --color-black: #{$color-black};
+  --color-white: #{$color-white};
 
   // Primary Colors
-  --color-primary: #{$color-primary};
-  --color-secondary: #{$color-secondary};
-  --color-accent: #{$color-accent};
+  --color-primary: #{$color-primary};    // Blue
+  --color-secondary: #{$color-secondary}; // Red
+  --color-accent: #{$color-accent};       // Yellow
 
   // Background Colors
-  --color-bg-light: #{$color-bg-light};
-  --color-bg-dark: #{$color-bg-dark};
-  --color-bg-white: #{$color-bg-white};
-  --color-bg-black: #{$color-bg-black};
+  --color-bg-light: #{$color-bg-light};   // White
 
   // Text Colors
-  --color-text-primary: #{$color-text-primary-light};
-  --color-text-secondary: #{$color-text-secondary};
-  --color-text-muted: #{$color-text-muted};
-
-  // Gray Scale
-  --color-gray-50: #{$color-gray-50};
-  --color-gray-100: #{$color-gray-100};
-  --color-gray-200: #{$color-gray-200};
-  --color-gray-300: #{$color-gray-300};
-  --color-gray-400: #{$color-gray-400};
-  --color-gray-500: #{$color-gray-500};
-  --color-gray-600: #{$color-gray-600};
-  --color-gray-700: #{$color-gray-700};
-  --color-gray-800: #{$color-gray-800};
-  --color-gray-900: #{$color-gray-900};
+  --color-text-primary: #{$color-text-primary};       // Blue text
+  --color-text-secondary: #{$color-text-secondary};   // Blue
+  --color-text-muted: #{$color-text-muted};           // Blue
 
   // Semantic Colors
-  --color-success: #{$color-success};
   --color-warning: #{$color-warning};
   --color-error: #{$color-error};
   --color-info: #{$color-info};
 }
 
-// Dark mode overrides
-@media (prefers-color-scheme: dark) {
-  :root {
-    // Background Colors - switch to dark theme
-    --color-bg-light: #{$color-deep-navy};
-    --color-bg-dark: #{$color-deep-navy};
-    
-    // Text Colors - use light text for dark backgrounds
-    --color-text-primary: #{$color-text-primary-dark};
-    --color-text-secondary: #{$color-sky-mist};
-    --color-text-muted: #{$color-gray-400};
-    
-    // Primary Colors - slightly lighter for better visibility on dark
-    --color-primary: #{$color-ocean-teal};
-    --color-secondary: #{$color-sky-mist};
-    --color-accent: #{$color-lemon-zest};
-    
-    // Semantic Colors - adjusted for dark mode visibility
-    --color-success: #3DAF9F; // Lighter teal-green for dark backgrounds
-    --color-warning: #E6D547; // Lighter yellow for dark backgrounds
-    --color-error: #E85A6B; // Lighter red for dark backgrounds
-    --color-info: #{$color-sky-mist};
-    
-    // Shadows - lighter shadows for dark mode
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
-  }
-}
 
 // ============================================================================
 // Spacing Variables
@@ -180,10 +122,12 @@ $radius-full: 9999px;  // Full circle/pill
 // Shadows
 // ============================================================================
 
-$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+// Shadows using blue instead of black
+// Blue RGB: (0, 0, 255)
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 255, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 255, 0.1), 0 2px 4px -1px rgba(0, 0, 255, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 255, 0.1), 0 4px 6px -2px rgba(0, 0, 255, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 255, 0.1), 0 10px 10px -5px rgba(0, 0, 255, 0.04);
 
 :root {
   --shadow-sm: #{$shadow-sm};

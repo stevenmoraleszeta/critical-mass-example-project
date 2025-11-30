@@ -1,0 +1,206 @@
+// ============================================================================
+// ErrorMessage Component Styles
+// Following Critical Mass requirements: BEM, Mobile-First, Accessibility
+// Following project-idea.md: ErrorMessage component specifications
+// ============================================================================
+
+// Import base files for variables and mixins
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// ErrorMessage Block (BEM)
+// Base styles for all error messages
+// ============================================================================
+
+.error-message {
+  // Base error message styles
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-secondary); // Red border for error
+  border-radius: var(--radius-md);
+  text-align: center;
+  
+  // Typography
+  font-family: var(--font-family-sans);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-normal);
+  line-height: var(--lh-normal);
+  color: var(--color-primary); // Blue text
+  
+  // ============================================================================
+  // ErrorMessage Elements (BEM)
+  // ============================================================================
+  
+  // Error icon
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem; // 48px
+    height: 3rem; // 48px
+    color: var(--color-secondary); // Red color for error icon
+    flex-shrink: 0;
+    
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  // Content container
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    width: 100%;
+  }
+  
+  // Error text
+  &__text {
+    margin: 0;
+    font-size: inherit;
+    font-weight: var(--fw-medium);
+    color: var(--color-primary); // Blue text
+    line-height: var(--lh-normal);
+  }
+  
+  // Actions container (for retry button)
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: var(--space-xs);
+  }
+  
+  // ============================================================================
+  // ErrorMessage Sizes (BEM Modifiers)
+  // Following project-idea.md: sm, md, lg sizes
+  // Mobile-first: base styles for mobile, enhance for larger screens
+  // ============================================================================
+  
+  // Small Size
+  &--sm {
+    padding: var(--space-md);
+    gap: var(--space-sm);
+    font-size: var(--fs-sm);
+    
+    .error-message__icon {
+      width: 2rem; // 32px
+      height: 2rem; // 32px
+    }
+    
+    .error-message__content {
+      gap: var(--space-sm);
+    }
+    
+    .error-message__text {
+      font-size: var(--fs-sm);
+    }
+    
+    @include breakpoint-md {
+      padding: var(--space-lg);
+      gap: var(--space-md);
+      
+      .error-message__icon {
+        width: 2.5rem; // 40px
+        height: 2.5rem; // 40px
+      }
+    }
+  }
+  
+  // Medium Size (default)
+  &--md {
+    padding: var(--space-lg);
+    gap: var(--space-md);
+    font-size: var(--fs-base);
+    
+    .error-message__icon {
+      width: 3rem; // 48px
+      height: 3rem; // 48px
+    }
+    
+    .error-message__content {
+      gap: var(--space-md);
+    }
+    
+    .error-message__text {
+      font-size: var(--fs-base);
+    }
+    
+    @include breakpoint-md {
+      padding: var(--space-xl);
+      gap: var(--space-lg);
+      
+      .error-message__icon {
+        width: 3.5rem; // 56px
+        height: 3.5rem; // 56px
+      }
+    }
+  }
+  
+  // Large Size
+  &--lg {
+    padding: var(--space-xl);
+    gap: var(--space-lg);
+    font-size: var(--fs-lg);
+    
+    .error-message__icon {
+      width: 4rem; // 64px
+      height: 4rem; // 64px
+    }
+    
+    .error-message__content {
+      gap: var(--space-lg);
+    }
+    
+    .error-message__text {
+      font-size: var(--fs-lg);
+      font-weight: var(--fw-semibold);
+    }
+    
+    @include breakpoint-md {
+      padding: var(--space-2xl);
+      gap: var(--space-xl);
+      
+      .error-message__icon {
+        width: 5rem; // 80px
+        height: 5rem; // 80px
+      }
+    }
+  }
+  
+  // ============================================================================
+  // Responsive Enhancements (Mobile-First)
+  // Following Critical Mass requirement: Mobile-First approach
+  // ============================================================================
+  
+  @include breakpoint-md {
+    // Enhanced spacing and layout for medium screens and up
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  @include breakpoint-lg {
+    // Enhanced spacing for large screens
+    max-width: 700px;
+  }
+  
+  // ============================================================================
+  // Reduced Motion Support (Accessibility)
+  // Following Critical Mass accessibility requirements
+  // ============================================================================
+  
+  @media (prefers-reduced-motion: reduce) {
+    // No animations to reduce, but ensure smooth transitions if added later
+    transition: none;
+  }
+}
+

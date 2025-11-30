@@ -12,3 +12,30 @@
 // Any global overrides or additional styles can go here
 // ============================================================================
 
+// Light theme for the app
+body {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+// Ensure main content area has light background
+main {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+// Ensure all headings are visible with proper contrast
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
+}
+
+// Ensure paragraphs and text are visible
+p {
+  color: var(--color-primary);
+}
+
+// Ensure sections are visible
+section {
+  color: var(--color-primary);
+}
+

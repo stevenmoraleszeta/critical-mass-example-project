@@ -1,0 +1,117 @@
+// ============================================================================
+// Tag Component Styles
+// Following Critical Mass requirements: BEM, Mobile-First, Accessibility
+// Following project-idea.md: Tag component specifications
+// ============================================================================
+
+// Import base files for variables and mixins
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Tag Block (BEM)
+// Base styles for all tags
+// ============================================================================
+
+.tag {
+  // Base tag styles
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  // Typography
+  font-family: var(--font-family-sans);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-normal);
+  text-align: center;
+  white-space: nowrap;
+  
+  // Layout
+  border-radius: var(--radius-md);
+  
+  // Transitions
+  @include transition-base(all);
+  
+  // Prevent text selection on tags
+  user-select: none;
+  
+  // ============================================================================
+  // Tag Variants (BEM Modifiers)
+  // Following project-idea.md: default, primary, secondary variants
+  // ============================================================================
+  
+  // Default Variant
+  // Yellow background with blue text (following design system)
+  &--default {
+    background-color: var(--color-accent); // Yellow
+    color: var(--color-primary); // Blue text
+    border: 1px solid var(--color-primary);
+  }
+  
+  // Primary Variant
+  // Blue background with white text
+  &--primary {
+    background-color: var(--color-primary); // Blue
+    color: var(--color-white); // White text
+    border: 1px solid var(--color-primary);
+  }
+  
+  // Secondary Variant
+  // Red background with white text
+  &--secondary {
+    background-color: var(--color-secondary); // Red
+    color: var(--color-white); // White text
+    border: 1px solid var(--color-secondary);
+  }
+  
+  // ============================================================================
+  // Tag Sizes (BEM Modifiers)
+  // Following project-idea.md: sm, md sizes
+  // Mobile-first: base styles for mobile, enhance for larger screens
+  // ============================================================================
+  
+  // Small Size
+  &--sm {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--fs-sm);
+    min-height: 1.5rem; // 24px
+    
+    @include breakpoint-md {
+      padding: var(--space-xs) var(--space-md);
+      min-height: 1.75rem; // 28px
+    }
+  }
+  
+  // Medium Size (default)
+  &--md {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--fs-base);
+    min-height: 1.75rem; // 28px
+    
+    @include breakpoint-md {
+      padding: var(--space-sm) var(--space-lg);
+      min-height: 2rem; // 32px
+    }
+  }
+  
+  // ============================================================================
+  // Responsive Enhancements (Mobile-First)
+  // Following Critical Mass requirement: Mobile-First approach
+  // ============================================================================
+  
+  // Base styles are mobile-first (defined above)
+  // Additional responsive adjustments can be added here if needed
+  
+  // ============================================================================
+  // Reduced Motion Support (Accessibility)
+  // Following Critical Mass accessibility requirements
+  // ============================================================================
+  
+  @media (prefers-reduced-motion: reduce) {
+    & {
+      transition: none;
+      animation: none;
+    }
+  }
+}
+

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 import "./globals.scss";
 
-// Import Inter font as specified in project-idea.md
+// Import Roboto Mono font (monospace) for code-like appearance
 // Using next/font/google for automatic optimization (Critical Mass performance requirement)
-const inter = Inter({
-  variable: "--font-inter",
+const robotoMono = Roboto_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
   display: "swap", // Better performance - shows fallback font while loading
 });
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.variable}>
+      <body className={robotoMono.variable}>
         {children}
       </body>
     </html>

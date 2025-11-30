@@ -1,0 +1,184 @@
+// ============================================================================
+// Input Component Styles
+// Following Critical Mass requirements: BEM, Mobile-First, Accessibility
+// Following project-idea.md: Input component specifications
+// ============================================================================
+
+// Import base files for variables and mixins
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Input Wrapper (BEM)
+// Container for input and its associated elements
+// ============================================================================
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+// ============================================================================
+// Input Block (BEM)
+// Base styles for all inputs
+// ============================================================================
+
+.input {
+  // Base input styles
+  display: block;
+  width: 100%;
+  
+  // Typography
+  font-family: var(--font-family-sans);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-normal);
+  line-height: var(--lh-normal);
+  color: var(--color-primary); // Blue text
+  
+  // Layout
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-primary); // Blue border
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  
+  // Transitions
+  @include transition-base(all);
+  
+  // Accessibility: Focus states
+  // Always red focus for better visibility (20% thinner)
+  outline: none;
+  
+  &:focus-visible {
+    outline: 1.6px solid var(--color-secondary); // Red outline - always visible, 20% thinner
+    outline-offset: 2px;
+    border-color: var(--color-primary);
+    @include shadow-md;
+  }
+  
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+  // Placeholder styles
+  &::placeholder {
+    color: var(--color-primary);
+    opacity: 0.6;
+  }
+  
+  // Hover state
+  &:hover:not(:disabled):not(.input--error) {
+    border-color: var(--color-primary);
+    @include shadow-sm;
+  }
+  
+  // Disabled state
+  &:disabled {
+    background-color: var(--color-accent); // Yellow background when disabled
+    color: var(--color-primary); // Blue text
+    border-color: var(--color-primary);
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  // ============================================================================
+  // Input Elements (BEM)
+  // ============================================================================
+  
+  // Label element
+  &__label {
+    display: block;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--color-primary); // Blue text
+    margin-bottom: var(--space-xs);
+    line-height: var(--lh-normal);
+  }
+  
+  // Required indicator
+  &__required {
+    color: var(--color-secondary); // Red for required indicator
+    margin-left: var(--space-xs);
+    font-weight: var(--fw-bold);
+  }
+  
+  // Error message
+  &__error {
+    display: block;
+    font-size: var(--fs-sm);
+    color: var(--color-secondary); // Red for errors
+    margin-top: var(--space-xs);
+    line-height: var(--lh-normal);
+  }
+  
+  // ============================================================================
+  // Input Modifiers (BEM)
+  // ============================================================================
+  
+  // Error state
+  &--error {
+    border-color: var(--color-secondary); // Red border for errors
+    background-color: var(--color-white);
+    
+    &:focus-visible {
+      outline-color: var(--color-secondary); // Red outline when in error state
+      border-color: var(--color-secondary);
+    }
+    
+    &:hover:not(:disabled) {
+      border-color: var(--color-secondary);
+    }
+  }
+  
+  // Required state (visual indicator already handled by __required element)
+  &--required {
+    // Additional styles for required inputs if needed
+  }
+  
+  // ============================================================================
+  // Input Types
+  // ============================================================================
+  
+  // Search input
+  &[type="search"] {
+    // Search inputs can have specific styling if needed
+    // For now, using base styles
+  }
+  
+  // Email input
+  &[type="email"] {
+    // Email inputs can have specific styling if needed
+    // For now, using base styles
+  }
+  
+  // Password input
+  &[type="password"] {
+    // Password inputs can have specific styling if needed
+    // For now, using base styles
+    font-family: 'Courier New', monospace; // Use monospace for password fields
+    letter-spacing: 0.1em;
+  }
+  
+  // ============================================================================
+  // Responsive Enhancements (Mobile-First)
+  // Following Critical Mass requirement: Mobile-First approach
+  // ============================================================================
+  
+  @include breakpoint-md {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--fs-base);
+  }
+  
+  // ============================================================================
+  // Reduced Motion Support (Accessibility)
+  // Following Critical Mass accessibility requirements
+  // ============================================================================
+  
+  @media (prefers-reduced-motion: reduce) {
+    & {
+      transition: none;
+    }
+  }
+}
+

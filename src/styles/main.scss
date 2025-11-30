@@ -32,12 +32,18 @@
 // Will be added as components are created
 // ============================================================================
 
-// @use 'components/buttons' as *;
-// @use 'components/cards' as *;
-// @use 'components/tags' as *;
+@use 'components/buttons' as *;
+@use 'components/cards' as *;
+@use 'components/tags' as *;
+@use 'components/badges' as *;
+@use 'components/inputs' as *;
+@use 'components/selects' as *;
+@use 'components/toggles' as *;
+@use 'components/loader' as *;
+@use 'components/error-message' as *;
+@use 'components/toast' as *;
 // @use 'components/navbar' as *;
 // @use 'components/hero' as *;
-// @use 'components/forms' as *;
 // @use 'components/content' as *;
 
 // ============================================================================
