@@ -94,6 +94,21 @@
       }
     }
     
+    // When unchecked (after being checked), move slider to the left and animate color change
+    // Note: This will animate on initial load if unchecked, but that's acceptable
+    &:not(:checked) ~ .toggle {
+      // Animation: first yellow, then red, then white (runs once when deactivated)
+      // Smooth color transition similar to loader
+      animation: toggle-deactivate 0.8s ease-in-out forwards;
+      border-color: var(--color-primary); // Blue border
+      
+      .toggle__slider {
+        // Slider moves quickly, color changes smoothly
+        animation: toggle-slider-move-back 0.6s ease-out forwards;
+        background-color: var(--color-primary); // Blue slider when unchecked
+      }
+    }
+    
     // Disabled state
     &:disabled ~ .toggle {
       background-color: var(--color-accent); // Yellow background when disabled
@@ -146,6 +161,7 @@
     }
   }
   
+  
   // ============================================================================
   // Toggle Animations
   // ============================================================================
@@ -170,7 +186,7 @@
     }
   }
   
-  // Slider movement animation - fast and smooth
+  // Slider movement animation - fast and smooth (left to right)
   @keyframes toggle-slider-move {
     0% {
       transform: translateY(-50%) translateX(0); // Start position (left)
@@ -180,6 +196,39 @@
     }
     100% {
       transform: translateY(-50%) translateX(1.5rem); // End position (right)
+    }
+  }
+  
+  // Slider movement animation - fast and smooth (right to left)
+  @keyframes toggle-slider-move-back {
+    0% {
+      transform: translateY(-50%) translateX(1.5rem); // Start position (right)
+    }
+    50% {
+      transform: translateY(-50%) translateX(0.75rem); // Middle position (halfway)
+    }
+    100% {
+      transform: translateY(-50%) translateX(0); // End position (left)
+    }
+  }
+  
+  // Animation for toggle deactivation: yellow first, then red, then white
+  // Smooth transition similar to loader color change
+  @keyframes toggle-deactivate {
+    0% {
+      background-color: var(--color-accent); // Yellow (initial state when deactivating)
+    }
+    30% {
+      background-color: var(--color-accent); // Yellow (hold yellow while slider moves)
+    }
+    50% {
+      background-color: var(--color-accent); // Yellow (slider at middle, transition starts)
+    }
+    70% {
+      background-color: var(--color-secondary); // Transition to Red (smooth blend)
+    }
+    100% {
+      background-color: var(--color-white); // White (final state - inactive)
     }
   }
   
@@ -217,9 +266,14 @@
       // Animation will handle the movement, but final position needs adjustment
       animation: toggle-slider-move-md 0.6s ease-out forwards;
     }
+    
+    // Responsive slider animation for unchecked state
+    &__input:not(:checked) ~ & .toggle__slider {
+      animation: toggle-slider-move-back-md 0.6s ease-out forwards;
+    }
   }
   
-  // Responsive slider animation for medium screens
+  // Responsive slider animation for medium screens (left to right)
   @keyframes toggle-slider-move-md {
     0% {
       transform: translateY(-50%) translateX(0); // Start position (left)
@@ -229,6 +283,19 @@
     }
     100% {
       transform: translateY(-50%) translateX(1.75rem); // End position (right for md)
+    }
+  }
+  
+  // Responsive slider animation for medium screens (right to left)
+  @keyframes toggle-slider-move-back-md {
+    0% {
+      transform: translateY(-50%) translateX(1.75rem); // Start position (right)
+    }
+    50% {
+      transform: translateY(-50%) translateX(0.875rem); // Middle position (halfway for md)
+    }
+    100% {
+      transform: translateY(-50%) translateX(0); // End position (left)
     }
   }
   
