@@ -1150,7 +1150,7 @@ export default function Home() {
                   <h3>Success Notification</h3>
                   <button
                     type="button"
-                    className={styles['toast-trigger']}
+                    className={`${styles['toast-trigger']} ${styles['toast-trigger--yellow']}`}
                     onClick={() => showToast('Your changes have been saved successfully!', 'success', 'top-right', 'md', true, 4000)}
                   >
                     Save Success
@@ -1160,7 +1160,7 @@ export default function Home() {
                   <h3>Error Notification</h3>
                   <button
                     type="button"
-                    className={styles['toast-trigger']}
+                    className={`${styles['toast-trigger']} ${styles['toast-trigger--yellow']}`}
                     onClick={() => showToast('Failed to connect to server. Please check your connection.', 'error', 'top-right', 'md', true, 6000)}
                   >
                     Show Error
@@ -1170,7 +1170,7 @@ export default function Home() {
                   <h3>Info Notification</h3>
                   <button
                     type="button"
-                    className={styles['toast-trigger']}
+                    className={`${styles['toast-trigger']} ${styles['toast-trigger--yellow']}`}
                     onClick={() => showToast('New features are available. Check them out!', 'info', 'bottom-right', 'md', true, 5000)}
                   >
                     Show Info
