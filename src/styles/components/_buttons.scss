@@ -193,6 +193,7 @@
   &--save {
     background-color: var(--color-accent); // Yellow
     color: var(--color-primary); // Blue text
+    border: 1px solid var(--color-primary); // Blue border
     
     // Ensure text element is blue
     .btn__text {
@@ -319,6 +320,7 @@
   &:disabled {
     background-color: var(--color-accent); // Yellow
     color: var(--color-primary); // Blue text
+    border: 1px solid var(--color-primary); // Blue border
     cursor: not-allowed;
     pointer-events: none;
     
@@ -345,6 +347,7 @@
   &--loading {
     background-color: var(--color-accent); // Yellow
     color: var(--color-primary); // Blue text
+    border: 1px solid var(--color-primary); // Blue border
     cursor: wait;
     pointer-events: none;
     
