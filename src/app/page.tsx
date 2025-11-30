@@ -8,6 +8,7 @@ import Badge from "@/components/ui/Badge";
 import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
 import Toggle from "@/components/ui/Toggle";
+import Loader from "@/components/feedback/Loader";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -822,6 +823,60 @@ export default function Home() {
                   checked={false}
                   onChange={() => {}}
                 />
+              </div>
+            </section>
+          </section>
+
+          {/* Loader Component Showcase */}
+          <section>
+            <h1 className={styles['section-title']}>Loader Component Showcase</h1>
+            
+            {/* Basic Loader Section */}
+            <section>
+              <h2>Basic Loader</h2>
+              <div className={styles['loader-group']}>
+                <Loader />
+                <Loader text="Loading..." />
+                <Loader text="Please wait" />
+              </div>
+            </section>
+
+            {/* Loader Sizes Section */}
+            <section>
+              <h2>Loader Sizes</h2>
+              <div className={styles['loader-group']}>
+                <Loader size="sm" text="Small loader" />
+                <Loader size="md" text="Medium loader" />
+                <Loader size="lg" text="Large loader" />
+              </div>
+            </section>
+
+            {/* Loader Without Text */}
+            <section>
+              <h2>Loader Without Text</h2>
+              <div className={styles['loader-group']}>
+                <Loader size="sm" />
+                <Loader size="md" />
+                <Loader size="lg" />
+              </div>
+            </section>
+
+            {/* Usage Examples */}
+            <section>
+              <h2>Usage Examples</h2>
+              <div className={styles['loader-examples']}>
+                <div className={styles['loader-example']}>
+                  <h3>Loading Content</h3>
+                  <Loader text="Loading content..." size="md" />
+                </div>
+                <div className={styles['loader-example']}>
+                  <h3>Processing Request</h3>
+                  <Loader text="Processing your request" size="md" />
+                </div>
+                <div className={styles['loader-example']}>
+                  <h3>Fetching Data</h3>
+                  <Loader text="Fetching data..." size="lg" />
+                </div>
               </div>
             </section>
           </section>

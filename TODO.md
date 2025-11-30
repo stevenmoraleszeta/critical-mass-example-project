@@ -237,12 +237,12 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test toggle is accessible
 
 ### Loader Component
-- [ ] Create `components/feedback/Loader.tsx`
-- [ ] Implement spinner loader
-- [ ] Implement skeleton loader (optional)
-- [ ] Add loading text support
-- [ ] Style loader component
-- [ ] Test loader renders correctly
+- [x] Create `components/feedback/Loader.tsx`
+- [x] Implement spinner loader
+- [x] Implement skeleton loader (optional)
+- [x] Add loading text support
+- [x] Style loader component
+- [x] Test loader renders correctly
 
 ### ErrorMessage Component
 - [ ] Create `components/feedback/ErrorMessage.tsx`
