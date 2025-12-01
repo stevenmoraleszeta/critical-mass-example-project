@@ -103,10 +103,10 @@
       color: var(--color-primary);
     }
     
-    // Always red focus for better visibility (20% thinner)
+    // Always red focus for better visibility (matching navbar)
     &:focus-visible {
-      outline: var(--outline-width-focus) solid var(--color-secondary); // Red outline - always visible, 20% thinner
-      outline-offset: var(--outline-offset-focus);
+      outline: 3px solid var(--color-secondary); // Red outline - matching navbar
+      outline-offset: 4px;
     }
     
     &:focus:not(:focus-visible) {

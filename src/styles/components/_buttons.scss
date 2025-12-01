@@ -35,12 +35,12 @@
   @include transition-base(all);
   
   // Accessibility: Focus states
-  // Always red focus for better visibility (20% thinner than before)
+  // Always red focus for better visibility (matching navbar)
   outline: none;
   
   &:focus-visible {
-    outline: var(--outline-width-focus) solid var(--color-secondary); // Red outline - always visible, 20% thinner
-    outline-offset: var(--outline-offset-focus);
+    outline: 3px solid var(--color-secondary); // Red outline - matching navbar
+    outline-offset: 4px;
     border-radius: var(--radius-md);
   }
   
@@ -132,10 +132,10 @@
       @include shadow-sm;
     }
     
-    // Focus state - Red outline (always visible, 20% thinner)
+    // Focus state - Red outline (matching navbar)
     &:focus-visible {
-      outline: var(--outline-width-focus) solid var(--color-secondary); // Red outline
-      outline-offset: var(--outline-offset-focus);
+      outline: 3px solid var(--color-secondary); // Red outline
+      outline-offset: 4px;
     }
   }
   
@@ -172,10 +172,10 @@
       @include shadow-sm;
     }
     
-    // Focus state - Red outline (always visible, 20% thinner)
+    // Focus state - Red outline (matching navbar)
     &:focus-visible {
-      outline: var(--outline-width-focus) solid var(--color-secondary); // Red outline
-      outline-offset: var(--outline-offset-focus);
+      outline: 3px solid var(--color-secondary); // Red outline
+      outline-offset: 4px;
     }
   }
   
@@ -197,10 +197,10 @@
       @include shadow-sm;
     }
     
-    // Focus state - Red outline (always visible, 20% thinner)
+    // Focus state - Red outline (matching navbar)
     &:focus-visible {
-      outline: var(--outline-width-focus) solid var(--color-secondary); // Red outline
-      outline-offset: var(--outline-offset-focus);
+      outline: 3px solid var(--color-secondary); // Red outline
+      outline-offset: 4px;
     }
   }
   
@@ -239,10 +239,10 @@
       @include shadow-sm;
     }
     
-    // Focus state - Red outline (always visible, 20% thinner)
+    // Focus state - Red outline (matching navbar)
     &:focus-visible {
-      outline: var(--outline-width-focus) solid var(--color-secondary); // Red outline
-      outline-offset: var(--outline-offset-focus);
+      outline: 3px solid var(--color-secondary); // Red outline
+      outline-offset: 4px;
     }
   }
   
@@ -280,10 +280,10 @@
       @include shadow-sm;
     }
     
-    // Focus state - Red outline (always visible, 20% thinner)
+    // Focus state - Red outline (matching navbar)
     &:focus-visible {
-      outline: var(--outline-width-focus) solid var(--color-secondary); // Red outline
-      outline-offset: var(--outline-offset-focus);
+      outline: 3px solid var(--color-secondary); // Red outline
+      outline-offset: 4px;
     }
   }
   

@@ -80,10 +80,10 @@
     pointer-events: none;
     
     // Accessibility: Focus states on the toggle track
-    // Always red focus for better visibility (20% thinner)
+    // Always red focus for better visibility (matching navbar)
     &:focus-visible ~ .toggle {
-      outline: var(--outline-width-focus) solid var(--color-secondary); // Red outline - always visible, 20% thinner
-      outline-offset: var(--outline-offset-focus);
+      outline: 3px solid var(--color-secondary); // Red outline - matching navbar
+      outline-offset: 4px;
     }
     
     // When checked, move slider to the right and animate color change

@@ -315,11 +315,16 @@
   // But we provide a modifier for interactive cards
   &--interactive {
     cursor: pointer;
-    
-    @include focus-visible;
+    outline: none;
     
     &:focus-visible {
-      outline-offset: var(--space-xs);
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
+    }
+    
+    &:focus:not(:focus-visible) {
+      outline: none;
     }
   }
 }
