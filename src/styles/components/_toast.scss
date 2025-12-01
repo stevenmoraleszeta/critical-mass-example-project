@@ -28,8 +28,7 @@
   min-width: 300px;
   max-width: 400px;
   
-  // Typography
-  font-family: var(--font-family-sans);
+  // Typography - inherits monospace from body
   font-size: var(--fs-base);
   font-weight: var(--fw-normal);
   line-height: var(--lh-normal);

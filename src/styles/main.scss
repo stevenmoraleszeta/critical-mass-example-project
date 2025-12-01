@@ -49,11 +49,10 @@
 // ============================================================================
 // Pages Layer (SMACSS)
 // Page-specific styles
-// Will be added as pages are created
 // ============================================================================
 
+@use 'pages/components' as *;
 // @use 'pages/home' as *;
-// @use 'pages/components-page' as *;
 // @use 'pages/content-page' as *;
 // @use 'pages/about-page' as *;
 

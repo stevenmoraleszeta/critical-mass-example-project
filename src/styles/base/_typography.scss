@@ -3,24 +3,22 @@
 // Following Critical Mass requirements: SASS, Mobile-First, Design System
 // ============================================================================
 
-// Import font from Google Fonts (Inter - as mentioned in project-idea.md)
-// Note: Font should be imported in layout.tsx using next/font/google for optimization
-// This file assumes Inter is available via CSS variable or @import
-
 // ============================================================================
 // Font Family Variables
 // ============================================================================
 
+// PROJECT-WIDE: All text uses monospace fonts for code-like appearance
 // Font family uses Next.js font variable (--font-mono) set in layout.tsx
-// Using monospace font for code-like appearance
+// Using monospace font throughout the entire project for code-like appearance
 // Fallback to system monospace fonts for better performance
 $font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
 
 :root {
-  // Use Next.js monospace font variable with fallbacks
-  // Changed from sans-serif to monospace for code-like appearance
-  --font-family-sans: var(--font-mono), 'Roboto Mono', 'SF Mono', Monaco, 'Cascadia Code', Consolas, 'Courier New', monospace;
-  --font-family-mono: #{$font-family-mono};
+  // Primary font family - monospace for code-like appearance throughout project
+  --font-family-mono: var(--font-mono), 'Roboto Mono', 'SF Mono', Monaco, 'Cascadia Code', Consolas, 'Courier New', monospace;
+  
+  // Alias for backward compatibility - also uses monospace
+  --font-family-sans: var(--font-family-mono);
 }
 
 // ============================================================================
@@ -93,7 +91,7 @@ $line-height-loose: 2;
 // ============================================================================
 
 html {
-  font-family: var(--font-family-sans);
+  font-family: var(--font-family-mono);
   font-size: 16px; // Base font size for rem calculations
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -101,7 +99,7 @@ html {
 }
 
 body {
-  font-family: var(--font-family-sans);
+  font-family: var(--font-family-mono);
   font-size: var(--fs-base);
   font-weight: var(--fw-normal);
   line-height: var(--lh-normal);
@@ -110,7 +108,7 @@ body {
 
 // ============================================================================
 // Heading Styles
-// Following project-idea.md: Headings use sans-serif bold font
+// All headings use monospace font for code-like appearance
 // ============================================================================
 
 h1,
@@ -119,7 +117,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-sans);
+  // Typography - inherits monospace from body
   font-weight: var(--fw-bold);
   line-height: var(--lh-tight);
   color: var(--color-text-primary);
@@ -192,10 +190,11 @@ h6 {
 
 // ============================================================================
 // Body Text Styles
-// Following project-idea.md: Body uses sans-serif regular
+// All body text uses monospace font for code-like appearance
 // ============================================================================
 
 p {
+  // Typography - inherits monospace from body
   font-size: var(--fs-base);
   font-weight: var(--fw-normal);
   line-height: var(--lh-relaxed);

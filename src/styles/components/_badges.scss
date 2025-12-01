@@ -19,8 +19,7 @@
   align-items: center;
   justify-content: center;
   
-  // Typography
-  font-family: var(--font-family-sans);
+  // Typography - inherits monospace from body
   font-weight: var(--fw-semibold);
   line-height: var(--lh-normal);
   text-align: center;

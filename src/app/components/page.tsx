@@ -11,7 +11,7 @@ import Toggle from "@/components/ui/Toggle";
 import Loader from "@/components/feedback/Loader";
 import ErrorMessage from "@/components/feedback/ErrorMessage";
 import Toast from "@/components/feedback/Toast";
-import styles from "./page.module.css";
+// Styles are now in SCSS: src/styles/pages/_components.scss
 
 export default function Components() {
   const handleClick = () => {
@@ -30,7 +30,6 @@ export default function Components() {
   const [categoryValue, setCategoryValue] = React.useState('all');
   const [statusValue, setStatusValue] = React.useState('live');
   const [requiredSelectValue, setRequiredSelectValue] = React.useState('');
-  const [selectError, setSelectError] = React.useState('');
 
   // Toggle state management
   const [darkMode, setDarkMode] = React.useState(false);
@@ -81,15 +80,15 @@ export default function Components() {
   };
 
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <div className={styles.content}>
+    <div className="components-page">
+      <main className="components-page__main">
+        <div className="components-page__content">
           <h1>Button Component Showcase</h1>
           
           {/* Variants Section */}
           <section>
             <h2>Variants</h2>
-            <div className={`${styles['button-group']}`}>
+            <div className="components-page__button-group">
               <Button variant="primary" onClick={handleClick}>
                 Primary Button
               </Button>
@@ -105,7 +104,7 @@ export default function Components() {
           {/* Sizes Section */}
           <section>
             <h2>Sizes</h2>
-            <div className={`${styles['button-group']} ${styles['button-group--align-center']}`}>
+            <div className="components-page__button-group components-page__button-group--align-center">
               <Button size="sm" onClick={handleClick}>
                 Small Button
               </Button>
@@ -121,10 +120,10 @@ export default function Components() {
           {/* All Variants with All Sizes */}
           <section>
             <h2>All Variants × All Sizes</h2>
-            <div className={`${styles['button-group']} ${styles['button-group--vertical']}`}>
+            <div className="components-page__button-group components-page__button-group--vertical">
               <div>
                 <h3>Primary</h3>
-                <div className={`${styles['button-group']} ${styles['button-group--align-center']}`}>
+                <div className="components-page__button-group components-page__button-group--align-center">
                   <Button variant="primary" size="sm" onClick={handleClick}>Small</Button>
                   <Button variant="primary" size="md" onClick={handleClick}>Medium</Button>
                   <Button variant="primary" size="lg" onClick={handleClick}>Large</Button>
@@ -132,7 +131,7 @@ export default function Components() {
               </div>
               <div>
                 <h3>Secondary</h3>
-                <div className={`${styles['button-group']} ${styles['button-group--align-center']}`}>
+                <div className="components-page__button-group components-page__button-group--align-center">
                   <Button variant="secondary" size="sm" onClick={handleClick}>Small</Button>
                   <Button variant="secondary" size="md" onClick={handleClick}>Medium</Button>
                   <Button variant="secondary" size="lg" onClick={handleClick}>Large</Button>
@@ -140,7 +139,7 @@ export default function Components() {
               </div>
               <div>
                 <h3>Ghost</h3>
-                <div className={`${styles['button-group']} ${styles['button-group--align-center']}`}>
+                <div className="components-page__button-group components-page__button-group--align-center">
                   <Button variant="ghost" size="sm" onClick={handleClick}>Small</Button>
                   <Button variant="ghost" size="md" onClick={handleClick}>Medium</Button>
                   <Button variant="ghost" size="lg" onClick={handleClick}>Large</Button>
@@ -152,7 +151,7 @@ export default function Components() {
           {/* States Section */}
           <section>
             <h2>States</h2>
-            <div className={styles['button-group']}>
+            <div className="components-page__button-group">
               <Button onClick={handleClick}>Normal</Button>
               <Button disabled onClick={handleClick}>Disabled</Button>
               <Button loading onClick={handleClick}>Loading</Button>
@@ -162,7 +161,7 @@ export default function Components() {
           {/* Link Buttons Section */}
           <section>
             <h2>Link Buttons</h2>
-            <div className={styles['button-group']}>
+            <div className="components-page__button-group">
               <Button href="/" variant="primary">Link Primary</Button>
               <Button href="/" variant="secondary">Link Secondary</Button>
               <Button href="/" variant="ghost">Link Ghost</Button>
@@ -172,7 +171,7 @@ export default function Components() {
           {/* Accessibility Section */}
           <section>
             <h2>Accessibility</h2>
-            <div className={styles['button-group']}>
+            <div className="components-page__button-group">
               <Button ariaLabel="Close dialog" onClick={handleClick}>
                 <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -193,12 +192,12 @@ export default function Components() {
 
           {/* Card Component Showcase */}
           <section>
-            <h1 className={styles['section-title']}>Card Component Showcase</h1>
+            <h1 className="components-page__section-title">Card Component Showcase</h1>
             
             {/* Variants Section */}
             <section>
               <h2>Variants</h2>
-              <div className={styles['card-group']}>
+              <div className="components-page__card-group">
                 <Card 
                   variant="default" 
                   title="Default Card"
@@ -220,7 +219,7 @@ export default function Components() {
             {/* Cards with Images */}
             <section>
               <h2>Cards with Images</h2>
-              <div className={styles['card-group']}>
+              <div className="components-page__card-group">
                 <Card 
                   variant="default"
                   title="Card with Image"
@@ -260,13 +259,13 @@ export default function Components() {
             {/* Cards with Footer */}
             <section>
               <h2>Cards with Footer</h2>
-              <div className={styles['card-group']}>
+              <div className="components-page__card-group">
                 <Card 
                   variant="default"
                   title="Card with Footer"
                   description="This card includes a footer section with action buttons."
                   footer={
-                    <div className={styles['card-footer-actions']}>
+                    <div className="components-page__card-footer-actions">
                       <Button size="sm" variant="primary" onClick={handleClick}>Action</Button>
                       <Button size="sm" variant="ghost" onClick={handleClick}>Cancel</Button>
                     </div>
@@ -285,8 +284,8 @@ export default function Components() {
                   title="Content with Footer"
                   description="Content cards often have footers with metadata or actions."
                   footer={
-                    <div className={styles['card-footer-meta']}>
-                      <span className={styles['card-footer-meta__text']}>Published: Today</span>
+                    <div className="components-page__card-footer-meta">
+                      <span className="components-page__card-footer-meta__text">Published: Today</span>
                       <Button size="sm" variant="ghost" onClick={handleClick}>Read More</Button>
                     </div>
                   }
@@ -297,12 +296,12 @@ export default function Components() {
             {/* Cards with Children */}
             <section>
               <h2>Cards with Custom Children</h2>
-              <div className={styles['card-group']}>
+              <div className="components-page__card-group">
                 <Card variant="default">
-                  <div className={styles['card-custom-content']}>
-                    <h3 className={styles['card-custom-content__title']}>Custom Content Card</h3>
+                  <div className="components-page__card-custom-content">
+                    <h3 className="components-page__card-custom-content__title">Custom Content Card</h3>
                     <p>This card uses custom children instead of title and description props.</p>
-                    <ul className={styles['card-custom-content__list']}>
+                    <ul className="components-page__card-custom-content__list">
                       <li>Flexible content structure</li>
                       <li>Full control over layout</li>
                       <li>Perfect for complex content</li>
@@ -310,10 +309,10 @@ export default function Components() {
                   </div>
                 </Card>
                 <Card variant="feature">
-                  <div className={styles['card-custom-content']}>
-                    <h3 className={`${styles['card-custom-content__title']} ${styles['card-custom-content__title--primary']}`}>Feature with Custom Content</h3>
+                  <div className="components-page__card-custom-content">
+                    <h3 className="components-page__card-custom-content__title components-page__card-custom-content__title--primary">Feature with Custom Content</h3>
                     <p>You can combine custom children with other props for maximum flexibility.</p>
-                    <div className={styles['card-custom-content__tip']}>
+                    <div className="components-page__card-custom-content__tip">
                       <strong>Pro tip:</strong> Use children for complex layouts!
                     </div>
                   </div>
@@ -324,7 +323,7 @@ export default function Components() {
             {/* Complete Cards */}
             <section>
               <h2>Complete Cards (All Features)</h2>
-              <div className={styles['card-group']}>
+              <div className="components-page__card-group">
                 <Card 
                   variant="default"
                   title="Complete Default Card"
@@ -339,7 +338,7 @@ export default function Components() {
                     <Button variant="primary" onClick={handleClick}>View Details</Button>
                   }
                 >
-                  <p className={styles['card-additional-text']}>
+                  <p className="components-page__card-additional-text">
                     This card also includes custom children content in addition to the title and description.
                   </p>
                 </Card>
@@ -354,7 +353,7 @@ export default function Components() {
                     height: 300
                   }}
                   footer={
-                    <div className={styles['card-footer-actions']}>
+                    <div className="components-page__card-footer-actions">
                       <Button size="sm" variant="primary" onClick={handleClick}>Get Started</Button>
                       <Button size="sm" variant="ghost" onClick={handleClick}>Learn More</Button>
                     </div>
@@ -366,12 +365,12 @@ export default function Components() {
 
           {/* Tag Component Showcase */}
           <section>
-            <h1 className={styles['section-title']}>Tag Component Showcase</h1>
+            <h1 className="components-page__section-title">Tag Component Showcase</h1>
             
             {/* Variants Section */}
             <section>
               <h2>Variants</h2>
-              <div className={styles['tag-group']}>
+              <div className="components-page__tag-group">
                 <Tag text="Default Tag" variant="default" />
                 <Tag text="Primary Tag" variant="primary" />
                 <Tag text="Secondary Tag" variant="secondary" />
@@ -381,7 +380,7 @@ export default function Components() {
             {/* Sizes Section */}
             <section>
               <h2>Sizes</h2>
-              <div className={`${styles['tag-group']} ${styles['tag-group--align-center']}`}>
+              <div className="components-page__tag-group components-page__tag-group--align-center">
                 <Tag text="Small Tag" size="sm" />
                 <Tag text="Medium Tag" size="md" />
               </div>
@@ -390,24 +389,24 @@ export default function Components() {
             {/* All Variants with All Sizes */}
             <section>
               <h2>All Variants × All Sizes</h2>
-              <div className={`${styles['tag-group']} ${styles['tag-group--vertical']}`}>
+              <div className="components-page__tag-group components-page__tag-group--vertical">
                 <div>
                   <h3>Default</h3>
-                  <div className={`${styles['tag-group']} ${styles['tag-group--align-center']}`}>
+                  <div className="components-page__tag-group components-page__tag-group--align-center">
                     <Tag text="Small" variant="default" size="sm" />
                     <Tag text="Medium" variant="default" size="md" />
                   </div>
                 </div>
                 <div>
                   <h3>Primary</h3>
-                  <div className={`${styles['tag-group']} ${styles['tag-group--align-center']}`}>
+                  <div className="components-page__tag-group components-page__tag-group--align-center">
                     <Tag text="Small" variant="primary" size="sm" />
                     <Tag text="Medium" variant="primary" size="md" />
                   </div>
                 </div>
                 <div>
                   <h3>Secondary</h3>
-                  <div className={`${styles['tag-group']} ${styles['tag-group--align-center']}`}>
+                  <div className="components-page__tag-group components-page__tag-group--align-center">
                     <Tag text="Small" variant="secondary" size="sm" />
                     <Tag text="Medium" variant="secondary" size="md" />
                   </div>
@@ -418,28 +417,28 @@ export default function Components() {
             {/* Usage Examples */}
             <section>
               <h2>Usage Examples</h2>
-              <div className={styles['tag-examples']}>
-                <div className={styles['tag-example']}>
+              <div className="components-page__tag-examples">
+                <div className="components-page__tag-example">
                   <h3>Categories</h3>
-                  <div className={styles['tag-group']}>
+                  <div className="components-page__tag-group">
                     <Tag text="React" variant="primary" />
                     <Tag text="TypeScript" variant="secondary" />
                     <Tag text="Next.js" variant="default" />
                     <Tag text="SCSS" variant="primary" />
                   </div>
                 </div>
-                <div className={styles['tag-example']}>
+                <div className="components-page__tag-example">
                   <h3>Technologies</h3>
-                  <div className={styles['tag-group']}>
+                  <div className="components-page__tag-group">
                     <Tag text="Frontend" variant="default" size="sm" />
                     <Tag text="Backend" variant="default" size="sm" />
                     <Tag text="Full Stack" variant="primary" size="sm" />
                     <Tag text="DevOps" variant="secondary" size="sm" />
                   </div>
                 </div>
-                <div className={styles['tag-example']}>
+                <div className="components-page__tag-example">
                   <h3>Skills</h3>
-                  <div className={styles['tag-group']}>
+                  <div className="components-page__tag-group">
                     <Tag text="Responsive Design" variant="primary" />
                     <Tag text="Accessibility" variant="secondary" />
                     <Tag text="Performance" variant="default" />
@@ -451,12 +450,12 @@ export default function Components() {
 
           {/* Badge Component Showcase */}
           <section>
-            <h1 className={styles['section-title']}>Badge Component Showcase</h1>
+            <h1 className="components-page__section-title">Badge Component Showcase</h1>
             
             {/* Status Variants Section */}
             <section>
               <h2>Status Variants</h2>
-              <div className={styles['badge-group']}>
+              <div className="components-page__badge-group">
                 <Badge text="Live" status="live" />
                 <Badge text="Upcoming" status="upcoming" />
                 <Badge text="Draft" status="draft" />
@@ -466,7 +465,7 @@ export default function Components() {
             {/* All Statuses Section */}
             <section>
               <h2>All Status Types</h2>
-              <div className={`${styles['badge-group']} ${styles['badge-group--align-center']}`}>
+              <div className="components-page__badge-group components-page__badge-group--align-center">
                 <Badge text="Live" status="live" />
                 <Badge text="Upcoming" status="upcoming" />
                 <Badge text="Draft" status="draft" />
@@ -476,34 +475,34 @@ export default function Components() {
             {/* Usage Examples */}
             <section>
               <h2>Usage Examples</h2>
-              <div className={styles['badge-examples']}>
-                <div className={styles['badge-example']}>
+              <div className="components-page__badge-examples">
+                <div className="components-page__badge-example">
                   <h3>Content Status</h3>
-                  <div className={styles['badge-group']}>
+                  <div className="components-page__badge-group">
                     <Badge text="Live" status="live" />
                     <Badge text="Published" status="live" />
                     <Badge text="Active" status="live" />
                   </div>
                 </div>
-                <div className={styles['badge-example']}>
+                <div className="components-page__badge-example">
                   <h3>Upcoming Content</h3>
-                  <div className={styles['badge-group']}>
+                  <div className="components-page__badge-group">
                     <Badge text="Upcoming" status="upcoming" />
                     <Badge text="Scheduled" status="upcoming" />
                     <Badge text="Coming Soon" status="upcoming" />
                   </div>
                 </div>
-                <div className={styles['badge-example']}>
+                <div className="components-page__badge-example">
                   <h3>Draft Content</h3>
-                  <div className={styles['badge-group']}>
+                  <div className="components-page__badge-group">
                     <Badge text="Draft" status="draft" />
                     <Badge text="In Review" status="draft" />
                     <Badge text="Pending" status="draft" />
                   </div>
                 </div>
-                <div className={styles['badge-example']}>
+                <div className="components-page__badge-example">
                   <h3>Mixed Statuses</h3>
-                  <div className={styles['badge-group']}>
+                  <div className="components-page__badge-group">
                     <Badge text="Live" status="live" />
                     <Badge text="Upcoming" status="upcoming" />
                     <Badge text="Draft" status="draft" />
@@ -516,12 +515,12 @@ export default function Components() {
 
           {/* Input Component Showcase */}
           <section>
-            <h1 className={styles['section-title']}>Input Component Showcase</h1>
+            <h1 className="components-page__section-title">Input Component Showcase</h1>
             
             {/* Input Types Section */}
             <section>
               <h2>Input Types</h2>
-              <div className={styles['input-group']}>
+              <div className="components-page__input-group">
                 <Input
                   id="input-text"
                   label="Text Input"
@@ -561,7 +560,7 @@ export default function Components() {
             {/* Required Inputs Section */}
             <section>
               <h2>Required Inputs</h2>
-              <div className={styles['input-group']}>
+              <div className="components-page__input-group">
                 <Input
                   id="input-required"
                   label="Required Field"
@@ -587,7 +586,7 @@ export default function Components() {
             {/* Error States Section */}
             <section>
               <h2>Error States</h2>
-              <div className={styles['input-group']}>
+              <div className="components-page__input-group">
                 <Input
                   id="input-error-1"
                   label="Input with Error"
@@ -612,7 +611,7 @@ export default function Components() {
             {/* All States Combined */}
             <section>
               <h2>All States Combined</h2>
-              <div className={styles['input-group']}>
+              <div className="components-page__input-group">
                 <Input
                   id="input-normal"
                   label="Normal Input"
@@ -655,12 +654,12 @@ export default function Components() {
 
           {/* Select Component Showcase */}
           <section>
-            <h1 className={styles['section-title']}>Select Component Showcase</h1>
+            <h1 className="components-page__section-title">Select Component Showcase</h1>
             
             {/* Basic Select Section */}
             <section>
               <h2>Basic Select</h2>
-              <div className={styles['input-group']}>
+              <div className="components-page__input-group">
                 <Select
                   id="select-category"
                   label="Category"
@@ -691,7 +690,7 @@ export default function Components() {
             {/* Required Select Section */}
             <section>
               <h2>Required Select</h2>
-              <div className={styles['input-group']}>
+              <div className="components-page__input-group">
                 <Select
                   id="select-required"
                   label="Required Category"
@@ -711,7 +710,7 @@ export default function Components() {
             {/* Error States Section */}
             <section>
               <h2>Error States</h2>
-              <div className={styles['input-group']}>
+              <div className="components-page__input-group">
                 <Select
                   id="select-error"
                   label="Select with Error"
@@ -743,7 +742,7 @@ export default function Components() {
             {/* Usage Examples */}
             <section>
               <h2>Usage Examples</h2>
-              <div className={styles['input-group']}>
+              <div className="components-page__input-group">
                 <Select
                   id="select-filter"
                   label="Filter by Category"
@@ -775,12 +774,12 @@ export default function Components() {
 
           {/* Toggle Component Showcase */}
           <section>
-            <h1 className={styles['section-title']}>Toggle Component Showcase</h1>
+            <h1 className="components-page__section-title">Toggle Component Showcase</h1>
             
             {/* Basic Toggle Section */}
             <section>
               <h2>Basic Toggle</h2>
-              <div className={styles['input-group']}>
+              <div className="components-page__input-group">
                 <Toggle
                   id="toggle-dark-mode"
                   label="Dark Mode"
@@ -805,7 +804,7 @@ export default function Components() {
             {/* Toggle States Section */}
             <section>
               <h2>Toggle States</h2>
-              <div className={styles['input-group']}>
+              <div className="components-page__input-group">
                 <Toggle
                   id="toggle-checked"
                   label="Checked Toggle"
@@ -838,7 +837,7 @@ export default function Components() {
             {/* Usage Examples */}
             <section>
               <h2>Usage Examples</h2>
-              <div className={styles['input-group']}>
+              <div className="components-page__input-group">
                 <Toggle
                   id="toggle-show-live"
                   label="Show only live content"
@@ -863,12 +862,12 @@ export default function Components() {
 
           {/* Loader Component Showcase */}
           <section>
-            <h1 className={styles['section-title']}>Loader Component Showcase</h1>
+            <h1 className="components-page__section-title">Loader Component Showcase</h1>
             
             {/* Basic Loader Section */}
             <section>
               <h2>Basic Loader</h2>
-              <div className={styles['loader-group']}>
+              <div className="components-page__loader-group">
                 <Loader />
                 <Loader text="Loading..." />
                 <Loader text="Please wait" />
@@ -878,7 +877,7 @@ export default function Components() {
             {/* Loader Sizes Section */}
             <section>
               <h2>Loader Sizes</h2>
-              <div className={styles['loader-group']}>
+              <div className="components-page__loader-group">
                 <Loader size="sm" text="Small loader" />
                 <Loader size="md" text="Medium loader" />
                 <Loader size="lg" text="Large loader" />
@@ -888,7 +887,7 @@ export default function Components() {
             {/* Loader Without Text */}
             <section>
               <h2>Loader Without Text</h2>
-              <div className={styles['loader-group']}>
+              <div className="components-page__loader-group">
                 <Loader size="sm" />
                 <Loader size="md" />
                 <Loader size="lg" />
@@ -898,16 +897,16 @@ export default function Components() {
             {/* Usage Examples */}
             <section>
               <h2>Usage Examples</h2>
-              <div className={styles['loader-examples']}>
-                <div className={styles['loader-example']}>
+              <div className="components-page__loader-examples">
+                <div className="components-page__loader-example">
                   <h3>Loading Content</h3>
                   <Loader text="Loading content..." size="md" />
                 </div>
-                <div className={styles['loader-example']}>
+                <div className="components-page__loader-example">
                   <h3>Processing Request</h3>
                   <Loader text="Processing your request" size="md" />
                 </div>
-                <div className={styles['loader-example']}>
+                <div className="components-page__loader-example">
                   <h3>Fetching Data</h3>
                   <Loader text="Fetching data..." size="lg" />
                 </div>
@@ -917,12 +916,12 @@ export default function Components() {
 
           {/* ErrorMessage Component Showcase */}
           <section>
-            <h1 className={styles['section-title']}>ErrorMessage Component Showcase</h1>
+            <h1 className="components-page__section-title">ErrorMessage Component Showcase</h1>
             
             {/* Basic Error Message Section */}
             <section>
               <h2>Basic Error Message</h2>
-              <div className={styles['error-group']}>
+              <div className="components-page__error-group">
                 <ErrorMessage message="Something went wrong" />
                 <ErrorMessage message="Failed to load content" />
                 <ErrorMessage message="Network error occurred" />
@@ -932,7 +931,7 @@ export default function Components() {
             {/* Error Message with Retry Section */}
             <section>
               <h2>Error Message with Retry Button</h2>
-              <div className={styles['error-group']}>
+              <div className="components-page__error-group">
                 <ErrorMessage 
                   message="Failed to load data" 
                   onRetry={handleRetry}
@@ -953,7 +952,7 @@ export default function Components() {
             {/* Error Message Sizes Section */}
             <section>
               <h2>Error Message Sizes</h2>
-              <div className={styles['error-group']}>
+              <div className="components-page__error-group">
                 <ErrorMessage 
                   size="sm" 
                   message="Small error message" 
@@ -975,7 +974,7 @@ export default function Components() {
             {/* Error Message Without Retry */}
             <section>
               <h2>Error Message Without Retry</h2>
-              <div className={styles['error-group']}>
+              <div className="components-page__error-group">
                 <ErrorMessage size="sm" message="Small error without retry" />
                 <ErrorMessage size="md" message="Medium error without retry" />
                 <ErrorMessage size="lg" message="Large error without retry" />
@@ -985,8 +984,8 @@ export default function Components() {
             {/* Usage Examples */}
             <section>
               <h2>Usage Examples</h2>
-              <div className={styles['error-examples']}>
-                <div className={styles['error-example']}>
+              <div className="components-page__error-examples">
+                <div className="components-page__error-example">
                   <h3>API Error</h3>
                   <ErrorMessage 
                     message="Failed to fetch data from server" 
@@ -994,7 +993,7 @@ export default function Components() {
                     retryLabel="Retry Request"
                   />
                 </div>
-                <div className={styles['error-example']}>
+                <div className="components-page__error-example">
                   <h3>Network Error</h3>
                   <ErrorMessage 
                     message="No internet connection" 
@@ -1002,7 +1001,7 @@ export default function Components() {
                     retryLabel="Check Connection"
                   />
                 </div>
-                <div className={styles['error-example']}>
+                <div className="components-page__error-example">
                   <h3>Validation Error</h3>
                   <ErrorMessage 
                     message="Invalid input. Please check your data." 
@@ -1014,36 +1013,36 @@ export default function Components() {
 
           {/* Toast Component Showcase */}
           <section>
-            <h1 className={styles['section-title']}>Toast Component Showcase</h1>
+            <h1 className="components-page__section-title">Toast Component Showcase</h1>
             
             {/* Toast Variants Section */}
             <section>
               <h2>Toast Variants</h2>
-              <div className={styles['toast-group']}>
+              <div className="components-page__toast-group">
                 <button
                   type="button"
-                  className={styles['toast-trigger']}
+                  className="components-page__toast-trigger"
                   onClick={() => showToast('Operation completed successfully!', 'success')}
                 >
                   Show Success Toast
                 </button>
                 <button
                   type="button"
-                  className={styles['toast-trigger']}
+                  className="components-page__toast-trigger"
                   onClick={() => showToast('An error occurred. Please try again.', 'error')}
                 >
                   Show Error Toast
                 </button>
                 <button
                   type="button"
-                  className={styles['toast-trigger']}
+                  className="components-page__toast-trigger"
                   onClick={() => showToast('Here is some information for you.', 'info')}
                 >
                   Show Info Toast
                 </button>
                 <button
                   type="button"
-                  className={styles['toast-trigger']}
+                  className="components-page__toast-trigger"
                   onClick={() => showToast('Warning: This action cannot be undone.', 'warning')}
                 >
                   Show Warning Toast
@@ -1054,24 +1053,24 @@ export default function Components() {
             {/* Toast Sizes Section */}
             <section>
               <h2>Toast Sizes</h2>
-              <div className={styles['toast-group']}>
+              <div className="components-page__toast-group">
                 <button
                   type="button"
-                  className={styles['toast-trigger']}
+                  className="components-page__toast-trigger"
                   onClick={() => showToast('Small toast message', 'info', 'top-right', 'sm')}
                 >
                   Show Small Toast
                 </button>
                 <button
                   type="button"
-                  className={styles['toast-trigger']}
+                  className="components-page__toast-trigger"
                   onClick={() => showToast('Medium toast message', 'info', 'top-right', 'md')}
                 >
                   Show Medium Toast
                 </button>
                 <button
                   type="button"
-                  className={styles['toast-trigger']}
+                  className="components-page__toast-trigger"
                   onClick={() => showToast('Large toast message with more content', 'info', 'top-right', 'lg')}
                 >
                   Show Large Toast
@@ -1082,31 +1081,31 @@ export default function Components() {
             {/* Toast Positions Section */}
             <section>
               <h2>Toast Positions</h2>
-              <div className={styles['toast-group']}>
+              <div className="components-page__toast-group">
                 <button
                   type="button"
-                  className={styles['toast-trigger']}
+                  className="components-page__toast-trigger"
                   onClick={() => showToast('Top Right Toast', 'info', 'top-right')}
                 >
                   Top Right
                 </button>
                 <button
                   type="button"
-                  className={styles['toast-trigger']}
+                  className="components-page__toast-trigger"
                   onClick={() => showToast('Top Left Toast', 'info', 'top-left')}
                 >
                   Top Left
                 </button>
                 <button
                   type="button"
-                  className={styles['toast-trigger']}
+                  className="components-page__toast-trigger"
                   onClick={() => showToast('Bottom Right Toast', 'info', 'bottom-right')}
                 >
                   Bottom Right
                 </button>
                 <button
                   type="button"
-                  className={styles['toast-trigger']}
+                  className="components-page__toast-trigger"
                   onClick={() => showToast('Bottom Left Toast', 'info', 'bottom-left')}
                 >
                   Bottom Left
@@ -1117,24 +1116,24 @@ export default function Components() {
             {/* Auto-Dismiss Section */}
             <section>
               <h2>Auto-Dismiss Options</h2>
-              <div className={styles['toast-group']}>
+              <div className="components-page__toast-group">
                 <button
                   type="button"
-                  className={styles['toast-trigger']}
+                  className="components-page__toast-trigger"
                   onClick={() => showToast('This toast will auto-dismiss in 5 seconds', 'info', 'top-right', 'md', true, 5000)}
                 >
                   Auto-Dismiss (5s)
                 </button>
                 <button
                   type="button"
-                  className={styles['toast-trigger']}
+                  className="components-page__toast-trigger"
                   onClick={() => showToast('This toast will auto-dismiss in 3 seconds', 'success', 'top-right', 'md', true, 3000)}
                 >
                   Auto-Dismiss (3s)
                 </button>
                 <button
                   type="button"
-                  className={styles['toast-trigger']}
+                  className="components-page__toast-trigger"
                   onClick={() => showToast('This toast will not auto-dismiss. Click X to close.', 'warning', 'top-right', 'md', false, 0)}
                 >
                   No Auto-Dismiss
@@ -1145,32 +1144,32 @@ export default function Components() {
             {/* Usage Examples */}
             <section>
               <h2>Usage Examples</h2>
-              <div className={styles['toast-examples']}>
-                <div className={styles['toast-example']}>
+              <div className="components-page__toast-examples">
+                <div className="components-page__toast-example">
                   <h3>Success Notification</h3>
                   <button
                     type="button"
-                    className={`${styles['toast-trigger']} ${styles['toast-trigger--yellow']}`}
+                    className="components-page__toast-trigger components-page__toast-trigger--yellow"
                     onClick={() => showToast('Your changes have been saved successfully!', 'success', 'top-right', 'md', true, 4000)}
                   >
                     Save Success
                   </button>
                 </div>
-                <div className={styles['toast-example']}>
+                <div className="components-page__toast-example">
                   <h3>Error Notification</h3>
                   <button
                     type="button"
-                    className={`${styles['toast-trigger']} ${styles['toast-trigger--yellow']}`}
+                    className="components-page__toast-trigger components-page__toast-trigger--yellow"
                     onClick={() => showToast('Failed to connect to server. Please check your connection.', 'error', 'top-right', 'md', true, 6000)}
                   >
                     Show Error
                   </button>
                 </div>
-                <div className={styles['toast-example']}>
+                <div className="components-page__toast-example">
                   <h3>Info Notification</h3>
                   <button
                     type="button"
-                    className={`${styles['toast-trigger']} ${styles['toast-trigger--yellow']}`}
+                    className="components-page__toast-trigger components-page__toast-trigger--yellow"
                     onClick={() => showToast('New features are available. Check them out!', 'info', 'bottom-right', 'md', true, 5000)}
                   >
                     Show Info

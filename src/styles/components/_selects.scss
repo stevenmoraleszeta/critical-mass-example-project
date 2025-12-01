@@ -30,8 +30,7 @@
   display: block;
   width: 100%;
   
-  // Typography
-  font-family: var(--font-family-sans);
+  // Typography - inherits monospace from body
   font-size: var(--fs-base);
   font-weight: var(--fw-normal);
   line-height: var(--lh-normal);
