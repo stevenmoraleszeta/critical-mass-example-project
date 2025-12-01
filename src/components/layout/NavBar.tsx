@@ -193,7 +193,7 @@ export default function NavBar({ className = '' }: NavBarProps) {
             className="navbar__logo-link"
             aria-label="Steven Morales - Home"
           >
-            <span className="navbar__logo-text" aria-hidden="true">SM</span>
+            <span className="navbar__logo-initials" aria-hidden="true">SM</span>
           </Link>
         </div>
 

@@ -7,9 +7,9 @@ import NavBar from './NavBar';
  * MainLayout Component
  * 
  * Main layout wrapper that provides semantic HTML structure and includes
- * all layout components (NavBar with logo, Footer).
+ * all layout components (Header with NavBar, Footer).
  * Follows Critical Mass accessibility requirements:
- * - Semantic HTML (<header>, <main>, <footer>)
+ * - Semantic HTML (<header>, <nav>, <main>, <footer>)
  * - Proper ARIA landmarks
  * - Responsive design
  * 
@@ -32,15 +32,16 @@ export interface MainLayoutProps {
  * MainLayout Component Implementation
  * 
  * Structure:
- * - NavBar component (logo and navigation with active state)
+ * - Header (semantic wrapper for navigation)
+ *   - NavBar component (logo and navigation with active state)
  * - Main content area
  * - Footer component (to be added)
  */
 export default function MainLayout({ children, className = '' }: MainLayoutProps) {
   return (
     <>
-      {/* Header (contains logo and navigation) */}
-      <header>
+      {/* Header - Semantic wrapper for navigation */}
+      <header role="banner">
         <NavBar />
       </header>
 
