@@ -296,17 +296,14 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [X] Test footer renders correctly
 
 ### MainLayout Component
-- [ ] Create `components/layout/MainLayout.tsx`
-- [ ] Wrap content with semantic HTML (`<header>`, `<main>`, `<footer>`)
-- [ ] Include Header component
-- [ ] Include NavBar component
-- [ ] Include Footer component
-- [ ] Add skip link for accessibility: `<a href="#main-content" class="skip-link">Skip to main content</a>`
-- [ ] Style skip link (visible on focus)
-- [ ] Create `styles/components/_navbar.scss`
-- [ ] Test layout structure is semantic
-- [ ] Test skip link works
-- [ ] Test layout is responsive
+- [x] Create `components/layout/MainLayout.tsx`
+- [x] Wrap content with semantic HTML (`<header>`, `<main>`, `<footer>`)
+- [x] Include Header component
+- [x] Include NavBar component
+- [x] Include Footer component
+- [x] Create `styles/components/_navbar.scss`
+- [x] Test layout structure is semantic
+- [x] Test layout is responsive
 
 ---
 

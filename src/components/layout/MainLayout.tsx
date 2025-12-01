@@ -36,7 +36,7 @@ export interface MainLayoutProps {
  * - Header (semantic wrapper for navigation)
  *   - NavBar component (logo and navigation with active state)
  * - Main content area
- * - Footer component (to be added)
+ * - Footer component (social links and contact information)
  */
 export default function MainLayout({ children, className = '' }: MainLayoutProps) {
   return (
