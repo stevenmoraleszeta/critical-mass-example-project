@@ -281,6 +281,17 @@
     outline: none;
     border: none;
     
+    // Focus-visible: borde rojo del mismo tamaño que el background
+    &:focus-visible {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 0;
+      border-radius: var(--radius-md);
+    }
+    
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+    
     // Opción seleccionada: background amarillo (por defecto)
     &[aria-selected="true"] {
       background-color: var(--color-accent);
@@ -288,9 +299,8 @@
     }
     
     // Hover: azul claro como en el navbar, SIN borde ni outline
-    // El hover siempre debe quitar cualquier outline/borde completamente
-    // El hover prevalece sobre el amarillo de la opción seleccionada
-    &:hover {
+    // El hover NO se aplica a la opción seleccionada (mantiene el amarillo)
+    &:hover:not([aria-selected="true"]) {
       background-color: var(--color-primary-rgba-5) !important;
       color: var(--color-primary);
       outline: none !important;
@@ -300,7 +310,7 @@
     }
     
     // Focus con teclado: azul claro (prevalece sobre amarillo si está seleccionado)
-    &[data-focused="true"] {
+    &[data-focused="true"]:not([aria-selected="true"]) {
       background-color: var(--color-primary-rgba-5) !important;
       color: var(--color-primary);
     }
