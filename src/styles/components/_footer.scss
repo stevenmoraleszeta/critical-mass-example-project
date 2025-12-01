@@ -1,0 +1,250 @@
+// ============================================================================
+// Footer Component Styles
+// Following BEM methodology and Critical Mass requirements
+// Mobile-first approach with responsive breakpoints
+// ============================================================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.footer {
+  width: 100%;
+  background-color: var(--color-bg-light);
+  border-top: var(--border-width-thin) solid var(--color-primary);
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  margin-top: var(--space-2xl);
+  @include shadow-sm;
+
+  &__container {
+    @include container(var(--container-max-width), var(--space-md));
+    @include flexbox(column, center, center, nowrap, var(--space-lg));
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__content {
+    @include flexbox(column, center, center, nowrap, var(--space-xl));
+    width: 100%;
+
+    @include breakpoint-md {
+      @include flexbox(row, center, center, nowrap, var(--space-2xl));
+    }
+
+    @include breakpoint-lg {
+      gap: var(--space-3xl);
+    }
+  }
+
+  // Social Links Section
+  &__social {
+    width: 100%;
+    @include flexbox(column, center, center, nowrap, 0);
+
+    @include breakpoint-md {
+      width: auto;
+      flex: 1;
+    }
+  }
+
+  &__section-title {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+    line-height: var(--lh-tight);
+    text-align: center;
+
+    @include breakpoint-md {
+      font-size: var(--fs-xl);
+      margin-bottom: var(--space-lg);
+    }
+  }
+
+  &__social-list {
+    @include flexbox(column, center, center, nowrap, var(--space-sm));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include breakpoint-md {
+      @include flexbox(row, center, center, wrap, var(--space-md));
+    }
+  }
+
+  &__social-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__social-link {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    border-radius: var(--radius-sm);
+    @include transition-base(all);
+    outline: none;
+    position: relative;
+
+    @include breakpoint-md {
+      padding: var(--space-sm) var(--space-md);
+      font-size: var(--fs-base);
+    }
+
+    &:hover {
+      color: var(--color-primary);
+      background-color: var(--color-primary-rgba-5);
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
+      background-color: var(--color-accent-rgba-10);
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    // External link indicator (optional visual cue)
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: var(--space-xs);
+      opacity: 0;
+      @include transition-base(all);
+    }
+  }
+
+  // Contact Section
+  &__contact {
+    width: 100%;
+    @include flexbox(column, center, center, nowrap, 0);
+
+    @include breakpoint-md {
+      width: auto;
+      flex: 1;
+    }
+  }
+
+  &__contact-list {
+    @include flexbox(column, center, center, nowrap, var(--space-sm));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include breakpoint-md {
+      gap: var(--space-md);
+    }
+  }
+
+  &__contact-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__contact-link {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    border-radius: var(--radius-sm);
+    @include transition-base(all);
+    outline: none;
+    word-break: break-word;
+
+    @include breakpoint-md {
+      padding: var(--space-sm) var(--space-md);
+      font-size: var(--fs-base);
+      word-break: normal;
+    }
+
+    &:hover {
+      color: var(--color-primary);
+      background-color: var(--color-primary-rgba-5);
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
+      background-color: var(--color-accent-rgba-10);
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  // Copyright Section
+  &__copyright {
+    @include flexbox(column, center, center, nowrap, var(--space-sm));
+    width: 100%;
+    padding-top: var(--space-lg);
+    border-top: var(--border-width-thin) solid var(--color-primary);
+    text-align: center;
+
+    @include breakpoint-md {
+      @include flexbox(row, center, center, nowrap, var(--space-md));
+      text-align: left;
+    }
+  }
+
+  &__copyright-text {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: 0;
+
+    @include breakpoint-md {
+      font-size: var(--fs-base);
+    }
+  }
+
+  &__copyright-note {
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-normal);
+    color: var(--color-text-muted);
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+
+    @include breakpoint-md {
+      font-size: var(--fs-sm);
+    }
+  }
+}
+
+// Reduced motion support (accessibility)
+@media (prefers-reduced-motion: reduce) {
+  .footer {
+    &__social-link,
+    &__contact-link {
+      @include transition-base(none);
+      
+      &:hover {
+        transform: none;
+      }
+    }
+  }
+}
+

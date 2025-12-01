@@ -279,21 +279,21 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test header renders correctly
 
 ### NavBar Component
-- [ ] Create `components/layout/NavBar.tsx`
-- [ ] Add navigation links (/, /components, /content, /about)
-- [ ] Add active state indication
-- [ ] Make navigation keyboard accessible
-- [ ] Style navbar component
-- [ ] Make navbar responsive (mobile menu if needed)
-- [ ] Test navigation works correctly
+- [X] Create `components/layout/NavBar.tsx`
+- [X] Add navigation links (/, /components, /content, /about)
+- [X] Add active state indication
+- [X] Make navigation keyboard accessible
+- [X] Style navbar component
+- [X] Make navbar responsive (mobile menu if needed)
+- [X] Test navigation works correctly
 
 ### Footer Component
-- [ ] Create `components/layout/Footer.tsx`
-- [ ] Add footer content
-- [ ] Add links (if any)
-- [ ] Style footer component
-- [ ] Make footer responsive
-- [ ] Test footer renders correctly
+- [X] Create `components/layout/Footer.tsx`
+- [X] Add footer content
+- [X] Add links (if any)
+- [X] Style footer component
+- [X] Make footer responsive
+- [X] Test footer renders correctly
 
 ### MainLayout Component
 - [ ] Create `components/layout/MainLayout.tsx`

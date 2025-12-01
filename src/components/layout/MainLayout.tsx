@@ -2,6 +2,7 @@
 
 import React from 'react';
 import NavBar from './NavBar';
+import Footer from './Footer';
 
 /**
  * MainLayout Component
@@ -54,8 +55,8 @@ export default function MainLayout({ children, className = '' }: MainLayoutProps
         {children}
       </main>
 
-      {/* Footer - To be implemented */}
-      {/* <Footer /> */}
+      {/* Footer */}
+      <Footer />
     </>
   );
 }
