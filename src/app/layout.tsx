@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={robotoMono.variable}>
+    <html lang="en" className={robotoMono.variable}>
+      <body>
         {children}
       </body>
     </html>

@@ -12,6 +12,16 @@
 // Any global overrides or additional styles can go here
 // ============================================================================
 
+// Ensure font family is applied globally
+// Next.js font variable (--font-mono) is set on html element via layout.tsx
+// All elements inherit from html, ensuring Roboto Mono is used throughout
+// Using universal selector to ensure all elements inherit the font
+*,
+*::before,
+*::after {
+  font-family: inherit;
+}
+
 // Light theme for the app
 body {
   background-color: var(--color-white);
