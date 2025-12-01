@@ -3,24 +3,24 @@
 // Following Critical Mass requirements: SASS, Mobile-First, Design System
 // ============================================================================
 
-// Import font from Google Fonts (Inter - as mentioned in project-idea.md)
-// Note: Font should be imported in layout.tsx using next/font/google for optimization
-// This file assumes Inter is available via CSS variable or @import
-
 // ============================================================================
 // Font Family Variables
 // ============================================================================
 
+// PROJECT-WIDE: All text uses monospace fonts for code-like appearance
 // Font family uses Next.js font variable (--font-mono) set in layout.tsx
-// Using monospace font for code-like appearance
+// Using monospace font throughout the entire project for code-like appearance
 // Fallback to system monospace fonts for better performance
 $font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
 
 :root {
-  // Use Next.js monospace font variable with fallbacks
-  // Changed from sans-serif to monospace for code-like appearance
-  --font-family-sans: var(--font-mono), 'Roboto Mono', 'SF Mono', Monaco, 'Cascadia Code', Consolas, 'Courier New', monospace;
-  --font-family-mono: #{$font-family-mono};
+  // Primary font family - monospace for code-like appearance throughout project
+  // Note: --font-mono is set by Next.js font loader in layout.tsx
+  // Fallback chain ensures Roboto Mono is used even if Next.js variable is not available
+  --font-family-mono: 'Roboto Mono', 'SF Mono', Monaco, 'Cascadia Code', Consolas, 'Courier New', monospace;
+  
+  // Alias for backward compatibility - also uses monospace
+  --font-family-sans: var(--font-mono, var(--font-family-mono));
 }
 
 // ============================================================================
@@ -92,8 +92,13 @@ $line-height-loose: 2;
 // Following SMACSS base layer
 // ============================================================================
 
+// Apply font family to html element
+// Following SASS/LESS best practices: font definition in typography system, not in HTML
+// Next.js font variable (--font-mono) is set via className on html element in layout.tsx
+// This ensures the variable is available globally for all child elements
+// Fallback to SASS variable $font-family-mono ensures Roboto Mono is used throughout
 html {
-  font-family: var(--font-family-sans);
+  font-family: var(--font-mono, #{$font-family-mono});
   font-size: 16px; // Base font size for rem calculations
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -101,7 +106,7 @@ html {
 }
 
 body {
-  font-family: var(--font-family-sans);
+  font-family: inherit;
   font-size: var(--fs-base);
   font-weight: var(--fw-normal);
   line-height: var(--lh-normal);
@@ -110,7 +115,7 @@ body {
 
 // ============================================================================
 // Heading Styles
-// Following project-idea.md: Headings use sans-serif bold font
+// All headings use monospace font for code-like appearance
 // ============================================================================
 
 h1,
@@ -119,7 +124,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-sans);
+  // Typography - inherits monospace from body
   font-weight: var(--fw-bold);
   line-height: var(--lh-tight);
   color: var(--color-text-primary);
@@ -192,10 +197,11 @@ h6 {
 
 // ============================================================================
 // Body Text Styles
-// Following project-idea.md: Body uses sans-serif regular
+// All body text uses monospace font for code-like appearance
 // ============================================================================
 
 p {
+  // Typography - inherits monospace from body
   font-size: var(--fs-base);
   font-weight: var(--fw-normal);
   line-height: var(--lh-relaxed);
@@ -205,137 +211,6 @@ p {
   &:last-child {
     margin-bottom: 0;
   }
-}
-
-// ============================================================================
-// Text Utility Classes
-// Following SMACSS utilities and BEM methodology
-// ============================================================================
-
-// Font Size Utilities
-.text-xs {
-  font-size: var(--fs-xs);
-}
-
-.text-sm {
-  font-size: var(--fs-sm);
-}
-
-.text-base {
-  font-size: var(--fs-base);
-}
-
-.text-lg {
-  font-size: var(--fs-lg);
-}
-
-.text-xl {
-  font-size: var(--fs-xl);
-}
-
-.text-2xl {
-  font-size: var(--fs-2xl);
-}
-
-.text-3xl {
-  font-size: var(--fs-3xl);
-}
-
-.text-4xl {
-  font-size: var(--fs-4xl);
-}
-
-.text-5xl {
-  font-size: var(--fs-5xl);
-}
-
-// Font Weight Utilities
-.font-light {
-  font-weight: var(--fw-light);
-}
-
-.font-normal {
-  font-weight: var(--fw-normal);
-}
-
-.font-medium {
-  font-weight: var(--fw-medium);
-}
-
-.font-semibold {
-  font-weight: var(--fw-semibold);
-}
-
-.font-bold {
-  font-weight: var(--fw-bold);
-}
-
-.font-extrabold {
-  font-weight: var(--fw-extrabold);
-}
-
-// Line Height Utilities
-.leading-tight {
-  line-height: var(--lh-tight);
-}
-
-.leading-snug {
-  line-height: var(--lh-snug);
-}
-
-.leading-normal {
-  line-height: var(--lh-normal);
-}
-
-.leading-relaxed {
-  line-height: var(--lh-relaxed);
-}
-
-.leading-loose {
-  line-height: var(--lh-loose);
-}
-
-// Text Color Utilities
-.text-primary {
-  color: var(--color-text-primary);
-}
-
-.text-secondary {
-  color: var(--color-text-secondary);
-}
-
-.text-muted {
-  color: var(--color-text-muted);
-}
-
-.text-accent {
-  color: var(--color-accent);
-}
-
-// Text Alignment Utilities
-.text-left {
-  text-align: left;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
-
-// Text Transform Utilities
-.uppercase {
-  text-transform: uppercase;
-}
-
-.lowercase {
-  text-transform: lowercase;
-}
-
-.capitalize {
-  text-transform: capitalize;
 }
 
 // ============================================================================
@@ -371,7 +246,7 @@ small {
 }
 
 code {
-  font-family: var(--font-family-mono);
+  font-family: inherit;
   font-size: 0.875em;
   background-color: var(--color-white);
   color: var(--color-text-primary);
@@ -380,7 +255,7 @@ code {
 }
 
 pre {
-  font-family: var(--font-family-mono);
+  font-family: inherit;
   font-size: var(--fs-sm);
   line-height: var(--lh-relaxed);
   background-color: var(--color-white);

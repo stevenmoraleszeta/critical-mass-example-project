@@ -21,15 +21,14 @@
   gap: var(--space-sm);
   padding: var(--space-md);
   background-color: var(--color-white);
-  border: 1px solid var(--color-primary); // Blue border (default)
+  border: var(--border-width-thin) solid var(--color-primary); // Blue border (default)
   border-radius: var(--radius-md);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   min-width: 300px;
   max-width: 400px;
   
-  // Typography
-  font-family: var(--font-family-sans);
+  // Typography - inherits monospace from body
   font-size: var(--fs-base);
   font-weight: var(--fw-normal);
   line-height: var(--lh-normal);
@@ -104,10 +103,10 @@
       color: var(--color-primary);
     }
     
-    // Always red focus for better visibility (20% thinner)
+    // Always red focus for better visibility (matching navbar)
     &:focus-visible {
-      outline: 1.6px solid var(--color-secondary); // Red outline - always visible, 20% thinner
-      outline-offset: 2px;
+      outline: 3px solid var(--color-secondary); // Red outline - matching navbar
+      outline-offset: 4px;
     }
     
     &:focus:not(:focus-visible) {

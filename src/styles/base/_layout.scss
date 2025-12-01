@@ -6,7 +6,7 @@
 // ============================================================================
 
 // Import mixins to use breakpoints and other utilities
-// Note: Assumes _mixins.scss is imported before this file
+@use 'mixins' as *;
 
 // ============================================================================
 // Container Utility
@@ -15,19 +15,19 @@
 
 .container {
   width: 100%;
-  max-width: 1280px; // Standard container max-width
+  max-width: var(--container-max-width);
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--space-md);
   padding-right: var(--space-md);
 
   // Responsive padding (mobile-first)
-  @media (min-width: 640px) {
+  @include breakpoint-sm {
     padding-left: var(--space-lg);
     padding-right: var(--space-lg);
   }
 
-  @media (min-width: 1024px) {
+  @include breakpoint-lg {
     padding-left: var(--space-xl);
     padding-right: var(--space-xl);
   }
@@ -35,23 +35,23 @@
 
 // Container variants
 .container--sm {
-  max-width: 640px;
+  max-width: var(--container-sm);
 }
 
 .container--md {
-  max-width: 768px;
+  max-width: var(--container-md);
 }
 
 .container--lg {
-  max-width: 1024px;
+  max-width: var(--container-lg);
 }
 
 .container--xl {
-  max-width: 1280px;
+  max-width: var(--container-xl);
 }
 
 .container--2xl {
-  max-width: 1536px;
+  max-width: var(--breakpoint-2xl);
 }
 
 .container--full {
@@ -69,7 +69,7 @@
   gap: var(--space-md);
 
   // Responsive gap
-  @media (min-width: 768px) {
+  @include breakpoint-md {
     gap: var(--space-lg);
   }
 }
@@ -82,7 +82,7 @@
 .grid--2 {
   grid-template-columns: 1fr; // Mobile: 1 column
 
-  @media (min-width: 640px) {
+  @include breakpoint-sm {
     grid-template-columns: repeat(2, 1fr); // Tablet: 2 columns
   }
 }
@@ -90,11 +90,11 @@
 .grid--3 {
   grid-template-columns: 1fr; // Mobile: 1 column
 
-  @media (min-width: 640px) {
+  @include breakpoint-sm {
     grid-template-columns: repeat(2, 1fr); // Tablet: 2 columns
   }
 
-  @media (min-width: 1024px) {
+  @include breakpoint-lg {
     grid-template-columns: repeat(3, 1fr); // Desktop: 3 columns
   }
 }
@@ -102,11 +102,11 @@
 .grid--4 {
   grid-template-columns: 1fr; // Mobile: 1 column
 
-  @media (min-width: 640px) {
+  @include breakpoint-sm {
     grid-template-columns: repeat(2, 1fr); // Tablet: 2 columns
   }
 
-  @media (min-width: 1024px) {
+  @include breakpoint-lg {
     grid-template-columns: repeat(4, 1fr); // Desktop: 4 columns
   }
 }
@@ -138,19 +138,19 @@
 
 // Grid auto-fit (responsive columns)
 .grid--auto-fit {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-auto-min-width), 1fr));
   gap: var(--space-md);
 
-  @media (min-width: 768px) {
+  @include breakpoint-md {
     gap: var(--space-lg);
   }
 }
 
 .grid--auto-fill {
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid-auto-min-width), 1fr));
   gap: var(--space-md);
 
-  @media (min-width: 768px) {
+  @include breakpoint-md {
     gap: var(--space-lg);
   }
 }
@@ -758,5 +758,174 @@
   overflow: visible;
   clip: auto;
   white-space: normal;
+}
+
+// ============================================================================
+// Typography Utility Classes
+// Following SMACSS utilities layer and BEM methodology
+// These utilities should be in the layout/utilities layer, not base typography
+// ============================================================================
+
+// Font Size Utilities
+.text-xs {
+  font-size: var(--fs-xs);
+}
+
+.text-sm {
+  font-size: var(--fs-sm);
+}
+
+.text-base {
+  font-size: var(--fs-base);
+}
+
+.text-lg {
+  font-size: var(--fs-lg);
+}
+
+.text-xl {
+  font-size: var(--fs-xl);
+}
+
+.text-2xl {
+  font-size: var(--fs-2xl);
+}
+
+.text-3xl {
+  font-size: var(--fs-3xl);
+}
+
+.text-4xl {
+  font-size: var(--fs-4xl);
+}
+
+.text-5xl {
+  font-size: var(--fs-5xl);
+}
+
+// Font Weight Utilities
+.font-light {
+  font-weight: var(--fw-light);
+}
+
+.font-normal {
+  font-weight: var(--fw-normal);
+}
+
+.font-medium {
+  font-weight: var(--fw-medium);
+}
+
+.font-semibold {
+  font-weight: var(--fw-semibold);
+}
+
+.font-bold {
+  font-weight: var(--fw-bold);
+}
+
+.font-extrabold {
+  font-weight: var(--fw-extrabold);
+}
+
+// Line Height Utilities
+.leading-tight {
+  line-height: var(--lh-tight);
+}
+
+.leading-snug {
+  line-height: var(--lh-snug);
+}
+
+.leading-normal {
+  line-height: var(--lh-normal);
+}
+
+.leading-relaxed {
+  line-height: var(--lh-relaxed);
+}
+
+.leading-loose {
+  line-height: var(--lh-loose);
+}
+
+// Text Color Utilities
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+// Text Alignment Utilities
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// Text Transform Utilities
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+// ============================================================================
+// Main Content Layout
+// Following Critical Mass requirements: Responsive, Mobile-First
+// Padding-top to compensate for fixed navbar
+// ============================================================================
+
+main#main-content {
+  // Mobile-first: padding-top to compensate for fixed navbar
+  padding-top: var(--navbar-height-mobile);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  
+  // Desktop: use larger navbar height
+  @include breakpoint-md {
+    padding-top: var(--navbar-height-desktop);
+  }
+}
+
+// ============================================================================
+// Header Layout (for fixed navbar)
+// When navbar is fixed, header should not occupy space
+// ============================================================================
+
+header[role="banner"] {
+  // When header contains a fixed navbar, it should not occupy layout space
+  // The navbar itself is positioned fixed, so header is just a semantic wrapper
+  line-height: 0; // Prevent extra space from line-height
+  
+  // Ensure header doesn't create extra spacing
+  margin: 0;
+  padding: 0;
 }
 

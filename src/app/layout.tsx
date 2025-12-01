@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
-import "./globals.scss";
+import "../styles/main.scss";
 
 // Import Roboto Mono font (monospace) for code-like appearance
 // Using next/font/google for automatic optimization (Critical Mass performance requirement)
@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={robotoMono.variable}>
+    <html lang="en" className={robotoMono.variable}>
+      <body>
         {children}
       </body>
     </html>

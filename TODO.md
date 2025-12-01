@@ -297,45 +297,42 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 
 ### Header Component
 
-- [ ] Create `components/layout/Header.tsx`
-- [ ] Add logo (stylized "SM" or placeholder)
-- [ ] Add navigation structure
-- [ ] Style header component
-- [ ] Make header responsive
-- [ ] Test header renders correctly
+- [x] Create `components/layout/Header.tsx`
+- [x] Add logo (stylized "SM" or placeholder)
+- [x] Add navigation structure
+- [x] Style header component
+- [x] Make header responsive
+- [x] Test header renders correctly
 
 ### NavBar Component
 
-- [ ] Create `components/layout/NavBar.tsx`
-- [ ] Add navigation links (/, /components, /content, /about)
-- [ ] Add active state indication
-- [ ] Make navigation keyboard accessible
-- [ ] Style navbar component
-- [ ] Make navbar responsive (mobile menu if needed)
-- [ ] Test navigation works correctly
+- [X] Create `components/layout/NavBar.tsx`
+- [X] Add navigation links (/, /components, /content, /about)
+- [X] Add active state indication
+- [X] Make navigation keyboard accessible
+- [X] Style navbar component
+- [X] Make navbar responsive (mobile menu if needed)
+- [X] Test navigation works correctly
 
 ### Footer Component
 
-- [ ] Create `components/layout/Footer.tsx`
-- [ ] Add footer content
-- [ ] Add links (if any)
-- [ ] Style footer component
-- [ ] Make footer responsive
-- [ ] Test footer renders correctly
+- [X] Create `components/layout/Footer.tsx`
+- [X] Add footer content
+- [X] Add links (if any)
+- [X] Style footer component
+- [X] Make footer responsive
+- [X] Test footer renders correctly
 
 ### MainLayout Component
 
-- [ ] Create `components/layout/MainLayout.tsx`
-- [ ] Wrap content with semantic HTML (`<header>`, `<main>`, `<footer>`)
-- [ ] Include Header component
-- [ ] Include NavBar component
-- [ ] Include Footer component
-- [ ] Add skip link for accessibility: `<a href="#main-content" class="skip-link">Skip to main content</a>`
-- [ ] Style skip link (visible on focus)
-- [ ] Create `styles/components/_navbar.scss`
-- [ ] Test layout structure is semantic
-- [ ] Test skip link works
-- [ ] Test layout is responsive
+- [x] Create `components/layout/MainLayout.tsx`
+- [x] Wrap content with semantic HTML (`<header>`, `<main>`, `<footer>`)
+- [x] Include Header component
+- [x] Include NavBar component
+- [x] Include Footer component
+- [x] Create `styles/components/_navbar.scss`
+- [x] Test layout structure is semantic
+- [x] Test layout is responsive
 
 ---
 
@@ -470,7 +467,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 
 ## Phase 6: Components Page (`/components`)
 
-### Components Page Setup
+### Page Setup
 
 - [ ] Create `app/components/page.tsx`
 - [ ] Add page title: "UI Component Library"
@@ -508,7 +505,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
   - [ ] Show Toast component (if implemented)
   - [ ] Add usage notes
 
-### Components Page Styling
+### Styling
 
 - [ ] Create `styles/pages/_components-page.scss`
 - [ ] Style components page
@@ -648,6 +645,12 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Make page responsive
 - [ ] Ensure professional tone in styling
 - [ ] Test about page renders correctly
+
+### Navbar Search Icon
+
+- [ ] Implement search icon to navbar
+- [ ] Create functionality to navigate though pages content
+- [ ] Test funcitionality is correctly
 
 ---
 

@@ -34,7 +34,7 @@
   // Spinner circle (the rotating part)
   &__spinner-circle {
     display: block;
-    border: 3px solid var(--color-primary); // Blue border (default)
+    border: var(--border-width-thick) solid var(--color-primary); // Blue border (default)
     border-right-color: transparent;
     border-top-color: transparent;
     border-radius: 50%;

@@ -27,6 +27,7 @@ import Toggle from '../components/ui/Toggle';
 import Loader from '../components/feedback/Loader';
 import ErrorMessage from '../components/feedback/ErrorMessage';
 import Toast from '../components/feedback/Toast';
+import Footer from '../components/layout/Footer';
 
 describe('Component Rendering Tests', () => {
   // ============================================================================
@@ -467,6 +468,57 @@ describe('Component Rendering Tests', () => {
         <Toast message="Error toast" variant="error" onDismiss={() => {}} />
       );
       expect(screen.getByRole('alert')).toBeInTheDocument();
+    });
+  });
+
+  // ============================================================================
+  // Footer Component
+  // ============================================================================
+  
+  describe('Footer Component', () => {
+    it('should render without errors', () => {
+      const { container } = render(<Footer />);
+      expect(container).toBeTruthy();
+      expect(screen.getByRole('contentinfo')).toBeInTheDocument();
+    });
+
+    it('should follow BEM naming convention', () => {
+      render(<Footer />);
+      const footer = screen.getByRole('contentinfo');
+      expect(footer).toHaveClass('footer');
+    });
+
+    it('should have social links', () => {
+      render(<Footer />);
+      expect(screen.getByLabelText('Visit Steven Morales LinkedIn profile')).toBeInTheDocument();
+      expect(screen.getByLabelText('Visit Steven Morales GitHub profile')).toBeInTheDocument();
+      expect(screen.getByLabelText('Visit Steven Morales Instagram profile')).toBeInTheDocument();
+    });
+
+    it('should have contact links', () => {
+      render(<Footer />);
+      expect(screen.getByLabelText('Send email to fallasmoraless@gmail.com')).toBeInTheDocument();
+      expect(screen.getByLabelText('Contact via WhatsApp at +506 6130 4830')).toBeInTheDocument();
+    });
+
+    it('should have proper ARIA attributes', () => {
+      render(<Footer />);
+      const footer = screen.getByRole('contentinfo');
+      expect(footer).toHaveAttribute('aria-label', 'Site footer');
+      expect(screen.getByLabelText('Social media links')).toBeInTheDocument();
+      expect(screen.getByLabelText('Contact information')).toBeInTheDocument();
+    });
+
+    it('should be keyboard accessible', () => {
+      render(<Footer />);
+      const linkedInLink = screen.getByLabelText('Visit Steven Morales LinkedIn profile');
+      
+      linkedInLink.focus();
+      expect(linkedInLink).toHaveFocus();
+      
+      // Verify external links have proper attributes
+      expect(linkedInLink).toHaveAttribute('target', '_blank');
+      expect(linkedInLink).toHaveAttribute('rel', 'noopener noreferrer');
     });
   });
 });

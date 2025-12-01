@@ -1,0 +1,471 @@
+// ============================================================================
+// NavBar Component Styles
+// Following BEM methodology and Critical Mass requirements
+// Mobile-first approach with responsive breakpoints
+// ============================================================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.navbar {
+  width: 100%;
+  background-color: var(--color-bg-light);
+  border-bottom: var(--border-width-thin) solid var(--color-primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-fixed);
+  @include shadow-sm;
+  overflow: visible; // Allow active indicator line to show below navbar
+
+  &__container {
+    @include container(var(--container-max-width), var(--space-md));
+    @include flexbox(row, center, center, nowrap, 0);
+    position: relative;
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
+    min-height: 48px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakpoint-md {
+      padding-top: var(--space-sm);
+      padding-bottom: var(--space-sm);
+      min-height: 56px;
+      gap: var(--space-lg);
+    }
+
+    // Center logo and nav items
+    > * {
+      flex: 0 0 auto;
+    }
+  }
+
+  // Logo Section
+  &__logo {
+    @include flex;
+    @include align-center;
+    @include justify-center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    @include breakpoint-md {
+      position: static;
+      transform: none;
+      z-index: auto;
+    }
+  }
+
+  &__logo-link {
+    @include flex;
+    @include align-center;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    @include transition-base(all);
+    outline: none;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+  }
+
+  &__logo-initials {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--letter-spacing-tight);
+    color: var(--color-primary);
+    line-height: 1;
+    display: inline-flex;
+    @include align-center;
+    @include justify-center;
+    padding: var(--space-xs) var(--space-md);
+    background-color: var(--color-accent);
+    border: var(--border-width-thin) solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    @include transition-base(all);
+
+    @include breakpoint-md {
+      font-size: var(--fs-xl);
+      padding: var(--space-xs) var(--space-md);
+    }
+
+    .navbar__logo-link:hover & {
+      color: var(--color-accent);
+      background-color: var(--color-primary);
+      border-color: var(--color-accent);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 4px 12px var(--color-primary-rgba-10);
+    }
+
+    .navbar__logo-link:focus-visible & {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 4px;
+    }
+
+    .navbar__logo-link:active & {
+      transform: scale(0.98);
+    }
+  }
+
+  // Mobile Menu Button
+  &__menu-button {
+    @include flex;
+    @include align-center;
+    @include justify-center;
+    padding: var(--space-xs) var(--space-sm);
+    background-color: transparent;
+    border: var(--border-width-thin) solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-primary);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    cursor: pointer;
+    @include transition-base(all);
+    outline: none;
+    position: absolute;
+    right: var(--space-md);
+    z-index: 2;
+
+    @include breakpoint-md {
+      display: none;
+    }
+
+    &:hover {
+      background-color: var(--color-primary-rgba-5);
+      border-color: var(--color-primary);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  &__menu-icon {
+    @include flex;
+    @include flex-column;
+    @include justify-center;
+    gap: 4px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__menu-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    @include transition-base(all);
+    transform-origin: center;
+
+    &:nth-child(1) {
+      transform: translateY(0);
+    }
+
+    &:nth-child(2) {
+      opacity: 1;
+    }
+
+    &:nth-child(3) {
+      transform: translateY(0);
+    }
+
+    // Animated state when menu is open
+    &--open {
+      &:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+    }
+  }
+
+  // Navigation List
+  &__list {
+    @include flex;
+    @include align-center;
+    @include justify-center;
+    @include flex-wrap;
+    gap: var(--space-xs);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    @include breakpoint-md {
+      width: auto;
+    }
+
+    // Mobile: Hidden by default, shown when menu is open
+    @include breakpoint-max-md {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      background-color: var(--color-bg-light);
+      border: var(--border-width-thin) solid var(--color-primary);
+      border-top: none;
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      padding: var(--space-md) var(--space-sm);
+      margin-top: var(--space-xs);
+      gap: var(--space-sm); // Increased gap between items in mobile
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      @include transition-base(all);
+      z-index: var(--z-index-dropdown);
+
+      &--open {
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+        padding: var(--space-md);
+        gap: var(--space-md); // Even more space when menu is open
+      }
+    }
+
+    // Desktop: Always visible, horizontal layout, centered
+    @include breakpoint-md {
+      position: static;
+      flex-direction: row;
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      margin: 0;
+      max-height: none;
+      opacity: 1;
+      visibility: visible;
+      gap: var(--space-sm);
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include breakpoint-lg {
+      gap: var(--space-md);
+    }
+  }
+
+  &__item {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+
+    // Mobile: Add more vertical spacing between items
+    @include breakpoint-max-md {
+      margin-bottom: var(--space-xs);
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include breakpoint-md {
+      width: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: var(--space-xs) var(--space-sm);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    border-radius: var(--radius-sm);
+    text-align: center;
+    @include transition-base(all);
+    outline: none;
+    overflow: visible; // Allow active indicator line to show outside link bounds
+
+    // Mobile: Full width with more vertical padding
+    @include breakpoint-max-md {
+      width: 100%;
+      padding: var(--space-sm) var(--space-md);
+    }
+
+    // Desktop: Auto width
+    @include breakpoint-md {
+      text-align: left;
+      padding: var(--space-xs) var(--space-md);
+      font-size: var(--fs-base);
+    }
+
+    &:hover {
+      color: var(--color-primary);
+      background-color: var(--color-primary-rgba-5);
+      
+      @include breakpoint-max-md {
+        padding: var(--space-sm) var(--space-md);
+      }
+      
+      @include breakpoint-md {
+        padding: var(--space-sm) var(--space-lg);
+      }
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    // Active state
+    &--active {
+      color: var(--color-primary);
+      font-weight: var(--fw-bold);
+      background-color: var(--color-primary-rgba-10);
+      position: relative;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 255, 0.1);
+      padding: var(--space-sm) var(--space-md);
+      
+      @include breakpoint-max-md {
+        padding: var(--space-sm) var(--space-md);
+      }
+      
+      @include breakpoint-md {
+        padding: var(--space-sm) var(--space-lg);
+      }
+
+      // Active indicator line (desktop only) - positioned below the navbar, aligned with link
+      @include breakpoint-md {
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: calc(-1 * var(--space-sm) - var(--border-width-thin));
+          left: 0;
+          right: 0;
+          height: 3px;
+          background-color: var(--color-accent);
+          border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+          animation: slideIn 0.3s ease-out;
+          z-index: calc(var(--z-index-fixed) + 1);
+        }
+      }
+
+      // Mobile: underline effect - positioned below the link text
+      @include breakpoint-max-md {
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: calc(-1 * var(--space-xs));
+          left: var(--space-md);
+          right: var(--space-md);
+          height: 2px;
+          background-color: var(--color-accent);
+          border-radius: var(--radius-sm);
+        }
+      }
+    }
+
+    // Active state with aria-current
+    &[aria-current="page"] {
+      color: var(--color-primary);
+      font-weight: var(--fw-bold);
+      background-color: var(--color-primary-rgba-10);
+      position: relative;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 255, 0.1);
+      padding: var(--space-sm) var(--space-md);
+      
+      @include breakpoint-max-md {
+        padding: var(--space-sm) var(--space-md);
+      }
+      
+      @include breakpoint-md {
+        padding: var(--space-sm) var(--space-lg);
+      }
+
+      @include breakpoint-md {
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: calc(-1 * var(--space-sm) - var(--border-width-thin));
+          left: 0;
+          right: 0;
+          height: 3px;
+          background-color: var(--color-accent);
+          border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+          animation: slideIn 0.3s ease-out;
+          z-index: calc(var(--z-index-fixed) + 1);
+        }
+      }
+
+      // Mobile: underline effect - positioned below the link text
+      @include breakpoint-max-md {
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: calc(-1 * var(--space-xs));
+          left: var(--space-md);
+          right: var(--space-md);
+          height: 2px;
+          background-color: var(--color-accent);
+          border-radius: var(--radius-sm);
+        }
+      }
+    }
+  }
+}
+
+// Animation for active link indicator
+@keyframes slideIn {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+// Reduced motion support (accessibility)
+@media (prefers-reduced-motion: reduce) {
+  .navbar {
+    &__logo-initials {
+      @include transition-base(none);
+    }
+  }
+}
+

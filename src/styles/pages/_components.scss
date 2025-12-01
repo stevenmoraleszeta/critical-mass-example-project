@@ -1,0 +1,561 @@
+// ============================================================================
+// Components Showcase Page Styles
+// Following SMACSS pages layer and BEM methodology
+// Styles for /components page (component showcase)
+// ============================================================================
+
+// Import base dependencies
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Page Container
+// ============================================================================
+
+.components-page {
+  // CSS Custom Properties (scoped to this page)
+  --background: var(--color-white);
+  --foreground: var(--color-white);
+  --text-primary: var(--color-primary);
+  --text-secondary: var(--color-primary);
+  --button-primary-hover: var(--color-button-primary-hover);
+  --button-secondary-hover: var(--color-button-secondary-hover);
+  --button-secondary-border: var(--color-button-secondary-border);
+
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  color: var(--text-primary);
+  width: 100%;
+}
+
+.components-page__main {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  max-width: var(--container-xl);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--foreground);
+  padding: 0;
+  color: var(--text-primary);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ============================================================================
+// Content Container
+// ============================================================================
+
+.components-page__content {
+  padding: var(--space-xl);
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  width: 100%;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+// ============================================================================
+// Typography Styles
+// ============================================================================
+
+.components-page__content {
+  h1 {
+    margin-bottom: var(--space-xl);
+    color: var(--text-primary);
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-bold);
+    text-align: center;
+    width: 100%;
+  }
+
+  h2 {
+    margin-bottom: var(--space-md);
+    color: var(--text-primary);
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    text-align: center;
+    width: 100%;
+  }
+
+  h3 {
+    margin-bottom: var(--space-sm);
+    font-size: var(--fs-base);
+    color: var(--text-primary);
+    font-weight: var(--fw-semibold);
+    text-align: center;
+    width: 100%;
+  }
+
+  section {
+    margin-bottom: var(--space-2xl);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+// ============================================================================
+// Button Groups
+// ============================================================================
+
+.components-page__button-group {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-md);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &--vertical {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+}
+
+// ============================================================================
+// Card Groups
+// ============================================================================
+
+.components-page__card-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-md);
+  width: 100%;
+  justify-items: center;
+
+  @include breakpoint-md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint-lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// ============================================================================
+// Tag Groups
+// ============================================================================
+
+.components-page__tag-group {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-md);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &--vertical {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+}
+
+.components-page__tag-examples {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.components-page__tag-example {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-75);
+}
+
+// ============================================================================
+// Badge Groups
+// ============================================================================
+
+.components-page__badge-group {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-md);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &--align-center {
+    align-items: center;
+  }
+}
+
+.components-page__badge-examples {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.components-page__badge-example {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-75);
+}
+
+// ============================================================================
+// Loader Groups
+// ============================================================================
+
+.components-page__loader-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  align-items: center;
+  margin-bottom: var(--space-md);
+
+  @include breakpoint-md {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2xl);
+  }
+}
+
+.components-page__loader-examples {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.components-page__loader-example {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border: var(--border-width-thin) solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+}
+
+// ============================================================================
+// Error Message Groups
+// ============================================================================
+
+.components-page__error-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-md);
+
+  @include breakpoint-md {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xl);
+  }
+}
+
+.components-page__error-examples {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.components-page__error-example {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border: var(--border-width-thin) solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+}
+
+// ============================================================================
+// Input Groups
+// ============================================================================
+
+.components-page__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-md);
+  max-width: var(--container-md);
+  width: 100%;
+  align-items: center;
+
+  @include breakpoint-md {
+    max-width: var(--container-lg);
+  }
+}
+
+// ============================================================================
+// Section Title
+// ============================================================================
+
+.components-page__section-title {
+  margin-top: var(--space-3xl);
+  margin-bottom: var(--space-xl);
+}
+
+// ============================================================================
+// Card Footer Styles
+// ============================================================================
+
+.components-page__card-footer-actions {
+  display: flex;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.components-page__card-footer-meta {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.components-page__card-footer-meta__text {
+  font-size: var(--fs-sm);
+  color: var(--color-primary);
+}
+
+// ============================================================================
+// Card Custom Content
+// ============================================================================
+
+.components-page__card-custom-content__title {
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
+
+  &--primary {
+    color: var(--color-primary);
+  }
+}
+
+.components-page__card-custom-content__list {
+  margin-top: var(--space-md);
+  padding-left: var(--space-xl);
+}
+
+.components-page__card-custom-content__tip {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  background-color: var(--color-accent);
+  border: var(--border-width-thin) solid var(--color-primary);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+}
+
+.components-page__card-additional-text {
+  margin-top: var(--space-sm);
+  color: var(--color-primary);
+}
+
+// ============================================================================
+// Intro Section
+// ============================================================================
+
+.components-page__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-lg);
+  width: 100%;
+
+  h1 {
+    max-width: var(--container-xs);
+    font-size: var(--fs-40);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-48);
+    letter-spacing: var(--letter-spacing-tight);
+    text-wrap: balance;
+    color: var(--text-primary);
+  }
+
+  p {
+    max-width: var(--container-sm);
+    font-size: var(--fs-lg);
+    line-height: var(--lh-32);
+    text-wrap: balance;
+    color: var(--text-secondary);
+  }
+
+  a {
+    font-weight: var(--fw-medium);
+    color: var(--text-primary);
+  }
+}
+
+// ============================================================================
+// CTAs Section
+// ============================================================================
+
+.components-page__ctas {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: var(--container-sm);
+  gap: var(--space-md);
+  font-size: var(--fs-sm);
+  justify-content: center;
+  align-items: center;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--lh-40);
+    padding: 0 var(--space-md);
+    border-radius: var(--radius-full);
+    border: 1px solid transparent;
+    transition: var(--transition-base);
+    cursor: pointer;
+    width: fit-content;
+    font-weight: var(--fw-medium);
+
+    &.primary {
+      background: var(--text-primary);
+      color: var(--background);
+      gap: var(--space-sm);
+    }
+
+    &.secondary {
+      border-color: var(--button-secondary-border);
+    }
+  }
+
+  // Enable hover only on non-touch devices
+  @media (hover: hover) and (pointer: fine) {
+    a.primary:hover {
+      background: var(--button-primary-hover);
+      border-color: transparent;
+    }
+
+    a.secondary:hover {
+      background: var(--button-secondary-hover);
+      border-color: transparent;
+    }
+  }
+}
+
+// ============================================================================
+// Toast Groups
+// ============================================================================
+
+.components-page__toast-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @include breakpoint-md {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+}
+
+// ============================================================================
+// Toast Trigger Button
+// ============================================================================
+
+.components-page__toast-trigger {
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: var(--border-width-thin) solid var(--color-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  outline: none;
+
+  &:hover {
+    background-color: var(--color-primary-rgba-90);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus-visible {
+    outline: var(--outline-width-focus) solid var(--color-secondary);
+    outline-offset: var(--outline-offset-focus);
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &--yellow {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    border: var(--border-width-thin) solid var(--color-primary);
+
+    &:hover {
+      background-color: var(--color-accent-rgba-90);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// ============================================================================
+// Toast Examples
+// ============================================================================
+
+.components-page__toast-examples {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.components-page__toast-example {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border: var(--border-width-thin) solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+}
+
+// ============================================================================
+// Responsive Styles (Mobile-First)
+// ============================================================================
+
+@include breakpoint-max-sm {
+  .components-page__main {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .components-page__intro {
+    gap: var(--space-md);
+
+    h1 {
+      font-size: var(--fs-32);
+      line-height: var(--lh-40);
+      letter-spacing: var(--letter-spacing-tighter);
+    }
+  }
+}
+

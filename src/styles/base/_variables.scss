@@ -150,3 +150,244 @@ $transition-slow: 300ms ease-in-out;
   --transition-slow: #{$transition-slow};
 }
 
+// ============================================================================
+// Container Widths
+// ============================================================================
+
+$container-xs: 20rem;    // 320px
+$container-sm: 27.5rem;  // 440px
+$container-md: 37.5rem;  // 600px
+$container-lg: 50rem;    // 800px
+$container-xl: 75rem;   // 1200px
+
+:root {
+  --container-xs: #{$container-xs};
+  --container-sm: #{$container-sm};
+  --container-md: #{$container-md};
+  --container-lg: #{$container-lg};
+  --container-xl: #{$container-xl};
+}
+
+// ============================================================================
+// Additional Spacing
+// ============================================================================
+
+$space-0-75: 0.75rem;  // 12px - between sm and md
+
+:root {
+  --space-0-75: #{$space-0-75};
+}
+
+// ============================================================================
+// Button UI Colors (Hover States)
+// ============================================================================
+
+// Button hover colors using grayscale values
+// These are UI-specific colors for interactive states
+$color-button-primary-hover: #383838;      // Dark gray for primary button hover
+$color-button-secondary-hover: #f2f2f2;   // Light gray for secondary button hover
+$color-button-secondary-border: #ebebeb;  // Light gray for secondary button border
+
+:root {
+  --color-button-primary-hover: #{$color-button-primary-hover};
+  --color-button-secondary-hover: #{$color-button-secondary-hover};
+  --color-button-secondary-border: #{$color-button-secondary-border};
+}
+
+// ============================================================================
+// Additional Typography Values
+// ============================================================================
+
+// Letter spacing
+$letter-spacing-tight: -0.15rem;   // -2.4px
+$letter-spacing-tighter: -0.12rem; // -1.92px
+
+:root {
+  --letter-spacing-tight: #{$letter-spacing-tight};
+  --letter-spacing-tighter: #{$letter-spacing-tighter};
+}
+
+// Additional line heights for specific use cases
+$line-height-48: 3rem;   // 48px
+$line-height-40: 2.5rem; // 40px
+$line-height-32: 2rem;   // 32px
+
+:root {
+  --lh-48: #{$line-height-48};
+  --lh-40: #{$line-height-40};
+  --lh-32: #{$line-height-32};
+}
+
+// Additional font sizes for specific use cases
+$font-size-40: 2.5rem;  // 40px
+$font-size-32: 2rem;    // 32px
+
+:root {
+  --fs-40: #{$font-size-40};
+  --fs-32: #{$font-size-32};
+}
+
+// ============================================================================
+// RGBA Color Utilities
+// ============================================================================
+
+// RGBA values for primary colors with opacity
+// Used for hover states and overlays
+$color-primary-rgba-90: rgba(0, 0, 255, 0.9);   // Blue at 90% opacity
+$color-accent-rgba-90: rgba(255, 255, 0, 0.9); // Yellow at 90% opacity
+
+:root {
+  --color-primary-rgba-90: #{$color-primary-rgba-90};
+  --color-accent-rgba-90: #{$color-accent-rgba-90};
+}
+
+// ============================================================================
+// Outline/Focus Styles
+// ============================================================================
+
+$outline-width-focus: 1.6px;  // Focus outline width (20% thinner than standard 2px)
+$outline-offset-focus: 2px;    // Focus outline offset
+
+:root {
+  --outline-width-focus: #{$outline-width-focus};
+  --outline-offset-focus: #{$outline-offset-focus};
+}
+
+// ============================================================================
+// Border Widths
+// ============================================================================
+
+$border-width-thin: 1px;
+$border-width-base: 2px;
+$border-width-thick: 3px;
+
+:root {
+  --border-width-thin: #{$border-width-thin};
+  --border-width-base: #{$border-width-base};
+  --border-width-thick: #{$border-width-thick};
+}
+
+// ============================================================================
+// Z-Index Layers
+// ============================================================================
+
+$z-index-base: 1;
+$z-index-dropdown: 100;
+$z-index-sticky: 200;
+$z-index-fixed: 300;
+$z-index-modal-backdrop: 400;
+$z-index-modal: 500;
+$z-index-popover: 600;
+$z-index-tooltip: 700;
+
+:root {
+  --z-index-base: #{$z-index-base};
+  --z-index-dropdown: #{$z-index-dropdown};
+  --z-index-sticky: #{$z-index-sticky};
+  --z-index-fixed: #{$z-index-fixed};
+  --z-index-modal-backdrop: #{$z-index-modal-backdrop};
+  --z-index-modal: #{$z-index-modal};
+  --z-index-popover: #{$z-index-popover};
+  --z-index-tooltip: #{$z-index-tooltip};
+}
+
+// ============================================================================
+// Opacity Values
+// ============================================================================
+
+$opacity-5: 0.05;
+$opacity-10: 0.1;
+$opacity-20: 0.2;
+$opacity-30: 0.3;
+$opacity-50: 0.5;
+$opacity-70: 0.7;
+$opacity-90: 0.9;
+$opacity-100: 1;
+
+:root {
+  --opacity-5: #{$opacity-5};
+  --opacity-10: #{$opacity-10};
+  --opacity-20: #{$opacity-20};
+  --opacity-30: #{$opacity-30};
+  --opacity-50: #{$opacity-50};
+  --opacity-70: #{$opacity-70};
+  --opacity-90: #{$opacity-90};
+  --opacity-100: #{$opacity-100};
+}
+
+// ============================================================================
+// RGBA Color Utilities (Extended)
+// ============================================================================
+
+// RGBA values for primary colors with different opacities
+$color-primary-rgba-5: rgba(0, 0, 255, $opacity-5);   // Blue at 5% opacity
+$color-primary-rgba-10: rgba(0, 0, 255, $opacity-10); // Blue at 10% opacity
+$color-primary-rgba-90: rgba(0, 0, 255, $opacity-90); // Blue at 90% opacity
+$color-accent-rgba-10: rgba(255, 255, 0, $opacity-10); // Yellow at 10% opacity
+$color-accent-rgba-90: rgba(255, 255, 0, $opacity-90); // Yellow at 90% opacity
+
+:root {
+  --color-primary-rgba-5: #{$color-primary-rgba-5};
+  --color-primary-rgba-10: #{$color-primary-rgba-10};
+  --color-primary-rgba-90: #{$color-primary-rgba-90};
+  --color-accent-rgba-10: #{$color-accent-rgba-10};
+  --color-accent-rgba-90: #{$color-accent-rgba-90};
+}
+
+// ============================================================================
+// Container Max Widths
+// ============================================================================
+
+$container-max-width: 1280px; // Standard container max-width
+
+:root {
+  --container-max-width: #{$container-max-width};
+  --breakpoint-2xl: #{$breakpoint-2xl};
+}
+
+// ============================================================================
+// Grid Auto-fit/Fill Min Width
+// ============================================================================
+
+$grid-auto-min-width: 250px; // Minimum width for auto-fit/fill grids
+
+:root {
+  --grid-auto-min-width: #{$grid-auto-min-width};
+}
+
+
+// ============================================================================
+// Button Specific Dimensions
+// ============================================================================
+
+$button-min-height-sm: 2rem;      // 32px
+$button-min-height-sm-md: 2.25rem; // 36px
+$button-min-height-md: 2.5rem;    // 40px
+$button-min-height-md-lg: 2.75rem; // 44px
+$button-min-height-lg: 3rem;      // 48px
+$button-min-height-lg-xl: 3.25rem; // 52px
+
+:root {
+  --button-min-height-sm: #{$button-min-height-sm};
+  --button-min-height-sm-md: #{$button-min-height-sm-md};
+  --button-min-height-md: #{$button-min-height-md};
+  --button-min-height-md-lg: #{$button-min-height-md-lg};
+  --button-min-height-lg: #{$button-min-height-lg};
+  --button-min-height-lg-xl: #{$button-min-height-lg-xl};
+}
+
+// ============================================================================
+// Navbar Dimensions
+// ============================================================================
+
+// Navbar height including padding and border
+// Mobile: min-height 48px + padding 8px top/bottom + border 1px = ~57px
+// Desktop: min-height 56px + padding 8px top/bottom + border 1px = ~65px
+$navbar-height-mobile: 3.5625rem; // 57px
+$navbar-height-desktop: 4.0625rem; // 65px
+
+:root {
+  --navbar-height-mobile: #{$navbar-height-mobile};
+  --navbar-height-desktop: #{$navbar-height-desktop};
+}
+

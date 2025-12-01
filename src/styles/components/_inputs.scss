@@ -30,8 +30,7 @@
   display: block;
   width: 100%;
   
-  // Typography
-  font-family: var(--font-family-sans);
+  // Typography - inherits monospace from body
   font-size: var(--fs-base);
   font-weight: var(--fw-normal);
   line-height: var(--lh-normal);
@@ -39,7 +38,7 @@
   
   // Layout
   padding: var(--space-sm) var(--space-md);
-  border: 1px solid var(--color-primary); // Blue border
+  border: var(--border-width-thin) solid var(--color-primary); // Blue border
   border-radius: var(--radius-md);
   background-color: var(--color-white);
   
@@ -47,12 +46,12 @@
   @include transition-base(all);
   
   // Accessibility: Focus states
-  // Always red focus for better visibility (20% thinner)
+  // Always red focus for better visibility (matching navbar)
   outline: none;
   
   &:focus-visible {
-    outline: 1.6px solid var(--color-secondary); // Red outline - always visible, 20% thinner
-    outline-offset: 2px;
+    outline: 3px solid var(--color-secondary); // Red outline - matching navbar
+    outline-offset: 4px;
     border-color: var(--color-primary);
     @include shadow-md;
   }
@@ -154,9 +153,7 @@
   
   // Password input
   &[type="password"] {
-    // Password inputs can have specific styling if needed
-    // For now, using base styles
-    font-family: 'Courier New', monospace; // Use monospace for password fields
+    // Password inputs inherit monospace from body
     letter-spacing: 0.1em;
   }
   

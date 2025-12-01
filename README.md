@@ -4,7 +4,7 @@ A Next.js prototype project built to demonstrate front-end development skills, s
 
 ## Project Status
 
-🚧 **In Active Development** - Core foundation and UI components complete. Landing page and additional features in progress.
+🚧 **In Active Development** - Core foundation, UI components, and layout system complete. Landing page sections and content integration in progress.
 
 ### Current Progress
 
@@ -14,18 +14,20 @@ A Next.js prototype project built to demonstrate front-end development skills, s
 - Design system foundation (SCSS variables, typography, mixins, layout utilities)
 - Core UI components (Button, Card, Tag, Badge, Input, Select, Toggle)
 - Feedback components (Loader, ErrorMessage, Toast)
+- Layout components (MainLayout, NavBar, Footer)
 - Testing infrastructure (Jest + React Testing Library)
 - BEM methodology implementation
 - SMACSS architecture
-- Component showcase page
+- Component showcase page (`/components`)
+- Semantic HTML structure with proper ARIA landmarks
+- Responsive navigation with mobile menu
+- Fixed navbar with proper spacing
 
 ⏳ **In Progress:**
 
 - Landing page sections (Hero, Features, Specs, Use Cases, etc.)
-- Layout components (Header, NavBar, Footer, MainLayout)
 - Content page with API integration
-- Components documentation page
-- About page
+- About page content
 
 ## Tech Stack
 
@@ -44,9 +46,14 @@ A Next.js prototype project built to demonstrate front-end development skills, s
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx          # Root layout with font optimization
-│   │   ├── page.tsx            # Component showcase (temporary)
-│   │   ├── globals.scss        # Main SCSS entry point
-│   │   └── page.module.css     # Page-specific styles
+│   │   ├── page.tsx            # Landing page (/)
+│   │   ├── components/
+│   │   │   └── page.tsx        # Component showcase page (/components)
+│   │   ├── content/
+│   │   │   └── page.tsx        # Content page (/content)
+│   │   ├── about/
+│   │   │   └── page.tsx        # About page (/about)
+│   │   └── globals.scss        # Main SCSS entry point
 │   ├── components/
 │   │   ├── ui/                 # UI components
 │   │   │   ├── Button.tsx
@@ -60,8 +67,11 @@ A Next.js prototype project built to demonstrate front-end development skills, s
 │   │   │   ├── Loader.tsx
 │   │   │   ├── ErrorMessage.tsx
 │   │   │   └── Toast.tsx
-│   │   ├── layout/             # Layout components (to be created)
-│   │   ├── sections/           # Page sections (to be created)
+│   │   ├── layout/             # Layout components
+│   │   │   ├── MainLayout.tsx
+│   │   │   ├── NavBar.tsx
+│   │   │   └── Footer.tsx
+│   │   ├── sections/           # Page sections (in progress)
 │   │   └── content/            # Content components (to be created)
 │   ├── lib/
 │   │   ├── api/               # API clients (to be created)
@@ -83,8 +93,11 @@ A Next.js prototype project built to demonstrate front-end development skills, s
 │   │   │   ├── _toggles.scss
 │   │   │   ├── _loader.scss
 │   │   │   ├── _error-message.scss
-│   │   │   └── _toast.scss
-│   │   ├── pages/             # Page-specific styles (to be created)
+│   │   │   ├── _toast.scss
+│   │   │   ├── _navbar.scss
+│   │   │   └── _footer.scss
+│   │   ├── pages/             # Page-specific styles
+│   │   │   └── _components.scss
 │   │   └── main.scss          # Main SCSS import file
 │   ├── tests/                 # Test files
 │   │   ├── Button.test.tsx
@@ -246,6 +259,29 @@ All components are:
 - **ErrorMessage** - Error display with optional retry button
 - **Toast** - Toast notifications with variants and auto-dismiss
 
+### Layout Components
+
+- **MainLayout** - Main layout wrapper with semantic HTML structure (`<header>`, `<main>`, `<footer>`)
+- **NavBar** - Responsive navigation bar with:
+  - Mobile hamburger menu with smooth animations
+  - Active state indication with visual indicators
+  - Keyboard navigation support (Tab, Enter, Space, Escape)
+  - Focus management for mobile menu
+  - Fixed positioning with proper spacing compensation
+  - Logo with hover effects
+- **Footer** - Footer component with social links and contact information
+
+## Pages
+
+The application includes the following pages:
+
+- **`/`** - Landing page (in progress - will include Hero, Features, Specs, Use Cases, etc.)
+- **`/components`** - Component showcase page displaying all UI components with variants and states
+- **`/content`** - Content page (in progress - will integrate with JSON API)
+- **`/about`** - About page (in progress - project purpose and information)
+
+All pages use the `MainLayout` component for consistent structure and navigation.
+
 ## Testing
 
 The project includes comprehensive tests for:
@@ -262,16 +298,18 @@ See `TESTING.md` for detailed testing documentation.
 
 ## Accessibility
 
-The project follows WCAG accessibility guidelines:
+The project follows WCAG accessibility guidelines and Critical Mass requirements:
 
-- ✅ Semantic HTML (`<header>`, `<main>`, `<section>`, `<footer>`)
+- ✅ Semantic HTML (`<header>`, `<main>`, `<section>`, `<footer>`, `<nav>`)
 - ✅ Proper heading hierarchy (one `<h1>` per page)
-- ✅ ARIA labels and attributes
-- ✅ Keyboard navigation support
-- ✅ Visible focus states
-- ✅ Form labels and error associations
-- ✅ Alt text for images
-- ✅ Skip link for main content
+- ✅ ARIA labels and attributes (`role="banner"`, `role="main"`, `role="navigation"`, `role="contentinfo"`)
+- ✅ Keyboard navigation support (Tab, Enter, Space, Escape)
+- ✅ Visible focus states using `focus-visible` mixin
+- ✅ Form labels and error associations (`htmlFor`, `aria-describedby`, `aria-invalid`)
+- ✅ Alt text for images (descriptive for important images, empty for decorative)
+- ✅ Active state indication in navigation (`aria-current="page"`)
+- ✅ Mobile menu with proper focus management and keyboard shortcuts
+- ✅ Reduced motion support for animations
 
 ## Performance
 
@@ -309,12 +347,25 @@ See `TODO.md` for the complete development checklist and project phases.
 - Component styles with BEM methodology
 - Comprehensive testing
 
-#### Next Phase: Phase 4: Layout Components - ⏳ In Progress
+#### Phase 4: Layout Components - ✅ Complete
 
-- Header component
-- NavBar component
-- Footer component
-- MainLayout component
+- MainLayout component with semantic HTML structure
+- NavBar component with responsive mobile menu
+- Footer component with social links and contact info
+- All layout components styled with BEM methodology
+- Proper ARIA landmarks and accessibility features
+- Fixed navbar with responsive spacing
+
+#### Next Phase: Phase 5: Landing Page Sections - ⏳ In Progress
+
+- Hero section
+- Features section
+- Specs section
+- Use Cases section
+- Performance section
+- Pricing section
+- Testimonials section
+- CTA section
 
 ## How This Maps to Critical Mass Job Requirements
 
