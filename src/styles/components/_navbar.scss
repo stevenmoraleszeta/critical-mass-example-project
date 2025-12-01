@@ -1,0 +1,254 @@
+// ============================================================================
+// NavBar Component Styles
+// Following BEM methodology and Critical Mass requirements
+// Mobile-first approach with responsive breakpoints
+// ============================================================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.navbar {
+  width: 100%;
+
+  &__container {
+    @include container(var(--container-max-width), var(--space-md));
+    @include flexbox(row, space-between, center, nowrap, 0);
+    position: relative;
+  }
+
+  // Mobile Menu Button
+  &__menu-button {
+    @include flex;
+    @include align-center;
+    @include justify-center;
+    gap: var(--space-xs);
+    padding: var(--space-sm);
+    background-color: transparent;
+    border: var(--border-width-thin) solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-primary);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    cursor: pointer;
+    @include transition-base(all);
+    @include focus-visible;
+
+    &:hover {
+      background-color: var(--color-primary-rgba-5);
+      border-color: var(--color-primary);
+    }
+
+    &:focus-visible {
+      outline-color: var(--color-accent);
+      background-color: var(--color-accent-rgba-10);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    // Hide on desktop
+    @include breakpoint-md {
+      display: none;
+    }
+  }
+
+  &__menu-icon {
+    @include flex;
+    @include flex-column;
+    @include justify-center;
+    gap: 4px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__menu-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    @include transition-base(all);
+    transform-origin: center;
+
+    &:nth-child(1) {
+      transform: translateY(0);
+    }
+
+    &:nth-child(2) {
+      opacity: 1;
+    }
+
+    &:nth-child(3) {
+      transform: translateY(0);
+    }
+
+    // Animated state when menu is open
+    &--open {
+      &:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+    }
+  }
+
+  &__menu-text {
+    @include breakpoint-max-sm {
+      @include visually-hidden;
+    }
+  }
+
+  // Navigation List
+  &__list {
+    @include flex;
+    @include align-center;
+    @include flex-wrap;
+    gap: var(--space-xs);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    // Mobile: Hidden by default, shown when menu is open
+    @include breakpoint-max-md {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      background-color: var(--color-bg-light);
+      border: var(--border-width-thin) solid var(--color-primary);
+      border-top: none;
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      padding: var(--space-sm);
+      margin-top: var(--space-xs);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      @include transition-base(all);
+      z-index: var(--z-index-dropdown);
+
+      &--open {
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+        padding: var(--space-md);
+      }
+    }
+
+    // Desktop: Always visible, horizontal layout
+    @include breakpoint-md {
+      position: static;
+      flex-direction: row;
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      margin: 0;
+      max-height: none;
+      opacity: 1;
+      visibility: visible;
+      gap: var(--space-sm);
+    }
+
+    @include breakpoint-lg {
+      gap: var(--space-md);
+    }
+  }
+
+  &__item {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    @include breakpoint-md {
+      width: auto;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    border-radius: var(--radius-sm);
+    text-align: center;
+    @include transition-base(all);
+    @include focus-visible;
+
+    // Mobile: Full width
+    @include breakpoint-max-md {
+      width: 100%;
+    }
+
+    // Desktop: Auto width
+    @include breakpoint-md {
+      text-align: left;
+      padding: var(--space-sm) var(--space-lg);
+    }
+
+    &:hover {
+      color: var(--color-primary);
+      background-color: var(--color-primary-rgba-5);
+    }
+
+    &:focus-visible {
+      outline-color: var(--color-accent);
+      background-color: var(--color-accent-rgba-10);
+    }
+
+    // Active state
+    &--active {
+      color: var(--color-primary);
+      font-weight: var(--fw-bold);
+      background-color: var(--color-primary-rgba-10);
+      position: relative;
+
+      // Active indicator line (desktop only)
+      @include breakpoint-md {
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: var(--space-lg);
+          right: var(--space-lg);
+          height: 2px;
+          background-color: var(--color-primary);
+          border-radius: var(--radius-sm);
+        }
+      }
+    }
+
+    // Active state with aria-current
+    &[aria-current="page"] {
+      color: var(--color-primary);
+      font-weight: var(--fw-bold);
+      background-color: var(--color-primary-rgba-10);
+
+      @include breakpoint-md {
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: var(--space-lg);
+          right: var(--space-lg);
+          height: 2px;
+          background-color: var(--color-primary);
+          border-radius: var(--radius-sm);
+        }
+      }
+    }
+  }
+}
+
