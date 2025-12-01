@@ -58,29 +58,43 @@ export default function NavBar({ className = '' }: NavBarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuListRef = useRef<HTMLUListElement>(null);
+  const previousPathnameRef = useRef<string>(pathname);
 
   // Build BEM class names
   const baseClass = 'navbar';
   const classNames = [baseClass, className].filter(Boolean).join(' ');
 
-  // Close mobile menu when pathname changes
+  // Close mobile menu when pathname changes (navigation occurred)
+  // Using ref to track previous pathname to avoid unnecessary state updates
   useEffect(() => {
-    setIsMobileMenuOpen(false);
+    if (previousPathnameRef.current !== pathname) {
+      if (isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+      previousPathnameRef.current = pathname;
+    }
+    // This effect intentionally syncs state with external pathname changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
-  // Handle Escape key to close mobile menu
+  // Handle Escape key to close mobile menu and prevent body scroll
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isMobileMenuOpen) {
         setIsMobileMenuOpen(false);
-        menuButtonRef.current?.focus();
+        // Return focus to menu button after closing
+        setTimeout(() => {
+          menuButtonRef.current?.focus();
+        }, 0);
       }
     };
 
     if (isMobileMenuOpen) {
       document.addEventListener('keydown', handleEscape);
-      // Prevent body scroll when menu is open
-      document.body.style.overflow = 'hidden';
+      // Prevent body scroll when menu is open (mobile only)
+      if (window.innerWidth < 768) {
+        document.body.style.overflow = 'hidden';
+      }
     } else {
       document.body.style.overflow = '';
     }
@@ -91,14 +105,18 @@ export default function NavBar({ className = '' }: NavBarProps) {
     };
   }, [isMobileMenuOpen]);
 
-  // Focus first link when menu opens
+  // Focus first link when menu opens (mobile only)
   useEffect(() => {
-    if (isMobileMenuOpen && menuListRef.current) {
-      // Small delay to ensure menu is rendered
-      setTimeout(() => {
+    if (isMobileMenuOpen && menuListRef.current && window.innerWidth < 768) {
+      // Small delay to ensure menu is rendered and visible
+      const timeoutId = setTimeout(() => {
         const firstLink = menuListRef.current?.querySelector('a') as HTMLAnchorElement;
-        firstLink?.focus();
-      }, 100);
+        if (firstLink) {
+          firstLink.focus();
+        }
+      }, 150);
+      
+      return () => clearTimeout(timeoutId);
     }
   }, [isMobileMenuOpen]);
 
@@ -106,6 +124,34 @@ export default function NavBar({ className = '' }: NavBarProps) {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
+
+  // Handle click outside to close menu (mobile only)
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as Node;
+      if (
+        menuListRef.current &&
+        menuButtonRef.current &&
+        !menuListRef.current.contains(target) &&
+        !menuButtonRef.current.contains(target) &&
+        window.innerWidth < 768
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    // Add listener after a small delay to avoid immediate closure
+    const timeoutId = setTimeout(() => {
+      document.addEventListener('click', handleClickOutside);
+    }, 100);
+
+    return () => {
+      clearTimeout(timeoutId);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
 
   // Handle keyboard navigation for menu button
   const handleMenuButtonKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
@@ -115,12 +161,22 @@ export default function NavBar({ className = '' }: NavBarProps) {
     }
   };
 
+  // Handle link click to close menu on mobile
+  const handleLinkClick = () => {
+    if (window.innerWidth < 768) {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   // Check if link is active
   const isActiveLink = (href: string): boolean => {
+    // Exact match for home page
     if (href === '/') {
       return pathname === '/';
     }
-    return pathname.startsWith(href);
+    // For other pages, check if pathname starts with href
+    // This handles nested routes like /components/something
+    return pathname === href || pathname.startsWith(`${href}/`);
   };
 
   return (
@@ -167,6 +223,7 @@ export default function NavBar({ className = '' }: NavBarProps) {
                   className={`navbar__link ${isActive ? 'navbar__link--active' : ''}`}
                   aria-label={link.ariaLabel}
                   aria-current={isActive ? 'page' : undefined}
+                  onClick={handleLinkClick}
                 >
                   {link.label}
                 </Link>
