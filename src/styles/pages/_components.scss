@@ -24,10 +24,11 @@
 
   display: flex;
   min-height: 100vh;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   background-color: var(--background);
   color: var(--text-primary);
+  width: 100%;
 }
 
 .components-page__main {
@@ -36,11 +37,13 @@
   width: 100%;
   max-width: var(--container-xl);
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   background-color: var(--foreground);
   padding: 0;
   color: var(--text-primary);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // ============================================================================
@@ -53,6 +56,10 @@
   margin: 0 auto;
   width: 100%;
   color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 // ============================================================================
@@ -65,6 +72,8 @@
     color: var(--text-primary);
     font-size: var(--fs-3xl);
     font-weight: var(--fw-bold);
+    text-align: center;
+    width: 100%;
   }
 
   h2 {
@@ -72,6 +81,8 @@
     color: var(--text-primary);
     font-size: var(--fs-2xl);
     font-weight: var(--fw-bold);
+    text-align: center;
+    width: 100%;
   }
 
   h3 {
@@ -79,10 +90,16 @@
     font-size: var(--fs-base);
     color: var(--text-primary);
     font-weight: var(--fw-semibold);
+    text-align: center;
+    width: 100%;
   }
 
   section {
     margin-bottom: var(--space-2xl);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -95,6 +112,9 @@
   gap: var(--space-md);
   flex-wrap: wrap;
   margin-bottom: var(--space-md);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 
   &--vertical {
     flex-direction: column;
@@ -115,6 +135,8 @@
   grid-template-columns: 1fr;
   gap: var(--space-lg);
   margin-bottom: var(--space-md);
+  width: 100%;
+  justify-items: center;
 
   @include breakpoint-md {
     grid-template-columns: repeat(2, 1fr);
@@ -134,6 +156,9 @@
   gap: var(--space-md);
   flex-wrap: wrap;
   margin-bottom: var(--space-md);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 
   &--vertical {
     flex-direction: column;
@@ -166,6 +191,9 @@
   gap: var(--space-md);
   flex-wrap: wrap;
   margin-bottom: var(--space-md);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 
   &--align-center {
     align-items: center;
@@ -265,6 +293,8 @@
   gap: var(--space-lg);
   margin-bottom: var(--space-md);
   max-width: var(--container-md);
+  width: 100%;
+  align-items: center;
 
   @include breakpoint-md {
     max-width: var(--container-lg);
@@ -342,9 +372,10 @@
 .components-page__intro {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   gap: var(--space-lg);
+  width: 100%;
 
   h1 {
     max-width: var(--container-xs);
@@ -381,6 +412,8 @@
   max-width: var(--container-sm);
   gap: var(--space-md);
   font-size: var(--fs-sm);
+  justify-content: center;
+  align-items: center;
 
   a {
     display: flex;
@@ -429,6 +462,9 @@
   flex-direction: column;
   gap: var(--space-md);
   margin-bottom: var(--space-md);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 
   @include breakpoint-md {
     flex-direction: row;

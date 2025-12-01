@@ -902,6 +902,11 @@ main#main-content {
   // Mobile-first: padding-top to compensate for fixed navbar
   padding-top: var(--navbar-height-mobile);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
   
   // Desktop: use larger navbar height
   @include breakpoint-md {

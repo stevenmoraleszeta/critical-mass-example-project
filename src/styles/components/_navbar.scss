@@ -21,16 +21,24 @@
 
   &__container {
     @include container(var(--container-max-width), var(--space-md));
-    @include flexbox(row, space-between, center, nowrap, 0);
+    @include flexbox(row, center, center, nowrap, 0);
     position: relative;
     padding-top: var(--space-sm);
     padding-bottom: var(--space-sm);
     min-height: 48px;
+    margin-left: auto;
+    margin-right: auto;
 
     @include breakpoint-md {
       padding-top: var(--space-sm);
       padding-bottom: var(--space-sm);
       min-height: 56px;
+      gap: var(--space-lg);
+    }
+
+    // Center logo and nav items
+    > * {
+      flex: 0 0 auto;
     }
   }
 
@@ -38,6 +46,17 @@
   &__logo {
     @include flex;
     @include align-center;
+    @include justify-center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    @include breakpoint-md {
+      position: static;
+      transform: none;
+      z-index: auto;
+    }
   }
 
   &__logo-link {
@@ -110,6 +129,13 @@
     cursor: pointer;
     @include transition-base(all);
     @include focus-visible;
+    position: absolute;
+    right: var(--space-md);
+    z-index: 2;
+
+    @include breakpoint-md {
+      display: none;
+    }
 
     &:hover {
       background-color: var(--color-primary-rgba-5);
@@ -123,11 +149,6 @@
 
     &:active {
       transform: scale(0.98);
-    }
-
-    // Hide on desktop
-    @include breakpoint-md {
-      display: none;
     }
   }
 
@@ -181,11 +202,17 @@
   &__list {
     @include flex;
     @include align-center;
+    @include justify-center;
     @include flex-wrap;
     gap: var(--space-xs);
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 100%;
+
+    @include breakpoint-md {
+      width: auto;
+    }
 
     // Mobile: Hidden by default, shown when menu is open
     @include breakpoint-max-md {
@@ -219,7 +246,7 @@
       }
     }
 
-    // Desktop: Always visible, horizontal layout
+    // Desktop: Always visible, horizontal layout, centered
     @include breakpoint-md {
       position: static;
       flex-direction: row;
@@ -232,6 +259,8 @@
       opacity: 1;
       visibility: visible;
       gap: var(--space-sm);
+      justify-content: center;
+      align-items: center;
     }
 
     @include breakpoint-lg {
