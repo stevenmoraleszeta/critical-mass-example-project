@@ -1,0 +1,301 @@
+// ============================================================================
+// Hero Component Styles
+// Following Critical Mass requirements: BEM, Mobile-First, Accessibility
+// Following project-idea.md: Hero section specifications
+// ============================================================================
+
+// Import base files for variables and mixins
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Hero Block (BEM)
+// Main hero section container
+// ============================================================================
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  
+  // Mobile-first: padding for mobile
+  padding: var(--space-2xl) var(--space-md);
+  
+  // Layout
+  @include flex;
+  @include flex-column;
+  @include align-center;
+  @include justify-center;
+  
+  // Background
+  background-color: var(--color-bg-light);
+  overflow: hidden;
+  
+  // Tablet and up: adjust padding
+  @include breakpoint-md {
+    padding: var(--space-3xl) var(--space-lg);
+    min-height: 90vh;
+  }
+  
+  // Desktop: adjust padding
+  @include breakpoint-lg {
+    padding: var(--space-3xl) var(--space-xl);
+    min-height: 85vh;
+  }
+  
+  // ============================================================================
+  // Hero Elements (BEM)
+  // ============================================================================
+  
+  // Container for content and visual
+  &__container {
+    position: relative;
+    z-index: var(--z-index-base);
+    width: 100%;
+    max-width: var(--container-max-width);
+    
+    // Mobile-first: single column layout
+    @include flex;
+    @include flex-column;
+    @include align-center;
+    gap: var(--space-xl);
+    
+    // Desktop: two column layout (content + visual)
+    @include breakpoint-lg {
+      @include flex-row;
+      @include align-center;
+      @include justify-between;
+      gap: var(--space-2xl);
+    }
+  }
+  
+  // Content wrapper (text, CTAs, note)
+  &__content {
+    width: 100%;
+    max-width: 100%;
+    
+    // Mobile: center align
+    text-align: center;
+    
+    // Desktop: left align
+    @include breakpoint-lg {
+      text-align: left;
+      max-width: 560px;
+      flex: 1;
+    }
+  }
+  
+  // Main title (H1)
+  &__title {
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+    
+    // Mobile: adjust font size
+    @media (max-width: 639px) {
+      font-size: var(--fs-xl);
+    }
+    
+    // Tablet: larger font
+    @include breakpoint-md {
+      font-size: var(--fs-3xl);
+      margin-bottom: var(--space-lg);
+    }
+    
+    // Desktop: largest font
+    @include breakpoint-lg {
+      font-size: var(--fs-40);
+      line-height: var(--lh-48);
+    }
+  }
+  
+  // Subtitle
+  &__subtitle {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-relaxed);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+    
+    // Mobile: adjust font size
+    @media (max-width: 639px) {
+      font-size: var(--fs-base);
+    }
+    
+    // Tablet: larger font
+    @include breakpoint-md {
+      font-size: var(--fs-xl);
+      margin-bottom: var(--space-xl);
+    }
+    
+    // Desktop: adjust spacing
+    @include breakpoint-lg {
+      font-size: var(--fs-xl);
+      margin-bottom: var(--space-xl);
+    }
+  }
+  
+  // Actions container (CTAs)
+  &__actions {
+    @include flex;
+    @include flex-column;
+    @include align-center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    
+    // Mobile: full width buttons
+    width: 100%;
+    
+    // Tablet and up: horizontal layout
+    @include breakpoint-md {
+      @include flex-row;
+      @include justify-center;
+      width: auto;
+    }
+    
+    // Desktop: left align
+    @include breakpoint-lg {
+      @include justify-start;
+    }
+  }
+  
+  // Note (small ironic copy)
+  &__note {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-normal);
+    color: var(--color-text-muted);
+    margin-top: var(--space-md);
+    
+    // Mobile: center align
+    text-align: center;
+    
+    // Desktop: left align
+    @include breakpoint-lg {
+      text-align: left;
+    }
+  }
+  
+  // Visual wrapper (image container)
+  &__visual {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    
+    // Mobile: full width, maintain aspect ratio
+    @include flex;
+    @include align-center;
+    @include justify-center;
+    
+    // Tablet: adjust max width
+    @include breakpoint-md {
+      max-width: 500px;
+    }
+    
+    // Desktop: flex item
+    @include breakpoint-lg {
+      flex: 1;
+      max-width: 600px;
+    }
+  }
+  
+  // Image element
+  &__image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--radius-lg);
+    
+    // Add subtle shadow
+    @include shadow-lg;
+  }
+  
+  // Background gradient overlay
+  &__gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    
+    // Subtle gradient using primary color with low opacity
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-rgba-5) 0%,
+      var(--color-accent-rgba-10) 100%
+    );
+    
+    // Ensure it doesn't interfere with content
+    pointer-events: none;
+  }
+}
+
+// ============================================================================
+// Responsive Adjustments
+// ============================================================================
+
+// Ensure hero section is accessible on very small screens
+@media (max-width: 319px) {
+  .hero {
+    padding: var(--space-lg) var(--space-sm);
+    min-height: auto;
+    
+    &__title {
+      font-size: var(--fs-lg);
+    }
+    
+    &__subtitle {
+      font-size: var(--fs-sm);
+    }
+    
+    &__actions {
+      @include flex-column;
+      width: 100%;
+      
+      // Make buttons full width on very small screens
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// ============================================================================
+// Accessibility Enhancements
+// ============================================================================
+
+// Ensure proper focus management for CTAs
+.hero__actions {
+  .btn {
+    // Focus states are handled by Button component
+    // But ensure they're visible in hero context
+    min-width: 140px;
+    
+    @include breakpoint-md {
+      min-width: 160px;
+    }
+  }
+}
+
+// ============================================================================
+// Print Styles (Optional)
+// ============================================================================
+
+@media print {
+  .hero {
+    min-height: auto;
+    padding: var(--space-lg) 0;
+    
+    &__gradient {
+      display: none;
+    }
+    
+    &__visual {
+      display: none;
+    }
+  }
+}
+

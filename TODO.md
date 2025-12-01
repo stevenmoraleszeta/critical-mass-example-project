@@ -340,21 +340,21 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 
 ### Hero Section
 
-- [ ] Create `components/sections/Hero.tsx`
-- [ ] Define `HeroProps` interface (from specifications)
-- [ ] Add title (H1): "Meet Steven Morales: Your Next Front-End Experience Engine."
-- [ ] Add subtitle
-- [ ] Add primary CTA button: "View Features"
-- [ ] Add secondary CTA button: "See Live Content"
-- [ ] Add note: "No monthly subscription. Just coffee and interesting problems."
-- [ ] Add image/visual element (placeholder or actual)
-- [ ] Create `styles/components/_hero.scss`
-- [ ] Style hero section with BEM
-- [ ] Add background gradient
-- [ ] Make hero responsive
-- [ ] Implement smooth scroll to Features section (for primary CTA)
-- [ ] Test hero section renders correctly
-- [ ] Test CTAs work correctly
+- [x] Create `components/sections/Hero.tsx`
+- [x] Define `HeroProps` interface (from specifications)
+- [x] Add title (H1): "Meet Steven Morales: Your Next Front-End Experience Engine."
+- [x] Add subtitle
+- [x] Add primary CTA button: "View Features"
+- [x] Add secondary CTA button: "See Live Content"
+- [x] Add note: "No monthly subscription. Just coffee and interesting problems."
+- [x] Add image/visual element (placeholder or actual)
+- [x] Create `styles/components/_hero.scss`
+- [x] Style hero section with BEM
+- [x] Add background gradient
+- [x] Make hero responsive
+- [x] Implement smooth scroll to Features section (for primary CTA)
+- [x] Test hero section renders correctly
+- [x] Test CTAs work correctly
 
 ### Features Section
 
