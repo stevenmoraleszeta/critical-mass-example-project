@@ -82,7 +82,7 @@ export default function Components() {
 
   return (
     <MainLayout className="components-page__main">
-      <div className="components-page">
+    <div className="components-page">
         <div className="components-page__content">
           <h1>Button Component Showcase</h1>
           
@@ -1181,20 +1181,20 @@ export default function Components() {
           </section>
         </div>
 
-        {/* Render all active toasts */}
-        {toasts.map((toast) => (
-          <Toast
-            key={toast.id}
-            message={toast.message}
-            variant={toast.variant}
-            position={toast.position}
-            size={toast.size}
-            autoDismiss={toast.autoDismiss}
-            duration={toast.duration}
-            onDismiss={() => removeToast(toast.id)}
-          />
-        ))}
-      </div>
+      {/* Render all active toasts */}
+      {toasts.map((toast) => (
+        <Toast
+          key={toast.id}
+          message={toast.message}
+          variant={toast.variant}
+          position={toast.position}
+          size={toast.size}
+          autoDismiss={toast.autoDismiss}
+          duration={toast.duration}
+          onDismiss={() => removeToast(toast.id)}
+        />
+      ))}
+    </div>
     </MainLayout>
   );
 }

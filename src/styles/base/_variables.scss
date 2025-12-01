@@ -355,17 +355,6 @@ $grid-auto-min-width: 250px; // Minimum width for auto-fit/fill grids
   --grid-auto-min-width: #{$grid-auto-min-width};
 }
 
-// ============================================================================
-// Header Specific Dimensions
-// ============================================================================
-
-$header-min-height-mobile: 64px;  // 4rem
-$header-min-height-desktop: 72px;  // 4.5rem
-
-:root {
-  --header-min-height-mobile: #{$header-min-height-mobile};
-  --header-min-height-desktop: #{$header-min-height-desktop};
-}
 
 // ============================================================================
 // Button Specific Dimensions

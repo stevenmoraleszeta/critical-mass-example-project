@@ -186,6 +186,17 @@ export default function NavBar({ className = '' }: NavBarProps) {
       aria-label="Main navigation"
     >
       <div className="navbar__container">
+        {/* Logo */}
+        <div className="navbar__logo">
+          <Link 
+            href="/" 
+            className="navbar__logo-link"
+            aria-label="Steven Morales - Home"
+          >
+            <span className="navbar__logo-text" aria-hidden="true">SM</span>
+          </Link>
+        </div>
+
         {/* Mobile Menu Button */}
         <button
           ref={menuButtonRef}
