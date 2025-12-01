@@ -65,14 +65,20 @@
     text-decoration: none;
     color: var(--color-text-primary);
     @include transition-base(all);
-    @include focus-visible;
+    outline: none;
 
     &:hover {
       color: var(--color-primary);
     }
 
     &:focus-visible {
-      outline-color: var(--color-accent);
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
     }
   }
 
@@ -105,8 +111,8 @@
     }
 
     .navbar__logo-link:focus-visible & {
-      outline: var(--border-width-base) solid var(--color-accent);
-      outline-offset: var(--outline-offset-focus);
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 4px;
     }
 
     .navbar__logo-link:active & {
@@ -128,7 +134,7 @@
     font-weight: var(--fw-medium);
     cursor: pointer;
     @include transition-base(all);
-    @include focus-visible;
+    outline: none;
     position: absolute;
     right: var(--space-md);
     z-index: 2;
@@ -143,8 +149,14 @@
     }
 
     &:focus-visible {
-      outline-color: var(--color-accent);
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
       background-color: var(--color-accent-rgba-10);
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
     }
 
     &:active {
@@ -299,7 +311,7 @@
     border-radius: var(--radius-sm);
     text-align: center;
     @include transition-base(all);
-    @include focus-visible;
+    outline: none;
     overflow: visible; // Allow active indicator line to show outside link bounds
 
     // Mobile: Full width with more vertical padding
@@ -329,8 +341,14 @@
     }
 
     &:focus-visible {
-      outline-color: var(--color-accent);
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
       background-color: var(--color-accent-rgba-10);
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
     }
 
     // Active state
