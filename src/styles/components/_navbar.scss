@@ -207,8 +207,9 @@
       border-top: none;
       border-radius: 0 0 var(--radius-md) var(--radius-md);
       box-shadow: var(--shadow-lg);
-      padding: var(--space-sm);
+      padding: var(--space-md) var(--space-sm);
       margin-top: var(--space-xs);
+      gap: var(--space-sm); // Increased gap between items in mobile
       max-height: 0;
       overflow: hidden;
       opacity: 0;
@@ -221,6 +222,7 @@
         opacity: 1;
         visibility: visible;
         padding: var(--space-md);
+        gap: var(--space-md); // Even more space when menu is open
       }
     }
 
@@ -250,8 +252,18 @@
     width: 100%;
     position: relative;
 
+    // Mobile: Add more vertical spacing between items
+    @include breakpoint-max-md {
+      margin-bottom: var(--space-xs);
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
     @include breakpoint-md {
       width: auto;
+      margin-bottom: 0;
     }
   }
 
@@ -268,9 +280,10 @@
     @include focus-visible;
     overflow: visible; // Allow active indicator line to show outside link bounds
 
-    // Mobile: Full width
+    // Mobile: Full width with more vertical padding
     @include breakpoint-max-md {
       width: 100%;
+      padding: var(--space-sm) var(--space-md);
     }
 
     // Desktop: Auto width
@@ -283,7 +296,10 @@
     &:hover {
       color: var(--color-primary);
       background-color: var(--color-primary-rgba-5);
-      padding: var(--space-sm) var(--space-md);
+      
+      @include breakpoint-max-md {
+        padding: var(--space-sm) var(--space-md);
+      }
       
       @include breakpoint-md {
         padding: var(--space-sm) var(--space-lg);
@@ -304,6 +320,10 @@
       transform: translateY(-1px);
       box-shadow: 0 2px 4px rgba(0, 0, 255, 0.1);
       padding: var(--space-sm) var(--space-md);
+      
+      @include breakpoint-max-md {
+        padding: var(--space-sm) var(--space-md);
+      }
       
       @include breakpoint-md {
         padding: var(--space-sm) var(--space-lg);
@@ -330,9 +350,9 @@
         &::after {
           content: '';
           position: absolute;
-          bottom: var(--space-xs);
-          left: var(--space-sm);
-          right: var(--space-sm);
+          bottom: calc(-1 * var(--space-xs));
+          left: var(--space-md);
+          right: var(--space-md);
           height: 2px;
           background-color: var(--color-accent);
           border-radius: var(--radius-sm);
@@ -349,6 +369,10 @@
       transform: translateY(-1px);
       box-shadow: 0 2px 4px rgba(0, 0, 255, 0.1);
       padding: var(--space-sm) var(--space-md);
+      
+      @include breakpoint-max-md {
+        padding: var(--space-sm) var(--space-md);
+      }
       
       @include breakpoint-md {
         padding: var(--space-sm) var(--space-lg);
@@ -374,9 +398,9 @@
         &::after {
           content: '';
           position: absolute;
-          bottom: var(--space-xs);
-          left: var(--space-sm);
-          right: var(--space-sm);
+          bottom: calc(-1 * var(--space-xs));
+          left: var(--space-md);
+          right: var(--space-md);
           height: 2px;
           background-color: var(--color-accent);
           border-radius: var(--radius-sm);
