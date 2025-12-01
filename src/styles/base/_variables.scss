@@ -381,10 +381,11 @@ $button-min-height-lg-xl: 3.25rem; // 52px
 // ============================================================================
 
 // Navbar height including padding and border
-// Mobile: min-height 48px + padding 8px top/bottom + border 1px = ~57px
-// Desktop: min-height 56px + padding 8px top/bottom + border 1px = ~65px
-$navbar-height-mobile: 3.5625rem; // 57px
-$navbar-height-desktop: 4.0625rem; // 65px
+// Reduced by 30% from original values
+// Mobile: ~45.5px (30% less than 65px)
+// Desktop: ~51px (30% less than 73px)
+$navbar-height-mobile: 2.84375rem; // ~45.5px (30% reduction)
+$navbar-height-desktop: 3.1875rem; // ~51px (30% reduction)
 
 :root {
   --navbar-height-mobile: #{$navbar-height-mobile};
