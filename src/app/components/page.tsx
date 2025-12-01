@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import MainLayout from '@/components/layout/MainLayout';
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import Tag from "@/components/ui/Tag";
@@ -80,8 +81,8 @@ export default function Components() {
   };
 
   return (
-    <div className="components-page">
-      <main className="components-page__main">
+    <MainLayout className="components-page__main">
+      <div className="components-page">
         <div className="components-page__content">
           <h1>Button Component Showcase</h1>
           
@@ -1179,22 +1180,22 @@ export default function Components() {
             </section>
           </section>
         </div>
-      </main>
 
-      {/* Render all active toasts */}
-      {toasts.map((toast) => (
-        <Toast
-          key={toast.id}
-          message={toast.message}
-          variant={toast.variant}
-          position={toast.position}
-          size={toast.size}
-          autoDismiss={toast.autoDismiss}
-          duration={toast.duration}
-          onDismiss={() => removeToast(toast.id)}
-        />
-      ))}
-    </div>
+        {/* Render all active toasts */}
+        {toasts.map((toast) => (
+          <Toast
+            key={toast.id}
+            message={toast.message}
+            variant={toast.variant}
+            position={toast.position}
+            size={toast.size}
+            autoDismiss={toast.autoDismiss}
+            duration={toast.duration}
+            onDismiss={() => removeToast(toast.id)}
+          />
+        ))}
+      </div>
+    </MainLayout>
   );
 }
 
