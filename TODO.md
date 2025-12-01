@@ -7,6 +7,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 1: Project Setup & Initialization
 
 ### Environment Setup
+
 - [x] Install Node.js (v18 or higher)
 - [x] Install npm or yarn package manager
 - [x] Verify Git is installed and configured
@@ -14,12 +15,14 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Install recommended VS Code extensions (ESLint, Prettier, SCSS IntelliSense)
 
 ### Next.js Project Creation
+
 - [x] Create Next.js 14 project with TypeScript: `npx create-next-app@latest --typescript --app`
 - [x] Choose project name and initialize
 - [x] Verify project structure is created correctly
 - [x] Test that `npm run dev` works and shows default Next.js page
 
 ### Configuration Files
+
 - [x] Review and configure `tsconfig.json`
 - [x] Review and configure `next.config.js`
 - [x] Create `.gitignore` file (if not auto-generated)
@@ -28,6 +31,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Set up environment variables file `.env.local` (if needed)
 
 ### Testing Setup
+
 - [x] Install Jest: `npm install --save-dev jest @types/jest`
 - [x] Install React Testing Library: `npm install --save-dev @testing-library/react @testing-library/jest-dom`
 - [x] Install Jest environment for Next.js: `npm install --save-dev jest-environment-jsdom`
@@ -36,11 +40,13 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Verify test setup works with a simple test
 
 ### SASS/SCSS Setup
+
 - [x] Install SASS: `npm install --save-dev sass`
 - [x] Verify SCSS files can be imported
 - [x] Test basic SCSS compilation
 
 ### Git Repository
+
 - [x] Initialize Git repository: `git init`
 - [x] Create initial commit with project setup
 - [x] Create GitHub repository (or other Git hosting)
@@ -48,6 +54,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Push initial commit to remote
 
 ### Folder Structure Creation
+
 - [x] Create `src/app/` directory structure
 - [x] Create `src/components/` directory structure
   - [x] `components/layout/`
@@ -71,6 +78,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 2: Design System & Base Styles
 
 ### SCSS Variables
+
 - [x] Create `styles/base/_variables.scss`
 - [x] Define color palette variables:
   - [x] Primary color: `#4B3FFF`
@@ -84,6 +92,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Export variables for use in components
 
 ### Typography
+
 - [x] Create `styles/base/_typography.scss`
 - [x] Choose and import font (Inter or Poppins from Google Fonts) - Using Inter with next/font/google for optimization
 - [x] Define font-size scale variables: `--fs-xs`, `--fs-sm`, `--fs-md`, `--fs-lg`, `--fs-xl`, `--fs-2xl`, `--fs-3xl` (already in _variables.scss)
@@ -93,6 +102,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test typography renders correctly
 
 ### Reset & Base Styles
+
 - [x] Create `styles/base/_reset.scss`
 - [x] Add CSS reset or normalize styles (modern CSS reset following Critical Mass requirements)
 - [x] Set base body styles (using variables from _variables.scss)
@@ -103,6 +113,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test reset styles work correctly
 
 ### Mixins
+
 - [x] Create `styles/base/_mixins.scss`
 - [x] Create responsive breakpoint mixins (mobile-first, using breakpoints from _variables.scss)
 - [x] Create flexbox utility mixins (complete set: direction, justify, align, gap, etc.)
@@ -111,6 +122,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Create focus-visible mixin for accessibility (following Critical Mass requirements)
 
 ### Layout Utilities
+
 - [x] Create `styles/base/_layout.scss`
 - [x] Create `.container` utility class (with responsive padding and size variants)
 - [x] Create grid utilities: `.grid`, `.grid--2`, `.grid--3` (following BEM methodology)
@@ -121,6 +133,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test layout utilities work correctly
 
 ### Main SCSS File
+
 - [x] Create `styles/main.scss`
 - [x] Import `_reset.scss` (in correct order: after variables and mixins)
 - [x] Import `_variables.scss` (first - used by all other files)
@@ -134,6 +147,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Verify all styles compile without errors (test with `npm run build`)
 
 ### BEM Methodology
+
 - [x] Document BEM naming convention for team reference (see BEM_METHODOLOGY_GUIDE.md)
 - [x] Verify BEM structure is consistent
 
@@ -142,6 +156,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 3: Core UI Components
 
 ### Button Component
+
 - [x] Create `components/ui/Button.tsx`
 - [x] Define `ButtonProps` interface (from specifications)
 - [x] Implement primary variant
@@ -163,6 +178,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test button works with screen reader
 
 ### Card Component
+
 - [x] Create `components/ui/Card.tsx`
 - [x] Define `CardProps` interface
 - [x] Implement default variant
@@ -177,6 +193,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test card renders correctly
 
 ### Tag Component
+
 - [x] Create `components/ui/Tag.tsx`
 - [x] Define `TagProps` interface
 - [x] Implement default variant
@@ -188,6 +205,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test tag renders correctly
 
 ### Badge Component
+
 - [x] Create `components/ui/Badge.tsx`
 - [x] Define `BadgeProps` interface
 - [x] Implement live status
@@ -198,6 +216,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test badge renders correctly
 
 ### Input Component
+
 - [x] Create `components/ui/Input.tsx`
 - [x] Define `InputProps` interface
 - [x] Implement text input
@@ -217,6 +236,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test input works with screen reader
 
 ### Select Component
+
 - [x] Create `components/ui/Select.tsx`
 - [x] Define `SelectProps` interface
 - [x] Implement dropdown functionality
@@ -227,6 +247,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test select is accessible
 
 ### Toggle Component
+
 - [x] Create `components/ui/Toggle.tsx`
 - [x] Define `ToggleProps` interface
 - [x] Implement toggle functionality
@@ -237,6 +258,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test toggle is accessible
 
 ### Loader Component
+
 - [x] Create `components/feedback/Loader.tsx`
 - [x] Implement spinner loader
 - [x] Implement skeleton loader (optional)
@@ -245,6 +267,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test loader renders correctly
 
 ### ErrorMessage Component
+
 - [x] Create `components/feedback/ErrorMessage.tsx`
 - [x] Define error message props
 - [x] Implement error display
@@ -253,6 +276,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test error component renders correctly
 
 ### Toast Component (Optional)
+
 - [x] Create `components/feedback/Toast.tsx`
 - [x] Implement toast notification
 - [x] Add auto-dismiss functionality
@@ -261,6 +285,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test toast works correctly
 
 ### Component Testing
+
 - [x] Test all components render without errors
 - [x] Test all components are responsive
 - [x] Verify all components follow BEM naming
@@ -271,6 +296,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 4: Layout Components
 
 ### Header Component
+
 - [x] Create `components/layout/Header.tsx`
 - [x] Add logo (stylized "SM" or placeholder)
 - [x] Add navigation structure
@@ -279,6 +305,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Test header renders correctly
 
 ### NavBar Component
+
 - [X] Create `components/layout/NavBar.tsx`
 - [X] Add navigation links (/, /components, /content, /about)
 - [X] Add active state indication
@@ -288,6 +315,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [X] Test navigation works correctly
 
 ### Footer Component
+
 - [X] Create `components/layout/Footer.tsx`
 - [X] Add footer content
 - [X] Add links (if any)
@@ -296,6 +324,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [X] Test footer renders correctly
 
 ### MainLayout Component
+
 - [x] Create `components/layout/MainLayout.tsx`
 - [x] Wrap content with semantic HTML (`<header>`, `<main>`, `<footer>`)
 - [x] Include Header component
@@ -310,6 +339,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 5: Landing Page Sections
 
 ### Hero Section
+
 - [ ] Create `components/sections/Hero.tsx`
 - [ ] Define `HeroProps` interface (from specifications)
 - [ ] Add title (H1): "Meet Steven Morales: Your Next Front-End Experience Engine."
@@ -327,6 +357,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test CTAs work correctly
 
 ### Features Section
+
 - [ ] Create `components/sections/Features.tsx`
 - [ ] Create `components/ui/FeatureCard.tsx`
 - [ ] Define `FeatureCardProps` interface
@@ -342,6 +373,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test features section renders correctly
 
 ### Specs Section
+
 - [ ] Create `components/sections/Specs.tsx`
 - [ ] Define `SpecsSectionProps` interface
 - [ ] Add section title: "Tech Specs"
@@ -355,6 +387,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test specs section renders correctly
 
 ### Use Cases Section
+
 - [ ] Create `components/sections/UseCases.tsx`
 - [ ] Create `components/ui/UseCaseCard.tsx`
 - [ ] Define `UseCaseCardProps` interface
@@ -368,6 +401,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test use cases section renders correctly
 
 ### Performance Section
+
 - [ ] Create `components/sections/PerformanceSection.tsx`
 - [ ] Create `components/ui/StatCard.tsx`
 - [ ] Define `StatCardProps` interface
@@ -382,6 +416,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test performance section renders correctly
 
 ### Testimonials Section
+
 - [ ] Create `components/sections/Testimonials.tsx`
 - [ ] Create `components/ui/TestimonialCard.tsx`
 - [ ] Define `TestimonialCardProps` interface
@@ -395,6 +430,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test testimonials section renders correctly
 
 ### Pricing Section
+
 - [ ] Create `components/sections/PricingSection.tsx`
 - [ ] Add section title: "Availability & Pricing"
 - [ ] Add pricing copy (from copy section)
@@ -403,6 +439,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test pricing section renders correctly
 
 ### Final CTA Section
+
 - [ ] Create `components/sections/CTASection.tsx`
 - [ ] Add section title: "Ready to Explore?"
 - [ ] Add Button 1: "Explore Components" → `/components`
@@ -414,6 +451,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test buttons navigate correctly
 
 ### Landing Page Assembly
+
 - [ ] Create `app/page.tsx` (or update existing)
 - [ ] Import all section components
 - [ ] Assemble landing page with all sections in order
@@ -430,13 +468,14 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 6: Components Page (`/components`)
 
 ### Page Setup
+
 - [ ] Create `app/components/page.tsx`
 - [ ] Add page title: "UI Component Library"
 - [ ] Add intro text: "A small set of reusable components used across this prototype, documented with their intended usage and accessibility notes."
 - [ ] Wrap with MainLayout
 
-
 ### Component Documentation Sections
+
 - [ ] Create Buttons section
   - [ ] Show primary variant
   - [ ] Show secondary variant
@@ -467,6 +506,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
   - [ ] Add usage notes
 
 ### Styling
+
 - [ ] Create `styles/pages/_components-page.scss`
 - [ ] Style components page
 - [ ] Make page responsive
@@ -479,6 +519,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 7: Content Page (`/content`)
 
 ### Content Filters Component
+
 - [ ] Create `components/content/ContentFilters.tsx`
 - [ ] Define `ContentFiltersProps` interface
 - [ ] Add category dropdown (Campaign, Case Study, Experiment, Learning)
@@ -490,6 +531,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test filters component works
 
 ### Content List Component
+
 - [ ] Create `components/content/ContentList.tsx`
 - [ ] Add loading state (skeletons/loader)
 - [ ] Add error state with retry button
@@ -500,6 +542,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test content list works
 
 ### Content Card Component
+
 - [ ] Create `components/content/ContentCard.tsx`
 - [ ] Define `ContentCardProps` interface
 - [ ] Display title
@@ -512,7 +555,8 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Make content card responsive
 - [ ] Test content card renders correctly
 
-### Page Setup
+### Content Page Setup
+
 - [ ] Create `app/content/page.tsx`
 - [ ] Add page title: "Content Feed"
 - [ ] Add description: "Data fetched from a JSON endpoint, filtered on the client."
@@ -530,6 +574,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 8: API Integration
 
 ### API Route
+
 - [ ] Create `app/api/content/route.ts`
 - [ ] Implement GET handler
 - [ ] Define content data structure/type
@@ -542,6 +587,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Verify JSON structure is correct
 
 ### API Client
+
 - [ ] Create `lib/api/contentApi.ts`
 - [ ] Implement `fetchContent()` function
 - [ ] Handle fetch errors
@@ -549,6 +595,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test API client function
 
 ### Custom Hook
+
 - [ ] Create `lib/hooks/useFetchContent.ts`
 - [ ] Implement data state
 - [ ] Implement loading state
@@ -558,6 +605,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test custom hook
 
 ### Connect to Content Page
+
 - [ ] Import `useFetchContent` hook in content page
 - [ ] Call hook to fetch data
 - [ ] Pass data to ContentList component
@@ -572,12 +620,14 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 
 ## Phase 9: About Page (`/about`)
 
-### Page Setup
+### About Page Setup
+
 - [ ] Create `app/about/page.tsx`
 - [ ] Add page title: "About This Prototype"
 - [ ] Wrap with MainLayout
 
 ### Content Sections
+
 - [ ] Add Context section
   - [ ] Title: "Context"
   - [ ] Content: "I'm applying for the Front-End Developer position at Critical Mass..."
@@ -588,7 +638,8 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
   - [ ] Title: "How It's Built"
   - [ ] Content: Tech stack and approach (from copy section)
 
-### Styling
+### About Page Styling
+
 - [ ] Create `styles/pages/_about-page.scss`
 - [ ] Style about page
 - [ ] Make page responsive
@@ -596,22 +647,24 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test about page renders correctly
 
 ### Navbar Search Icon
+
 - [ ] Implement search icon to navbar
 - [ ] Create functionality to navigate though pages content
 - [ ] Test funcitionality is correctly
-
 
 ---
 
 ## Phase 10: Accessibility Implementation
 
 ### Semantic HTML
+
 - [ ] Verify all pages use `<header>`, `<main>`, `<section>`, `<footer>`
 - [ ] Verify one `<h1>` per page
 - [ ] Verify heading hierarchy (h2, h3) is correct
 - [ ] Check all pages for semantic structure
 
 ### Keyboard Navigation
+
 - [ ] Test skip link works (Tab key)
 - [ ] Test all buttons are keyboard accessible
 - [ ] Test all links are keyboard accessible
@@ -620,6 +673,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Verify Tab order is logical
 
 ### Focus Management
+
 - [ ] Add visible focus styles to all buttons
 - [ ] Add visible focus styles to all links
 - [ ] Add visible focus styles to all form inputs
@@ -627,6 +681,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test focus indicators meet contrast requirements
 
 ### ARIA Attributes
+
 - [ ] Add `aria-label` to icon-only buttons
 - [ ] Add `aria-describedby` for error messages
 - [ ] Add `aria-invalid` for form validation
@@ -634,17 +689,20 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Verify all ARIA attributes are correct
 
 ### Form Accessibility
+
 - [ ] Verify all inputs have associated `<label>`
 - [ ] Verify all labels use `for` attribute correctly
 - [ ] Test form error messages are announced by screen reader
 - [ ] Test form validation is accessible
 
 ### Image Accessibility
+
 - [ ] Add meaningful `alt` text to all key images
 - [ ] Add `alt=""` to decorative images
 - [ ] Verify all images have appropriate alt text
 
 ### Screen Reader Testing
+
 - [ ] Test with NVDA (Windows) or VoiceOver (Mac)
 - [ ] Verify all content is announced correctly
 - [ ] Verify navigation is clear
@@ -652,6 +710,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Fix any issues found
 
 ### Color Contrast
+
 - [ ] Check text contrast meets WCAG AA (4.5:1 for normal text)
 - [ ] Check text contrast meets WCAG AA (3:1 for large text)
 - [ ] Use contrast checker tool
@@ -669,6 +728,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 11: Performance Optimization
 
 ### Image Optimization
+
 - [ ] Replace all `<img>` tags with `next/image`
 - [ ] Add `loading="lazy"` to non-critical images
 - [ ] Optimize image sizes
@@ -677,17 +737,20 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test images load correctly
 
 ### Code Splitting
+
 - [ ] Verify Next.js automatic code splitting works
 - [ ] Check bundle sizes with `npm run build`
 - [ ] Identify large dependencies
 - [ ] Optimize or remove unnecessary dependencies
 
 ### Lazy Loading
+
 - [ ] Implement `React.Suspense` for deferred sections (optional)
 - [ ] Verify lazy loading works correctly
 - [ ] Test page performance
 
 ### Bundle Optimization
+
 - [ ] Run `npm run build` and check bundle sizes
 - [ ] Remove unused dependencies
 - [ ] Remove unused CSS
@@ -695,6 +758,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Verify bundle size is reasonable
 
 ### Performance Testing
+
 - [ ] Run Lighthouse performance audit
 - [ ] Aim for 90+ performance score
 - [ ] Check Core Web Vitals:
@@ -706,6 +770,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Re-test after optimizations
 
 ### Font Optimization
+
 - [ ] Optimize font loading (use `next/font`)
 - [ ] Add font-display strategy
 - [ ] Test fonts load correctly
@@ -716,12 +781,14 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 12: Testing
 
 ### Test Setup Verification
+
 - [ ] Verify Jest is configured correctly
 - [ ] Verify React Testing Library is set up
 - [ ] Run a simple test to verify setup works
 - [ ] Fix any test setup issues
 
 ### Hero Component Tests
+
 - [ ] Create `tests/Hero.test.tsx`
 - [ ] Test title "Meet Steven Morales…" renders
 - [ ] Test "View Features" button exists
@@ -729,6 +796,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Run tests and verify they pass
 
 ### Button Component Tests
+
 - [ ] Create `tests/Button.test.tsx`
 - [ ] Test button renders with given text
 - [ ] Test button calls onClick handler when clicked
@@ -736,6 +804,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Run tests and verify they pass
 
 ### Content Component Tests
+
 - [ ] Create `tests/Content.test.tsx`
 - [ ] Mock `fetchContent` function
 - [ ] Test loading state renders
@@ -744,6 +813,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Run tests and verify they pass
 
 ### Test Coverage
+
 - [ ] Run test coverage report
 - [ ] Aim for reasonable coverage (60%+)
 - [ ] Add tests for critical paths
@@ -754,6 +824,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 13: Git Workflow & Version Control
 
 ### Branch Strategy
+
 - [ ] Create and switch to `main` branch
 - [ ] Create `feature/landing-page` branch
 - [ ] Create `feature/components-page` branch
@@ -762,6 +833,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Create `chore/tests` branch
 
 ### Commit Strategy
+
 - [ ] Make commits with descriptive messages
 - [ ] Use conventional commit format:
   - [ ] `feat:` for new features
@@ -774,6 +846,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Write clear commit messages
 
 ### Branch Workflow
+
 - [ ] Work on feature branches
 - [ ] Commit frequently
 - [ ] Merge feature branches to main when complete
@@ -781,6 +854,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Resolve merge conflicts if any
 
 ### Final Git Cleanup
+
 - [ ] Ensure all work is committed
 - [ ] Push all branches to remote
 - [ ] Verify commit history is clean
@@ -791,6 +865,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 14: Documentation
 
 ### README.md
+
 - [ ] Create `README.md`
 - [ ] Add project title: "Steven Morales FE-01 – Front-End Experience Engine (Critical Mass Prototype)"
 - [ ] Add project description (2-3 paragraphs)
@@ -820,6 +895,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Review and polish README
 
 ### Code Comments
+
 - [ ] Add JSDoc comments to complex functions
 - [ ] Add inline comments where needed
 - [ ] Ensure code is self-documenting
@@ -829,12 +905,14 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 15: Final Polish & Review
 
 ### Content Review
+
 - [ ] Review all copy matches "Complete Copy" section
 - [ ] Check for typos and grammar errors
 - [ ] Verify all text is in English
 - [ ] Ensure tone is consistent
 
 ### Functionality Review
+
 - [ ] Test all links work correctly
 - [ ] Test all buttons have proper actions
 - [ ] Test navigation works
@@ -843,6 +921,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Test filtering works on content page
 
 ### Design Review
+
 - [ ] Verify responsive design on mobile (320px+)
 - [ ] Verify responsive design on tablet (768px+)
 - [ ] Verify responsive design on desktop (1024px+)
@@ -851,6 +930,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Check for layout shifts
 
 ### Cross-Browser Testing
+
 - [ ] Test in Chrome
 - [ ] Test in Firefox
 - [ ] Test in Safari
@@ -858,6 +938,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Fix any browser-specific issues
 
 ### Code Quality
+
 - [ ] Run ESLint and fix errors
 - [ ] Run Prettier for code formatting
 - [ ] Check for console errors
@@ -868,6 +949,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Review component props match specifications
 
 ### Accessibility Final Check
+
 - [ ] Run final accessibility audit
 - [ ] Test keyboard navigation one more time
 - [ ] Test with screen reader one more time
@@ -875,6 +957,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Fix any remaining issues
 
 ### Performance Final Check
+
 - [ ] Run final Lighthouse audit
 - [ ] Check all Core Web Vitals
 - [ ] Verify performance scores are good
@@ -885,6 +968,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 16: Deployment
 
 ### Vercel Setup
+
 - [ ] Create Vercel account (if needed)
 - [ ] Install Vercel CLI (optional): `npm i -g vercel`
 - [ ] Connect GitHub repository to Vercel
@@ -895,12 +979,14 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Add environment variables (if any)
 
 ### Deployment
+
 - [ ] Deploy to Vercel
 - [ ] Wait for build to complete
 - [ ] Verify deployment succeeded
 - [ ] Get production URL
 
 ### Production Testing
+
 - [ ] Test all routes work on production
 - [ ] Test API endpoint works on production
 - [ ] Test all functionality works
@@ -909,6 +995,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Fix any production issues
 
 ### Domain & URLs
+
 - [ ] Note production URL
 - [ ] Test production URL is accessible
 - [ ] Verify HTTPS is enabled
@@ -919,11 +1006,13 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 ## Phase 17: Presentation Preparation
 
 ### Elevator Pitch
+
 - [ ] Prepare 30-second explanation of project
 - [ ] Prepare 2-minute detailed explanation
 - [ ] Practice explaining the project approach
 
 ### Key Points to Highlight
+
 - [ ] Design-to-code translation
 - [ ] Component system architecture
 - [ ] API integration approach
@@ -932,6 +1021,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Testing strategy
 
 ### Documentation Ready
+
 - [ ] Have GitHub repo URL ready
 - [ ] Have live demo URL ready
 - [ ] Have README polished and ready
@@ -939,6 +1029,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Ensure project addresses all job posting points
 
 ### Final Review
+
 - [ ] Review entire project one more time
 - [ ] Make sure everything works
 - [ ] Be ready to discuss decisions and trade-offs
