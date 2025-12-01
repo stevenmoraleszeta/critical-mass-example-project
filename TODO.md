@@ -438,6 +438,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Add intro text: "A small set of reusable components used across this prototype, documented with their intended usage and accessibility notes."
 - [ ] Wrap with MainLayout
 
+
 ### Component Documentation Sections
 - [ ] Create Buttons section
   - [ ] Show primary variant
@@ -597,6 +598,12 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Ensure professional tone in styling
 - [ ] Test about page renders correctly
 
+### Navbar Search Icon
+- [ ] Implement search icon to navbar
+- [ ] Create functionality to navigate though pages content
+- [ ] Test funcitionality is correctly
+
+
 ---
 
 ## Phase 10: Accessibility Implementation
@@ -654,6 +661,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [ ] Fix any contrast issues
 
 ### Final Accessibility Check
+
 - [ ] Run Lighthouse accessibility audit
 - [ ] Aim for 100% accessibility score
 - [ ] Fix any issues found

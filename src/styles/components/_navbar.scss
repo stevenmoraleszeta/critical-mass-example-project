@@ -11,10 +11,13 @@
   width: 100%;
   background-color: var(--color-bg-light);
   border-bottom: var(--border-width-thin) solid var(--color-primary);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: var(--z-index-sticky);
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-fixed);
   @include shadow-sm;
+  overflow: visible; // Allow active indicator line to show below navbar
 
   &__container {
     @include container(var(--container-max-width), var(--space-md));
@@ -245,6 +248,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
+    position: relative;
 
     @include breakpoint-md {
       width: auto;
@@ -262,6 +266,7 @@
     text-align: center;
     @include transition-base(all);
     @include focus-visible;
+    overflow: visible; // Allow active indicator line to show outside link bounds
 
     // Mobile: Full width
     @include breakpoint-max-md {
@@ -278,6 +283,11 @@
     &:hover {
       color: var(--color-primary);
       background-color: var(--color-primary-rgba-5);
+      padding: var(--space-sm) var(--space-md);
+      
+      @include breakpoint-md {
+        padding: var(--space-sm) var(--space-lg);
+      }
     }
 
     &:focus-visible {
@@ -293,32 +303,38 @@
       position: relative;
       transform: translateY(-1px);
       box-shadow: 0 2px 4px rgba(0, 0, 255, 0.1);
+      padding: var(--space-sm) var(--space-md);
+      
+      @include breakpoint-md {
+        padding: var(--space-sm) var(--space-lg);
+      }
 
-      // Active indicator line (desktop only)
+      // Active indicator line (desktop only) - positioned below the navbar, aligned with link
       @include breakpoint-md {
         &::after {
           content: '';
           position: absolute;
-          bottom: 0;
-          left: var(--space-lg);
-          right: var(--space-lg);
+          bottom: calc(-1 * var(--space-sm) - var(--border-width-thin));
+          left: 0;
+          right: 0;
           height: 3px;
-          background-color: var(--color-primary);
+          background-color: var(--color-accent);
           border-radius: var(--radius-sm) var(--radius-sm) 0 0;
           animation: slideIn 0.3s ease-out;
+          z-index: calc(var(--z-index-fixed) + 1);
         }
       }
 
-      // Mobile: underline effect
+      // Mobile: underline effect - positioned below the link text
       @include breakpoint-max-md {
         &::after {
           content: '';
           position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
+          bottom: var(--space-xs);
+          left: var(--space-sm);
+          right: var(--space-sm);
           height: 2px;
-          background-color: var(--color-primary);
+          background-color: var(--color-accent);
           border-radius: var(--radius-sm);
         }
       }
@@ -332,31 +348,37 @@
       position: relative;
       transform: translateY(-1px);
       box-shadow: 0 2px 4px rgba(0, 0, 255, 0.1);
+      padding: var(--space-sm) var(--space-md);
+      
+      @include breakpoint-md {
+        padding: var(--space-sm) var(--space-lg);
+      }
 
       @include breakpoint-md {
         &::after {
           content: '';
           position: absolute;
-          bottom: 0;
-          left: var(--space-lg);
-          right: var(--space-lg);
+          bottom: calc(-1 * var(--space-sm) - var(--border-width-thin));
+          left: 0;
+          right: 0;
           height: 3px;
-          background-color: var(--color-primary);
+          background-color: var(--color-accent);
           border-radius: var(--radius-sm) var(--radius-sm) 0 0;
           animation: slideIn 0.3s ease-out;
+          z-index: calc(var(--z-index-fixed) + 1);
         }
       }
 
-      // Mobile: underline effect
+      // Mobile: underline effect - positioned below the link text
       @include breakpoint-max-md {
         &::after {
           content: '';
           position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
+          bottom: var(--space-xs);
+          left: var(--space-sm);
+          right: var(--space-sm);
           height: 2px;
-          background-color: var(--color-primary);
+          background-color: var(--color-accent);
           border-radius: var(--radius-sm);
         }
       }

@@ -892,3 +892,35 @@
   text-transform: capitalize;
 }
 
+// ============================================================================
+// Main Content Layout
+// Following Critical Mass requirements: Responsive, Mobile-First
+// Padding-top to compensate for fixed navbar
+// ============================================================================
+
+main#main-content {
+  // Mobile-first: padding-top to compensate for fixed navbar
+  padding-top: var(--navbar-height-mobile);
+  min-height: 100vh;
+  
+  // Desktop: use larger navbar height
+  @include breakpoint-md {
+    padding-top: var(--navbar-height-desktop);
+  }
+}
+
+// ============================================================================
+// Header Layout (for fixed navbar)
+// When navbar is fixed, header should not occupy space
+// ============================================================================
+
+header[role="banner"] {
+  // When header contains a fixed navbar, it should not occupy layout space
+  // The navbar itself is positioned fixed, so header is just a semantic wrapper
+  line-height: 0; // Prevent extra space from line-height
+  
+  // Ensure header doesn't create extra spacing
+  margin: 0;
+  padding: 0;
+}
+
