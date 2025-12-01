@@ -150,3 +150,106 @@ $transition-slow: 300ms ease-in-out;
   --transition-slow: #{$transition-slow};
 }
 
+// ============================================================================
+// Container Widths
+// ============================================================================
+
+$container-xs: 20rem;    // 320px
+$container-sm: 27.5rem;  // 440px
+$container-md: 37.5rem;  // 600px
+$container-lg: 50rem;    // 800px
+$container-xl: 75rem;   // 1200px
+
+:root {
+  --container-xs: #{$container-xs};
+  --container-sm: #{$container-sm};
+  --container-md: #{$container-md};
+  --container-lg: #{$container-lg};
+  --container-xl: #{$container-xl};
+}
+
+// ============================================================================
+// Additional Spacing
+// ============================================================================
+
+$space-0-75: 0.75rem;  // 12px - between sm and md
+
+:root {
+  --space-0-75: #{$space-0-75};
+}
+
+// ============================================================================
+// Button UI Colors (Hover States)
+// ============================================================================
+
+// Button hover colors using grayscale values
+// These are UI-specific colors for interactive states
+$color-button-primary-hover: #383838;      // Dark gray for primary button hover
+$color-button-secondary-hover: #f2f2f2;   // Light gray for secondary button hover
+$color-button-secondary-border: #ebebeb;  // Light gray for secondary button border
+
+:root {
+  --color-button-primary-hover: #{$color-button-primary-hover};
+  --color-button-secondary-hover: #{$color-button-secondary-hover};
+  --color-button-secondary-border: #{$color-button-secondary-border};
+}
+
+// ============================================================================
+// Additional Typography Values
+// ============================================================================
+
+// Letter spacing
+$letter-spacing-tight: -0.15rem;   // -2.4px
+$letter-spacing-tighter: -0.12rem; // -1.92px
+
+:root {
+  --letter-spacing-tight: #{$letter-spacing-tight};
+  --letter-spacing-tighter: #{$letter-spacing-tighter};
+}
+
+// Additional line heights for specific use cases
+$line-height-48: 3rem;   // 48px
+$line-height-40: 2.5rem; // 40px
+$line-height-32: 2rem;   // 32px
+
+:root {
+  --lh-48: #{$line-height-48};
+  --lh-40: #{$line-height-40};
+  --lh-32: #{$line-height-32};
+}
+
+// Additional font sizes for specific use cases
+$font-size-40: 2.5rem;  // 40px
+$font-size-32: 2rem;    // 32px
+
+:root {
+  --fs-40: #{$font-size-40};
+  --fs-32: #{$font-size-32};
+}
+
+// ============================================================================
+// RGBA Color Utilities
+// ============================================================================
+
+// RGBA values for primary colors with opacity
+// Used for hover states and overlays
+$color-primary-rgba-90: rgba(0, 0, 255, 0.9);   // Blue at 90% opacity
+$color-accent-rgba-90: rgba(255, 255, 0, 0.9); // Yellow at 90% opacity
+
+:root {
+  --color-primary-rgba-90: #{$color-primary-rgba-90};
+  --color-accent-rgba-90: #{$color-accent-rgba-90};
+}
+
+// ============================================================================
+// Outline/Focus Styles
+// ============================================================================
+
+$outline-width-focus: 1.6px;  // Focus outline width (20% thinner than standard 2px)
+$outline-offset-focus: 2px;    // Focus outline offset
+
+:root {
+  --outline-width-focus: #{$outline-width-focus};
+  --outline-offset-focus: #{$outline-offset-focus};
+}
+
