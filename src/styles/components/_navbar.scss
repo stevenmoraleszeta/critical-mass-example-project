@@ -100,7 +100,6 @@
     @include flex;
     @include align-center;
     @include justify-center;
-    gap: var(--space-xs);
     padding: var(--space-xs) var(--space-sm);
     background-color: transparent;
     border: var(--border-width-thin) solid var(--color-primary);
@@ -175,12 +174,6 @@
       &:nth-child(3) {
         transform: translateY(-6px) rotate(-45deg);
       }
-    }
-  }
-
-  &__menu-text {
-    @include breakpoint-max-sm {
-      @include visually-hidden;
     }
   }
 

@@ -213,9 +213,6 @@ export default function NavBar({ className = '' }: NavBarProps) {
             <span className={`navbar__menu-line ${isMobileMenuOpen ? 'navbar__menu-line--open' : ''}`} />
             <span className={`navbar__menu-line ${isMobileMenuOpen ? 'navbar__menu-line--open' : ''}`} />
           </span>
-          <span className="navbar__menu-text">
-            {isMobileMenuOpen ? 'Close' : 'Menu'}
-          </span>
         </button>
 
         {/* Navigation Links */}
