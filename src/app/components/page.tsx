@@ -36,6 +36,11 @@ export default function Components() {
   const [darkMode, setDarkMode] = React.useState(false);
   const [notifications, setNotifications] = React.useState(true);
   const [autoSave, setAutoSave] = React.useState(false);
+  
+  // Usage examples toggle states
+  const [showLive, setShowLive] = React.useState(false);
+  const [emailAlerts, setEmailAlerts] = React.useState(true);
+  const [publicProfile, setPublicProfile] = React.useState(false);
 
   // Error message handlers
   const handleRetry = () => {
@@ -842,20 +847,20 @@ export default function Components() {
                 <Toggle
                   id="toggle-show-live"
                   label="Show only live content"
-                  checked={false}
-                  onChange={() => {}}
+                  checked={showLive}
+                  onChange={(e) => setShowLive(e.target.checked)}
                 />
                 <Toggle
                   id="toggle-email-alerts"
                   label="Email alerts"
-                  checked={true}
-                  onChange={() => {}}
+                  checked={emailAlerts}
+                  onChange={(e) => setEmailAlerts(e.target.checked)}
                 />
                 <Toggle
                   id="toggle-public-profile"
                   label="Make profile public"
-                  checked={false}
-                  onChange={() => {}}
+                  checked={publicProfile}
+                  onChange={(e) => setPublicProfile(e.target.checked)}
                 />
               </div>
             </section>
