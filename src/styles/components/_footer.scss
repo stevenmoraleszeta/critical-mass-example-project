@@ -104,7 +104,6 @@
       outline: 3px solid var(--color-secondary);
       outline-offset: 4px;
       border-radius: var(--radius-sm);
-      background-color: var(--color-accent-rgba-10);
     }
 
     &:focus:not(:focus-visible) {
@@ -182,7 +181,6 @@
       outline: 3px solid var(--color-secondary);
       outline-offset: 4px;
       border-radius: var(--radius-sm);
-      background-color: var(--color-accent-rgba-10);
     }
 
     &:focus:not(:focus-visible) {
