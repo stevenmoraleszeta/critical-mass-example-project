@@ -38,7 +38,7 @@
   
   // Layout
   padding: var(--space-sm) var(--space-md);
-  border: 1px solid var(--color-primary); // Blue border
+  border: var(--border-width-thin) solid var(--color-primary); // Blue border
   border-radius: var(--radius-md);
   background-color: var(--color-white);
   
@@ -50,8 +50,8 @@
   outline: none;
   
   &:focus-visible {
-    outline: 1.6px solid var(--color-secondary); // Red outline - always visible, 20% thinner
-    outline-offset: 2px;
+    outline: var(--outline-width-focus) solid var(--color-secondary); // Red outline - always visible, 20% thinner
+    outline-offset: var(--outline-offset-focus);
     border-color: var(--color-primary);
     @include shadow-md;
   }

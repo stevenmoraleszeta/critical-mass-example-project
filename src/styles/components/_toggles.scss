@@ -29,13 +29,13 @@
   // Base toggle styles (the switch track)
   position: relative;
   display: inline-block;
-  width: 3rem; // 48px
-  height: 1.5rem; // 24px
+  width: var(--space-2xl); // 48px
+  height: var(--space-lg); // 24px
   flex-shrink: 0;
   
   // Layout
   background-color: var(--color-white);
-  border: 1px solid var(--color-primary); // Blue border
+  border: var(--border-width-thin) solid var(--color-primary); // Blue border
   border-radius: var(--radius-full);
   cursor: pointer;
   
@@ -77,8 +77,8 @@
     // Accessibility: Focus states on the toggle track
     // Always red focus for better visibility (20% thinner)
     &:focus-visible ~ .toggle {
-      outline: 1.6px solid var(--color-secondary); // Red outline - always visible, 20% thinner
-      outline-offset: 2px;
+      outline: var(--outline-width-focus) solid var(--color-secondary); // Red outline - always visible, 20% thinner
+      outline-offset: var(--outline-offset-focus);
     }
     
     // When checked, move slider to the right and animate color change

@@ -39,13 +39,13 @@
   // Layout
   padding: var(--space-sm) var(--space-md);
   padding-right: var(--space-2xl); // Extra padding for dropdown arrow
-  border: 1px solid var(--color-primary); // Blue border
+  border: var(--border-width-thin) solid var(--color-primary); // Blue border
   border-radius: var(--radius-md);
   background-color: var(--color-white);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23FFFF00' stroke='%230000FF' stroke-width='1'/%3E%3Cpath fill='%230000FF' d='M8 11L4 7h8z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right var(--space-md) center;
-  background-size: 16px 16px;
+  background-size: 1rem 1rem; // 16px
   appearance: none; // Remove default arrow
   cursor: pointer;
   
@@ -57,8 +57,8 @@
   outline: none;
   
   &:focus-visible {
-    outline: 1.6px solid var(--color-secondary); // Red outline - always visible, 20% thinner
-    outline-offset: 2px;
+    outline: var(--outline-width-focus) solid var(--color-secondary); // Red outline - always visible, 20% thinner
+    outline-offset: var(--outline-offset-focus);
     border-color: var(--color-primary);
     @include shadow-md;
   }
