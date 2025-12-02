@@ -1,21 +1,5 @@
-// ============================================================================
-// SCSS Mixins
-// Following Critical Mass requirements: SASS, Mobile-First, Accessibility
-// Following SMACSS architecture
-// Using modern @use syntax
-// ============================================================================
-
-// Import variables to use breakpoints and other values
 @use 'variables' as *;
 
-// ============================================================================
-// Responsive Breakpoint Mixins
-// Mobile-First approach (Critical Mass requirement)
-// Note: Breakpoint variables are defined in _variables.scss
-// ============================================================================
-
-// These mixins use the breakpoint variables from _variables.scss
-// They follow mobile-first approach: base styles for mobile, enhance for larger screens
 
 @mixin breakpoint-xs {
   @media (min-width: #{$breakpoint-xs}) {
@@ -53,7 +37,6 @@
   }
 }
 
-// Max-width breakpoints (for specific use cases)
 @mixin breakpoint-max-xs {
   @media (max-width: #{$breakpoint-xs - 1px}) {
     @content;
@@ -78,24 +61,16 @@
   }
 }
 
-// Range breakpoint (between two breakpoints)
 @mixin breakpoint-between($min, $max) {
   @media (min-width: #{$min}) and (max-width: #{$max - 1px}) {
     @content;
   }
 }
 
-// ============================================================================
-// Flexbox Utility Mixins
-// Following project-idea.md: Layout utilities
-// ============================================================================
-
-// Flex container
 @mixin flex {
   display: flex;
 }
 
-// Flex direction
 @mixin flex-row {
   flex-direction: row;
 }
@@ -112,7 +87,6 @@
   flex-direction: column-reverse;
 }
 
-// Flex wrap
 @mixin flex-wrap {
   flex-wrap: wrap;
 }
@@ -121,7 +95,6 @@
   flex-wrap: nowrap;
 }
 
-// Justify content
 @mixin justify-start {
   justify-content: flex-start;
 }
@@ -146,7 +119,6 @@
   justify-content: space-evenly;
 }
 
-// Align items
 @mixin align-start {
   align-items: flex-start;
 }
@@ -167,7 +139,6 @@
   align-items: baseline;
 }
 
-// Align self
 @mixin align-self-start {
   align-self: flex-start;
 }
@@ -184,12 +155,10 @@
   align-self: stretch;
 }
 
-// Gap (using spacing variables)
 @mixin gap($size) {
   gap: var(--space-#{$size});
 }
 
-// Flex grow/shrink
 @mixin flex-grow($value: 1) {
   flex-grow: $value;
 }
@@ -198,7 +167,6 @@
   flex-shrink: $value;
 }
 
-// Complete flexbox utility mixin
 @mixin flexbox($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap, $gap: 0) {
   display: flex;
   flex-direction: $direction;
@@ -208,27 +176,18 @@
   gap: $gap;
 }
 
-// ============================================================================
-// Grid Utility Mixins
-// Following project-idea.md: Grid utilities (.grid, .grid--2, .grid--3)
-// ============================================================================
-
-// Grid container
 @mixin grid {
   display: grid;
 }
 
-// Grid columns (using CSS Grid)
 @mixin grid-cols($columns) {
   grid-template-columns: repeat($columns, 1fr);
 }
 
-// Grid rows
 @mixin grid-rows($rows) {
   grid-template-rows: repeat($rows, 1fr);
 }
 
-// Grid gap (using spacing variables)
 @mixin grid-gap($size) {
   gap: var(--space-#{$size});
 }
@@ -241,7 +200,6 @@
   row-gap: var(--space-#{$size});
 }
 
-// Grid auto-fit/auto-fill
 @mixin grid-auto-fit($min-width) {
   grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
 }
@@ -250,19 +208,16 @@
   grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
 }
 
-// Grid area
 @mixin grid-area($name) {
   grid-area: $name;
 }
 
-// Complete grid utility mixin
 @mixin grid-layout($columns: 1, $gap: 0) {
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
   gap: $gap;
 }
 
-// Responsive grid mixin (mobile-first)
 @mixin responsive-grid($mobile: 1, $tablet: 2, $desktop: 3, $gap-size: md) {
   @include grid;
   @include grid-cols($mobile);
@@ -277,10 +232,6 @@
   }
 }
 
-// ============================================================================
-// Transition Mixins
-// Using transition variables from _variables.scss
-// ============================================================================
 
 @mixin transition($property: all, $duration: base, $timing: ease-in-out) {
   $transition-duration: var(--transition-#{$duration});
@@ -299,7 +250,6 @@
   transition: $property var(--transition-slow);
 }
 
-// Multiple properties transition
 @mixin transition-multiple($properties...) {
   $transitions: ();
   @each $prop in $properties {
@@ -308,30 +258,20 @@
   transition: $transitions;
 }
 
-// ============================================================================
-// Focus-Visible Mixin for Accessibility
-// Following Critical Mass requirement: Visible Focus
-// Following project-idea.md section 5: Accessibility
-// ============================================================================
-
 @mixin focus-visible {
-  // Remove default outline
   outline: none;
   
-  // Add visible focus ring for keyboard users
   &:focus-visible {
     outline: var(--border-width-base) solid var(--color-accent);
     outline-offset: var(--outline-offset-focus);
     border-radius: var(--radius-sm);
   }
   
-  // Remove outline for mouse users
   &:focus:not(:focus-visible) {
     outline: none;
   }
 }
 
-// Focus-visible with custom color
 @mixin focus-visible-custom($color: var(--color-accent), $width: var(--border-width-base), $offset: var(--outline-offset-focus)) {
   outline: none;
   
@@ -346,7 +286,6 @@
   }
 }
 
-// Focus-visible with box-shadow (alternative style)
 @mixin focus-visible-shadow($color: var(--color-accent)) {
   outline: none;
   
@@ -361,18 +300,12 @@
   }
 }
 
-// ============================================================================
-// Additional Utility Mixins
-// ============================================================================
-
-// Truncate text (ellipsis)
 @mixin truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-// Line clamp (multi-line truncate)
 @mixin line-clamp($lines: 2) {
   display: -webkit-box;
   -webkit-line-clamp: $lines;
@@ -380,12 +313,10 @@
   overflow: hidden;
 }
 
-// Aspect ratio
 @mixin aspect-ratio($width: 16, $height: 9) {
   aspect-ratio: #{$width} / #{$height};
 }
 
-// Center content (absolute positioning)
 @mixin center-absolute {
   position: absolute;
   top: 50%;
@@ -393,14 +324,12 @@
   transform: translate(-50%, -50%);
 }
 
-// Center content (flexbox)
 @mixin center-flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-// Visually hidden (for accessibility)
 @mixin visually-hidden {
   position: absolute;
   width: var(--border-width-thin);
@@ -413,7 +342,6 @@
   border-width: 0;
 }
 
-// Container mixin (responsive max-width)
 @mixin container($max-width: var(--container-max-width), $padding: var(--space-md)) {
   width: 100%;
   max-width: $max-width;
@@ -423,9 +351,6 @@
   padding-right: $padding;
 }
 
-// ============================================================================
-// Spacing Mixins (using spacing variables)
-// ============================================================================
 
 @mixin padding($size) {
   padding: var(--space-#{$size});
@@ -455,9 +380,6 @@
   margin-bottom: var(--space-#{$size});
 }
 
-// ============================================================================
-// Shadow Mixins (using shadow variables)
-// ============================================================================
 
 @mixin shadow($size: md) {
   box-shadow: var(--shadow-#{$size});
@@ -479,9 +401,6 @@
   box-shadow: var(--shadow-xl);
 }
 
-// ============================================================================
-// Border Radius Mixins (using radius variables)
-// ============================================================================
 
 @mixin radius($size: md) {
   border-radius: var(--radius-#{$size});

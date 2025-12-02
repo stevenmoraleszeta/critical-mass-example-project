@@ -1,36 +1,8 @@
-// ============================================================================
-// Main SCSS File
-// Following Critical Mass requirements: SASS, Organized Architecture
-// Following SMACSS architecture and project-idea.md structure
-// Using modern @use syntax (replaces deprecated @import)
-// ============================================================================
-
-// ============================================================================
-// Base Layer (SMACSS)
-// Import order is important: variables first, then mixins, then everything else
-// Using @use with 'as *' to maintain global scope compatibility
-// ============================================================================
-
-// 1. Variables - Must be imported first (used by all other files)
 @use 'base/variables' as *;
-
-// 2. Mixins - Imported second (may use variables, used by other files)
 @use 'base/mixins' as *;
-
-// 3. Reset - Base styles and resets
 @use 'base/reset' as *;
-
-// 4. Typography - Base typography styles
 @use 'base/typography' as *;
-
-// 5. Layout - Layout utilities
 @use 'base/layout' as *;
-
-// ============================================================================
-// Components Layer (SMACSS)
-// Component-specific styles
-// Will be added as components are created
-// ============================================================================
 
 @use 'components/buttons' as *;
 @use 'components/cards' as *;
@@ -60,10 +32,6 @@
 @use 'components/floating-binary-elements' as *;
 // @use 'components/content' as *;
 
-// ============================================================================
-// Pages Layer (SMACSS)
-// Page-specific styles
-// ============================================================================
 
 @use 'pages/components' as *;
 @use 'pages/home' as *;
