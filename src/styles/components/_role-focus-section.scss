@@ -17,6 +17,8 @@
   }
   
   &__container {
+    position: relative;
+    z-index: 2;
     width: 100%;
     max-width: var(--container-max-width);
     margin: 0 auto;

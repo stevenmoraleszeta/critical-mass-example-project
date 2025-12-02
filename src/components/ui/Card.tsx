@@ -28,13 +28,6 @@ import Image from 'next/image';
  * />
  * 
  * <Card 
- *   variant="feature" 
- *   title="Feature with Background" 
- *   description="Feature description with background image"
- *   backgroundImage={{ src: "/image.jpg", alt: "Background image" }}
- * />
- * 
- * <Card 
  *   variant="content" 
  *   footer={<Button variant="primary">Action</Button>}
  * >
@@ -69,8 +62,6 @@ export interface CardProps {
   backgroundImage?: {
     src: string;
     alt: string;
-    width?: number;
-    height?: number;
   };
   /** Card footer content (React node) */
   footer?: React.ReactNode;

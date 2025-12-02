@@ -282,8 +282,7 @@
     }
   }
 
-  // next/image with fill creates its own positioned container
-  // Apply same filter as regular card images for red/white effect
+  // Apply same filter as regular cards for red/white effect
   &__background-img {
     // Filter to show images only in red and white
     // Convert to grayscale for white/black base, then overlay will add red
@@ -300,7 +299,8 @@
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.75) 100%
+      rgba(0, 0, 0, 0.7) 50%,
+      rgba(0, 0, 0, 0.85) 100%
     );
     z-index: 3;
     pointer-events: none;
