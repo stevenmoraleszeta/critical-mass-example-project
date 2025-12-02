@@ -20,13 +20,8 @@ export default function Home() {
               Building <strong>high-quality, responsive, accessible full stack experiences</strong> that connect technology, creativity, and real human needs.
             </>
           }
-          keyIdentity={
-            <>
-              Applying for <strong>Developer, Front End at Critical Mass</strong>
-            </>
-          }
           ctaPrimary={{
-            text: "Want to see how I would work at Critical Mass?",
+            text: "See My Work",
             href: "/critical-mass-case-study",
             variant: "highlight",
           }}

@@ -80,10 +80,6 @@
 
 > Building **high-quality, responsive, accessible full stack experiences** that connect technology, creativity, and real human needs.
 
-**Key Identity Line**
-
-- Applying for **Developer, Front End at Critical Mass**
-
 ### Role Focus: Developer, Front End @ Critical Mass
 
 This portfolio is intentionally designed as a **live case study** for the **Developer, Front End** position at Critical Mass:
