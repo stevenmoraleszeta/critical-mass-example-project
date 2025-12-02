@@ -1,6 +1,7 @@
 import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/sections/Hero';
 import Features from '@/components/sections/Features';
+import Specs from '@/components/sections/Specs';
 
 export default function Home() {
   return (
@@ -19,6 +20,43 @@ export default function Home() {
         note="No monthly subscription. Just coffee and interesting problems."
       />
       <Features />
+      <Specs
+        title="Tech Specs"
+        columns={[
+          {
+            title: "Supported Technologies",
+            items: [
+              "React",
+              "Next.js",
+              "TypeScript",
+              "HTML5",
+              "CSS3",
+              "SASS",
+              "Git",
+              "Jest",
+              "RTL",
+            ],
+          },
+          {
+            title: "Protocols & Data",
+            items: [
+              "HTTP",
+              "JSON",
+              "Basic XML",
+              "REST APIs",
+            ],
+          },
+          {
+            title: "Integrations",
+            items: [
+              "CMS-like data",
+              "3rd-party APIs",
+              "Webhooks",
+            ],
+          },
+        ]}
+        footerNote="Backwards-compatible with legacy codebases (with patience)."
+      />
     </MainLayout>
   );
 }

@@ -375,17 +375,17 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 
 ### Specs Section
 
-- [ ] Create `components/sections/Specs.tsx`
-- [ ] Define `SpecsSectionProps` interface
-- [ ] Add section title: "Tech Specs"
-- [ ] Create column layout
-- [ ] Add Column 1: Supported Technologies (React, Next.js, TypeScript, etc.)
-- [ ] Add Column 2: Protocols & Data (HTTP, JSON, XML, REST APIs)
-- [ ] Add Column 3: Integrations (CMS-like data, 3rd-party APIs, Webhooks)
-- [ ] Add footer note: "Backwards-compatible with legacy codebases (with patience)."
-- [ ] Style specs section
-- [ ] Make specs section responsive
-- [ ] Test specs section renders correctly
+- [x] Create `components/sections/Specs.tsx`
+- [x] Define `SpecsSectionProps` interface
+- [x] Add section title: "Tech Specs"
+- [x] Create column layout
+- [x] Add Column 1: Supported Technologies (React, Next.js, TypeScript, etc.)
+- [x] Add Column 2: Protocols & Data (HTTP, JSON, XML, REST APIs)
+- [x] Add Column 3: Integrations (CMS-like data, 3rd-party APIs, Webhooks)
+- [x] Add footer note: "Backwards-compatible with legacy codebases (with patience)."
+- [x] Style specs section
+- [x] Make specs section responsive
+- [x] Test specs section renders correctly
 
 ### Use Cases Section
 
