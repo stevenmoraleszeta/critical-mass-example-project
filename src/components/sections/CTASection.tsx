@@ -6,8 +6,9 @@ import Button from '@/components/ui/Button';
 /**
  * CTA Section Component
  * 
- * Final call-to-action section for the landing page. Encourages exploration of
- * portfolio components and demonstrates technical capabilities.
+ * Primary call-to-action section for the landing page. Encourages visitors to
+ * explore the Critical Mass Case Study page to see how the portfolio matches
+ * the role requirements.
  * 
  * Follows Critical Mass requirements:
  * - Semantic HTML (<section>, <h2>)
@@ -20,47 +21,37 @@ import Button from '@/components/ui/Button';
  * <CTASection />
  * ```
  */
-
-/**
- * CTA Section Implementation
- * 
- * Features:
- * - Two primary action buttons for navigation
- * - Professional note about the portfolio prototype
- * - Centered layout with responsive design
- * - Accessible semantic structure
- */
 export default function CTASection() {
   return (
     <section className="cta-section" id="cta" aria-labelledby="cta-title">
       <div className="cta-section__container">
         <h2 id="cta-title" className="cta-section__title">
-          Explore My Work
+          Want to see how I would work at Critical Mass?
         </h2>
+        
+        <p className="cta-section__description">
+          Start with the <strong>"Critical Mass Case Study"</strong> page – it's a focused breakdown of how I match this role, backed by real code and projects.
+        </p>
         
         <div className="cta-section__actions">
           <Button
-            variant="primary"
+            variant="highlight"
             size="lg"
-            href="/projects"
-            ariaLabel="View All Projects"
+            href="/critical-mass-case-study"
+            ariaLabel="View Critical Mass Case Study"
           >
-            View All Projects
+            Case Study
           </Button>
           
           <Button
             variant="secondary"
             size="lg"
-            href="/ui-library"
-            ariaLabel="Explore UI Library"
+            href="/projects"
+            ariaLabel="View All Projects"
           >
-            Explore UI Library
+            View Projects
           </Button>
         </div>
-        
-        <p className="cta-section__note">
-          This portfolio prototype was crafted specifically to demonstrate my skills and approach for the Critical Mass Front-End Developer position in San Jose, Costa Rica. Explore the UI Library to see the component system architecture.
-        </p>
       </div>
     </section>
   );

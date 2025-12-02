@@ -80,28 +80,52 @@
     }
   }
   
+  // Description paragraph
+  &__description {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-relaxed);
+    color: var(--color-text-primary);
+    margin: 0;
+    text-align: center;
+    max-width: 800px;
+    
+    // Mobile: adjust font size
+    @media (max-width: 639px) {
+      font-size: var(--fs-sm);
+    }
+    
+    // Tablet: larger font
+    @include breakpoint-md {
+      font-size: var(--fs-lg);
+    }
+    
+    // Desktop: maintain readable line length
+    @include breakpoint-lg {
+      font-size: var(--fs-lg);
+      max-width: 700px;
+    }
+  }
+  
   // Actions container (CTAs)
   &__actions {
-    @include flex;
-    @include flex-column;
-    @include align-center;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--space-md);
     
     // Mobile: full width buttons
     width: 100%;
     max-width: 100%;
     
-    // Tablet and up: horizontal layout, centered
+    // Tablet and up: horizontal layout, equal width
     @include breakpoint-md {
-      @include flex-row;
-      @include justify-center;
-      width: auto;
+      grid-template-columns: 1fr 1fr;
       max-width: 600px;
+      margin: 0 auto;
     }
     
     // Desktop: maintain center alignment
     @include breakpoint-lg {
-      @include justify-center;
       max-width: 700px;
     }
   }
@@ -143,17 +167,10 @@
     .btn {
       // Mobile: full width buttons
       width: 100%;
-      min-width: 200px;
       
-      // Tablet and up: auto width with min-width
+      // Tablet and up: full grid column width
       @include breakpoint-md {
-        width: auto;
-        min-width: 200px;
-      }
-      
-      // Desktop: larger min-width
-      @include breakpoint-lg {
-        min-width: 220px;
+        width: 100%;
       }
     }
   }
@@ -170,7 +187,7 @@
       font-size: var(--fs-lg);
     }
     
-    &__note {
+    &__description {
       font-size: var(--fs-xs);
     }
     

@@ -530,11 +530,11 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [ ] Test section renders correctly
 
 #### Primary CTA Section Update
-- [ ] Update CTASection component (`src/components/sections/CTASection.tsx`) with new copy from `PROJECT-CONTENT.md`:
-  - [ ] Update title/heading: "Want to see how I would work at Critical Mass?"
-  - [ ] Update description: "Start with the 'Critical Mass Case Study' page – it's a focused breakdown of how I match this role, backed by real code and projects."
-  - [ ] Update buttons: Primary → `/critical-mass-case-study`, Secondary → `/projects`
-- [ ] Update styles if needed
+- [x] Update CTASection component (`src/components/sections/CTASection.tsx`) with new copy from `PROJECT-CONTENT.md`:
+  - [x] Update title/heading: "Want to see how I would work at Critical Mass?"
+  - [x] Update description: "Start with the 'Critical Mass Case Study' page – it's a focused breakdown of how I match this role, backed by real code and projects."
+  - [x] Update buttons: Primary → `/critical-mass-case-study`, Secondary → `/projects`
+- [x] Update styles if needed
 - [ ] Test CTA section renders correctly
 
 #### Remove/Archive Obsolete Sections
