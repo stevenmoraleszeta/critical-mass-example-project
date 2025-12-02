@@ -1108,13 +1108,7 @@ Define all this in `_variables.scss`.
 
 #### Keyboard Navigation
 
-- **Skip link at the start:**
-
-  ```html
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  ```
-
-- `.skip-link` classes with styles to be visible when `:focus`.
+- Proper focus states and keyboard navigation support.
 
 #### Correct Links and Buttons
 

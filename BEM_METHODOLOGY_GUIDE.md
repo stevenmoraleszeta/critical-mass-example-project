@@ -304,13 +304,11 @@ styles/
 
 **Status**: ✅ **COMPLIANT** (Foundation ready)
 - Focus-visible mixin created (`@include focus-visible`)
-- Skip-link styles in `_reset.scss`
 - Reduced motion support
 - **Action Needed**: Apply accessibility to all components when created
 
 **Accessibility Features**:
 - ✅ Focus-visible mixin for keyboard navigation
-- ✅ Skip-link styles
 - ✅ Reduced motion support
 - ✅ Semantic HTML structure ready
 

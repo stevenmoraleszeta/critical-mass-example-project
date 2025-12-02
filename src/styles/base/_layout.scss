@@ -748,7 +748,7 @@
   border-width: 0;
 }
 
-// Show visually hidden content when focused (for skip links, etc.)
+// Show visually hidden content when focused
 .visually-hidden:focus {
   position: static;
   width: auto;
@@ -898,7 +898,7 @@
 // Padding-top to compensate for fixed navbar
 // ============================================================================
 
-main#main-content {
+main {
   // Mobile-first: padding-top to compensate for fixed navbar
   padding-top: var(--navbar-height-mobile);
   min-height: 100vh;
