@@ -18,7 +18,7 @@ export default function Home() {
           ctaPrimary={{
             text: "View Features",
             href: "#features",
-            variant: "save", // Yellow with blue text and border
+            variant: "highlight", // Yellow with blue text and border
           }}
           ctaSecondary={{
             text: "See Live Content",

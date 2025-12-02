@@ -92,28 +92,12 @@
     @include breakpoint-md {
       grid-template-columns: repeat(2, 1fr);
       gap: var(--space-xl);
-      
-      // Center the last item if it's alone in the row (odd number of items)
-      // For 3 items: 2 in first row, 1 in second row - center the last one
-      > *:last-child:nth-child(odd) {
-        grid-column: 1 / -1;
-        justify-self: center;
-        // Constrain width to match one column width (accounting for gap)
-        max-width: calc((100% - var(--space-xl)) / 2);
-      }
     }
     
     // Desktop: 3 columns for testimonials
     @include breakpoint-lg {
       grid-template-columns: repeat(3, 1fr);
       gap: var(--space-2xl);
-      
-      // Reset the centering on desktop since all 3 items fit in one row
-      > *:last-child:nth-child(odd) {
-        grid-column: auto;
-        justify-self: auto;
-        max-width: none;
-      }
     }
   }
   

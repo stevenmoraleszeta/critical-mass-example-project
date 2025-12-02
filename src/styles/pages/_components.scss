@@ -24,7 +24,7 @@
 
   display: flex;
   min-height: 100vh;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background-color: var(--background);
   color: var(--text-primary);
@@ -40,7 +40,8 @@
   align-items: center;
   justify-content: flex-start;
   background-color: var(--foreground);
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
   color: var(--text-primary);
   margin-left: auto;
   margin-right: auto;
@@ -140,29 +141,10 @@
 
   @include breakpoint-md {
     grid-template-columns: repeat(2, 1fr);
-    
-    // Center the last item if it's alone in the row (odd number of items)
-    // For 3 items: 2 in first row, 1 in second row - center the last one
-    > *:last-child:nth-child(odd) {
-      grid-column: 1 / -1;
-      justify-self: center;
-      // Constrain width to match one column width (accounting for gap)
-      max-width: calc((100% - var(--space-lg)) / 2);
-    }
   }
 
   @include breakpoint-lg {
     grid-template-columns: repeat(3, 1fr);
-    
-    // Center the last item if it's alone in the row
-    // For 3-column grid: 4 items (3+1), 7 items (3+3+1), 10 items (3+3+3+1), etc.
-    // Pattern: last child at position 3n+1 (4, 7, 10, 13...)
-    > *:last-child:nth-child(3n + 1) {
-      grid-column: 1 / -1;
-      justify-self: center;
-      // Constrain width to match one column width (accounting for 2 gaps)
-      max-width: calc((100% - 2 * var(--space-lg)) / 3);
-    }
   }
 }
 
@@ -577,4 +559,6 @@
     }
   }
 }
+
+
 

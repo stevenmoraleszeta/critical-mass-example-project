@@ -101,6 +101,9 @@ export default function Components() {
               <Button variant="secondary" onClick={handleClick}>
                 Secondary Button
               </Button>
+              <Button variant="highlight" onClick={handleClick}>
+                Highlight Button
+              </Button>
               <Button variant="ghost" onClick={handleClick}>
                 Ghost Button
               </Button>
@@ -144,6 +147,14 @@ export default function Components() {
                 </div>
               </div>
               <div>
+                <h3>Highlight</h3>
+                <div className="components-page__button-group components-page__button-group--align-center">
+                  <Button variant="highlight" size="sm" onClick={handleClick}>Small</Button>
+                  <Button variant="highlight" size="md" onClick={handleClick}>Medium</Button>
+                  <Button variant="highlight" size="lg" onClick={handleClick}>Large</Button>
+                </div>
+              </div>
+              <div>
                 <h3>Ghost</h3>
                 <div className="components-page__button-group components-page__button-group--align-center">
                   <Button variant="ghost" size="sm" onClick={handleClick}>Small</Button>
@@ -170,6 +181,7 @@ export default function Components() {
             <div className="components-page__button-group">
               <Button href="/" variant="primary">Link Primary</Button>
               <Button href="/" variant="secondary">Link Secondary</Button>
+              <Button href="/" variant="highlight">Link Highlight</Button>
               <Button href="/" variant="ghost">Link Ghost</Button>
             </div>
           </section>
@@ -183,7 +195,7 @@ export default function Components() {
                   <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </Button>
-              <Button ariaLabel="Save changes" variant="save" onClick={handleClick}>
+              <Button ariaLabel="Save changes" variant="highlight" onClick={handleClick}>
                 <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M13.333 4V13.333H2.667V2.667H10.667L13.333 4ZM8 11.333C9.473 11.333 10.667 10.139 10.667 8.667C10.667 7.194 9.473 6 8 6C6.527 6 5.333 7.194 5.333 8.667C5.333 10.139 6.527 11.333 8 11.333ZM4 2.667V4H2.667V2.667H4Z" fill="currentColor"/>
                 </svg>

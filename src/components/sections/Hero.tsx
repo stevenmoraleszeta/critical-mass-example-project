@@ -39,7 +39,7 @@ export interface HeroProps {
     text: string;
     href: string;
     onClick?: () => void;
-    variant?: 'primary' | 'secondary' | 'ghost' | 'save' | 'exit';
+    variant?: 'primary' | 'secondary' | 'ghost' | 'highlight' | 'exit';
   };
   /** Secondary CTA button configuration */
   ctaSecondary: {
@@ -195,6 +195,3 @@ export default function Hero({
     </section>
   );
 }
-
-
-
