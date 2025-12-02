@@ -19,6 +19,56 @@ body {
   background-color: var(--color-bg-light);
 }
 
+// ============================================================================
+// Custom Scrollbar Styles
+// Following project design system (Primary: Blue, Secondary: Red, Accent: Yellow)
+// ============================================================================
+
+// Webkit browsers (Chrome, Safari, Edge)
+* {
+  &::-webkit-scrollbar {
+    width: var(--space-sm);
+    height: var(--space-sm);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--color-bg-light);
+    border-radius: var(--radius-sm);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    border: var(--border-width-thin) solid var(--color-bg-light);
+    transition: background-color var(--transition-base);
+
+    &:hover {
+      background-color: var(--color-secondary);
+    }
+
+    &:active {
+      background-color: var(--color-accent);
+    }
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: var(--color-bg-light);
+  }
+}
+
+// Firefox
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-bg-light);
+}
+
+// Ensure scrollbar respects reduced motion preference
+@media (prefers-reduced-motion: reduce) {
+  *::-webkit-scrollbar-thumb {
+    transition: none;
+  }
+}
+
 
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
