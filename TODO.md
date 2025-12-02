@@ -538,29 +538,29 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [ ] Test CTA section renders correctly
 
 #### Remove/Archive Obsolete Sections
-- [x] Remove or archive `UseCases` section (not in new structure)
-- [x] Remove or archive `FeaturedProjects` section (moved to `/projects` page)
-- [x] Remove or archive `LeadershipSection` (content reorganized)
-- [x] Remove or archive `PerformanceSection` (content reorganized)
-- [x] Remove or archive `PricingSection` (not in new structure)
-- [x] Remove or archive `Features` section (not in new structure, replaced by Key Highlights)
+- [x] Remove `UseCases` section (not in new structure)
+- [x] Remove `FeaturedProjects` section (moved to `/projects` page)
+- [x] Remove `LeadershipSection` (content reorganized)
+- [x] Remove `PerformanceSection` (content reorganized)
+- [x] Remove `PricingSection` (not in new structure)
+- [x] Remove `Features` section (not in new structure, replaced by Key Highlights)
 - [x] Update `src/app/page.tsx` to remove obsolete section imports
-- [ ] Clean up unused section files or archive them
-- [ ] Update imports in `main.scss` if needed
+- [x] Clean up unused section files them
+- [x] Update imports in `main.scss` if needed
 
 #### Home Page Final Assembly
-- [ ] Update `src/app/page.tsx` with new section order:
-  - [ ] Hero
-  - [ ] Role Focus Section
-  - [ ] Key Highlights Section
-  - [ ] Primary CTA Section
-- [ ] Remove all obsolete section imports
-- [ ] Update `styles/pages/_home.scss` for new structure
+- [x] Update `src/app/page.tsx` with new section order:
+  - [x] Hero
+  - [x] Role Focus Section
+  - [x] Key Highlights Section
+  - [x] Primary CTA Section
+- [x] Remove all obsolete section imports
+- [x] Update `styles/pages/_home.scss` for new structure
 - [ ] Test full Home page renders correctly
 - [ ] Test all sections are visible and in correct order
 - [ ] Test all links and buttons work
 - [ ] Test page is responsive on mobile/tablet/desktop
-- [ ] Verify content matches `PROJECT-CONTENT.md` exactly
+- [x] Verify content matches `PROJECT-CONTENT.md` exactly
 
 ### Phase 6.2: Critical Mass Case Study Page (`/critical-mass-case-study`) Creation
 
