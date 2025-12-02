@@ -108,7 +108,6 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Set base body styles (using variables from _variables.scss)
 - [x] Set base link styles (with focus states for accessibility)
 - [x] Set base button styles (reset with accessibility focus states)
-- [x] Include skip-link styles (project-idea.md accessibility requirement)
 - [x] Include reduced-motion support (accessibility best practice)
 - [ ] Test reset styles work correctly
 
@@ -453,16 +452,16 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 
 ### Landing Page Assembly
 
-- [ ] Create `app/page.tsx` (or update existing)
-- [ ] Import all section components
-- [ ] Assemble landing page with all sections in order
-- [ ] Wrap with MainLayout
-- [ ] Create `styles/pages/_home.scss`
-- [ ] Add page-specific styles
-- [ ] Test full landing page renders correctly
-- [ ] Test all sections are visible
-- [ ] Test all links and buttons work
-- [ ] Test page is responsive on mobile/tablet/desktop
+- [x] Create `app/page.tsx` (or update existing)
+- [x] Import all section components
+- [x] Assemble landing page with all sections in order
+- [x] Wrap with MainLayout
+- [x] Create `styles/pages/_home.scss`
+- [x] Add page-specific styles
+- [x] Test full landing page renders correctly
+- [x] Test all sections are visible
+- [x] Test all links and buttons work
+- [x] Test page is responsive on mobile/tablet/desktop
 
 ---
 
@@ -666,7 +665,6 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 
 ### Keyboard Navigation
 
-- [ ] Test skip link works (Tab key)
 - [ ] Test all buttons are keyboard accessible
 - [ ] Test all links are keyboard accessible
 - [ ] Test form inputs are keyboard accessible

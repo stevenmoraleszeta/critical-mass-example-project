@@ -1,0 +1,112 @@
+// ============================================================================
+// Home Page Styles
+// Following SMACSS pages layer and BEM methodology
+// Styles for / page (landing page)
+// ============================================================================
+
+// Import base dependencies
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Home Page Container
+// ============================================================================
+
+.home-page {
+  // CSS Custom Properties (scoped to this page)
+  --background: var(--color-white);
+  --foreground: var(--color-white);
+  --text-primary: var(--color-primary);
+  --text-secondary: var(--color-primary);
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+// ============================================================================
+// Section Spacing
+// Ensures consistent spacing between sections on the landing page
+// Following mobile-first approach
+// ============================================================================
+
+.home-page {
+  // Target all direct section children
+  > section {
+    // Base spacing for mobile
+    margin-bottom: var(--space-2xl);
+    
+    // Increased spacing on larger screens
+    @include breakpoint-md {
+      margin-bottom: var(--space-3xl);
+    }
+
+    // Last section should not have bottom margin
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ============================================================================
+// Smooth Scrolling
+// For anchor links within the page (e.g., #features)
+// ============================================================================
+
+.home-page {
+  // Smooth scroll behavior for anchor links
+  scroll-behavior: smooth;
+  
+  // Respect user preference for reduced motion
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+// ============================================================================
+// Section IDs for Anchor Navigation
+// Ensure sections are properly targetable for skip links and anchor navigation
+// ============================================================================
+
+.home-page {
+  // Each section should be focusable for accessibility
+  > section[id] {
+    // Add scroll margin to account for fixed header
+    scroll-margin-top: var(--space-2xl);
+    
+    @include breakpoint-md {
+      scroll-margin-top: var(--space-3xl);
+    }
+  }
+}
+
+// ============================================================================
+// Responsive Adjustments
+// Mobile-first responsive styles
+// ============================================================================
+
+@include breakpoint-max-sm {
+  .home-page {
+    > section {
+      margin-bottom: var(--space-xl);
+    }
+  }
+}
+
+// ============================================================================
+// Print Styles
+// Optimize landing page for printing
+// ============================================================================
+
+@media print {
+  .home-page {
+    > section {
+      page-break-inside: avoid;
+      margin-bottom: var(--space-lg);
+    }
+  }
+}
+
