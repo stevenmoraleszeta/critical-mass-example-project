@@ -27,6 +27,7 @@ export default function Home() {
           note="No monthly subscription. Just coffee and interesting problems."
           backgroundImage={{
             src: "/images/hero-background.webp",
+            alt: "Abstract background pattern for hero section",
           }}
         />
         <Features />

@@ -299,6 +299,7 @@ $opacity-5: 0.05;
 $opacity-10: 0.1;
 $opacity-20: 0.2;
 $opacity-30: 0.3;
+$opacity-40: 0.4;
 $opacity-50: 0.5;
 $opacity-70: 0.7;
 $opacity-90: 0.9;
@@ -309,6 +310,7 @@ $opacity-100: 1;
   --opacity-10: #{$opacity-10};
   --opacity-20: #{$opacity-20};
   --opacity-30: #{$opacity-30};
+  --opacity-40: #{$opacity-40};
   --opacity-50: #{$opacity-50};
   --opacity-70: #{$opacity-70};
   --opacity-90: #{$opacity-90};
@@ -326,12 +328,16 @@ $color-primary-rgba-90: rgba(0, 0, 255, $opacity-90); // Blue at 90% opacity
 $color-accent-rgba-10: rgba(255, 255, 0, $opacity-10); // Yellow at 10% opacity
 $color-accent-rgba-90: rgba(255, 255, 0, $opacity-90); // Yellow at 90% opacity
 
+// Overlay colors for backgrounds
+$color-overlay-black-40: rgba(0, 0, 0, $opacity-40); // Black overlay at 40% opacity
+
 :root {
   --color-primary-rgba-5: #{$color-primary-rgba-5};
   --color-primary-rgba-10: #{$color-primary-rgba-10};
   --color-primary-rgba-90: #{$color-primary-rgba-90};
   --color-accent-rgba-10: #{$color-accent-rgba-10};
   --color-accent-rgba-90: #{$color-accent-rgba-90};
+  --color-overlay-black-40: #{$color-overlay-black-40};
 }
 
 // ============================================================================

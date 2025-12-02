@@ -102,10 +102,26 @@ export default function Hero({
     <section 
       className="hero" 
       aria-labelledby="hero-title"
-      style={backgroundImage ? {
-        backgroundImage: `url(${backgroundImage.src})`,
-      } : undefined}
     >
+      {/* Optimized background image using next/image */}
+      {backgroundImage && (
+        <div className="hero__background-image" aria-hidden="true">
+          <Image
+            src={backgroundImage.src}
+            alt={backgroundImage.alt || ''}
+            fill
+            priority
+            quality={85}
+            sizes="100vw"
+            style={{
+              objectFit: 'cover',
+              objectPosition: 'center',
+            }}
+            className="hero__background-image-element"
+          />
+        </div>
+      )}
+      
       <div className="hero__container">
         <div className="hero__content">
           <h1 id="hero-title" className="hero__title">

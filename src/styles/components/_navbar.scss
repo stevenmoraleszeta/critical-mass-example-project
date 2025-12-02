@@ -367,7 +367,7 @@
       background-color: var(--color-primary-rgba-10);
       position: relative;
       transform: translateY(-1px);
-      box-shadow: 0 2px 4px rgba(0, 0, 255, 0.1);
+      box-shadow: 0 2px 4px var(--color-primary-rgba-10);
       padding: var(--space-sm) var(--space-md);
       
       @include breakpoint-max-md {
@@ -416,7 +416,7 @@
       background-color: var(--color-primary-rgba-10);
       position: relative;
       transform: translateY(-1px);
-      box-shadow: 0 2px 4px rgba(0, 0, 255, 0.1);
+      box-shadow: 0 2px 4px var(--color-primary-rgba-10);
       padding: var(--space-sm) var(--space-md);
       
       @include breakpoint-max-md {

@@ -41,6 +41,11 @@ export interface MainLayoutProps {
 export default function MainLayout({ children, className = '' }: MainLayoutProps) {
   return (
     <>
+      {/* Skip link for keyboard navigation (Critical Mass accessibility requirement) */}
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+
       {/* Header - Semantic wrapper for navigation */}
       <header role="banner">
         <NavBar />
