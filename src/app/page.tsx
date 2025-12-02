@@ -1,12 +1,6 @@
 import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/sections/Hero';
 import RoleFocusSection from '@/components/sections/RoleFocusSection';
-import Features from '@/components/sections/Features';
-import UseCases from '@/components/sections/UseCases';
-import FeaturedProjects from '@/components/sections/FeaturedProjects';
-import LeadershipSection from '@/components/sections/LeadershipSection';
-import PerformanceSection from '@/components/sections/PerformanceSection';
-import PricingSection from '@/components/sections/PricingSection';
 import CTASection from '@/components/sections/CTASection';
 
 export default function Home() {
@@ -46,12 +40,6 @@ export default function Home() {
           }}
         />
         <RoleFocusSection />
-        <Features />
-        <UseCases />
-        <FeaturedProjects />
-        <LeadershipSection />
-        <PerformanceSection />
-        <PricingSection />
         <CTASection />
       </div>
     </MainLayout>

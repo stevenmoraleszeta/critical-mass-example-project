@@ -538,12 +538,13 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [ ] Test CTA section renders correctly
 
 #### Remove/Archive Obsolete Sections
-- [ ] Remove or archive `UseCases` section (not in new structure)
-- [ ] Remove or archive `FeaturedProjects` section (moved to `/projects` page)
-- [ ] Remove or archive `LeadershipSection` (content reorganized)
-- [ ] Remove or archive `PerformanceSection` (content reorganized)
-- [ ] Remove or archive `PricingSection` (not in new structure)
-- [ ] Update `src/app/page.tsx` to remove obsolete section imports
+- [x] Remove or archive `UseCases` section (not in new structure)
+- [x] Remove or archive `FeaturedProjects` section (moved to `/projects` page)
+- [x] Remove or archive `LeadershipSection` (content reorganized)
+- [x] Remove or archive `PerformanceSection` (content reorganized)
+- [x] Remove or archive `PricingSection` (not in new structure)
+- [x] Remove or archive `Features` section (not in new structure, replaced by Key Highlights)
+- [x] Update `src/app/page.tsx` to remove obsolete section imports
 - [ ] Clean up unused section files or archive them
 - [ ] Update imports in `main.scss` if needed
 
