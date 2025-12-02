@@ -18,12 +18,16 @@ export default function Home() {
           ctaPrimary={{
             text: "View Features",
             href: "#features",
+            variant: "save", // Yellow with blue text and border
           }}
           ctaSecondary={{
             text: "See Live Content",
             href: "/content",
           }}
           note="No monthly subscription. Just coffee and interesting problems."
+          backgroundImage={{
+            src: "/images/hero-background.webp",
+          }}
         />
         <Features />
         <Specs

@@ -38,6 +38,7 @@ export interface HeroProps {
     text: string;
     href: string;
     onClick?: () => void;
+    variant?: 'primary' | 'secondary' | 'ghost' | 'save' | 'exit';
   };
   /** Secondary CTA button configuration */
   ctaSecondary: {
@@ -51,6 +52,11 @@ export interface HeroProps {
   image?: {
     src: string;
     alt: string;
+  };
+  /** Optional background image configuration */
+  backgroundImage?: {
+    src: string;
+    alt?: string;
   };
 }
 
@@ -70,6 +76,7 @@ export default function Hero({
   ctaSecondary,
   note,
   image,
+  backgroundImage,
 }: HeroProps) {
   // Handle smooth scroll to Features section
   const handlePrimaryClick = () => {
@@ -92,7 +99,13 @@ export default function Hero({
   };
 
   return (
-    <section className="hero" aria-labelledby="hero-title">
+    <section 
+      className="hero" 
+      aria-labelledby="hero-title"
+      style={backgroundImage ? {
+        backgroundImage: `url(${backgroundImage.src})`,
+      } : undefined}
+    >
       <div className="hero__container">
         <div className="hero__content">
           <h1 id="hero-title" className="hero__title">
@@ -105,7 +118,7 @@ export default function Hero({
           
           <div className="hero__actions">
             <Button
-              variant="primary"
+              variant={ctaPrimary.variant || "primary"}
               size="lg"
               href={ctaPrimary.href.startsWith('#') ? undefined : ctaPrimary.href}
               onClick={handlePrimaryClick}
@@ -148,6 +161,11 @@ export default function Hero({
       
       {/* Background gradient overlay */}
       <div className="hero__gradient" aria-hidden="true" />
+      
+      {/* Background image overlay for better text readability */}
+      {backgroundImage && (
+        <div className="hero__background-overlay" aria-hidden="true" />
+      )}
     </section>
   );
 }
