@@ -144,15 +144,15 @@
   
   // Enhanced hover effect - gradual scale increase
   // Preserve rotation on hover but straighten slightly for better UX
-  &:hover {
-    // Pause animation to allow smooth transition
-    animation-play-state: paused;
+  &:hover:not(&--dragging):not(&--drag-over) {
+    // Stop animation completely to allow smooth transition
+    animation: none;
     
     // Enhanced elevation and gradual scale increase
     // Scale increases smoothly from 1 to 1.08 over 400ms
-    // Reduce rotation slightly on hover (straighten to 0deg) for better focus
+    // Straighten to 0deg on hover for better focus
     // The transition property ensures smooth animation in both directions
-    transform: translateY(-12px) scale(1.08) rotate(0deg);
+    transform: translateY(-12px) scale(1.08) rotate(0deg) !important;
     
     // More pronounced shadow for depth
     box-shadow: 0 12px 24px -6px rgba(0, 0, 255, 0.25),
@@ -165,30 +165,78 @@
     background-color: #FFFF33;
   }
   
+  // Dragging state - maintain full opacity and straighten
+  &--dragging {
+    opacity: 1;
+    cursor: grabbing;
+    z-index: 1000;
+    animation: none;
+    transform: translateY(-12px) rotate(0deg) scale(1.1);
+    box-shadow: 0 16px 32px -8px rgba(0, 0, 255, 0.4);
+  }
+  
+  // Drag over state
+  &--drag-over {
+    border-color: var(--color-secondary);
+    border-width: var(--border-width-base);
+    background-color: #FFFF66;
+    transform: scale(1.05) rotate(0deg);
+  }
+  
+  // Cursor for draggable cards
+  &[draggable="true"] {
+    cursor: grab;
+    
+    // Maintain full opacity when pressed/active
+    &:active {
+      cursor: grabbing;
+      opacity: 1;
+    }
+    
+    // Maintain full opacity when starting to drag
+    &:focus {
+      opacity: 1;
+    }
+  }
+  
+  // Ensure full opacity during drag operations
+  &[draggable="true"]:active,
+  &[draggable="true"]:focus,
+  &--dragging {
+    opacity: 1 !important;
+  }
+  
   // Preserve individual rotations on hover for each card
-  // But straighten them slightly for better focus
-  &:nth-child(1):hover {
-    transform: translateY(-12px) scale(1.08) rotate(0deg);
+  // But straighten them to 0deg for better focus
+  // Using !important to override animation transforms
+  &:nth-child(1):hover:not(&--dragging):not(&--drag-over) {
+    animation: none;
+    transform: translateY(-12px) scale(1.08) rotate(0deg) !important;
   }
   
-  &:nth-child(2):hover {
-    transform: translateY(-12px) scale(1.08) rotate(0deg);
+  &:nth-child(2):hover:not(&--dragging):not(&--drag-over) {
+    animation: none;
+    transform: translateY(-12px) scale(1.08) rotate(0deg) !important;
   }
   
-  &:nth-child(3):hover {
-    transform: translateY(-12px) scale(1.08) rotate(0deg);
+  &:nth-child(3):hover:not(&--dragging):not(&--drag-over) {
+    animation: none;
+    transform: translateY(-12px) scale(1.08) rotate(0deg) !important;
   }
   
-  &:nth-child(4):hover {
-    transform: translateY(-12px) scale(1.08) rotate(0deg);
+  &:nth-child(4):hover:not(&--dragging):not(&--drag-over) {
+    animation: none;
+    transform: translateY(-12px) scale(1.08) rotate(0deg) !important;
   }
   
-  &:nth-child(5):hover {
-    transform: translateY(-12px) scale(1.08) rotate(0deg);
+  &:nth-child(5):hover:not(&--dragging):not(&--drag-over) {
+    animation: none;
+    transform: translateY(-12px) scale(1.08) rotate(0deg) !important;
   }
   
-  &:nth-child(6):hover {
-    transform: translateY(-12px) scale(1.08) rotate(0deg);
+  &:nth-child(6):hover:not(&--dragging):not(&--drag-over) {
+    animation: none;
+    transform: translateY(-12px) scale(1.08) rotate(0deg) !important;
   }
   
   // ============================================================================

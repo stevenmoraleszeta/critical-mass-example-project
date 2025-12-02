@@ -33,6 +33,22 @@ export interface FeatureCardProps {
   description: string;
   /** Additional CSS classes */
   className?: string;
+  /** Enable drag and drop */
+  draggable?: boolean;
+  /** Is currently being dragged */
+  isDragging?: boolean;
+  /** Is drag over target */
+  isDragOver?: boolean;
+  /** Drag start handler */
+  onDragStart?: () => void;
+  /** Drag over handler */
+  onDragOver?: (e: React.DragEvent) => void;
+  /** Drag leave handler */
+  onDragLeave?: () => void;
+  /** Drop handler */
+  onDrop?: (e: React.DragEvent) => void;
+  /** Drag end handler */
+  onDragEnd?: () => void;
 }
 
 /**
@@ -49,19 +65,61 @@ export default function FeatureCard({
   title,
   description,
   className = '',
+  draggable = false,
+  isDragging = false,
+  isDragOver = false,
+  onDragStart,
+  onDragOver,
+  onDragLeave,
+  onDrop,
+  onDragEnd,
 }: FeatureCardProps) {
   // Build BEM class names
   const baseClass = 'feature-card';
   
   const classNames = [
     baseClass,
+    isDragging && `${baseClass}--dragging`,
+    isDragOver && `${baseClass}--drag-over`,
     className,
   ]
     .filter(Boolean)
     .join(' ');
 
   return (
-    <article className={classNames}>
+    <article
+      className={classNames}
+      draggable={draggable}
+      onDragStart={(e) => {
+        if (draggable && onDragStart) {
+          e.dataTransfer.effectAllowed = 'move';
+          onDragStart();
+        }
+      }}
+      onDragOver={(e) => {
+        if (draggable && onDragOver) {
+          e.preventDefault();
+          onDragOver(e);
+        }
+      }}
+      onDragLeave={() => {
+        if (draggable && onDragLeave) {
+          onDragLeave();
+        }
+      }}
+      onDrop={(e) => {
+        if (draggable && onDrop) {
+          e.preventDefault();
+          onDrop(e);
+        }
+      }}
+      onDragEnd={() => {
+        if (draggable && onDragEnd) {
+          onDragEnd();
+        }
+      }}
+      aria-grabbed={draggable ? isDragging : undefined}
+    >
       {/* Icon Section */}
       {icon && (
         <div className="feature-card__icon" aria-hidden="true">

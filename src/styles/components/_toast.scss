@@ -17,7 +17,7 @@
   // Base toast styles
   position: fixed;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
   gap: var(--space-sm);
   padding: var(--space-md);
   background-color: var(--color-white);
@@ -41,6 +41,13 @@
   // Toast Elements (BEM)
   // ============================================================================
   
+  // Header container (content + close button)
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+  
   // Content container
   &__content {
     display: flex;
@@ -48,6 +55,14 @@
     gap: var(--space-sm);
     flex: 1;
     min-width: 0; // Allow text to shrink
+  }
+  
+  // Footer container (for action button)
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: var(--space-xs);
+    border-top: var(--border-width-thin) solid rgba(0, 0, 255, 0.1);
   }
   
   // Icon
@@ -101,6 +116,43 @@
     &:hover {
       background-color: rgba(0, 0, 255, 0.1); // Light blue background on hover
       color: var(--color-primary);
+    }
+    
+    // Always red focus for better visibility (matching navbar)
+    &:focus-visible {
+      outline: 3px solid var(--color-secondary); // Red outline - matching navbar
+      outline-offset: 4px;
+    }
+    
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+    
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+  
+  // Action button (in footer, red style)
+  &__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: var(--space-xs) var(--space-md);
+    margin: 0;
+    border: var(--border-width-thin) solid var(--color-secondary);
+    background: transparent;
+    color: var(--color-secondary);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    @include transition-base(all);
+    
+    &:hover {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
     }
     
     // Always red focus for better visibility (matching navbar)
