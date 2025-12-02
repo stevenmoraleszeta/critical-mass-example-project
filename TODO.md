@@ -432,12 +432,12 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 
 ### Pricing Section
 
-- [ ] Create `components/sections/PricingSection.tsx`
-- [ ] Add section title: "Availability & Pricing"
-- [ ] Add pricing copy (from copy section)
-- [ ] Style pricing section
-- [ ] Make pricing section responsive
-- [ ] Test pricing section renders correctly
+- [x] Create `components/sections/PricingSection.tsx`
+- [x] Add section title: "Availability & Pricing"
+- [x] Add pricing copy (from copy section)
+- [x] Style pricing section
+- [x] Make pricing section responsive
+- [x] Test pricing section renders correctly
 
 ### Final CTA Section
 

@@ -30,6 +30,7 @@ import Toast from '../components/feedback/Toast';
 import Footer from '../components/layout/Footer';
 import TestimonialCard from '../components/ui/TestimonialCard';
 import Testimonials from '../components/sections/Testimonials';
+import PricingSection from '../components/sections/PricingSection';
 
 describe('Component Rendering Tests', () => {
   // ============================================================================
@@ -600,6 +601,43 @@ describe('Component Rendering Tests', () => {
       const section = screen.getByRole('region', { name: /what teams say/i });
       expect(section).toHaveAttribute('id', 'testimonials');
       expect(section).toHaveAttribute('aria-labelledby', 'testimonials-title');
+    });
+  });
+
+  // ============================================================================
+  // Pricing Section Component
+  // ============================================================================
+  
+  describe('Pricing Section Component', () => {
+    it('should render without errors', () => {
+      const { container } = render(<PricingSection />);
+      expect(container).toBeTruthy();
+      expect(screen.getByText('Availability & Pricing')).toBeInTheDocument();
+    });
+
+    it('should follow BEM naming convention', () => {
+      render(<PricingSection />);
+      const section = screen.getByText('Availability & Pricing').closest('.pricing');
+      expect(section).toHaveClass('pricing');
+    });
+
+    it('should render pricing copy', () => {
+      render(<PricingSection />);
+      expect(screen.getByText(/Available for full-time integration/i)).toBeInTheDocument();
+    });
+
+    it('should have proper semantic structure', () => {
+      render(<PricingSection />);
+      const section = screen.getByRole('region', { name: /availability & pricing/i });
+      expect(section).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /availability & pricing/i })).toBeInTheDocument();
+    });
+
+    it('should have proper ARIA attributes', () => {
+      render(<PricingSection />);
+      const section = screen.getByRole('region', { name: /availability & pricing/i });
+      expect(section).toHaveAttribute('id', 'pricing');
+      expect(section).toHaveAttribute('aria-labelledby', 'pricing-title');
     });
   });
 });
