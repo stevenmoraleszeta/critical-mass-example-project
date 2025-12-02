@@ -40,7 +40,6 @@ const navigationLinks: NavLink[] = [
   { href: '/', label: 'Home', ariaLabel: 'Go to home page' },
   { href: '/skills', label: 'Skills', ariaLabel: 'Go to skills page' },
   { href: '/projects', label: 'Projects', ariaLabel: 'Go to projects page' },
-  { href: '/about', label: 'About', ariaLabel: 'Go to about page' },
   { href: '/ui-library', label: 'UI Library', ariaLabel: 'Go to UI library page' },
 ];
 
