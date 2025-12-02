@@ -73,20 +73,16 @@
 
 **Headline**
 
-> _“Front-End Experience Engine for Critical Mass.”_
+> _"Steven Morales_  
+> _Full Stack Software Engineer & Tech Leader"_
 
 **Subheadline**
 
-> I’m **Steven Morales**, a **Full Stack Software Engineer & Tech Leader** focused on building **high-quality, responsive, accessible front-end experiences** that connect technology, creativity, and real human needs.
+> Building **scalable full-stack solutions** that connect technology, creativity, and real human needs.
 
 **Key Identity Line**
 
-- **Full Stack Software Engineer | Tech Leader | Product-Driven Developer | Creative Technologist**
-- Based in **San José, Costa Rica**, applying for **Developer, Front End at Critical Mass**.
-
-**Short Value Intro**
-
-I have **3+ years of experience** building robust, scalable, high-performance software across **web, desktop, mobile, and hybrid platforms**, working through the full development cycle: from **design and architecture** to **deployment and optimization**. I enjoy creating **clean, efficient solutions** that connect technology with real user needs, combining strong technical skills with **leadership, teamwork, and problem-solving**.
+- Costa Rica · Applying for **Developer, Front End at Critical Mass**
 
 ### Role Focus: Developer, Front End @ Critical Mass
 

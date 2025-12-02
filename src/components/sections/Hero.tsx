@@ -30,10 +30,14 @@ import FloatingBinaryElements from '@/components/ui/FloatingBinaryElements';
  */
 
 export interface HeroProps {
-  /** Main title (H1) */
-  title: string;
-  /** Subtitle text */
-  subtitle: string;
+  /** Main title (H1, supports ReactNode for formatting) */
+  title: React.ReactNode;
+  /** Subtitle text (supports ReactNode for formatting) */
+  subtitle: React.ReactNode;
+  /** Key identity line (role tags, supports ReactNode for formatting) */
+  keyIdentity?: React.ReactNode;
+  /** Value intro paragraph (experience summary, supports ReactNode for formatting) */
+  valueIntro?: React.ReactNode;
   /** Primary CTA button configuration */
   ctaPrimary: {
     text: string;
@@ -73,6 +77,8 @@ export interface HeroProps {
 export default function Hero({
   title,
   subtitle,
+  keyIdentity,
+  valueIntro,
   ctaPrimary,
   ctaSecondary,
   note,
@@ -132,6 +138,18 @@ export default function Hero({
           <p className="hero__subtitle">
             {subtitle}
           </p>
+          
+          {keyIdentity && (
+            <p className="hero__key-identity">
+              {keyIdentity}
+            </p>
+          )}
+          
+          {valueIntro && (
+            <p className="hero__value-intro">
+              {valueIntro}
+            </p>
+          )}
           
           <div className="hero__actions">
             <Button

@@ -13,18 +13,32 @@ export default function Home() {
     <MainLayout>
       <div className="home-page">
         <Hero
-          title="Steven Morales: Full Stack Developer & Tech Leader"
-          subtitle="Passionate about building robust, scalable, and meaningful innovations. Leading teams at Novaera and ZETA Academia, empowering 1,000+ students while delivering high-quality web experiences."
+          title={
+            <>
+              Steven Morales
+              <br />
+              Full Stack Software Engineer & Tech Leader
+            </>
+          }
+          subtitle={
+            <>
+              Building <strong>scalable full-stack solutions</strong> that connect technology, creativity, and real human needs.
+            </>
+          }
+          keyIdentity={
+            <>
+              Costa Rica · Applying for <strong>Developer, Front End at Critical Mass</strong>
+            </>
+          }
           ctaPrimary={{
-            text: "View My Work",
-            href: "#projects",
-            variant: "highlight", // Yellow with blue text and border
+            text: "Want to see how I would work at Critical Mass?",
+            href: "/critical-mass-case-study",
+            variant: "highlight",
           }}
           ctaSecondary={{
-            text: "View All Projects",
+            text: "View Projects",
             href: "/projects",
           }}
-          note="Available for full-time opportunities at Critical Mass. Based in Costa Rica."
           backgroundImage={{
             src: "/images/hero-background.webp",
             alt: "Abstract background pattern for hero section",
