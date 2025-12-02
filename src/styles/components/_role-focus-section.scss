@@ -99,7 +99,7 @@
 }
 
 .role-focus__grid {
-  .feature-card {
+  .card {
     &:focus-within {
       outline: 3px solid var(--color-secondary);
       outline-offset: 4px;
