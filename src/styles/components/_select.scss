@@ -300,18 +300,20 @@
     
     // Hover: azul claro como en el navbar, SIN borde ni outline
     // El hover NO se aplica a la opción seleccionada (mantiene el amarillo)
-    &:hover:not([aria-selected="true"]) {
-      background-color: var(--color-primary-rgba-5) !important;
+    // Increased specificity to override focus-visible styles without !important
+    &.select__option:hover:not([aria-selected="true"]) {
+      background-color: var(--color-primary-rgba-5);
       color: var(--color-primary);
-      outline: none !important;
-      outline-offset: 0 !important;
-      border: none !important;
-      box-shadow: none !important;
+      outline: none;
+      outline-offset: 0;
+      border: none;
+      box-shadow: none;
     }
     
     // Focus con teclado: azul claro (prevalece sobre amarillo si está seleccionado)
-    &[data-focused="true"]:not([aria-selected="true"]) {
-      background-color: var(--color-primary-rgba-5) !important;
+    // Increased specificity to override selected state without !important
+    &.select__option[data-focused="true"]:not([aria-selected="true"]) {
+      background-color: var(--color-primary-rgba-5);
       color: var(--color-primary);
     }
   }

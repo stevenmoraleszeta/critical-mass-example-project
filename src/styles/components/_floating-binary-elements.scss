@@ -27,7 +27,7 @@
     white-space: nowrap;
     will-change: transform, opacity, color;
     cursor: default;
-    pointer-events: auto !important;
+    pointer-events: auto;
     z-index: 10;
     // Ensure the element can receive hover events
     isolation: isolate;
@@ -58,23 +58,24 @@
     }
     
     // Hover color changes based on data-hover-color attribute
-    &[data-hover-color="blue"]:hover {
-      color: var(--color-blue) !important;
-      opacity: 1 !important;
+    // Increased specificity to override base styles without !important
+    &.floating-binary-elements__element[data-hover-color="blue"]:hover {
+      color: var(--color-blue);
+      opacity: 1;
       text-shadow: 0 0 10px var(--color-blue), 0 0 20px var(--color-blue);
       filter: brightness(1.3);
     }
     
-    &[data-hover-color="red"]:hover {
-      color: var(--color-red) !important;
-      opacity: 1 !important;
+    &.floating-binary-elements__element[data-hover-color="red"]:hover {
+      color: var(--color-red);
+      opacity: 1;
       text-shadow: 0 0 10px var(--color-red), 0 0 20px var(--color-red);
       filter: brightness(1.3);
     }
     
-    &[data-hover-color="yellow"]:hover {
-      color: var(--color-yellow) !important;
-      opacity: 1 !important;
+    &.floating-binary-elements__element[data-hover-color="yellow"]:hover {
+      color: var(--color-yellow);
+      opacity: 1;
       text-shadow: 0 0 10px var(--color-yellow), 0 0 20px var(--color-yellow);
       filter: brightness(1.3);
     }
