@@ -53,18 +53,20 @@
     z-index: var(--z-index-base);
     width: 100%;
     max-width: var(--container-max-width);
+    margin: 0 auto;
     
-    // Mobile-first: single column layout
+    // Mobile-first: single column layout, centered
     @include flex;
     @include flex-column;
     @include align-center;
+    @include justify-center;
     gap: var(--space-xl);
     
-    // Desktop: two column layout (content + visual)
+    // Desktop: maintain centered layout
     @include breakpoint-lg {
       @include flex-row;
       @include align-center;
-      @include justify-between;
+      @include justify-center;
       gap: var(--space-2xl);
     }
   }
@@ -74,14 +76,14 @@
     width: 100%;
     max-width: 100%;
     
-    // Mobile: center align
+    // Center align on all breakpoints
     text-align: center;
     
-    // Desktop: left align
+    // Desktop: maintain center alignment with max-width constraint
     @include breakpoint-lg {
-      text-align: left;
+      text-align: center;
       max-width: 560px;
-      flex: 1;
+      margin: 0 auto;
     }
   }
   
@@ -148,16 +150,16 @@
     // Mobile: full width buttons
     width: 100%;
     
-    // Tablet and up: horizontal layout
+    // Tablet and up: horizontal layout, centered
     @include breakpoint-md {
       @include flex-row;
       @include justify-center;
       width: auto;
     }
     
-    // Desktop: left align
+    // Desktop: maintain center alignment
     @include breakpoint-lg {
-      @include justify-start;
+      @include justify-center;
     }
   }
   
@@ -169,13 +171,8 @@
     color: var(--color-text-muted);
     margin-top: var(--space-md);
     
-    // Mobile: center align
+    // Center align on all breakpoints
     text-align: center;
-    
-    // Desktop: left align
-    @include breakpoint-lg {
-      text-align: left;
-    }
   }
   
   // Visual wrapper (image container)

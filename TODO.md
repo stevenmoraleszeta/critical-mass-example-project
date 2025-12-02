@@ -352,6 +352,7 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Style hero section with BEM
 - [x] Add background gradient
 - [x] Make hero responsive
+- [x] Center hero content on all breakpoints (mobile-first, centered layout)
 - [x] Implement smooth scroll to Features section (for primary CTA)
 - [x] Test hero section renders correctly
 - [x] Test CTAs work correctly
