@@ -248,21 +248,6 @@
     @include shadow-lg;
   }
   
-  &__gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    background: linear-gradient(
-      135deg,
-      var(--color-primary-rgba-5) 0%,
-      var(--color-accent-rgba-10) 100%
-    );
-    pointer-events: none;
-  }
-  
   &__background-overlay {
     position: absolute;
     top: 0;
@@ -309,10 +294,6 @@
   .hero {
     min-height: auto;
     padding: var(--space-lg) 0;
-    
-    &__gradient {
-      display: none;
-    }
     
     &__background-overlay {
       display: none;

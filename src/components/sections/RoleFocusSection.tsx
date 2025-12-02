@@ -34,11 +34,11 @@ export default function RoleFocusSection() {
             variant="feature"
             title="Design Translation"
             description="I translate Figma/wireframes into semantic HTML5, modern CSS3, and React/Next.js components."
-            image={{
-              src: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=400&h=300&fit=crop",
+            backgroundImage={{
+              src: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=800&h=600&fit=crop",
               alt: "Design tools and wireframes representing design translation",
-              width: 400,
-              height: 300
+              width: 800,
+              height: 600
             }}
           />
           
@@ -46,11 +46,11 @@ export default function RoleFocusSection() {
             variant="feature"
             title="Responsive & Accessible"
             description="I build mobile-first layouts with accessibility best practices (WCAG mindset) and cross-browser support."
-            image={{
-              src: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop",
+            backgroundImage={{
+              src: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
               alt: "Multiple devices showing responsive design",
-              width: 400,
-              height: 300
+              width: 800,
+              height: 600
             }}
           />
           
@@ -58,11 +58,11 @@ export default function RoleFocusSection() {
             variant="feature"
             title="API Integration"
             description="I work daily with REST APIs, JSON, HTTP, and have familiarity with SOAP and external services."
-            image={{
-              src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
+            backgroundImage={{
+              src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
               alt: "API connections and network integration",
-              width: 400,
-              height: 300
+              width: 800,
+              height: 600
             }}
           />
           
@@ -70,11 +70,11 @@ export default function RoleFocusSection() {
             variant="feature"
             title="Tooling"
             description="I use SASS/LESS, Gulp, Vite, GitHub Actions and modern bundlers to maintain efficient front-end pipelines."
-            image={{
-              src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+            backgroundImage={{
+              src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
               alt: "Development tools and automation",
-              width: 400,
-              height: 300
+              width: 800,
+              height: 600
             }}
           />
           
@@ -82,11 +82,11 @@ export default function RoleFocusSection() {
             variant="feature"
             title="Collaboration"
             description="I coordinate with design, business, QA, and tech leads to deliver on time with quality."
-            image={{
-              src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop",
+            backgroundImage={{
+              src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop",
               alt: "Team collaboration and communication",
-              width: 400,
-              height: 300
+              width: 800,
+              height: 600
             }}
           />
           
@@ -94,11 +94,11 @@ export default function RoleFocusSection() {
             variant="feature"
             title="Ownership"
             description="I'm used to owning features end-to-end, providing time estimates, and communicating progress clearly."
-            image={{
-              src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop",
+            backgroundImage={{
+              src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
               alt: "Project ownership and responsibility",
-              width: 400,
-              height: 300
+              width: 800,
+              height: 600
             }}
           />
         </div>

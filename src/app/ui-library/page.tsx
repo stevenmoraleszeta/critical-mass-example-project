@@ -281,6 +281,46 @@ export default function UILibrary() {
               </div>
             </section>
 
+            {/* Cards with Background Images */}
+            <section>
+              <h2>Cards with Background Images</h2>
+              <div className="components-page__card-group">
+                <Card 
+                  variant="default"
+                  title="Card with Background Image"
+                  description="This card uses a background image with an overlay for better text readability."
+                  backgroundImage={{
+                    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+                    alt: "Background image for card",
+                    width: 800,
+                    height: 600
+                  }}
+                />
+                <Card 
+                  variant="feature"
+                  title="Feature with Background"
+                  description="Feature cards with background images create a more immersive visual experience."
+                  backgroundImage={{
+                    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+                    alt: "Feature background image",
+                    width: 800,
+                    height: 600
+                  }}
+                />
+                <Card 
+                  variant="content"
+                  title="Content with Background"
+                  description="Content cards can use background images to create engaging visual layouts."
+                  backgroundImage={{
+                    src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
+                    alt: "Content background image",
+                    width: 800,
+                    height: 600
+                  }}
+                />
+              </div>
+            </section>
+
             {/* Cards with Footer */}
             <section>
               <h2>Cards with Footer</h2>

@@ -59,7 +59,6 @@ export interface HeroProps {
  * Features:
  * - Scroll arrow to navigate to next section
  * - Responsive layout (mobile-first)
- * - Background gradient
  * - Accessible semantic structure
  */
 export default function Hero({
@@ -182,9 +181,6 @@ export default function Hero({
           </div>
         )}
       </div>
-      
-      {/* Background gradient overlay */}
-      <div className="hero__gradient" aria-hidden="true" />
       
       {/* Background image overlay for better text readability */}
       {backgroundImage && (
