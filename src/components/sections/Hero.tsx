@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Button from '@/components/ui/Button';
 import FloatingBinaryElements from '@/components/ui/FloatingBinaryElements';
 
 /**
@@ -38,19 +37,6 @@ export interface HeroProps {
   keyIdentity?: React.ReactNode;
   /** Value intro paragraph (experience summary, supports ReactNode for formatting) */
   valueIntro?: React.ReactNode;
-  /** Primary CTA button configuration */
-  ctaPrimary: {
-    text: string;
-    href: string;
-    onClick?: () => void;
-    variant?: 'primary' | 'secondary' | 'ghost' | 'highlight' | 'exit';
-  };
-  /** Secondary CTA button configuration */
-  ctaSecondary: {
-    text: string;
-    href: string;
-    onClick?: () => void;
-  };
   /** Optional note text (small copy) */
   note?: string;
   /** Optional image configuration */
@@ -63,13 +49,15 @@ export interface HeroProps {
     src: string;
     alt?: string;
   };
+  /** Target section ID for scroll arrow (default: "role-focus") */
+  scrollTargetId?: string;
 }
 
 /**
  * Hero Component Implementation
  * 
  * Features:
- * - Smooth scroll to Features section (for primary CTA)
+ * - Scroll arrow to navigate to next section
  * - Responsive layout (mobile-first)
  * - Background gradient
  * - Accessible semantic structure
@@ -79,29 +67,26 @@ export default function Hero({
   subtitle,
   keyIdentity,
   valueIntro,
-  ctaPrimary,
-  ctaSecondary,
   note,
   image,
   backgroundImage,
+  scrollTargetId = 'role-focus',
 }: HeroProps) {
-  // Handle smooth scroll to Features section
-  const handlePrimaryClick = () => {
-    if (ctaPrimary.onClick) {
-      ctaPrimary.onClick();
-    }
+  const handleScrollDown = () => {
+    const targetElement = document.getElementById(scrollTargetId);
     
-    // If href is an anchor link, implement smooth scroll
-    if (ctaPrimary.href.startsWith('#')) {
-      const targetId = ctaPrimary.href.substring(1);
-      const targetElement = document.getElementById(targetId);
-      
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleScrollDown();
     }
   };
 
@@ -151,33 +136,37 @@ export default function Hero({
             </p>
           )}
           
-          <div className="hero__actions">
-            <Button
-              variant={ctaPrimary.variant || "primary"}
-              size="lg"
-              href={ctaPrimary.href.startsWith('#') ? undefined : ctaPrimary.href}
-              onClick={handlePrimaryClick}
-              ariaLabel={ctaPrimary.text}
-            >
-              {ctaPrimary.text}
-            </Button>
-            
-            <Button
-              variant="secondary"
-              size="lg"
-              href={ctaSecondary.href}
-              onClick={ctaSecondary.onClick}
-              ariaLabel={ctaSecondary.text}
-            >
-              {ctaSecondary.text}
-            </Button>
-          </div>
-          
           {note && (
             <p className="hero__note">
               {note}
             </p>
           )}
+          
+          <button
+            className="hero__scroll-arrow"
+            onClick={handleScrollDown}
+            onKeyDown={handleKeyDown}
+            aria-label="Scroll to next section"
+            type="button"
+          >
+            <svg
+              className="hero__scroll-arrow-icon"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M7 10L12 15L17 10"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
         </div>
         
         {image && (

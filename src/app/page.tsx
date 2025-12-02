@@ -21,15 +21,6 @@ export default function Home() {
               Building <strong>high-quality, responsive, accessible full stack experiences</strong> that connect technology, creativity, and real human needs.
             </>
           }
-          ctaPrimary={{
-            text: "See This Project",
-            href: "/critical-mass-case-study",
-            variant: "highlight",
-          }}
-          ctaSecondary={{
-            text: "View Projects",
-            href: "/projects",
-          }}
           backgroundImage={{
             src: "/images/hero-background.webp",
             alt: "Abstract background pattern for hero section",
