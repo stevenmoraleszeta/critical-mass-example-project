@@ -78,11 +78,11 @@
 
 **Subheadline**
 
-> Building **scalable full-stack solutions** that connect technology, creativity, and real human needs.
+> Building **high-quality, responsive, accessible full stack experiences** that connect technology, creativity, and real human needs.
 
 **Key Identity Line**
 
-- Costa Rica · Applying for **Developer, Front End at Critical Mass**
+- Applying for **Developer, Front End at Critical Mass**
 
 ### Role Focus: Developer, Front End @ Critical Mass
 

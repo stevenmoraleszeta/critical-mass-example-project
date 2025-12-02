@@ -22,12 +22,12 @@ export default function Home() {
           }
           subtitle={
             <>
-              Building <strong>scalable full-stack solutions</strong> that connect technology, creativity, and real human needs.
+              Building <strong>high-quality, responsive, accessible full stack experiences</strong> that connect technology, creativity, and real human needs.
             </>
           }
           keyIdentity={
             <>
-              Costa Rica · Applying for <strong>Developer, Front End at Critical Mass</strong>
+              Applying for <strong>Developer, Front End at Critical Mass</strong>
             </>
           }
           ctaPrimary={{
