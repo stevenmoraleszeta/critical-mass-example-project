@@ -22,7 +22,7 @@ export default function Home() {
             </>
           }
           ctaPrimary={{
-            text: "See My Work",
+            text: "See This Project",
             href: "/critical-mass-case-study",
             variant: "highlight",
           }}

@@ -103,7 +103,7 @@ This portfolio is intentionally designed as a **live case study** for the **Deve
 ### Primary Call To Action
 
 > **Want to see how I would work at Critical Mass?**  
-> Start with the **“Critical Mass Case Study”** page – it’s a focused breakdown of how I match this role, backed by real code and projects.
+> Start with the **"This Project"** page – it's a focused breakdown of how I match this role, backed by real code and projects.
 
 ---
 

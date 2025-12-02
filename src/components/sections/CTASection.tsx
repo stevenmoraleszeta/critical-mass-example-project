@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button';
  * CTA Section Component
  * 
  * Primary call-to-action section for the landing page. Encourages visitors to
- * explore the Critical Mass Case Study page to see how the portfolio matches
+ * explore the This Project page to see how the portfolio matches
  * the role requirements.
  * 
  * Follows Critical Mass requirements:
@@ -30,7 +30,7 @@ export default function CTASection() {
         </h2>
         
         <p className="cta-section__description">
-          Start with the <strong>"Critical Mass Case Study"</strong> page – it's a focused breakdown of how I match this role, backed by real code and projects.
+          Start with the <strong>"This Project"</strong> page – it's a focused breakdown of how I match this role, backed by real code and projects.
         </p>
         
         <div className="cta-section__actions">
@@ -38,9 +38,9 @@ export default function CTASection() {
             variant="highlight"
             size="lg"
             href="/critical-mass-case-study"
-            ariaLabel="View Critical Mass Case Study"
+            ariaLabel="See This Project"
           >
-            Case Study
+            See This Project
           </Button>
           
           <Button
