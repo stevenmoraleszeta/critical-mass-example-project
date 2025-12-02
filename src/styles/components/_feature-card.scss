@@ -81,6 +81,8 @@
     flex-direction: column;
     flex: 1;
     gap: var(--space-sm);
+    align-items: center;
+    text-align: center;
   }
   
   // Title
@@ -91,6 +93,7 @@
     font-weight: var(--fw-bold);
     line-height: var(--lh-tight);
     color: var(--color-primary); // Blue text always
+    text-align: center;
     
     @include breakpoint-md {
       font-size: var(--fs-xl);
@@ -105,6 +108,7 @@
     font-weight: var(--fw-normal);
     line-height: var(--lh-relaxed);
     color: var(--color-primary); // Blue text always
+    text-align: center;
     
     @include breakpoint-md {
       font-size: var(--fs-base);
