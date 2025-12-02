@@ -1,6 +1,7 @@
 import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/sections/Hero';
 import RoleFocusSection from '@/components/sections/RoleFocusSection';
+import KeyHighlightsSection from '@/components/sections/KeyHighlightsSection';
 import CTASection from '@/components/sections/CTASection';
 
 export default function Home() {
@@ -35,6 +36,7 @@ export default function Home() {
           }}
         />
         <RoleFocusSection />
+        <KeyHighlightsSection />
         <CTASection />
       </div>
     </MainLayout>
