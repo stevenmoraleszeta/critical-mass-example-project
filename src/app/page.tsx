@@ -4,6 +4,7 @@ import Features from '@/components/sections/Features';
 import Specs from '@/components/sections/Specs';
 import UseCases from '@/components/sections/UseCases';
 import PerformanceSection from '@/components/sections/PerformanceSection';
+import Testimonials from '@/components/sections/Testimonials';
 
 export default function Home() {
   return (
@@ -61,6 +62,7 @@ export default function Home() {
       />
       <UseCases />
       <PerformanceSection />
+      <Testimonials />
     </MainLayout>
   );
 }

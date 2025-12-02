@@ -1,0 +1,149 @@
+// ============================================================================
+// Testimonial Card Component Styles
+// Following Critical Mass requirements: BEM, Mobile-First, Accessibility
+// Following project-idea.md: TestimonialCard component specifications
+// ============================================================================
+
+// Import base files for variables and mixins
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Testimonial Card Block (BEM)
+// Card component specifically for testimonials
+// ============================================================================
+
+.testimonial-card {
+  // Base card styles
+  display: flex;
+  flex-direction: column;
+  
+  // Layout - Cards must be white with borders
+  background-color: var(--color-white);
+  border: var(--border-width-thin) solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  
+  // Spacing
+  padding: var(--space-lg);
+  gap: var(--space-md);
+  
+  // Transitions
+  @include transition-base(all);
+  
+  // Shadow (subtle)
+  @include shadow-sm;
+  
+  // Hover effect
+  &:hover {
+    @include shadow-md;
+    transform: translateY(-2px);
+  }
+  
+  // ============================================================================
+  // Testimonial Card Elements (BEM)
+  // ============================================================================
+  
+  // Quote Blockquote
+  &__quote {
+    margin: 0;
+    padding: 0;
+    border: none;
+    flex: 1;
+  }
+  
+  // Quote Text
+  // All text in cards must be blue
+  &__text {
+    margin: 0;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-relaxed);
+    color: var(--color-primary); // Blue text always
+    font-style: italic;
+    
+    @include breakpoint-md {
+      font-size: var(--fs-lg);
+    }
+  }
+  
+  // Footer (Author Attribution)
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+    padding-top: var(--space-md);
+    border-top: var(--border-width-thin) solid var(--color-primary);
+  }
+  
+  // Author Name (Cite)
+  &__author {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-bold);
+    font-style: normal;
+    color: var(--color-primary); // Blue text always
+    
+    @include breakpoint-md {
+      font-size: var(--fs-base);
+    }
+  }
+  
+  // Meta Information Container
+  &__meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    font-size: var(--fs-sm);
+    color: var(--color-primary); // Blue text always
+  }
+  
+  // Role
+  &__role {
+    font-weight: var(--fw-normal);
+    color: var(--color-primary);
+  }
+  
+  // Separator
+  &__separator {
+    color: var(--color-primary);
+  }
+  
+  // Company
+  &__company {
+    font-weight: var(--fw-normal);
+    color: var(--color-primary);
+  }
+  
+  // ============================================================================
+  // Responsive Enhancements (Mobile-First)
+  // Following Critical Mass requirement: Mobile-First approach
+  // ============================================================================
+  
+  // Base styles are mobile-first (defined above)
+  // Additional responsive adjustments for larger screens
+  
+  @include breakpoint-lg {
+    padding: var(--space-xl);
+    gap: var(--space-lg);
+  }
+  
+  // ============================================================================
+  // Reduced Motion Support (Accessibility)
+  // Following Critical Mass accessibility requirements
+  // ============================================================================
+  
+  @media (prefers-reduced-motion: reduce) {
+    &,
+    &__quote,
+    &__footer {
+      transition: none;
+      animation: none;
+    }
+    
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
