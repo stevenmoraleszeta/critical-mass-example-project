@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Card from '@/components/ui/Card';
+import FeatureCard from '@/components/ui/FeatureCard';
 
 /**
  * Role Focus Section Component
@@ -17,7 +17,6 @@ import Card from '@/components/ui/Card';
  */
 
 export default function RoleFocusSection() {
-
   return (
     <section className="role-focus" id="role-focus" aria-labelledby="role-focus-title">
       <div className="role-focus__container">
@@ -30,80 +29,37 @@ export default function RoleFocusSection() {
         </p>
         
         <div className="role-focus__grid">
-          <Card
-            variant="feature"
+          <FeatureCard
             title="Design Translation"
             description="I translate Figma/wireframes into semantic HTML5, modern CSS3, and React/Next.js components."
-            backgroundImage={{
-              src: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=800&h=600&fit=crop",
-              alt: "Design tools and wireframes representing design translation",
-              width: 800,
-              height: 600
-            }}
           />
           
-          <Card
-            variant="feature"
+          <FeatureCard
             title="Responsive & Accessible"
             description="I build mobile-first layouts with accessibility best practices (WCAG mindset) and cross-browser support."
-            backgroundImage={{
-              src: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
-              alt: "Multiple devices showing responsive design",
-              width: 800,
-              height: 600
-            }}
           />
           
-          <Card
-            variant="feature"
+          <FeatureCard
             title="API Integration"
             description="I work daily with REST APIs, JSON, HTTP, and have familiarity with SOAP and external services."
-            backgroundImage={{
-              src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
-              alt: "API connections and network integration",
-              width: 800,
-              height: 600
-            }}
           />
           
-          <Card
-            variant="feature"
+          <FeatureCard
             title="Tooling"
             description="I use SASS/LESS, Gulp, Vite, GitHub Actions and modern bundlers to maintain efficient front-end pipelines."
-            backgroundImage={{
-              src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-              alt: "Development tools and automation",
-              width: 800,
-              height: 600
-            }}
           />
           
-          <Card
-            variant="feature"
+          <FeatureCard
             title="Collaboration"
             description="I coordinate with design, business, QA, and tech leads to deliver on time with quality."
-            backgroundImage={{
-              src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop",
-              alt: "Team collaboration and communication",
-              width: 800,
-              height: 600
-            }}
           />
           
-          <Card
-            variant="feature"
+          <FeatureCard
             title="Ownership"
             description="I'm used to owning features end-to-end, providing time estimates, and communicating progress clearly."
-            backgroundImage={{
-              src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
-              alt: "Project ownership and responsibility",
-              width: 800,
-              height: 600
-            }}
           />
         </div>
       </div>
     </section>
   );
 }
-

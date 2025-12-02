@@ -58,11 +58,6 @@ export interface CardProps {
     width?: number;
     height?: number;
   };
-  /** Background image for card (image as background with overlay) */
-  backgroundImage?: {
-    src: string;
-    alt: string;
-  };
   /** Card footer content (React node) */
   footer?: React.ReactNode;
   /** Card main content (React node) - used instead of or alongside title/description */
@@ -87,7 +82,6 @@ export default function Card({
   title,
   description,
   image,
-  backgroundImage,
   footer,
   children,
   className = '',
@@ -96,12 +90,10 @@ export default function Card({
   // Build BEM class names
   const baseClass = 'card';
   const variantClass = `card--${variant}`;
-  const backgroundImageClass = backgroundImage ? 'card--with-background' : '';
   
   const classNames = [
     baseClass,
     variantClass,
-    backgroundImageClass,
     className,
   ]
     .filter(Boolean)
@@ -109,23 +101,8 @@ export default function Card({
 
   return (
     <article className={classNames}>
-      {/* Background Image Section */}
-      {backgroundImage && (
-        <div className="card__background">
-          <Image
-            src={backgroundImage.src}
-            alt={backgroundImage.alt}
-            className="card__background-img"
-            loading="lazy"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-          <div className="card__background-overlay" aria-hidden="true" />
-        </div>
-      )}
-
-      {/* Image Section (regular image, not background) */}
-      {image && !backgroundImage && (
+      {/* Image Section */}
+      {image && (
         <div className="card__image">
           <Image
             src={image.src}

@@ -100,11 +100,11 @@
 }
 
 .role-focus__grid {
-  .card {
+  .feature-card {
     &:focus-within {
       outline: 3px solid var(--color-secondary);
       outline-offset: 4px;
-      border-radius: var(--radius-lg);
+      border-radius: 0;
     }
   }
 }

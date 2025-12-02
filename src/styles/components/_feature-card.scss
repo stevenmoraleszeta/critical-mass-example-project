@@ -13,30 +13,182 @@
 // Card component specifically for features
 // ============================================================================
 
+// Levitation animation keyframes with rotations preserved
+// Each card has its own animation to maintain its unique rotation
+@keyframes levitate-1 {
+  0%, 100% {
+    transform: translateY(0) rotate(-5.5deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-5.5deg);
+  }
+}
+
+@keyframes levitate-2 {
+  0%, 100% {
+    transform: translateY(0) rotate(1.5deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+@keyframes levitate-3 {
+  0%, 100% {
+    transform: translateY(0) rotate(5.5deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(5.5deg);
+  }
+}
+
+@keyframes levitate-4 {
+  0%, 100% {
+    transform: translateY(0) rotate(4.5deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(4.5deg);
+  }
+}
+
+@keyframes levitate-5 {
+  0%, 100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+}
+
+@keyframes levitate-6 {
+  0%, 100% {
+    transform: translateY(0) rotate(-4.5deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-4.5deg);
+  }
+}
+
 .feature-card {
   // Base card styles
   display: flex;
   flex-direction: column;
   
-  // Layout - Cards must be white with borders
-  background-color: var(--color-white);
+  // Layout - Cards are yellow with blue text
+  background-color: var(--color-accent);
   border: var(--border-width-thin) solid var(--color-primary);
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   
   // Spacing
   padding: var(--space-lg);
   gap: var(--space-md);
   
-  // Transitions
-  @include transition-base(all);
+  // Transitions - very smooth and gradual for scale effect
+  // Longer duration (400ms) with ease-in-out for smooth scale in both directions
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
+              border-width 300ms ease-in-out,
+              background-color 300ms ease-in-out;
   
   // Shadow (subtle)
   @include shadow-sm;
   
-  // Hover effect
+  // Transform origin for scale
+  transform-origin: center;
+  
+  // Optimize for transforms
+  will-change: transform, box-shadow;
+  
+  // Initial transform state with subtle rotations for organic/disordered look
+  // Each card has a slight rotation to appear naturally scattered
+  transform: translateY(0) scale(1) rotate(0deg);
+  
+  // Apply varied rotations to each card for disordered appearance
+  // Mix of subtle and more pronounced rotations for visual interest
+  // Cards 1, 4, and 5 have more pronounced rotations
+  &:nth-child(1) {
+    transform: translateY(0) scale(1) rotate(-5.5deg);
+    animation: levitate-1 3s ease-in-out infinite;
+    animation-delay: 0.2s;
+  }
+  
+  &:nth-child(2) {
+    transform: translateY(0) scale(1) rotate(1.5deg);
+    animation: levitate-2 3s ease-in-out infinite;
+    animation-delay: 0.4s;
+  }
+  
+  &:nth-child(3) {
+    transform: translateY(0) scale(1) rotate(5.5deg);
+    animation: levitate-3 3s ease-in-out infinite;
+    animation-delay: 0.6s;
+  }
+  
+  &:nth-child(4) {
+    transform: translateY(0) scale(1) rotate(4.5deg);
+    animation: levitate-4 3s ease-in-out infinite;
+    animation-delay: 0.8s;
+  }
+  
+  &:nth-child(5) {
+    transform: translateY(0) scale(1) rotate(-1deg);
+    animation: levitate-5 3s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  
+  &:nth-child(6) {
+    transform: translateY(0) scale(1) rotate(-4.5deg);
+    animation: levitate-6 3s ease-in-out infinite;
+    animation-delay: 1.2s;
+  }
+  
+  // Enhanced hover effect - gradual scale increase
+  // Preserve rotation on hover but straighten slightly for better UX
   &:hover {
-    @include shadow-md;
-    transform: translateY(-2px);
+    // Pause animation to allow smooth transition
+    animation-play-state: paused;
+    
+    // Enhanced elevation and gradual scale increase
+    // Scale increases smoothly from 1 to 1.08 over 400ms
+    // Reduce rotation slightly on hover (straighten to 0deg) for better focus
+    // The transition property ensures smooth animation in both directions
+    transform: translateY(-12px) scale(1.08) rotate(0deg);
+    
+    // More pronounced shadow for depth
+    box-shadow: 0 12px 24px -6px rgba(0, 0, 255, 0.25),
+                0 8px 16px -4px rgba(0, 0, 255, 0.15);
+    
+    // Slightly thicker border on hover for emphasis
+    border-width: var(--border-width-base);
+    
+    // Subtle background color shift (slightly brighter yellow)
+    background-color: #FFFF33;
+  }
+  
+  // Preserve individual rotations on hover for each card
+  // But straighten them slightly for better focus
+  &:nth-child(1):hover {
+    transform: translateY(-12px) scale(1.08) rotate(0deg);
+  }
+  
+  &:nth-child(2):hover {
+    transform: translateY(-12px) scale(1.08) rotate(0deg);
+  }
+  
+  &:nth-child(3):hover {
+    transform: translateY(-12px) scale(1.08) rotate(0deg);
+  }
+  
+  &:nth-child(4):hover {
+    transform: translateY(-12px) scale(1.08) rotate(0deg);
+  }
+  
+  &:nth-child(5):hover {
+    transform: translateY(-12px) scale(1.08) rotate(0deg);
+  }
+  
+  &:nth-child(6):hover {
+    transform: translateY(-12px) scale(1.08) rotate(0deg);
   }
   
   // ============================================================================
@@ -48,29 +200,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 64px;
-    height: 64px;
-    margin-bottom: var(--space-sm);
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--space-md);
     
     // Icon color - use primary color (blue)
     color: var(--color-primary);
     
-    // Ensure SVG icons scale properly
+    // Ensure SVG icons scale properly - large and simple
     svg {
       width: 100%;
       height: 100%;
-      max-width: 48px;
-      max-height: 48px;
+      max-width: 80px;
+      max-height: 80px;
     }
     
-    // Tablet and up: larger icon
+    // Tablet and up: even larger icon
     @include breakpoint-md {
-      width: 72px;
-      height: 72px;
+      width: 96px;
+      height: 96px;
       
       svg {
-        max-width: 56px;
-        max-height: 56px;
+        max-width: 96px;
+        max-height: 96px;
+      }
+    }
+    
+    // Desktop: largest icon
+    @include breakpoint-lg {
+      width: 112px;
+      height: 112px;
+      
+      svg {
+        max-width: 112px;
+        max-height: 112px;
       }
     }
   }
@@ -137,12 +300,17 @@
     &,
     &__icon,
     &__content {
-      transition: none;
+      transition: transform var(--transition-base) ease-in-out,
+                  box-shadow var(--transition-base) ease-in-out,
+                  border-width var(--transition-base) ease-in-out,
+                  background-color var(--transition-base) ease-in-out;
       animation: none;
     }
     
     &:hover {
-      transform: none;
+      transform: scale(1.05);
+      @include shadow-md;
+      border-width: var(--border-width-base);
     }
   }
 }
