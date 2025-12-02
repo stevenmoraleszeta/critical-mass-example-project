@@ -8,6 +8,30 @@
   padding: var(--space-2xl) var(--space-md);
   background-color: var(--color-bg-light);
   
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba($color-red, 0.15) 0%, rgba($color-red, 0.05) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+    
+    @include breakpoint-md {
+      width: 800px;
+      height: 800px;
+    }
+    
+    @include breakpoint-lg {
+      width: 1000px;
+      height: 1000px;
+    }
+  }
+  
   @include breakpoint-md {
     padding: var(--space-3xl) var(--space-lg);
   }
