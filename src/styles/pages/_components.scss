@@ -408,13 +408,17 @@
 
 .components-page__ctas {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   max-width: var(--container-sm);
   gap: var(--space-md);
   font-size: var(--fs-sm);
   justify-content: center;
   align-items: center;
+
+  @include breakpoint-md {
+    flex-direction: row;
+  }
 
   a {
     display: flex;
@@ -423,7 +427,7 @@
     height: var(--lh-40);
     padding: 0 var(--space-md);
     border-radius: var(--radius-full);
-    border: 1px solid transparent;
+    border: var(--border-width-thin) solid transparent;
     transition: var(--transition-base);
     cursor: pointer;
     width: fit-content;
