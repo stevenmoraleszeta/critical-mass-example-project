@@ -28,6 +28,10 @@ import Loader from '../components/feedback/Loader';
 import ErrorMessage from '../components/feedback/ErrorMessage';
 import Toast from '../components/feedback/Toast';
 import Footer from '../components/layout/Footer';
+import TestimonialCard from '../components/ui/TestimonialCard';
+import Testimonials from '../components/sections/Testimonials';
+import PricingSection from '../components/sections/PricingSection';
+import CTASection from '../components/sections/CTASection';
 
 describe('Component Rendering Tests', () => {
   // ============================================================================
@@ -519,6 +523,183 @@ describe('Component Rendering Tests', () => {
       // Verify external links have proper attributes
       expect(linkedInLink).toHaveAttribute('target', '_blank');
       expect(linkedInLink).toHaveAttribute('rel', 'noopener noreferrer');
+    });
+  });
+
+  // ============================================================================
+  // TestimonialCard Component
+  // ============================================================================
+  
+  describe('TestimonialCard Component', () => {
+    it('should render without errors', () => {
+      const { container } = render(
+        <TestimonialCard quote="Test testimonial quote" />
+      );
+      expect(container).toBeTruthy();
+      expect(screen.getByText('Test testimonial quote')).toBeInTheDocument();
+    });
+
+    it('should follow BEM naming convention', () => {
+      render(<TestimonialCard quote="Quote" />);
+      const card = screen.getByText('Quote').closest('.testimonial-card');
+      expect(card).toHaveClass('testimonial-card');
+    });
+
+    it('should render with author information', () => {
+      render(
+        <TestimonialCard
+          quote="Test quote"
+          author="John Doe"
+          role="Front-End Manager"
+          company="Agency Name"
+        />
+      );
+      expect(screen.getByText('John Doe')).toBeInTheDocument();
+      expect(screen.getByText('Front-End Manager')).toBeInTheDocument();
+      expect(screen.getByText('Agency Name')).toBeInTheDocument();
+    });
+
+    it('should use semantic HTML (blockquote, cite)', () => {
+      render(<TestimonialCard quote="Test quote" author="John Doe" />);
+      const blockquote = screen.getByText('Test quote').closest('blockquote');
+      expect(blockquote).toBeInTheDocument();
+      expect(screen.getByText('John Doe').tagName).toBe('CITE');
+    });
+  });
+
+  // ============================================================================
+  // Testimonials Section Component
+  // ============================================================================
+  
+  describe('Testimonials Section Component', () => {
+    it('should render without errors', () => {
+      const { container } = render(<Testimonials />);
+      expect(container).toBeTruthy();
+      expect(screen.getByText('What Teams Say')).toBeInTheDocument();
+    });
+
+    it('should follow BEM naming convention', () => {
+      render(<Testimonials />);
+      const section = screen.getByText('What Teams Say').closest('.testimonials');
+      expect(section).toHaveClass('testimonials');
+    });
+
+    it('should render all three testimonials', () => {
+      render(<Testimonials />);
+      const testimonials = screen.getAllByRole('article');
+      expect(testimonials.length).toBe(3);
+    });
+
+    it('should have proper semantic structure', () => {
+      render(<Testimonials />);
+      const section = screen.getByRole('region', { name: /what teams say/i });
+      expect(section).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /what teams say/i })).toBeInTheDocument();
+    });
+
+    it('should have proper ARIA attributes', () => {
+      render(<Testimonials />);
+      const section = screen.getByRole('region', { name: /what teams say/i });
+      expect(section).toHaveAttribute('id', 'testimonials');
+      expect(section).toHaveAttribute('aria-labelledby', 'testimonials-title');
+    });
+  });
+
+  // ============================================================================
+  // Pricing Section Component
+  // ============================================================================
+  
+  describe('Pricing Section Component', () => {
+    it('should render without errors', () => {
+      const { container } = render(<PricingSection />);
+      expect(container).toBeTruthy();
+      expect(screen.getByText('Availability & Pricing')).toBeInTheDocument();
+    });
+
+    it('should follow BEM naming convention', () => {
+      render(<PricingSection />);
+      const section = screen.getByText('Availability & Pricing').closest('.pricing');
+      expect(section).toHaveClass('pricing');
+    });
+
+    it('should render pricing copy', () => {
+      render(<PricingSection />);
+      expect(screen.getByText(/Available for full-time integration/i)).toBeInTheDocument();
+    });
+
+    it('should have proper semantic structure', () => {
+      render(<PricingSection />);
+      const section = screen.getByRole('region', { name: /availability & pricing/i });
+      expect(section).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /availability & pricing/i })).toBeInTheDocument();
+    });
+
+    it('should have proper ARIA attributes', () => {
+      render(<PricingSection />);
+      const section = screen.getByRole('region', { name: /availability & pricing/i });
+      expect(section).toHaveAttribute('id', 'pricing');
+      expect(section).toHaveAttribute('aria-labelledby', 'pricing-title');
+    });
+  });
+
+  // ============================================================================
+  // CTA Section Component
+  // ============================================================================
+  
+  describe('CTA Section Component', () => {
+    it('should render without errors', () => {
+      const { container } = render(<CTASection />);
+      expect(container).toBeTruthy();
+      expect(screen.getByText('Ready to Explore?')).toBeInTheDocument();
+    });
+
+    it('should follow BEM naming convention', () => {
+      render(<CTASection />);
+      const section = screen.getByText('Ready to Explore?').closest('.cta-section');
+      expect(section).toHaveClass('cta-section');
+    });
+
+    it('should render both buttons', () => {
+      render(<CTASection />);
+      expect(screen.getByText('View All Projects')).toBeInTheDocument();
+      expect(screen.getByText('Explore UI Library')).toBeInTheDocument();
+    });
+
+    it('should render note text', () => {
+      render(<CTASection />);
+      expect(screen.getByText(/This prototype was crafted specifically with the Critical Mass Front-End Developer role in mind/i)).toBeInTheDocument();
+    });
+
+    it('should have proper semantic structure', () => {
+      render(<CTASection />);
+      const section = screen.getByRole('region', { name: /ready to explore/i });
+      expect(section).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /ready to explore/i })).toBeInTheDocument();
+    });
+
+    it('should have proper ARIA attributes', () => {
+      render(<CTASection />);
+      const section = screen.getByRole('region', { name: /ready to explore/i });
+      expect(section).toHaveAttribute('id', 'cta');
+      expect(section).toHaveAttribute('aria-labelledby', 'cta-title');
+    });
+
+    it('should have buttons with correct navigation links', () => {
+      render(<CTASection />);
+      const projectsButton = screen.getByText('View All Projects').closest('a');
+      const uiLibraryButton = screen.getByText('Explore UI Library').closest('a');
+      
+      expect(projectsButton).toHaveAttribute('href', '/projects');
+      expect(uiLibraryButton).toHaveAttribute('href', '/components-library');
+    });
+
+    it('should have buttons with proper ARIA labels', () => {
+      render(<CTASection />);
+      const projectsButton = screen.getByText('View All Projects').closest('a');
+      const uiLibraryButton = screen.getByText('Explore UI Library').closest('a');
+      
+      expect(projectsButton).toHaveAttribute('aria-label', 'View All Projects');
+      expect(uiLibraryButton).toHaveAttribute('aria-label', 'Explore UI Library');
     });
   });
 });

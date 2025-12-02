@@ -204,8 +204,8 @@
     }
   }
   
-  // Save Variant - Yellow background with blue text
-  &--save {
+  // Highlight Variant - Yellow background with blue text
+  &--highlight {
     background-color: var(--color-accent); // Yellow
     color: var(--color-primary); // Blue text
     border: var(--border-width-thin) solid var(--color-primary); // Blue border

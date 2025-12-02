@@ -1,0 +1,73 @@
+// ============================================================================
+// Leadership Section Styles
+// Following BEM methodology and Critical Mass requirements
+// Mobile-first responsive design
+// ============================================================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.leadership {
+  padding: var(--space-2xl) 0;
+  background-color: var(--color-white);
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: var(--space-md);
+
+    @include breakpoint-md {
+      font-size: var(--fs-4xl);
+      margin-bottom: var(--space-lg);
+    }
+  }
+
+  &__subtitle {
+    font-size: var(--fs-lg);
+    line-height: var(--lh-relaxed);
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: var(--container-sm);
+    margin: 0 auto var(--space-2xl);
+
+    @include breakpoint-md {
+      font-size: var(--fs-xl);
+      margin-bottom: var(--space-3xl);
+    }
+  }
+
+  &__grid {
+    @include responsive-grid(1, 2, 3, md);
+    gap: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+
+    @include breakpoint-lg {
+      gap: var(--space-2xl);
+      margin-bottom: var(--space-3xl);
+    }
+  }
+
+  &__paragraph {
+    max-width: var(--container-md);
+    margin: 0 auto;
+
+    p {
+      font-size: var(--fs-base);
+      line-height: var(--lh-relaxed);
+      color: var(--text-secondary);
+      text-align: center;
+
+      @include breakpoint-md {
+        font-size: var(--fs-lg);
+      }
+    }
+  }
+}
+

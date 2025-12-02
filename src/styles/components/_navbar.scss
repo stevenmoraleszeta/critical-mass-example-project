@@ -18,6 +18,13 @@
   z-index: var(--z-index-fixed);
   @include shadow-sm;
   overflow: visible; // Allow active indicator line to show below navbar
+  
+  // Use height variable directly to ensure consistency with main padding-top
+  height: var(--navbar-height-mobile);
+  
+  @include breakpoint-md {
+    height: var(--navbar-height-desktop);
+  }
 
   &__container {
     @include container(var(--container-max-width), var(--space-md));
@@ -25,14 +32,18 @@
     position: relative;
     padding-top: var(--space-sm);
     padding-bottom: var(--space-sm);
-    min-height: 48px;
+    // Calculate min-height from navbar height minus padding and border
+    // Mobile: 65px - 8px (top) - 8px (bottom) - 1px (border) = 48px
+    min-height: calc(var(--navbar-height-mobile) - var(--space-sm) - var(--space-sm) - var(--border-width-thin));
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
 
     @include breakpoint-md {
       padding-top: var(--space-sm);
       padding-bottom: var(--space-sm);
-      min-height: 56px;
+      // Desktop: 73px - 8px (top) - 8px (bottom) - 1px (border) = 56px
+      min-height: calc(var(--navbar-height-desktop) - var(--space-sm) - var(--space-sm) - var(--border-width-thin));
       gap: var(--space-lg);
     }
 
@@ -356,7 +367,7 @@
       background-color: var(--color-primary-rgba-10);
       position: relative;
       transform: translateY(-1px);
-      box-shadow: 0 2px 4px rgba(0, 0, 255, 0.1);
+      box-shadow: 0 2px 4px var(--color-primary-rgba-10);
       padding: var(--space-sm) var(--space-md);
       
       @include breakpoint-max-md {
@@ -405,7 +416,7 @@
       background-color: var(--color-primary-rgba-10);
       position: relative;
       transform: translateY(-1px);
-      box-shadow: 0 2px 4px rgba(0, 0, 255, 0.1);
+      box-shadow: 0 2px 4px var(--color-primary-rgba-10);
       padding: var(--space-sm) var(--space-md);
       
       @include breakpoint-max-md {

@@ -1,12 +1,3 @@
-// ============================================================================
-// CSS Reset & Base Styles
-// Following Critical Mass requirements: SASS, Mobile-First, Accessibility
-// Following SMACSS base layer architecture
-// ============================================================================
-
-// ============================================================================
-// Modern CSS Reset
-// ============================================================================
 
 *,
 *::before,
@@ -17,25 +8,67 @@
 }
 
 html {
-  // Prevent font size adjustment on iOS
   -webkit-text-size-adjust: 100%;
-  // Smooth scrolling (if supported)
   scroll-behavior: smooth;
 }
 
 body {
-  // Reset body styles - typography styles are in _typography.scss
   margin: 0;
   padding: 0;
-  // Prevent horizontal scroll
   overflow-x: hidden;
-  // Background color (typography color is in _typography.scss)
   background-color: var(--color-bg-light);
 }
 
 // ============================================================================
-// Remove default margins and padding from common elements
+// Custom Scrollbar Styles
+// Following project design system (Primary: Blue, Secondary: Red, Accent: Yellow)
 // ============================================================================
+
+// Webkit browsers (Chrome, Safari, Edge)
+* {
+  &::-webkit-scrollbar {
+    width: var(--space-sm);
+    height: var(--space-sm);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--color-bg-light);
+    border-radius: var(--radius-sm);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    border: var(--border-width-thin) solid var(--color-bg-light);
+    transition: background-color var(--transition-base);
+
+    &:hover {
+      background-color: var(--color-secondary);
+    }
+
+    &:active {
+      background-color: var(--color-accent);
+    }
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: var(--color-bg-light);
+  }
+}
+
+// Firefox
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-bg-light);
+}
+
+// Ensure scrollbar respects reduced motion preference
+@media (prefers-reduced-motion: reduce) {
+  *::-webkit-scrollbar-thumb {
+    transition: none;
+  }
+}
+
 
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
@@ -46,66 +79,27 @@ hr {
   padding: 0;
 }
 
-// ============================================================================
-// Lists
-// ============================================================================
 
 ul,
 ol {
   list-style: none;
 }
 
-// ============================================================================
-// Links - Base Styles
-// Following project-idea.md: Correct Links and Buttons
-// ============================================================================
 
 a {
-  // Remove default link styling (base reset)
   text-decoration: none;
   color: inherit;
-  // Better touch targets on mobile (Critical Mass mobile-first requirement)
   -webkit-tap-highlight-color: transparent;
   
-  // Focus styles for accessibility (Critical Mass requirement)
   &:focus-visible {
     outline: var(--border-width-base) solid var(--color-accent);
     outline-offset: var(--outline-offset-focus);
     border-radius: var(--radius-sm);
   }
-  
-  // Skip link for keyboard navigation (project-idea.md requirement)
-  &.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--color-primary);
-    color: var(--color-white);
-    padding: var(--space-sm) var(--space-md);
-    z-index: 1000;
-    border-radius: 0 0 var(--radius-md) 0;
-    font-weight: var(--fw-semibold);
-    transition: top var(--transition-base);
-    
-    // Visible when focused (Critical Mass accessibility requirement)
-    &:focus {
-      top: 0;
-      outline: var(--border-width-base) solid var(--color-accent);
-      outline-offset: var(--outline-offset-focus);
-    }
-  }
 }
 
-// Note: Link colors, hover states, and typography-specific link styles
-// are defined in _typography.scss
-
-// ============================================================================
-// Buttons - Reset Styles
-// Following project-idea.md: Correct Links and Buttons (use <button> for actions)
-// ============================================================================
 
 button {
-  // Reset button styles
   border: none;
   background: none;
   padding: 0;
@@ -113,77 +107,59 @@ button {
   font: inherit;
   color: inherit;
   cursor: pointer;
-  // Remove default button styling
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  // Better touch targets
   -webkit-tap-highlight-color: transparent;
   
-  // Focus styles for accessibility (Critical Mass requirement)
   &:focus-visible {
     outline: var(--border-width-base) solid var(--color-accent);
     outline-offset: var(--outline-offset-focus);
     border-radius: var(--radius-sm);
   }
   
-  // Disabled state
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;
   }
 }
 
-// ============================================================================
-// Form Elements - Base Reset
-// Following Critical Mass: Accessible Forms
-// ============================================================================
 
 input,
 textarea,
 select {
-  // Reset form element styles
   border: none;
   background: none;
   padding: 0;
   margin: 0;
   font: inherit;
   color: inherit;
-  // Remove default styling
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   
-  // Focus styles for accessibility (Critical Mass requirement)
   &:focus-visible {
     outline: var(--border-width-base) solid var(--color-accent);
     outline-offset: var(--outline-offset-focus);
     border-radius: var(--radius-sm);
   }
   
-  // Remove number input spinners
   &[type="number"]::-webkit-inner-spin-button,
   &[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
   
-  // Remove search input clear button
   &[type="search"]::-webkit-search-cancel-button,
   &[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
   }
 }
 
-// Remove default styling from select
 select {
   cursor: pointer;
 }
 
-// ============================================================================
-// Images and Media
-// Following Critical Mass: Performance and Accessibility
-// ============================================================================
 
 img,
 picture,
@@ -195,72 +171,55 @@ svg {
   height: auto;
 }
 
-// Remove border from images inside links
 img {
   border-style: none;
 }
 
-// ============================================================================
-// Tables
-// ============================================================================
 
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-// ============================================================================
-// Accessibility: Remove animations for users who prefer reduced motion
-// Following Critical Mass: Accessibility requirements
-// ============================================================================
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  html *,
+  html *::before,
+  html *::after,
+  body *,
+  body *::before,
+  body *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
   }
 }
 
-// ============================================================================
-// Remove outline for mouse users, keep for keyboard users
-// Following Critical Mass: Visible Focus requirement
-// ============================================================================
 
 :focus:not(:focus-visible) {
   outline: none;
 }
 
-// ============================================================================
-// Semantic HTML Elements - Base Styles
-// Following project-idea.md: Semantic Structure
-// ============================================================================
 
 main {
-  // Ensure main is focusable for skip link
   &:focus {
     outline: none;
   }
 }
 
-// Note: .visually-hidden utility class is defined in _layout.scss
-// (utilities layer, not base layer)
-
-// ============================================================================
-// Print Styles (Basic)
-// ============================================================================
 
 @media print {
-  *,
-  *::before,
-  *::after {
-    background: transparent !important;
-    color: var(--color-primary) !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
+  html *,
+  html *::before,
+  html *::after,
+  body *,
+  body *::before,
+  body *::after {
+    background: transparent;
+    color: var(--color-primary);
+    box-shadow: none;
+    text-shadow: none;
   }
   
   a,

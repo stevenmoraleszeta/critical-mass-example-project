@@ -1,6 +1,6 @@
 # Project TODO Checklist
 
-Complete step-by-step checklist for building the Steven Morales FE-01 Front-End Experience Engine prototype.
+Complete step-by-step checklist for building the Steven Morales Professional Portfolio prototype, specifically designed for the Critical Mass Front-End Developer position in San Jose, Costa Rica.
 
 ---
 
@@ -108,7 +108,6 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 - [x] Set base body styles (using variables from _variables.scss)
 - [x] Set base link styles (with focus states for accessibility)
 - [x] Set base button styles (reset with accessibility focus states)
-- [x] Include skip-link styles (project-idea.md accessibility requirement)
 - [x] Include reduced-motion support (accessibility best practice)
 - [ ] Test reset styles work correctly
 
@@ -340,128 +339,129 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 
 ### Hero Section
 
-- [ ] Create `components/sections/Hero.tsx`
-- [ ] Define `HeroProps` interface (from specifications)
-- [ ] Add title (H1): "Meet Steven Morales: Your Next Front-End Experience Engine."
-- [ ] Add subtitle
-- [ ] Add primary CTA button: "View Features"
-- [ ] Add secondary CTA button: "See Live Content"
-- [ ] Add note: "No monthly subscription. Just coffee and interesting problems."
-- [ ] Add image/visual element (placeholder or actual)
-- [ ] Create `styles/components/_hero.scss`
-- [ ] Style hero section with BEM
-- [ ] Add background gradient
-- [ ] Make hero responsive
-- [ ] Implement smooth scroll to Features section (for primary CTA)
-- [ ] Test hero section renders correctly
-- [ ] Test CTAs work correctly
+- [x] Create `components/sections/Hero.tsx`
+- [x] Define `HeroProps` interface (from specifications)
+- [x] Add title (H1): "Meet Steven Morales: Your Next Front-End Experience Engine."
+- [x] Add subtitle
+- [x] Add primary CTA button: "View Features"
+- [x] Add secondary CTA button: "See Live Content"
+- [x] Add note: "No monthly subscription. Just coffee and interesting problems."
+- [x] Add image/visual element (placeholder or actual)
+- [x] Create `styles/components/_hero.scss`
+- [x] Style hero section with BEM
+- [x] Add background gradient
+- [x] Make hero responsive
+- [x] Center hero content on all breakpoints (mobile-first, centered layout)
+- [x] Implement smooth scroll to Features section (for primary CTA)
+- [x] Test hero section renders correctly
+- [x] Test CTAs work correctly
 
 ### Features Section
 
-- [ ] Create `components/sections/Features.tsx`
-- [ ] Create `components/ui/FeatureCard.tsx`
-- [ ] Define `FeatureCardProps` interface
-- [ ] Add section title: "Core Features"
-- [ ] Add Feature 1: "Design-to-Code Translation"
-- [ ] Add Feature 2: "Responsive & Mobile-First Layout Engine"
-- [ ] Add Feature 3: "API Integration Module"
-- [ ] Add Feature 4: "Accessibility & Performance Optimizer"
-- [ ] Add icons to each feature card (SVG or icon component)
-- [ ] Style features section
-- [ ] Style feature cards with BEM
-- [ ] Make features section responsive (grid layout)
-- [ ] Test features section renders correctly
+- [x] Create `components/sections/Features.tsx`
+- [x] Create `components/ui/FeatureCard.tsx`
+- [x] Define `FeatureCardProps` interface
+- [x] Add section title: "Core Features"
+- [x] Add Feature 1: "Design-to-Code Translation"
+- [x] Add Feature 2: "Responsive & Mobile-First Layout Engine"
+- [x] Add Feature 3: "API Integration Module"
+- [x] Add Feature 4: "Accessibility & Performance Optimizer"
+- [x] Add icons to each feature card (SVG or icon component)
+- [x] Style features section
+- [x] Style feature cards with BEM
+- [x] Make features section responsive (grid layout)
+- [x] Test features section renders correctly
 
 ### Specs Section
 
-- [ ] Create `components/sections/Specs.tsx`
-- [ ] Define `SpecsSectionProps` interface
-- [ ] Add section title: "Tech Specs"
-- [ ] Create column layout
-- [ ] Add Column 1: Supported Technologies (React, Next.js, TypeScript, etc.)
-- [ ] Add Column 2: Protocols & Data (HTTP, JSON, XML, REST APIs)
-- [ ] Add Column 3: Integrations (CMS-like data, 3rd-party APIs, Webhooks)
-- [ ] Add footer note: "Backwards-compatible with legacy codebases (with patience)."
-- [ ] Style specs section
-- [ ] Make specs section responsive
-- [ ] Test specs section renders correctly
+- [x] Create `components/sections/Specs.tsx`
+- [x] Define `SpecsSectionProps` interface
+- [x] Add section title: "Tech Specs"
+- [x] Create column layout
+- [x] Add Column 1: Supported Technologies (React, Next.js, TypeScript, etc.)
+- [x] Add Column 2: Protocols & Data (HTTP, JSON, XML, REST APIs)
+- [x] Add Column 3: Integrations (CMS-like data, 3rd-party APIs, Webhooks)
+- [x] Add footer note: "Backwards-compatible with legacy codebases (with patience)."
+- [x] Style specs section
+- [x] Make specs section responsive
+- [x] Test specs section renders correctly
 
 ### Use Cases Section
 
-- [ ] Create `components/sections/UseCases.tsx`
-- [ ] Create `components/ui/UseCaseCard.tsx`
-- [ ] Define `UseCaseCardProps` interface
-- [ ] Add section title: "Use Cases"
-- [ ] Add Use Case 1: "Need a pixel-perfect build from a Figma file?"
-- [ ] Add Use Case 2: "Need a component library your design team actually likes?"
-- [ ] Add Use Case 3: "Need someone to debug that weird layout in Safari?"
-- [ ] Style use cases section
-- [ ] Style use case cards
-- [ ] Make use cases section responsive
-- [ ] Test use cases section renders correctly
+- [x] Create `components/sections/UseCases.tsx`
+- [x] Create `components/ui/UseCaseCard.tsx`
+- [x] Define `UseCaseCardProps` interface
+- [x] Add section title: "Use Cases"
+- [x] Add Use Case 1: "Need a pixel-perfect build from a Figma file?"
+- [x] Add Use Case 2: "Need a component library your design team actually likes?"
+- [x] Add Use Case 3: "Need someone to debug that weird layout in Safari?"
+- [x] Style use cases section
+- [x] Style use case cards
+- [x] Make use cases section responsive
+- [x] Test use cases section renders correctly
 
 ### Performance Section
 
-- [ ] Create `components/sections/PerformanceSection.tsx`
-- [ ] Create `components/ui/StatCard.tsx`
-- [ ] Define `StatCardProps` interface
-- [ ] Add section title: "Performance & Reliability"
-- [ ] Add Stat Card 1: "Lighthouse Focus"
-- [ ] Add Stat Card 2: "Optimization Built-In"
-- [ ] Add Stat Card 3: "Data-Driven Approach"
-- [ ] Add performance paragraph (from copy section)
-- [ ] Style performance section
-- [ ] Style stat cards
-- [ ] Make performance section responsive
-- [ ] Test performance section renders correctly
+- [x] Create `components/sections/PerformanceSection.tsx`
+- [x] Create `components/ui/StatCard.tsx`
+- [x] Define `StatCardProps` interface
+- [x] Add section title: "Performance & Reliability"
+- [x] Add Stat Card 1: "Lighthouse Focus"
+- [x] Add Stat Card 2: "Optimization Built-In"
+- [x] Add Stat Card 3: "Data-Driven Approach"
+- [x] Add performance paragraph (from copy section)
+- [x] Style performance section
+- [x] Style stat cards
+- [x] Make performance section responsive
+- [x] Test performance section renders correctly
 
 ### Testimonials Section
 
-- [ ] Create `components/sections/Testimonials.tsx`
-- [ ] Create `components/ui/TestimonialCard.tsx`
-- [ ] Define `TestimonialCardProps` interface
-- [ ] Add section title: "What Teams Say"
-- [ ] Add Testimonial 1 (from copy section)
-- [ ] Add Testimonial 2 (optional)
-- [ ] Add Testimonial 3 (optional)
-- [ ] Style testimonials section
-- [ ] Style testimonial cards
-- [ ] Make testimonials section responsive
-- [ ] Test testimonials section renders correctly
+- [x] Create `components/sections/Testimonials.tsx`
+- [x] Create `components/ui/TestimonialCard.tsx`
+- [x] Define `TestimonialCardProps` interface
+- [x] Add section title: "What Teams Say"
+- [x] Add Testimonial 1 (from copy section)
+- [x] Add Testimonial 2 (optional)
+- [x] Add Testimonial 3 (optional)
+- [x] Style testimonials section
+- [x] Style testimonial cards
+- [x] Make testimonials section responsive
+- [x] Test testimonials section renders correctly
 
 ### Pricing Section
 
-- [ ] Create `components/sections/PricingSection.tsx`
-- [ ] Add section title: "Availability & Pricing"
-- [ ] Add pricing copy (from copy section)
-- [ ] Style pricing section
-- [ ] Make pricing section responsive
-- [ ] Test pricing section renders correctly
+- [x] Create `components/sections/PricingSection.tsx`
+- [x] Add section title: "Availability & Pricing"
+- [x] Add pricing copy (from copy section)
+- [x] Style pricing section
+- [x] Make pricing section responsive
+- [x] Test pricing section renders correctly
 
 ### Final CTA Section
 
-- [ ] Create `components/sections/CTASection.tsx`
-- [ ] Add section title: "Ready to Explore?"
-- [ ] Add Button 1: "Explore Components" → `/components`
-- [ ] Add Button 2: "View Content in Action" → `/content`
-- [ ] Add note: "This prototype was crafted specifically with the Critical Mass Front-End Developer role in mind."
-- [ ] Style CTA section
-- [ ] Make CTA section responsive
-- [ ] Test CTA section renders correctly
-- [ ] Test buttons navigate correctly
+- [x] Create `components/sections/CTASection.tsx`
+- [x] Add section title: "Ready to Explore?"
+- [x] Add Button 1: "Explore Components" → `/components`
+- [x] Add Button 2: "View Content in Action" → `/content`
+- [x] Add note: "This prototype was crafted specifically with the Critical Mass Front-End Developer role in mind."
+- [x] Style CTA section
+- [x] Make CTA section responsive
+- [x] Test CTA section renders correctly
+- [x] Test buttons navigate correctly
 
 ### Landing Page Assembly
 
-- [ ] Create `app/page.tsx` (or update existing)
-- [ ] Import all section components
-- [ ] Assemble landing page with all sections in order
-- [ ] Wrap with MainLayout
-- [ ] Create `styles/pages/_home.scss`
-- [ ] Add page-specific styles
-- [ ] Test full landing page renders correctly
-- [ ] Test all sections are visible
-- [ ] Test all links and buttons work
-- [ ] Test page is responsive on mobile/tablet/desktop
+- [x] Create `app/page.tsx` (or update existing)
+- [x] Import all section components
+- [x] Assemble landing page with all sections in order
+- [x] Wrap with MainLayout
+- [x] Create `styles/pages/_home.scss`
+- [x] Add page-specific styles
+- [x] Test full landing page renders correctly
+- [x] Test all sections are visible
+- [x] Test all links and buttons work
+- [x] Test page is responsive on mobile/tablet/desktop
 
 ---
 
@@ -665,7 +665,6 @@ Complete step-by-step checklist for building the Steven Morales FE-01 Front-End 
 
 ### Keyboard Navigation
 
-- [ ] Test skip link works (Tab key)
 - [ ] Test all buttons are keyboard accessible
 - [ ] Test all links are keyboard accessible
 - [ ] Test form inputs are keyboard accessible

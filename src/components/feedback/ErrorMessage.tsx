@@ -93,7 +93,7 @@ export default function ErrorMessage({
         {onRetry && (
           <div className="error-message__actions">
             <Button
-              variant="save"
+              variant="highlight"
               size={size === 'sm' ? 'sm' : size === 'lg' ? 'lg' : 'md'}
               onClick={onRetry}
               aria-label={`${retryLabel}: ${message}`}

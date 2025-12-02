@@ -48,7 +48,6 @@ export default function MainLayout({ children, className = '' }: MainLayoutProps
 
       {/* Main Content */}
       <main 
-        id="main-content" 
         className={className}
         role="main"
       >
