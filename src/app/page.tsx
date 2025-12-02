@@ -1,5 +1,6 @@
 import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/sections/Hero';
+import RoleFocusSection from '@/components/sections/RoleFocusSection';
 import Features from '@/components/sections/Features';
 import UseCases from '@/components/sections/UseCases';
 import FeaturedProjects from '@/components/sections/FeaturedProjects';
@@ -44,6 +45,7 @@ export default function Home() {
             alt: "Abstract background pattern for hero section",
           }}
         />
+        <RoleFocusSection />
         <Features />
         <UseCases />
         <FeaturedProjects />

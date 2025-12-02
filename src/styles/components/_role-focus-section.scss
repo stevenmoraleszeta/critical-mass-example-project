@@ -1,0 +1,122 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.role-focus {
+  position: relative;
+  width: 100%;
+  
+  padding: var(--space-2xl) var(--space-md);
+  
+  background-color: var(--color-bg-light);
+  
+  @include breakpoint-md {
+    padding: var(--space-3xl) var(--space-lg);
+  }
+  
+  @include breakpoint-lg {
+    padding: var(--space-3xl) var(--space-xl);
+  }
+  
+  &__container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    
+    @include flex;
+    @include flex-column;
+    gap: var(--space-xl);
+    
+    @include breakpoint-md {
+      gap: var(--space-2xl);
+    }
+  }
+  
+  &__title {
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    color: var(--color-text-primary);
+    margin: 0;
+    text-align: center;
+    
+    @media (max-width: 639px) {
+      font-size: var(--fs-xl);
+    }
+    
+    @include breakpoint-md {
+      font-size: var(--fs-3xl);
+    }
+    
+    @include breakpoint-lg {
+      font-size: var(--fs-40);
+      line-height: var(--lh-48);
+    }
+  }
+  
+  &__subtitle {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-relaxed);
+    color: var(--color-text-primary);
+    margin: 0;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @include breakpoint-md {
+      font-size: var(--fs-lg);
+    }
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    
+    @include breakpoint-md {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-xl);
+    }
+    
+    @include breakpoint-lg {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-2xl);
+    }
+  }
+  
+  @media (max-width: 319px) {
+    padding: var(--space-lg) var(--space-sm);
+    
+    &__title {
+      font-size: var(--fs-lg);
+    }
+    
+    &__grid {
+      gap: var(--space-md);
+    }
+  }
+}
+
+.role-focus__grid {
+  .feature-card {
+    &:focus-within {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 4px;
+      border-radius: var(--radius-lg);
+    }
+  }
+}
+
+@media print {
+  .role-focus {
+    padding: var(--space-lg) 0;
+    page-break-inside: avoid;
+    
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+    }
+  }
+}
+
