@@ -661,8 +661,8 @@ describe('Component Rendering Tests', () => {
 
     it('should render both buttons', () => {
       render(<CTASection />);
-      expect(screen.getByText('Explore Components')).toBeInTheDocument();
-      expect(screen.getByText('View Content in Action')).toBeInTheDocument();
+      expect(screen.getByText('View All Projects')).toBeInTheDocument();
+      expect(screen.getByText('Explore UI Library')).toBeInTheDocument();
     });
 
     it('should render note text', () => {
@@ -686,20 +686,20 @@ describe('Component Rendering Tests', () => {
 
     it('should have buttons with correct navigation links', () => {
       render(<CTASection />);
-      const exploreButton = screen.getByText('Explore Components').closest('a');
-      const contentButton = screen.getByText('View Content in Action').closest('a');
+      const projectsButton = screen.getByText('View All Projects').closest('a');
+      const uiLibraryButton = screen.getByText('Explore UI Library').closest('a');
       
-      expect(exploreButton).toHaveAttribute('href', '/components');
-      expect(contentButton).toHaveAttribute('href', '/content');
+      expect(projectsButton).toHaveAttribute('href', '/projects');
+      expect(uiLibraryButton).toHaveAttribute('href', '/components-library');
     });
 
     it('should have buttons with proper ARIA labels', () => {
       render(<CTASection />);
-      const exploreButton = screen.getByText('Explore Components').closest('a');
-      const contentButton = screen.getByText('View Content in Action').closest('a');
+      const projectsButton = screen.getByText('View All Projects').closest('a');
+      const uiLibraryButton = screen.getByText('Explore UI Library').closest('a');
       
-      expect(exploreButton).toHaveAttribute('aria-label', 'Explore Components');
-      expect(contentButton).toHaveAttribute('aria-label', 'View Content in Action');
+      expect(projectsButton).toHaveAttribute('aria-label', 'View All Projects');
+      expect(uiLibraryButton).toHaveAttribute('aria-label', 'Explore UI Library');
     });
   });
 });

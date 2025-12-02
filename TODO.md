@@ -1,6 +1,6 @@
 # Project TODO Checklist
 
-Complete step-by-step checklist for building the Steven Morales FE-01 Front-End Experience Engine prototype.
+Complete step-by-step checklist for building the Steven Morales Professional Portfolio prototype, specifically designed for the Critical Mass Front-End Developer position in San Jose, Costa Rica.
 
 ---
 

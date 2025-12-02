@@ -18,7 +18,7 @@ import React from 'react';
  * ```tsx
  * <UseCaseCard
  *   question="Need a pixel-perfect build from a Figma file?"
- *   answer="Steven FE-01 converts design tokens, grids and components into maintainable front-end architecture."
+ *   answer="I've translated complex designs into production-ready code across multiple projects, including ERP systems and educational platforms."
  * />
  * ```
  */

@@ -17,7 +17,7 @@ import React from 'react';
  * @example
  * ```tsx
  * <TestimonialCard
- *   quote="Working with Steven FE-01 felt like plugging a specialized module into our team..."
+ *   quote="Strong technical leadership with the ability to translate complex requirements into clean, maintainable code..."
  *   author="Team Lead"
  *   role="Front-End Manager"
  *   company="Agency Name"

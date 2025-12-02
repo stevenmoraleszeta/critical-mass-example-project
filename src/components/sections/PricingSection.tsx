@@ -3,10 +3,10 @@
 import React from 'react';
 
 /**
- * Pricing Section Component
+ * Availability Section Component
  * 
- * Main pricing section for the landing page. Displays availability and pricing
- * information with a playful but professional tone.
+ * Main availability section for the landing page. Displays professional availability
+ * and contact information for the Critical Mass position.
  * 
  * Follows Critical Mass requirements:
  * - Semantic HTML (<section>, <h2>)
@@ -21,21 +21,20 @@ import React from 'react';
  */
 
 /**
- * Pricing Section Implementation
+ * Availability Section Implementation
  * 
  * Features:
  * - Centered layout with max-width container
  * - Responsive typography
  * - Accessible semantic structure
- * - Copy from project-idea.md section 3.6
+ * - Professional availability messaging
  */
 export default function PricingSection() {
-  // Pricing copy from project-idea.md section 3.1.7 and 3.6
-  const sectionTitle = "Availability & Pricing";
-  const mainCopy = "Available for full-time integration into your team. Salary expectations available upon request. Refunds not available, but continuous improvement is included by default.";
+  const sectionTitle = "Availability & Next Steps";
+  const mainCopy = "I'm actively seeking a full-time Front-End Developer position at Critical Mass in San Jose, Costa Rica. I'm ready to bring my experience in leading teams, building scalable applications, and delivering high-quality code to your projects. Let's discuss how I can contribute to your team.";
 
   return (
-    <section className="pricing" id="pricing" aria-labelledby="pricing-title">
+    <section className="pricing" id="availability" aria-labelledby="pricing-title">
       <div className="pricing__container">
         <h2 id="pricing-title" className="pricing__title">
           {sectionTitle}

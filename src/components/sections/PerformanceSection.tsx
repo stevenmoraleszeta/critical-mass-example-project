@@ -7,8 +7,8 @@ import StatCard from '@/components/ui/StatCard';
  * Performance Section Component
  * 
  * Performance & Reliability section for the landing page. Displays
- * performance-focused stat cards and a detailed paragraph about
- * the approach to debugging and performance optimization.
+ * performance-focused expertise and approach to debugging and optimization
+ * based on real-world experience.
  * 
  * Follows Critical Mass requirements:
  * - Semantic HTML (<section>, <h2>)
@@ -27,8 +27,8 @@ import StatCard from '@/components/ui/StatCard';
  * 
  * Features:
  * - Grid layout (responsive)
- * - 3 stat cards
- * - Performance paragraph
+ * - 3 stat cards reflecting real experience
+ * - Performance paragraph with professional approach
  */
 export default function PerformanceSection() {
   return (
@@ -57,7 +57,7 @@ export default function PerformanceSection() {
         
         <div className="performance__paragraph">
           <p>
-            I approach debugging with a systematic mindset: identify the root cause, not just the symptom. When working with teams, I provide clear progress updates and realistic estimates, ensuring transparency throughout the development process. I believe in measuring performance before optimizing, using tools like Lighthouse and browser DevTools to make informed decisions.
+            I approach debugging with a systematic mindset: identify the root cause, not just the symptom. Leading teams at Novaera and ZETA Academia has taught me the importance of clear communication, realistic estimates, and transparent progress updates. I believe in measuring performance before optimizing, using tools like Lighthouse and browser DevTools to make data-driven decisions. This approach has helped me build scalable applications that serve 1,000+ users while maintaining excellent performance metrics.
           </p>
         </div>
       </div>

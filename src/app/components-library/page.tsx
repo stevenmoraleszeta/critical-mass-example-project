@@ -14,7 +14,7 @@ import ErrorMessage from "@/components/feedback/ErrorMessage";
 import Toast from "@/components/feedback/Toast";
 // Styles are now in SCSS: src/styles/pages/_components.scss
 
-export default function Components() {
+export default function UILibrary() {
   const handleClick = () => {
     alert("Button clicked!");
   };
@@ -89,7 +89,13 @@ export default function Components() {
     <MainLayout className="components-page__main">
     <div className="components-page">
         <div className="components-page__content">
-          <h1>Button Component Showcase</h1>
+          <h1 className="components-page__main-title">UI Library</h1>
+          <p className="components-page__intro">
+            A small set of reusable components used across this portfolio, documented with their intended usage and accessibility notes.
+          </p>
+          
+          <section>
+            <h2>Button Component Showcase</h2>
           
           {/* Variants Section */}
           <section>
@@ -207,10 +213,11 @@ export default function Components() {
               </Button>
             </div>
           </section>
+          </section>
 
           {/* Card Component Showcase */}
           <section>
-            <h1 className="components-page__section-title">Card Component Showcase</h1>
+            <h2 className="components-page__section-title">Card Component Showcase</h2>
             
             {/* Variants Section */}
             <section>
@@ -1031,7 +1038,7 @@ export default function Components() {
 
           {/* Toast Component Showcase */}
           <section>
-            <h1 className="components-page__section-title">Toast Component Showcase</h1>
+            <h2 className="components-page__section-title">Toast Component Showcase</h2>
             
             {/* Toast Variants Section */}
             <section>
@@ -1198,20 +1205,20 @@ export default function Components() {
           </section>
         </div>
 
-      {/* Render all active toasts */}
-      {toasts.map((toast) => (
-        <Toast
-          key={toast.id}
-          message={toast.message}
-          variant={toast.variant}
-          position={toast.position}
-          size={toast.size}
-          autoDismiss={toast.autoDismiss}
-          duration={toast.duration}
-          onDismiss={() => removeToast(toast.id)}
-        />
-      ))}
-    </div>
+        {/* Render all active toasts */}
+        {toasts.map((toast) => (
+          <Toast
+            key={toast.id}
+            message={toast.message}
+            variant={toast.variant}
+            position={toast.position}
+            size={toast.size}
+            autoDismiss={toast.autoDismiss}
+            duration={toast.duration}
+            onDismiss={() => removeToast(toast.id)}
+          />
+        ))}
+      </div>
     </MainLayout>
   );
 }

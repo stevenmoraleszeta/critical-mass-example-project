@@ -38,9 +38,10 @@ interface NavLink {
 
 const navigationLinks: NavLink[] = [
   { href: '/', label: 'Home', ariaLabel: 'Go to home page' },
-  { href: '/components', label: 'Components', ariaLabel: 'Go to components page' },
-  { href: '/content', label: 'Content', ariaLabel: 'Go to content page' },
+  { href: '/skills', label: 'Skills', ariaLabel: 'Go to skills page' },
+  { href: '/projects', label: 'Projects', ariaLabel: 'Go to projects page' },
   { href: '/about', label: 'About', ariaLabel: 'Go to about page' },
+  { href: '/components-library', label: 'UI Library', ariaLabel: 'Go to UI library page' },
 ];
 
 /**

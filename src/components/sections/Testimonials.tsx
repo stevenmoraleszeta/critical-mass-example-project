@@ -6,8 +6,8 @@ import TestimonialCard from '@/components/ui/TestimonialCard';
 /**
  * Testimonials Section Component
  * 
- * Main testimonials section for the landing page. Displays social proof
- * from teams in a grid layout.
+ * Main testimonials section for the landing page. Displays professional feedback
+ * and work approach in a grid layout.
  * 
  * Follows Critical Mass requirements:
  * - Semantic HTML (<section>, <h2>)
@@ -26,11 +26,11 @@ import TestimonialCard from '@/components/ui/TestimonialCard';
  * 
  * Features:
  * - Grid layout (responsive)
- * - 3 testimonial cards
+ * - 3 testimonial cards reflecting professional approach
  * - Smooth scroll anchor support
  */
 export default function Testimonials() {
-  // Testimonials data (from project-idea.md section 3.6)
+  // Testimonials reflecting professional work approach and skills
   const testimonials: Array<{
     quote: string;
     author?: string;
@@ -38,15 +38,13 @@ export default function Testimonials() {
     company?: string;
   }> = [
     {
-      quote: "Working with Steven FE-01 felt like plugging a specialized module into our team – fast to understand the brief, calm under pressure, and always pushing for cleaner code.",
-      // Optional: author, role, company can be added if needed
-      // Keeping generic as per project-idea.md (fictional but credible)
+      quote: "Strong technical leadership with the ability to translate complex requirements into clean, maintainable code. Excellent at collaborating with cross-functional teams and delivering on time.",
     },
     {
-      quote: "Delivers on time, communicates clearly, and writes code that's easy to maintain. Exactly what you want in a front-end developer.",
+      quote: "Proven experience building scalable applications from the ground up. Combines front-end expertise with full-stack understanding, making them valuable in any development context.",
     },
     {
-      quote: "Brought fresh ideas to our component architecture while respecting existing patterns. Great balance of innovation and pragmatism.",
+      quote: "Demonstrates deep understanding of modern development practices, accessibility standards, and performance optimization. A resourceful problem-solver who thinks critically about solutions.",
     },
   ];
 
@@ -54,7 +52,7 @@ export default function Testimonials() {
     <section className="testimonials" id="testimonials" aria-labelledby="testimonials-title">
       <div className="testimonials__container">
         <h2 id="testimonials-title" className="testimonials__title">
-          What Teams Say
+          Professional Approach
         </h2>
         
         <div className="testimonials__grid">

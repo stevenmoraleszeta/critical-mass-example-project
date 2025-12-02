@@ -29,12 +29,15 @@
 @use 'components/testimonials' as *;
 @use 'components/pricing' as *;
 @use 'components/cta-section' as *;
+@use 'components/featured-projects' as *;
+@use 'components/leadership' as *;
 @use 'components/floating-binary-elements' as *;
 // @use 'components/content' as *;
 
 
 @use 'pages/components' as *;
 @use 'pages/home' as *;
-// @use 'pages/content-page' as *;
-// @use 'pages/about-page' as *;
+@use 'pages/skills-page' as *;
+@use 'pages/projects-page' as *;
+@use 'pages/about-page' as *;
 

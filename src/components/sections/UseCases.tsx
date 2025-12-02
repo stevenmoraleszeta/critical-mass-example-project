@@ -6,8 +6,8 @@ import UseCaseCard from '@/components/ui/UseCaseCard';
 /**
  * Use Cases Section Component
  * 
- * Use cases section for the landing page. Displays typical situations
- * where Steven FE-01 can help, in a card layout.
+ * Use cases section for the landing page. Displays real-world scenarios
+ * and challenges I've successfully addressed in my projects.
  * 
  * Follows Critical Mass requirements:
  * - Semantic HTML (<section>, <h2>)
@@ -26,7 +26,7 @@ import UseCaseCard from '@/components/ui/UseCaseCard';
  * 
  * Features:
  * - Grid layout (responsive)
- * - 3 use case cards
+ * - 3 use case cards based on real experience
  * - Question/answer format
  */
 export default function UseCases() {
@@ -34,23 +34,23 @@ export default function UseCases() {
     <section className="use-cases" id="use-cases" aria-labelledby="use-cases-title">
       <div className="use-cases__container">
         <h2 id="use-cases-title" className="use-cases__title">
-          Use Cases
+          Real-World Experience
         </h2>
         
         <div className="use-cases__grid">
           <UseCaseCard
             question="Need a pixel-perfect build from a Figma file?"
-            answer="Steven FE-01 converts design tokens, grids and components into maintainable front-end architecture."
+            answer="I've translated complex designs into production-ready code across multiple projects, including ERP systems and educational platforms. Built reusable component libraries that design teams love to work with."
           />
           
           <UseCaseCard
-            question="Need a component library your design team actually likes?"
-            answer="Can build accessible, reusable components and document them clearly."
+            question="Need scalable architecture for growing teams?"
+            answer="Led development of modular SaaS ERP systems and EdTech platforms. Designed component systems that scale from prototypes to production applications serving 1,000+ users."
           />
           
           <UseCaseCard
-            question="Need someone to debug that weird layout in Safari?"
-            answer="Comfortable with cross-browser issues and digging into root causes instead of patching symptoms."
+            question="Need someone who understands both front-end and back-end?"
+            answer="Full-stack experience building complete systems from database design to API development to responsive UIs. Comfortable with debugging, root cause analysis, and cross-browser compatibility."
           />
         </div>
       </div>

@@ -8,8 +8,8 @@ import FloatingBinaryElements from '@/components/ui/FloatingBinaryElements';
 /**
  * Hero Component
  * 
- * Main hero section for the landing page. Presents Steven Morales as a product
- * with clear CTAs and engaging copy.
+ * Main hero section for the landing page. Presents Steven Morales as a professional
+ * front-end developer with portfolio-focused messaging and clear CTAs.
  * 
  * Follows Critical Mass requirements:
  * - Semantic HTML (<section>, <h1>)
@@ -20,11 +20,11 @@ import FloatingBinaryElements from '@/components/ui/FloatingBinaryElements';
  * @example
  * ```tsx
  * <Hero
- *   title="Meet Steven Morales: Your Next Front-End Experience Engine."
- *   subtitle="A human-first, code-driven product..."
- *   ctaPrimary={{ text: "View Features", href: "#features" }}
- *   ctaSecondary={{ text: "See Live Content", href: "/content" }}
- *   note="No monthly subscription. Just coffee and interesting problems."
+ *   title="Steven Morales: Full Stack Developer & Tech Leader"
+ *   subtitle="Building scalable, accessible, and performant web experiences..."
+ *   ctaPrimary={{ text: "View My Work", href: "#projects" }}
+ *   ctaSecondary={{ text: "Explore Components", href: "/components" }}
+ *   note="Available for full-time opportunities at Critical Mass."
  * />
  * ```
  */

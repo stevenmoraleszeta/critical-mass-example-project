@@ -6,8 +6,8 @@ import FeatureCard from '@/components/ui/FeatureCard';
 /**
  * Features Section Component
  * 
- * Main features section for the landing page. Displays core features
- * as product capabilities in a grid layout.
+ * Main features section for the landing page. Displays core skills and expertise
+ * demonstrated through real projects and experience.
  * 
  * Follows Critical Mass requirements:
  * - Semantic HTML (<section>, <h2>)
@@ -26,7 +26,7 @@ import FeatureCard from '@/components/ui/FeatureCard';
  * 
  * Features:
  * - Grid layout (responsive)
- * - 4 feature cards
+ * - 4 skill/experience cards
  * - Smooth scroll anchor support
  */
 export default function Features() {
@@ -111,32 +111,32 @@ export default function Features() {
     <section className="features" id="features" aria-labelledby="features-title">
       <div className="features__container">
         <h2 id="features-title" className="features__title">
-          Core Features
+          Core Expertise
         </h2>
         
         <div className="features__grid">
           <FeatureCard
             icon={<DesignIcon />}
             title="Design-to-Code Translation"
-            description="Converts Figma and wireframes into clean, semantic HTML/CSS and reusable React components."
+            description="Expert at translating Figma designs and wireframes into clean, semantic HTML/CSS and reusable React components. Proven track record across multiple production projects."
           />
           
           <FeatureCard
             icon={<ResponsiveIcon />}
-            title="Responsive & Mobile-First Layout Engine"
-            description="Optimized for all breakpoints. Designed to behave nicely on phones your stakeholders actually use."
+            title="Responsive & Mobile-First Development"
+            description="Built responsive, mobile-first applications that work flawlessly across all devices. Experience leading teams to deliver pixel-perfect implementations."
           />
           
           <FeatureCard
             icon={<APIIcon />}
-            title="API Integration Module"
-            description="Speaks fluent REST, JSON and HTTP. Comfortable integrating with CMSs and external web services."
+            title="Full-Stack Integration"
+            description="Experienced with REST APIs, JSON, HTTP, and integrating with CMSs and third-party services. Built complete ERP systems with API-first architecture."
           />
           
           <FeatureCard
             icon={<AccessibilityIcon />}
-            title="Accessibility & Performance Optimizer"
-            description="Focuses on semantic structure, keyboard navigation and fast load times. Because pretty is not enough."
+            title="Accessibility & Performance"
+            description="WCAG-compliant implementations with semantic HTML, keyboard navigation, and optimized performance. Built accessible platforms serving 1,000+ users."
           />
         </div>
       </div>
