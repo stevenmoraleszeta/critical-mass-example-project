@@ -1,0 +1,112 @@
+// ============================================================================
+// Stat Card Component Styles
+// Following Critical Mass requirements: BEM, Mobile-First, Accessibility
+// Following project-idea.md: StatCard component specifications
+// ============================================================================
+
+// Import base files for variables and mixins
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Stat Card Block (BEM)
+// Card component specifically for statistics/performance metrics
+// ============================================================================
+
+.stat-card {
+  // Base card styles
+  display: flex;
+  flex-direction: column;
+  
+  // Layout - Cards must be white with borders
+  background-color: var(--color-white);
+  border: var(--border-width-thin) solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  
+  // Spacing
+  padding: var(--space-lg);
+  gap: var(--space-md);
+  
+  // Transitions
+  @include transition-base(all);
+  
+  // Shadow (subtle)
+  @include shadow-sm;
+  
+  // Hover effect
+  &:hover {
+    @include shadow-md;
+    transform: translateY(-2px);
+  }
+  
+  // ============================================================================
+  // Stat Card Elements (BEM)
+  // ============================================================================
+  
+  // Content Container
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: var(--space-sm);
+  }
+  
+  // Title
+  // All text in cards must be blue
+  &__title {
+    margin: 0;
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    color: var(--color-primary); // Blue text always
+    
+    @include breakpoint-md {
+      font-size: var(--fs-xl);
+    }
+  }
+  
+  // Description
+  // All text in cards must be blue
+  &__description {
+    margin: 0;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-relaxed);
+    color: var(--color-primary); // Blue text always
+    
+    @include breakpoint-md {
+      font-size: var(--fs-base);
+    }
+  }
+  
+  // ============================================================================
+  // Responsive Enhancements (Mobile-First)
+  // Following Critical Mass requirement: Mobile-First approach
+  // ============================================================================
+  
+  // Base styles are mobile-first (defined above)
+  // Additional responsive adjustments for larger screens
+  
+  @include breakpoint-lg {
+    padding: var(--space-xl);
+    gap: var(--space-lg);
+  }
+  
+  // ============================================================================
+  // Reduced Motion Support (Accessibility)
+  // Following Critical Mass accessibility requirements
+  // ============================================================================
+  
+  @media (prefers-reduced-motion: reduce) {
+    &,
+    &__content {
+      transition: none;
+      animation: none;
+    }
+    
+    &:hover {
+      transform: none;
+    }
+  }
+}
+

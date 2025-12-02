@@ -3,6 +3,7 @@ import Hero from '@/components/sections/Hero';
 import Features from '@/components/sections/Features';
 import Specs from '@/components/sections/Specs';
 import UseCases from '@/components/sections/UseCases';
+import PerformanceSection from '@/components/sections/PerformanceSection';
 
 export default function Home() {
   return (
@@ -59,6 +60,7 @@ export default function Home() {
         footerNote="Backwards-compatible with legacy codebases (with patience)."
       />
       <UseCases />
+      <PerformanceSection />
     </MainLayout>
   );
 }

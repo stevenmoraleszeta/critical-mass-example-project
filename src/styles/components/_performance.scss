@@ -1,0 +1,194 @@
+// ============================================================================
+// Performance Section Styles
+// Following Critical Mass requirements: BEM, Mobile-First, Accessibility
+// Following project-idea.md: Performance section specifications
+// ============================================================================
+
+// Import base files for variables and mixins
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Performance Block (BEM)
+// Main performance section container
+// ============================================================================
+
+.performance {
+  position: relative;
+  width: 100%;
+  
+  // Mobile-first: padding for mobile
+  padding: var(--space-2xl) var(--space-md);
+  
+  // Background
+  background-color: var(--color-bg-light);
+  
+  // Tablet and up: adjust padding
+  @include breakpoint-md {
+    padding: var(--space-3xl) var(--space-lg);
+  }
+  
+  // Desktop: adjust padding
+  @include breakpoint-lg {
+    padding: var(--space-3xl) var(--space-xl);
+  }
+  
+  // ============================================================================
+  // Performance Elements (BEM)
+  // ============================================================================
+  
+  // Container for content
+  &__container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    
+    // Layout
+    @include flex;
+    @include flex-column;
+    gap: var(--space-xl);
+    
+    @include breakpoint-md {
+      gap: var(--space-2xl);
+    }
+  }
+  
+  // Section Title (H2)
+  &__title {
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    color: var(--color-text-primary);
+    margin: 0;
+    text-align: center;
+    
+    // Mobile: adjust font size
+    @media (max-width: 639px) {
+      font-size: var(--fs-xl);
+    }
+    
+    // Tablet: larger font
+    @include breakpoint-md {
+      font-size: var(--fs-3xl);
+    }
+    
+    // Desktop: largest font
+    @include breakpoint-lg {
+      font-size: var(--fs-40);
+      line-height: var(--lh-48);
+    }
+  }
+  
+  // Grid Container for stat cards
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    
+    // Mobile: single column
+    // Already set above (1fr)
+    
+    // Tablet: 2 columns
+    @include breakpoint-md {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-xl);
+    }
+    
+    // Desktop: 3 columns
+    @include breakpoint-lg {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+    }
+  }
+  
+  // Paragraph container
+  &__paragraph {
+    width: 100%;
+    max-width: 100%;
+    
+    // Center align on mobile
+    text-align: center;
+    
+    // Desktop: center with max-width constraint
+    @include breakpoint-lg {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    // Paragraph text
+    p {
+      margin: 0;
+      font-size: var(--fs-base);
+      font-weight: var(--fw-normal);
+      line-height: var(--lh-relaxed);
+      color: var(--color-text-primary);
+      
+      @include breakpoint-md {
+        font-size: var(--fs-lg);
+      }
+      
+      @include breakpoint-lg {
+        font-size: var(--fs-lg);
+        line-height: var(--lh-relaxed);
+      }
+    }
+  }
+  
+  // ============================================================================
+  // Responsive Adjustments
+  // ============================================================================
+  
+  // Ensure performance section is accessible on very small screens
+  @media (max-width: 319px) {
+    padding: var(--space-lg) var(--space-sm);
+    
+    &__title {
+      font-size: var(--fs-lg);
+    }
+    
+    &__grid {
+      gap: var(--space-md);
+    }
+    
+    &__paragraph {
+      p {
+        font-size: var(--fs-sm);
+      }
+    }
+  }
+}
+
+// ============================================================================
+// Accessibility Enhancements
+// ============================================================================
+
+// Ensure proper focus management for stat cards
+.performance__grid {
+  .stat-card {
+    // Focus states are handled by StatCard component
+    // But ensure they're accessible in grid context
+    &:focus-within {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 4px;
+      border-radius: var(--radius-lg);
+    }
+  }
+}
+
+// ============================================================================
+// Print Styles (Optional)
+// ============================================================================
+
+@media print {
+  .performance {
+    padding: var(--space-lg) 0;
+    page-break-inside: avoid;
+    
+    &__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+    }
+  }
+}
+
