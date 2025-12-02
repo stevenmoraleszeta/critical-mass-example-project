@@ -51,7 +51,7 @@ export default function CTASection() {
           <Button
             variant="secondary"
             size="lg"
-            href="/components-library"
+            href="/ui-library"
             ariaLabel="Explore UI Library"
           >
             Explore UI Library

@@ -68,13 +68,19 @@ This professional portfolio is specifically designed for the **Developer, Front 
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx          # Root layout with font optimization
-│   │   ├── page.tsx            # Landing page (/)
-│   │   ├── components/
-│   │   │   └── page.tsx        # Component showcase page (/components)
-│   │   ├── content/
-│   │   │   └── page.tsx        # Content page (/content)
-│   │   ├── about/
-│   │   │   └── page.tsx        # About page (/about)
+│   │   ├── page.tsx            # Home page (/)
+│   │   ├── critical-mass-case-study/
+│   │   │   └── page.tsx        # Critical Mass case study page
+│   │   ├── projects/
+│   │   │   └── page.tsx        # Projects showcase page
+│   │   ├── skills/
+│   │   │   └── page.tsx        # Skills & tech stack page
+│   │   ├── experience/
+│   │   │   └── page.tsx        # Professional experience page
+│   │   ├── contact/
+│   │   │   └── page.tsx        # Contact page
+│   │   ├── ui-library/
+│   │   │   └── page.tsx        # UI Library page
 │   │   └── globals.scss        # Main SCSS entry point
 │   ├── components/
 │   │   ├── ui/                 # UI components
@@ -132,7 +138,8 @@ This professional portfolio is specifically designed for the **Developer, Front 
 ├── BEM_METHODOLOGY_GUIDE.md  # BEM methodology documentation
 ├── TESTING.md                # Testing guide
 ├── TODO.md                   # Complete project checklist
-├── project-idea.md           # Full project specifications
+├── PROJECT-IDEA.md           # Full project specifications
+├── PROJECT-CONTENT.md         # Complete content specifications
 └── CONSIDERACIONES_DESARROLLO.md  # Development guidelines (Spanish)
 ```
 
@@ -297,27 +304,56 @@ All components are:
 
 The application includes the following pages:
 
-- **`/`** - Professional portfolio landing page showcasing:
-  - Professional background and experience
-  - Core expertise and skills
-  - Tech stack and real-world experience
-  - Featured projects section
-  - Leadership & collaboration
-  - Performance and reliability approach
-  - Availability for Critical Mass position
-- **`/projects`** - Portfolio projects page showcasing all projects with filtering:
-  - Real projects: Novaera ERP, ZETA Academia, Precision Seas, Matemática Integral, Demeter IoT, TimerChill, and this portfolio
-  - Filter by category (ERP Systems, EdTech, SaaS, IoT, Other)
-  - Search functionality
-  - Show only live toggle
-  - Client-side filtering demonstration
-- **`/components-library`** - UI Library page displaying all UI components with variants and states
-- **`/about`** - About page with:
-  - Context about application to Critical Mass
-  - Portfolio objectives aligned with job requirements
-  - How it's built (tech stack and approach)
-  - Real-world experience and projects
-  - Why Critical Mass
+- **`/`** - Home page showcasing:
+  - Hero section with professional introduction
+  - Role Focus: Developer, Front End @ Critical Mass
+  - Key Highlights (What I bring to the team)
+  - Primary Call To Action
+- **`/critical-mass-case-study`** - CM Front-End Experience Engine page with:
+  - Project Overview
+  - How This Portfolio Is Built for Critical Mass
+  - Design-to-Code Workflow (Figma → HTML/CSS/JS/React)
+  - Accessibility, Performance & Responsiveness
+  - Tooling, Testing & Automation
+  - What You Can Review Here (Code, Live Demo, Repo Links)
+- **`/projects`** - Selected Projects & Case Studies page showcasing:
+  - Steven Morales FE-01 – Front-End Experience Engine
+  - Novaera SaaS ERP (Web, API, DB)
+  - Precision Seas ERP System
+  - ZETA Academia EdTech Platform (V1 & V2)
+  - TimerChill – Modern Pomodoro Timer
+  - Matemática Integral ERP & Automation System
+  - Demeter IoT Agriculture System
+  - INFOCOOP Education Platform Enhancements
+  - Assistive Robotics Project for Elderly Care
+- **`/skills`** - Skills & Tech Stack page with:
+  - Core Front-End Skills
+  - Front-End Tooling & Automation
+  - Back-End & APIs
+  - Databases & Data
+  - Cloud & DevOps
+  - AI & Data Tools
+  - Testing & QA
+  - Productivity & Collaboration Tools
+  - Languages
+  - Engineering Practices & Soft Skills
+- **`/experience`** - Professional Experience page with:
+  - CEO & Lead Software Developer – Novaera
+  - CEO & Lead Tech Educator – ZETA Academia
+  - Freelance Software Developer
+  - Software Developer (Intern) – INFOCOOP
+  - Software Developer – TI Recursos CR
+  - Impact Summary (Leadership, Ownership, Collaboration)
+- **`/contact`** - Let's Build Something Great page with:
+  - Contact Details
+  - Social Links
+  - Availability & Ways to Collaborate
+- **`/ui-library`** - UI Library page displaying all UI components with variants and states:
+  - Buttons (primary, secondary, ghost variants with all states)
+  - Cards (default, feature, content variants)
+  - Tags & Badges (categorization and status indicators)
+  - Form Elements (Input, Select, Toggle with accessibility features)
+  - Feedback States (Loader, ErrorMessage, Toast)
 
 All pages use the `MainLayout` component for consistent structure and navigation.
 
@@ -427,7 +463,8 @@ See `TODO.md` for the complete development checklist and project phases.
 - **`BEM_METHODOLOGY_GUIDE.md`** - Complete BEM methodology guide and Critical Mass compliance review
 - **`TESTING.md`** - Testing guide and best practices
 - **`TODO.md`** - Complete project checklist with all phases
-- **`project-idea.md`** - Full project specifications and requirements
+- **`PROJECT-IDEA.md`** - Full project specifications and requirements
+- **`PROJECT-CONTENT.md`** - **Official copy and content specifications for all pages** (single source of truth for all page content)
 - **`CONSIDERACIONES_DESARROLLO.md`** - Development guidelines and standards (Spanish)
 
 ## License

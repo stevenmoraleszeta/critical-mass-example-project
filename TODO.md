@@ -2,6 +2,8 @@
 
 Complete step-by-step checklist for building the Steven Morales Professional Portfolio prototype, specifically designed for the Critical Mass Front-End Developer position in San Jose, Costa Rica.
 
+> **Note:** All official copy and content for pages is defined in `PROJECT-CONTENT.md`. Always refer to that file for exact copy, content structure, and page specifications.
+
 ---
 
 ## Phase 1: Project Setup & Initialization
@@ -141,7 +143,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [x] Import `_layout.scss` (after typography)
 - [x] Import component styles (commented out, will add later)
 - [x] Import page styles (commented out, will add later)
-- [x] Create `app/globals.scss` that imports `main.scss` (following project-idea.md)
+- [x] Create `app/globals.scss` that imports `main.scss` (following PROJECT-IDEA.md)
 - [x] Update `app/layout.tsx` to import `globals.scss` instead of `globals.css`
 - [x] Verify all styles compile without errors (test with `npm run build`)
 
@@ -465,13 +467,220 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 6: Components Page (`/components`)
+## Phase 6: Critical Mass Case Study Page (`/critical-mass-case-study`)
 
 ### Page Setup
 
-- [ ] Create `app/components/page.tsx`
-- [ ] Add page title: "UI Component Library"
-- [ ] Add intro text: "A small set of reusable components used across this prototype, documented with their intended usage and accessibility notes."
+- [ ] Create `app/critical-mass-case-study/page.tsx`
+- [ ] Add page title: "CM Front-End Experience Engine"
+- [ ] Wrap with MainLayout
+
+### Content Sections
+
+- [ ] Create Section 1 – Project Overview
+  - [ ] Add project description
+  - [ ] Add goals list
+- [ ] Create Section 2 – How This Portfolio Is Built for Critical Mass
+  - [ ] Add Figma to Front-End content
+  - [ ] Add Design Systems content
+  - [ ] Add Mobile First content
+  - [ ] Add Cross-Browser content
+- [ ] Create Section 3 – Design-to-Code Workflow
+  - [ ] Add workflow steps (8 steps)
+- [ ] Create Section 4 – Accessibility, Performance & Responsiveness
+  - [ ] Add Accessibility subsection
+  - [ ] Add Performance subsection
+  - [ ] Add Responsiveness subsection
+- [ ] Create Section 5 – Tooling, Testing & Automation
+  - [ ] Add Preprocessors content
+  - [ ] Add Tooling content
+  - [ ] Add Testing content
+  - [ ] Add CI/CD content
+- [ ] Create Section 6 – What You Can Review
+  - [ ] Add Live demo link
+  - [ ] Add GitHub repository links
+  - [ ] Add Other case studies link
+
+### Styling
+
+- [ ] Create `styles/pages/_critical-mass-case-study.scss`
+- [ ] Style case study page
+- [ ] Make page responsive
+- [ ] Test page renders correctly
+
+---
+
+## Phase 7: Projects Page (`/projects`)
+
+### Projects Page Setup
+
+- [ ] Create `app/projects/page.tsx`
+- [ ] Add page title: "Selected Projects & Case Studies"
+- [ ] Wrap with MainLayout
+
+### Project Sections
+
+- [ ] Create Project: Steven Morales FE-01 – Front-End Experience Engine
+  - [ ] Add project type, status, live URL, repo URL
+  - [ ] Add "What it is" description
+  - [ ] Add highlights list
+- [ ] Create Project: Novaera SaaS ERP (Web, API, DB)
+  - [ ] Add project details
+  - [ ] Add "What it is" description
+  - [ ] Add "My role" description
+- [ ] Create Project: Precision Seas ERP System
+  - [ ] Add project details
+  - [ ] Add "What it is" description
+  - [ ] Add "My role" description
+- [ ] Create Project: ZETA Academia EdTech Platform (V1 & V2)
+  - [ ] Add project details
+  - [ ] Add "What it is" description
+  - [ ] Add "My role" description
+- [ ] Create Project: TimerChill – Modern Pomodoro Timer
+  - [ ] Add project details
+  - [ ] Add "What it is" description
+  - [ ] Add tech stack
+- [ ] Create Project: Matemática Integral ERP & Automation System
+  - [ ] Add project details
+  - [ ] Add "What it is" description
+  - [ ] Add "My role" description
+- [ ] Create Project: Demeter IoT Agriculture System
+  - [ ] Add project details
+  - [ ] Add "What it is" description
+- [ ] Create Project: INFOCOOP Education Platform Enhancement
+  - [ ] Add project details
+  - [ ] Add "What it is" description
+  - [ ] Add "My role" description
+- [ ] Create Project: Assistive Robotics for Elderly Care
+  - [ ] Add project details
+  - [ ] Add "What it is" description
+  - [ ] Add "My role" description
+
+### Styling
+
+- [ ] Create `styles/pages/_projects.scss`
+- [ ] Style projects page
+- [ ] Make page responsive
+- [ ] Test projects page renders correctly
+
+---
+
+## Phase 8: Skills Page (`/skills`)
+
+### Skills Page Setup
+
+- [ ] Create `app/skills/page.tsx`
+- [ ] Add page title: "Skills & Tech Stack"
+- [ ] Wrap with MainLayout
+
+### Skills Sections
+
+- [ ] Create Core Front-End section
+  - [ ] Add Languages subsection
+  - [ ] Add Frameworks & Libraries subsection
+  - [ ] Add Styling & Design Systems subsection
+  - [ ] Add Core Practices subsection
+- [ ] Create Front-End Tooling & Automation section
+- [ ] Create Back-End & APIs section
+  - [ ] Add Languages & Runtimes subsection
+  - [ ] Add Architectural Practices subsection
+- [ ] Create Databases & Data section
+- [ ] Create Cloud & DevOps section
+- [ ] Create AI, Data & Automation section
+- [ ] Create Testing & API Tools section
+- [ ] Create Productivity & Collaboration Tools section
+- [ ] Create Languages section
+- [ ] Create Soft Skills & Ways of Working section
+
+### Styling
+
+- [ ] Create `styles/pages/_skills.scss`
+- [ ] Style skills page
+- [ ] Make page responsive
+- [ ] Test skills page renders correctly
+
+---
+
+## Phase 9: Experience Page (`/experience`)
+
+### Experience Page Setup
+
+- [ ] Create `app/experience/page.tsx`
+- [ ] Add page title: "Professional Experience"
+- [ ] Wrap with MainLayout
+
+### Experience Sections
+
+- [ ] Create CEO & Lead Software Developer — Novaera section
+  - [ ] Add date range: May 2024 – Present
+  - [ ] Add responsibilities list
+- [ ] Create CEO & Lead Tech Educator — ZETA Academia section
+  - [ ] Add responsibilities list
+- [ ] Create Freelance Software Developer section
+  - [ ] Add date range: Aug 2022 – Present
+  - [ ] Add responsibilities list
+- [ ] Create Software Developer (Intern) — INFOCOOP section
+  - [ ] Add date range: Aug 2023 – Nov 2023
+  - [ ] Add responsibilities list
+- [ ] Create Software Developer — TI Recursos CR section
+  - [ ] Add date range: Dec 2022 – Feb 2023
+  - [ ] Add responsibilities list
+- [ ] Create Education section
+  - [ ] Add Technical Degree information
+  - [ ] Add graduation details
+- [ ] Create Impact Summary section
+  - [ ] Add Leadership subsection
+  - [ ] Add Ownership subsection
+  - [ ] Add Collaboration subsection
+
+### Styling
+
+- [ ] Create `styles/pages/_experience.scss`
+- [ ] Style experience page
+- [ ] Make page responsive
+- [ ] Test experience page renders correctly
+
+---
+
+## Phase 10: Contact Page (`/contact`)
+
+### Contact Page Setup
+
+- [ ] Create `app/contact/page.tsx`
+- [ ] Add page title: "Let's Build Something Great"
+- [ ] Wrap with MainLayout
+
+### Contact Sections
+
+- [ ] Create Contact Information section
+  - [ ] Add Name
+  - [ ] Add Location
+  - [ ] Add Phone / WhatsApp
+  - [ ] Add Email
+- [ ] Create Online Profiles section
+  - [ ] Add GitHub link
+  - [ ] Add LinkedIn link
+  - [ ] Add Instagram link
+- [ ] Create Short Closing Message section
+  - [ ] Add closing message content
+  - [ ] Add quote (optional)
+
+### Styling
+
+- [ ] Create `styles/pages/_contact.scss`
+- [ ] Style contact page
+- [ ] Make page responsive
+- [ ] Test contact page renders correctly
+
+---
+
+## Phase 11: UI Library Page (`/ui-library`)
+
+### Page Setup
+
+- [ ] Create `app/ui-library/page.tsx`
+- [ ] Add page title: "UI Library"
+- [ ] Add intro text: "A small set of reusable components used across this portfolio, documented with their intended usage and accessibility notes."
 - [ ] Wrap with MainLayout
 
 ### Component Documentation Sections
@@ -507,154 +716,16 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ### Styling
 
-- [ ] Create `styles/pages/_components-page.scss`
-- [ ] Style components page
+- [ ] Create `styles/pages/_ui-library.scss`
+- [ ] Style components library page
 - [ ] Make page responsive
 - [ ] Add code examples (optional)
-- [ ] Test components page renders correctly
+- [ ] Test components library page renders correctly
 - [ ] Test all component examples are visible
 
 ---
 
-## Phase 7: Content Page (`/content`)
-
-### Content Filters Component
-
-- [ ] Create `components/content/ContentFilters.tsx`
-- [ ] Define `ContentFiltersProps` interface
-- [ ] Add category dropdown (Campaign, Case Study, Experiment, Learning)
-- [ ] Add search input
-- [ ] Add "Show only live" toggle
-- [ ] Implement filter state management
-- [ ] Style filters component
-- [ ] Make filters responsive
-- [ ] Test filters component works
-
-### Content List Component
-
-- [ ] Create `components/content/ContentList.tsx`
-- [ ] Add loading state (skeletons/loader)
-- [ ] Add error state with retry button
-- [ ] Add empty state: "No content matches your filters yet."
-- [ ] Add content cards list
-- [ ] Implement filtering logic
-- [ ] Style content list
-- [ ] Test content list works
-
-### Content Card Component
-
-- [ ] Create `components/content/ContentCard.tsx`
-- [ ] Define `ContentCardProps` interface
-- [ ] Display title
-- [ ] Display category (as Tag)
-- [ ] Display status (as Badge: Live/Upcoming/Draft)
-- [ ] Display date
-- [ ] Display summary
-- [ ] Display tags (chips)
-- [ ] Style content card
-- [ ] Make content card responsive
-- [ ] Test content card renders correctly
-
-### Content Page Setup
-
-- [ ] Create `app/content/page.tsx`
-- [ ] Add page title: "Content Feed"
-- [ ] Add description: "Data fetched from a JSON endpoint, filtered on the client."
-- [ ] Import ContentFilters component
-- [ ] Import ContentList component
-- [ ] Implement filter state
-- [ ] Wrap with MainLayout
-- [ ] Create `styles/pages/_content-page.scss`
-- [ ] Style content page
-- [ ] Make page responsive
-- [ ] Test content page renders correctly
-
----
-
-## Phase 8: API Integration
-
-### API Route
-
-- [ ] Create `app/api/content/route.ts`
-- [ ] Implement GET handler
-- [ ] Define content data structure/type
-- [ ] Add sample content data (5-7 items):
-  - [ ] Item 1: "Critical Portfolio Microsite" (Case Study, Live)
-  - [ ] Item 2: "Design-to-Code Experiment" (Experiment, Draft)
-  - [ ] Add more items with different categories and statuses
-- [ ] Return JSON response
-- [ ] Test API endpoint: `curl http://localhost:3000/api/content` or use browser
-- [ ] Verify JSON structure is correct
-
-### API Client
-
-- [ ] Create `lib/api/contentApi.ts`
-- [ ] Implement `fetchContent()` function
-- [ ] Handle fetch errors
-- [ ] Return typed data
-- [ ] Test API client function
-
-### Custom Hook
-
-- [ ] Create `lib/hooks/useFetchContent.ts`
-- [ ] Implement data state
-- [ ] Implement loading state
-- [ ] Implement error state
-- [ ] Implement refetch function (optional)
-- [ ] Use React hooks (useState, useEffect)
-- [ ] Test custom hook
-
-### Connect to Content Page
-
-- [ ] Import `useFetchContent` hook in content page
-- [ ] Call hook to fetch data
-- [ ] Pass data to ContentList component
-- [ ] Pass loading state to ContentList
-- [ ] Pass error state to ContentList
-- [ ] Test data loads correctly
-- [ ] Test loading state shows
-- [ ] Test error state shows
-- [ ] Test filtering works with fetched data
-
----
-
-## Phase 9: About Page (`/about`)
-
-### About Page Setup
-
-- [ ] Create `app/about/page.tsx`
-- [ ] Add page title: "About This Prototype"
-- [ ] Wrap with MainLayout
-
-### Content Sections
-
-- [ ] Add Context section
-  - [ ] Title: "Context"
-  - [ ] Content: "I'm applying for the Front-End Developer position at Critical Mass..."
-- [ ] Add Objective section
-  - [ ] Title: "Objective"
-  - [ ] Content: List of skills demonstrated (from copy section)
-- [ ] Add "How It's Built" section
-  - [ ] Title: "How It's Built"
-  - [ ] Content: Tech stack and approach (from copy section)
-
-### About Page Styling
-
-- [ ] Create `styles/pages/_about-page.scss`
-- [ ] Style about page
-- [ ] Make page responsive
-- [ ] Ensure professional tone in styling
-- [ ] Test about page renders correctly
-
-### Navbar Search Icon
-
-- [ ] Implement search icon to navbar
-- [ ] Create functionality to navigate though pages content
-- [ ] Test funcitionality is correctly
-
----
-
-## Phase 10: Accessibility Implementation
+## Phase 12: Accessibility Implementation
 
 ### Semantic HTML
 
@@ -724,7 +795,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 11: Performance Optimization
+## Phase 13: Performance Optimization
 
 ### Image Optimization
 
@@ -777,7 +848,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 12: Testing
+## Phase 14: Testing
 
 ### Test Setup Verification
 
@@ -820,7 +891,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 13: Git Workflow & Version Control
+## Phase 15: Git Workflow & Version Control
 
 ### Branch Strategy
 
@@ -861,7 +932,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 14: Documentation
+## Phase 16: Documentation
 
 ### README.md
 
@@ -901,7 +972,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 15: Final Polish & Review
+## Phase 17: Final Polish & Review
 
 ### Content Review
 
@@ -964,7 +1035,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 16: Deployment
+## Phase 18: Deployment
 
 ### Vercel Setup
 
@@ -1002,7 +1073,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 17: Presentation Preparation
+## Phase 19: Presentation Preparation
 
 ### Elevator Pitch
 
