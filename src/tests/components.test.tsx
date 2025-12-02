@@ -31,6 +31,7 @@ import Footer from '../components/layout/Footer';
 import TestimonialCard from '../components/ui/TestimonialCard';
 import Testimonials from '../components/sections/Testimonials';
 import PricingSection from '../components/sections/PricingSection';
+import CTASection from '../components/sections/CTASection';
 
 describe('Component Rendering Tests', () => {
   // ============================================================================
@@ -638,6 +639,67 @@ describe('Component Rendering Tests', () => {
       const section = screen.getByRole('region', { name: /availability & pricing/i });
       expect(section).toHaveAttribute('id', 'pricing');
       expect(section).toHaveAttribute('aria-labelledby', 'pricing-title');
+    });
+  });
+
+  // ============================================================================
+  // CTA Section Component
+  // ============================================================================
+  
+  describe('CTA Section Component', () => {
+    it('should render without errors', () => {
+      const { container } = render(<CTASection />);
+      expect(container).toBeTruthy();
+      expect(screen.getByText('Ready to Explore?')).toBeInTheDocument();
+    });
+
+    it('should follow BEM naming convention', () => {
+      render(<CTASection />);
+      const section = screen.getByText('Ready to Explore?').closest('.cta-section');
+      expect(section).toHaveClass('cta-section');
+    });
+
+    it('should render both buttons', () => {
+      render(<CTASection />);
+      expect(screen.getByText('Explore Components')).toBeInTheDocument();
+      expect(screen.getByText('View Content in Action')).toBeInTheDocument();
+    });
+
+    it('should render note text', () => {
+      render(<CTASection />);
+      expect(screen.getByText(/This prototype was crafted specifically with the Critical Mass Front-End Developer role in mind/i)).toBeInTheDocument();
+    });
+
+    it('should have proper semantic structure', () => {
+      render(<CTASection />);
+      const section = screen.getByRole('region', { name: /ready to explore/i });
+      expect(section).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /ready to explore/i })).toBeInTheDocument();
+    });
+
+    it('should have proper ARIA attributes', () => {
+      render(<CTASection />);
+      const section = screen.getByRole('region', { name: /ready to explore/i });
+      expect(section).toHaveAttribute('id', 'cta');
+      expect(section).toHaveAttribute('aria-labelledby', 'cta-title');
+    });
+
+    it('should have buttons with correct navigation links', () => {
+      render(<CTASection />);
+      const exploreButton = screen.getByText('Explore Components').closest('a');
+      const contentButton = screen.getByText('View Content in Action').closest('a');
+      
+      expect(exploreButton).toHaveAttribute('href', '/components');
+      expect(contentButton).toHaveAttribute('href', '/content');
+    });
+
+    it('should have buttons with proper ARIA labels', () => {
+      render(<CTASection />);
+      const exploreButton = screen.getByText('Explore Components').closest('a');
+      const contentButton = screen.getByText('View Content in Action').closest('a');
+      
+      expect(exploreButton).toHaveAttribute('aria-label', 'Explore Components');
+      expect(contentButton).toHaveAttribute('aria-label', 'View Content in Action');
     });
   });
 });

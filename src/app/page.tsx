@@ -6,6 +6,7 @@ import UseCases from '@/components/sections/UseCases';
 import PerformanceSection from '@/components/sections/PerformanceSection';
 import Testimonials from '@/components/sections/Testimonials';
 import PricingSection from '@/components/sections/PricingSection';
+import CTASection from '@/components/sections/CTASection';
 
 export default function Home() {
   return (
@@ -65,6 +66,7 @@ export default function Home() {
       <PerformanceSection />
       <Testimonials />
       <PricingSection />
+      <CTASection />
     </MainLayout>
   );
 }
