@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
+import FloatingBinaryElements from '@/components/ui/FloatingBinaryElements';
 
 /**
  * Hero Component
@@ -182,7 +183,18 @@ export default function Hero({
       {backgroundImage && (
         <div className="hero__background-overlay" aria-hidden="true" />
       )}
+      
+      {/* Floating binary elements (0s and 1s) */}
+      <FloatingBinaryElements 
+        count={130}
+        minFontSize={0.5}
+        maxFontSize={2}
+        minOpacity={0.2}
+        maxOpacity={0.5}
+      />
     </section>
   );
 }
+
+
 
