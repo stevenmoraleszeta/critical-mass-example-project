@@ -241,12 +241,12 @@ export default function RoleFocusSection() {
       
       {showToast && (
         <Toast
-          message="Orden guardado en localStorage"
-          variant="error"
+          message="Order saved to localStorage"
+          variant="warning"
           position="top-right"
           autoDismiss={false}
           actionButton={{
-            label: 'Resetear',
+            label: 'Reset',
             onClick: handleReset,
           }}
           onDismiss={() => setShowToast(false)}

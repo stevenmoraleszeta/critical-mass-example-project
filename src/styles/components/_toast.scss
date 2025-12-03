@@ -204,13 +204,17 @@
     }
   }
   
-  // Warning variant - Yellow border
+  // Warning variant - Red border (for alert/advisory messages)
   &--warning {
-    border-color: var(--color-accent); // Yellow border
+    border-color: var(--color-secondary); // Red border
     background-color: var(--color-white);
     
     .toast__icon {
-      color: var(--color-accent); // Yellow icon
+      color: var(--color-secondary); // Red icon
+    }
+    
+    .toast__message {
+      color: var(--color-primary); 
     }
   }
   
