@@ -15,7 +15,7 @@ export interface ScrollArrowProps {
 
 export default function ScrollArrow({
   targetId,
-  color = 'white',
+  color = 'red',
   ariaLabel = 'Scroll to next section',
   className = '',
 }: ScrollArrowProps) {

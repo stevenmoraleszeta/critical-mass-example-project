@@ -5,6 +5,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import Button from '@/components/ui/Button';
 import CardBoard, { CardData } from '@/components/sections/CardBoard';
 import FloatingBinaryElements from '@/components/ui/FloatingBinaryElements';
+import ScrollArrow from '@/components/ui/ScrollArrow';
 
 const projectOverviewCards: CardData[] = [
   {
@@ -94,6 +95,7 @@ export default function ThisProject() {
             <p className="this-project-page__intro">
               This site is built as a <strong>portfolio prototype specifically for the Critical Mass Developer, Front End role</strong>, demonstrating front-end expertise, design-to-code translation, and modern web development practices.
             </p>
+            <ScrollArrow targetId="project-overview" />
           </section>
         </div>
 
@@ -104,6 +106,7 @@ export default function ThisProject() {
             cards={projectOverviewCards}
             draggable={true}
             storageKey="project-overview-cards-order"
+            scrollTargetId="workflow"
             className="project-overview"
           />
           <FloatingBinaryElements 
@@ -179,6 +182,7 @@ export default function ThisProject() {
                 </div>
               </li>
             </ol>
+            <ScrollArrow targetId="review" />
           </section>
 
           <section className="this-project-page__section this-project-page__section--cta" id="review" aria-labelledby="review-title">
