@@ -129,7 +129,7 @@ export default function NavBar({ className = '' }: NavBarProps) {
   useEffect(() => {
     if (!isMobileMenuOpen) return;
 
-    const handleClickOutside = (e: MouseEvent) => {
+    const handleClickOutside = (e: Event) => {
       const target = e.target as Node;
       const isMobile = window.innerWidth < 768;
       
@@ -145,7 +145,6 @@ export default function NavBar({ className = '' }: NavBarProps) {
       }
     };
 
-    // Use mousedown instead of click to catch clicks more reliably
     const timeoutId = setTimeout(() => {
       document.addEventListener('mousedown', handleClickOutside);
       document.addEventListener('touchstart', handleClickOutside);
