@@ -1,7 +1,7 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
 
-.case-study-page {
+.this-project-page {
   --text-primary: var(--color-primary);
   --text-secondary: var(--color-primary);
   
@@ -57,6 +57,34 @@
     strong {
       font-weight: var(--fw-bold);
       color: var(--color-primary);
+    }
+  }
+
+  &__project-overview-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+
+    .floating-binary-elements {
+      z-index: 1.5;
+
+      &__element {
+        &[data-hover-color="blue"] {
+          color: var(--color-blue);
+        }
+
+        &[data-hover-color="red"] {
+          color: var(--color-red);
+        }
+
+        &[data-hover-color="yellow"] {
+          color: var(--color-yellow);
+        }
+
+        &:hover {
+          opacity: 1 !important;
+        }
+      }
     }
   }
 
