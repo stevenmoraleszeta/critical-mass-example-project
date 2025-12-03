@@ -6,7 +6,7 @@ import Card from '@/components/ui/Card';
 import FeatureCard from '@/components/ui/FeatureCard';
 import Button from '@/components/ui/Button';
 
-export default function CriticalMassCaseStudy() {
+export default function ThisProject() {
   return (
     <MainLayout>
       <main className="case-study-page">

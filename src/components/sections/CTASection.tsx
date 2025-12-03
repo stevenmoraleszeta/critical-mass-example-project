@@ -38,7 +38,7 @@ export default function CTASection() {
           <Button
             variant="highlight"
             size="lg"
-            href="/critical-mass-case-study"
+            href="/this-project"
             ariaLabel="See This Project"
             prefetch={true}
           >

@@ -13,6 +13,8 @@
     @include container;
     max-width: var(--container-xl);
     padding: var(--space-lg);
+    margin-left: auto;
+    margin-right: auto;
 
     @include breakpoint-md {
       padding: var(--space-xl);
@@ -60,6 +62,7 @@
 
   &__section {
     margin-bottom: var(--space-2xl);
+    text-align: center;
 
     @include breakpoint-md {
       margin-bottom: var(--space-3xl);
@@ -95,6 +98,10 @@
     line-height: var(--lh-relaxed);
     color: var(--text-primary);
     margin-bottom: var(--space-lg);
+    text-align: center;
+    max-width: var(--container-md);
+    margin-left: auto;
+    margin-right: auto;
 
     @include breakpoint-md {
       font-size: var(--fs-lg);
@@ -108,10 +115,10 @@
   }
 
   &__goals-grid {
-    @include responsive-grid(1, 2, 2, lg);
+    @include responsive-grid(1, 2, 3, lg);
 
-    @include breakpoint-lg {
-      grid-template-columns: repeat(2, 1fr);
+    @include breakpoint-xl {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 
