@@ -1,5 +1,6 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
+@use '../base/animations' as *;
 
 .this-project-page {
   --text-primary: var(--color-primary);
@@ -227,7 +228,8 @@
     border: var(--border-width-thin) solid var(--color-primary-rgba-10);
     @include transition-multiple(transform, box-shadow, border-color);
     @include shadow-sm;
-    animation: workflow-levitate 4s ease-in-out infinite;
+    --levitate-distance: calc(var(--space-sm) * -1);
+    @include levitate(calc(var(--space-sm) * -1), 4s, ease-in-out, 0s);
 
     @include breakpoint-md {
       max-width: 22rem;
@@ -280,19 +282,6 @@
     &:hover {
       transform: translateY(calc(var(--space-xs) * -1));
       @include shadow-md;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      animation: none;
-    }
-  }
-
-  @keyframes workflow-levitate {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(calc(var(--space-sm) * -1));
     }
   }
 

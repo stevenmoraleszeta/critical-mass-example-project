@@ -7,6 +7,7 @@
 // Import base files for variables and mixins
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
+@use '../base/animations' as *;
 
 // ============================================================================
 // CTA Section Block (BEM)
@@ -52,13 +53,7 @@
     @include align-center;
     gap: var(--space-xl);
     
-    // Floating animation
-    animation: cta-content-float 6s ease-in-out infinite;
-    will-change: transform;
-    
-    @media (prefers-reduced-motion: reduce) {
-      animation: none;
-    }
+    @include levitate(-10px, 6s, ease-in-out, 0s);
     
     @include breakpoint-md {
       gap: var(--space-2xl);
@@ -74,13 +69,7 @@
     margin: 0;
     text-align: center;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    animation: cta-title-float 4s ease-in-out infinite;
-    animation-delay: 0.2s;
-    will-change: transform;
-    
-    @media (prefers-reduced-motion: reduce) {
-      animation: none;
-    }
+    @include levitate(-5px, 4s, ease-in-out, 0.2s);
     
     // Mobile: adjust font size
     @media (max-width: 639px) {
@@ -109,13 +98,7 @@
     text-align: center;
     max-width: 800px;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-    animation: cta-description-float 5s ease-in-out infinite;
-    animation-delay: 0.4s;
-    will-change: transform;
-    
-    @media (prefers-reduced-motion: reduce) {
-      animation: none;
-    }
+    @include levitate(-3px, 5s, ease-in-out, 0.4s);
     
     // Mobile: adjust font size
     @media (max-width: 639px) {
@@ -146,14 +129,7 @@
     width: 100%;
     max-width: 100%;
     
-    // Floating animation for buttons
-    animation: cta-actions-float 7s ease-in-out infinite;
-    animation-delay: 0.6s;
-    will-change: transform;
-    
-    @media (prefers-reduced-motion: reduce) {
-      animation: none;
-    }
+    @include levitate(-8px, 7s, ease-in-out, 0.6s);
     
     // Tablet and up: horizontal layout, equal width
     @include breakpoint-md {
@@ -284,48 +260,4 @@
   }
 }
 
-// ============================================================================
-// Animations
-// ============================================================================
-
-
-@keyframes cta-content-float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes cta-title-float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-@keyframes cta-description-float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  
-  50% {
-    transform: translateY(-3px);
-  }
-}
-
-@keyframes cta-actions-float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  
-  50% {
-    transform: translateY(-8px);
-  }
-}
 

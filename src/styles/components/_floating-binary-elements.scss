@@ -1,6 +1,7 @@
 
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
+@use '../base/animations' as *;
 
 .floating-binary-elements {
   position: absolute;
@@ -29,17 +30,19 @@
     transition: color var(--transition-base), opacity var(--transition-base), text-shadow var(--transition-base), filter var(--transition-base), transform var(--transition-base);
     transform-origin: center center;
     transform: rotate(var(--initial-rotation, 0deg));
+    --item-rotation: var(--initial-rotation, 0deg);
+    
     @media (prefers-reduced-motion: reduce) {
       animation: none;
       transition: color var(--transition-base), opacity var(--transition-base);
     }
     
     &[data-value="0"] {
-      animation: floating-binary-float-0 infinite ease-in-out;
+      animation: float-binary-0 infinite ease-in-out;
     }
     
     &[data-value="1"] {
-      animation: floating-binary-float-1 infinite ease-in-out;
+      animation: float-binary-1 infinite ease-in-out;
     }
     
     &[data-hover-color="blue"]:hover {
@@ -95,55 +98,6 @@
   }
 }
 
-@keyframes floating-binary-float-0 {
-  0% {
-    transform: translateY(0) translateX(0) rotate(var(--initial-rotation, 0deg));
-  }
-  
-  25% {
-    transform: translateY(-20px) translateX(15px) 
-               rotate(calc(var(--initial-rotation, 0deg) + 3deg));
-  }
-  
-  50% {
-    transform: translateY(-30px) translateX(20px) 
-               rotate(calc(var(--initial-rotation, 0deg) - 2deg));
-  }
-  
-  75% {
-    transform: translateY(-15px) translateX(18px) 
-               rotate(calc(var(--initial-rotation, 0deg) + 2deg));
-  }
-  
-  100% {
-    transform: translateY(0) translateX(0) rotate(var(--initial-rotation, 0deg));
-  }
-}
-
-@keyframes floating-binary-float-1 {
-  0% {
-    transform: translateY(0) translateX(0) rotate(var(--initial-rotation, 0deg));
-  }
-  
-  25% {
-    transform: translateY(-18px) translateX(20px) 
-               rotate(calc(var(--initial-rotation, 0deg) - 3deg));
-  }
-  
-  50% {
-    transform: translateY(-25px) translateX(12px) 
-               rotate(var(--initial-rotation, 0deg));
-  }
-  
-  75% {
-    transform: translateY(-12px) translateX(16px) 
-               rotate(calc(var(--initial-rotation, 0deg) + 3deg));
-  }
-  
-  100% {
-    transform: translateY(0) translateX(0) rotate(var(--initial-rotation, 0deg));
-  }
-}
 
 @media print {
   .floating-binary-elements {

@@ -1,5 +1,6 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
+@use '../base/animations' as *;
 
 .floating-geometric-shapes {
   position: absolute;
@@ -24,6 +25,7 @@
     
     transition: color var(--transition-base), opacity var(--transition-base), filter var(--transition-base), transform var(--transition-base);
     transform-origin: center center;
+    --item-rotation: var(--initial-rotation, 0deg);
     
     @media (prefers-reduced-motion: reduce) {
       animation: none;
@@ -37,15 +39,15 @@
     }
     
     &--triangle {
-      animation: floating-shape-float-1 infinite ease-in-out;
+      animation: float-shape-1 infinite ease-in-out;
     }
     
     &--circle {
-      animation: floating-shape-float-2 infinite ease-in-out;
+      animation: float-shape-2 infinite ease-in-out;
     }
     
     &--square {
-      animation: floating-shape-float-3 infinite ease-in-out;
+      animation: float-shape-3 infinite ease-in-out;
     }
     
     &[data-hover-color="blue"]:hover {
@@ -74,81 +76,6 @@
       transform: translate(-50%, -50%) rotate(var(--initial-rotation, 0deg)) scale(1.2);
       z-index: 20;
     }
-  }
-}
-
-@keyframes floating-shape-float-1 {
-  0% {
-    transform: translate(-50%, -50%) translateY(0) translateX(0) rotate(var(--initial-rotation, 0deg));
-  }
-  
-  25% {
-    transform: translate(-50%, -50%) translateY(-25px) translateX(20px) 
-               rotate(calc(var(--initial-rotation, 0deg) + 5deg));
-  }
-  
-  50% {
-    transform: translate(-50%, -50%) translateY(-35px) translateX(25px) 
-               rotate(calc(var(--initial-rotation, 0deg) - 3deg));
-  }
-  
-  75% {
-    transform: translate(-50%, -50%) translateY(-20px) translateX(22px) 
-               rotate(calc(var(--initial-rotation, 0deg) + 3deg));
-  }
-  
-  100% {
-    transform: translate(-50%, -50%) translateY(0) translateX(0) rotate(var(--initial-rotation, 0deg));
-  }
-}
-
-@keyframes floating-shape-float-2 {
-  0% {
-    transform: translate(-50%, -50%) translateY(0) translateX(0) rotate(var(--initial-rotation, 0deg));
-  }
-  
-  25% {
-    transform: translate(-50%, -50%) translateY(-22px) translateX(18px) 
-               rotate(calc(var(--initial-rotation, 0deg) - 4deg));
-  }
-  
-  50% {
-    transform: translate(-50%, -50%) translateY(-30px) translateX(15px) 
-               rotate(var(--initial-rotation, 0deg));
-  }
-  
-  75% {
-    transform: translate(-50%, -50%) translateY(-18px) translateX(20px) 
-               rotate(calc(var(--initial-rotation, 0deg) + 4deg));
-  }
-  
-  100% {
-    transform: translate(-50%, -50%) translateY(0) translateX(0) rotate(var(--initial-rotation, 0deg));
-  }
-}
-
-@keyframes floating-shape-float-3 {
-  0% {
-    transform: translate(-50%, -50%) translateY(0) translateX(0) rotate(var(--initial-rotation, 0deg));
-  }
-  
-  25% {
-    transform: translate(-50%, -50%) translateY(-28px) translateX(22px) 
-               rotate(calc(var(--initial-rotation, 0deg) + 6deg));
-  }
-  
-  50% {
-    transform: translate(-50%, -50%) translateY(-32px) translateX(18px) 
-               rotate(calc(var(--initial-rotation, 0deg) - 4deg));
-  }
-  
-  75% {
-    transform: translate(-50%, -50%) translateY(-24px) translateX(24px) 
-               rotate(calc(var(--initial-rotation, 0deg) + 4deg));
-  }
-  
-  100% {
-    transform: translate(-50%, -50%) translateY(0) translateX(0) rotate(var(--initial-rotation, 0deg));
   }
 }
 

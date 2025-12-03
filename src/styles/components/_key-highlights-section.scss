@@ -1,24 +1,6 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
-
-
-@keyframes levitate-card {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-@keyframes levitate-text {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-}
+@use '../base/animations' as *;
 
 .key-highlights {
   position: relative;
@@ -138,7 +120,7 @@
   .card {
     background-color: var(--color-accent);
     border-color: var(--color-primary);
-    animation: levitate-card 3s ease-in-out infinite;
+    @include levitate(-12px, 3s, ease-in-out, 0s);
     
     &:nth-child(1) {
       animation-delay: 0s;
@@ -169,7 +151,7 @@
       .card__description,
       .card__body {
         color: var(--color-primary);
-        animation: levitate-text 2.5s ease-in-out infinite;
+        @include levitate(-4px, 2.5s, ease-in-out, 0s);
       }
       
       .card__title {

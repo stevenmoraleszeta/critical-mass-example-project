@@ -1,5 +1,6 @@
 @use 'variables' as *;
-
+@use 'sass:list';
+@use 'sass:map';
 
 @mixin breakpoint-xs {
   @media (min-width: #{$breakpoint-xs}) {
@@ -253,7 +254,7 @@
 @mixin transition-multiple($properties...) {
   $transitions: ();
   @each $prop in $properties {
-    $transitions: append($transitions, $prop var(--transition-base) ease-in-out, comma);
+    $transitions: list.append($transitions, $prop var(--transition-base) ease-in-out, comma);
   }
   transition: $transitions;
 }
@@ -441,6 +442,38 @@
   @media (prefers-reduced-motion: reduce) {
     animation: none;
     background: var(--color-primary);
+  }
+}
+
+@mixin levitate($distance: -8px, $duration: 3s, $timing: ease-in-out, $delay: 0s) {
+  --levitate-distance: #{$distance};
+  animation: levitate $duration $timing infinite;
+  animation-delay: $delay;
+  will-change: transform;
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@mixin levitate-rotation($distance: -8px, $duration: 3s, $timing: ease-in-out, $delay: 0s) {
+  --levitate-distance: #{$distance};
+  animation: levitate-rotation $duration $timing infinite;
+  animation-delay: $delay;
+  will-change: transform;
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@mixin float($duration: 3s, $timing: ease-in-out, $delay: 0s) {
+  animation: float $duration $timing infinite;
+  animation-delay: $delay;
+  will-change: transform;
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
   }
 }
 

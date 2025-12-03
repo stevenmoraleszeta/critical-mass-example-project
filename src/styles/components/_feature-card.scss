@@ -7,22 +7,7 @@
 // Import base files for variables and mixins
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
-
-// ============================================================================
-// Feature Card Block (BEM)
-// Card component specifically for features
-// ============================================================================
-
-// Single reusable levitation animation that uses CSS custom property for rotation
-// Works for any number of cards with unique rotations
-@keyframes levitate {
-  0%, 100% {
-    transform: translateY(0) rotate(var(--card-rotation, 0deg));
-  }
-  50% {
-    transform: translateY(-8px) rotate(var(--card-rotation, 0deg));
-  }
-}
+@use '../base/animations' as *;
 
 .feature-card {
   // Base card styles
@@ -55,13 +40,12 @@
   will-change: transform, box-shadow;
   
   // Initial transform state using CSS custom property for rotation
-  // Each card gets a unique rotation via --card-rotation CSS variable
+  // Each card gets a unique rotation via --item-rotation CSS variable
   transform: translateY(0) scale(1) rotate(var(--card-rotation, 0deg));
+  --item-rotation: var(--card-rotation, 0deg);
   
-  // Single reusable animation for all cards
-  // Uses CSS custom property for rotation, works for any number of cards
-  animation: levitate 3s ease-in-out infinite;
-  animation-delay: var(--card-animation-delay, 0s);
+  // Reusable levitation animation with rotation support
+  @include levitate-rotation(-8px, 3s, ease-in-out, var(--card-animation-delay, 0s));
   
   // Enhanced hover effect - gradual scale increase
   // Preserve rotation on hover but straighten slightly for better UX

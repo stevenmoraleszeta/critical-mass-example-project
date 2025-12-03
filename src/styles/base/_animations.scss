@@ -1,0 +1,54 @@
+// ============================================================================
+// Reusable Levitation Animations System - Simplified
+// Following Critical Mass requirements: BEM, Mobile-First, Accessibility
+// Centralized animation keyframes - only 3 essential types
+// ============================================================================
+
+@use 'variables' as *;
+
+// ============================================================================
+// Base Levitation Animations - Only 3 essential types
+// ============================================================================
+
+// Simple vertical levitation - use with --levitate-distance CSS variable
+@keyframes levitate {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--levitate-distance, -8px));
+  }
+}
+
+// Levitation with rotation support - for cards with rotation
+@keyframes levitate-rotation {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--item-rotation, 0deg));
+  }
+  50% {
+    transform: translateY(var(--levitate-distance, -8px)) rotate(var(--item-rotation, 0deg));
+  }
+}
+
+// Complex floating animation - for binary and geometric elements
+// Uses CSS variables for movement patterns (values can be overridden per element)
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0) rotate(var(--item-rotation, 0deg));
+  }
+  25% {
+    transform: translateY(var(--float-y-1, -20px)) translateX(var(--float-x-1, 15px)) 
+               rotate(calc(var(--item-rotation, 0deg) + var(--float-rotate-1, 3deg)));
+  }
+  50% {
+    transform: translateY(var(--float-y-2, -30px)) translateX(var(--float-x-2, 20px)) 
+               rotate(calc(var(--item-rotation, 0deg) + var(--float-rotate-2, -2deg)));
+  }
+  75% {
+    transform: translateY(var(--float-y-3, -15px)) translateX(var(--float-x-3, 18px)) 
+               rotate(calc(var(--item-rotation, 0deg) + var(--float-rotate-3, 2deg)));
+  }
+  100% {
+    transform: translateY(0) translateX(0) rotate(var(--item-rotation, 0deg));
+  }
+}
