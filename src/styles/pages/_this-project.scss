@@ -262,14 +262,14 @@
     }
 
     &[data-color="accent"] {
-      border-color: var(--color-accent-rgba-10);
+      border-color: var(--color-primary-rgba-10);
 
       &:hover {
-        border-color: rgba(255, 255, 0, 0.2);
+        border-color: var(--color-primary-rgba-20);
       }
 
       &:focus-within {
-        @include focus-visible-shadow(var(--color-accent));
+        @include focus-visible-shadow(var(--color-primary));
       }
     }
 
