@@ -227,6 +227,7 @@
     border: var(--border-width-thin) solid var(--color-primary-rgba-10);
     @include transition-multiple(transform, box-shadow, border-color);
     @include shadow-sm;
+    animation: workflow-levitate 4s ease-in-out infinite;
 
     @include breakpoint-md {
       max-width: 22rem;
@@ -242,6 +243,7 @@
 
       &:hover {
         border-color: var(--color-primary-rgba-20);
+        animation-play-state: paused;
       }
 
       &:focus-within {
@@ -254,6 +256,7 @@
 
       &:hover {
         border-color: rgba(255, 0, 0, 0.2);
+        animation-play-state: paused;
       }
 
       &:focus-within {
@@ -266,6 +269,7 @@
 
       &:hover {
         border-color: var(--color-primary-rgba-20);
+        animation-play-state: paused;
       }
 
       &:focus-within {
@@ -276,6 +280,19 @@
     &:hover {
       transform: translateY(calc(var(--space-xs) * -1));
       @include shadow-md;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  @keyframes workflow-levitate {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(calc(var(--space-sm) * -1));
     }
   }
 
@@ -343,7 +360,7 @@
     .this-project-page__workflow-item[data-color="accent"] & {
       background-color: var(--color-accent);
       color: var(--color-primary);
-      border: var(--border-width-thin) solid var(--color-primary);
+      border: none;
 
       &::before {
         content: '';
