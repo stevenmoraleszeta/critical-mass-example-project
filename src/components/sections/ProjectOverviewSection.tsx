@@ -104,11 +104,6 @@ export default function ProjectOverviewSection() {
     <CardBoard
       id="project-overview"
       title="Project Overview"
-      subtitle={
-        <>
-          This site is built as a <strong>portfolio prototype specifically for the Critical Mass Developer, Front End role</strong>, demonstrating front-end expertise, design-to-code translation, and modern web development practices.
-        </>
-      }
       cards={projectOverviewCards}
       draggable={false}
       className="project-overview"
