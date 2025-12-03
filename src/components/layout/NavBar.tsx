@@ -130,7 +130,7 @@ export default function NavBar({ className = '' }: NavBarProps) {
   useEffect(() => {
     if (!isMobileMenuOpen) return;
 
-    const handleClickOutside = (e: MouseEvent) => {
+    const handleClickOutside = (e: Event) => {
       const target = e.target as Node;
       const isMobile = window.innerWidth < 768;
       
