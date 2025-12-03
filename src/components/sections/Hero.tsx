@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Button from '@/components/ui/Button';
 import FloatingBinaryElements from '@/components/ui/FloatingBinaryElements';
 
 /**
@@ -30,23 +29,14 @@ import FloatingBinaryElements from '@/components/ui/FloatingBinaryElements';
  */
 
 export interface HeroProps {
-  /** Main title (H1) */
-  title: string;
-  /** Subtitle text */
-  subtitle: string;
-  /** Primary CTA button configuration */
-  ctaPrimary: {
-    text: string;
-    href: string;
-    onClick?: () => void;
-    variant?: 'primary' | 'secondary' | 'ghost' | 'highlight' | 'exit';
-  };
-  /** Secondary CTA button configuration */
-  ctaSecondary: {
-    text: string;
-    href: string;
-    onClick?: () => void;
-  };
+  /** Main title (H1, supports ReactNode for formatting) */
+  title: React.ReactNode;
+  /** Subtitle text (supports ReactNode for formatting) */
+  subtitle: React.ReactNode;
+  /** Key identity line (role tags, supports ReactNode for formatting) */
+  keyIdentity?: React.ReactNode;
+  /** Value intro paragraph (experience summary, supports ReactNode for formatting) */
+  valueIntro?: React.ReactNode;
   /** Optional note text (small copy) */
   note?: string;
   /** Optional image configuration */
@@ -59,43 +49,44 @@ export interface HeroProps {
     src: string;
     alt?: string;
   };
+  /** Target section ID for scroll arrow (default: "role-focus") */
+  scrollTargetId?: string;
 }
 
 /**
  * Hero Component Implementation
  * 
  * Features:
- * - Smooth scroll to Features section (for primary CTA)
+ * - Scroll arrow to navigate to next section
  * - Responsive layout (mobile-first)
- * - Background gradient
  * - Accessible semantic structure
  */
 export default function Hero({
   title,
   subtitle,
-  ctaPrimary,
-  ctaSecondary,
+  keyIdentity,
+  valueIntro,
   note,
   image,
   backgroundImage,
+  scrollTargetId = 'role-focus',
 }: HeroProps) {
-  // Handle smooth scroll to Features section
-  const handlePrimaryClick = () => {
-    if (ctaPrimary.onClick) {
-      ctaPrimary.onClick();
-    }
+  const handleScrollDown = () => {
+    const targetElement = document.getElementById(scrollTargetId);
     
-    // If href is an anchor link, implement smooth scroll
-    if (ctaPrimary.href.startsWith('#')) {
-      const targetId = ctaPrimary.href.substring(1);
-      const targetElement = document.getElementById(targetId);
-      
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }
+    if (targetElement) {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      targetElement.scrollIntoView({
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleScrollDown();
     }
   };
 
@@ -112,6 +103,7 @@ export default function Hero({
             alt={backgroundImage.alt || ''}
             fill
             priority
+            fetchPriority="high"
             quality={85}
             sizes="100vw"
             style={{
@@ -133,33 +125,49 @@ export default function Hero({
             {subtitle}
           </p>
           
-          <div className="hero__actions">
-            <Button
-              variant={ctaPrimary.variant || "primary"}
-              size="lg"
-              href={ctaPrimary.href.startsWith('#') ? undefined : ctaPrimary.href}
-              onClick={handlePrimaryClick}
-              ariaLabel={ctaPrimary.text}
-            >
-              {ctaPrimary.text}
-            </Button>
-            
-            <Button
-              variant="secondary"
-              size="lg"
-              href={ctaSecondary.href}
-              onClick={ctaSecondary.onClick}
-              ariaLabel={ctaSecondary.text}
-            >
-              {ctaSecondary.text}
-            </Button>
-          </div>
+          {keyIdentity && (
+            <p className="hero__key-identity">
+              {keyIdentity}
+            </p>
+          )}
+          
+          {valueIntro && (
+            <p className="hero__value-intro">
+              {valueIntro}
+            </p>
+          )}
           
           {note && (
             <p className="hero__note">
               {note}
             </p>
           )}
+          
+          <button
+            className="hero__scroll-arrow"
+            onClick={handleScrollDown}
+            onKeyDown={handleKeyDown}
+            aria-label="Scroll to next section"
+            type="button"
+          >
+            <svg
+              className="hero__scroll-arrow-icon"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M7 10L12 15L17 10"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
         </div>
         
         {image && (
@@ -176,9 +184,6 @@ export default function Hero({
         )}
       </div>
       
-      {/* Background gradient overlay */}
-      <div className="hero__gradient" aria-hidden="true" />
-      
       {/* Background image overlay for better text readability */}
       {backgroundImage && (
         <div className="hero__background-overlay" aria-hidden="true" />
@@ -186,7 +191,7 @@ export default function Hero({
       
       {/* Floating binary elements (0s and 1s) */}
       <FloatingBinaryElements 
-        count={130}
+        count={80}
         minFontSize={0.5}
         maxFontSize={2}
         minOpacity={0.2}

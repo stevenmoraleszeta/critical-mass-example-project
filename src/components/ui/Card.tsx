@@ -111,6 +111,7 @@ export default function Card({
             height={image.height || 300}
             className="card__img"
             loading="lazy"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
       )}

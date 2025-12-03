@@ -42,6 +42,8 @@ export interface ButtonProps {
   ariaLabel?: string;
   /** Additional CSS classes */
   className?: string;
+  /** Enable prefetch for Next.js Link (default: true) */
+  prefetch?: boolean;
 }
 
 /**
@@ -65,6 +67,7 @@ export default function Button({
   type = 'button',
   ariaLabel,
   className = '',
+  prefetch = true,
 }: ButtonProps) {
   // Build BEM class names
   const baseClass = 'btn';
@@ -104,6 +107,7 @@ export default function Button({
         tabIndex={disabled ? -1 : 0}
         onKeyDown={handleKeyDown}
         onClick={onClick}
+        prefetch={prefetch}
       >
         {loading && <span className="btn__spinner" aria-hidden="true" />}
         <span className="btn__text">{children}</span>

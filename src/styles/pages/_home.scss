@@ -64,6 +64,11 @@
     &.hero {
       max-width: 100%;
     }
+    
+    // CTA section should occupy 100% width for full-width banner
+    &.cta-section {
+      max-width: 100%;
+    }
   }
   
   // Center all text and icons in sections

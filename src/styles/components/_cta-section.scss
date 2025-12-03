@@ -1,7 +1,7 @@
 // ============================================================================
 // CTA Section Component Styles
 // Following Critical Mass requirements: BEM, Mobile-First, Accessibility
-// Following project-idea.md: Final CTA section specifications
+// Following PROJECT-IDEA.md: Final CTA section specifications
 // ============================================================================
 
 // Import base files for variables and mixins
@@ -16,12 +16,12 @@
 .cta-section {
   position: relative;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
   
   // Mobile-first: padding for mobile
   padding: var(--space-2xl) var(--space-md);
-  
-  // Background
-  background-color: var(--color-bg-light);
   
   // Tablet and up: adjust padding
   @include breakpoint-md {
@@ -33,12 +33,42 @@
     padding: var(--space-3xl) var(--space-xl);
   }
   
+  // Animated gradient background
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    // Pattern: Yellow -> Blue -> Red -> Yellow
+    // Smooth, fluid gradient with yellow before blue and after red
+    // Constant velocity animation with smooth transitions
+    background: linear-gradient(
+      135deg,
+      var(--color-accent),
+      var(--color-primary),
+      var(--color-secondary),
+      var(--color-accent)
+    );
+    background-size: 400% 400%;
+    animation: cta-gradient-shift 20s linear infinite;
+    will-change: background-position;
+    
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+      background: var(--color-primary);
+    }
+  }
+  
   // ============================================================================
   // CTA Section Elements (BEM)
   // ============================================================================
   
   // Container for content
   &__container {
+    position: relative;
+    z-index: 2;
     width: 100%;
     max-width: var(--container-max-width);
     margin: 0 auto;
@@ -48,6 +78,14 @@
     @include flex-column;
     @include align-center;
     gap: var(--space-xl);
+    
+    // Floating animation
+    animation: cta-content-float 6s ease-in-out infinite;
+    will-change: transform;
+    
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
     
     @include breakpoint-md {
       gap: var(--space-2xl);
@@ -59,9 +97,17 @@
     font-size: var(--fs-2xl);
     font-weight: var(--fw-bold);
     line-height: var(--lh-tight);
-    color: var(--color-text-primary);
+    color: var(--color-white);
     margin: 0;
     text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    animation: cta-title-float 4s ease-in-out infinite;
+    animation-delay: 0.2s;
+    will-change: transform;
+    
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
     
     // Mobile: adjust font size
     @media (max-width: 639px) {
@@ -80,28 +126,71 @@
     }
   }
   
+  // Description paragraph
+  &__description {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-relaxed);
+    color: var(--color-white);
+    margin: 0;
+    text-align: center;
+    max-width: 800px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    animation: cta-description-float 5s ease-in-out infinite;
+    animation-delay: 0.4s;
+    will-change: transform;
+    
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+    
+    // Mobile: adjust font size
+    @media (max-width: 639px) {
+      font-size: var(--fs-sm);
+    }
+    
+    // Tablet: larger font
+    @include breakpoint-md {
+      font-size: var(--fs-lg);
+    }
+    
+    // Desktop: maintain readable line length
+    @include breakpoint-lg {
+      font-size: var(--fs-lg);
+      max-width: 700px;
+    }
+  }
+  
   // Actions container (CTAs)
   &__actions {
-    @include flex;
-    @include flex-column;
-    @include align-center;
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--space-md);
     
     // Mobile: full width buttons
     width: 100%;
     max-width: 100%;
     
-    // Tablet and up: horizontal layout, centered
+    // Floating animation for buttons
+    animation: cta-actions-float 7s ease-in-out infinite;
+    animation-delay: 0.6s;
+    will-change: transform;
+    
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+    
+    // Tablet and up: horizontal layout, equal width
     @include breakpoint-md {
-      @include flex-row;
-      @include justify-center;
-      width: auto;
+      grid-template-columns: 1fr 1fr;
       max-width: 600px;
+      margin: 0 auto;
     }
     
     // Desktop: maintain center alignment
     @include breakpoint-lg {
-      @include justify-center;
       max-width: 700px;
     }
   }
@@ -143,17 +232,23 @@
     .btn {
       // Mobile: full width buttons
       width: 100%;
-      min-width: 200px;
       
-      // Tablet and up: auto width with min-width
+      // Tablet and up: full grid column width
       @include breakpoint-md {
-        width: auto;
-        min-width: 200px;
+        width: 100%;
+      }
+    }
+    
+    // View Projects button with yellow borders
+    .btn--secondary {
+      border: var(--border-width-base) solid var(--color-accent);
+      
+      &:hover:not(:disabled):not(.btn--disabled) {
+        border-color: var(--color-accent);
       }
       
-      // Desktop: larger min-width
-      @include breakpoint-lg {
-        min-width: 220px;
+      &:active:not(:disabled):not(.btn--disabled) {
+        border-color: var(--color-accent);
       }
     }
   }
@@ -170,7 +265,7 @@
       font-size: var(--fs-lg);
     }
     
-    &__note {
+    &__description {
       font-size: var(--fs-xs);
     }
     
@@ -213,6 +308,84 @@
       @include flex-column;
       gap: var(--space-sm);
     }
+  }
+}
+
+// ============================================================================
+// Animations
+// ============================================================================
+
+@keyframes cta-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  
+  25% {
+    background-position: 25% 50%;
+  }
+  
+  32% {
+    background-position: 33.33% 50%;
+  }
+  
+  36% {
+    background-position: 50% 50%;
+  }
+  
+  40% {
+    background-position: 66.66% 50%;
+  }
+  
+  55% {
+    background-position: 75% 50%;
+  }
+  
+  75% {
+    background-position: 100% 50%;
+  }
+  
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes cta-content-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes cta-title-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes cta-description-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes cta-actions-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  
+  50% {
+    transform: translateY(-8px);
   }
 }
 

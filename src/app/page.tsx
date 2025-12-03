@@ -1,42 +1,41 @@
+import { Suspense, lazy } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/sections/Hero';
-import Features from '@/components/sections/Features';
-import UseCases from '@/components/sections/UseCases';
-import FeaturedProjects from '@/components/sections/FeaturedProjects';
-import LeadershipSection from '@/components/sections/LeadershipSection';
-import PerformanceSection from '@/components/sections/PerformanceSection';
-import PricingSection from '@/components/sections/PricingSection';
-import CTASection from '@/components/sections/CTASection';
+import RoleFocusSection from '@/components/sections/RoleFocusSection';
+
+// Lazy load non-critical sections for better initial page load performance
+const KeyHighlightsSection = lazy(() => import('@/components/sections/KeyHighlightsSection'));
+const CTASection = lazy(() => import('@/components/sections/CTASection'));
 
 export default function Home() {
   return (
     <MainLayout>
       <div className="home-page">
         <Hero
-          title="Steven Morales: Full Stack Developer & Tech Leader"
-          subtitle="Passionate about building robust, scalable, and meaningful innovations. Leading teams at Novaera and ZETA Academia, empowering 1,000+ students while delivering high-quality web experiences."
-          ctaPrimary={{
-            text: "View My Work",
-            href: "#projects",
-            variant: "highlight", // Yellow with blue text and border
-          }}
-          ctaSecondary={{
-            text: "View All Projects",
-            href: "/projects",
-          }}
-          note="Available for full-time opportunities at Critical Mass. Based in Costa Rica."
+          title={
+            <>
+              Steven Morales
+              <br />
+              Full Stack Software Engineer & Tech Leader
+            </>
+          }
+          subtitle={
+            <>
+              Building <strong>high-quality, responsive, accessible full stack experiences</strong> that connect technology, creativity, and real human needs.
+            </>
+          }
           backgroundImage={{
             src: "/images/hero-background.webp",
             alt: "Abstract background pattern for hero section",
           }}
         />
-        <Features />
-        <UseCases />
-        <FeaturedProjects />
-        <LeadershipSection />
-        <PerformanceSection />
-        <PricingSection />
+        <RoleFocusSection />
+        <Suspense fallback={null}>
+        <KeyHighlightsSection />
+        </Suspense>
+        <Suspense fallback={null}>
         <CTASection />
+        </Suspense>
       </div>
     </MainLayout>
   );

@@ -9,6 +9,7 @@
 
 .navbar {
   width: 100%;
+  max-width: 100%;
   background-color: var(--color-bg-light);
   border-bottom: var(--border-width-thin) solid var(--color-primary);
   position: fixed;
@@ -17,7 +18,18 @@
   right: 0;
   z-index: var(--z-index-fixed);
   @include shadow-sm;
-  overflow: visible; // Allow active indicator line to show below navbar
+  
+  // Mobile: Allow overflow to show dropdown menu
+  @include breakpoint-max-md {
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+  
+  // Desktop: Prevent horizontal scroll, allow active indicator
+  @include breakpoint-md {
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
   
   // Use height variable directly to ensure consistency with main padding-top
   height: var(--navbar-height-mobile);
@@ -36,8 +48,16 @@
     // Mobile: 65px - 8px (top) - 8px (bottom) - 1px (border) = 48px
     min-height: calc(var(--navbar-height-mobile) - var(--space-sm) - var(--space-sm) - var(--border-width-thin));
     height: 100%;
+    width: 100%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
+
+    // Mobile: Allow overflow for dropdown menu
+    @include breakpoint-max-md {
+      overflow: visible;
+    }
 
     @include breakpoint-md {
       padding-top: var(--space-sm);
@@ -62,11 +82,14 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
+    max-width: calc(100% - 120px);
+    flex-shrink: 0;
 
     @include breakpoint-md {
       position: static;
       transform: none;
       z-index: auto;
+      max-width: none;
     }
   }
 
@@ -107,6 +130,8 @@
     border: var(--border-width-thin) solid var(--color-primary);
     border-radius: var(--radius-sm);
     @include transition-base(all);
+    white-space: nowrap;
+    flex-shrink: 0;
 
     @include breakpoint-md {
       font-size: var(--fs-xl);
@@ -149,6 +174,7 @@
     position: absolute;
     right: var(--space-md);
     z-index: 2;
+    flex-shrink: 0;
 
     @include breakpoint-md {
       display: none;
@@ -238,33 +264,42 @@
 
     // Mobile: Hidden by default, shown when menu is open
     @include breakpoint-max-md {
-      position: absolute;
-      top: 100%;
+      position: fixed;
+      top: var(--navbar-height-mobile);
       left: 0;
       right: 0;
+      width: 100%;
+      max-width: 100vw;
       flex-direction: column;
       align-items: stretch;
       background-color: var(--color-bg-light);
       border: var(--border-width-thin) solid var(--color-primary);
       border-top: none;
+      border-left: none;
+      border-right: none;
       border-radius: 0 0 var(--radius-md) var(--radius-md);
       box-shadow: var(--shadow-lg);
-      padding: var(--space-md) var(--space-sm);
-      margin-top: var(--space-xs);
-      gap: var(--space-sm); // Increased gap between items in mobile
+      padding: 0;
+      margin: 0;
+      gap: 0;
       max-height: 0;
       overflow: hidden;
       opacity: 0;
       visibility: hidden;
       @include transition-base(all);
-      z-index: var(--z-index-dropdown);
+      z-index: calc(var(--z-index-fixed) + 1);
+      box-sizing: border-box;
+      transform: translateY(-10px);
+      pointer-events: none;
 
       &--open {
-        max-height: 500px;
+        max-height: 80vh;
         opacity: 1;
         visibility: visible;
         padding: var(--space-md);
-        gap: var(--space-md); // Even more space when menu is open
+        gap: var(--space-sm);
+        transform: translateY(0);
+        pointer-events: auto;
       }
     }
 
@@ -298,7 +333,7 @@
 
     // Mobile: Add more vertical spacing between items
     @include breakpoint-max-md {
-      margin-bottom: var(--space-xs);
+      margin-bottom: var(--space-sm);
       
       &:last-child {
         margin-bottom: 0;

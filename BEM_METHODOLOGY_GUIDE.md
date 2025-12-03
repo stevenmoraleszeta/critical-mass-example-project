@@ -404,10 +404,10 @@ When creating any component, ensure:
 
 ## References
 
-- **Critical Mass Job Posting**: Section 11 in `project-idea.md`
-- **Project Requirements**: Section 1 in `project-idea.md`
-- **BEM Example**: Section 4.4 in `project-idea.md`
-- **SMACSS Architecture**: Section 2.2 in `project-idea.md`
+- **Critical Mass Job Posting**: Section 11 in `PROJECT-IDEA.md`
+- **Project Requirements**: Section 1 in `PROJECT-IDEA.md`
+- **BEM Example**: Section 4.4 in `PROJECT-IDEA.md`
+- **SMACSS Architecture**: Section 2.2 in `PROJECT-IDEA.md`
 
 ---
 

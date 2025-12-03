@@ -1,7 +1,7 @@
 // ============================================================================
 // Specs Section Styles
 // Following Critical Mass requirements: BEM, Mobile-First, Accessibility
-// Following project-idea.md: Specs section specifications
+// Following PROJECT-IDEA.md: Specs section specifications
 // ============================================================================
 
 // Import base files for variables and mixins
@@ -16,6 +16,8 @@
 .specs {
   position: relative;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; // Prevent horizontal scroll
   
   // Mobile-first: padding for mobile
   padding: var(--space-2xl) var(--space-md);

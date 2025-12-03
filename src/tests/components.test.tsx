@@ -690,7 +690,7 @@ describe('Component Rendering Tests', () => {
       const uiLibraryButton = screen.getByText('Explore UI Library').closest('a');
       
       expect(projectsButton).toHaveAttribute('href', '/projects');
-      expect(uiLibraryButton).toHaveAttribute('href', '/components-library');
+      expect(uiLibraryButton).toHaveAttribute('href', '/ui-library');
     });
 
     it('should have buttons with proper ARIA labels', () => {

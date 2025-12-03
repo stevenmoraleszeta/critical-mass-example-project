@@ -19,19 +19,14 @@
 @use 'components/footer' as *;
 @use 'components/hero' as *;
 @use 'components/feature-card' as *;
-@use 'components/features' as *;
+@use 'components/role-focus-section' as *;
+@use 'components/key-highlights-section' as *;
 @use 'components/specs' as *;
-@use 'components/use-case-card' as *;
-@use 'components/use-cases' as *;
 @use 'components/stat-card' as *;
-@use 'components/performance' as *;
 @use 'components/testimonial-card' as *;
-@use 'components/testimonials' as *;
-@use 'components/pricing' as *;
 @use 'components/cta-section' as *;
-@use 'components/featured-projects' as *;
-@use 'components/leadership' as *;
 @use 'components/floating-binary-elements' as *;
+@use 'components/floating-geometric-shapes' as *;
 // @use 'components/content' as *;
 
 
@@ -39,5 +34,4 @@
 @use 'pages/home' as *;
 @use 'pages/skills-page' as *;
 @use 'pages/projects-page' as *;
-@use 'pages/about-page' as *;
 

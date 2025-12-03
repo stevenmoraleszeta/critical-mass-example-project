@@ -1,7 +1,7 @@
 // ============================================================================
 // Toast Component Styles
 // Following Critical Mass requirements: BEM, Mobile-First, Accessibility
-// Following project-idea.md: Toast component specifications
+// Following PROJECT-IDEA.md: Toast component specifications
 // ============================================================================
 
 // Import base files for variables and mixins
@@ -17,7 +17,7 @@
   // Base toast styles
   position: fixed;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
   gap: var(--space-sm);
   padding: var(--space-md);
   background-color: var(--color-white);
@@ -41,6 +41,13 @@
   // Toast Elements (BEM)
   // ============================================================================
   
+  // Header container (content + close button)
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+  
   // Content container
   &__content {
     display: flex;
@@ -48,6 +55,14 @@
     gap: var(--space-sm);
     flex: 1;
     min-width: 0; // Allow text to shrink
+  }
+  
+  // Footer container (for action button)
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: var(--space-xs);
+    border-top: var(--border-width-thin) solid rgba(0, 0, 255, 0.1);
   }
   
   // Icon
@@ -118,6 +133,43 @@
     }
   }
   
+  // Action button (in footer, red style)
+  &__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: var(--space-xs) var(--space-md);
+    margin: 0;
+    border: var(--border-width-thin) solid var(--color-secondary);
+    background: transparent;
+    color: var(--color-secondary);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    @include transition-base(all);
+    
+    &:hover {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+    }
+    
+    // Always red focus for better visibility (matching navbar)
+    &:focus-visible {
+      outline: 3px solid var(--color-secondary); // Red outline - matching navbar
+      outline-offset: 4px;
+    }
+    
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+    
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+  
   // ============================================================================
   // Toast Variants (BEM Modifiers)
   // ============================================================================
@@ -152,19 +204,23 @@
     }
   }
   
-  // Warning variant - Yellow border
+  // Warning variant - Red border (for alert/advisory messages)
   &--warning {
-    border-color: var(--color-accent); // Yellow border
+    border-color: var(--color-secondary); // Red border
     background-color: var(--color-white);
     
     .toast__icon {
-      color: var(--color-accent); // Yellow icon
+      color: var(--color-secondary); // Red icon
+    }
+    
+    .toast__message {
+      color: var(--color-primary); 
     }
   }
   
   // ============================================================================
   // Toast Sizes (BEM Modifiers)
-  // Following project-idea.md: sm, md, lg sizes
+  // Following PROJECT-IDEA.md: sm, md, lg sizes
   // Mobile-first: base styles for mobile, enhance for larger screens
   // ============================================================================
   
@@ -328,8 +384,9 @@
   
   @media (max-width: 640px) {
     // On mobile, toasts take full width minus margins
-    min-width: calc(100vw - 2rem);
-    max-width: calc(100vw - 2rem);
+    // Use 100% instead of 100vw to avoid horizontal scrollbar issues
+    min-width: calc(100% - 2rem);
+    max-width: calc(100% - 2rem);
     
     // Adjust positions for mobile
     &--top-right,

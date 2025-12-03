@@ -9,9 +9,12 @@
   - [2.2. Folder Structure](#22-folder-structure)
 - [3. Narrative Concept and Content for Each Page](#3-narrative-concept-and-content-for-each-page)
   - [3.1. Landing - "Steven Morales: Front-End Experience Engine"](#31-landing---steven-morales-front-end-experience-engine)
-  - [3.2. `/components` Page – Component Library](#32-components-page--component-library)
-  - [3.3. `/content` Page – CMS-like View](#33-content-page--cms-like-view)
-  - [3.4. /about Page – Project Purpose](#34-about-page--project-purpose)
+  - [3.2. `/critical-mass-case-study` Page – CM Front-End Experience Engine](#32-critical-mass-case-study-page--cm-front-end-experience-engine)
+  - [3.3. `/projects` Page – Selected Projects & Case Studies](#33-projects-page--selected-projects--case-studies)
+  - [3.4. `/skills` Page – Skills & Tech Stack](#34-skills-page--skills--tech-stack)
+  - [3.5. `/experience` Page – Professional Experience](#35-experience-page--professional-experience)
+  - [3.6. `/contact` Page – Let's Build Something Great](#36-contact-page--lets-build-something-great)
+  - [3.7. `/ui-library` Page – UI Library](#37-ui-library-page--ui-library)
   - [3.5. Component Specifications (Props & Types)](#35-component-specifications-props--types)
   - [3.6. Complete Copy (Ready to Use)](#36-complete-copy-ready-to-use)
 - [4. Visual Design and Style System](#4-visual-design-and-style-system)
@@ -82,26 +85,60 @@ This project needs to clearly respond to the job posting:
 
 ### 2.1. Pages (Next.js App Router)
 
-- **`/`** → Professional Portfolio Landing
-  - Main page presenting my experience, skills, and professional background
-  - Focus on real-world projects and achievements (Novaera, ZETA Academia, ERP systems)
-  - Highlight alignment with Critical Mass requirements
+- **`/`** → Home
+  - Hero section with professional introduction
+  - Role Focus: Developer, Front End @ Critical Mass
+  - Key Highlights (What I bring to the team)
+  - Primary Call To Action
 
-- **`/projects`** → Portfolio Projects Showcase
-  - Showcase of all real projects and case studies
-  - Demonstrates filtering capabilities and dynamic content handling
-  - All projects with categories, technologies, and highlights
+- **`/critical-mass-case-study`** → CM Front-End Experience Engine
+  - Project Overview
+  - How This Portfolio Is Built for Critical Mass
+  - Design-to-Code Workflow (Figma → HTML/CSS/JS/React)
+  - Accessibility, Performance & Responsiveness
+  - Tooling, Testing & Automation
+  - What You Can Review Here (Code, Live Demo, Repo Links)
 
-- **`/components-library`** → UI Library / Design System
+- **`/projects`** → Selected Projects & Case Studies
+  - Steven Morales FE-01 – Front-End Experience Engine
+  - Novaera SaaS ERP (Web, API, DB)
+  - Precision Seas ERP System
+  - ZETA Academia EdTech Platform (V1 & V2)
+  - TimerChill – Modern Pomodoro Timer
+  - Matemática Integral ERP & Automation System
+  - Demeter IoT Agriculture System
+  - INFOCOOP Education Platform Enhancements
+  - Assistive Robotics Project for Elderly Care
+
+- **`/skills`** → Skills & Tech Stack
+  - Core Front-End Skills
+  - Front-End Tooling & Automation
+  - Back-End & APIs
+  - Databases & Data
+  - Cloud & DevOps
+  - AI & Data Tools
+  - Testing & QA
+  - Productivity & Collaboration Tools
+  - Languages
+  - Engineering Practices & Soft Skills
+
+- **`/experience`** → Professional Experience
+  - CEO & Lead Software Developer – Novaera
+  - CEO & Lead Tech Educator – ZETA Academia
+  - Freelance Software Developer
+  - Software Developer (Intern) – INFOCOOP
+  - Software Developer – TI Recursos CR
+  - Impact Summary (Leadership, Ownership, Collaboration)
+
+- **`/contact`** → Let's Build Something Great
+  - Contact Details
+  - Social Links
+  - Availability & Ways to Collaborate
+
+- **`/ui-library`** → UI Library
   - Showcase of reusable UI components demonstrating technical skills
   - Documentation of component architecture and accessibility features
-  - Positioned last in navigation as technical reference
-
-- **`/about`** → About This Portfolio
-  - Professional explanation of the portfolio's purpose for Critical Mass
-  - Context about my application, experience, and why I'm interested in the position
-
-- **`/api/content`** → Internal API that returns JSON with "use cases / projects / campaigns".
+  - Positioned as technical reference
 
 ### 2.2. Folder Structure
 
@@ -204,71 +241,62 @@ public/
 
 ## 3. Narrative Concept and Content for Each Page
 
-### 3.1. Landing - "Steven Morales: Full Stack Developer & Tech Leader"
+> **Note:** The complete and official copy for all pages is defined in `PROJECT-CONTENT.md`. This section provides a high-level overview. Always refer to `PROJECT-CONTENT.md` for the exact copy, content structure, and detailed specifications for each page.
+
+### 3.1. Landing - "Front-End Experience Engine for Critical Mass"
 
 #### 3.1.1. Hero Section
 
 **Objective:** Present my professional background and establish connection with Critical Mass.
 
-**Elements:**
+**Elements (from PROJECT-CONTENT.md):**
 
-- Logo (could be stylized "SM").
-- **Title (H1):**
-  - "Steven Morales: Full Stack Developer & Tech Leader"
-- **Subtitle:**
-  - "Passionate about building robust, scalable, and meaningful innovations. Leading teams at Novaera and ZETA Academia, empowering 1,000+ students while delivering high-quality web experiences."
+- **Headline:**
+  - _"Front-End Experience Engine for Critical Mass."_
+- **Subheadline:**
+  - I'm **Steven Morales**, a **Full Stack Software Engineer & Tech Leader** focused on building **high-quality, responsive, accessible front-end experiences** that connect technology, creativity, and real human needs.
+- **Key Identity Line:**
+  - **Full Stack Software Engineer | Tech Leader | Product-Driven Developer | Creative Technologist**
+  - Based in **San José, Costa Rica**, applying for **Developer, Front End at Critical Mass**.
+- **Short Value Intro:**
+  - I have **3+ years of experience** building robust, scalable, high-performance software across **web, desktop, mobile, and hybrid platforms**, working through the full development cycle: from **design and architecture** to **deployment and optimization**. I enjoy creating **clean, efficient solutions** that connect technology with real user needs, combining strong technical skills with **leadership, teamwork, and problem-solving**.
 - **CTAs:**
-- View My Work → scroll to Features/Projects section.
-- Explore Components → navigate to `/components`.
-- **Professional note:**
-  - "Available for full-time opportunities at Critical Mass. Based in Costa Rica."
+  - Primary: "Want to see how I would work at Critical Mass?" → Navigate to `/critical-mass-case-study`
+  - Secondary: View Projects → Navigate to `/projects`
 - **Visual:**
   - Professional background image or code/UI overlay representing technical expertise.
   - Background with subtle gradient.
 
-#### 3.1.2. "Core Expertise" Section
+#### 3.1.2. "Role Focus: Developer, Front End @ Critical Mass" Section
 
-**Title:** "Core Expertise"
+**Title:** "Role Focus: Developer, Front End @ Critical Mass"
 
-Present my skills and experience based on real-world projects. 3–4 cards:
+This portfolio is intentionally designed as a **live case study** for the **Developer, Front End** position at Critical Mass:
 
-1. **Design-to-Code Translation**
-   - **Subtext:** "Expert at translating Figma designs and wireframes into clean, semantic HTML/CSS and reusable React components. Proven track record across multiple production projects including ERP systems and educational platforms."
+- **Design Translation:** I translate Figma/wireframes into **semantic HTML5, modern CSS3, and React/Next.js components**.
+- **Responsive & Accessible:** I build **mobile-first layouts** with **accessibility best practices (WCAG mindset)** and **cross-browser support**.
+- **API Integration:** I work daily with **REST APIs, JSON, HTTP**, and have familiarity with **SOAP** and external services.
+- **Tooling:** I use **SASS/LESS, Gulp, Vite, GitHub Actions** and modern bundlers to maintain efficient front-end pipelines.
+- **Collaboration:** I coordinate with **design, business, QA, and tech leads** to deliver on time with quality.
+- **Ownership:** I'm used to **owning features end-to-end**, providing time estimates, and communicating progress clearly.
 
-2. **Responsive & Mobile-First Development**
-   - "Built responsive, mobile-first applications that work flawlessly across all devices. Experience leading teams to deliver pixel-perfect implementations serving 1,000+ users."
-
-3. **Full-Stack Integration**
-   - "Experienced with REST APIs, JSON, HTTP, and integrating with CMSs and third-party services. Built complete ERP systems with API-first architecture, PostgreSQL, MongoDB, and cloud deployment."
-
-4. **Accessibility & Performance**
-   - "WCAG-compliant implementations with semantic HTML, keyboard navigation, and optimized performance. Built accessible platforms serving 1,000+ users with excellent performance metrics."
-
-**Each card will include:**
+**Each item will include:**
 
 - Decorative icon.
 - Title.
 - Brief description.
-- BEM class: `.feature-card`, `.feature-card__icon`, etc.
+- BEM class: `.role-focus-item`, `.role-focus-item__icon`, etc.
 
-#### 3.1.3. "Tech Stack & Expertise" Section
+#### 3.1.3. "Key Highlights – What I Bring to Critical Mass" Section
 
-**Title:** "Tech Stack & Expertise"
+**Title:** "Key Highlights – What I Bring to Critical Mass"
 
-Divided into columns:
-
-- **Front-End Technologies**
-  - React, Next.js, TypeScript, HTML5, CSS3, SASS/SCSS, LESS, TailwindCSS, React Native, JavaScript (ES6+)
-
-- **Back-End & Data**
-  - Node.js, Python, PostgreSQL, MongoDB, REST & GraphQL APIs, JSON, XML, HTTP, Firebase
-
-- **Tools & Practices**
-  - Git & GitHub, Gulp & Vite, Jest & RTL, Figma Design Translation, Docker & AWS
-
-**Professional note:**
-
-- "Experience with full-stack development, API design, and scalable architecture."
+- **Front-End Expertise:** Strong in **HTML, CSS, JavaScript, TypeScript, React, Next.js**, design systems and reusable components.
+- **Product Mindset:** I think in **flows, user journeys, and product impact**, not just isolated tasks.
+- **Performance & Quality:** Experience with **performance optimization, scalability, and maintainable architectures**.
+- **Leadership & Mentorship:** CEO & Lead Developer at **Novaera**, leading a **multi-developer engineering team**.  
+- **Education & Impact:** CEO & Lead Tech Educator at **ZETA Academia**, offering **30+ courses** to **1,000+ students** in Python, AI, Java, Excel, and more.  
+- **Problem Solver:** Comfortable with **debugging, root cause analysis, and reducing technical debt**.
 
 #### 3.1.4. "Real-World Experience" Section
 
@@ -376,285 +404,194 @@ I'll render it as cards or timeline, haven't decided yet.
 
 - "I'm actively seeking a full-time Front-End Developer position at Critical Mass in San Jose, Costa Rica. I'm ready to bring my experience in leading teams, building scalable applications, and delivering high-quality code to your projects. Let's discuss how I can contribute to your team."
 
-#### 3.1.9. "Final CTA" Section
+#### 3.1.4. "Primary Call To Action" Section
+
+**Title:** "Primary Call To Action"
+
+**Copy:**
+
+> **Want to see how I would work at Critical Mass?**  
+> Start with the **"Critical Mass Case Study"** page – it's a focused breakdown of how I match this role, backed by real code and projects.
 
 **Buttons:**
 
-- Explore Component Library → `/components`
-- View Portfolio Projects → `/content`
+- View Critical Mass Case Study → `/critical-mass-case-study`
+- Explore My Projects → `/projects`
 
-**Professional note:**
+### 3.2. `/critical-mass-case-study` Page – CM Front-End Experience Engine
 
-- "This portfolio prototype was crafted specifically to demonstrate my skills and approach for the Critical Mass Front-End Developer position in San Jose, Costa Rica."
+**Objective:** Detailed breakdown of how this portfolio demonstrates alignment with Critical Mass requirements.
 
-### 3.2. `/components-library` Page – UI Library
+> **Note:** Complete content and copy for this page is defined in `PROJECT-CONTENT.md` under `/critical-mass-case-study`. Always refer to that file for exact copy and content structure.
+
+**Sections (from PROJECT-CONTENT.md):**
+
+#### Section 1 – Project Overview
+
+- This site and the linked project **"Steven Morales FE-01 – Front-End Experience Engine"** are built as a **portfolio prototype specifically for the Critical Mass Developer, Front End role**.
+
+**Goals:**
+- Demonstrate **design-to-code translation** using **Figma → Next.js + SASS/SCSS**.
+- Show **responsive architecture**, **component-driven design**, and **accessibility best practices**.
+- Highlight **API integration**, **state management**, and **front-end tooling** (SASS, BEM, Vite/Gulp-style patterns).
+- Reflect how I **collaborate with cross-functional teams** and maintain **clean, documented code**.
+
+#### Section 2 – How This Portfolio Is Built for Critical Mass
+
+- **Figma to Front-End:** Layouts and components designed to be **pixel-conscious, flexible, and accessible**.
+- **Design Systems:** Components treated as **reusable building blocks** with well-structured **SCSS and BEM-like class naming**.
+- **Mobile First:** Layouts are **designed mobile-first**, then scale up to tablet and desktop.
+- **Cross-Browser:** Styles and layout decisions respect **modern browser compatibility**.
+
+#### Section 3 – Design-to-Code Workflow
+
+**Typical workflow:**
+
+1. **Receive designs & specs** (Figma, wireframes, UX notes).
+2. **Break into components**: pages, sections, UI blocks (cards, navbars, buttons, grids).
+3. **Define responsive behavior** for each breakpoint.
+4. **Implement semantic HTML** and **accessible React/Next.js components**.
+5. **Style with CSS/SCSS/SASS** using **variables, mixins, and BEM-like structure**.
+6. **Integrate APIs** (REST/JSON, occasionally SOAP) and manage **local and global state**.
+7. **Test accessibility & responsiveness**: keyboard navigation, contrast, screen sizes.
+8. **Review & iterate** with designers, PMs, QA, and tech leads.
+
+#### Section 4 – Accessibility, Performance & Responsiveness
+
+- **Accessibility:**
+  - Semantic HTML and ARIA attributes where needed.
+  - Focus management and keyboard navigation.
+  - Attention to **color contrast**, font sizes, and readable layouts.
+
+- **Performance:**
+  - Lean, reusable component architecture.
+  - Avoid unnecessary re-renders, heavy images, or blocking scripts.
+  - Efficient API usage and caching strategies where appropriate.
+
+- **Responsiveness:**
+  - Mobile-first CSS strategies.
+  - Layouts built with **flexbox** and **CSS grid**.
+  - Tested across multiple viewports and browsers.
+
+#### Section 5 – Tooling, Testing & Automation
+
+- **Preprocessors:** SASS/SCSS & LESS.
+- **Tooling:** Gulp/Vite-style bundling and asset pipelines.
+- **Testing:** React Testing Library & Jest for UI behavior and component tests.
+- **CI/CD:** GitHub Actions for linting, tests, and basic deployment workflows.
+
+#### Section 6 – What You Can Review
+
+- **Live demo** (portfolio site).
+- **GitHub repository** for:
+  - Front-end structure (pages, components, hooks).
+  - Styles (SASS/SCSS, BEM structure).
+  - Tests and basic CI config.
+- **Other case studies** on `/projects`.
+
+### 3.3. `/projects` Page – Selected Projects & Case Studies
+
+**Objective:** Showcase all portfolio projects with detailed case studies, demonstrating real-world experience and impact.
+
+> **Note:** Complete content, project details, and copy for this page is defined in `PROJECT-CONTENT.md` under `/projects`. Always refer to that file for exact project descriptions, URLs, highlights, and content structure.
+
+Each project section includes: **context, responsibilities, tech stack, and impact**.
+
+**Projects to showcase (from PROJECT-CONTENT.md):**
+
+1. **Steven Morales FE-01 – Front-End Experience Engine**
+2. **Novaera SaaS ERP (Web, API, DB)**
+3. **Precision Seas ERP System**
+4. **ZETA Academia EdTech Platform (V1 & V2)**
+5. **TimerChill – Modern Pomodoro Timer**
+6. **Matemática Integral ERP & Automation System**
+7. **Demeter IoT Agriculture System**
+8. **INFOCOOP Education Platform Enhancement**
+9. **Assistive Robotics for Elderly Care**
+
+See `PROJECT-CONTENT.md` for complete project details, descriptions, URLs, and highlights.
+
+### 3.4. `/skills` Page – Skills & Tech Stack
+
+**Objective:** Comprehensive showcase of technical and soft skills, grouped by relevance to the Critical Mass Front-End Developer role.
+
+> **Note:** Complete skills list, organization, and content for this page is defined in `PROJECT-CONTENT.md` under `/skills`. Always refer to that file for exact skills, categories, and content structure.
+
+**Sections (from PROJECT-CONTENT.md):**
+
+- **Core Front-End**
+- **Front-End Tooling & Automation**
+- **Back-End & APIs**
+- **Databases & Data**
+- **Cloud & DevOps**
+- **AI, Data & Automation**
+- **Testing & API Tools**
+- **Productivity & Collaboration Tools**
+- **Languages**
+- **Soft Skills & Ways of Working**
+
+See `PROJECT-CONTENT.md` for complete skills list and detailed breakdown.
+
+### 3.5. `/experience` Page – Professional Experience
+
+**Objective:** Detailed professional experience showcasing leadership, technical expertise, and impact.
+
+> **Note:** Complete experience details, responsibilities, and content for this page is defined in `PROJECT-CONTENT.md` under `/experience`. Always refer to that file for exact job descriptions, dates, responsibilities, and content structure.
+
+**Sections (from PROJECT-CONTENT.md):**
+
+- **CEO & Lead Software Developer — Novaera**
+- **CEO & Lead Tech Educator — ZETA Academia**
+- **Freelance Software Developer**
+- **Software Developer (Intern) — INFOCOOP**
+- **Software Developer — TI Recursos CR**
+- **Education**
+- **Impact Summary**
+
+See `PROJECT-CONTENT.md` for complete experience descriptions and details.
+
+### 3.6. `/contact` Page – Let's Build Something Great
+
+**Objective:** Contact information and closing message.
+
+> **Note:** Complete contact information, social links, and closing message for this page is defined in `PROJECT-CONTENT.md` under `/contact`. Always refer to that file for exact contact details and copy.
+
+**Sections (from PROJECT-CONTENT.md):**
+
+- **Contact Information**
+- **Online Profiles**
+- **Short Closing Message**
+
+See `PROJECT-CONTENT.md` for complete contact details and closing message.
+
+### 3.7. `/ui-library` Page – UI Library
+
+**Page Title:** "UI Library"
 
 **Objective:** Make it look like a mini Storybook / design system docs.
 
-**Sections:**
+> **Note:** Complete component showcase structure, variants, states, and documentation for this page is defined in `PROJECT-CONTENT.md` under `/ui-library`. Always refer to that file for exact component examples, variants, sizes, states, and usage notes.
+
+**Sections (from PROJECT-CONTENT.md):**
 
 #### Intro
-
 - **Title:** "UI Library"
 - **Text:** "A small set of reusable components used across this portfolio, documented with their intended usage and accessibility notes."
 
-#### Buttons
+#### Component Showcases
+- **Button Component Showcase** (Variants, Sizes, States, Link Buttons, Accessibility)
+- **Card Component Showcase** (Variants, Images, Footer, Custom Children, Complete Cards)
+- **Tag Component Showcase** (Variants, Sizes, Usage Examples)
+- **Badge Component Showcase** (Status Variants, Usage Examples)
+- **Input Component Showcase** (Types, Required, Error States, All States Combined)
+- **Select Component Showcase** (Basic, Required, Error States, Usage Examples)
+- **Toggle Component Showcase** (Basic, States, Usage Examples)
+- **Loader Component Showcase** (Basic, Sizes, Without Text, Usage Examples)
+- **ErrorMessage Component Showcase** (Basic, With Retry, Sizes, Without Retry, Usage Examples)
+- **Toast Component Showcase** (Variants, Sizes, Positions, Auto-Dismiss, Usage Examples)
 
-I'll show variants:
+See `PROJECT-CONTENT.md` for complete component documentation and examples.
 
-- `.btn--primary`
-- `.btn--secondary`
-- `.btn--ghost`
-
-States: normal, hover, focus, disabled. All important states for accessibility.
-
-**For each variant I'll include:**
-
-- Preview.
-- **Notes:**
-  - Recommended usage.
-  - Accessibility (use of `<button>`, `aria-label` when there's only an icon).
-
-#### Cards
-
-- Basic Card.
-- FeatureCard.
-- ContentCard.
-
-**I'll show:**
-
-- Different layouts (with image, without image).
-- Responsiveness (how it behaves on small screens).
-
-#### Tags / Badges / Pills
-
-- Tags for categories.
-- Status badges (Live, Upcoming, Draft).
-
-#### Form Elements
-
-- Input (search).
-- Select (filter).
-- Toggle (dark mode / preference).
-
-**I'll include:**
-
-- Associated `<label>`.
-- `aria-invalid` and `aria-describedby` as examples.
-
-#### Feedback States
-
-- Loader (spinner or skeleton).
-- ErrorMessage.
-- Toast (notification message).
-
-### 3.3. `/projects` Page – Portfolio Projects Showcase
-
-**Objective:** Showcase all portfolio projects with filtering capabilities, demonstrating ability to work with dynamic data and client-side filtering.
-
-#### 3.3.1. Layout
-
-**Top bar:**
-
-- Title: "Portfolio Projects".
-- Description: "Showcase of real-world projects demonstrating full-stack expertise. Data fetched from a JSON endpoint, filtered on the client."
-
-**Filter row:**
-
-- Category dropdown (ERP Systems, EdTech, SaaS, IoT, Other).
-- Search input (by title / keywords / technologies).
-- "Show only live" toggle.
-
-**Content area:**
-
-- If `loading === true` → skeletons / loader.
-- If `error` → message with "Retry" button.
-- If `data.length === 0` → empty state: "No content matches your filters yet."
-
-**Card list (ContentCard):**
-
-Each item shows:
-
-- Title.
-- Category (Tag): ERP Systems, EdTech, SaaS, IoT, Other.
-- Status (Live/Upcoming/Draft) as color-coded Badge.
-- Date (project completion or last update).
-- Description/summary.
-- Technologies used (tags/chips).
-- Key highlights or achievements.
-- Links to live site and GitHub (when available).
-
-#### 3.3.2. API / Data
-
-**In `app/api/content/route.ts`:**
-GET endpoint that returns an array of objects.
-
-**Something like:**
-
-```typescript
-// app/api/content/route.ts
-import { NextResponse } from "next/server";
-
-export async function GET() {
-  const projects = [
-    {
-      id: 1,
-      title: "Novaera SaaS ERP",
-      category: "SaaS",
-      status: "Live",
-      publishedAt: "2024-05-01",
-      summary: "Modular SaaS ERP for business management with automation, analytics, and scalable architecture. Leading a team of 6+ developers.",
-      tags: ["React", "Next.js", "TypeScript", "PostgreSQL", "REST API", "AWS"],
-      highlights: ["Led team of 6+ developers", "Scalable microservices", "Multi-tenant platform"],
-      url: "https://novaera-saas-erp.vercel.app",
-      githubUrl: "https://github.com/stevenmoraleszeta/novaera-saas-erp-web"
-    },
-    {
-      id: 2,
-      title: "ZETA Academia EdTech Platform",
-      category: "EdTech",
-      status: "Live",
-      publishedAt: "2024-01-01",
-      summary: "Founded an EdTech startup offering 30+ courses to 1,000+ students. Designed scalable and accessible learning platform.",
-      tags: ["React", "Next.js", "TypeScript", "MongoDB", "Firebase", "SASS"],
-      highlights: ["1,000+ active students", "30+ courses", "Led team of 4+ educators"],
-      url: "https://zetaacademia.com",
-      githubUrl: "https://github.com/stevenmoraleszeta/novaera-academy-web"
-    },
-    {
-      id: 3,
-      title: "Precision Seas ERP System",
-      category: "ERP Systems",
-      status: "Upcoming",
-      publishedAt: "2025-01-01",
-      summary: "Integrated ERP for industrial manufacturing company. Modules for inventory, billing, production, and analytics.",
-      tags: ["React", "Next.js", "PostgreSQL", "REST API", "Docker"],
-      highlights: ["Industrial manufacturing focus", "Complete inventory management"],
-      url: "https://precision-seas-erp.vercel.app"
-    },
-    {
-      id: 4,
-      title: "Matemática Integral ERP",
-      category: "ERP Systems",
-      status: "Live",
-      publishedAt: "2024-06-01",
-      summary: "Custom ERP and automation platform for educational institution. Integrated resources management and academic modules.",
-      tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "SASS"],
-      highlights: ["Educational institution focus", "Automation and reporting"],
-      url: "https://matematica-integral.vercel.app",
-      githubUrl: "https://github.com/stevenmoraleszeta/matematica-integral-web"
-    },
-    {
-      id: 5,
-      title: "Demeter IoT Agriculture System",
-      category: "IoT",
-      status: "Live",
-      publishedAt: "2024-03-01",
-      summary: "IoT solution for smart agriculture, presented in a Nestlé innovation contest. Real-time monitoring and automated actions.",
-      tags: ["React", "IoT", "Microcontrollers", "Sensors"],
-      highlights: ["Nestlé innovation contest", "Real-time monitoring", "Automated irrigation"],
-      url: "https://demeter-prototype.vercel.app",
-      githubUrl: "https://github.com/stevenmoraleszeta/demeter-prototype"
-    },
-    {
-      id: 6,
-      title: "TimerChill - Modern Pomodoro Timer",
-      category: "Other",
-      status: "Live",
-      publishedAt: "2024-02-01",
-      summary: "Modern React timer app with Pomodoro focus cycles, ambient sounds, statistics tracking, and dark/light themes.",
-      tags: ["React", "TypeScript", "Vite"],
-      highlights: ["Pomodoro focus cycles", "Statistics tracking", "Dark/light themes"],
-      url: "https://timerchill.vercel.app",
-      githubUrl: "https://github.com/stevenmoraleszeta/timer-chill-web"
-    },
-    {
-      id: 7,
-      title: "Steven Morales Portfolio Prototype",
-      category: "Other",
-      status: "Live",
-      publishedAt: "2025-01-15",
-      summary: "Professional portfolio prototype built specifically for Critical Mass Front-End Developer position. Demonstrates design-to-code translation, accessibility, and performance optimization.",
-      tags: ["React", "Next.js", "TypeScript", "SASS", "BEM", "Accessibility"],
-      highlights: ["Critical Mass portfolio", "WCAG compliant", "Performance optimized"],
-      url: "https://stevenmorales.vercel.app",
-      githubUrl: "https://github.com/stevenmoraleszeta/critical-mass-example-project"
-    }
-  ];
-
-  return NextResponse.json(projects);
-}
-```
-
-**In `lib/api/contentApi.ts`:**
-
-```typescript
-export async function fetchContent() {
-  const res = await fetch("/api/content");
-  if (!res.ok) throw new Error("Failed to fetch content");
-  return res.json();
-}
-```
-
-**In `hooks/useFetchContent.ts`:**
-
-I'll handle:
-
-- `data`
-- `loading`
-- `error`
-- `refetch()` optional (if I have time).
-
-### 3.4. `/about` Page – Project Purpose
-
-**Content I'll include:**
-
-Explain in multiple sections:
-
-#### Context
-
-- I'm applying for the **Developer, Front End** position at **Critical Mass** in **San Jose, Costa Rica**.
-- Currently: CEO & Lead Software Developer at Novaera (6+ developers), CEO & Lead Tech Educator at ZETA Academia (1,000+ students)
-- 3+ years of full-stack development experience
-- Based in Costa Rica, ready to work from office 3+ days a week
-
-#### Portfolio Objective
-
-- Demonstrate skills aligned with the Critical Mass job posting:
-  - Design-to-code translation with attention to detail
-  - Responsive, mobile-first development
-  - Accessibility best practices (WCAG compliance)
-  - Performance optimization
-  - API integration and data handling
-  - SASS preprocessing with organized architecture
-  - Component system development
-  - Testing practices
-  - Version control and collaboration
-
-#### How It's Built
-
-- Next.js 14 (App Router) + TypeScript + SASS/SCSS
-- BEM methodology and SMACSS architecture
-- Jest and React Testing Library for testing
-- Accessibility and performance optimizations
-- Component-based architecture
-
-#### Real-World Experience
-
-- Leading development teams at Novaera and ZETA Academia
-- Full-stack development: Built complete ERP systems, EdTech platforms, SaaS applications
-- API design and integration: REST, GraphQL, third-party services
-- Database design: PostgreSQL, MongoDB, SQL
-- Cloud deployment: Vercel, AWS, and other platforms
-- Cross-functional collaboration: Worked with design, business, and QA teams
-
-#### Why Critical Mass?
-
-- Excited about the opportunity to work on meaningful projects with a forward-thinking team
-- My experience aligns perfectly with Critical Mass values
-- Ready to bring passion, attention to detail, and collaborative approach
-
-This is a great place to be direct and professional with the recruiter.
 
 ## 3.5. Component Specifications (Props & Types)
 
@@ -854,6 +791,10 @@ interface ContentFiltersProps {
 
 ## 3.6. Complete Copy (Ready to Use)
 
+> **IMPORTANT:** All complete copy for the project is now defined in `PROJECT-CONTENT.md`. This section below contains legacy copy examples. **Always refer to `PROJECT-CONTENT.md` as the single source of truth for all page content, copy, and content structure.**
+
+The following sections are kept for reference but should be considered deprecated in favor of `PROJECT-CONTENT.md`:
+
 ### Hero Section Copy
 
 **Title (H1):**
@@ -913,6 +854,14 @@ Core Features
 
 - **Title:** `Accessibility & Performance Optimizer`
 - **Description:** `Focuses on semantic structure, keyboard navigation and fast load times. Because pretty is not enough.`
+
+---
+
+## 3.6. Complete Copy (Ready to Use)
+
+> **IMPORTANT:** All complete copy for the project is now defined in `PROJECT-CONTENT.md`. This section below contains legacy copy examples. **Always refer to `PROJECT-CONTENT.md` as the single source of truth for all page content, copy, and content structure.**
+
+The following sections are kept for reference but should be considered deprecated in favor of `PROJECT-CONTENT.md`:
 
 ### Tech Specs Section Copy
 

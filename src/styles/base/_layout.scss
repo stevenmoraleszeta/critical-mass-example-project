@@ -2,7 +2,7 @@
 // Layout Utilities
 // Following Critical Mass requirements: SASS, Mobile-First, Responsive
 // Following SMACSS utilities layer
-// Following project-idea.md section 4.3: Layout and Spacing
+// Following PROJECT-IDEA.md section 4.3: Layout and Spacing
 // ============================================================================
 
 // Import mixins to use breakpoints and other utilities
@@ -10,7 +10,7 @@
 
 // ============================================================================
 // Container Utility
-// Following project-idea.md: .container utility class
+// Following PROJECT-IDEA.md: .container utility class
 // ============================================================================
 
 .container {
@@ -60,7 +60,7 @@
 
 // ============================================================================
 // Grid Utilities
-// Following project-idea.md: .grid, .grid--2, .grid--3 with media queries
+// Following PROJECT-IDEA.md: .grid, .grid--2, .grid--3 with media queries
 // Following BEM methodology
 // ============================================================================
 
@@ -253,7 +253,7 @@
 
 // ============================================================================
 // Spacing Utility Classes
-// Following project-idea.md: Spacing variables
+// Following PROJECT-IDEA.md: Spacing variables
 // Following SMACSS utilities pattern
 // ============================================================================
 
@@ -907,6 +907,8 @@ main {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; // Prevent horizontal scroll
   
   // Desktop: use larger navbar height
   @include breakpoint-md {
