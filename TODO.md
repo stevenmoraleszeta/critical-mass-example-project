@@ -487,6 +487,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [x] Create Section 1 – Project Overview
   - [x] Add project description from `PROJECT-CONTENT.md`
   - [x] Add goals list (4 goals)
+  - [x] Restored original 16 cards with full content in Project Overview section
 - [x] Create Section 2 – How This Portfolio Is Built for Critical Mass
   - [x] Add Figma to Front-End content
   - [x] Add Design Systems content

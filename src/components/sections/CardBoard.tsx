@@ -8,7 +8,7 @@ import Toast from '@/components/feedback/Toast';
  * CardBoard Component
  * 
  * A reusable component for displaying a grid of cards with optional drag & drop functionality.
- * Used by RoleFocusSection and ProjectOverviewSection to maintain consistent design and behavior.
+ * Used directly in pages (Home, This Project) to maintain consistent design and behavior.
  * 
  * Follows Critical Mass requirements:
  * - Semantic HTML (<section>, <h2>)

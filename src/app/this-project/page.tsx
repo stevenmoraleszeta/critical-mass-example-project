@@ -3,7 +3,85 @@
 import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import Button from '@/components/ui/Button';
-import ProjectOverviewSection from '@/components/sections/ProjectOverviewSection';
+import CardBoard, { CardData } from '@/components/sections/CardBoard';
+
+const projectOverviewCards: CardData[] = [
+  {
+    id: '1',
+    title: 'Design-to-Code Translation',
+    description: 'In this portfolio, I translated design concepts into standard-compliant HTML5, semantic CSS3, and responsive React/Next.js components. Every component was built from scratch following design specifications with pixel-perfect attention to detail.',
+  },
+  {
+    id: '2',
+    title: 'Cross-Browser & Mobile-First',
+    description: 'This portfolio implements mobile-first CSS strategies using SCSS variables and mixins for responsive breakpoints. All components are tested and verified to work seamlessly across modern browsers (Chrome, Firefox, Safari, Edge) and devices.',
+  },
+  {
+    id: '3',
+    title: 'API Integration & Web Services',
+    description: 'The projects page demonstrates API integration patterns with client-side data filtering and state management using React hooks. This showcases readiness to integrate with REST APIs, CMS systems, and handle JSON data structures as required.',
+  },
+  {
+    id: '4',
+    title: 'Modern Front-End Technologies',
+    description: 'This portfolio is built with Next.js 14 App Router, React 19, TypeScript, and SASS/SCSS. The architecture uses modern patterns including server components, client components, and optimized image loading with next/image.',
+  },
+  {
+    id: '5',
+    title: 'Design Systems & Reusable Components',
+    description: 'I built a complete reusable component library (Button, Card, Tag, Badge, Input, Select, etc.) following BEM methodology. All components are documented and showcased in the /this-project/ui-library page, demonstrating design system thinking and component reusability.',
+  },
+  {
+    id: '6',
+    title: 'Best Practices & Documentation',
+    description: 'Throughout this project, I implemented industry best practices including BEM methodology, SMACSS architecture, and TypeScript for type safety. Code is well-documented with JSDoc comments and follows Next.js and React best practices.',
+  },
+  {
+    id: '7',
+    title: 'Testing & Quality Assurance',
+    description: 'This portfolio includes unit tests using Jest and React Testing Library (visible in src/tests/). Tests validate component rendering, user interactions, and BEM naming conventions, demonstrating commitment to quality and maintainable code.',
+  },
+  {
+    id: '8',
+    title: 'Preprocessors & Automation',
+    description: 'This project uses SASS/SCSS preprocessing with a comprehensive variable system, mixins for responsive breakpoints, and organized architecture (base, components, pages). Next.js handles bundling and optimization automatically, demonstrating understanding of build processes.',
+  },
+  {
+    id: '9',
+    title: 'Troubleshooting & Debugging',
+    description: 'During development, I systematically resolved TypeScript type issues, SCSS compilation challenges, and React component lifecycle problems. This project demonstrates systematic debugging approaches using browser DevTools, ESLint, and TypeScript compiler feedback.',
+  },
+  {
+    id: '10',
+    title: 'Code Analysis & Optimization',
+    description: 'I continuously optimized this portfolio by implementing code splitting with React.lazy, using next/image for optimized images, and following Next.js performance best practices. Code quality is maintained through ESLint, TypeScript strict mode, and consistent code organization.',
+  },
+  {
+    id: '11',
+    title: 'Performance & Scalability',
+    description: 'This portfolio is optimized as a proof-of-concept prototype using Next.js automatic code splitting, lazy loading for non-critical components, optimized fonts with next/font, and efficient component architecture that scales as features are added.',
+  },
+  {
+    id: '12',
+    title: 'Modern Development Practices',
+    description: 'This portfolio demonstrates Mobile First approach (all styles start mobile, then scale up), component-based architecture (React), and Object-Oriented principles in TypeScript interfaces and component composition patterns.',
+  },
+  {
+    id: '13',
+    title: 'Task Ownership & Communication',
+    description: 'I owned this entire portfolio project from initial concept through deployment, making architectural decisions, implementing features, and ensuring quality. The organized project structure and clear component architecture demonstrate strong task ownership and planning.',
+  },
+  {
+    id: '14',
+    title: 'Version Control & Workflows',
+    description: 'This project uses Git/GitHub with organized commit history and branch management. The repository structure follows best practices, and I\'m prepared to set up CI/CD pipelines with GitHub Actions for automated testing and deployment as needed.',
+  },
+  {
+    id: '15',
+    title: 'Autonomous & Team Leadership',
+    description: 'This portfolio was developed independently through the complete design-to-deployment cycle, demonstrating self-sufficiency. Additionally, my experience leading teams of 6+ developers at Novaera and 4+ educators at ZETA Academia shows capability to work in collaborative environments.',
+  },
+];
 
 export default function ThisProject() {
   return (
@@ -17,7 +95,13 @@ export default function ThisProject() {
             </p>
           </section>
 
-          <ProjectOverviewSection />
+          <CardBoard
+            id="project-overview"
+            title="Project Overview"
+            cards={projectOverviewCards}
+            draggable={false}
+            className="project-overview"
+          />
 
           <section className="case-study-page__section" id="workflow" aria-labelledby="workflow-title">
             <h2 id="workflow-title" className="case-study-page__section-title">Design-to-Code Workflow</h2>
