@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import FeatureCard from '@/components/ui/FeatureCard';
 import Toast from '@/components/feedback/Toast';
+import { useDragAndDrop } from '@/lib/hooks/useDragAndDrop';
 
 /**
  * CardBoard Component
@@ -64,105 +65,17 @@ export default function CardBoard({
   className = '',
   renderCard,
 }: CardBoardProps) {
-  const [cards, setCards] = useState<CardData[]>(initialCards);
-  const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
-  const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
-  const [showToast, setShowToast] = useState(false);
-
-  // Load cards order from localStorage if draggable and storageKey provided
-  useEffect(() => {
-    if (!draggable || !storageKey || typeof window === 'undefined') {
-      return;
-    }
-
-    const savedOrder = localStorage.getItem(storageKey);
-    if (!savedOrder) {
-      return;
-    }
-
-    try {
-      const order = JSON.parse(savedOrder) as string[];
-      const orderedCards = order
-        .map((id) => initialCards.find((card) => card.id === id))
-        .filter((card): card is CardData => card !== undefined);
-      
-      const existingIds = new Set(order);
-      const newCards = initialCards.filter((card) => !existingIds.has(card.id));
-      
-      setCards([...orderedCards, ...newCards]);
-    } catch {
-      // Silently fail if localStorage is unavailable or corrupted
-    }
-  }, [draggable, storageKey, initialCards]);
-
-  // Save order to localStorage whenever it changes
-  useEffect(() => {
-    if (!draggable || !storageKey || typeof window === 'undefined' || cards.length === 0) {
-      return;
-    }
-
-    try {
-      const order = cards.map((card) => card.id);
-      localStorage.setItem(storageKey, JSON.stringify(order));
-    } catch {
-      // Silently fail if localStorage is unavailable
-    }
-  }, [cards, draggable, storageKey]);
-
-  const handleDragStart = (index: number) => {
-    setDraggedIndex(index);
-  };
-
-  const handleDragOver = (e: React.DragEvent, index: number) => {
-    e.preventDefault();
-    setDragOverIndex(index);
-  };
-
-  const handleDragLeave = () => {
-    setDragOverIndex(null);
-  };
-
-  const handleDrop = (e: React.DragEvent, dropIndex: number) => {
-    e.preventDefault();
-    
-    if (draggedIndex === null || draggedIndex === dropIndex) {
-      setDraggedIndex(null);
-      setDragOverIndex(null);
-      return;
-    }
-
-    const newCards = [...cards];
-    const draggedCard = newCards[draggedIndex];
-    
-    newCards.splice(draggedIndex, 1);
-    newCards.splice(dropIndex, 0, draggedCard);
-    
-    setCards(newCards);
-    setDraggedIndex(null);
-    setDragOverIndex(null);
-    
-    if (storageKey) {
-      setShowToast(true);
-    }
-  };
-
-  const handleReset = () => {
-    if (typeof window !== 'undefined' && storageKey) {
-      try {
-        localStorage.removeItem(storageKey);
-        setCards(initialCards);
-        setShowToast(false);
-      } catch {
-        setCards(initialCards);
-        setShowToast(false);
-      }
-    }
-  };
-
-  const handleDragEnd = () => {
-    setDraggedIndex(null);
-    setDragOverIndex(null);
-  };
+  const {
+    items: cards,
+    draggedIndex,
+    dragOverIndex,
+    showToast,
+    handlers: dragHandlers,
+  } = useDragAndDrop<CardData>({
+    items: initialCards,
+    enabled: draggable,
+    storageKey,
+  });
 
   const handleScrollDown = () => {
     if (!scrollTargetId || typeof window === 'undefined') return;
@@ -220,11 +133,11 @@ export default function CardBoard({
           <div className="card-board__grid">
             {cards.map((card, index) => {
               const handlers: DragHandlers = {
-                onDragStart: () => handleDragStart(index),
-                onDragOver: (e) => handleDragOver(e, index),
-                onDragLeave: handleDragLeave,
-                onDrop: (e) => handleDrop(e, index),
-                onDragEnd: handleDragEnd,
+                onDragStart: () => dragHandlers.onDragStart(index),
+                onDragOver: (e) => dragHandlers.onDragOver(e, index),
+                onDragLeave: dragHandlers.onDragLeave,
+                onDrop: (e) => dragHandlers.onDrop(e, index),
+                onDragEnd: dragHandlers.onDragEnd,
               };
 
               const rotation = calculateRotation(index);
@@ -296,9 +209,9 @@ export default function CardBoard({
           autoDismiss={false}
           actionButton={{
             label: 'Reset',
-            onClick: handleReset,
+            onClick: dragHandlers.onReset,
           }}
-          onDismiss={() => setShowToast(false)}
+          onDismiss={dragHandlers.dismissToast}
         />
       )}
     </>

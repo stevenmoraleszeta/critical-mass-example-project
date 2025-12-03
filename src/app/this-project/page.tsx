@@ -99,7 +99,8 @@ export default function ThisProject() {
             id="project-overview"
             title="Project Overview"
             cards={projectOverviewCards}
-            draggable={false}
+            draggable={true}
+            storageKey="project-overview-cards-order"
             className="project-overview"
           />
 
