@@ -17,11 +17,11 @@
   position: relative;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden; // Prevent horizontal scroll
+  overflow-x: hidden;
+  overflow-y: visible;
   
   // Mobile-first: padding for mobile
   padding: var(--space-2xl) var(--space-md);
-  background-color: var(--color-bg-light);
   
   // Tablet and up: adjust padding
   @include breakpoint-md {
@@ -33,12 +33,33 @@
     padding: var(--space-3xl) var(--space-xl);
   }
   
+  // Animated gradient background
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary));
+    background-size: 400% 400%;
+    animation: cta-gradient-shift 15s ease infinite;
+    will-change: background-position;
+    
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+      background: var(--color-primary);
+    }
+  }
+  
   // ============================================================================
   // CTA Section Elements (BEM)
   // ============================================================================
   
   // Container for content
   &__container {
+    position: relative;
+    z-index: 2;
     width: 100%;
     max-width: var(--container-max-width);
     margin: 0 auto;
@@ -48,6 +69,14 @@
     @include flex-column;
     @include align-center;
     gap: var(--space-xl);
+    
+    // Floating animation
+    animation: cta-content-float 6s ease-in-out infinite;
+    will-change: transform;
+    
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
     
     @include breakpoint-md {
       gap: var(--space-2xl);
@@ -59,9 +88,17 @@
     font-size: var(--fs-2xl);
     font-weight: var(--fw-bold);
     line-height: var(--lh-tight);
-    color: var(--color-text-primary);
+    color: var(--color-white);
     margin: 0;
     text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    animation: cta-title-float 4s ease-in-out infinite;
+    animation-delay: 0.2s;
+    will-change: transform;
+    
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
     
     // Mobile: adjust font size
     @media (max-width: 639px) {
@@ -85,10 +122,18 @@
     font-size: var(--fs-base);
     font-weight: var(--fw-normal);
     line-height: var(--lh-relaxed);
-    color: var(--color-text-primary);
+    color: var(--color-white);
     margin: 0;
     text-align: center;
     max-width: 800px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    animation: cta-description-float 5s ease-in-out infinite;
+    animation-delay: 0.4s;
+    will-change: transform;
+    
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
     
     // Mobile: adjust font size
     @media (max-width: 639px) {
@@ -109,6 +154,8 @@
   
   // Actions container (CTAs)
   &__actions {
+    position: relative;
+    z-index: 3;
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-md);
@@ -116,6 +163,15 @@
     // Mobile: full width buttons
     width: 100%;
     max-width: 100%;
+    
+    // Floating animation for buttons
+    animation: cta-actions-float 7s ease-in-out infinite;
+    animation-delay: 0.6s;
+    will-change: transform;
+    
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
     
     // Tablet and up: horizontal layout, equal width
     @include breakpoint-md {
@@ -230,6 +286,64 @@
       @include flex-column;
       gap: var(--space-sm);
     }
+  }
+}
+
+// ============================================================================
+// Animations
+// ============================================================================
+
+@keyframes cta-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  
+  50% {
+    background-position: 100% 50%;
+  }
+  
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes cta-content-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes cta-title-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes cta-description-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes cta-actions-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  
+  50% {
+    transform: translateY(-8px);
   }
 }
 

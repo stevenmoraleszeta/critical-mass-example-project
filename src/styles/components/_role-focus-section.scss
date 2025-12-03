@@ -1,6 +1,18 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
 
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
 .role-focus {
   position: relative;
   width: 100%;
@@ -108,6 +120,63 @@
     @include breakpoint-lg {
       grid-template-columns: repeat(3, 1fr);
       gap: var(--space-2xl);
+    }
+  }
+  
+  &__scroll-arrow {
+    position: relative;
+    z-index: 3;
+    margin-top: var(--space-xl);
+    margin-left: auto;
+    margin-right: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-md);
+    color: var(--color-red);
+    transition: transform var(--transition-base), opacity var(--transition-base);
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    @include focus-visible;
+    
+    &:hover {
+      opacity: 1;
+      transform: translateY(4px);
+    }
+    
+    &:active {
+      transform: translateY(6px);
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+      
+      &:hover {
+        transform: none;
+      }
+      
+      &:active {
+        transform: none;
+      }
+    }
+  }
+  
+  &__scroll-arrow-icon {
+    width: 32px;
+    height: 32px;
+    display: block;
+    animation: bounce 2s infinite;
+    
+    @include breakpoint-md {
+      width: 48px;
+      height: 48px;
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
     }
   }
   

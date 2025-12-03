@@ -150,6 +150,26 @@ export default function RoleFocusSection() {
     setDragOverIndex(null);
   };
 
+  const handleScrollDown = () => {
+    if (typeof window === 'undefined') return;
+    
+    const targetElement = document.getElementById('key-highlights');
+    
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleScrollDown();
+    }
+  };
+
   return (
     <>
       <section className="role-focus" id="role-focus" aria-labelledby="role-focus-title">
@@ -180,6 +200,32 @@ export default function RoleFocusSection() {
               />
             ))}
           </div>
+          
+          <button
+            className="role-focus__scroll-arrow"
+            onClick={handleScrollDown}
+            onKeyDown={handleKeyDown}
+            aria-label="Scroll to next section"
+            type="button"
+          >
+            <svg
+              className="role-focus__scroll-arrow-icon"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M7 10L12 15L17 10"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
         </div>
       </section>
       

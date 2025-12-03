@@ -24,6 +24,7 @@ import Button from '@/components/ui/Button';
 export default function CTASection() {
   return (
     <section className="cta-section" id="cta" aria-labelledby="cta-title">
+      <div className="cta-section__background" aria-hidden="true" />
       <div className="cta-section__container">
         <h2 id="cta-title" className="cta-section__title">
           Want to see how I would work at Critical Mass?
