@@ -31,10 +31,10 @@ export default function Home() {
         />
         <RoleFocusSection />
         <Suspense fallback={null}>
-          <KeyHighlightsSection />
+        <KeyHighlightsSection />
         </Suspense>
         <Suspense fallback={null}>
-          <CTASection />
+        <CTASection />
         </Suspense>
       </div>
     </MainLayout>

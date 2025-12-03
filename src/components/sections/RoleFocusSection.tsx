@@ -96,8 +96,8 @@ export default function RoleFocusSection() {
   useEffect(() => {
     if (typeof window !== 'undefined' && cards.length > 0) {
       try {
-        const order = cards.map((card) => card.id);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(order));
+      const order = cards.map((card) => card.id);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(order));
       } catch {
         // Silently fail if localStorage is unavailable (private mode, quota exceeded, etc.)
       }
@@ -143,9 +143,9 @@ export default function RoleFocusSection() {
   const handleReset = () => {
     if (typeof window !== 'undefined') {
       try {
-        localStorage.removeItem(STORAGE_KEY);
-        setCards(initialCards);
-        setShowToast(false);
+      localStorage.removeItem(STORAGE_KEY);
+      setCards(initialCards);
+      setShowToast(false);
       } catch {
         // Silently fail if localStorage is unavailable
         setCards(initialCards);
