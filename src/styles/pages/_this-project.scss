@@ -120,9 +120,11 @@
   &__section {
     margin-bottom: var(--space-2xl);
     text-align: center;
+    scroll-margin-top: calc(var(--navbar-height-mobile) + var(--space-md));
 
     @include breakpoint-md {
       margin-bottom: var(--space-3xl);
+      scroll-margin-top: calc(var(--navbar-height-desktop) + var(--space-md));
     }
 
     &--cta {
