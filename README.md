@@ -1,156 +1,106 @@
-# Steven Morales – Professional Portfolio Prototype
+# Steven Morales – Professional Portfolio for Critical Mass
 
-A Next.js portfolio prototype built to demonstrate front-end development skills and experience, specifically crafted for the Critical Mass Front-End Developer position in San Jose, Costa Rica.
+> **Full Stack Software Engineer · Tech Leader · Product-Focused Developer**  
+> San José, Costa Rica · Applying for **Developer, Front End – Critical Mass**
+
+A professional portfolio prototype built to demonstrate front-end development skills and experience, specifically crafted for the **Critical Mass Front-End Developer** position in **San Jose, Costa Rica**. This project showcases real-world expertise in translating designs to code, building scalable component systems, and delivering production-ready applications.
+
+---
+
+## 📋 Project Context
+
+This portfolio demonstrates my experience as a **Full Stack Developer and Tech Leader** with more than **3 years** building robust, scalable solutions. Currently serving as:
+
+- **CEO & Lead Software Developer** at [Novaera](https://linkedin.com/in/stevenmoralesfallas) – Leading a team of **6+ developers** building intelligent and scalable digital solutions
+- **CEO & Lead Tech Educator** at [ZETA Academia](https://zetaacademia.com/) – Leading a team of **4+ educators** empowering **1,000+ students**
+
+Based in **Costa Rica**, ready to work from office **3+ days a week** as required by Critical Mass.
 
 > **⚠️ Project Simplification Note:** Due to time constraints, the project was simplified to ensure timely completion. The "Me & Skills" (`/me-and-skills`) and "Projects & Experience" (`/projects`) pages were removed from the final implementation. The portfolio focuses on the core pages: Home, This Project, and Contact, which demonstrate the essential skills and experience relevant to the Critical Mass Front-End Developer position.
 
-## About This Portfolio
+---
 
-This professional portfolio is specifically designed for the **Developer, Front End** position at **Critical Mass** in **San Jose, Costa Rica**.
+## 🎯 What This Portfolio Demonstrates
 
-### About Me
+This portfolio is designed as a **live case study** demonstrating:
 
-- **CEO & Lead Software Developer** at [Novaera](https://linkedin.com/in/stevenmoralesfallas) - Leading a team of 6+ developers building intelligent and scalable digital solutions
-- **CEO & Lead Tech Educator** at [ZETA Academia](https://zetaacademia.com/) - Leading a team of 4+ educators empowering 1,000+ students
-- **3+ years** of full-stack development experience
-- **Full Stack Software Engineer** with expertise across web, desktop, mobile, and hybrid platforms
-- Based in **Costa Rica**, ready to work from office 3+ days a week as required by Critical Mass
+- ✅ **Design-to-code translation** – Figma → HTML5/CSS3/React/Next.js with pixel-perfect implementation
+- ✅ **Responsive & mobile-first development** – Applications serving 1,000+ users across all devices
+- ✅ **Accessibility best practices** – WCAG-compliant implementations with semantic HTML and ARIA
+- ✅ **Component system architecture** – BEM + SMACSS following industry best practices
+- ✅ **API integration capabilities** – Full-stack experience with REST, GraphQL, and third-party services
+- ✅ **Performance optimization** – Experience optimizing applications for scale and performance
+- ✅ **Testing practices** – Jest + React Testing Library for quality assurance
+- ✅ **Leadership and collaboration** – Leading teams, working with cross-functional teams
+- ✅ **Full-stack expertise** – Front-end, back-end, databases, cloud deployment
 
-### Project Status
+---
 
-🚧 **In Active Development** - Core foundation, UI components, and layout system complete. Landing page sections transformed to professional portfolio focus.
+## 📚 Essential Reference Documents
 
-### Current Progress
+**Before working on this project, read these files:**
 
-✅ **Completed:**
+1. **[`CONSIDERACIONES_DESARROLLO.md`](./CONSIDERACIONES_DESARROLLO.md)** ⭐ **START HERE** – Complete development guidelines, standards, and Critical Mass requirements
+2. **[`TODO.md`](./TODO.md)** – Complete project checklist with all phases and tasks
+3. **[`PROJECT-IDEA.md`](./PROJECT-IDEA.md)** – Full project specifications, architecture, and requirements
+4. **[`PROJECT-CONTENT.md`](./PROJECT-CONTENT.md)** – **Official copy and content specifications for all pages** (single source of truth)
+5. **[`BEM_METHODOLOGY_GUIDE.md`](./BEM_METHODOLOGY_GUIDE.md)** – Complete BEM methodology guide and Critical Mass compliance review
 
-- Project setup and configuration
-- Design system foundation (SCSS variables, typography, mixins, layout utilities)
-- Core UI components (Button, Card, Tag, Badge, Input, Select, Toggle)
-- Feedback components (Loader, ErrorMessage, Toast)
-- Layout components (MainLayout, NavBar, Footer)
-- Testing infrastructure (Jest + React Testing Library)
-- BEM methodology implementation
-- SMACSS architecture
-- Component showcase page (`/components`)
-- Semantic HTML structure with proper ARIA landmarks
-- Responsive navigation with mobile menu
-- Fixed navbar with proper spacing
-- **Landing page sections** - Transformed to professional portfolio focus:
-  - Hero section with professional background
-  - Core Expertise section
-  - Tech Stack & Expertise section
-  - Real-World Experience section
-  - **Featured Projects section** - Showcasing real projects (Novaera ERP, ZETA Academia, Precision Seas, etc.)
-  - **Leadership & Collaboration section** - Highlighting team leadership and cross-functional work
-  - Performance & Reliability section
-  - Availability & Next Steps section
-  - Final CTA section
-- **About page** - Complete with professional context and experience
+---
 
-⏳ **In Progress:**
+## 🛠️ Tech Stack
 
-- Content page with API integration (portfolio projects showcase)
-- Additional testing coverage
+- **Next.js** 16.0.5 (App Router) – Server components, optimized routing, automatic code splitting
+- **React** 19.2.0 – Modern React features with hooks and server components
+- **TypeScript** 5.x – Type safety and enhanced developer experience
+- **SASS/SCSS** 1.94.2 – Advanced styling with variables, mixins, and BEM methodology
+- **Jest** 30.2.0 – Unit and integration testing
+- **React Testing Library** 16.3.0 – Component testing with accessibility focus
+- **ESLint** 9.x – Code quality and consistency (configured with Next.js config)
 
-## Tech Stack
+---
 
-- **Next.js** 16.0.5 (App Router)
-- **React** 19.2.0
-- **TypeScript** 5.x
-- **SASS/SCSS** 1.94.2
-- **Jest** 30.2.0
-- **React Testing Library** 16.3.0
-- **ESLint** 9.x (configured with Next.js config)
+## 📁 Project Structure
 
-## Project Structure
-
-```plaintext
-.
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx          # Root layout with font optimization
-│   │   ├── page.tsx            # Home page (/)
-│   │   ├── critical-mass-case-study/
-│   │   │   └── page.tsx        # Critical Mass case study page
-│   │   ├── projects/
-│   │   │   └── page.tsx        # Projects showcase page
-│   │   ├── skills/
-│   │   │   └── page.tsx        # Skills & tech stack page
-│   │   ├── experience/
-│   │   │   └── page.tsx        # Professional experience page
-│   │   ├── contact/
-│   │   │   └── page.tsx        # Contact page
-│   │   ├── ui-library/
-│   │   │   └── page.tsx        # UI Library page
-│   │   └── globals.scss        # Main SCSS entry point
-│   ├── components/
-│   │   ├── ui/                 # UI components
-│   │   │   ├── Button.tsx
-│   │   │   ├── Card.tsx
-│   │   │   ├── Tag.tsx
-│   │   │   ├── Badge.tsx
-│   │   │   ├── Input.tsx
-│   │   │   ├── Select.tsx
-│   │   │   └── Toggle.tsx
-│   │   ├── feedback/          # Feedback components
-│   │   │   ├── Loader.tsx
-│   │   │   ├── ErrorMessage.tsx
-│   │   │   └── Toast.tsx
-│   │   ├── layout/             # Layout components
-│   │   │   ├── MainLayout.tsx
-│   │   │   ├── NavBar.tsx
-│   │   │   └── Footer.tsx
-│   │   ├── sections/           # Page sections (in progress)
-│   │   └── content/            # Content components (to be created)
-│   ├── lib/
-│   │   ├── api/               # API clients (to be created)
-│   │   └── hooks/             # Custom hooks (to be created)
-│   ├── styles/
-│   │   ├── base/              # Base styles (SMACSS)
-│   │   │   ├── _variables.scss
-│   │   │   ├── _mixins.scss
-│   │   │   ├── _reset.scss
-│   │   │   ├── _typography.scss
-│   │   │   └── _layout.scss
-│   │   ├── components/        # Component styles (BEM)
-│   │   │   ├── _buttons.scss
-│   │   │   ├── _cards.scss
-│   │   │   ├── _tags.scss
-│   │   │   ├── _badges.scss
-│   │   │   ├── _inputs.scss
-│   │   │   ├── _selects.scss
-│   │   │   ├── _toggles.scss
-│   │   │   ├── _loader.scss
-│   │   │   ├── _error-message.scss
-│   │   │   ├── _toast.scss
-│   │   │   ├── _navbar.scss
-│   │   │   └── _footer.scss
-│   │   ├── pages/             # Page-specific styles
-│   │   │   └── _components.scss
-│   │   └── main.scss          # Main SCSS import file
-│   ├── tests/                 # Test files
-│   │   ├── Button.test.tsx
-│   │   ├── Card.test.tsx
-│   │   ├── components.test.tsx
-│   │   └── responsive.test.tsx
-│   └── types/                # TypeScript types
-├── public/
-│   └── images/               # Static assets
-├── BEM_METHODOLOGY_GUIDE.md  # BEM methodology documentation
-├── TESTING.md                # Testing guide
-├── TODO.md                   # Complete project checklist
-├── PROJECT-IDEA.md           # Full project specifications
-├── PROJECT-CONTENT.md         # Complete content specifications
-└── CONSIDERACIONES_DESARROLLO.md  # Development guidelines (Spanish)
+```
+src/
+├── app/                      # Next.js App Router (pages)
+│   ├── layout.tsx           # Root layout with font optimization
+│   ├── page.tsx             # Home page (/)
+│   ├── this-project/
+│   │   ├── page.tsx         # This Project page
+│   │   └── ui-library/
+│   │       └── page.tsx     # UI Library showcase
+│   └── contact/             # Contact page (in progress)
+│       └── page.tsx
+├── components/              # React components
+│   ├── ui/                  # UI components (Button, Card, Tag, Badge, Input, Select, Toggle)
+│   ├── layout/              # Layout components (MainLayout, NavBar, Footer)
+│   ├── sections/            # Page sections (Hero, CardBoard, KeyHighlightsSection, CTASection)
+│   └── feedback/            # Feedback components (Loader, ErrorMessage, Toast)
+├── lib/
+│   ├── api/                 # API clients
+│   └── hooks/               # Custom React hooks
+├── styles/                  # SCSS styles (SMACSS architecture)
+│   ├── base/                # Variables, mixins, reset, typography, layout
+│   ├── components/          # Component styles (BEM methodology)
+│   ├── pages/               # Page-specific styles
+│   └── main.scss            # Main SCSS import file
+├── tests/                   # Test files
+│   ├── Button.test.tsx
+│   ├── Card.test.tsx
+│   └── ...
+└── types/                   # TypeScript type definitions
 ```
 
-## Getting Started
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18 or higher
-- npm (or yarn/pnpm)
+- **Node.js** 18 or higher
+- **npm** (or yarn/pnpm)
 
 ### Installation
 
@@ -166,7 +116,7 @@ Run the development server:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Build
 
@@ -212,25 +162,74 @@ Run ESLint to check for code issues:
 npm run lint
 ```
 
-## Design System
+---
+
+## 📄 Pages
+
+The application includes the following pages:
+
+### `/` – Home
+
+Professional portfolio landing page showcasing:
+
+- **Hero Section** – Professional introduction with key identity
+- **Role Focus** – Developer, Front End @ Critical Mass (6 focus areas with draggable cards)
+- **Key Highlights** – What I bring to Critical Mass (6 highlights)
+- **Primary Call To Action** – Directing to This Project page
+
+### `/this-project` – This Project
+
+Focused breakdown of how this portfolio matches the Critical Mass role:
+
+- **Project Overview** – 15 draggable cards covering all project aspects
+- **How This Portfolio Is Built for Critical Mass** – Technical implementation details
+- **Design-to-Code Workflow** – Complete workflow from Figma to production
+- **Accessibility, Performance & Responsiveness** – Implementation details
+- **Tooling, Testing & Automation** – Development practices
+- **What You Can Review** – Links to live demo, GitHub repository, and UI Library
+
+### `/this-project/ui-library` – UI Library
+
+Complete component showcase demonstrating technical skills:
+
+- **Button Component** – All variants (primary, secondary, ghost), sizes, states, link buttons, accessibility
+- **Card Component** – All variants (default, feature, content), images, footer, custom children
+- **Tag & Badge Components** – Variants, sizes, usage examples
+- **Form Elements** – Input, Select, Toggle with all states and accessibility features
+- **Feedback Components** – Loader, ErrorMessage, Toast with variants and usage examples
+
+### `/contact` – Let's Build Something Great
+
+Contact page with:
+
+- **Contact Information** – Name, location, phone/WhatsApp, email
+- **Online Profiles** – GitHub, LinkedIn, Instagram links
+- **Closing Message** – Professional closing with quote
+
+> **Note:** Contact page is in progress. See [`TODO.md`](./TODO.md) Phase 11 for details.
+
+---
+
+## 🎨 Design System
 
 ### Color Palette
 
-- **Primary:** `#4B3FFF` (vibrant blue/violet)
-- **Secondary:** `#00D4B5` (soft turquoise)
-- **Accent:** `#FFB347` (soft orange)
-- Defined in `src/styles/base/_variables.scss`
+- **Primary:** `#4B3FFF` (vibrant blue/violet) – `var(--color-primary)`
+- **Secondary:** `#00D4B5` (soft turquoise) – `var(--color-secondary)`
+- **Accent:** `#FFB347` (soft orange) – `var(--color-accent)`
+- All colors defined in `src/styles/base/_variables.scss`
 
 ### Typography
 
-- Font: Inter (via `next/font/google` for optimization)
-- Font size scale: `--fs-xs` through `--fs-3xl`
-- Defined in `src/styles/base/_typography.scss`
+- **Font:** Inter (via `next/font/google` for optimization)
+- **Font sizes:** `--fs-xs` through `--fs-3xl` (scale defined in variables)
+- **Font weights:** `--fw-normal`, `--fw-medium`, `--fw-bold`
+- Typography system in `src/styles/base/_typography.scss`
 
 ### Spacing System
 
-- Spacing scale: `--space-xs`, `--space-sm`, `--space-md`, `--space-lg`, `--space-xl`
-- Defined in `src/styles/base/_variables.scss`
+- **Spacing scale:** `--space-xs`, `--space-sm`, `--space-md`, `--space-lg`, `--space-xl`
+- All spacing uses variables from `src/styles/base/_variables.scss`
 
 ### Breakpoints (Mobile-First)
 
@@ -241,221 +240,286 @@ npm run lint
 - `xl`: 1280px
 - `2xl`: 1536px
 
-## Architecture
+Breakpoints defined in `src/styles/base/_variables.scss` and used via mixins in `src/styles/base/_mixins.scss`.
 
-### BEM Methodology
+---
 
-All component styles follow BEM (Block Element Modifier) naming conventions:
+## 🏗️ Architecture
 
-- **Block:** `.btn`, `.card`, `.tag`
-- **Element:** `.btn__text`, `.card__title`, `.tag__label`
-- **Modifier:** `.btn--primary`, `.card--feature`, `.tag--sm`
+### BEM Methodology (Mandatory)
 
-See `BEM_METHODOLOGY_GUIDE.md` for detailed documentation.
+All component styles follow **BEM (Block Element Modifier)** naming conventions:
+
+- **Block:** `.btn`, `.card`, `.hero`
+- **Element:** `.btn__text`, `.card__title`, `.hero__title`
+- **Modifier:** `.btn--primary`, `.card--feature`, `.hero--large`
+
+**Rules:**
+- Use single hyphen for multi-word blocks: `.feature-card` (not `.featureCard`)
+- Use double underscore for elements: `.hero__title` (not `.hero-title`)
+- Use double hyphen for modifiers: `.button--primary` (not `.button-primary`)
+- Never nest blocks inside blocks (avoid `.card .button`, use `.card__button`)
+- Modifiers are independent: `.btn.btn--primary` (not just `.btn--primary`)
+
+See [`BEM_METHODOLOGY_GUIDE.md`](./BEM_METHODOLOGY_GUIDE.md) for complete documentation.
 
 ### SMACSS Architecture
 
-Styles are organized following SMACSS principles:
+Styles are organized following **SMACSS (Scalable and Modular Architecture for CSS)** principles:
 
-- **Base:** Reset, typography, variables, mixins
-- **Layout:** Container, grid, spacing utilities
-- **Components:** Individual component styles
-- **Pages:** Page-specific styles
+- **Base:** Reset, typography, variables, mixins (`styles/base/`)
+- **Layout:** Container, grid, spacing utilities (`styles/base/_layout.scss`)
+- **Components:** Individual component styles with BEM (`styles/components/`)
+- **Pages:** Page-specific styles (`styles/pages/`)
 
 ### Component Structure
 
 All components are:
 
-- Built with TypeScript for type safety
-- Styled with SCSS using BEM methodology
-- Fully accessible (ARIA labels, keyboard navigation, focus states)
-- Responsive and mobile-first
-- Tested with Jest and React Testing Library
+- ✅ Built with **TypeScript** for type safety
+- ✅ Styled with **SCSS using BEM methodology**
+- ✅ Fully **accessible** (ARIA labels, keyboard navigation, focus states)
+- ✅ **Responsive and mobile-first**
+- ✅ Tested with **Jest and React Testing Library**
 
-## Components
+---
+
+## ♿ Accessibility (WCAG-Compliant)
+
+The project follows **WCAG accessibility guidelines** and Critical Mass requirements:
+
+- ✅ **Semantic HTML** – `<header>`, `<main>`, `<section>`, `<footer>`, `<nav>`
+- ✅ **Proper heading hierarchy** – One `<h1>` per page, correct h2 → h3 progression
+- ✅ **ARIA attributes** – `role`, `aria-label`, `aria-describedby`, `aria-invalid`, `aria-current`
+- ✅ **Keyboard navigation** – Full Tab, Enter, Space, Escape support
+- ✅ **Visible focus states** – Using `focus-visible` mixin for all interactive elements
+- ✅ **Form accessibility** – Labels with `htmlFor`, error associations, validation states
+- ✅ **Image accessibility** – Descriptive `alt` text for important images, `alt=""` for decorative
+- ✅ **Screen reader support** – Tested with NVDA/VoiceOver
+- ✅ **Reduced motion support** – Respects user preferences
+
+---
+
+## ⚡ Performance
+
+Performance optimizations implemented:
+
+- ✅ **Font optimization** – Via `next/font/google` (Inter, Roboto Mono)
+- ✅ **Image optimization** – Using `next/image` for all images
+- ✅ **Code splitting** – Automatic with Next.js App Router
+- ✅ **Lazy loading** – Images with `loading="lazy"` for non-critical content
+- ✅ **CSS variables** – Efficient styling with CSS custom properties
+- ✅ **Mobile-first approach** – Reduces unnecessary CSS
+- ✅ **Production build optimizations** – Next.js automatic optimizations
+
+---
+
+## 🧪 Testing
+
+The project includes comprehensive tests:
+
+- **Component rendering tests** – Button, Card, and other UI components
+- **BEM naming verification** – Automated checks for BEM compliance
+- **Responsive behavior tests** – Breakpoint verification
+- **Accessibility tests** – Keyboard navigation, ARIA attributes
+- **User interaction tests** – Click handlers, form submissions
+
+Test files are located in `src/tests/` and `src/__tests__/`.
+
+See [`TESTING.md`](./TESTING.md) for detailed testing documentation.
+
+---
+
+## 📦 Components
 
 ### UI Components
 
-- **Button** - Multiple variants (primary, secondary, ghost), sizes, and states
-- **Card** - Flexible card component with variants (default, feature, content)
-- **Tag** - Categorization tags with variants and sizes
-- **Badge** - Status indicators (Live, Upcoming, Draft)
-- **Input** - Form input with label, error states, and validation
-- **Select** - Dropdown select with accessibility support
-- **Toggle** - Toggle switch component
+- **Button** – Multiple variants (primary, secondary, ghost), sizes, states, link buttons
+- **Card** – Flexible card component with variants (default, feature, content)
+- **Tag** – Categorization tags with variants and sizes
+- **Badge** – Status indicators (Live, Upcoming, Draft)
+- **Input** – Form input with label, error states, validation
+- **Select** – Dropdown select with accessibility support
+- **Toggle** – Toggle switch component
 
 ### Feedback Components
 
-- **Loader** - Loading spinner with optional text
-- **ErrorMessage** - Error display with optional retry button
-- **Toast** - Toast notifications with variants and auto-dismiss
+- **Loader** – Loading spinner with optional text
+- **ErrorMessage** – Error display with optional retry button
+- **Toast** – Toast notifications with variants and auto-dismiss
 
 ### Layout Components
 
-- **MainLayout** - Main layout wrapper with semantic HTML structure (`<header>`, `<main>`, `<footer>`)
-- **NavBar** - Responsive navigation bar with:
+- **MainLayout** – Main layout wrapper with semantic HTML structure (`<header>`, `<main>`, `<footer>`)
+- **NavBar** – Responsive navigation bar with:
   - Mobile hamburger menu with smooth animations
   - Active state indication with visual indicators
   - Keyboard navigation support (Tab, Enter, Space, Escape)
   - Focus management for mobile menu
   - Fixed positioning with proper spacing compensation
-  - Logo with hover effects
-- **Footer** - Footer component with social links and contact information
+- **Footer** – Footer component with social links and contact information
 
-## Pages
+### Section Components
 
-The application includes the following pages:
+- **Hero** – Professional hero section with background image support
+- **CardBoard** – Draggable card board component with local storage persistence
+- **KeyHighlightsSection** – Highlights showcase section
+- **CTASection** – Call-to-action section with buttons
 
-- **`/`** - Home page showcasing:
-  - Hero section with professional introduction
-  - Role Focus: Developer, Front End @ Critical Mass
-  - Key Highlights (What I bring to the team)
-  - Primary Call To Action
-- **`/critical-mass-case-study`** - Critical Mass Portfolio Prototype page with:
-  - Project Overview
-  - How This Portfolio Is Built for Critical Mass
-  - Design-to-Code Workflow (Figma → HTML/CSS/JS/React)
-  - Accessibility, Performance & Responsiveness
-  - Tooling, Testing & Automation
-  - What You Can Review Here (Code, Live Demo, Repo Links)
-- **`/experience`** - Professional Experience page with:
-  - CEO & Lead Software Developer – Novaera
-  - CEO & Lead Tech Educator – ZETA Academia
-  - Freelance Software Developer
-  - Software Developer (Intern) – INFOCOOP
-  - Software Developer – TI Recursos CR
-  - Impact Summary (Leadership, Ownership, Collaboration)
-- **`/contact`** - Let's Build Something Great page with:
-  - Contact Details
-  - Social Links
-  - Availability & Ways to Collaborate
-- **`/ui-library`** - UI Library page displaying all UI components with variants and states:
-  - Buttons (primary, secondary, ghost variants with all states)
-  - Cards (default, feature, content variants)
-  - Tags & Badges (categorization and status indicators)
-  - Form Elements (Input, Select, Toggle with accessibility features)
-  - Feedback States (Loader, ErrorMessage, Toast)
+---
 
-All pages use the `MainLayout` component for consistent structure and navigation.
+## ✅ Development Standards
 
-## Testing
+### Code Quality Checklist
 
-The project includes comprehensive tests for:
+Before submitting code, verify:
 
-- Component rendering
-- BEM naming conventions
-- Responsive behavior
-- Accessibility features
-- User interactions
+- [ ] ✅ Follows **BEM methodology** correctly
+- [ ] ✅ Uses **variables and mixins** from design system (no hardcoded values)
+- [ ] ✅ **Mobile-first** and responsive across all breakpoints
+- [ ] ✅ **HTML semantic** structure correct
+- [ ] ✅ **Accessibility complete** (ARIA, labels, focus, keyboard nav)
+- [ ] ✅ Uses **`next/image`** for images
+- [ ] ✅ **TypeScript** without errors
+- [ ] ✅ No **hardcoded values** (colors, spacing)
+- [ ] ✅ No **`!important`** unless strictly necessary
+- [ ] ✅ Component is **reusable and well-documented**
+- [ ] ✅ Styles imported correctly in `main.scss`
+- [ ] ✅ No **console.logs** or debug code
+- [ ] ✅ No **unnecessary comments** (only when really needed)
+- [ ] ✅ Code is **clean and well-organized**
+- [ ] ✅ Follows exact specifications from `PROJECT-IDEA.md` and `PROJECT-CONTENT.md`
+- [ ] ✅ Verified against `TODO.md` for current status
 
-Test files are located in `src/tests/` and `src/__tests__/`.
+### SCSS/Styles Standards
 
-See `TESTING.md` for detailed testing documentation.
+- **Always** use variables from `_variables.scss` for colors, spacing, typography
+- **Always** use mixins from `_mixins.scss` for breakpoints, flexbox, grid, transitions
+- **Always** follow mobile-first approach (base styles for mobile, then breakpoints)
+- **Never** use hardcoded values (colors, spacing, etc.)
+- **Never** use `!important` unless strictly necessary (prefer specificity and BEM)
+- Import styles in `main.scss` following correct order
 
-## Accessibility
+### TypeScript Standards
 
-The project follows WCAG accessibility guidelines and Critical Mass requirements:
+- **Always** define interfaces for component props
+- Use strict types, avoid `any`
+- Document complex props with JSDoc when necessary
 
-- ✅ Semantic HTML (`<header>`, `<main>`, `<section>`, `<footer>`, `<nav>`)
-- ✅ Proper heading hierarchy (one `<h1>` per page)
-- ✅ ARIA labels and attributes (`role="banner"`, `role="main"`, `role="navigation"`, `role="contentinfo"`)
-- ✅ Keyboard navigation support (Tab, Enter, Space, Escape)
-- ✅ Visible focus states using `focus-visible` mixin
-- ✅ Form labels and error associations (`htmlFor`, `aria-describedby`, `aria-invalid`)
-- ✅ Alt text for images (descriptive for important images, empty for decorative)
-- ✅ Active state indication in navigation (`aria-current="page"`)
-- ✅ Mobile menu with proper focus management and keyboard shortcuts
-- ✅ Reduced motion support for animations
+### Comment Policy
 
-## Performance
+- **Never** add unnecessary or redundant comments
+- **Only** use comments when really necessary (complex logic, non-obvious design decisions)
+- Code should be **self-explanatory** through descriptive names
 
-Performance optimizations implemented:
+See [`CONSIDERACIONES_DESARROLLO.md`](./CONSIDERACIONES_DESARROLLO.md) for complete development guidelines.
 
-- ✅ Font optimization via `next/font/google`
-- ✅ Image optimization ready (using `next/image`)
-- ✅ Code splitting (automatic with Next.js)
-- ✅ CSS variables for efficient styling
-- ✅ Mobile-first approach reduces unnecessary CSS
-- ✅ Production build optimizations
+---
 
-## Project Goals
-
-This portfolio demonstrates:
-
-- ✅ **Design-to-code translation** - Proven experience translating Figma designs into production-ready code
-- ✅ **Responsive, mobile-first development** - Built applications serving 1,000+ users across all devices
-- ✅ **Accessibility best practices** - WCAG-compliant implementations with semantic HTML and ARIA
-- ✅ **Component system architecture** - BEM + SMACSS following industry best practices
-- ✅ **API integration capabilities** - Full-stack experience with REST, GraphQL, and third-party services
-- ✅ **Performance optimization** - Experience optimizing applications for scale and performance
-- ✅ **Testing practices** - Jest + RTL for quality assurance
-- ✅ **Leadership and collaboration** - Leading teams, working with cross-functional teams
-- ✅ **Full-stack expertise** - Front-end, back-end, databases, cloud deployment
-
-## Development Roadmap
-
-See `TODO.md` for the complete development checklist and project phases.
-
-### Current Phase
-
-#### Phase 3: Core UI Components - ✅ Complete
-
-- All core UI components implemented
-- All feedback components implemented
-- Component styles with BEM methodology
-- Comprehensive testing
-
-#### Phase 4: Layout Components - ✅ Complete
-
-- MainLayout component with semantic HTML structure
-- NavBar component with responsive mobile menu
-- Footer component with social links and contact info
-- All layout components styled with BEM methodology
-- Proper ARIA landmarks and accessibility features
-- Fixed navbar with responsive spacing
-
-#### Next Phase: Phase 5: Landing Page Sections - ⏳ In Progress
-
-- Hero section
-- Features section
-- Specs section
-- Use Cases section
-- Performance section
-- Pricing section
-- Testimonials section
-- CTA section
-
-## How This Maps to Critical Mass Job Requirements
+## 🎯 How This Maps to Critical Mass Job Requirements
 
 | Requirement | Implementation |
 |------------|----------------|
-| **Translate designs to code** | Component system with BEM methodology, pixel-perfect implementation |
-| **Responsive & Mobile-first** | Mobile-first breakpoints, responsive grid utilities, tested across devices |
+| **Translate designs to code** | Component system with BEM methodology, pixel-perfect implementation following Figma workflows |
+| **Responsive & Mobile-first** | Mobile-first breakpoints, responsive grid utilities, tested across all devices |
 | **Accessibility** | WCAG-compliant components, ARIA attributes, keyboard navigation, semantic HTML |
 | **SASS/SCSS with BEM/SMACSS** | Complete SCSS architecture following BEM and SMACSS principles |
-| **Design systems & reusable components** | Full component library with variants, sizes, and states |
-| **API integration** | API route structure ready, custom hooks planned |
+| **Design systems & reusable components** | Full component library with variants, sizes, and states (`/this-project/ui-library`) |
+| **API integration** | API route structure ready, custom hooks, full-stack experience demonstrated |
 | **Testing** | Jest + React Testing Library with comprehensive test coverage |
-| **Performance** | Font optimization, image optimization ready, code splitting |
+| **Performance** | Font optimization, image optimization, code splitting, lazy loading |
 | **Version control** | Git workflow with descriptive commits |
 
-## Documentation
+---
 
-- **`BEM_METHODOLOGY_GUIDE.md`** - Complete BEM methodology guide and Critical Mass compliance review
-- **`TESTING.md`** - Testing guide and best practices
-- **`TODO.md`** - Complete project checklist with all phases
-- **`PROJECT-IDEA.md`** - Full project specifications and requirements
-- **`PROJECT-CONTENT.md`** - **Official copy and content specifications for all pages** (single source of truth for all page content)
-- **`CONSIDERACIONES_DESARROLLO.md`** - Development guidelines and standards (Spanish)
+## 📚 Documentation
 
-## License
+- **[`CONSIDERACIONES_DESARROLLO.md`](./CONSIDERACIONES_DESARROLLO.md)** ⭐ – Development guidelines and standards (Spanish)
+- **[`BEM_METHODOLOGY_GUIDE.md`](./BEM_METHODOLOGY_GUIDE.md)** – Complete BEM methodology guide and Critical Mass compliance review
+- **[`TESTING.md`](./TESTING.md)** – Testing guide and best practices
+- **[`TODO.md`](./TODO.md)** – Complete project checklist with all phases
+- **[`PROJECT-IDEA.md`](./PROJECT-IDEA.md)** – Full project specifications and requirements
+- **[`PROJECT-CONTENT.md`](./PROJECT-CONTENT.md)** – **Official copy and content specifications for all pages** (single source of truth)
+
+---
+
+## 📈 Project Status
+
+🚧 **In Active Development**
+
+### ✅ Completed
+
+- Project setup and configuration
+- Design system foundation (SCSS variables, typography, mixins, layout utilities)
+- Core UI components (Button, Card, Tag, Badge, Input, Select, Toggle)
+- Feedback components (Loader, ErrorMessage, Toast)
+- Layout components (MainLayout, NavBar, Footer)
+- Testing infrastructure (Jest + React Testing Library)
+- BEM methodology implementation
+- SMACSS architecture
+- UI Library page (`/this-project/ui-library`)
+- Semantic HTML structure with proper ARIA landmarks
+- Responsive navigation with mobile menu
+- Fixed navbar with proper spacing
+- **Home page** – Complete with Hero, Role Focus, Key Highlights, and CTA sections
+- **This Project page** – Complete with Project Overview and Design-to-Code Workflow sections
+
+### ⏳ In Progress
+
+- Contact page (`/contact`)
+- Additional sections for This Project page (How This Portfolio Is Built, Accessibility/Performance, Tooling/Testing)
+- Additional testing coverage
+
+See [`TODO.md`](./TODO.md) for complete development checklist.
+
+---
+
+## 🚀 Development Roadmap
+
+See [`TODO.md`](./TODO.md) for the complete development checklist organized by phases:
+
+1. **Foundation (Phases 1-4):** Project setup, design system, UI components, layout structure
+2. **Content Pages (Phases 5-12):** Home, This Project, UI Library, Contact
+3. **Integration & Quality (Phases 13-16):** Navigation updates, style organization, content verification
+4. **Optimization (Phases 17-19):** Accessibility, performance, testing implementation
+5. **Finalization (Phases 20-24):** Git workflow, documentation, polish, deployment
+
+---
+
+## 💡 Project Philosophy
+
+This portfolio is a **professional demonstration** designed specifically for the **Developer, Front End position at Critical Mass (San Jose, Costa Rica)**. Every line of code reflects:
+
+- **Technical Excellence** – Demonstrating real-world experience leading teams and building scalable applications
+- **Attention to Detail** – Reflecting experience with production projects (ERP systems, EdTech platforms, SaaS applications)
+- **Industry Standards Compliance** – Aligned with Critical Mass requirements and values
+- **Accessibility and Performance Understanding** – Based on experience with applications serving 1,000+ users
+- **Scalable and Maintainable Architecture** – Reflecting full-stack and technical leadership experience
+
+**No shortcuts. No hardcoded values. No accessibility ignored. Mobile-first always. Clean, professional code.**
+
+---
+
+## 📝 License
 
 Copyright (c) 2025 Steven Morales. All rights reserved.
 
 This project is provided for evaluation purposes only. Permission is granted to view, use, and share this project with team members and technical staff solely for recruitment evaluation and technical assessment purposes.
 
-See `LICENSE` file for full terms and conditions.
+See [`LICENSE`](./LICENSE) file for full terms and conditions.
 
 ---
 
-**Built with attention to detail, following industry best practices, and crafted specifically to demonstrate my skills and approach for the Critical Mass Front-End Developer position.**
+## 🤝 Contact
+
+**Steven Morales Fallas**
+
+- **Location:** San José, Costa Rica
+- **Phone / WhatsApp:** +506 6130 4830
+- **Email:** fallasmoraless@gmail.com
+- **GitHub:** [github.com/stevenmoraleszeta](https://github.com/stevenmoraleszeta)
+- **LinkedIn:** [linkedin.com/in/stevenmoralesfallas](https://linkedin.com/in/stevenmoralesfallas)
+
+---
+
+**Built with attention to detail, following industry best practices, and crafted specifically to demonstrate my skills and approach for the Critical Mass Front-End Developer position. 🚀**
