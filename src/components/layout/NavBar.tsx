@@ -42,7 +42,6 @@ const navigationLinks: NavLink[] = [
   { href: '/me-and-skills', label: 'Me & Skills', ariaLabel: 'Go to me and skills page' },
   { href: '/projects', label: 'Projects & Experience', ariaLabel: 'Go to projects and experience page' },
   { href: '/contact', label: 'Contact', ariaLabel: 'Go to contact page' },
-  { href: '/ui-library', label: 'UI Library', ariaLabel: 'Go to UI library page' },
 ];
 
 /**

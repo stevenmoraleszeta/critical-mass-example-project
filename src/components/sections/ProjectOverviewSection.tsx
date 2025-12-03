@@ -75,7 +75,7 @@ const projectOverviewCards: CardData[] = [
   {
     id: '12',
     title: 'Design Systems & Reusable Components',
-    description: 'I built a complete reusable component library (Button, Card, Tag, Badge, Input, Select, etc.) following BEM methodology. All components are documented and showcased in the /ui-library page, demonstrating design system thinking and component reusability.',
+    description: 'I built a complete reusable component library (Button, Card, Tag, Badge, Input, Select, etc.) following BEM methodology. All components are documented and showcased in the /this-project/ui-library page, demonstrating design system thinking and component reusability.',
   },
   {
     id: '13',

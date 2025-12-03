@@ -20,6 +20,7 @@
    - Accessibility, Performance & Responsiveness
    - Tooling, Testing & Automation
    - What You Can Review Here (Code, Live Demo, Repo Links)
+   - `/this-project/ui-library` – **UI Library** (submenu)
 
 3. `/me-and-skills` – **Me & Skills**
    - Personal Introduction & Background
@@ -46,14 +47,6 @@
    - Contact Details
    - Social Links
    - Availability & Ways to Collaborate
-
-6. `/ui-library` – **UI Library**
-   - Intro
-   - Buttons (Primary, Secondary, Ghost variants with all states)
-   - Cards (Default, Feature, Content variants)
-   - Tags & Badges (Categorization and status indicators)
-   - Form Elements (Input, Select, Toggle with accessibility features)
-   - Feedback States (Loader, ErrorMessage, Toast)
 
 ---
 
@@ -167,6 +160,7 @@ From this page, link to:
   - Front-end structure (pages, components, hooks).
   - Styles (SASS/SCSS, BEM structure).
   - Tests and basic CI config.
+- **UI Library** on `/this-project/ui-library` (component showcase and documentation).
 - **Other case studies** on `/projects`.
 
 ---
@@ -584,7 +578,7 @@ I'd be excited to talk and show how I can contribute to **Critical Mass**.
 
 ---
 
-## `/ui-library` – UI Library
+## `/this-project/ui-library` – UI Library
 
 ### Intro
 

@@ -79,7 +79,7 @@ export default function ThisProject() {
               <Card 
                 variant="default"
                 title="Design Systems & Reusable Components"
-                description="I built a complete reusable component library (Button, Card, Tag, Badge, Input, Select, etc.) following BEM methodology. All components are documented and showcased in the /ui-library page, demonstrating design system thinking and component reusability."
+                description="I built a complete reusable component library (Button, Card, Tag, Badge, Input, Select, etc.) following BEM methodology. All components are documented and showcased in the /this-project/ui-library page, demonstrating design system thinking and component reusability."
               />
               <Card 
                 variant="default"
