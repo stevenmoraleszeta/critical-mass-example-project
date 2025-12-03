@@ -2,6 +2,8 @@
 
 A Next.js portfolio prototype built to demonstrate front-end development skills and experience, specifically crafted for the Critical Mass Front-End Developer position in San Jose, Costa Rica.
 
+> **⚠️ Project Simplification Note:** Due to time constraints, the project was simplified to ensure timely completion. The "Me & Skills" (`/me-and-skills`) and "Projects & Experience" (`/projects`) pages were removed from the final implementation. The portfolio focuses on the core pages: Home, This Project, and Contact, which demonstrate the essential skills and experience relevant to the Critical Mass Front-End Developer position.
+
 ## About This Portfolio
 
 This professional portfolio is specifically designed for the **Developer, Front End** position at **Critical Mass** in **San Jose, Costa Rica**.
@@ -316,27 +318,6 @@ The application includes the following pages:
   - Accessibility, Performance & Responsiveness
   - Tooling, Testing & Automation
   - What You Can Review Here (Code, Live Demo, Repo Links)
-- **`/projects`** - Selected Projects & Case Studies page showcasing:
-  - Critical Mass Portfolio Prototype
-  - Novaera SaaS ERP (Web, API, DB)
-  - Precision Seas ERP System
-  - ZETA Academia EdTech Platform (V1 & V2)
-  - TimerChill – Modern Pomodoro Timer
-  - Matemática Integral ERP & Automation System
-  - Demeter IoT Agriculture System
-  - INFOCOOP Education Platform Enhancements
-  - Assistive Robotics Project for Elderly Care
-- **`/skills`** - Skills & Tech Stack page with:
-  - Core Front-End Skills
-  - Front-End Tooling & Automation
-  - Back-End & APIs
-  - Databases & Data
-  - Cloud & DevOps
-  - AI & Data Tools
-  - Testing & QA
-  - Productivity & Collaboration Tools
-  - Languages
-  - Engineering Practices & Soft Skills
 - **`/experience`** - Professional Experience page with:
   - CEO & Lead Software Developer – Novaera
   - CEO & Lead Tech Educator – ZETA Academia

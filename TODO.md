@@ -6,6 +6,8 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 > **Important:** Follow the phases in order. Each phase builds upon the previous ones. Refer to `CONSIDERACIONES_DESARROLLO.md` for development standards, BEM methodology, accessibility requirements, and code quality guidelines.
 
+> **⚠️ Project Simplification Note:** Due to time constraints, the project was simplified to ensure timely completion. The "Me & Skills" (`/me-and-skills`) and "Projects & Experience" (`/projects-and-experience`) pages were removed from the final implementation. The portfolio focuses on the core pages: Home, This Project, and Contact, which demonstrate the essential skills and experience relevant to the Critical Mass Front-End Developer position.
+
 ## Phase Overview
 
 **Foundation (Phases 1-4):** Project setup, design system, UI components, and layout structure  
@@ -13,9 +15,9 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
   - Phase 6: Home (`/`)
   - Phase 7: This Project (`/this-project`)
   - Phase 12: UI Library (`/this-project/ui-library`) - submenu of This Project
-  - Phase 9: Me & Skills (`/me-and-skills`)
-  - Phase 8: Projects & Experience (`/projects-and-experience`) - combined (projects + experience together)
   - Phase 11: Contact (`/contact`)
+  
+> **Note:** The "Me & Skills" and "Projects & Experience" pages were removed due to time constraints to ensure timely project completion.
 **Integration & Quality (Phases 13-16):** Navigation updates, style organization, content verification  
 **Optimization (Phases 17-19):** Accessibility, performance, and testing implementation  
 **Finalization (Phases 20-24):** Git workflow, documentation, polish, deployment, and presentation preparation
@@ -408,7 +410,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
   - [x] Update subheadline with new copy
   - [x] Add Key Identity Line: "Full Stack Software Engineer | Tech Leader | Product-Driven Developer | Creative Technologist"
   - [x] Add Short Value Intro paragraph
-  - [x] Update CTAs to match PROJECT-CONTENT.md (Primary: "Want to see how I would work at Critical Mass?" → `/critical-mass-case-study`, Secondary: View Projects → `/projects-and-experience`)
+  - [x] Update CTAs to match PROJECT-CONTENT.md (Primary: "Want to see how I would work at Critical Mass?" → `/this-project`, Secondary: Get in Touch → `/contact`)
 - [x] Update Hero props interface if needed
 - [x] Update `src/app/page.tsx` to pass new Hero props
 - [ ] Test Hero renders correctly with new content
@@ -447,13 +449,13 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [x] Update CTASection component (`src/components/sections/CTASection.tsx`) with new copy from `PROJECT-CONTENT.md`:
   - [x] Update title/heading: "Want to see how I would work at Critical Mass?"
   - [x] Update description: "Start with the 'This Project' page – it's a focused breakdown of how I match this role, backed by real code and projects."
-  - [x] Update buttons: Primary → `/this-project`, Secondary → `/projects-and-experience`
+  - [x] Update buttons: Primary → `/this-project`, Secondary → `/contact`
 - [x] Update styles if needed
 - [ ] Test CTA section renders correctly
 
 ### Remove/Archive Obsolete Sections
 - [x] Remove `UseCases` section (not in new structure)
-- [x] Remove `FeaturedProjects` section (moved to `/projects-and-experience` page)
+- [x] Remove `FeaturedProjects` section (removed due to project simplification)
 - [x] Remove `LeadershipSection` (content reorganized)
 - [x] Remove `PerformanceSection` (content reorganized)
 - [x] Remove `PricingSection` (not in new structure)
@@ -586,231 +588,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 8: Projects & Experience Page (`/projects-and-experience`) Content Update
-
-> **Reference:** Always use `PROJECT-CONTENT.md` as the single source of truth for all page content, copy, and structure.
-> **Note:** This page combines both "Projects" and "Professional Experience" as specified in PROJECT-CONTENT.md and the navbar label "Projects & Experience".
-
-### Current State Analysis
-- [x] Review current Projects page (`src/app/projects-and-experience/page.tsx`)
-- [x] Page exists with project filtering functionality
-- [ ] Compare current project data with `PROJECT-CONTENT.md`
-- [ ] Identify missing projects
-- [ ] Identify projects that need content updates
-- [ ] Add Professional Experience section to this page (combining projects and experience)
-
-### Content Updates - Projects (from PROJECT-CONTENT.md)
-- [ ] Update/Create Project: Critical Mass Portfolio Prototype
-  - [ ] Add project type, status, live URL, repo URL
-  - [ ] Add "What it is" description from `PROJECT-CONTENT.md`
-  - [ ] Add highlights list (4 items)
-- [ ] Update/Create Project: Novaera SaaS ERP (Web, API, DB)
-  - [ ] Add project details (type, status, URLs)
-  - [ ] Add "What it is" description
-  - [ ] Add "My role" description
-- [ ] Update/Create Project: Precision Seas ERP System
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-  - [ ] Add "My role" description
-- [ ] Update/Create Project: ZETA Academia EdTech Platform (V1 & V2)
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-  - [ ] Add "My role" description
-- [ ] Update/Create Project: TimerChill – Modern Pomodoro Timer
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-  - [ ] Add tech stack
-- [ ] Update/Create Project: Matemática Integral ERP & Automation System
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-  - [ ] Add "My role" description
-- [ ] Update/Create Project: Demeter IoT Agriculture System
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-- [ ] Update/Create Project: INFOCOOP Education Platform Enhancement
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-  - [ ] Add "My role" description
-- [ ] Update/Create Project: Assistive Robotics for Elderly Care
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-  - [ ] Add "My role" description
-
-### Content Updates - Experience (from PROJECT-CONTENT.md)
-- [ ] Create CEO & Lead Software Developer — Novaera section
-  - [ ] Add date range: May 2024 – Present
-  - [ ] Add responsibilities list (5 items from `PROJECT-CONTENT.md`)
-- [ ] Create CEO & Lead Tech Educator — ZETA Academia section
-  - [ ] Add responsibilities list (from `PROJECT-CONTENT.md`)
-- [ ] Create Freelance Software Developer section
-  - [ ] Add date range: Aug 2022 – Present
-  - [ ] Add responsibilities list (3 items)
-- [ ] Create Software Developer (Intern) — INFOCOOP section
-  - [ ] Add date range: Aug 2023 – Nov 2023
-  - [ ] Add responsibilities list (3 items)
-- [ ] Create Software Developer — TI Recursos CR section
-  - [ ] Add date range: Dec 2022 – Feb 2023
-  - [ ] Add responsibilities list (2 items)
-- [ ] Create Education section
-  - [ ] Add Technical Degree information
-  - [ ] Add graduation details
-- [ ] Create Impact Summary section
-  - [ ] Add Leadership subsection
-  - [ ] Add Ownership subsection
-  - [ ] Add Collaboration subsection
-
-### Page Structure Update
-- [ ] Update page title: "Projects & Experience" (per PROJECT-CONTENT.md and navbar)
-- [ ] Add page description/intro if needed
-- [ ] Ensure all 9 projects from `PROJECT-CONTENT.md` are displayed
-- [ ] Add Professional Experience section on the same page (after projects)
-- [ ] Verify project order matches `PROJECT-CONTENT.md`
-- [ ] Test all project links work correctly
-
-### Experience Section Design & Implementation
-- [ ] **Layout Structure:**
-  - [ ] Timeline-style layout for chronological experience (vertical timeline on mobile, can be horizontal on desktop)
-  - [ ] Each role as a Card component with clear visual hierarchy
-  - [ ] Date ranges prominently displayed (consider using Badge or Tag component)
-  - [ ] Impact Summary section at bottom as highlight cards (similar to Key Highlights pattern)
-- [ ] **Visual Design:**
-  - [ ] Experience entries as FeatureCard or custom experience cards
-  - [ ] Clear separation between Projects section and Experience section
-  - [ ] Responsibilities displayed as clean bullet list or structured grid
-  - [ ] Visual indicators for current vs. past positions
-- [ ] **Timeline Approach (Optional):**
-  - [ ] Vertical timeline on left (or centered) connecting experience entries
-  - [ ] Each entry card positioned relative to timeline
-  - [ ] Responsive: timeline becomes simple vertical line on mobile, more elaborate on desktop
-  - [ ] Alternative: Simple stacked cards if timeline is too complex
-- [ ] **Education Section:**
-  - [ ] Distinct visual treatment from work experience (different card style or layout)
-  - [ ] Highlight graduation details (highest GPA, honors) prominently
-- [ ] **Impact Summary:**
-  - [ ] Three-card grid layout: Leadership, Ownership, Collaboration
-  - [ ] Use Card components with consistent styling
-  - [ ] Visual emphasis on these key strengths
-
-### Design Ideas for Projects Section
-- [ ] **Current Layout Enhancement:**
-  - [ ] Keep existing filter/search functionality (already well-designed)
-  - [ ] Enhance project cards with consistent spacing and visual hierarchy
-  - [ ] Add visual grouping by category or status if helpful
-- [ ] **Visual Improvements:**
-  - [ ] Consider adding project thumbnail images to cards (using next/image)
-  - [ ] Enhanced card hover states for better interactivity
-  - [ ] Visual separation between project cards with consistent spacing
-  - [ ] Prominent display of "Live" status badges for quick scanning
-- [ ] **Layout Refinements:**
-  - [ ] Ensure grid layout is optimal: 1 column (mobile), 2 columns (tablet), 3 columns (desktop)
-  - [ ] Consistent card heights or allow natural flow based on content
-  - [ ] Better visual hierarchy for project title, category, and status
-- [ ] **Content Presentation:**
-  - [ ] Group related information (tech stack, highlights, links) clearly
-  - [ ] Ensure external links are visually distinct and accessible
-  - [ ] Consider adding visual indicators for project types (ERP, EdTech, etc.)
-
-### Styling Updates
-- [ ] Update `styles/pages/_projects-and-experience-page.scss` if needed
-- [ ] Add styles for Experience section
-- [ ] Ensure page is responsive
-- [ ] Test projects-and-experience page renders correctly
-- [ ] Verify all content matches `PROJECT-CONTENT.md`
-
----
-
-## Phase 9: Me & Skills Page (`/me-and-skills`) Creation/Update
-
-> **Reference:** Always use `PROJECT-CONTENT.md` as the single source of truth for all page content, copy, and structure.
-> **Note:** According to PROJECT-CONTENT.md, this should be `/me-and-skills` (not `/skills`), combining personal introduction with skills. NavBar already references `/me-and-skills` but page doesn't exist yet.
-
-### Current State Analysis
-- [x] Review current Skills page (`src/app/skills/page.tsx`)
-- [x] Page exists but route is `/skills` (should be `/me-and-skills`)
-- [ ] Create new `/me-and-skills` page or rename/refactor `/skills` to `/me-and-skills`
-- [ ] Compare current skills structure with `PROJECT-CONTENT.md`
-- [ ] Identify missing skill categories
-- [ ] Identify skills that need updates
-
-### Content Updates (from PROJECT-CONTENT.md)
-- [ ] Update Core Front-End section
-  - [ ] Add Languages subsection (HTML5, CSS3, JavaScript, TypeScript)
-  - [ ] Add Frameworks & Libraries subsection (React, React Native, Next.js)
-  - [ ] Add Styling & Design Systems subsection (Tailwind CSS, Styled Components, SASS/SCSS, LESS)
-  - [ ] Add Core Practices subsection (Mobile-First Development, Responsive Design, Design Systems, Accessibility)
-- [ ] Update Front-End Tooling & Automation section
-  - [ ] Add all tools from `PROJECT-CONTENT.md`
-- [ ] Update Back-End & APIs section
-  - [ ] Add Languages & Runtimes subsection (Node.js, Python, Java, C#, PHP)
-  - [ ] Add Architectural Practices subsection (RESTful APIs, Microservices, Performance optimization, Scalability)
-- [ ] Update Databases & Data section
-  - [ ] Add all databases from `PROJECT-CONTENT.md`
-- [ ] Update Cloud & DevOps section
-  - [ ] Add all tools from `PROJECT-CONTENT.md`
-- [ ] Update AI, Data & Automation section
-  - [ ] Add all tools from `PROJECT-CONTENT.md`
-- [ ] Update Testing & API Tools section
-  - [ ] Add all tools from `PROJECT-CONTENT.md`
-- [ ] Update Productivity & Collaboration Tools section
-  - [ ] Add all tools from `PROJECT-CONTENT.md`
-- [ ] Update Languages section
-  - [ ] Add Spanish (Native)
-  - [ ] Add English (Professional Working Proficiency)
-- [ ] Update Soft Skills & Ways of Working section
-  - [ ] Add all soft skills from `PROJECT-CONTENT.md`
-
-### Content Structure (from PROJECT-CONTENT.md)
-- [ ] Add "About Me" section at top:
-  - [ ] Name: Steven Morales Fallas
-  - [ ] Full Stack Software Engineer & Tech Leader
-  - [ ] Location: San José, Costa Rica
-  - [ ] Experience summary (3+ years, CEO roles at Novaera and ZETA Academia)
-  - [ ] Product-focused mindset description
-
-### Page Structure Update
-- [ ] Update page title: "Me & Skills" (per PROJECT-CONTENT.md)
-- [ ] Ensure all sections are properly organized:
-  - [ ] About Me (new section)
-  - [ ] Core Front-End
-  - [ ] Front-End Tooling & Automation
-  - [ ] Back-End & APIs
-  - [ ] Databases & Data
-  - [ ] Cloud & DevOps
-  - [ ] AI, Data & Automation
-  - [ ] Testing & API Tools
-  - [ ] Productivity & Collaboration Tools
-  - [ ] Languages
-  - [ ] Soft Skills & Ways of Working
-- [ ] Update route from `/skills` to `/me-and-skills` or create new page
-- [ ] Verify content matches `PROJECT-CONTENT.md` exactly
-
-### Design Ideas
-- [ ] **Layout Structure:**
-  - [ ] Replace current simple Specs section with rich, organized skill sections
-  - [ ] Use Card components for each skill category (Core Front-End, Back-End, etc.)
-  - [ ] Group skills logically with visual hierarchy
-- [ ] **Visual Organization:**
-  - [ ] Each major skill category as a section with title (H2)
-  - [ ] Subsections within categories (e.g., "Languages", "Frameworks") as H3
-  - [ ] Skills displayed as Tags for easy scanning and visual consistency
-  - [ ] Use badges or icons to distinguish skill categories
-- [ ] **Layout Patterns:**
-  - [ ] Skills grid layout: 1 column (mobile), 2 columns (tablet), 3-4 columns (desktop)
-  - [ ] Group related skills together (e.g., all Front-End tools in one card)
-  - [ ] Soft Skills section at bottom with different visual treatment (emphasize human aspects)
-- [ ] **Interactive Elements:**
-  - [ ] Consider hover effects on skill tags/cards
-  - [ ] Visual grouping by proficiency level if relevant (though not in PROJECT-CONTENT.md)
-  - [ ] Consistent spacing between skill groups
-- [ ] **Enhanced Presentation:**
-  - [ ] Use FeatureCard components for major skill categories
-  - [ ] Tag components for individual technologies/tools
-  - [ ] Consider iconography for major categories (optional, decorative only with proper alt text)
-
-### Styling Updates
-- [ ] Update `styles/pages/_skills-page.scss` (may need rename/update for `/me-and-skills`)
-- [ ] Ensure page is responsive
-- [ ] Test skills page renders correctly
+> **Note:** Phase 8 (Projects & Experience) and Phase 9 (Me & Skills) were removed due to time constraints. The project was simplified to focus on core pages: Home, This Project, and Contact.
 
 ---
 - [ ] Update/Create Project: Critical Mass Portfolio Prototype
@@ -923,12 +701,6 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
   - [ ] Ensure external links are visually distinct and accessible
   - [ ] Consider adding visual indicators for project types (ERP, EdTech, etc.)
 
-### Styling Updates
-- [ ] Update `styles/pages/_projects-and-experience-page.scss` if needed
-- [ ] Add styles for Experience section
-- [ ] Ensure page is responsive
-- [ ] Test projects-and-experience page renders correctly
-- [ ] Verify all content matches `PROJECT-CONTENT.md`
 
 ---
 
@@ -1073,17 +845,15 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [x] Update navigation links to match new structure (in order):
   - [x] `/` → Home
   - [x] `/this-project` → This Project
-  - [x] `/me-and-skills` → Me & Skills
-  - [x] `/projects-and-experience` → Projects & Experience
   - [x] `/contact` → Contact
 - [x] Note: `/ui-library` is accessible via `/this-project/ui-library` (not in main nav)
 - [x] Remove any obsolete navigation links (e.g., `/about`, `/components`, `/content`, `/critical-mass-case-study`)
 - [x] Update aria-labels if needed
 - [x] Ensure navigation order matches logical page flow
-- [ ] Test navigation works correctly (some pages referenced don't exist yet: `/me-and-skills`, `/contact`)
+- [ ] Test navigation works correctly (some pages referenced don't exist yet: `/contact`)
 - [x] Test active state indication works
 - [x] Test mobile menu includes all new links
-- [ ] Create missing pages that NavBar references: `/me-and-skills` and `/contact`
+- [ ] Create missing pages that NavBar references: `/contact`
 
 ### Footer Update (if needed)
 - [ ] Review Footer component
@@ -1097,9 +867,6 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 ### Page Style Files
 - [x] Create/Update `styles/pages/_home.scss` for new Home structure
 - [x] Create `styles/pages/_this-project.scss` (exists, may need updates for missing sections)
-- [ ] Update `styles/pages/_projects-and-experience-page.scss` if needed (for experience section)
-- [ ] Update `styles/pages/_skills-page.scss` (may need rename/update for `/me-and-skills`)
-- [ ] Create `styles/pages/_me-and-skills.scss` (if separate from skills)
 - [ ] Create `styles/pages/_contact.scss`
 - [x] Update `styles/pages/_components.scss` (used for ui-library)
 - [ ] Remove/archive obsolete page style files
@@ -1135,8 +902,6 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 ### Content Accuracy Check
 - [ ] Verify Home page content matches `PROJECT-CONTENT.md` exactly
 - [ ] Verify This Project page (`/this-project`) content matches `PROJECT-CONTENT.md` exactly (sections 2, 4, 5 missing)
-- [ ] Verify Projects & Experience page (`/projects-and-experience`) content matches `PROJECT-CONTENT.md` exactly (needs all 9 projects + experience section)
-- [ ] Verify Me & Skills page (`/me-and-skills`) content matches `PROJECT-CONTENT.md` exactly (page doesn't exist yet)
 - [ ] Verify Contact page content matches `PROJECT-CONTENT.md` exactly (page doesn't exist yet)
 - [ ] Verify UI Library page content matches `PROJECT-CONTENT.md` exactly
 
@@ -1153,7 +918,6 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [ ] Verify heading hierarchy is correct (one `<h1>` per page)
 - [ ] Verify all sections are properly structured
 - [ ] Check for broken links or missing pages:
-  - [ ] `/me-and-skills` - referenced in NavBar but doesn't exist
   - [ ] `/contact` - referenced in NavBar but doesn't exist
   - [ ] All internal links work correctly
 
@@ -1314,8 +1078,8 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [ ] Create `tests/components/sections/Hero.test.tsx`
 - [ ] Test Hero component renders correctly with new content from `PROJECT-CONTENT.md`
 - [ ] Test title and subtitle render correctly
-- [ ] Test primary CTA button exists and navigates to `/critical-mass-case-study`
-- [ ] Test secondary CTA button exists and navigates to `/projects-and-experience`
+- [ ] Test primary CTA button exists and navigates to `/this-project`
+- [ ] Test secondary CTA button exists and navigates to `/contact`
 - [ ] Test background image renders correctly if provided
 - [ ] Run tests and verify they pass
 
@@ -1414,8 +1178,6 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
   - [ ] `/` – Home (Professional Portfolio Landing)
   - [ ] `/this-project` – This Project (Critical Mass Portfolio Prototype)
   - [ ] `/this-project/ui-library` – UI Library (Component Showcase)
-  - [ ] `/projects-and-experience` – Projects & Experience
-  - [ ] `/me-and-skills` – Me & Skills
   - [ ] `/contact` – Let's Build Something Great
 - [ ] Add "How to Run" section:
   - [ ] Prerequisites
@@ -1536,10 +1298,6 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 - [ ] Test all routes work on production:
   - [ ] `/` (Home)
-  - [ ] `/critical-mass-case-study`
-  - [ ] `/projects-and-experience`
-  - [ ] `/me-and-skills`
-  - [ ] `/experience`
   - [ ] `/contact`
   - [ ] `/ui-library`
 - [ ] Test all functionality works
