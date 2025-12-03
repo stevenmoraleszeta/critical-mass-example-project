@@ -153,7 +153,7 @@ export default function Hero({
       
       {/* Floating binary elements (0s and 1s) */}
       <FloatingBinaryElements 
-        count={80}
+        count={250}
         minFontSize={0.5}
         maxFontSize={2}
         minOpacity={0.2}

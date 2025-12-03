@@ -29,7 +29,6 @@
     
     transition: color var(--transition-base), opacity var(--transition-base), text-shadow var(--transition-base), filter var(--transition-base), transform var(--transition-base);
     transform-origin: center center;
-    transform: rotate(var(--initial-rotation, 0deg));
     --item-rotation: var(--initial-rotation, 0deg);
     
     @media (prefers-reduced-motion: reduce) {
@@ -38,11 +37,35 @@
     }
     
     &[data-value="0"] {
-      animation: float-binary-0 infinite ease-in-out;
+      animation-name: float;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      will-change: transform;
+      --float-y-1: -20px;
+      --float-x-1: 15px;
+      --float-rotate-1: 3deg;
+      --float-y-2: -30px;
+      --float-x-2: 20px;
+      --float-rotate-2: -2deg;
+      --float-y-3: -15px;
+      --float-x-3: 18px;
+      --float-rotate-3: 2deg;
     }
     
     &[data-value="1"] {
-      animation: float-binary-1 infinite ease-in-out;
+      animation-name: float;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      will-change: transform;
+      --float-y-1: -18px;
+      --float-x-1: 20px;
+      --float-rotate-1: -3deg;
+      --float-y-2: -25px;
+      --float-x-2: 12px;
+      --float-rotate-2: 0deg;
+      --float-y-3: -12px;
+      --float-x-3: 16px;
+      --float-rotate-3: 3deg;
     }
     
     &[data-hover-color="blue"]:hover {
