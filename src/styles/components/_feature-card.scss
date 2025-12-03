@@ -13,59 +13,14 @@
 // Card component specifically for features
 // ============================================================================
 
-// Levitation animation keyframes with rotations preserved
-// Each card has its own animation to maintain its unique rotation
-@keyframes levitate-1 {
+// Single reusable levitation animation that uses CSS custom property for rotation
+// Works for any number of cards with unique rotations
+@keyframes levitate {
   0%, 100% {
-    transform: translateY(0) rotate(-5.5deg);
+    transform: translateY(0) rotate(var(--card-rotation, 0deg));
   }
   50% {
-    transform: translateY(-8px) rotate(-5.5deg);
-  }
-}
-
-@keyframes levitate-2 {
-  0%, 100% {
-    transform: translateY(0) rotate(1.5deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(1.5deg);
-  }
-}
-
-@keyframes levitate-3 {
-  0%, 100% {
-    transform: translateY(0) rotate(5.5deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(5.5deg);
-  }
-}
-
-@keyframes levitate-4 {
-  0%, 100% {
-    transform: translateY(0) rotate(4.5deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(4.5deg);
-  }
-}
-
-@keyframes levitate-5 {
-  0%, 100% {
-    transform: translateY(0) rotate(-1deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(-1deg);
-  }
-}
-
-@keyframes levitate-6 {
-  0%, 100% {
-    transform: translateY(0) rotate(-4.5deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(-4.5deg);
+    transform: translateY(-8px) rotate(var(--card-rotation, 0deg));
   }
 }
 
@@ -99,48 +54,14 @@
   // Optimize for transforms
   will-change: transform, box-shadow;
   
-  // Initial transform state with subtle rotations for organic/disordered look
-  // Each card has a slight rotation to appear naturally scattered
-  transform: translateY(0) scale(1) rotate(0deg);
+  // Initial transform state using CSS custom property for rotation
+  // Each card gets a unique rotation via --card-rotation CSS variable
+  transform: translateY(0) scale(1) rotate(var(--card-rotation, 0deg));
   
-  // Apply varied rotations to each card for disordered appearance
-  // Mix of subtle and more pronounced rotations for visual interest
-  // Cards 1, 4, and 5 have more pronounced rotations
-  &:nth-child(1) {
-    transform: translateY(0) scale(1) rotate(-5.5deg);
-    animation: levitate-1 3s ease-in-out infinite;
-    animation-delay: 0.2s;
-  }
-  
-  &:nth-child(2) {
-    transform: translateY(0) scale(1) rotate(1.5deg);
-    animation: levitate-2 3s ease-in-out infinite;
-    animation-delay: 0.4s;
-  }
-  
-  &:nth-child(3) {
-    transform: translateY(0) scale(1) rotate(5.5deg);
-    animation: levitate-3 3s ease-in-out infinite;
-    animation-delay: 0.6s;
-  }
-  
-  &:nth-child(4) {
-    transform: translateY(0) scale(1) rotate(4.5deg);
-    animation: levitate-4 3s ease-in-out infinite;
-    animation-delay: 0.8s;
-  }
-  
-  &:nth-child(5) {
-    transform: translateY(0) scale(1) rotate(-1deg);
-    animation: levitate-5 3s ease-in-out infinite;
-    animation-delay: 1s;
-  }
-  
-  &:nth-child(6) {
-    transform: translateY(0) scale(1) rotate(-4.5deg);
-    animation: levitate-6 3s ease-in-out infinite;
-    animation-delay: 1.2s;
-  }
+  // Single reusable animation for all cards
+  // Uses CSS custom property for rotation, works for any number of cards
+  animation: levitate 3s ease-in-out infinite;
+  animation-delay: var(--card-animation-delay, 0s);
   
   // Enhanced hover effect - gradual scale increase
   // Preserve rotation on hover but straighten slightly for better UX
@@ -206,38 +127,6 @@
     opacity: 1 !important;
   }
   
-  // Preserve individual rotations on hover for each card
-  // But straighten them to 0deg for better focus
-  // Using !important to override animation transforms
-  &:nth-child(1):hover:not(&--dragging):not(&--drag-over) {
-    animation: none;
-    transform: translateY(-12px) scale(1.08) rotate(0deg) !important;
-  }
-  
-  &:nth-child(2):hover:not(&--dragging):not(&--drag-over) {
-    animation: none;
-    transform: translateY(-12px) scale(1.08) rotate(0deg) !important;
-  }
-  
-  &:nth-child(3):hover:not(&--dragging):not(&--drag-over) {
-    animation: none;
-    transform: translateY(-12px) scale(1.08) rotate(0deg) !important;
-  }
-  
-  &:nth-child(4):hover:not(&--dragging):not(&--drag-over) {
-    animation: none;
-    transform: translateY(-12px) scale(1.08) rotate(0deg) !important;
-  }
-  
-  &:nth-child(5):hover:not(&--dragging):not(&--drag-over) {
-    animation: none;
-    transform: translateY(-12px) scale(1.08) rotate(0deg) !important;
-  }
-  
-  &:nth-child(6):hover:not(&--dragging):not(&--drag-over) {
-    animation: none;
-    transform: translateY(-12px) scale(1.08) rotate(0deg) !important;
-  }
   
   // ============================================================================
   // Feature Card Elements (BEM)

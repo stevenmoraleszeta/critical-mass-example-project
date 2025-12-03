@@ -187,6 +187,22 @@ export default function CardBoard({
 
   const titleId = `${id}-title`;
 
+  const calculateRotation = (index: number): number => {
+    const rotations = [
+      -5.5, 1.5, 5.5, 4.5, -1, -4.5,
+      -3.2, 2.8, -2.3, 3.7, -4.1, 1.8,
+      -5.2, 4.3, -1.7, 2.5, -3.8, 5.1,
+      -2.1, 3.9, -4.7, 1.3, -5.8, 2.9,
+      -3.5, 4.8, -1.2, 3.1, -4.9, 2.2,
+    ];
+    
+    return rotations[index % rotations.length];
+  };
+
+  const calculateAnimationDelay = (index: number): number => {
+    return 0.2 + (index * 0.2);
+  };
+
   return (
     <>
       <section className={`card-board ${className}`} id={id} aria-labelledby={titleId}>
@@ -211,6 +227,9 @@ export default function CardBoard({
                 onDragEnd: handleDragEnd,
               };
 
+              const rotation = calculateRotation(index);
+              const animationDelay = calculateAnimationDelay(index);
+
               if (renderCard) {
                 return (
                   <React.Fragment key={card.id}>
@@ -227,6 +246,8 @@ export default function CardBoard({
                   draggable={draggable}
                   isDragging={draggedIndex === index}
                   isDragOver={dragOverIndex === index}
+                  rotation={rotation}
+                  animationDelay={animationDelay}
                   onDragStart={handlers.onDragStart}
                   onDragOver={handlers.onDragOver}
                   onDragLeave={handlers.onDragLeave}
