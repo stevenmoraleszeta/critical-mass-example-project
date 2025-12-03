@@ -13,7 +13,7 @@
    - Key Highlights (What I bring to the team)
    - Primary Call To Action
 
-2. `/critical-mass-case-study` – **Critical Mass Portfolio Prototype**
+2. `/this-project` – **This Project**
    - Project Overview
    - How This Portfolio Is Built for Critical Mass
    - Design-to-Code Workflow (Figma → HTML/CSS/JS/React)
@@ -21,18 +21,9 @@
    - Tooling, Testing & Automation
    - What You Can Review Here (Code, Live Demo, Repo Links)
 
-3. `/projects` – **Selected Projects & Case Studies**
-   - Critical Mass Portfolio Prototype
-   - Novaera SaaS ERP (Web, API, DB)
-   - Precision Seas ERP System
-   - ZETA Academia EdTech Platform (V1 & V2)
-   - TimerChill – Modern Pomodoro Timer
-   - Matemática Integral ERP & Automation System
-   - Demeter IoT Agriculture System
-   - INFOCOOP Education Platform Enhancements
-   - Assistive Robotics Project for Elderly Care
-
-4. `/skills` – **Skills & Tech Stack**
+3. `/me-and-skills` – **Me & Skills**
+   - Personal Introduction & Background
+   - Skills & Tech Stack
    - Core Front-End Skills
    - Front-End Tooling & Automation
    - Back-End & APIs
@@ -44,20 +35,19 @@
    - Languages
    - Engineering Practices & Soft Skills
 
-5. `/experience` – **Professional Experience**
-   - CEO & Lead Software Developer – Novaera
-   - CEO & Lead Tech Educator – ZETA Academia
-   - Freelance Software Developer
-   - Software Developer (Intern) – INFOCOOP
-   - Software Developer – TI Recursos CR
+4. `/projects` – **Projects & Experience**
+   - Selected Projects & Case Studies
+   - Professional Experience
+   - Projects: Critical Mass Portfolio Prototype, Novaera SaaS ERP, Precision Seas ERP System, ZETA Academia EdTech Platform, TimerChill, Matemática Integral ERP & Automation System, Demeter IoT Agriculture System, INFOCOOP Education Platform Enhancements, Assistive Robotics Project for Elderly Care
+   - Experience: CEO & Lead Software Developer – Novaera, CEO & Lead Tech Educator – ZETA Academia, Freelance Software Developer, Software Developer (Intern) – INFOCOOP, Software Developer – TI Recursos CR
    - Impact Summary (Leadership, Ownership, Collaboration)
 
-6. `/contact` – **Let's Build Something Great**
+5. `/contact` – **Let's Build Something Great**
    - Contact Details
    - Social Links
    - Availability & Ways to Collaborate
 
-7. `/ui-library` – **UI Library**
+6. `/ui-library` – **UI Library**
    - Intro
    - Buttons (Primary, Secondary, Ghost variants with all states)
    - Cards (Default, Feature, Content variants)
@@ -107,7 +97,7 @@ This portfolio is intentionally designed as a **live case study** for the **Deve
 
 ---
 
-## `/critical-mass-case-study` – Critical Mass Portfolio Prototype
+## `/this-project` – This Project
 
 ### Section 1 – Project Overview
 
@@ -181,9 +171,9 @@ From this page, link to:
 
 ---
 
-## `/projects` – Selected Projects & Case Studies
+## `/projects` – Projects & Experience
 
-Each project section includes: **context, responsibilities, tech stack, and impact**.
+This page showcases selected projects and professional experience. Each project section includes: **context, responsibilities, tech stack, and impact**.
 
 ---
 
@@ -374,9 +364,106 @@ A **robotic system** designed to assist **elderly and rehabilitation patients**,
 
 ---
 
-## `/skills` – Skills & Tech Stack
+## Professional Experience
 
-This page gathers all my **technical and soft skills**, grouped by relevance to the **Critical Mass Front-End Developer** role.
+### CEO & Lead Software Developer — Novaera  
+**May 2024 – Present**
+
+- Lead a **multi-developer development team** creating:
+  - Automation tools
+  - ERP systems
+  - AI-powered platforms  
+- Design and implement **full-stack architectures**, **APIs**, and **modular components** for scalable solutions.  
+- Collaborate with designers and clients to guarantee **usability**, **performance**, and **visual consistency** across products.  
+- Establish workflows for:
+  - Code reviews
+  - CI/CD integration
+  - Continuous process improvement  
+- Integrate software development with **design and marketing services**, helping clients build **strong digital identities** and **unified brand experiences**.  
+
+---
+
+### CEO & Lead Tech Educator — ZETA Academia  
+
+- Founded and lead **ZETA Academia**, an educational startup focused on:
+  - Artificial Intelligence
+  - Python
+  - Java
+  - Excel
+  - Other tech-related courses
+- Designed the **course catalog**, learning paths, and pedagogical approach.
+- Led a team to design and co-develop the **EdTech platform** used by:
+  - **1,000+ students**
+  - **30+ courses**  
+- Focused on:
+  - Performance, accessibility, and scalability
+  - Integrating analytics, responsive design, and continuous feedback loops from students into the product.  
+- Teaching work feeds directly into product decisions:
+  - Classroom experience → platform features.
+  - Student doubts and pain points → UX and content improvements.
+
+---
+
+### Freelance Software Developer — Self-Employed  
+**Aug 2022 – Present**
+
+- Develop **custom ERP and automation systems** for small and medium-sized companies.  
+- Integrate **modern front-end frameworks** with efficient and secure back-end architectures.
+- Translate **business needs** into **clean, functional, maintainable code**.  
+
+---
+
+### Software Developer (Intern) — INFOCOOP  
+**Aug 2023 – Nov 2023**
+
+- Enhanced the educational platform of the **Instituto Nacional de Cooperativismo**.  
+- Developed automation tools that **improved system performance** and **reduced manual work**.  
+- Participated in **code reviews and documentation** to maintain technical standards.  
+
+---
+
+### Software Developer — TI Recursos CR  
+**Dec 2022 – Feb 2023**
+
+- Implemented **custom Odoo ERP modules** tailored to client requirements.  
+- Improved integrations, performance, and documentation for **long-term maintainability**.  
+
+---
+
+### Education
+
+**Technical Degree in Software Development — CTP de Orosi (2023)**  
+- Graduated with **highest GPA and honors**.  
+
+---
+
+### Impact Summary
+
+**Leadership, Ownership, Collaboration**
+
+- **Leadership:** Leading multi-developer teams at Novaera and ZETA Academia, defining technical direction and mentoring developers.
+- **Ownership:** End-to-end feature ownership from concept to production, ensuring code quality, maintainability, and clear documentation.
+- **Collaboration:** Working closely with designers, business stakeholders, QA teams, and tech leads to deliver high-quality solutions on time.
+
+---
+
+## `/me-and-skills` – Me & Skills
+
+This page combines personal introduction with **technical and soft skills**, grouped by relevance to the **Critical Mass Front-End Developer** role.
+
+### About Me
+
+**Steven Morales Fallas**  
+**Full Stack Software Engineer & Tech Leader**  
+**San José, Costa Rica**
+
+With over **3 years** of experience building scalable solutions, I currently serve as:
+- **CEO & Lead Software Developer** at Novaera, leading a team of 6+ developers
+- **CEO & Lead Tech Educator** at ZETA Academia, empowering 1,000+ students through 30+ courses
+
+I bring a **product-focused mindset** combined with **technical expertise** in front-end development, full-stack architecture, and team leadership. My experience spans from translating Figma designs into production-ready React applications to leading multi-developer teams in building enterprise-level SaaS platforms.
+
+### Skills & Tech Stack
 
 ### Core Front-End
 
@@ -466,80 +553,7 @@ This page gathers all my **technical and soft skills**, grouped by relevance to 
 
 ---
 
-## `/experience` – Professional Experience
-
-### CEO & Lead Software Developer — Novaera  
-**May 2024 – Present**
-
-- Lead a **multi-developer development team** creating:
-  - Automation tools
-  - ERP systems
-  - AI-powered platforms  
-- Design and implement **full-stack architectures**, **APIs**, and **modular components** for scalable solutions.  
-- Collaborate with designers and clients to guarantee **usability**, **performance**, and **visual consistency** across products.  
-- Establish workflows for:
-  - Code reviews
-  - CI/CD integration
-  - Continuous process improvement  
-- Integrate software development with **design and marketing services**, helping clients build **strong digital identities** and **unified brand experiences**.  
-
----
-
-### CEO & Lead Tech Educator — ZETA Academia  
-
-- Founded and lead **ZETA Academia**, an educational startup focused on:
-  - Artificial Intelligence
-  - Python
-  - Java
-  - Excel
-  - Other tech-related courses
-- Designed the **course catalog**, learning paths, and pedagogical approach.
-- Led a team to design and co-develop the **EdTech platform** used by:
-  - **1,000+ students**
-  - **30+ courses**  
-- Focused on:
-  - Performance, accessibility, and scalability
-  - Integrating analytics, responsive design, and continuous feedback loops from students into the product.  
-- Teaching work feeds directly into product decisions:
-  - Classroom experience → platform features.
-  - Student doubts and pain points → UX and content improvements.
-
----
-
-### Freelance Software Developer — Self-Employed  
-**Aug 2022 – Present**
-
-- Develop **custom ERP and automation systems** for small and medium-sized companies.  
-- Integrate **modern front-end frameworks** with efficient and secure back-end architectures.
-- Translate **business needs** into **clean, functional, maintainable code**.  
-
----
-
-### Software Developer (Intern) — INFOCOOP  
-**Aug 2023 – Nov 2023**
-
-- Enhanced the educational platform of the **Instituto Nacional de Cooperativismo**.  
-- Developed automation tools that **improved system performance** and **reduced manual work**.  
-- Participated in **code reviews and documentation** to maintain technical standards.  
-
----
-
-### Software Developer — TI Recursos CR  
-**Dec 2022 – Feb 2023**
-
-- Implemented **custom Odoo ERP modules** tailored to client requirements.  
-- Improved integrations, performance, and documentation for **long-term maintainability**.  
-
----
-
-### Education
-
-**Technical Degree in Software Development — CTP de Orosi (2023)**  
-- Graduated with **highest GPA and honors**.  
-
----
-
-## `/contact` – Let’s Build Something Great
+## `/contact` – Let's Build Something Great
 
 ### Contact Information
 

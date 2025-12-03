@@ -38,9 +38,10 @@ interface NavLink {
 
 const navigationLinks: NavLink[] = [
   { href: '/', label: 'Home', ariaLabel: 'Go to home page' },
-  { href: '/this-project', label: 'This Project', ariaLabel: 'Go to Critical Mass case study page' },
-  { href: '/skills', label: 'Skills', ariaLabel: 'Go to skills page' },
-  { href: '/projects', label: 'Projects', ariaLabel: 'Go to projects page' },
+  { href: '/this-project', label: 'This Project', ariaLabel: 'Go to this project page' },
+  { href: '/me-and-skills', label: 'Me & Skills', ariaLabel: 'Go to me and skills page' },
+  { href: '/projects', label: 'Projects & Experience', ariaLabel: 'Go to projects and experience page' },
+  { href: '/contact', label: 'Contact', ariaLabel: 'Go to contact page' },
   { href: '/ui-library', label: 'UI Library', ariaLabel: 'Go to UI library page' },
 ];
 

@@ -867,18 +867,17 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 ## Phase 13: Navigation & Routing Updates
 
 ### Navigation Bar Update
-- [ ] Review current NavBar (`src/components/layout/NavBar.tsx`)
-- [ ] Update navigation links to match new structure (in order):
-  - [ ] `/` → Home
-  - [ ] `/critical-mass-case-study` → Critical Mass Case Study
-  - [ ] `/projects` → Projects
-  - [ ] `/skills` → Skills
-  - [ ] `/experience` → Experience
-  - [ ] `/contact` → Contact
-  - [ ] `/ui-library` → UI Library
-- [ ] Remove any obsolete navigation links (e.g., `/about`, `/components`, `/content`)
-- [ ] Update aria-labels if needed
-- [ ] Ensure navigation order matches logical page flow
+- [x] Review current NavBar (`src/components/layout/NavBar.tsx`)
+- [x] Update navigation links to match new structure (in order):
+  - [x] `/` → Home
+  - [x] `/this-project` → This Project
+  - [x] `/me-and-skills` → Me & Skills
+  - [x] `/projects` → Projects & Experience
+  - [x] `/contact` → Contact
+  - [x] `/ui-library` → UI Library
+- [x] Remove any obsolete navigation links (e.g., `/about`, `/components`, `/content`, `/critical-mass-case-study`, `/skills`, `/experience`)
+- [x] Update aria-labels if needed
+- [x] Ensure navigation order matches logical page flow
 - [ ] Test navigation works correctly
 - [ ] Test active state indication works
 - [ ] Test mobile menu includes all new links
