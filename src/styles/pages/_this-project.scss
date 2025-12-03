@@ -191,27 +191,91 @@
     margin: 0;
     @include flex;
     @include flex-column;
-    gap: var(--space-lg);
+    @include align-center;
+    gap: var(--space-2xl);
 
     @include breakpoint-md {
-      gap: var(--space-xl);
+      gap: var(--space-3xl);
     }
 
     @include breakpoint-lg {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-xl);
+      gap: var(--space-3xl);
+      max-width: var(--container-lg);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include breakpoint-xl {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: var(--container-xl);
     }
   }
 
   &__workflow-item {
     @include flex;
-    @include flex-row;
-    gap: var(--space-md);
+    @include flex-column;
+    @include align-center;
+    text-align: center;
     position: relative;
+    width: 100%;
+    max-width: 20rem;
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-white);
+    border: var(--border-width-thin) solid var(--color-primary-rgba-10);
+    @include transition-multiple(transform, box-shadow, border-color);
+    @include shadow-sm;
 
     @include breakpoint-md {
-      gap: var(--space-lg);
+      max-width: 22rem;
+      padding: var(--space-xl);
+    }
+
+    @include breakpoint-lg {
+      max-width: 100%;
+    }
+
+    &[data-color="primary"] {
+      border-color: var(--color-primary-rgba-10);
+
+      &:hover {
+        border-color: var(--color-primary-rgba-20);
+      }
+
+      &:focus-within {
+        @include focus-visible-shadow(var(--color-primary));
+      }
+    }
+
+    &[data-color="secondary"] {
+      border-color: rgba(255, 0, 0, 0.1);
+
+      &:hover {
+        border-color: rgba(255, 0, 0, 0.2);
+      }
+
+      &:focus-within {
+        @include focus-visible-shadow(var(--color-secondary));
+      }
+    }
+
+    &[data-color="accent"] {
+      border-color: var(--color-accent-rgba-10);
+
+      &:hover {
+        border-color: rgba(255, 255, 0, 0.2);
+      }
+
+      &:focus-within {
+        @include focus-visible-shadow(var(--color-accent));
+      }
+    }
+
+    &:hover {
+      transform: translateY(calc(var(--space-xs) * -1));
+      @include shadow-md;
     }
   }
 
@@ -219,28 +283,91 @@
     @include flex;
     @include align-center;
     @include justify-center;
-    flex-shrink: 0;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: var(--radius-full);
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    font-size: var(--fs-lg);
+    font-size: var(--fs-2xl);
     font-weight: var(--fw-bold);
     line-height: 1;
+    margin-bottom: var(--space-lg);
+    @include shadow-md;
+    position: relative;
 
     @include breakpoint-md {
-      width: 3rem;
-      height: 3rem;
-      font-size: var(--fs-xl);
+      width: 5rem;
+      height: 5rem;
+      font-size: var(--fs-3xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    .this-project-page__workflow-item[data-color="primary"] & {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: calc(var(--space-xs) * -1);
+        border-radius: var(--radius-full);
+        background: linear-gradient(135deg, var(--color-primary-rgba-20) 0%, transparent 100%);
+        z-index: -1;
+        opacity: 0;
+        @include transition-base(opacity);
+      }
+
+      .this-project-page__workflow-item:hover &::before {
+        opacity: 1;
+      }
+    }
+
+    .this-project-page__workflow-item[data-color="secondary"] & {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: calc(var(--space-xs) * -1);
+        border-radius: var(--radius-full);
+        background: linear-gradient(135deg, rgba(255, 0, 0, 0.2) 0%, transparent 100%);
+        z-index: -1;
+        opacity: 0;
+        @include transition-base(opacity);
+      }
+
+      .this-project-page__workflow-item:hover &::before {
+        opacity: 1;
+      }
+    }
+
+    .this-project-page__workflow-item[data-color="accent"] & {
+      background-color: var(--color-accent);
+      color: var(--color-primary);
+      border: var(--border-width-thin) solid var(--color-primary);
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: calc(var(--space-xs) * -1);
+        border-radius: var(--radius-full);
+        background: linear-gradient(135deg, var(--color-accent-rgba-10) 0%, transparent 100%);
+        z-index: -1;
+        opacity: 0;
+        @include transition-base(opacity);
+      }
+
+      .this-project-page__workflow-item:hover &::before {
+        opacity: 1;
+      }
     }
   }
 
   &__workflow-content {
     @include flex;
     @include flex-column;
-    flex: 1;
-    gap: var(--space-xs);
+    @include align-center;
+    gap: var(--space-sm);
+    width: 100%;
   }
 
   &__workflow-step-title {
@@ -258,8 +385,13 @@
   &__workflow-step-description {
     font-size: var(--fs-base);
     line-height: var(--lh-relaxed);
-    color: var(--text-primary);
+    color: var(--color-primary);
     margin: 0;
+    max-width: 100%;
+
+    @include breakpoint-md {
+      font-size: var(--fs-lg);
+    }
   }
 
   &__pillars-grid {

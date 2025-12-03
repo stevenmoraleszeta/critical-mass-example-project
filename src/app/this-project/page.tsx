@@ -122,63 +122,91 @@ export default function ThisProject() {
 
           <section className="this-project-page__section" id="workflow" aria-labelledby="workflow-title">
             <h2 id="workflow-title" className="this-project-page__section-title">Design-to-Code Workflow</h2>
-            <p className="this-project-page__section-description">Typical workflow:</p>
+            <p className="this-project-page__section-description">How I translate designs into production-ready code:</p>
             
             <ol className="this-project-page__workflow-list">
-              <li className="this-project-page__workflow-item">
+              <li className="this-project-page__workflow-item" data-color="primary">
                 <span className="this-project-page__workflow-number" aria-hidden="true">1</span>
                 <div className="this-project-page__workflow-content">
                   <h3 className="this-project-page__workflow-step-title">Receive designs & specs</h3>
-                  <p className="this-project-page__workflow-step-description">Figma, wireframes, UX notes.</p>
+                  <p className="this-project-page__workflow-step-description">Figma files, wireframes, UX notes.</p>
                 </div>
               </li>
-              <li className="this-project-page__workflow-item">
+              <li className="this-project-page__workflow-item" data-color="secondary">
                 <span className="this-project-page__workflow-number" aria-hidden="true">2</span>
                 <div className="this-project-page__workflow-content">
                   <h3 className="this-project-page__workflow-step-title">Break into components</h3>
-                  <p className="this-project-page__workflow-step-description">Pages, sections, UI blocks (cards, navbars, buttons, grids).</p>
+                  <p className="this-project-page__workflow-step-description">Pages, sections, UI blocks.</p>
                 </div>
               </li>
-              <li className="this-project-page__workflow-item">
+              <li className="this-project-page__workflow-item" data-color="accent">
                 <span className="this-project-page__workflow-number" aria-hidden="true">3</span>
                 <div className="this-project-page__workflow-content">
                   <h3 className="this-project-page__workflow-step-title">Define responsive behavior</h3>
-                  <p className="this-project-page__workflow-step-description">For each breakpoint.</p>
+                  <p className="this-project-page__workflow-step-description">Breakpoints for each viewport.</p>
                 </div>
               </li>
-              <li className="this-project-page__workflow-item">
+              <li className="this-project-page__workflow-item" data-color="primary">
                 <span className="this-project-page__workflow-number" aria-hidden="true">4</span>
                 <div className="this-project-page__workflow-content">
                   <h3 className="this-project-page__workflow-step-title">Implement semantic HTML</h3>
                   <p className="this-project-page__workflow-step-description">Accessible React/Next.js components.</p>
                 </div>
               </li>
-              <li className="this-project-page__workflow-item">
+              <li className="this-project-page__workflow-item" data-color="secondary">
                 <span className="this-project-page__workflow-number" aria-hidden="true">5</span>
                 <div className="this-project-page__workflow-content">
-                  <h3 className="this-project-page__workflow-step-title">Style with CSS/SCSS/SASS</h3>
-                  <p className="this-project-page__workflow-step-description">Using variables, mixins, and BEM-like structure.</p>
+                  <h3 className="this-project-page__workflow-step-title">Style with SCSS/SASS</h3>
+                  <p className="this-project-page__workflow-step-description">Variables, mixins, BEM structure.</p>
                 </div>
               </li>
-              <li className="this-project-page__workflow-item">
+              <li className="this-project-page__workflow-item" data-color="accent">
                 <span className="this-project-page__workflow-number" aria-hidden="true">6</span>
                 <div className="this-project-page__workflow-content">
-                  <h3 className="this-project-page__workflow-step-title">Integrate APIs</h3>
-                  <p className="this-project-page__workflow-step-description">REST/JSON, occasionally SOAP, and manage local and global state.</p>
+                  <h3 className="this-project-page__workflow-step-title">Integrate programming logic</h3>
+                  <p className="this-project-page__workflow-step-description">Business logic, data flow, interactions.</p>
                 </div>
               </li>
-              <li className="this-project-page__workflow-item">
+              <li className="this-project-page__workflow-item" data-color="primary">
                 <span className="this-project-page__workflow-number" aria-hidden="true">7</span>
                 <div className="this-project-page__workflow-content">
-                  <h3 className="this-project-page__workflow-step-title">Test accessibility & responsiveness</h3>
-                  <p className="this-project-page__workflow-step-description">Keyboard navigation, contrast, screen sizes.</p>
+                  <h3 className="this-project-page__workflow-step-title">Test accessibility</h3>
+                  <p className="this-project-page__workflow-step-description">Keyboard nav, contrast, ARIA.</p>
                 </div>
               </li>
-              <li className="this-project-page__workflow-item">
+              <li className="this-project-page__workflow-item" data-color="secondary">
                 <span className="this-project-page__workflow-number" aria-hidden="true">8</span>
                 <div className="this-project-page__workflow-content">
-                  <h3 className="this-project-page__workflow-step-title">Review, test & iterate</h3>
-                  <p className="this-project-page__workflow-step-description">Quality assurance, performance optimization, and iterative refinement to meet production standards.</p>
+                  <h3 className="this-project-page__workflow-step-title">Test responsiveness</h3>
+                  <p className="this-project-page__workflow-step-description">Multiple viewports, cross-browser.</p>
+                </div>
+              </li>
+              <li className="this-project-page__workflow-item" data-color="accent">
+                <span className="this-project-page__workflow-number" aria-hidden="true">9</span>
+                <div className="this-project-page__workflow-content">
+                  <h3 className="this-project-page__workflow-step-title">Unit testing</h3>
+                  <p className="this-project-page__workflow-step-description">Jest, React Testing Library.</p>
+                </div>
+              </li>
+              <li className="this-project-page__workflow-item" data-color="primary">
+                <span className="this-project-page__workflow-number" aria-hidden="true">10</span>
+                <div className="this-project-page__workflow-content">
+                  <h3 className="this-project-page__workflow-step-title">Performance optimization</h3>
+                  <p className="this-project-page__workflow-step-description">Lazy loading, image optimization.</p>
+                </div>
+              </li>
+              <li className="this-project-page__workflow-item" data-color="secondary">
+                <span className="this-project-page__workflow-number" aria-hidden="true">11</span>
+                <div className="this-project-page__workflow-content">
+                  <h3 className="this-project-page__workflow-step-title">Code review & QA</h3>
+                  <p className="this-project-page__workflow-step-description">Quality assurance, refinement.</p>
+                </div>
+              </li>
+              <li className="this-project-page__workflow-item" data-color="accent">
+                <span className="this-project-page__workflow-number" aria-hidden="true">12</span>
+                <div className="this-project-page__workflow-content">
+                  <h3 className="this-project-page__workflow-step-title">Build & deploy</h3>
+                  <p className="this-project-page__workflow-step-description">CI/CD, production deployment.</p>
                 </div>
               </li>
             </ol>
