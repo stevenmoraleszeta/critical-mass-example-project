@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Button from '@/components/ui/Button';
+import AnimatedGradientBackground from '@/components/ui/AnimatedGradientBackground';
 
 /**
  * CTA Section Component
@@ -24,7 +25,7 @@ import Button from '@/components/ui/Button';
 export default function CTASection() {
   return (
     <section className="cta-section" id="cta" aria-labelledby="cta-title">
-      <div className="cta-section__background" aria-hidden="true" />
+      <AnimatedGradientBackground />
       <div className="cta-section__container">
         <h2 id="cta-title" className="cta-section__title">
           Want to see how I would work at Critical Mass?

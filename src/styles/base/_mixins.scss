@@ -426,3 +426,21 @@
   border-radius: var(--radius-full);
 }
 
+@mixin animated-gradient-background($angle: 135deg, $duration: 20s) {
+  background: linear-gradient(
+    $angle,
+    var(--color-accent),
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-accent)
+  );
+  background-size: 400% 400%;
+  animation: animated-gradient-shift $duration linear infinite;
+  will-change: background-position;
+  
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    background: var(--color-primary);
+  }
+}
+
