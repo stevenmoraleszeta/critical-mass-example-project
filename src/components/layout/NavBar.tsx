@@ -131,25 +131,30 @@ export default function NavBar({ className = '' }: NavBarProps) {
 
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as Node;
+      const isMobile = window.innerWidth < 768;
+      
       if (
+        isMobile &&
         menuListRef.current &&
         menuButtonRef.current &&
         !menuListRef.current.contains(target) &&
-        !menuButtonRef.current.contains(target) &&
-        window.innerWidth < 768
+        !menuButtonRef.current.contains(target)
       ) {
         setIsMobileMenuOpen(false);
+        menuButtonRef.current?.focus();
       }
     };
 
-    // Add listener after a small delay to avoid immediate closure
+    // Use mousedown instead of click to catch clicks more reliably
     const timeoutId = setTimeout(() => {
-      document.addEventListener('click', handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
     }, 100);
 
     return () => {
       clearTimeout(timeoutId);
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
     };
   }, [isMobileMenuOpen]);
 
@@ -165,6 +170,10 @@ export default function NavBar({ className = '' }: NavBarProps) {
   const handleLinkClick = () => {
     if (window.innerWidth < 768) {
       setIsMobileMenuOpen(false);
+      // Return focus to menu button after navigation
+      setTimeout(() => {
+        menuButtonRef.current?.focus();
+      }, 100);
     }
   };
 
