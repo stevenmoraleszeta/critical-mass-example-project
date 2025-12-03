@@ -6,6 +6,7 @@ import Button from '@/components/ui/Button';
 import CardBoard, { CardData } from '@/components/sections/CardBoard';
 import FloatingBinaryElements from '@/components/ui/FloatingBinaryElements';
 import ScrollArrow from '@/components/ui/ScrollArrow';
+import AnimatedGradientBackground from '@/components/ui/AnimatedGradientBackground';
 
 const projectOverviewCards: CardData[] = [
   {
@@ -214,44 +215,47 @@ export default function ThisProject() {
           </section>
 
           <section className="this-project-page__section this-project-page__section--cta" id="review" aria-labelledby="review-title">
-            <h2 id="review-title" className="this-project-page__section-title">What You Can Review</h2>
-            <p className="this-project-page__section-description">
-              From this page, link to:
-            </p>
-            
-            <div className="this-project-page__review-actions">
-              <a
-                href="https://stevenmorales.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="this-project-page__review-link"
-                aria-label="View live demo of portfolio site"
-              >
-                <Button variant="highlight" size="lg">
-                  View Live Demo
-                </Button>
-              </a>
+            <AnimatedGradientBackground />
+            <div className="this-project-page__review-container">
+              <h2 id="review-title" className="this-project-page__review-title">What You Can Review</h2>
+              <p className="this-project-page__review-description">
+                From this page, link to:
+              </p>
               
-              <a
-                href="https://github.com/stevenmoraleszeta/critical-mass-example-project"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="this-project-page__review-link"
-                aria-label="View GitHub repository with front-end structure, styles, tests and CI config"
-              >
-                <Button variant="primary" size="lg">
-                  View GitHub Repository
+              <div className="this-project-page__review-actions">
+                <a
+                  href="https://stevenmorales.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="this-project-page__review-link"
+                  aria-label="View live demo of portfolio site"
+                >
+                  <Button variant="highlight" size="lg">
+                    View Live Demo
+                  </Button>
+                </a>
+                
+                <a
+                  href="https://github.com/stevenmoraleszeta/critical-mass-example-project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="this-project-page__review-link"
+                  aria-label="View GitHub repository with front-end structure, styles, tests and CI config"
+                >
+                  <Button variant="primary" size="lg">
+                    View Repository
+                  </Button>
+                </a>
+                
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  href="/this-project/ui-library"
+                  ariaLabel="View UI library page with component showcase"
+                >
+                  UI Library
                 </Button>
-              </a>
-              
-              <Button
-                variant="secondary"
-                size="lg"
-                href="/this-project/ui-library"
-                ariaLabel="View UI library page with component showcase"
-              >
-                UI Library
-              </Button>
+              </div>
             </div>
           </section>
         </div>
