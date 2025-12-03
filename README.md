@@ -309,7 +309,7 @@ The application includes the following pages:
   - Role Focus: Developer, Front End @ Critical Mass
   - Key Highlights (What I bring to the team)
   - Primary Call To Action
-- **`/critical-mass-case-study`** - CM Front-End Experience Engine page with:
+- **`/critical-mass-case-study`** - Critical Mass Portfolio Prototype page with:
   - Project Overview
   - How This Portfolio Is Built for Critical Mass
   - Design-to-Code Workflow (Figma → HTML/CSS/JS/React)
@@ -317,7 +317,7 @@ The application includes the following pages:
   - Tooling, Testing & Automation
   - What You Can Review Here (Code, Live Demo, Repo Links)
 - **`/projects`** - Selected Projects & Case Studies page showcasing:
-  - Steven Morales FE-01 – Front-End Experience Engine
+  - Critical Mass Portfolio Prototype
   - Novaera SaaS ERP (Web, API, DB)
   - Precision Seas ERP System
   - ZETA Academia EdTech Platform (V1 & V2)

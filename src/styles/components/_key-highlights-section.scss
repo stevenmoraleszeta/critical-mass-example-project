@@ -1,35 +1,6 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-8px);
-  }
-  60% {
-    transform: translateY(-4px);
-  }
-}
-
-@keyframes levitate-card {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-@keyframes levitate-text {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-}
+@use '../base/animations' as *;
 
 .key-highlights {
   position: relative;
@@ -130,62 +101,6 @@
     }
   }
   
-  &__scroll-arrow {
-    position: relative;
-    z-index: 3;
-    margin-top: var(--space-xl);
-    margin-left: auto;
-    margin-right: auto;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: var(--space-md);
-    color: var(--color-red);
-    transition: transform var(--transition-base), opacity var(--transition-base);
-    opacity: 0.8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    @include focus-visible;
-    
-    &:hover {
-      opacity: 1;
-      transform: translateY(4px);
-    }
-    
-    &:active {
-      transform: translateY(6px);
-    }
-    
-    @media (prefers-reduced-motion: reduce) {
-      transition: none;
-      
-      &:hover {
-        transform: none;
-      }
-      
-      &:active {
-        transform: none;
-      }
-    }
-  }
-  
-  &__scroll-arrow-icon {
-    width: 32px;
-    height: 32px;
-    display: block;
-    animation: bounce 2s infinite;
-    
-    @include breakpoint-md {
-      width: 48px;
-      height: 48px;
-    }
-    
-    @media (prefers-reduced-motion: reduce) {
-      animation: none;
-    }
-  }
   
   
   @media (max-width: 319px) {
@@ -205,7 +120,7 @@
   .card {
     background-color: var(--color-accent);
     border-color: var(--color-primary);
-    animation: levitate-card 3s ease-in-out infinite;
+    @include levitate(-12px, 3s, ease-in-out, 0s);
     
     &:nth-child(1) {
       animation-delay: 0s;
@@ -236,7 +151,7 @@
       .card__description,
       .card__body {
         color: var(--color-primary);
-        animation: levitate-text 2.5s ease-in-out infinite;
+        @include levitate(-4px, 2.5s, ease-in-out, 0s);
       }
       
       .card__title {

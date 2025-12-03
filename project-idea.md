@@ -9,7 +9,7 @@
   - [2.2. Folder Structure](#22-folder-structure)
 - [3. Narrative Concept and Content for Each Page](#3-narrative-concept-and-content-for-each-page)
   - [3.1. Landing - "Steven Morales: Front-End Experience Engine"](#31-landing---steven-morales-front-end-experience-engine)
-  - [3.2. `/critical-mass-case-study` Page – CM Front-End Experience Engine](#32-critical-mass-case-study-page--cm-front-end-experience-engine)
+  - [3.2. `/critical-mass-case-study` Page – Critical Mass Portfolio Prototype](#32-critical-mass-case-study-page--critical-mass-portfolio-prototype)
   - [3.3. `/projects` Page – Selected Projects & Case Studies](#33-projects-page--selected-projects--case-studies)
   - [3.4. `/skills` Page – Skills & Tech Stack](#34-skills-page--skills--tech-stack)
   - [3.5. `/experience` Page – Professional Experience](#35-experience-page--professional-experience)
@@ -91,7 +91,7 @@ This project needs to clearly respond to the job posting:
   - Key Highlights (What I bring to the team)
   - Primary Call To Action
 
-- **`/critical-mass-case-study`** → CM Front-End Experience Engine
+- **`/critical-mass-case-study`** → Critical Mass Portfolio Prototype
   - Project Overview
   - How This Portfolio Is Built for Critical Mass
   - Design-to-Code Workflow (Figma → HTML/CSS/JS/React)
@@ -100,7 +100,7 @@ This project needs to clearly respond to the job posting:
   - What You Can Review Here (Code, Live Demo, Repo Links)
 
 - **`/projects`** → Selected Projects & Case Studies
-  - Steven Morales FE-01 – Front-End Experience Engine
+  - Critical Mass Portfolio Prototype
   - Novaera SaaS ERP (Web, API, DB)
   - Precision Seas ERP System
   - ZETA Academia EdTech Platform (V1 & V2)
@@ -418,7 +418,7 @@ I'll render it as cards or timeline, haven't decided yet.
 - View Critical Mass Case Study → `/critical-mass-case-study`
 - Explore My Projects → `/projects`
 
-### 3.2. `/critical-mass-case-study` Page – CM Front-End Experience Engine
+### 3.2. `/critical-mass-case-study` Page – Critical Mass Portfolio Prototype
 
 **Objective:** Detailed breakdown of how this portfolio demonstrates alignment with Critical Mass requirements.
 
@@ -428,7 +428,7 @@ I'll render it as cards or timeline, haven't decided yet.
 
 #### Section 1 – Project Overview
 
-- This site and the linked project **"Steven Morales FE-01 – Front-End Experience Engine"** are built as a **portfolio prototype specifically for the Critical Mass Developer, Front End role**.
+- This site is built as a **portfolio prototype specifically for the Critical Mass Developer, Front End role**, demonstrating front-end expertise, design-to-code translation, and modern web development practices.
 
 **Goals:**
 - Demonstrate **design-to-code translation** using **Figma → Next.js + SASS/SCSS**.
@@ -499,7 +499,7 @@ Each project section includes: **context, responsibilities, tech stack, and impa
 
 **Projects to showcase (from PROJECT-CONTENT.md):**
 
-1. **Steven Morales FE-01 – Front-End Experience Engine**
+1. **Critical Mass Portfolio Prototype**
 2. **Novaera SaaS ERP (Web, API, DB)**
 3. **Precision Seas ERP System**
 4. **ZETA Academia EdTech Platform (V1 & V2)**

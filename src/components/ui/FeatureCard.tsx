@@ -39,6 +39,10 @@ export interface FeatureCardProps {
   isDragging?: boolean;
   /** Is drag over target */
   isDragOver?: boolean;
+  /** Rotation angle in degrees for disordered appearance */
+  rotation?: number;
+  /** Animation delay in seconds */
+  animationDelay?: number;
   /** Drag start handler */
   onDragStart?: () => void;
   /** Drag over handler */
@@ -68,6 +72,8 @@ export default function FeatureCard({
   draggable = false,
   isDragging = false,
   isDragOver = false,
+  rotation = 0,
+  animationDelay = 0,
   onDragStart,
   onDragOver,
   onDragLeave,
@@ -86,9 +92,15 @@ export default function FeatureCard({
     .filter(Boolean)
     .join(' ');
 
+  const style = {
+    '--card-rotation': `${rotation}deg`,
+    '--card-animation-delay': `${animationDelay}s`,
+  } as React.CSSProperties;
+
   return (
     <article
       className={classNames}
+      style={style}
       draggable={draggable}
       onDragStart={(e) => {
         if (draggable && onDragStart) {

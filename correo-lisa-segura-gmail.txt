@@ -1,0 +1,42 @@
+ASUNTO: Portfolio en Desarrollo - Developer, Front End | Steven Morales
+
+---
+
+Estimada Lisa Segura,
+
+Espero que te encuentres bien. Me dirijo a ti para compartir algo especial que he estado trabajando.
+
+Aunque no me hayan pedido este proyecto como parte del proceso, decidí crear un portfolio prototipo específicamente para Critical Mass porque quería hacer algo especial para la empresa, utilizando las tecnologías y prácticas que buscan para la posición de Developer, Front End. Me emociona mucho la oportunidad y quería demostrar mi compromiso y entusiasmo de una manera práctica.
+
+He estado trabajando activamente en el proyecto y espero completarlo esta semana. He establecido la base técnica con Next.js 14, TypeScript y SCSS, implementado un sistema de diseño completo con metodología BEM, y desarrollado los componentes principales y varias páginas funcionales. Continúo refinando el contenido y completando las páginas restantes.
+
+ENLACES:
+
+Demo en vivo: https://stevenmorales.vercel.app/
+
+Repositorio GitHub: https://github.com/stevenmoraleszeta/critical-mass-example-project
+
+ASPECTOS DESTACADOS DEL PROYECTO:
+
+El portfolio refleja mi enfoque en arquitectura de componentes reutilizables siguiendo metodologías BEM y SMACSS, accesibilidad WCAG con HTML semántico y navegación por teclado, y diseño responsive mobile-first. Incluye un sistema de diseño completo, componentes UI documentados, y páginas funcionales que muestran proyectos, habilidades y una biblioteca de componentes.
+
+Estoy muy entusiasmado con este proyecto y con la posibilidad de formar parte del equipo de Critical Mass. Estaré disponible para cualquier pregunta o feedback que puedas tener sobre el proyecto.
+
+También quedo atento a la cita e información para la entrevista técnica. Estoy listo y disponible para coordinar cuando sea conveniente.
+
+Agradezco mucho tu tiempo y consideración.
+
+Saludos cordiales,
+
+Steven Morales Fallas
+Full Stack Software Engineer & Tech Leader
+San José, Costa Rica
+fallasmoraless@gmail.com
++506 6130 4830
+LinkedIn: https://linkedin.com/in/stevenmoralesfallas
+GitHub: https://github.com/stevenmoraleszeta
+
+---
+
+Este portfolio ha sido desarrollado específicamente para demostrar mis habilidades y enfoque para la posición de Developer, Front End en Critical Mass.
+

@@ -4,6 +4,16 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 > **Note:** All official copy and content for pages is defined in `PROJECT-CONTENT.md`. Always refer to that file for exact copy, content structure, and page specifications.
 
+> **Important:** Follow the phases in order. Each phase builds upon the previous ones. Refer to `CONSIDERACIONES_DESARROLLO.md` for development standards, BEM methodology, accessibility requirements, and code quality guidelines.
+
+## Phase Overview
+
+**Foundation (Phases 1-4):** Project setup, design system, UI components, and layout structure  
+**Content Pages (Phases 5-12):** Home page reorganization and all content pages creation/updates  
+**Integration & Quality (Phases 13-16):** Navigation updates, style organization, content verification  
+**Optimization (Phases 17-19):** Accessibility, performance, and testing implementation  
+**Finalization (Phases 20-24):** Git workflow, documentation, polish, deployment, and presentation preparation
+
 ---
 
 ## Phase 1: Project Setup & Initialization
@@ -337,157 +347,56 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 5: Landing Page Sections
+## Phase 5: Landing Page Sections (Initial Version - Superseded by Phase 6)
 
-### Hero Section
+> **Note:** This phase represents the initial landing page implementation with older sections. The landing page has been reorganized in **Phase 6** to match the new structure from `PROJECT-CONTENT.md`. The sections below (Features, Specs, Use Cases, Performance, Testimonials, Pricing) have been removed/replaced as part of the reorganization. Only Hero and CTA sections were updated and retained in Phase 6.
+
+### Hero Section (Updated in Phase 6)
 
 - [x] Create `components/sections/Hero.tsx`
 - [x] Define `HeroProps` interface (from specifications)
-- [x] Add title (H1): "Meet Steven Morales: Your Next Front-End Experience Engine."
-- [x] Add subtitle
-- [x] Add primary CTA button: "View Features"
-- [x] Add secondary CTA button: "See Live Content"
-- [x] Add note: "No monthly subscription. Just coffee and interesting problems."
-- [x] Add image/visual element (placeholder or actual)
+- [x] Update with new copy from `PROJECT-CONTENT.md` (see Phase 6)
 - [x] Create `styles/components/_hero.scss`
 - [x] Style hero section with BEM
-- [x] Add background gradient
 - [x] Make hero responsive
-- [x] Center hero content on all breakpoints (mobile-first, centered layout)
-- [x] Implement smooth scroll to Features section (for primary CTA)
-- [x] Test hero section renders correctly
-- [x] Test CTAs work correctly
 
-### Features Section
-
-- [x] Create `components/sections/Features.tsx`
-- [x] Create `components/ui/FeatureCard.tsx`
-- [x] Define `FeatureCardProps` interface
-- [x] Add section title: "Core Features"
-- [x] Add Feature 1: "Design-to-Code Translation"
-- [x] Add Feature 2: "Responsive & Mobile-First Layout Engine"
-- [x] Add Feature 3: "API Integration Module"
-- [x] Add Feature 4: "Accessibility & Performance Optimizer"
-- [x] Add icons to each feature card (SVG or icon component)
-- [x] Style features section
-- [x] Style feature cards with BEM
-- [x] Make features section responsive (grid layout)
-- [x] Test features section renders correctly
-
-### Specs Section
-
-- [x] Create `components/sections/Specs.tsx`
-- [x] Define `SpecsSectionProps` interface
-- [x] Add section title: "Tech Specs"
-- [x] Create column layout
-- [x] Add Column 1: Supported Technologies (React, Next.js, TypeScript, etc.)
-- [x] Add Column 2: Protocols & Data (HTTP, JSON, XML, REST APIs)
-- [x] Add Column 3: Integrations (CMS-like data, 3rd-party APIs, Webhooks)
-- [x] Add footer note: "Backwards-compatible with legacy codebases (with patience)."
-- [x] Style specs section
-- [x] Make specs section responsive
-- [x] Test specs section renders correctly
-
-### Use Cases Section
-
-- [x] Create `components/sections/UseCases.tsx`
-- [x] Create `components/ui/UseCaseCard.tsx`
-- [x] Define `UseCaseCardProps` interface
-- [x] Add section title: "Use Cases"
-- [x] Add Use Case 1: "Need a pixel-perfect build from a Figma file?"
-- [x] Add Use Case 2: "Need a component library your design team actually likes?"
-- [x] Add Use Case 3: "Need someone to debug that weird layout in Safari?"
-- [x] Style use cases section
-- [x] Style use case cards
-- [x] Make use cases section responsive
-- [x] Test use cases section renders correctly
-
-### Performance Section
-
-- [x] Create `components/sections/PerformanceSection.tsx`
-- [x] Create `components/ui/StatCard.tsx`
-- [x] Define `StatCardProps` interface
-- [x] Add section title: "Performance & Reliability"
-- [x] Add Stat Card 1: "Lighthouse Focus"
-- [x] Add Stat Card 2: "Optimization Built-In"
-- [x] Add Stat Card 3: "Data-Driven Approach"
-- [x] Add performance paragraph (from copy section)
-- [x] Style performance section
-- [x] Style stat cards
-- [x] Make performance section responsive
-- [x] Test performance section renders correctly
-
-### Testimonials Section
-
-- [x] Create `components/sections/Testimonials.tsx`
-- [x] Create `components/ui/TestimonialCard.tsx`
-- [x] Define `TestimonialCardProps` interface
-- [x] Add section title: "What Teams Say"
-- [x] Add Testimonial 1 (from copy section)
-- [x] Add Testimonial 2 (optional)
-- [x] Add Testimonial 3 (optional)
-- [x] Style testimonials section
-- [x] Style testimonial cards
-- [x] Make testimonials section responsive
-- [x] Test testimonials section renders correctly
-
-### Pricing Section
-
-- [x] Create `components/sections/PricingSection.tsx`
-- [x] Add section title: "Availability & Pricing"
-- [x] Add pricing copy (from copy section)
-- [x] Style pricing section
-- [x] Make pricing section responsive
-- [x] Test pricing section renders correctly
-
-### Final CTA Section
+### CTA Section (Updated in Phase 6)
 
 - [x] Create `components/sections/CTASection.tsx`
-- [x] Add section title: "Ready to Explore?"
-- [x] Add Button 1: "Explore Components" → `/components`
-- [x] Add Button 2: "View Content in Action" → `/content`
-- [x] Add note: "This prototype was crafted specifically with the Critical Mass Front-End Developer role in mind."
+- [x] Update with new copy from `PROJECT-CONTENT.md` (see Phase 6)
 - [x] Style CTA section
 - [x] Make CTA section responsive
-- [x] Test CTA section renders correctly
-- [x] Test buttons navigate correctly
 
-### Landing Page Assembly
+### Legacy Sections (Removed/Reorganized in Phase 6)
 
-- [x] Create `app/page.tsx` (or update existing)
-- [x] Import all section components
-- [x] Assemble landing page with all sections in order
-- [x] Wrap with MainLayout
-- [x] Create `styles/pages/_home.scss`
-- [x] Add page-specific styles
-- [x] Test full landing page renders correctly
-- [x] Test all sections are visible
-- [x] Test all links and buttons work
-- [x] Test page is responsive on mobile/tablet/desktop
+- [x] Features Section (replaced by Key Highlights in Phase 6)
+- [x] Specs Section (removed)
+- [x] Use Cases Section (removed)
+- [x] Performance Section (removed)
+- [x] Testimonials Section (removed)
+- [x] Pricing Section (removed)
+
+> **See Phase 6 for the current Home page structure and implementation.**
 
 ---
 
-## Phase 6: Content & Structure Reorganization
-
-> **Objective:** Reorganize all existing pages, sections, and content to align with the new planning and content defined in `PROJECT-CONTENT.md`. This phase involves updating existing content, creating missing pages, removing obsolete sections, and ensuring all content matches the official copy.
+## Phase 6: Home Page (`/`) Content & Structure Reorganization
 
 > **Reference:** Always use `PROJECT-CONTENT.md` as the single source of truth for all page content, copy, and structure.
 
-### Phase 6.1: Home Page (`/`) Reorganization
-
-#### Current State Analysis
+### Current State Analysis
 - [x] Review current Home page structure (`src/app/page.tsx`)
 - [x] Identify existing sections: Hero, Features, UseCases, FeaturedProjects, LeadershipSection, PerformanceSection, PricingSection, CTASection
 - [x] Document current content and structure
 - [x] Compare with target structure from `PROJECT-CONTENT.md`
 
-#### Target Structure (from PROJECT-CONTENT.md)
+### Target Structure (from PROJECT-CONTENT.md)
 - [x] Hero section (with new copy)
-- [ ] Role Focus: Developer, Front End @ Critical Mass section
-- [ ] Key Highlights – What I Bring to Critical Mass section
-- [ ] Primary Call To Action section
+- [x] Role Focus: Developer, Front End @ Critical Mass section
+- [x] Key Highlights – What I Bring to Critical Mass section
+- [x] Primary Call To Action section
 
-#### Hero Section Update
+### Hero Section Update
 - [x] Update Hero component (`src/components/sections/Hero.tsx`) with new copy from `PROJECT-CONTENT.md`:
   - [x] Update headline: "Front-End Experience Engine for Critical Mass."
   - [x] Update subheadline with new copy
@@ -498,7 +407,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [x] Update `src/app/page.tsx` to pass new Hero props
 - [ ] Test Hero renders correctly with new content
 
-#### Role Focus Section Creation
+### Role Focus Section Creation
 - [x] Create new section component `src/components/sections/RoleFocusSection.tsx`
 - [x] Implement section with 6 items from `PROJECT-CONTENT.md`:
   - [x] Design Translation
@@ -514,7 +423,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [x] Create `styles/components/_role-focus-section.scss`
 - [ ] Test section renders correctly
 
-#### Key Highlights Section Creation
+### Key Highlights Section Creation
 - [x] Create new section component `src/components/sections/KeyHighlightsSection.tsx`
 - [x] Implement section with 6 highlights from `PROJECT-CONTENT.md`:
   - [x] Front-End Expertise
@@ -529,7 +438,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [x] Create `styles/components/_key-highlights-section.scss`
 - [ ] Test section renders correctly
 
-#### Primary CTA Section Update
+### Primary CTA Section Update
 - [x] Update CTASection component (`src/components/sections/CTASection.tsx`) with new copy from `PROJECT-CONTENT.md`:
   - [x] Update title/heading: "Want to see how I would work at Critical Mass?"
   - [x] Update description: "Start with the 'Critical Mass Case Study' page – it's a focused breakdown of how I match this role, backed by real code and projects."
@@ -537,7 +446,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [x] Update styles if needed
 - [ ] Test CTA section renders correctly
 
-#### Remove/Archive Obsolete Sections
+### Remove/Archive Obsolete Sections
 - [x] Remove `UseCases` section (not in new structure)
 - [x] Remove `FeaturedProjects` section (moved to `/projects` page)
 - [x] Remove `LeadershipSection` (content reorganized)
@@ -545,10 +454,10 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [x] Remove `PricingSection` (not in new structure)
 - [x] Remove `Features` section (not in new structure, replaced by Key Highlights)
 - [x] Update `src/app/page.tsx` to remove obsolete section imports
-- [x] Clean up unused section files them
+- [x] Clean up unused section files
 - [x] Update imports in `main.scss` if needed
 
-#### Home Page Final Assembly
+### Home Page Final Assembly
 - [x] Update `src/app/page.tsx` with new section order:
   - [x] Hero
   - [x] Role Focus Section
@@ -562,57 +471,92 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [ ] Test page is responsive on mobile/tablet/desktop
 - [x] Verify content matches `PROJECT-CONTENT.md` exactly
 
-### Phase 6.2: Critical Mass Case Study Page (`/critical-mass-case-study`) Creation
+---
 
-#### Page Setup
-- [ ] Create `app/critical-mass-case-study/page.tsx`
-- [ ] Add page title: "CM Front-End Experience Engine"
-- [ ] Wrap with MainLayout
-- [ ] Add semantic HTML structure (`<main>`, `<section>`)
+## Phase 7: Critical Mass Case Study Page (`/critical-mass-case-study`)
 
-#### Content Sections (from PROJECT-CONTENT.md)
-- [ ] Create Section 1 – Project Overview
-  - [ ] Add project description from `PROJECT-CONTENT.md`
-  - [ ] Add goals list (4 goals)
-- [ ] Create Section 2 – How This Portfolio Is Built for Critical Mass
-  - [ ] Add Figma to Front-End content
-  - [ ] Add Design Systems content
-  - [ ] Add Mobile First content
-  - [ ] Add Cross-Browser content
-- [ ] Create Section 3 – Design-to-Code Workflow
-  - [ ] Add workflow steps (8 steps from `PROJECT-CONTENT.md`)
-- [ ] Create Section 4 – Accessibility, Performance & Responsiveness
-  - [ ] Add Accessibility subsection (3 bullet points)
-  - [ ] Add Performance subsection (3 bullet points)
-  - [ ] Add Responsiveness subsection (3 bullet points)
-- [ ] Create Section 5 – Tooling, Testing & Automation
-  - [ ] Add Preprocessors content
-  - [ ] Add Tooling content
-  - [ ] Add Testing content
-  - [ ] Add CI/CD content
-- [ ] Create Section 6 – What You Can Review
-  - [ ] Add Live demo link
-  - [ ] Add GitHub repository links
-  - [ ] Add Other case studies link to `/projects`
+> **Reference:** Always use `PROJECT-CONTENT.md` as the single source of truth for all page content, copy, and structure.
 
-#### Styling
-- [ ] Create `styles/pages/_critical-mass-case-study.scss`
-- [ ] Style case study page with BEM methodology
-- [ ] Make page responsive (mobile-first)
-- [ ] Add proper spacing and typography
-- [ ] Test page renders correctly
-- [ ] Verify all content matches `PROJECT-CONTENT.md`
+### Page Setup
+- [x] Create `app/critical-mass-case-study/page.tsx`
+- [x] Add page title: "Critical Mass Portfolio Prototype"
+- [x] Wrap with MainLayout
+- [x] Add semantic HTML structure (`<main>`, `<section>`)
 
-### Phase 6.3: Projects Page (`/projects`) Content Update
+### Content Sections (from PROJECT-CONTENT.md)
+- [x] Create Section 1 – Project Overview
+  - [x] Add project description from `PROJECT-CONTENT.md`
+  - [x] Add goals list (4 goals)
+  - [x] Restored original 16 cards with full content in Project Overview section
+- [x] Create Section 2 – How This Portfolio Is Built for Critical Mass
+  - [x] Add Figma to Front-End content
+  - [x] Add Design Systems content
+  - [x] Add Mobile First content
+  - [x] Add Cross-Browser content
+- [x] Create Section 3 – Design-to-Code Workflow
+  - [x] Add workflow steps (8 steps from `PROJECT-CONTENT.md`)
+- [x] Create Section 4 – Accessibility, Performance & Responsiveness
+  - [x] Add Accessibility subsection (3 bullet points)
+  - [x] Add Performance subsection (3 bullet points)
+  - [x] Add Responsiveness subsection (3 bullet points)
+- [x] Create Section 5 – Tooling, Testing & Automation
+  - [x] Add Preprocessors content
+  - [x] Add Tooling content
+  - [x] Add Testing content
+  - [x] Add CI/CD content
+- [x] Create Section 6 – What You Can Review
+  - [x] Add Live demo link
+  - [x] Add GitHub repository links
+  - [x] Add Other case studies link to `/projects`
 
-#### Current State Analysis
+### Design Ideas
+- [x] **Layout Structure:**
+  - [x] Centered container with max-width (`var(--container-xl)`) consistent with Home page
+  - [x] Each section as separate semantic `<section>` with consistent spacing
+  - [x] Hero-style introduction section at top with page title (H1) and brief intro
+  - [x] Clear visual hierarchy with section titles (H2) and subsections (H3)
+- [x] **Visual Design:**
+  - [x] Use Card components for "Project Overview" goals list (similar to Key Highlights pattern)
+  - [x] Use FeatureCard or custom cards for "How This Portfolio Is Built" subsections (4 items in grid)
+  - [x] Workflow steps displayed as numbered list or timeline-style layout (vertical or horizontal on desktop)
+  - [x] Three-column grid for "Accessibility, Performance & Responsiveness" subsections (mobile: stacked)
+  - [x] Cards or sections for "Tooling, Testing & Automation" content (grouped by category)
+  - [x] Prominent CTA section at bottom with links (similar to CTASection component)
+- [x] **Color & Typography:**
+  - [x] Use primary color (#0000FF) for headings and accent elements
+  - [x] Consistent typography scale from `_variables.scss`
+  - [x] Clear distinction between sections with spacing (`var(--space-2xl)` between sections)
+- [x] **Interactive Elements:**
+  - [x] Links styled consistently with Button component (primary/secondary variants)
+  - [x] Smooth scroll to sections if using anchor navigation
+  - [x] Hover states on interactive elements following project patterns
+- [x] **Mobile-First Responsive:**
+  - [x] Single column layout on mobile, expanding to 2-3 columns on tablet/desktop
+  - [x] Workflow steps stack vertically on mobile, horizontal on desktop
+  - [x] Grid layouts adapt from 1 column (mobile) to 2-3 columns (desktop)
+
+### Styling
+- [x] Create `styles/pages/_critical-mass-case-study.scss`
+- [x] Style case study page with BEM methodology
+- [x] Make page responsive (mobile-first)
+- [x] Add proper spacing and typography
+- [x] Test page renders correctly
+- [x] Verify all content matches `PROJECT-CONTENT.md`
+
+---
+
+## Phase 8: Projects Page (`/projects`) Content Update
+
+> **Reference:** Always use `PROJECT-CONTENT.md` as the single source of truth for all page content, copy, and structure.
+
+### Current State Analysis
 - [ ] Review current Projects page (`src/app/projects/page.tsx`)
 - [ ] Compare current project data with `PROJECT-CONTENT.md`
 - [ ] Identify missing projects
 - [ ] Identify projects that need content updates
 
-#### Content Updates (from PROJECT-CONTENT.md)
-- [ ] Update/Create Project: Steven Morales FE-01 – Front-End Experience Engine
+### Content Updates (from PROJECT-CONTENT.md)
+- [ ] Update/Create Project: Critical Mass Portfolio Prototype
   - [ ] Add project type, status, live URL, repo URL
   - [ ] Add "What it is" description from `PROJECT-CONTENT.md`
   - [ ] Add highlights list (4 items)
@@ -648,28 +592,51 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
   - [ ] Add "What it is" description
   - [ ] Add "My role" description
 
-#### Page Structure Update
+### Page Structure Update
 - [ ] Update page title: "Selected Projects & Case Studies"
 - [ ] Add page description/intro if needed
 - [ ] Ensure all 9 projects are displayed
 - [ ] Verify project order matches `PROJECT-CONTENT.md`
 - [ ] Test all project links work correctly
 
-#### Styling Updates
+### Design Ideas
+- [ ] **Current Layout Enhancement:**
+  - [ ] Keep existing filter/search functionality (already well-designed)
+  - [ ] Enhance project cards with consistent spacing and visual hierarchy
+  - [ ] Add visual grouping by category or status if helpful
+- [ ] **Visual Improvements:**
+  - [ ] Consider adding project thumbnail images to cards (using next/image)
+  - [ ] Enhanced card hover states for better interactivity
+  - [ ] Visual separation between project cards with consistent spacing
+  - [ ] Prominent display of "Live" status badges for quick scanning
+- [ ] **Layout Refinements:**
+  - [ ] Ensure grid layout is optimal: 1 column (mobile), 2 columns (tablet), 3 columns (desktop)
+  - [ ] Consistent card heights or allow natural flow based on content
+  - [ ] Better visual hierarchy for project title, category, and status
+- [ ] **Content Presentation:**
+  - [ ] Group related information (tech stack, highlights, links) clearly
+  - [ ] Ensure external links are visually distinct and accessible
+  - [ ] Consider adding visual indicators for project types (ERP, EdTech, etc.)
+
+### Styling Updates
 - [ ] Update `styles/pages/_projects.scss` if needed
 - [ ] Ensure page is responsive
 - [ ] Test projects page renders correctly
 - [ ] Verify all content matches `PROJECT-CONTENT.md`
 
-### Phase 6.4: Skills Page (`/skills`) Content Update
+---
 
-#### Current State Analysis
+## Phase 9: Skills Page (`/skills`) Content Update
+
+> **Reference:** Always use `PROJECT-CONTENT.md` as the single source of truth for all page content, copy, and structure.
+
+### Current State Analysis
 - [ ] Review current Skills page (`src/app/skills/page.tsx`)
 - [ ] Compare current skills structure with `PROJECT-CONTENT.md`
 - [ ] Identify missing skill categories
 - [ ] Identify skills that need updates
 
-#### Content Updates (from PROJECT-CONTENT.md)
+### Content Updates (from PROJECT-CONTENT.md)
 - [ ] Update Core Front-End section
   - [ ] Add Languages subsection (HTML5, CSS3, JavaScript, TypeScript)
   - [ ] Add Frameworks & Libraries subsection (React, React Native, Next.js)
@@ -696,25 +663,52 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [ ] Update Soft Skills & Ways of Working section
   - [ ] Add all soft skills from `PROJECT-CONTENT.md`
 
-#### Page Structure Update
+### Page Structure Update
 - [ ] Update page title: "Skills & Tech Stack"
 - [ ] Ensure all sections are properly organized
 - [ ] Verify content matches `PROJECT-CONTENT.md` exactly
 
-#### Styling Updates
+### Design Ideas
+- [ ] **Layout Structure:**
+  - [ ] Replace current simple Specs section with rich, organized skill sections
+  - [ ] Use Card components for each skill category (Core Front-End, Back-End, etc.)
+  - [ ] Group skills logically with visual hierarchy
+- [ ] **Visual Organization:**
+  - [ ] Each major skill category as a section with title (H2)
+  - [ ] Subsections within categories (e.g., "Languages", "Frameworks") as H3
+  - [ ] Skills displayed as Tags for easy scanning and visual consistency
+  - [ ] Use badges or icons to distinguish skill categories
+- [ ] **Layout Patterns:**
+  - [ ] Skills grid layout: 1 column (mobile), 2 columns (tablet), 3-4 columns (desktop)
+  - [ ] Group related skills together (e.g., all Front-End tools in one card)
+  - [ ] Soft Skills section at bottom with different visual treatment (emphasize human aspects)
+- [ ] **Interactive Elements:**
+  - [ ] Consider hover effects on skill tags/cards
+  - [ ] Visual grouping by proficiency level if relevant (though not in PROJECT-CONTENT.md)
+  - [ ] Consistent spacing between skill groups
+- [ ] **Enhanced Presentation:**
+  - [ ] Use FeatureCard components for major skill categories
+  - [ ] Tag components for individual technologies/tools
+  - [ ] Consider iconography for major categories (optional, decorative only with proper alt text)
+
+### Styling Updates
 - [ ] Update `styles/pages/_skills.scss` if needed
 - [ ] Ensure page is responsive
 - [ ] Test skills page renders correctly
 
-### Phase 6.5: Experience Page (`/experience`) Creation
+---
 
-#### Page Setup
+## Phase 10: Experience Page (`/experience`) Creation
+
+> **Reference:** Always use `PROJECT-CONTENT.md` as the single source of truth for all page content, copy, and structure.
+
+### Page Setup
 - [ ] Create `app/experience/page.tsx`
 - [ ] Add page title: "Professional Experience"
 - [ ] Wrap with MainLayout
 - [ ] Add semantic HTML structure
 
-#### Experience Sections (from PROJECT-CONTENT.md)
+### Experience Sections (from PROJECT-CONTENT.md)
 - [ ] Create CEO & Lead Software Developer — Novaera section
   - [ ] Add date range: May 2024 – Present
   - [ ] Add responsibilities list (5 items from `PROJECT-CONTENT.md`)
@@ -737,22 +731,54 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
   - [ ] Add Ownership subsection
   - [ ] Add Collaboration subsection
 
-#### Styling
+### Design Ideas
+- [ ] **Layout Structure:**
+  - [ ] Timeline-style layout for chronological experience (vertical timeline on mobile, can be horizontal on desktop)
+  - [ ] Each role as a Card component with clear visual hierarchy
+  - [ ] Date ranges prominently displayed (consider using Badge or Tag component)
+  - [ ] Impact Summary section at bottom as highlight cards (similar to Key Highlights pattern)
+- [ ] **Visual Design:**
+  - [ ] Experience entries as FeatureCard or custom experience cards
+  - [ ] Clear separation between different roles/positions
+  - [ ] Responsibilities displayed as clean bullet list or structured grid
+  - [ ] Visual indicators for current vs. past positions
+- [ ] **Timeline Approach (Optional):**
+  - [ ] Vertical timeline on left (or centered) connecting experience entries
+  - [ ] Each entry card positioned relative to timeline
+  - [ ] Responsive: timeline becomes simple vertical line on mobile, more elaborate on desktop
+  - [ ] Alternative: Simple stacked cards if timeline is too complex
+- [ ] **Education Section:**
+  - [ ] Distinct visual treatment from work experience (different card style or layout)
+  - [ ] Highlight graduation details (highest GPA, honors) prominently
+- [ ] **Impact Summary:**
+  - [ ] Three-card grid layout: Leadership, Ownership, Collaboration
+  - [ ] Use Card components with consistent styling
+  - [ ] Visual emphasis on these key strengths
+- [ ] **Color & Typography:**
+  - [ ] Consistent with project design system
+  - [ ] Use primary color for role titles and dates
+  - [ ] Clear typography hierarchy for company, role, dates, responsibilities
+
+### Styling
 - [ ] Create `styles/pages/_experience.scss`
 - [ ] Style experience page with BEM methodology
 - [ ] Make page responsive (mobile-first)
 - [ ] Test page renders correctly
 - [ ] Verify all content matches `PROJECT-CONTENT.md`
 
-### Phase 6.6: Contact Page (`/contact`) Creation
+---
 
-#### Page Setup
+## Phase 11: Contact Page (`/contact`) Creation
+
+> **Reference:** Always use `PROJECT-CONTENT.md` as the single source of truth for all page content, copy, and structure.
+
+### Page Setup
 - [ ] Create `app/contact/page.tsx`
 - [ ] Add page title: "Let's Build Something Great"
 - [ ] Wrap with MainLayout
 - [ ] Add semantic HTML structure
 
-#### Contact Sections (from PROJECT-CONTENT.md)
+### Contact Sections (from PROJECT-CONTENT.md)
 - [ ] Create Contact Information section
   - [ ] Add Name: Steven Morales Fallas
   - [ ] Add Location: San José, Costa Rica
@@ -766,16 +792,54 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
   - [ ] Add closing message content from `PROJECT-CONTENT.md`
   - [ ] Add quote: "We don't need to wait a single moment to start changing the world." – Anne Frank
 
-#### Styling
+### Design Ideas
+- [ ] **Layout Structure:**
+  - [ ] Centered, focused layout with clear sections
+  - [ ] Hero-style introduction with page title "Let's Build Something Great"
+  - [ ] Three distinct sections: Contact Info, Online Profiles, Closing Message
+  - [ ] Clean, minimal design emphasizing clarity and accessibility
+- [ ] **Contact Information Section:**
+  - [ ] Display contact details in Card component or structured list
+  - [ ] Each contact method as clickable link with icon (phone, email, location pin)
+  - [ ] WhatsApp link prominently displayed with visual indicator
+  - [ ] Email with mailto link styled as primary button or link
+  - [ ] Location displayed with visual styling (subtle, informative)
+- [ ] **Online Profiles Section:**
+  - [ ] Social links as Button components or styled links
+  - [ ] Grid layout: 1 column (mobile), 3 columns (desktop) for GitHub, LinkedIn, Instagram
+  - [ ] External link indicators (icon or text)
+  - [ ] Hover states showing interactivity
+  - [ ] Consider using icons for each platform (decorative, with aria-hidden)
+- [ ] **Closing Message Section:**
+  - [ ] Centered, prominent display of closing message
+  - [ ] Quote displayed with special typography treatment (italic, larger size, or in Card)
+  - [ ] Visual emphasis on call-to-action feel
+  - [ ] Professional but warm tone reflected in design
+- [ ] **Visual Design:**
+  - [ ] Use Card components for structured sections (Contact Info card, Profiles card)
+  - [ ] Consistent spacing between sections
+  - [ ] Clean, uncluttered layout focusing on key information
+  - [ ] Consider subtle background pattern or minimal visual elements (optional)
+- [ ] **Interactive Elements:**
+  - [ ] All links clearly styled and accessible
+  - [ ] Hover effects on clickable elements
+  - [ ] Proper focus states for keyboard navigation
+  - [ ] External links open in new tab with proper attributes
+
+### Styling
 - [ ] Create `styles/pages/_contact.scss`
 - [ ] Style contact page with BEM methodology
 - [ ] Make page responsive (mobile-first)
 - [ ] Test page renders correctly
 - [ ] Verify all content matches `PROJECT-CONTENT.md`
 
-### Phase 6.7: UI Library Page (`/ui-library`) Content Verification
+---
 
-#### Content Verification
+## Phase 12: UI Library Page (`/ui-library`) Content Verification
+
+> **Reference:** Always use `PROJECT-CONTENT.md` as the single source of truth for all page content, copy, and structure.
+
+### Content Verification
 - [ ] Review current UI Library page (`src/app/ui-library/page.tsx`)
 - [ ] Compare with `PROJECT-CONTENT.md` under `/ui-library`
 - [ ] Verify all component showcases are present:
@@ -793,31 +857,65 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [ ] Update any missing component examples
 - [ ] Ensure all content matches `PROJECT-CONTENT.md` exactly
 
-### Phase 6.8: Navigation & Routing Updates
+### Styling
+- [ ] Update `styles/pages/_ui-library.scss` if needed
+- [ ] Ensure page is responsive
+- [ ] Test components library page renders correctly
+- [ ] Test all component examples are visible
 
-#### Navigation Bar Update
-- [ ] Review current NavBar (`src/components/layout/NavBar.tsx`)
-- [ ] Update navigation links to match new structure:
-  - [ ] `/` → Home
-  - [ ] `/critical-mass-case-study` → Critical Mass Case Study
-  - [ ] `/projects` → Projects
-  - [ ] `/skills` → Skills
-  - [ ] `/experience` → Experience
-  - [ ] `/contact` → Contact
-  - [ ] `/ui-library` → UI Library
-- [ ] Remove any obsolete navigation links
-- [ ] Update aria-labels if needed
+---
+
+## Phase 13: Navigation & Routing Updates
+
+### Navigation Bar Update
+- [x] Review current NavBar (`src/components/layout/NavBar.tsx`)
+- [x] Update navigation links to match new structure (in order):
+  - [x] `/` → Home
+  - [x] `/this-project` → This Project
+  - [x] `/me-and-skills` → Me & Skills
+  - [x] `/projects` → Projects & Experience
+  - [x] `/contact` → Contact
+  - [x] `/ui-library` → UI Library
+- [x] Remove any obsolete navigation links (e.g., `/about`, `/components`, `/content`, `/critical-mass-case-study`, `/skills`, `/experience`)
+- [x] Update aria-labels if needed
+- [x] Ensure navigation order matches logical page flow
 - [ ] Test navigation works correctly
 - [ ] Test active state indication works
+- [ ] Test mobile menu includes all new links
 
-#### Footer Update (if needed)
+### Footer Update (if needed)
 - [ ] Review Footer component
 - [ ] Update links if needed
 - [ ] Ensure consistency with new page structure
 
-### Phase 6.9: About Page Removal or Archive
+---
 
-#### Decision & Action
+## Phase 14: Style Files Reorganization
+
+### Page Style Files
+- [x] Create/Update `styles/pages/_home.scss` for new Home structure
+- [ ] Create `styles/pages/_critical-mass-case-study.scss`
+- [ ] Update `styles/pages/_projects.scss` if needed
+- [ ] Update `styles/pages/_skills.scss` if needed
+- [ ] Create `styles/pages/_experience.scss`
+- [ ] Create `styles/pages/_contact.scss`
+- [ ] Update `styles/pages/_ui-library.scss` if needed (rename from `_components.scss` if applicable)
+- [ ] Remove/archive obsolete page style files
+- [ ] Update `styles/main.scss` to import all new/updated page styles
+
+### Component Style Files
+- [x] Create `styles/components/_role-focus-section.scss`
+- [x] Create `styles/components/_key-highlights-section.scss`
+- [ ] Update `styles/components/_hero.scss` if needed
+- [ ] Update `styles/components/_cta-section.scss` if needed
+- [ ] Archive/remove obsolete component style files
+- [ ] Update `styles/main.scss` to import all new/updated component styles
+
+---
+
+## Phase 15: About Page Removal or Archive
+
+### Decision & Action
 - [ ] Review current About page (`src/app/about/page.tsx`)
 - [ ] Determine if About page should be:
   - [ ] Removed (content moved to Critical Mass Case Study page)
@@ -828,30 +926,11 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [ ] Update navigation to remove About link if removed
 - [ ] Update any internal links that point to `/about`
 
-### Phase 6.10: Style Files Reorganization
+---
 
-#### Page Style Files
-- [ ] Create/Update `styles/pages/_home.scss` for new Home structure
-- [ ] Create `styles/pages/_critical-mass-case-study.scss`
-- [ ] Update `styles/pages/_projects.scss` if needed
-- [ ] Update `styles/pages/_skills.scss` if needed
-- [ ] Create `styles/pages/_experience.scss`
-- [ ] Create `styles/pages/_contact.scss`
-- [ ] Update `styles/pages/_ui-library.scss` if needed (rename from `_components.scss` if applicable)
-- [ ] Remove/archive obsolete page style files
-- [ ] Update `styles/main.scss` to import all new/updated page styles
+## Phase 16: Content Verification & Quality Check
 
-#### Component Style Files
-- [ ] Create `styles/components/_role-focus-section.scss`
-- [ ] Create `styles/components/_key-highlights-section.scss`
-- [ ] Update `styles/components/_hero.scss` if needed
-- [ ] Update `styles/components/_cta-section.scss` if needed
-- [ ] Archive/remove obsolete component style files
-- [ ] Update `styles/main.scss` to import all new/updated component styles
-
-### Phase 6.11: Content Verification & Quality Check
-
-#### Content Accuracy Check
+### Content Accuracy Check
 - [ ] Verify Home page content matches `PROJECT-CONTENT.md` exactly
 - [ ] Verify Critical Mass Case Study page content matches `PROJECT-CONTENT.md` exactly
 - [ ] Verify Projects page content matches `PROJECT-CONTENT.md` exactly
@@ -860,23 +939,21 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [ ] Verify Contact page content matches `PROJECT-CONTENT.md` exactly
 - [ ] Verify UI Library page content matches `PROJECT-CONTENT.md` exactly
 
-#### Copy Consistency Check
+### Copy Consistency Check
 - [ ] Check all copy uses exact text from `PROJECT-CONTENT.md`
 - [ ] Verify no placeholder text remains
 - [ ] Check for typos and grammar errors
 - [ ] Ensure tone is consistent across all pages
 - [ ] Verify all links and URLs are correct
 
-#### Structure Verification
+### Structure Verification
 - [ ] Verify all pages follow semantic HTML structure
 - [ ] Verify all pages use MainLayout
 - [ ] Verify heading hierarchy is correct (one `<h1>` per page)
 - [ ] Verify all sections are properly structured
 - [ ] Check for broken links or missing pages
 
-### Phase 6.12: Testing After Reorganization
-
-#### Functional Testing
+### Functional Testing
 - [ ] Test all pages render without errors
 - [ ] Test all navigation links work correctly
 - [ ] Test all internal links work correctly
@@ -885,279 +962,16 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [ ] Test responsive design on all pages
 - [ ] Test mobile menu works correctly
 
-#### Content Testing
+### Content Testing
 - [ ] Verify all content is visible and readable
 - [ ] Verify all images load correctly
 - [ ] Verify all sections display correctly
 - [ ] Test on different screen sizes
 - [ ] Test on different browsers
 
-#### Accessibility Testing
-- [ ] Verify semantic HTML is correct
-- [ ] Verify ARIA attributes are correct
-- [ ] Test keyboard navigation
-- [ ] Test screen reader compatibility
-- [ ] Verify focus states are visible
-
 ---
 
-## Phase 7: Critical Mass Case Study Page (`/critical-mass-case-study`)
-
-> **Note:** This page creation is covered in **Phase 6.2: Critical Mass Case Study Page Creation**. The tasks below are for reference and verification. If the page was already created in Phase 6, use this phase for final refinement and polish.
-
-### Page Verification
-
-- [ ] Verify `app/critical-mass-case-study/page.tsx` exists
-- [ ] Verify page title: "CM Front-End Experience Engine"
-- [ ] Verify MainLayout wrapper is present
-- [ ] Verify semantic HTML structure
-
-### Content Verification
-
-- [ ] Verify Section 1 – Project Overview is complete
-- [ ] Verify Section 2 – How This Portfolio Is Built for Critical Mass is complete
-- [ ] Verify Section 3 – Design-to-Code Workflow is complete
-- [ ] Verify Section 4 – Accessibility, Performance & Responsiveness is complete
-- [ ] Verify Section 5 – Tooling, Testing & Automation is complete
-- [ ] Verify Section 6 – What You Can Review is complete
-- [ ] Verify all content matches `PROJECT-CONTENT.md` exactly
-
-### Styling Verification
-
-- [ ] Verify `styles/pages/_critical-mass-case-study.scss` exists
-- [ ] Verify page is styled correctly
-- [ ] Verify page is responsive
-- [ ] Test page renders correctly
-- [ ] Polish and refine styling if needed
-
----
-
-## Phase 8: Projects Page (`/projects`)
-
-> **Note:** Content updates for this page are covered in **Phase 6.3: Projects Page Content Update**. The tasks below are for reference and verification. If the page was already updated in Phase 6, use this phase for final refinement and polish.
-
-### Page Verification
-
-- [ ] Verify `app/projects/page.tsx` exists
-- [ ] Verify page title: "Selected Projects & Case Studies"
-- [ ] Verify MainLayout wrapper is present
-
-### Project Sections
-
-- [ ] Create Project: Steven Morales FE-01 – Front-End Experience Engine
-  - [ ] Add project type, status, live URL, repo URL
-  - [ ] Add "What it is" description
-  - [ ] Add highlights list
-- [ ] Create Project: Novaera SaaS ERP (Web, API, DB)
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-  - [ ] Add "My role" description
-- [ ] Create Project: Precision Seas ERP System
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-  - [ ] Add "My role" description
-- [ ] Create Project: ZETA Academia EdTech Platform (V1 & V2)
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-  - [ ] Add "My role" description
-- [ ] Create Project: TimerChill – Modern Pomodoro Timer
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-  - [ ] Add tech stack
-- [ ] Create Project: Matemática Integral ERP & Automation System
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-  - [ ] Add "My role" description
-- [ ] Create Project: Demeter IoT Agriculture System
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-- [ ] Create Project: INFOCOOP Education Platform Enhancement
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-  - [ ] Add "My role" description
-- [ ] Create Project: Assistive Robotics for Elderly Care
-  - [ ] Add project details
-  - [ ] Add "What it is" description
-  - [ ] Add "My role" description
-
-### Styling
-
-- [ ] Create `styles/pages/_projects.scss`
-- [ ] Style projects page
-- [ ] Make page responsive
-- [ ] Test projects page renders correctly
-
----
-
-## Phase 9: Skills Page (`/skills`)
-
-> **Note:** Content updates for this page are covered in **Phase 6.4: Skills Page Content Update**. The tasks below are for reference and verification. If the page was already updated in Phase 6, use this phase for final refinement and polish.
-
-### Page Verification
-
-- [ ] Verify `app/skills/page.tsx` exists
-- [ ] Verify page title: "Skills & Tech Stack"
-- [ ] Verify MainLayout wrapper is present
-
-### Skills Sections
-
-- [ ] Create Core Front-End section
-  - [ ] Add Languages subsection
-  - [ ] Add Frameworks & Libraries subsection
-  - [ ] Add Styling & Design Systems subsection
-  - [ ] Add Core Practices subsection
-- [ ] Create Front-End Tooling & Automation section
-- [ ] Create Back-End & APIs section
-  - [ ] Add Languages & Runtimes subsection
-  - [ ] Add Architectural Practices subsection
-- [ ] Create Databases & Data section
-- [ ] Create Cloud & DevOps section
-- [ ] Create AI, Data & Automation section
-- [ ] Create Testing & API Tools section
-- [ ] Create Productivity & Collaboration Tools section
-- [ ] Create Languages section
-- [ ] Create Soft Skills & Ways of Working section
-
-### Styling
-
-- [ ] Create `styles/pages/_skills.scss`
-- [ ] Style skills page
-- [ ] Make page responsive
-- [ ] Test skills page renders correctly
-
----
-
-## Phase 10: Experience Page (`/experience`)
-
-> **Note:** This page creation is covered in **Phase 6.5: Experience Page Creation**. The tasks below are for reference and verification. If the page was already created in Phase 6, use this phase for final refinement and polish.
-
-### Page Verification
-
-- [ ] Verify `app/experience/page.tsx` exists
-- [ ] Verify page title: "Professional Experience"
-- [ ] Verify MainLayout wrapper is present
-
-### Experience Sections
-
-- [ ] Create CEO & Lead Software Developer — Novaera section
-  - [ ] Add date range: May 2024 – Present
-  - [ ] Add responsibilities list
-- [ ] Create CEO & Lead Tech Educator — ZETA Academia section
-  - [ ] Add responsibilities list
-- [ ] Create Freelance Software Developer section
-  - [ ] Add date range: Aug 2022 – Present
-  - [ ] Add responsibilities list
-- [ ] Create Software Developer (Intern) — INFOCOOP section
-  - [ ] Add date range: Aug 2023 – Nov 2023
-  - [ ] Add responsibilities list
-- [ ] Create Software Developer — TI Recursos CR section
-  - [ ] Add date range: Dec 2022 – Feb 2023
-  - [ ] Add responsibilities list
-- [ ] Create Education section
-  - [ ] Add Technical Degree information
-  - [ ] Add graduation details
-- [ ] Create Impact Summary section
-  - [ ] Add Leadership subsection
-  - [ ] Add Ownership subsection
-  - [ ] Add Collaboration subsection
-
-### Styling
-
-- [ ] Create `styles/pages/_experience.scss`
-- [ ] Style experience page
-- [ ] Make page responsive
-- [ ] Test experience page renders correctly
-
----
-
-## Phase 11: Contact Page (`/contact`)
-
-> **Note:** This page creation is covered in **Phase 6.6: Contact Page Creation**. The tasks below are for reference and verification. If the page was already created in Phase 6, use this phase for final refinement and polish.
-
-### Page Verification
-
-- [ ] Verify `app/contact/page.tsx` exists
-- [ ] Verify page title: "Let's Build Something Great"
-- [ ] Verify MainLayout wrapper is present
-
-### Contact Sections
-
-- [ ] Create Contact Information section
-  - [ ] Add Name
-  - [ ] Add Location
-  - [ ] Add Phone / WhatsApp
-  - [ ] Add Email
-- [ ] Create Online Profiles section
-  - [ ] Add GitHub link
-  - [ ] Add LinkedIn link
-  - [ ] Add Instagram link
-- [ ] Create Short Closing Message section
-  - [ ] Add closing message content
-  - [ ] Add quote (optional)
-
-### Styling
-
-- [ ] Create `styles/pages/_contact.scss`
-- [ ] Style contact page
-- [ ] Make page responsive
-- [ ] Test contact page renders correctly
-
----
-
-## Phase 12: UI Library Page (`/ui-library`)
-
-> **Note:** Content verification for this page is covered in **Phase 6.7: UI Library Page Content Verification**. The tasks below are for reference and verification. If the page was already verified in Phase 6, use this phase for final refinement and polish.
-
-### Page Verification
-
-- [ ] Verify `app/ui-library/page.tsx` exists
-- [ ] Verify page title: "UI Library"
-- [ ] Verify intro text matches `PROJECT-CONTENT.md`
-- [ ] Verify MainLayout wrapper is present
-
-### Component Documentation Sections
-
-- [ ] Create Buttons section
-  - [ ] Show primary variant
-  - [ ] Show secondary variant
-  - [ ] Show ghost variant
-  - [ ] Show all states (normal, hover, focus, disabled)
-  - [ ] Add usage notes
-  - [ ] Add accessibility notes
-- [ ] Create Cards section
-  - [ ] Show default card
-  - [ ] Show feature card
-  - [ ] Show content card
-  - [ ] Show with/without image
-  - [ ] Add usage notes
-- [ ] Create Tags & Badges section
-  - [ ] Show tag variants
-  - [ ] Show badge statuses (Live, Upcoming, Draft)
-  - [ ] Add usage notes
-- [ ] Create Form Elements section
-  - [ ] Show Input component
-  - [ ] Show Select component
-  - [ ] Show Toggle component
-  - [ ] Show accessibility features (labels, ARIA)
-  - [ ] Add usage notes
-- [ ] Create Feedback States section
-  - [ ] Show Loader component
-  - [ ] Show ErrorMessage component
-  - [ ] Show Toast component (if implemented)
-  - [ ] Add usage notes
-
-### Styling
-
-- [ ] Create `styles/pages/_ui-library.scss`
-- [ ] Style components library page
-- [ ] Make page responsive
-- [ ] Add code examples (optional)
-- [ ] Test components library page renders correctly
-- [ ] Test all component examples are visible
-
----
-
-## Phase 13: Accessibility Implementation
+## Phase 17: Accessibility Implementation
 
 ### Semantic HTML
 
@@ -1227,7 +1041,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 14: Performance Optimization
+## Phase 18: Performance Optimization
 
 ### Image Optimization
 
@@ -1280,7 +1094,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 15: Testing
+## Phase 19: Testing
 
 ### Test Setup Verification
 
@@ -1291,27 +1105,39 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ### Hero Component Tests
 
-- [ ] Create `tests/Hero.test.tsx`
-- [ ] Test title "Meet Steven Morales…" renders
-- [ ] Test "View Features" button exists
-- [ ] Test "See Live Content" button exists
+- [ ] Create `tests/components/sections/Hero.test.tsx`
+- [ ] Test Hero component renders correctly with new content from `PROJECT-CONTENT.md`
+- [ ] Test title and subtitle render correctly
+- [ ] Test primary CTA button exists and navigates to `/critical-mass-case-study`
+- [ ] Test secondary CTA button exists and navigates to `/projects`
+- [ ] Test background image renders correctly if provided
 - [ ] Run tests and verify they pass
 
 ### Button Component Tests
 
-- [ ] Create `tests/Button.test.tsx`
+- [ ] Create `tests/components/ui/Button.test.tsx`
 - [ ] Test button renders with given text
 - [ ] Test button calls onClick handler when clicked
 - [ ] Test button handles disabled state
+- [ ] Test button variants (primary, secondary, ghost)
+- [ ] Test button sizes (sm, md, lg)
+- [ ] Test link button functionality (href prop)
+- [ ] Test accessibility attributes (aria-label)
 - [ ] Run tests and verify they pass
 
-### Content Component Tests
+### Role Focus Section Tests
 
-- [ ] Create `tests/Content.test.tsx`
-- [ ] Mock `fetchContent` function
-- [ ] Test loading state renders
-- [ ] Test content cards render after data loads
-- [ ] Test error state renders
+- [ ] Create `tests/components/sections/RoleFocusSection.test.tsx`
+- [ ] Test section renders with all 6 items from `PROJECT-CONTENT.md`
+- [ ] Test drag-and-drop functionality (if implemented)
+- [ ] Test section is responsive
+- [ ] Run tests and verify they pass
+
+### Key Highlights Section Tests
+
+- [ ] Create `tests/components/sections/KeyHighlightsSection.test.tsx`
+- [ ] Test section renders with all 6 highlights from `PROJECT-CONTENT.md`
+- [ ] Test section is responsive
 - [ ] Run tests and verify they pass
 
 ### Test Coverage
@@ -1323,7 +1149,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 16: Git Workflow & Version Control
+## Phase 20: Git Workflow & Version Control
 
 ### Branch Strategy
 
@@ -1364,12 +1190,12 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 17: Documentation
+## Phase 21: Documentation
 
 ### README.md
 
 - [ ] Create `README.md`
-- [ ] Add project title: "Steven Morales FE-01 – Front-End Experience Engine (Critical Mass Prototype)"
+- [ ] Add project title: "Critical Mass Portfolio Prototype"
 - [ ] Add project description (2-3 paragraphs)
 - [ ] Add Objectives section (connected to job posting)
 - [ ] Add Tech Stack section:
@@ -1379,10 +1205,13 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
   - [ ] Jest
   - [ ] React Testing Library
 - [ ] Add Pages section:
-  - [ ] `/` – Product landing
-  - [ ] `/components` – UI Component Library
-  - [ ] `/content` – CMS-like API-driven view
-  - [ ] `/about` – Project context
+  - [ ] `/` – Home (Professional Portfolio Landing)
+  - [ ] `/critical-mass-case-study` – Critical Mass Portfolio Prototype
+  - [ ] `/projects` – Selected Projects & Case Studies
+  - [ ] `/skills` – Skills & Tech Stack
+  - [ ] `/experience` – Professional Experience
+  - [ ] `/contact` – Let's Build Something Great
+  - [ ] `/ui-library` – UI Library (Component Showcase)
 - [ ] Add "How to Run" section:
   - [ ] Prerequisites
   - [ ] Installation: `npm install`
@@ -1404,7 +1233,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 18: Final Polish & Review
+## Phase 22: Final Polish & Review
 
 ### Content Review
 
@@ -1419,8 +1248,6 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 - [ ] Test all buttons have proper actions
 - [ ] Test navigation works
 - [ ] Test forms work (if any)
-- [ ] Test API integration works
-- [ ] Test filtering works on content page
 
 ### Design Review
 
@@ -1470,7 +1297,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 19: Deployment
+## Phase 23: Deployment
 
 ### Vercel Setup
 
@@ -1502,8 +1329,14 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ### Production Testing
 
-- [ ] Test all routes work on production
-- [ ] Test API endpoint works on production
+- [ ] Test all routes work on production:
+  - [ ] `/` (Home)
+  - [ ] `/critical-mass-case-study`
+  - [ ] `/projects`
+  - [ ] `/skills`
+  - [ ] `/experience`
+  - [ ] `/contact`
+  - [ ] `/ui-library`
 - [ ] Test all functionality works
 - [ ] Verify images load correctly
 - [ ] Test performance on production
@@ -1518,7 +1351,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-## Phase 20: Presentation Preparation
+## Phase 24: Presentation Preparation
 
 ### Elevator Pitch
 

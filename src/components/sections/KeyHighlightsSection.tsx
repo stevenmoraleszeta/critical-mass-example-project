@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Card from '@/components/ui/Card';
+import ScrollArrow from '@/components/ui/ScrollArrow';
 
 /**
  * Key Highlights Section Component
@@ -17,26 +18,6 @@ import Card from '@/components/ui/Card';
  */
 
 export default function KeyHighlightsSection() {
-  const handleScrollDown = () => {
-    if (typeof window === 'undefined') return;
-    
-    const targetElement = document.getElementById('cta');
-    
-    if (targetElement) {
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      targetElement.scrollIntoView({
-        behavior: prefersReducedMotion ? 'auto' : 'smooth',
-        block: 'start',
-      });
-    }
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      handleScrollDown();
-    }
-  };
 
   return (
     <section className="key-highlights" id="key-highlights" aria-labelledby="key-highlights-title">
@@ -137,31 +118,10 @@ export default function KeyHighlightsSection() {
           </Card>
         </div>
         
-        <button
-          className="key-highlights__scroll-arrow"
-          onClick={handleScrollDown}
-          onKeyDown={handleKeyDown}
-          aria-label="Scroll to next section"
-          type="button"
-        >
-          <svg
-            className="key-highlights__scroll-arrow-icon"
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              d="M7 10L12 15L17 10"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
+        <ScrollArrow
+          targetId="cta"
+          color="red"
+        />
       </div>
     </section>
   );
