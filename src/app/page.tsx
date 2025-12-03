@@ -1,8 +1,11 @@
+import { Suspense, lazy } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/sections/Hero';
 import RoleFocusSection from '@/components/sections/RoleFocusSection';
-import KeyHighlightsSection from '@/components/sections/KeyHighlightsSection';
-import CTASection from '@/components/sections/CTASection';
+
+// Lazy load non-critical sections for better initial page load performance
+const KeyHighlightsSection = lazy(() => import('@/components/sections/KeyHighlightsSection'));
+const CTASection = lazy(() => import('@/components/sections/CTASection'));
 
 export default function Home() {
   return (
@@ -27,8 +30,12 @@ export default function Home() {
           }}
         />
         <RoleFocusSection />
-        <KeyHighlightsSection />
-        <CTASection />
+        <Suspense fallback={null}>
+          <KeyHighlightsSection />
+        </Suspense>
+        <Suspense fallback={null}>
+          <CTASection />
+        </Suspense>
       </div>
     </MainLayout>
   );

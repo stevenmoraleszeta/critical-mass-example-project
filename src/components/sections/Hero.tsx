@@ -75,8 +75,9 @@ export default function Hero({
     const targetElement = document.getElementById(scrollTargetId);
     
     if (targetElement) {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       targetElement.scrollIntoView({
-        behavior: 'smooth',
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
         block: 'start',
       });
     }
@@ -102,6 +103,7 @@ export default function Hero({
             alt={backgroundImage.alt || ''}
             fill
             priority
+            fetchPriority="high"
             quality={85}
             sizes="100vw"
             style={{
@@ -189,7 +191,7 @@ export default function Hero({
       
       {/* Floating binary elements (0s and 1s) */}
       <FloatingBinaryElements 
-        count={130}
+        count={80}
         minFontSize={0.5}
         maxFontSize={2}
         minOpacity={0.2}

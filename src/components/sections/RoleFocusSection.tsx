@@ -81,8 +81,7 @@ const loadCardsFromStorage = (): CardData[] => {
     const newCards = initialCards.filter((card) => !existingIds.has(card.id));
     
     return [...orderedCards, ...newCards];
-  } catch (error) {
-    console.error('Error loading card order from localStorage:', error);
+  } catch {
     return initialCards;
   }
 };
@@ -96,8 +95,12 @@ export default function RoleFocusSection() {
   // Save order to localStorage whenever it changes
   useEffect(() => {
     if (typeof window !== 'undefined' && cards.length > 0) {
-      const order = cards.map((card) => card.id);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(order));
+      try {
+        const order = cards.map((card) => card.id);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(order));
+      } catch {
+        // Silently fail if localStorage is unavailable (private mode, quota exceeded, etc.)
+      }
     }
   }, [cards]);
 
@@ -139,9 +142,15 @@ export default function RoleFocusSection() {
   
   const handleReset = () => {
     if (typeof window !== 'undefined') {
-      localStorage.removeItem(STORAGE_KEY);
-      setCards(initialCards);
-      setShowToast(false);
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+        setCards(initialCards);
+        setShowToast(false);
+      } catch {
+        // Silently fail if localStorage is unavailable
+        setCards(initialCards);
+        setShowToast(false);
+      }
     }
   };
 
@@ -156,8 +165,9 @@ export default function RoleFocusSection() {
     const targetElement = document.getElementById('key-highlights');
     
     if (targetElement) {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       targetElement.scrollIntoView({
-        behavior: 'smooth',
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
         block: 'start',
       });
     }

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 export interface FloatingBinaryElementsProps {
   count?: number;
@@ -26,18 +26,30 @@ interface BinaryElement {
 }
 
 export default function FloatingBinaryElements({
-  count = 100,
+  count = 80,
   minFontSize = 0.5,
   maxFontSize = 2,
   minOpacity = 0.1,
   maxOpacity = 0.4,
 }: FloatingBinaryElementsProps) {
-  const [elements, setElements] = useState<BinaryElement[]>([]);
   const [responsiveCount, setResponsiveCount] = useState(count);
   const [isMounted, setIsMounted] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   
   useEffect(() => {
     setIsMounted(true);
+    
+    if (typeof window !== 'undefined') {
+      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      setPrefersReducedMotion(mediaQuery.matches);
+      
+      const handleChange = (e: MediaQueryListEvent) => {
+        setPrefersReducedMotion(e.matches);
+      };
+      
+      mediaQuery.addEventListener('change', handleChange);
+      return () => mediaQuery.removeEventListener('change', handleChange);
+    }
   }, []);
   
   useEffect(() => {
@@ -47,7 +59,7 @@ export default function FloatingBinaryElements({
       const viewportWidth = window.innerWidth;
       const minViewport = 320;
       const maxViewport = 1920;
-      const minElements = 60;
+      const minElements = 50;
       const maxElements = count;
       const clampedWidth = Math.max(minViewport, Math.min(maxViewport, viewportWidth));
       const linearRatio = (clampedWidth - minViewport) / (maxViewport - minViewport);
@@ -61,7 +73,7 @@ export default function FloatingBinaryElements({
     let timeoutId: NodeJS.Timeout;
     const handleResize = () => {
       clearTimeout(timeoutId);
-      timeoutId = setTimeout(updateCount, 100);
+      timeoutId = setTimeout(updateCount, 250);
     };
     
     window.addEventListener('resize', handleResize);
@@ -72,52 +84,52 @@ export default function FloatingBinaryElements({
     };
   }, [count, isMounted]);
   
-  useEffect(() => {
-    if (!isMounted) return;
+  const elements = useMemo(() => {
+    if (!isMounted) return [];
     
-    const generateElements = (): BinaryElement[] => {
-      return Array.from({ length: responsiveCount }, (_, index) => {
-        const value: '0' | '1' = Math.random() > 0.5 ? '1' : '0';
-        const fontSize = minFontSize + Math.random() * (maxFontSize - minFontSize);
-        
-        const regions = [
-          { left: [0, 25], top: [0, 25] },
-          { left: [75, 100], top: [0, 25] },
-          { left: [0, 25], top: [75, 100] },
-          { left: [75, 100], top: [75, 100] },
-          { left: [0, 25], top: [25, 75] },
-          { left: [75, 100], top: [25, 75] },
-          { left: [25, 75], top: [0, 25] },
-          { left: [25, 75], top: [75, 100] },
-        ];
-        
-        const selectedRegion = regions[Math.floor(Math.random() * regions.length)];
-        const left = selectedRegion.left[0] + Math.random() * (selectedRegion.left[1] - selectedRegion.left[0]);
-        const top = selectedRegion.top[0] + Math.random() * (selectedRegion.top[1] - selectedRegion.top[0]);
-        const animationDuration = 8 + Math.random() * 12;
-        const animationDelay = Math.random() * 5;
-        const opacity = minOpacity + Math.random() * (maxOpacity - minOpacity);
-        const initialRotation = -30 + Math.random() * 60;
-        const hoverColors: HoverColor[] = ['blue', 'red', 'yellow'];
-        const hoverColor = hoverColors[Math.floor(Math.random() * hoverColors.length)];
-        
-        return {
-          id: index,
-          value,
-          fontSize,
-          left,
-          top,
-          animationDuration,
-          animationDelay,
-          opacity,
-          initialRotation,
-          hoverColor,
-        };
-      });
-    };
-    
-    setElements(generateElements());
-  }, [responsiveCount, minFontSize, maxFontSize, minOpacity, maxOpacity, isMounted]);
+    return Array.from({ length: responsiveCount }, (_, index) => {
+      const value: '0' | '1' = Math.random() > 0.5 ? '1' : '0';
+      const fontSize = minFontSize + Math.random() * (maxFontSize - minFontSize);
+      
+      const regions = [
+        { left: [0, 25], top: [0, 25] },
+        { left: [75, 100], top: [0, 25] },
+        { left: [0, 25], top: [75, 100] },
+        { left: [75, 100], top: [75, 100] },
+        { left: [0, 25], top: [25, 75] },
+        { left: [75, 100], top: [25, 75] },
+        { left: [25, 75], top: [0, 25] },
+        { left: [25, 75], top: [75, 100] },
+      ];
+      
+      const selectedRegion = regions[Math.floor(Math.random() * regions.length)];
+      const left = selectedRegion.left[0] + Math.random() * (selectedRegion.left[1] - selectedRegion.left[0]);
+      const top = selectedRegion.top[0] + Math.random() * (selectedRegion.top[1] - selectedRegion.top[0]);
+      const animationDuration = prefersReducedMotion ? 0 : (8 + Math.random() * 12);
+      const animationDelay = prefersReducedMotion ? 0 : (Math.random() * 5);
+      const opacity = minOpacity + Math.random() * (maxOpacity - minOpacity);
+      const initialRotation = -30 + Math.random() * 60;
+      const hoverColors: HoverColor[] = ['blue', 'red', 'yellow'];
+      const hoverColor = hoverColors[Math.floor(Math.random() * hoverColors.length)];
+      
+      return {
+        id: index,
+        value,
+        fontSize,
+        left,
+        top,
+        animationDuration,
+        animationDelay,
+        opacity,
+        initialRotation,
+        hoverColor,
+      };
+    });
+  }, [responsiveCount, minFontSize, maxFontSize, minOpacity, maxOpacity, isMounted, prefersReducedMotion]);
+
+  if (!isMounted || prefersReducedMotion) {
+    return null;
+  }
 
   return (
     <div 

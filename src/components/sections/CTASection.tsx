@@ -40,6 +40,7 @@ export default function CTASection() {
             size="lg"
             href="/critical-mass-case-study"
             ariaLabel="See This Project"
+            prefetch={true}
           >
             See This Project
           </Button>
@@ -49,6 +50,7 @@ export default function CTASection() {
             size="lg"
             href="/projects"
             ariaLabel="View All Projects"
+            prefetch={true}
           >
             View Projects
           </Button>

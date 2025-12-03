@@ -23,8 +23,9 @@ export default function KeyHighlightsSection() {
     const targetElement = document.getElementById('cta');
     
     if (targetElement) {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       targetElement.scrollIntoView({
-        behavior: 'smooth',
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
         block: 'start',
       });
     }
