@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import FloatingBinaryElements from '@/components/ui/FloatingBinaryElements';
+import ScrollArrow from '@/components/ui/ScrollArrow';
 
 /**
  * Hero Component
@@ -71,24 +72,6 @@ export default function Hero({
   backgroundImage,
   scrollTargetId = 'role-focus',
 }: HeroProps) {
-  const handleScrollDown = () => {
-    const targetElement = document.getElementById(scrollTargetId);
-    
-    if (targetElement) {
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      targetElement.scrollIntoView({
-        behavior: prefersReducedMotion ? 'auto' : 'smooth',
-        block: 'start',
-      });
-    }
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      handleScrollDown();
-    }
-  };
 
   return (
     <section 
@@ -143,31 +126,10 @@ export default function Hero({
             </p>
           )}
           
-          <button
-            className="hero__scroll-arrow"
-            onClick={handleScrollDown}
-            onKeyDown={handleKeyDown}
-            aria-label="Scroll to next section"
-            type="button"
-          >
-            <svg
-              className="hero__scroll-arrow-icon"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M7 10L12 15L17 10"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
+          <ScrollArrow
+            targetId={scrollTargetId}
+            color="white"
+          />
         </div>
         
         {image && (
