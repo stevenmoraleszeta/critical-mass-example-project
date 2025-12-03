@@ -3,7 +3,9 @@
 import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
+import FeatureCard from '@/components/ui/FeatureCard';
 import Button from '@/components/ui/Button';
+import ProjectOverviewSection from '@/components/sections/ProjectOverviewSection';
 
 export default function ThisProject() {
   return (
@@ -11,95 +13,36 @@ export default function ThisProject() {
       <main className="case-study-page">
         <div className="case-study-page__container">
           <section className="case-study-page__hero">
-            <h1 className="case-study-page__title">Critical Mass Portfolio Prototype</h1>
+            <h1 className="case-study-page__title">This Project</h1>
             <p className="case-study-page__intro">
               This site is built as a <strong>portfolio prototype specifically for the Critical Mass Developer, Front End role</strong>, demonstrating front-end expertise, design-to-code translation, and modern web development practices.
             </p>
           </section>
 
-          <section className="case-study-page__section" id="project-overview" aria-labelledby="overview-title">
-            <h2 id="overview-title" className="case-study-page__section-title">Project Overview</h2>
+          <ProjectOverviewSection />
+
+          <section className="case-study-page__section" id="built-for-cm" aria-labelledby="built-title">
+            <h2 id="built-title" className="case-study-page__section-title">How This Portfolio Is Built for Critical Mass</h2>
+            <p className="case-study-page__section-description">
+              This portfolio focuses on what Critical Mass values:
+            </p>
             
-            <div className="case-study-page__goals-grid">
-              <Card 
-                variant="default"
-                title="Design-to-Code Translation"
-                description="In this portfolio, I translated design concepts into standard-compliant HTML5, semantic CSS3, and responsive React/Next.js components. Every component was built from scratch following design specifications with pixel-perfect attention to detail."
+            <div className="case-study-page__features-grid">
+              <FeatureCard
+                title="Figma to Front-End"
+                description="Layouts and components designed to be pixel-conscious, flexible, and accessible."
               />
-              <Card 
-                variant="default"
-                title="Autonomous & Team Leadership"
-                description="This portfolio was developed independently through the complete design-to-deployment cycle, demonstrating self-sufficiency. Additionally, my experience leading teams of 6+ developers at Novaera and 4+ educators at ZETA Academia shows capability to work in collaborative environments."
+              <FeatureCard
+                title="Design Systems"
+                description="Components treated as reusable building blocks with well-structured SCSS and BEM-like class naming."
               />
-              <Card 
-                variant="default"
-                title="Cross-Browser & Mobile-First"
-                description="This portfolio implements mobile-first CSS strategies using SCSS variables and mixins for responsive breakpoints. All components are tested and verified to work seamlessly across modern browsers (Chrome, Firefox, Safari, Edge) and devices."
+              <FeatureCard
+                title="Mobile First"
+                description="Layouts are designed mobile-first, then scale up to tablet and desktop."
               />
-              <Card 
-                variant="default"
-                title="Best Practices & Documentation"
-                description="Throughout this project, I implemented industry best practices including BEM methodology, SMACSS architecture, and TypeScript for type safety. Code is well-documented with JSDoc comments and follows Next.js and React best practices."
-              />
-              <Card 
-                variant="default"
-                title="Modern Front-End Technologies"
-                description="This portfolio is built with Next.js 14 App Router, React 19, TypeScript, and SASS/SCSS. The architecture uses modern patterns including server components, client components, and optimized image loading with next/image."
-              />
-              <Card 
-                variant="default"
-                title="API Integration & Web Services"
-                description="The projects page demonstrates API integration patterns with client-side data filtering and state management using React hooks. This showcases readiness to integrate with REST APIs, CMS systems, and handle JSON data structures as required."
-              />
-              <Card 
-                variant="default"
-                title="Preprocessors & Automation"
-                description="This project uses SASS/SCSS preprocessing with a comprehensive variable system, mixins for responsive breakpoints, and organized architecture (base, components, pages). Next.js handles bundling and optimization automatically, demonstrating understanding of build processes."
-              />
-              <Card 
-                variant="default"
-                title="Troubleshooting & Debugging"
-                description="During development, I systematically resolved TypeScript type issues, SCSS compilation challenges, and React component lifecycle problems. This project demonstrates systematic debugging approaches using browser DevTools, ESLint, and TypeScript compiler feedback."
-              />
-              <Card 
-                variant="default"
-                title="Code Analysis & Optimization"
-                description="I continuously optimized this portfolio by implementing code splitting with React.lazy, using next/image for optimized images, and following Next.js performance best practices. Code quality is maintained through ESLint, TypeScript strict mode, and consistent code organization."
-              />
-              <Card 
-                variant="default"
-                title="Task Ownership & Communication"
-                description="I owned this entire portfolio project from initial concept through deployment, making architectural decisions, implementing features, and ensuring quality. The organized project structure and clear component architecture demonstrate strong task ownership and planning."
-              />
-              <Card 
-                variant="default"
-                title="Testing & Quality Assurance"
-                description="This portfolio includes unit tests using Jest and React Testing Library (visible in src/tests/). Tests validate component rendering, user interactions, and BEM naming conventions, demonstrating commitment to quality and maintainable code."
-              />
-              <Card 
-                variant="default"
-                title="Design Systems & Reusable Components"
-                description="I built a complete reusable component library (Button, Card, Tag, Badge, Input, Select, etc.) following BEM methodology. All components are documented and showcased in the /this-project/ui-library page, demonstrating design system thinking and component reusability."
-              />
-              <Card 
-                variant="default"
-                title="Version Control & Workflows"
-                description="This project uses Git/GitHub with organized commit history and branch management. The repository structure follows best practices, and I'm prepared to set up CI/CD pipelines with GitHub Actions for automated testing and deployment as needed."
-              />
-              <Card 
-                variant="default"
-                title="Modern Development Practices"
-                description="This portfolio demonstrates Mobile First approach (all styles start mobile, then scale up), component-based architecture (React), and Object-Oriented principles in TypeScript interfaces and component composition patterns."
-              />
-              <Card 
-                variant="default"
-                title="Performance & Scalability"
-                description="This portfolio is optimized as a proof-of-concept prototype using Next.js automatic code splitting, lazy loading for non-critical components, optimized fonts with next/font, and efficient component architecture that scales as features are added."
-              />
-              <Card 
-                variant="default"
-                title="Full-Stack Exposure"
-                description="While this portfolio focuses on front-end, my background includes full-stack experience (visible in /projects page) with databases, API design, and backend development. This demonstrates understanding of full application architecture and how front-end integrates with backend systems."
+              <FeatureCard
+                title="Cross-Browser"
+                description="Styles and layout decisions respect modern browser compatibility."
               />
             </div>
           </section>
@@ -168,6 +111,69 @@ export default function ThisProject() {
             </ol>
           </section>
 
+          <section className="case-study-page__section" id="a11y-performance" aria-labelledby="a11y-title">
+            <h2 id="a11y-title" className="case-study-page__section-title">Accessibility, Performance & Responsiveness</h2>
+            
+            <div className="case-study-page__pillars-grid">
+              <div className="case-study-page__pillar">
+                <h3 className="case-study-page__pillar-title">Accessibility</h3>
+                <ul className="case-study-page__pillar-list">
+                  <li className="case-study-page__pillar-item">Semantic HTML and ARIA attributes where needed.</li>
+                  <li className="case-study-page__pillar-item">Focus management and keyboard navigation.</li>
+                  <li className="case-study-page__pillar-item">Attention to color contrast, font sizes, and readable layouts.</li>
+                </ul>
+              </div>
+              
+              <div className="case-study-page__pillar">
+                <h3 className="case-study-page__pillar-title">Performance</h3>
+                <ul className="case-study-page__pillar-list">
+                  <li className="case-study-page__pillar-item">Lean, reusable component architecture.</li>
+                  <li className="case-study-page__pillar-item">Avoid unnecessary re-renders, heavy images, or blocking scripts.</li>
+                  <li className="case-study-page__pillar-item">Efficient API usage and caching strategies where appropriate.</li>
+                </ul>
+              </div>
+              
+              <div className="case-study-page__pillar">
+                <h3 className="case-study-page__pillar-title">Responsiveness</h3>
+                <ul className="case-study-page__pillar-list">
+                  <li className="case-study-page__pillar-item">Mobile-first CSS strategies.</li>
+                  <li className="case-study-page__pillar-item">Layouts built with flexbox and CSS grid.</li>
+                  <li className="case-study-page__pillar-item">Tested across multiple viewports and browsers.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section className="case-study-page__section" id="tooling" aria-labelledby="tooling-title">
+            <h2 id="tooling-title" className="case-study-page__section-title">Tooling, Testing & Automation</h2>
+            <p className="case-study-page__section-description">
+              The portfolio and related projects showcase:
+            </p>
+            
+            <div className="case-study-page__tooling-grid">
+              <Card 
+                variant="default"
+                title="Preprocessors"
+                description="SASS/SCSS & LESS for efficient and maintainable styling."
+              />
+              <Card 
+                variant="default"
+                title="Tooling"
+                description="Gulp/Vite-style bundling and asset pipelines for optimized builds."
+              />
+              <Card 
+                variant="default"
+                title="Testing"
+                description="React Testing Library & Jest for UI behavior and component tests."
+              />
+              <Card 
+                variant="default"
+                title="CI/CD"
+                description="GitHub Actions for linting, tests, and basic deployment workflows."
+              />
+            </div>
+          </section>
+
           <section className="case-study-page__section case-study-page__section--cta" id="review" aria-labelledby="review-title">
             <h2 id="review-title" className="case-study-page__section-title">What You Can Review</h2>
             <p className="case-study-page__section-description">
@@ -202,11 +208,31 @@ export default function ThisProject() {
               <Button
                 variant="secondary"
                 size="lg"
+                href="/this-project/ui-library"
+                ariaLabel="View UI library page with component showcase"
+              >
+                UI Library
+              </Button>
+              
+              <Button
+                variant="secondary"
+                size="lg"
                 href="/projects"
                 ariaLabel="View other case studies and projects"
               >
                 Other Case Studies
               </Button>
+            </div>
+            
+            <div className="case-study-page__review-details">
+              <p className="case-study-page__review-text">
+                The GitHub repository includes:
+              </p>
+              <ul className="case-study-page__review-list">
+                <li className="case-study-page__review-item">Front-end structure (pages, components, hooks)</li>
+                <li className="case-study-page__review-item">Styles (SASS/SCSS, BEM structure)</li>
+                <li className="case-study-page__review-item">Tests and basic CI config</li>
+              </ul>
             </div>
           </section>
         </div>
@@ -214,4 +240,3 @@ export default function ThisProject() {
     </MainLayout>
   );
 }
-
