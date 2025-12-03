@@ -62,13 +62,20 @@
 
   &__project-overview-wrapper {
     position: relative;
-    width: 100%;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
     overflow: visible;
 
     .floating-binary-elements {
-      z-index: 1.5;
+      z-index: 0;
+      width: 100vw;
+      max-width: 100vw;
 
       &__element {
+        z-index: 0 !important;
+
         &[data-hover-color="blue"] {
           color: var(--color-blue);
         }
@@ -83,6 +90,7 @@
 
         &:hover {
           opacity: 1 !important;
+          z-index: 1 !important;
         }
       }
     }

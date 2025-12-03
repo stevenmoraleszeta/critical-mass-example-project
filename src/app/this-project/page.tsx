@@ -95,24 +95,27 @@ export default function ThisProject() {
               This site is built as a <strong>portfolio prototype specifically for the Critical Mass Developer, Front End role</strong>, demonstrating front-end expertise, design-to-code translation, and modern web development practices.
             </p>
           </section>
+        </div>
 
-          <div className="this-project-page__project-overview-wrapper">
-            <CardBoard
-              id="project-overview"
-              title="Project Overview"
-              cards={projectOverviewCards}
-              draggable={true}
-              storageKey="project-overview-cards-order"
-              className="project-overview"
-            />
-            <FloatingBinaryElements 
-              count={80}
-              minFontSize={0.5}
-              maxFontSize={2}
-              minOpacity={0.2}
-              maxOpacity={0.5}
-            />
-          </div>
+        <div className="this-project-page__project-overview-wrapper">
+          <CardBoard
+            id="project-overview"
+            title="Project Overview"
+            cards={projectOverviewCards}
+            draggable={true}
+            storageKey="project-overview-cards-order"
+            className="project-overview"
+          />
+          <FloatingBinaryElements 
+            count={300}
+            minFontSize={0.4}
+            maxFontSize={2.5}
+            minOpacity={0.15}
+            maxOpacity={0.4}
+          />
+        </div>
+
+        <div className="this-project-page__container">
 
           <section className="this-project-page__section" id="workflow" aria-labelledby="workflow-title">
             <h2 id="workflow-title" className="this-project-page__section-title">Design-to-Code Workflow</h2>
