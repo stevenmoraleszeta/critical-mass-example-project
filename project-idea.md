@@ -489,50 +489,7 @@ I'll render it as cards or timeline, haven't decided yet.
   - Tests and basic CI config.
 - **Other case studies** on `/projects`.
 
-### 3.3. `/projects` Page – Selected Projects & Case Studies
-
-**Objective:** Showcase all portfolio projects with detailed case studies, demonstrating real-world experience and impact.
-
-> **Note:** Complete content, project details, and copy for this page is defined in `PROJECT-CONTENT.md` under `/projects`. Always refer to that file for exact project descriptions, URLs, highlights, and content structure.
-
-Each project section includes: **context, responsibilities, tech stack, and impact**.
-
-**Projects to showcase (from PROJECT-CONTENT.md):**
-
-1. **Critical Mass Portfolio Prototype**
-2. **Novaera SaaS ERP (Web, API, DB)**
-3. **Precision Seas ERP System**
-4. **ZETA Academia EdTech Platform (V1 & V2)**
-5. **TimerChill – Modern Pomodoro Timer**
-6. **Matemática Integral ERP & Automation System**
-7. **Demeter IoT Agriculture System**
-8. **INFOCOOP Education Platform Enhancement**
-9. **Assistive Robotics for Elderly Care**
-
-See `PROJECT-CONTENT.md` for complete project details, descriptions, URLs, and highlights.
-
-### 3.4. `/skills` Page – Skills & Tech Stack
-
-**Objective:** Comprehensive showcase of technical and soft skills, grouped by relevance to the Critical Mass Front-End Developer role.
-
-> **Note:** Complete skills list, organization, and content for this page is defined in `PROJECT-CONTENT.md` under `/skills`. Always refer to that file for exact skills, categories, and content structure.
-
-**Sections (from PROJECT-CONTENT.md):**
-
-- **Core Front-End**
-- **Front-End Tooling & Automation**
-- **Back-End & APIs**
-- **Databases & Data**
-- **Cloud & DevOps**
-- **AI, Data & Automation**
-- **Testing & API Tools**
-- **Productivity & Collaboration Tools**
-- **Languages**
-- **Soft Skills & Ways of Working**
-
-See `PROJECT-CONTENT.md` for complete skills list and detailed breakdown.
-
-### 3.5. `/experience` Page – Professional Experience
+### 3.3. `/contact` Page – Professional Experience
 
 **Objective:** Detailed professional experience showcasing leadership, technical expertise, and impact.
 

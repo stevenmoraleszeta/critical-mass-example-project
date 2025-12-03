@@ -661,45 +661,45 @@ describe('Component Rendering Tests', () => {
 
     it('should render both buttons', () => {
       render(<CTASection />);
-      expect(screen.getByText('View All Projects')).toBeInTheDocument();
-      expect(screen.getByText('Explore UI Library')).toBeInTheDocument();
+      expect(screen.getByText('See This Project')).toBeInTheDocument();
+      expect(screen.getByText('Get in Touch')).toBeInTheDocument();
     });
 
     it('should render note text', () => {
       render(<CTASection />);
-      expect(screen.getByText(/This prototype was crafted specifically with the Critical Mass Front-End Developer role in mind/i)).toBeInTheDocument();
+      expect(screen.getByText(/Start with the/i)).toBeInTheDocument();
     });
 
     it('should have proper semantic structure', () => {
       render(<CTASection />);
-      const section = screen.getByRole('region', { name: /ready to explore/i });
+      const section = screen.getByRole('region', { name: /want to see how i would work at critical mass/i });
       expect(section).toBeInTheDocument();
-      expect(screen.getByRole('heading', { name: /ready to explore/i })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /want to see how i would work at critical mass/i })).toBeInTheDocument();
     });
 
     it('should have proper ARIA attributes', () => {
       render(<CTASection />);
-      const section = screen.getByRole('region', { name: /ready to explore/i });
+      const section = screen.getByRole('region', { name: /want to see how i would work at critical mass/i });
       expect(section).toHaveAttribute('id', 'cta');
       expect(section).toHaveAttribute('aria-labelledby', 'cta-title');
     });
 
     it('should have buttons with correct navigation links', () => {
       render(<CTASection />);
-      const projectsButton = screen.getByText('View All Projects').closest('a');
-      const uiLibraryButton = screen.getByText('Explore UI Library').closest('a');
+      const thisProjectButton = screen.getByText('See This Project').closest('a');
+      const contactButton = screen.getByText('Get in Touch').closest('a');
       
-      expect(projectsButton).toHaveAttribute('href', '/projects');
-      expect(uiLibraryButton).toHaveAttribute('href', '/this-project/ui-library');
+      expect(thisProjectButton).toHaveAttribute('href', '/this-project');
+      expect(contactButton).toHaveAttribute('href', '/contact');
     });
 
     it('should have buttons with proper ARIA labels', () => {
       render(<CTASection />);
-      const projectsButton = screen.getByText('View All Projects').closest('a');
-      const uiLibraryButton = screen.getByText('Explore UI Library').closest('a');
+      const thisProjectButton = screen.getByText('See This Project').closest('a');
+      const contactButton = screen.getByText('Get in Touch').closest('a');
       
-      expect(projectsButton).toHaveAttribute('aria-label', 'View All Projects');
-      expect(uiLibraryButton).toHaveAttribute('aria-label', 'Explore UI Library');
+      expect(thisProjectButton).toHaveAttribute('aria-label', 'See This Project');
+      expect(contactButton).toHaveAttribute('aria-label', 'Get in touch');
     });
   });
 });
