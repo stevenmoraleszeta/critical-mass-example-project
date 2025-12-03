@@ -16,6 +16,8 @@
 .cta-section {
   position: relative;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; // Prevent horizontal scroll
   
   // Mobile-first: padding for mobile
   padding: var(--space-2xl) var(--space-md);

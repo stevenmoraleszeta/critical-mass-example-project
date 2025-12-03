@@ -4,6 +4,8 @@
 .role-focus {
   position: relative;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; // Prevent horizontal scroll
   
   padding: var(--space-2xl) var(--space-md);
   background-color: var(--color-bg-light);

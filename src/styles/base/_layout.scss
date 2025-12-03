@@ -907,6 +907,8 @@ main {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; // Prevent horizontal scroll
   
   // Desktop: use larger navbar height
   @include breakpoint-md {

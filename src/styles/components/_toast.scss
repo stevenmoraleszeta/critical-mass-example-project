@@ -380,8 +380,9 @@
   
   @media (max-width: 640px) {
     // On mobile, toasts take full width minus margins
-    min-width: calc(100vw - 2rem);
-    max-width: calc(100vw - 2rem);
+    // Use 100% instead of 100vw to avoid horizontal scrollbar issues
+    min-width: calc(100% - 2rem);
+    max-width: calc(100% - 2rem);
     
     // Adjust positions for mobile
     &--top-right,
