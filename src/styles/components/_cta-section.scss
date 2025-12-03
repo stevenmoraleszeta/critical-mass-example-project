@@ -41,9 +41,18 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary));
+    // Pattern: Yellow -> Blue -> Red -> Yellow
+    // Smooth, fluid gradient with yellow before blue and after red
+    // Constant velocity animation with smooth transitions
+    background: linear-gradient(
+      135deg,
+      var(--color-accent),
+      var(--color-primary),
+      var(--color-secondary),
+      var(--color-accent)
+    );
     background-size: 400% 400%;
-    animation: cta-gradient-shift 15s ease infinite;
+    animation: cta-gradient-shift 20s linear infinite;
     will-change: background-position;
     
     @media (prefers-reduced-motion: reduce) {
@@ -229,6 +238,19 @@
         width: 100%;
       }
     }
+    
+    // View Projects button with yellow borders
+    .btn--secondary {
+      border: var(--border-width-base) solid var(--color-accent);
+      
+      &:hover:not(:disabled):not(.btn--disabled) {
+        border-color: var(--color-accent);
+      }
+      
+      &:active:not(:disabled):not(.btn--disabled) {
+        border-color: var(--color-accent);
+      }
+    }
   }
   
   // ============================================================================
@@ -298,7 +320,27 @@
     background-position: 0% 50%;
   }
   
-  50% {
+  25% {
+    background-position: 25% 50%;
+  }
+  
+  32% {
+    background-position: 33.33% 50%;
+  }
+  
+  36% {
+    background-position: 50% 50%;
+  }
+  
+  40% {
+    background-position: 66.66% 50%;
+  }
+  
+  55% {
+    background-position: 75% 50%;
+  }
+  
+  75% {
     background-position: 100% 50%;
   }
   
