@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Roboto_Mono, Inter } from "next/font/google";
 import "../styles/main.scss";
 
@@ -36,16 +36,17 @@ export const metadata: Metadata = {
     title: "Steven Morales - Full Stack Software Engineer & Tech Leader",
     description: "Portfolio showcasing front-end development expertise for Critical Mass Developer position.",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
-  themeColor: "#0000FF",
   robots: {
     index: true,
     follow: true,
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#0000FF",
 };
 
 export default function RootLayout({
