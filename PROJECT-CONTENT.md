@@ -13,7 +13,7 @@
    - Key Highlights (What I bring to the team)
    - Primary Call To Action
 
-2. `/critical-mass-case-study` – **CM Front-End Experience Engine**
+2. `/critical-mass-case-study` – **Critical Mass Portfolio Prototype**
    - Project Overview
    - How This Portfolio Is Built for Critical Mass
    - Design-to-Code Workflow (Figma → HTML/CSS/JS/React)
@@ -22,7 +22,7 @@
    - What You Can Review Here (Code, Live Demo, Repo Links)
 
 3. `/projects` – **Selected Projects & Case Studies**
-   - Steven Morales FE-01 – Front-End Experience Engine
+   - Critical Mass Portfolio Prototype
    - Novaera SaaS ERP (Web, API, DB)
    - Precision Seas ERP System
    - ZETA Academia EdTech Platform (V1 & V2)
@@ -107,18 +107,18 @@ This portfolio is intentionally designed as a **live case study** for the **Deve
 
 ---
 
-## `/critical-mass-case-study` – CM Front-End Experience Engine
+## `/critical-mass-case-study` – Critical Mass Portfolio Prototype
 
 ### Section 1 – Project Overview
 
-This site and the linked project **“Steven Morales FE-01 – Front-End Experience Engine”** are built as a **portfolio prototype specifically for the Critical Mass Developer, Front End role**.
+This site is built as a **portfolio prototype specifically for the Critical Mass Developer, Front End role**, demonstrating front-end expertise, design-to-code translation, and modern web development practices.
 
 **Goals**
 
 - Demonstrate **design-to-code translation** using **Figma → Next.js + SASS/SCSS**.
 - Show **responsive architecture**, **component-driven design**, and **accessibility best practices**.
 - Highlight **API integration**, **state management**, and **front-end tooling** (SASS, BEM, Vite/Gulp-style patterns).
-- Reflect how I **collaborate with cross-functional teams** and maintain **clean, documented code**.
+- Demonstrate ability to work through the complete development cycle—from design to deployment—with attention to code quality, maintainability, and documentation standards.
 
 ### Section 2 – How This Portfolio Is Built for Critical Mass
 
@@ -140,7 +140,7 @@ This portfolio focuses on what Critical Mass values:
 5. **Style with CSS/SCSS/SASS** using **variables, mixins, and BEM-like structure**.
 6. **Integrate APIs** (REST/JSON, occasionally SOAP) and manage **local and global state**.
 7. **Test accessibility & responsiveness**: keyboard navigation, contrast, screen sizes.
-8. **Review & iterate** with designers, PMs, QA, and tech leads.
+8. **Review, test & iterate**: Quality assurance, performance optimization, and iterative refinement to meet production standards.
 
 ### Section 4 – Accessibility, Performance & Responsiveness
 
@@ -187,7 +187,7 @@ Each project section includes: **context, responsibilities, tech stack, and impa
 
 ---
 
-### Project: Steven Morales FE-01 – Front-End Experience Engine
+### Project: Critical Mass Portfolio Prototype
 
 **Type:** Portfolio Prototype · **Status:** In Development  
 **Live:** `https://stevenmorales.vercel.app/`  
