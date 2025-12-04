@@ -151,7 +151,10 @@ From this page, link to:
   - Styles (SASS/SCSS, BEM structure).
   - Tests and basic CI config.
 - **UI Library** on `/this-project/ui-library` (component showcase and documentation).
+---
 
+
+---  
 ---
 
 ## `/curriculum` – Professional Curriculum
@@ -227,7 +230,7 @@ My experience aligns perfectly with Critical Mass requirements:
 
 ### Closing Statement
 
-I'm excited about the opportunity to bring my full-stack expertise and leadership experience to Critical Mass in San Jose, Costa Rica. I'm ready to work from the office 3+ days a week and contribute to your team's success.
+I'm excited about the opportunity to bring my full-stack expertise and leadership experience to Critical Mass in Costa Rica. I'm ready to work from the office 3+ days a week and contribute to your team's success.
 
 > _"We don't need to wait a single moment to start changing the world."_ – Anne Frank
 
