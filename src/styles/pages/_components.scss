@@ -560,6 +560,107 @@
 }
 
 // ============================================================================
+// Component Levitation Animations
+// Only components levitate, not text or titles
+// Following BEM methodology and Critical Mass requirements
+// ============================================================================
+
+.components-page {
+  // Button components levitation
+  .btn {
+    @include levitate(-8px, 3s, ease-in-out, 0s);
+  }
+
+  // Card components levitation with staggered delays
+  .card {
+    @include levitate(-10px, 3.5s, ease-in-out, 0s);
+    
+    // Staggered animation delays for multiple cards
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+    
+    &:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+    
+    &:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    
+    &:nth-child(4) {
+      animation-delay: 0.9s;
+    }
+    
+    &:nth-child(5) {
+      animation-delay: 1.2s;
+    }
+    
+    &:nth-child(6) {
+      animation-delay: 1.5s;
+    }
+  }
+
+  // Tag components levitation
+  .tag {
+    @include levitate(-6px, 2.8s, ease-in-out, 0s);
+  }
+
+  // Badge components levitation
+  .badge {
+    @include levitate(-6px, 2.8s, ease-in-out, 0s);
+  }
+
+  // Input components levitation
+  .input-wrapper {
+    @include levitate(-8px, 3.2s, ease-in-out, 0s);
+  }
+
+  // Select components levitation
+  .select-wrapper {
+    @include levitate(-8px, 3.2s, ease-in-out, 0s);
+  }
+
+  // Toggle components levitation
+  .toggle-wrapper {
+    @include levitate(-6px, 2.9s, ease-in-out, 0s);
+  }
+
+  // Loader components levitation
+  .loader {
+    @include levitate(-8px, 3s, ease-in-out, 0s);
+  }
+
+  // Error message components levitation
+  .error-message {
+    @include levitate(-8px, 3.1s, ease-in-out, 0s);
+  }
+
+  // Toast components levitation (when rendered)
+  .toast {
+    @include levitate(-6px, 2.7s, ease-in-out, 0s);
+  }
+
+  // Feature card components levitation
+  .feature-card {
+    @include levitate(-10px, 3.4s, ease-in-out, 0s);
+    
+    // Staggered animation delays for multiple feature cards
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+    
+    &:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    
+    &:nth-child(3) {
+      animation-delay: 0.8s;
+    }
+  }
+}
+
+// ============================================================================
 // Responsive Styles (Mobile-First)
 // ============================================================================
 
