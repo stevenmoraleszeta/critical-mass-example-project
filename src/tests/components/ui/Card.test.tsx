@@ -15,7 +15,7 @@
  */
 
 import { render, screen } from '@testing-library/react';
-import Card from '../components/ui/Card';
+import Card from '@/components/ui/Card';
 
 // Mock next/image
 jest.mock('next/image', () => ({
