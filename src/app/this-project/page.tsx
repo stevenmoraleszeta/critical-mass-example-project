@@ -111,7 +111,7 @@ export default function ThisProject() {
             className="project-overview"
           />
           <FloatingBinaryElements 
-            count={300}
+            count={600}
             minFontSize={0.4}
             maxFontSize={2.5}
             minOpacity={0.15}

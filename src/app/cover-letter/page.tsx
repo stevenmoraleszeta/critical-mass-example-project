@@ -12,7 +12,7 @@ export default function CoverLetter() {
       <div className="cover-letter-page">
         <AnimatedGradientBackground />
         <FloatingBinaryElements 
-          count={300}
+          count={600}
           minFontSize={0.4}
           maxFontSize={2.5}
           minOpacity={0.15}
