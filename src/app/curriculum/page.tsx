@@ -6,6 +6,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
 import Tag from '@/components/ui/Tag';
 import CardBoard, { CardData } from '@/components/sections/CardBoard';
+import ScrollArrow from '@/components/ui/ScrollArrow';
 import AnimatedGradientBackground from '@/components/ui/AnimatedGradientBackground';
 import FloatingBinaryElements from '@/components/ui/FloatingBinaryElements';
 
@@ -60,6 +61,7 @@ export default function Curriculum() {
             <p className="curriculum-page__intro">
               Full Stack Software Engineer with more than <strong>3 years of experience</strong> building robust, scalable, and high-performance software across web, desktop, mobile, and hybrid platforms.
             </p>
+            <ScrollArrow targetId="professional-summary" />
           </section>
 
           <section 
@@ -79,6 +81,7 @@ export default function Curriculum() {
                 </div>
               </div>
             </Card>
+            <ScrollArrow targetId="core-skills" />
           </section>
 
           <section 
@@ -95,6 +98,7 @@ export default function Curriculum() {
                 className="curriculum-page__skills-board"
               />
             </div>
+            <ScrollArrow targetId="professional-experience" />
           </section>
 
           <section 
@@ -261,6 +265,7 @@ export default function Curriculum() {
                 </div>
               </Card>
             </div>
+            <ScrollArrow targetId="education" color="white" />
           </section>
 
           <section 
@@ -282,6 +287,7 @@ export default function Curriculum() {
                 </div>
               </div>
             </Card>
+            <ScrollArrow targetId="languages" color="white" />
           </section>
 
           <section 
