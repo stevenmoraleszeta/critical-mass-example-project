@@ -39,6 +39,7 @@ interface NavLink {
 const navigationLinks: NavLink[] = [
   { href: '/', label: 'Home', ariaLabel: 'Go to home page' },
   { href: '/this-project', label: 'This Project', ariaLabel: 'Go to this project page' },
+  { href: '/curriculum', label: 'Curriculum', ariaLabel: 'Go to curriculum page' },
   { href: '/cover-letter', label: 'Cover Letter', ariaLabel: 'Go to cover letter page' },
   { href: '/contact', label: 'Contact', ariaLabel: 'Go to contact page' },
 ];
