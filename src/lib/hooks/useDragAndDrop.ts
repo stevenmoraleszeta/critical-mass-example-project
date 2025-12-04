@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useLocalStorage } from './useLocalStorage';
 
 export interface DragAndDropItem {
   id: string;
@@ -42,30 +43,29 @@ export function useDragAndDrop<T extends DragAndDropItem>({
   storageKey,
   onOrderChange,
 }: UseDragAndDropOptions<T>): UseDragAndDropReturn<T> {
-  const [items, setItems] = useState<T[]>(initialItems);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
   const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
   const [showToast, setShowToast] = useState(false);
 
-  useEffect(() => {
-    if (!enabled || !storageKey || typeof window === 'undefined') {
-      setItems(initialItems);
-      return;
-    }
+  const { value: savedOrder, setValue: setSavedOrder } = useLocalStorage<string[]>(storageKey || '', {
+    defaultValue: null,
+    sync: enabled && !!storageKey,
+  });
 
-    const savedOrder = localStorage.getItem(storageKey);
-    if (!savedOrder) {
+  const [items, setItems] = useState<T[]>(initialItems);
+
+  useEffect(() => {
+    if (!enabled || !storageKey || !savedOrder) {
       setItems(initialItems);
       return;
     }
 
     try {
-      const order = JSON.parse(savedOrder) as string[];
-      const orderedItems = order
+      const orderedItems = savedOrder
         .map((id) => initialItems.find((item) => item.id === id))
         .filter((item): item is T => item !== undefined);
       
-      const existingIds = new Set(order);
+      const existingIds = new Set(savedOrder);
       const newItems = initialItems.filter((item) => !existingIds.has(item.id));
       
       const finalItems = [...orderedItems, ...newItems];
@@ -73,20 +73,16 @@ export function useDragAndDrop<T extends DragAndDropItem>({
     } catch {
       setItems(initialItems);
     }
-  }, [enabled, storageKey, initialItems]);
+  }, [enabled, storageKey, savedOrder, initialItems]);
 
   useEffect(() => {
-    if (!enabled || !storageKey || typeof window === 'undefined' || items.length === 0) {
+    if (!enabled || !storageKey || items.length === 0) {
       return;
     }
 
-    try {
-      const order = items.map((item) => item.id);
-      localStorage.setItem(storageKey, JSON.stringify(order));
-    } catch {
-      // Silently fail if localStorage is unavailable
-    }
-  }, [items, enabled, storageKey]);
+    const order = items.map((item) => item.id);
+    setSavedOrder(order);
+  }, [items, enabled, storageKey, setSavedOrder]);
 
   useEffect(() => {
     if (onOrderChange) {
@@ -144,20 +140,12 @@ export function useDragAndDrop<T extends DragAndDropItem>({
   const handleReset = useCallback(() => {
     if (!enabled) return;
     
-    if (typeof window !== 'undefined' && storageKey) {
-      try {
-        localStorage.removeItem(storageKey);
-        setItems(initialItems);
-        setShowToast(false);
-      } catch {
-        setItems(initialItems);
-        setShowToast(false);
-      }
-    } else {
-      setItems(initialItems);
-      setShowToast(false);
+    if (storageKey) {
+      setSavedOrder(null);
     }
-  }, [enabled, storageKey, initialItems]);
+    setItems(initialItems);
+    setShowToast(false);
+  }, [enabled, storageKey, initialItems, setSavedOrder]);
 
   const dismissToast = useCallback(() => {
     setShowToast(false);

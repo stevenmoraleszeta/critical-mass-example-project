@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { useToggle, useClickOutside } from '@/lib/hooks';
+import { useToggle, useClickOutside, useFocusTrap, useDebounce } from '@/lib/hooks';
 
 /**
  * Select Component
@@ -87,6 +87,7 @@ export default function Select({
 }: SelectProps) {
   const isOpen = useToggle(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const debouncedSearchQuery = useDebounce(searchQuery, { delay: 200 });
   const [focusedIndex, setFocusedIndex] = useState(-1);
   
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -98,10 +99,16 @@ export default function Select({
   const selectedOption = options.find(option => option.value === value);
   const displayValue = selectedOption ? selectedOption.label : placeholder;
 
-  // Filter options based on search query
+  // Filter options based on debounced search query
   const filteredOptions = options.filter(option =>
-    option.label.toLowerCase().includes(searchQuery.toLowerCase())
+    option.label.toLowerCase().includes(debouncedSearchQuery.toLowerCase())
   );
+
+  // Use focus trap for accessibility
+  useFocusTrap({
+    ref: modalRef,
+    enabled: isOpen.value,
+  });
 
   // Generate error message ID for aria-describedby
   const errorId = error ? `${id}-error` : undefined;
@@ -158,7 +165,7 @@ export default function Select({
     enabled: isOpen.value,
   });
 
-  // Handle keyboard navigation and focus trap
+  // Handle keyboard navigation (focus trap is handled by useFocusTrap hook)
   useEffect(() => {
     if (!isOpen.value) return;
 
@@ -170,7 +177,6 @@ export default function Select({
           break;
         
         case 'ArrowDown':
-          // Navegar hacia abajo - funciona siempre dentro del modal
           e.preventDefault();
           if (filteredOptions.length > 0) {
             setFocusedIndex(prev => 
@@ -180,7 +186,6 @@ export default function Select({
           break;
         
         case 'ArrowUp':
-          // Navegar hacia arriba - funciona siempre dentro del modal
           e.preventDefault();
           if (filteredOptions.length > 0) {
             setFocusedIndex(prev => prev > 0 ? prev - 1 : -1);
@@ -207,57 +212,13 @@ export default function Select({
             setFocusedIndex(filteredOptions.length - 1);
           }
           break;
-        
-        case 'Tab':
-          // Focus trap: keep focus within modal
-          // Allow Tab navigation between search input and options
-          if (!modalRef.current) return;
-          
-          const focusableElements = modalRef.current.querySelectorAll(
-            'input[type="search"], [role="option"]'
-          );
-          const elementsArray = Array.from(focusableElements) as HTMLElement[];
-          const firstElement = elementsArray[0];
-          const lastElement = elementsArray[elementsArray.length - 1];
-          const currentIndex = elementsArray.indexOf(document.activeElement as HTMLElement);
-          
-          if (e.shiftKey) {
-            // Shift+Tab: navigate backwards
-            if (currentIndex <= 0 || document.activeElement === firstElement) {
-              e.preventDefault();
-              lastElement?.focus();
-            }
-          } else {
-            // Tab: navigate forwards
-            if (currentIndex >= elementsArray.length - 1 || document.activeElement === lastElement) {
-              e.preventDefault();
-              firstElement?.focus();
-            }
-          }
-          break;
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     
-    // Focus trap: prevent focus from leaving modal
-    const handleFocusIn = (e: FocusEvent) => {
-      if (!modalRef.current) return;
-      
-      const target = e.target as HTMLElement;
-      
-      // If focus is outside modal, bring it back to search input
-      if (!modalRef.current.contains(target)) {
-        e.preventDefault();
-        searchInputRef.current?.focus();
-      }
-    };
-    
-    document.addEventListener('focusin', handleFocusIn);
-    
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      document.removeEventListener('focusin', handleFocusIn);
     };
   }, [isOpen.value, filteredOptions, focusedIndex, handleSelect, closeModal]);
 
