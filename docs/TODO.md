@@ -856,11 +856,11 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ### Screen Reader Testing
 
-- [ ] Test with NVDA (Windows) or VoiceOver (Mac)
-- [ ] Verify all content is announced correctly
-- [ ] Verify navigation is clear
-- [ ] Verify form interactions work
-- [ ] Fix any issues found
+- [x] Test with NVDA (Windows) or VoiceOver (Mac)
+- [x] Verify all content is announced correctly
+- [x] Verify navigation is clear
+- [x] Verify form interactions work
+- [x] Fix any issues found
 
 ### Color Contrast
 
@@ -882,12 +882,12 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ### Image Optimization
 
-- [ ] Replace all `<img>` tags with `next/image`
-- [ ] Add `loading="lazy"` to non-critical images
-- [ ] Optimize image sizes
-- [ ] Use appropriate image formats (WebP, AVIF)
-- [ ] Add proper `width` and `height` attributes
-- [ ] Test images load correctly
+- [x] Replace all `<img>` tags with `next/image`
+- [x] Add `loading="lazy"` to non-critical images
+- [x] Optimize image sizes
+- [x] Use appropriate image formats (WebP, AVIF)
+- [x] Add proper `width` and `height` attributes
+- [x] Test images load correctly
 
 ### Code Splitting
 
