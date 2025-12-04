@@ -81,22 +81,17 @@ export default function Input({
   const errorId = error ? `${id}-error` : undefined;
   const describedBy = ariaDescribedBy || errorId;
 
-  // Build BEM class names
-  const baseClass = 'input';
-  const errorClass = error ? 'input--error' : '';
-  const requiredClass = required ? 'input--required' : '';
-  
-  const inputClassNames = [
-    baseClass,
-    errorClass,
-    requiredClass,
+  const wrapperClassNames = [
+    'input',
+    error ? 'input--error' : '',
+    required ? 'input--required' : '',
     className,
   ]
     .filter(Boolean)
     .join(' ');
 
   return (
-    <div className="input-wrapper">
+    <div className={wrapperClassNames}>
       <label htmlFor={id} className="input__label">
         {label}
         {required && (
@@ -108,7 +103,7 @@ export default function Input({
       <input
         id={id}
         type={type}
-        className={inputClassNames}
+        className="input__field"
         placeholder={placeholder}
         value={value}
         onChange={onChange}

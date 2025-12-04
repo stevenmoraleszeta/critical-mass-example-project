@@ -9,79 +9,16 @@
 @use '../base/mixins' as *;
 
 // ============================================================================
-// Select Wrapper (BEM)
+// Select Block (BEM)
 // Container for select and its associated elements
 // ============================================================================
 
-.select-wrapper {
+.select {
+  // Wrapper styles
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
   width: 100%;
-}
-
-// ============================================================================
-// Select Block (BEM)
-// Base styles for all selects
-// ============================================================================
-
-.select {
-  // Base select styles
-  display: block;
-  width: 100%;
-  
-  // Typography - inherits monospace from body
-  font-size: var(--fs-base);
-  font-weight: var(--fw-normal);
-  line-height: var(--lh-normal);
-  color: var(--color-primary); // Blue text
-  
-  // Layout
-  padding: var(--space-sm) var(--space-md);
-  padding-right: var(--space-2xl); // Extra padding for dropdown arrow
-  border: var(--border-width-thin) solid var(--color-primary); // Blue border
-  border-radius: var(--radius-md);
-  background-color: var(--color-white);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23FFFF00' stroke='%230000FF' stroke-width='1'/%3E%3Cpath fill='%230000FF' d='M8 11L4 7h8z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right var(--space-md) center;
-  background-size: 1rem 1rem; // 16px
-  appearance: none; // Remove default arrow
-  cursor: pointer;
-  
-  // Transitions
-  @include transition-base(all);
-  
-  // Accessibility: Focus states
-  // Always red focus for better visibility (matching navbar)
-  outline: none;
-  
-  &:focus-visible {
-    outline: 3px solid var(--color-secondary); // Red outline - matching navbar
-    outline-offset: 4px;
-    border-color: var(--color-primary);
-    @include shadow-md;
-  }
-  
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-  
-  // Hover state
-  &:hover:not(:disabled):not(.select--error) {
-    border-color: var(--color-primary);
-    @include shadow-sm;
-  }
-  
-  // Disabled state
-  &:disabled {
-    background-color: var(--color-accent); // Yellow background when disabled
-    color: var(--color-primary); // Blue text
-    border-color: var(--color-primary);
-    cursor: not-allowed;
-    opacity: 0.7;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23FFFF00' stroke='%230000FF' stroke-width='1'/%3E%3Cpath fill='%230000FF' d='M8 11L4 7h8z'/%3E%3C/svg%3E");
-  }
   
   // ============================================================================
   // Select Elements (BEM)
@@ -95,6 +32,90 @@
     color: var(--color-primary); // Blue text
     margin-bottom: var(--space-xs);
     line-height: var(--lh-normal);
+  }
+  
+  // Trigger button element
+  &__trigger {
+    // Base trigger styles
+    display: block;
+    width: 100%;
+    
+    // Typography - inherits monospace from body
+    font-size: var(--fs-base);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-normal);
+    color: var(--color-primary); // Blue text
+    
+    // Layout
+    padding: var(--space-sm) var(--space-md);
+    padding-right: var(--space-2xl); // Extra padding for dropdown arrow
+    border: var(--border-width-thin) solid var(--color-primary); // Blue border
+    border-radius: var(--radius-md);
+    background-color: var(--color-white);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23FFFF00' stroke='%230000FF' stroke-width='1'/%3E%3Cpath fill='%230000FF' d='M8 10.5L5.5 8h5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--space-md) center;
+    background-size: 1rem 1rem; // 16px
+    appearance: none; // Remove default arrow
+    cursor: pointer;
+    text-align: left;
+    
+    // Transitions
+    @include transition-base(all);
+    
+    // Accessibility: Focus states
+    // Always red focus for better visibility (matching navbar)
+    outline: none;
+    
+    &:focus-visible {
+      outline: 3px solid var(--color-secondary); // Red outline - matching navbar
+      outline-offset: 4px;
+      border-color: var(--color-primary);
+      @include shadow-md;
+    }
+    
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+    
+    // Hover state
+    &:hover:not(:disabled) {
+      border-color: var(--color-primary);
+      @include shadow-sm;
+    }
+    
+    // Disabled state
+    &:disabled {
+      background-color: var(--color-accent); // Yellow background when disabled
+      color: var(--color-primary); // Blue text
+      border-color: var(--color-primary);
+      cursor: not-allowed;
+      opacity: 0.7;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23FFFF00' stroke='%230000FF' stroke-width='1'/%3E%3Cpath fill='%230000FF' d='M8 10.5L5.5 8h5z'/%3E%3C/svg%3E");
+    }
+    
+    // Open state
+    &--open {
+      border-color: var(--color-primary);
+    }
+    
+    // Responsive Enhancements (Mobile-First)
+    @include breakpoint-md {
+      padding: var(--space-sm) var(--space-lg);
+      padding-right: var(--space-3xl); // Extra padding for dropdown arrow
+      font-size: var(--fs-base);
+    }
+  }
+  
+  // Trigger text element
+  &__trigger-text {
+    display: block;
+  }
+  
+  // Trigger icon element
+  &__trigger-icon {
+    display: inline-block;
+    margin-left: var(--space-sm);
   }
   
   // Required indicator
@@ -117,18 +138,20 @@
   // Select Modifiers (BEM)
   // ============================================================================
   
-  // Error state
+  // Error state - applies to wrapper, affects trigger styling
   &--error {
-    border-color: var(--color-secondary); // Red border for errors
-    background-color: var(--color-white);
-    
-    &:focus-visible {
-      outline-color: var(--color-secondary); // Red outline when in error state
-      border-color: var(--color-secondary);
-    }
-    
-    &:hover:not(:disabled) {
-      border-color: var(--color-secondary);
+    .select__trigger {
+      border-color: var(--color-secondary); // Red border for errors
+      background-color: var(--color-white);
+      
+      &:focus-visible {
+        outline-color: var(--color-secondary); // Red outline when in error state
+        border-color: var(--color-secondary);
+      }
+      
+      &:hover:not(:disabled) {
+        border-color: var(--color-secondary);
+      }
     }
   }
   
@@ -138,24 +161,94 @@
   }
   
   // ============================================================================
-  // Select Options Styling
+  // Select Modal Elements (BEM)
   // ============================================================================
   
-  option {
-    padding: var(--space-sm);
-    background-color: var(--color-white);
-    color: var(--color-primary);
+  // Modal overlay
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
   }
   
-  // ============================================================================
-  // Responsive Enhancements (Mobile-First)
-  // Following Critical Mass requirement: Mobile-First approach
-  // ============================================================================
+  // Modal container
+  &__modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-white);
+    border: var(--border-width-thin) solid var(--color-primary);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    z-index: 9999;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    
+    @include breakpoint-md {
+      min-width: 400px;
+    }
+  }
   
-  @include breakpoint-md {
-    padding: var(--space-sm) var(--space-lg);
-    padding-right: var(--space-3xl); // Extra padding for dropdown arrow
+  // Search wrapper
+  &__search-wrapper {
+    padding: var(--space-md);
+    border-bottom: var(--border-width-thin) solid var(--color-primary);
+  }
+  
+  // Search input
+  &__search-input {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    border: var(--border-width-thin) solid var(--color-primary);
+    border-radius: var(--radius-sm);
     font-size: var(--fs-base);
+  }
+  
+  // Options list
+  &__options {
+    list-style: none;
+    margin: 0;
+    padding: var(--space-sm);
+    max-height: 300px;
+    overflow-y: auto;
+    
+    @include breakpoint-md {
+      max-height: 400px;
+    }
+  }
+  
+  // Option item
+  &__option {
+    padding: var(--space-sm) var(--space-md);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    
+    &:hover,
+    &[data-focused="true"] {
+      background-color: var(--color-accent);
+      color: var(--color-primary);
+    }
+    
+    &[aria-selected="true"] {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+  
+  // Empty state
+  &__empty {
+    padding: var(--space-md);
+    text-align: center;
+    color: var(--color-primary);
+    opacity: 0.6;
   }
   
   // ============================================================================
@@ -164,7 +257,7 @@
   // ============================================================================
   
   @media (prefers-reduced-motion: reduce) {
-    & {
+    .select__trigger {
       transition: none;
     }
   }

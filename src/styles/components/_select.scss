@@ -1,15 +1,14 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
 
-.select-wrapper {
+.select {
+  // Wrapper styles
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
   width: 100%;
   position: relative;
-}
-
-.select {
+  
   &__label {
     display: block;
     font-size: var(--fs-sm);
@@ -91,10 +90,17 @@
     &-icon {
       position: absolute;
       right: var(--space-md);
-      font-size: var(--fs-sm);
-      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       pointer-events: none;
       transition: transform var(--transition-base);
+      
+      svg {
+        width: 1rem;
+        height: 1rem;
+        display: block;
+      }
       
       .select--open & {
         transform: rotate(180deg);

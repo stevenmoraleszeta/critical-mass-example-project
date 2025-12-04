@@ -305,9 +305,17 @@ export default function Select({
     .filter(Boolean)
     .join(' ');
 
+  const wrapperClassNames = [
+    baseClass,
+    errorClass,
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
     <>
-      <div className={`${baseClass}-wrapper`}>
+      <div className={wrapperClassNames}>
         <label htmlFor={id} className={`${baseClass}__label`} id={`${id}-label`}>
           {label}
           {required && (
@@ -336,7 +344,10 @@ export default function Select({
             className={`${baseClass}__trigger-icon`}
             aria-hidden="true"
           >
-            ▼
+            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="8" r="7" fill="#FFFF00" stroke="#0000FF" strokeWidth="1"/>
+              <path fill="#0000FF" d="M8 11L4.5 7.5h7z"/>
+            </svg>
           </span>
         </button>
         {error && (
