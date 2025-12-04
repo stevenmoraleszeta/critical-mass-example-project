@@ -3,7 +3,6 @@
 @use 'base/reset' as *;
 @use 'base/typography' as *;
 @use 'base/layout' as *;
-@use 'base/backgrounds' as *;
 @use 'base/animations' as *;
 
 @use 'components/buttons' as *;
@@ -27,6 +26,7 @@
 @use 'components/cta-section' as *;
 @use 'components/floating-binary-elements' as *;
 @use 'components/scroll-arrow' as *;
+@use 'components/animated-gradient-background' as *;
 
 @use 'pages/components' as *;
 @use 'pages/home' as *;

@@ -1,16 +1,53 @@
 // ============================================================================
-// Reusable Levitation Animations System - Simplified
+// Reusable Animations System
 // Following Critical Mass requirements: BEM, Mobile-First, Accessibility
-// Centralized animation keyframes - only 3 essential types
+// Centralized animation keyframes for the entire project
 // ============================================================================
 
 @use 'variables' as *;
 
 // ============================================================================
-// Base Levitation Animations - Only 3 essential types
+// Background Animations
 // ============================================================================
 
-// Simple vertical levitation - use with --levitate-distance CSS variable
+@keyframes animated-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  
+  25% {
+    background-position: 25% 50%;
+  }
+  
+  32% {
+    background-position: 33.33% 50%;
+  }
+  
+  36% {
+    background-position: 50% 50%;
+  }
+  
+  40% {
+    background-position: 66.66% 50%;
+  }
+  
+  55% {
+    background-position: 75% 50%;
+  }
+  
+  75% {
+    background-position: 100% 50%;
+  }
+  
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// ============================================================================
+// Levitation Animations
+// ============================================================================
+
 @keyframes levitate {
   0%, 100% {
     transform: translateY(0);
@@ -20,7 +57,6 @@
   }
 }
 
-// Levitation with rotation support - for cards with rotation
 @keyframes levitate-rotation {
   0%, 100% {
     transform: translateY(0) rotate(var(--item-rotation, 0deg));
@@ -30,9 +66,10 @@
   }
 }
 
-// Binary elements floating animation - GPU-accelerated, optimized for 60fps
-// Uses translate3d for hardware acceleration and single transform for performance
-// Simple, smooth animation without complex calculations for maximum performance
+// ============================================================================
+// Floating Animations
+// ============================================================================
+
 @keyframes float-binary {
   0%, 100% {
     transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0);
