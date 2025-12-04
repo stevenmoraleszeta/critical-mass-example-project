@@ -812,10 +812,10 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ### Semantic HTML
 
-- [ ] Verify all pages use `<header>`, `<main>`, `<section>`, `<footer>`
-- [ ] Verify one `<h1>` per page
-- [ ] Verify heading hierarchy (h2, h3) is correct
-- [ ] Check all pages for semantic structure
+- [x] Verify all pages use `<header>`, `<main>`, `<section>`, `<footer>`
+- [x] Verify one `<h1>` per page
+- [x] Verify heading hierarchy (h2, h3) is correct
+- [x] Check all pages for semantic structure
 
 ### Keyboard Navigation
 
@@ -864,17 +864,17 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ### Color Contrast
 
-- [ ] Check text contrast meets WCAG AA (4.5:1 for normal text)
-- [ ] Check text contrast meets WCAG AA (3:1 for large text)
-- [ ] Use contrast checker tool
-- [ ] Fix any contrast issues
+- [x] Check text contrast meets WCAG AA (4.5:1 for normal text)
+- [x] Check text contrast meets WCAG AA (3:1 for large text)
+- [x] Use contrast checker tool
+- [x] Fix any contrast issues
 
 ### Final Accessibility Check
 
-- [ ] Run Lighthouse accessibility audit
-- [ ] Aim for 100% accessibility score
-- [ ] Fix any issues found
-- [ ] Re-test after fixes
+- [x] Run Lighthouse accessibility audit
+- [x] Aim for 100% accessibility score
+- [x] Fix any issues found
+- [x] Re-test after fixes
 
 ---
 
