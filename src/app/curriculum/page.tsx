@@ -183,11 +183,11 @@ export default function Curriculum() {
             <div className="curriculum-page__projects-list">
               <Card variant="default" className="curriculum-page__card">
                 <div className="curriculum-page__card-content">
-                  <h3 className="curriculum-page__project-title">Novaera SaaS ERP</h3>
-                  <Tag text="2024 - 2025" variant="secondary" size="md" />
+                  <h3 className="curriculum-page__project-title">Critical Mass Portfolio Prototype</h3>
+                  <Tag text="2025" variant="secondary" size="md" />
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
-                      Designed and co-developed an innovative SaaS ERP platform used by business clients. Integrated automation, analytics, and multi-module management with a strong focus on scalability and performance. Led a six-member engineering team ensuring code quality, maintainability, and clear technical documentation.
+                      A professional portfolio prototype built specifically for the Critical Mass Front-End Developer role. Demonstrates design-to-code translation, responsive architecture, accessibility best practices (WCAG), API integration, SASS/SCSS preprocessing with BEM methodology, and component library development. Built with Next.js 14, TypeScript, and React Testing Library to showcase front-end expertise in an agency context.
                     </p>
                   </div>
                 </div>
@@ -207,11 +207,35 @@ export default function Curriculum() {
 
               <Card variant="default" className="curriculum-page__card">
                 <div className="curriculum-page__card-content">
+                  <h3 className="curriculum-page__project-title">Novaera SaaS ERP</h3>
+                  <Tag text="2024 - 2025" variant="secondary" size="md" />
+                  <div className="curriculum-page__content">
+                    <p className="curriculum-page__text">
+                      Designed and co-developed an innovative SaaS ERP platform used by business clients. Integrated automation, analytics, and multi-module management with a strong focus on scalability and performance. Led a six-member engineering team ensuring code quality, maintainability, and clear technical documentation.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card variant="default" className="curriculum-page__card">
+                <div className="curriculum-page__card-content">
                   <h3 className="curriculum-page__project-title">ZETA Academia EdTech Platform</h3>
                   <Tag text="2024 - 2025" variant="secondary" size="md" />
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
                       Founded and led ZETA Academia, an educational startup offering courses in Artificial Intelligence, Python, Java, Excel, and more. Led a five-person team to design and co-develop the learning platform, which supports over <strong>1,000 students</strong> and <strong>30+ courses</strong>. Focused on performance, accessibility, and scalability, integrating user analytics and responsive design.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card variant="default" className="curriculum-page__card">
+                <div className="curriculum-page__card-content">
+                  <h3 className="curriculum-page__project-title">TimerChill — Modern Pomodoro Timer</h3>
+                  <Tag text="2024" variant="secondary" size="md" />
+                  <div className="curriculum-page__content">
+                    <p className="curriculum-page__text">
+                      A modern React timer app built with TypeScript and Vite. Includes Pomodoro focus cycles, ambient background sounds, statistics tracking, and dark/light themes. Designed for smooth productivity with a clean UI, animations, and persistent user preferences.
                     </p>
                   </div>
                 </div>
@@ -253,17 +277,6 @@ export default function Curriculum() {
                 </div>
               </Card>
 
-              <Card variant="default" className="curriculum-page__card">
-                <div className="curriculum-page__card-content">
-                  <h3 className="curriculum-page__project-title">Assistive Robotics Project for Elderly Care</h3>
-                  <Tag text="2022" variant="secondary" size="md" />
-                  <div className="curriculum-page__content">
-                    <p className="curriculum-page__text">
-                      Led and collaborated with a 3-member team to design and program a robotic system that assists elderly and rehabilitation patients, presented at the World Robotics Olympiad. Focused on automation, safety, and human interaction through embedded systems.
-                    </p>
-                  </div>
-                </div>
-              </Card>
             </div>
             <ScrollArrow targetId="education" color="white" />
           </section>
