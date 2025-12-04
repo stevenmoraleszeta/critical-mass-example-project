@@ -297,10 +297,16 @@
     font-size: var(--fs-base);
     font-style: normal;
     line-height: var(--lh-relaxed);
-    color: var(--color-primary);
+    color: var(--color-secondary);
     margin: 0;
-    text-align: right;
+    text-align: center;
     font-weight: var(--fw-normal);
+    border-top: none;
+    padding-top: 0;
+
+    &::before {
+      display: none;
+    }
 
     @include breakpoint-md {
       font-size: var(--fs-lg);

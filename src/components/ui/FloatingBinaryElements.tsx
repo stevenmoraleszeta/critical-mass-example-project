@@ -45,14 +45,14 @@ export default function FloatingBinaryElements({
     if (!isMounted) return count;
     
     const viewportWidth = windowSize.width;
-    const minViewport = 320;
-    const maxViewport = 1920;
-    const minElements = 50;
-    const maxElements = count;
-    const clampedWidth = Math.max(minViewport, Math.min(maxViewport, viewportWidth));
-    const linearRatio = (clampedWidth - minViewport) / (maxViewport - minViewport);
-    const smoothRatio = Math.sqrt(linearRatio);
-    const calculatedCount = Math.round(minElements + (maxElements - minElements) * smoothRatio);
+      const minViewport = 320;
+      const maxViewport = 1920;
+      const minElements = 50;
+      const maxElements = count;
+      const clampedWidth = Math.max(minViewport, Math.min(maxViewport, viewportWidth));
+      const linearRatio = (clampedWidth - minViewport) / (maxViewport - minViewport);
+      const smoothRatio = Math.sqrt(linearRatio);
+      const calculatedCount = Math.round(minElements + (maxElements - minElements) * smoothRatio);
     return Math.max(minElements, calculatedCount);
   }, [count, isMounted, windowSize.width]);
   
