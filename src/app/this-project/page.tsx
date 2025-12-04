@@ -223,29 +223,27 @@ export default function ThisProject() {
               </p>
               
               <div className="this-project-page__review-actions">
-                <a
+                <Button
+                  variant="highlight"
+                  size="lg"
                   href="https://stevenmorales.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="this-project-page__review-link"
-                  aria-label="View live demo of portfolio site"
+                  ariaLabel="View live demo of portfolio site"
                 >
-                  <Button variant="highlight" size="lg">
-                    View Live Demo
-                  </Button>
-                </a>
+                  View Live Demo
+                </Button>
                 
-                <a
+                <Button
+                  variant="primary"
+                  size="lg"
                   href="https://github.com/stevenmoraleszeta/critical-mass-example-project"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="this-project-page__review-link"
-                  aria-label="View GitHub repository with front-end structure, styles, tests and CI config"
+                  ariaLabel="View GitHub repository with front-end structure, styles, tests and CI config"
                 >
-                  <Button variant="primary" size="lg">
-                    View Repository
-                  </Button>
-                </a>
+                  View Repository
+                </Button>
                 
                 <Button
                   variant="secondary"
