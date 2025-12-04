@@ -220,7 +220,7 @@ export default function Curriculum() {
                   <Tag text="2025" variant="secondary" size="md" />
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
-                      A professional portfolio prototype built specifically for the Critical Mass Front-End Developer role. Demonstrates design-to-code translation, responsive architecture, accessibility best practices (WCAG), API integration, SASS/SCSS preprocessing with BEM methodology, and component library development. Built with Next.js 14, TypeScript, and React Testing Library to showcase front-end expertise in an agency context.
+                      A professional portfolio prototype built specifically for the Critical Mass Front-End Developer role. Demonstrates design-to-code translation, responsive architecture, accessibility best practices (WCAG), SASS/SCSS preprocessing with BEM methodology, and component library development. While this project focused on front-end demonstration without external API integration, my public GitHub repositories contain numerous production projects showcasing comprehensive API integrations, CMS systems, and full-stack architectures. Built with Next.js 14, TypeScript, and React Testing Library to showcase front-end expertise in an agency context.
                     </p>
                     <div className="curriculum-page__project-links">
                       <Button 

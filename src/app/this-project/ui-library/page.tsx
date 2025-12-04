@@ -1225,7 +1225,7 @@ export default function UILibrary() {
                 />
                 <FeatureCard
                   title="API Integration Module"
-                  description="Speaks fluent REST, JSON and HTTP. Comfortable integrating with CMSs and external web services."
+                  description="While this portfolio prototype demonstrates front-end capabilities without external API integration, I have extensive experience building production applications that integrate REST APIs, JSON data structures, and HTTP services. My public GitHub repositories showcase multiple projects with comprehensive API integrations, CMS systems, and external web services."
                 />
               </div>
             </section>

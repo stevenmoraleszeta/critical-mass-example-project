@@ -19,11 +19,11 @@
   flex-direction: column;
   gap: var(--space-xs);
   width: 100%;
-  
-  // ============================================================================
+
+// ============================================================================
   // Select Elements (BEM)
-  // ============================================================================
-  
+// ============================================================================
+
   // Label element
   &__label {
     display: block;
@@ -37,63 +37,63 @@
   // Trigger button element
   &__trigger {
     // Base trigger styles
-    display: block;
-    width: 100%;
-    
-    // Typography - inherits monospace from body
-    font-size: var(--fs-base);
-    font-weight: var(--fw-normal);
-    line-height: var(--lh-normal);
-    color: var(--color-primary); // Blue text
-    
-    // Layout
-    padding: var(--space-sm) var(--space-md);
-    padding-right: var(--space-2xl); // Extra padding for dropdown arrow
-    border: var(--border-width-thin) solid var(--color-primary); // Blue border
-    border-radius: var(--radius-md);
-    background-color: var(--color-white);
+  display: block;
+  width: 100%;
+  
+  // Typography - inherits monospace from body
+  font-size: var(--fs-base);
+  font-weight: var(--fw-normal);
+  line-height: var(--lh-normal);
+  color: var(--color-primary); // Blue text
+  
+  // Layout
+  padding: var(--space-sm) var(--space-md);
+  padding-right: var(--space-2xl); // Extra padding for dropdown arrow
+  border: var(--border-width-thin) solid var(--color-primary); // Blue border
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23FFFF00' stroke='%230000FF' stroke-width='1'/%3E%3Cpath fill='%230000FF' d='M8 10.5L5.5 8h5z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right var(--space-md) center;
-    background-size: 1rem 1rem; // 16px
-    appearance: none; // Remove default arrow
-    cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: right var(--space-md) center;
+  background-size: 1rem 1rem; // 16px
+  appearance: none; // Remove default arrow
+  cursor: pointer;
     text-align: left;
-    
-    // Transitions
-    @include transition-base(all);
-    
-    // Accessibility: Focus states
-    // Always red focus for better visibility (matching navbar)
+  
+  // Transitions
+  @include transition-base(all);
+  
+  // Accessibility: Focus states
+  // Always red focus for better visibility (matching navbar)
+  outline: none;
+  
+  &:focus-visible {
+    outline: 3px solid var(--color-secondary); // Red outline - matching navbar
+    outline-offset: 4px;
+    border-color: var(--color-primary);
+    @include shadow-md;
+  }
+  
+  &:focus:not(:focus-visible) {
     outline: none;
-    
-    &:focus-visible {
-      outline: 3px solid var(--color-secondary); // Red outline - matching navbar
-      outline-offset: 4px;
-      border-color: var(--color-primary);
-      @include shadow-md;
-    }
-    
-    &:focus:not(:focus-visible) {
-      outline: none;
-    }
-    
-    // Hover state
+  }
+  
+  // Hover state
     &:hover:not(:disabled) {
-      border-color: var(--color-primary);
-      @include shadow-sm;
-    }
-    
-    // Disabled state
-    &:disabled {
-      background-color: var(--color-accent); // Yellow background when disabled
-      color: var(--color-primary); // Blue text
-      border-color: var(--color-primary);
-      cursor: not-allowed;
-      opacity: 0.7;
+    border-color: var(--color-primary);
+    @include shadow-sm;
+  }
+  
+  // Disabled state
+  &:disabled {
+    background-color: var(--color-accent); // Yellow background when disabled
+    color: var(--color-primary); // Blue text
+    border-color: var(--color-primary);
+    cursor: not-allowed;
+    opacity: 0.7;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23FFFF00' stroke='%230000FF' stroke-width='1'/%3E%3Cpath fill='%230000FF' d='M8 10.5L5.5 8h5z'/%3E%3C/svg%3E");
-    }
-    
+  }
+  
     // Open state
     &--open {
       border-color: var(--color-primary);
@@ -141,16 +141,16 @@
   // Error state - applies to wrapper, affects trigger styling
   &--error {
     .select__trigger {
-      border-color: var(--color-secondary); // Red border for errors
-      background-color: var(--color-white);
-      
-      &:focus-visible {
-        outline-color: var(--color-secondary); // Red outline when in error state
-        border-color: var(--color-secondary);
-      }
-      
-      &:hover:not(:disabled) {
-        border-color: var(--color-secondary);
+    border-color: var(--color-secondary); // Red border for errors
+    background-color: var(--color-white);
+    
+    &:focus-visible {
+      outline-color: var(--color-secondary); // Red outline when in error state
+      border-color: var(--color-secondary);
+    }
+    
+    &:hover:not(:disabled) {
+      border-color: var(--color-secondary);
       }
     }
   }
@@ -191,8 +191,8 @@
     display: flex;
     flex-direction: column;
     min-width: 300px;
-    
-    @include breakpoint-md {
+  
+  @include breakpoint-md {
       min-width: 400px;
     }
   }

@@ -22,7 +22,7 @@ const roleFocusCards: CardData[] = [
   {
     id: '3',
     title: 'API Integration & Web Services',
-    description: 'I integrate REST APIs, JSON data structures, and handle client-side state management, demonstrating readiness for CMS systems and external services.',
+    description: 'I integrate REST and SOAP APIs, JSON data structures, and client-side state management. This portfolio focuses on front-end; my GitHub showcases API integrations.',
   },
   {
     id: '4',
@@ -94,7 +94,7 @@ const keyHighlights: FeatureItem[] = [
     },
     content: (
       <p>
-        Experience with <strong>RESTful APIs, SOAP, JSON, XML, HTTP</strong>, and integrating web solutions with external services, CMS systems, and third-party applications. Full-stack exposure including databases (PostgreSQL, MongoDB), API design, and performance monitoring.
+        Experience with <strong>RESTful APIs, SOAP, JSON, XML, HTTP</strong>, and integrating web solutions with external services, CMS systems, and third-party applications. While this portfolio focuses on front-end demonstration, most of my projects feature comprehensive API integrations—visible in my public GitHub repositories—including full-stack architectures with databases (PostgreSQL, MongoDB), API design, and performance monitoring.
       </p>
     ),
   },
