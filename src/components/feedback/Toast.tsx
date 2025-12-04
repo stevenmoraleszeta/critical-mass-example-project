@@ -2,67 +2,21 @@
 
 import React, { useEffect, useState } from 'react';
 
-/**
- * Toast Component
- * 
- * A reusable toast notification component for displaying temporary messages.
- * Supports auto-dismiss, manual dismiss, and multiple variants.
- * 
- * @example
- * ```tsx
- * <Toast message="Operation successful" variant="success" />
- * 
- * <Toast 
- *   message="Error occurred" 
- *   variant="error"
- *   autoDismiss={false}
- *   onDismiss={() => console.log('dismissed')}
- * />
- * 
- * <Toast 
- *   message="Info message" 
- *   variant="info"
- *   duration={5000}
- *   position="top-right"
- * />
- * ```
- */
-
 export interface ToastProps {
-  /** Toast message to display */
   message: string;
-  /** Toast variant: success, error, info, or warning */
   variant?: 'success' | 'error' | 'info' | 'warning';
-  /** Toast size: sm, md, or lg */
   size?: 'sm' | 'md' | 'lg';
-  /** Position of toast: top-right, top-left, bottom-right, bottom-left */
   position?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
-  /** Auto-dismiss duration in milliseconds (default: 5000ms, 0 to disable) */
   duration?: number;
-  /** Whether to show auto-dismiss (default: true) */
   autoDismiss?: boolean;
-  /** Callback when toast is dismissed */
   onDismiss?: () => void;
-  /** Custom action button (replaces close button if provided) */
   actionButton?: {
     label: string;
     onClick: () => void;
   };
-  /** Additional CSS classes */
   className?: string;
 }
 
-/**
- * Toast Component Implementation
- * 
- * Displays a toast notification with optional auto-dismiss and manual dismiss.
- * Follows Critical Mass accessibility requirements:
- * - Semantic HTML with proper ARIA attributes
- * - Role="status" for non-critical notifications
- * - Role="alert" for critical notifications (error)
- * - Keyboard accessible dismiss button
- * - Focus management
- */
 export default function Toast({
   message,
   variant = 'info',
@@ -77,7 +31,14 @@ export default function Toast({
   const [isVisible, setIsVisible] = useState(true);
   const [isExiting, setIsExiting] = useState(false);
 
-  // Auto-dismiss functionality
+  const handleDismiss = React.useCallback(() => {
+    setIsExiting(true);
+    setTimeout(() => {
+      setIsVisible(false);
+      onDismiss?.();
+    }, 300);
+  }, [onDismiss]);
+
   useEffect(() => {
     if (autoDismiss && duration > 0 && isVisible) {
       const timer = setTimeout(() => {
@@ -86,19 +47,8 @@ export default function Toast({
 
       return () => clearTimeout(timer);
     }
-  }, [autoDismiss, duration, isVisible]);
+  }, [autoDismiss, duration, isVisible, handleDismiss]);
 
-  // Handle dismiss with animation
-  const handleDismiss = () => {
-    setIsExiting(true);
-    // Wait for exit animation before calling onDismiss
-    setTimeout(() => {
-      setIsVisible(false);
-      onDismiss?.();
-    }, 300); // Match animation duration
-  };
-
-  // Build BEM class names
   const baseClass = 'toast';
   const variantClass = `toast--${variant}`;
   const sizeClass = `toast--${size}`;
@@ -116,11 +66,9 @@ export default function Toast({
     .filter(Boolean)
     .join(' ');
 
-  // Determine ARIA role based on variant
   const role = variant === 'error' ? 'alert' : 'status';
   const ariaLive = variant === 'error' ? 'assertive' : 'polite';
 
-  // Get icon based on variant
   const getIcon = () => {
     switch (variant) {
       case 'success':

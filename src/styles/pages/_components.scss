@@ -612,12 +612,12 @@
   }
 
   // Input components levitation
-  .input-wrapper {
+  .input {
     @include levitate(-8px, 3.2s, ease-in-out, 0s);
   }
 
   // Select components levitation
-  .select-wrapper {
+  .select {
     @include levitate(-8px, 3.2s, ease-in-out, 0s);
   }
 

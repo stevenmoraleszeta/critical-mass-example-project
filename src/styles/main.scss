@@ -3,7 +3,6 @@
 @use 'base/reset' as *;
 @use 'base/typography' as *;
 @use 'base/layout' as *;
-@use 'base/backgrounds' as *;
 @use 'base/animations' as *;
 
 @use 'components/buttons' as *;
@@ -11,7 +10,6 @@
 @use 'components/tags' as *;
 @use 'components/badges' as *;
 @use 'components/inputs' as *;
-@use 'components/selects' as *;
 @use 'components/select' as *;
 @use 'components/toggles' as *;
 @use 'components/loader' as *;
@@ -23,12 +21,12 @@
 @use 'components/feature-card' as *;
 @use 'components/card-board' as *;
 @use 'components/role-focus-section' as *;
+@use 'components/feature-grid-section' as *;
 @use 'components/key-highlights-section' as *;
 @use 'components/cta-section' as *;
 @use 'components/floating-binary-elements' as *;
 @use 'components/scroll-arrow' as *;
-// @use 'components/content' as *;
-
+@use 'components/animated-gradient-background' as *;
 
 @use 'pages/components' as *;
 @use 'pages/home' as *;

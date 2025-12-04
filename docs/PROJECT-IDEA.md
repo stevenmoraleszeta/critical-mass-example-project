@@ -93,54 +93,36 @@ This project needs to clearly respond to the job posting:
   - Key Highlights (What I bring to the team)
   - Primary Call To Action
 
-- **`/critical-mass-case-study`** → Critical Mass Portfolio Prototype
+- **`/this-project`** → This Project
   - Project Overview
-  - How This Portfolio Is Built for Critical Mass
   - Design-to-Code Workflow (Figma → HTML/CSS/JS/React)
-  - Accessibility, Performance & Responsiveness
-  - Tooling, Testing & Automation
   - What You Can Review Here (Code, Live Demo, Repo Links)
+  - **`/this-project/ui-library`** → UI Library (submenu)
+    - Showcase of reusable UI components demonstrating technical skills
+    - Documentation of component architecture and accessibility features
+    - Positioned as technical reference
 
-- **`/projects`** → Selected Projects & Case Studies
-  - Critical Mass Portfolio Prototype
-  - Novaera SaaS ERP (Web, API, DB)
-  - Precision Seas ERP System
-  - ZETA Academia EdTech Platform (V1 & V2)
-  - TimerChill – Modern Pomodoro Timer
-  - Matemática Integral ERP & Automation System
-  - Demeter IoT Agriculture System
-  - INFOCOOP Education Platform Enhancements
-  - Assistive Robotics Project for Elderly Care
-
-- **`/skills`** → Skills & Tech Stack
-  - Core Front-End Skills
-  - Front-End Tooling & Automation
-  - Back-End & APIs
-  - Databases & Data
-  - Cloud & DevOps
-  - AI & Data Tools
-  - Testing & QA
-  - Productivity & Collaboration Tools
+- **`/curriculum`** → Professional Curriculum
+  - Professional Summary
+  - Core Skills (Languages, Databases, DevOps, Architecture, Soft Skills)
+  - Professional Experience (Novaera, ZETA Academia, INFOCOOP, TI Recursos CR)
+  - Project Highlights (Featured projects with descriptions)
+  - Education
   - Languages
-  - Engineering Practices & Soft Skills
+  - CV Download (PDF)
 
-- **`/experience`** → Professional Experience
-  - CEO & Lead Software Developer – Novaera
-  - CEO & Lead Tech Educator – ZETA Academia
-  - Freelance Software Developer
-  - Software Developer (Intern) – INFOCOOP
-  - Software Developer – TI Recursos CR
-  - Impact Summary (Leadership, Ownership, Collaboration)
+- **`/cover-letter`** → Cover Letter
+  - Professional Experience
+  - Technical Expertise
+  - Alignment with Role
+  - Closing Statement
 
 - **`/contact`** → Let's Build Something Great
   - Contact Details
   - Social Links
   - Availability & Ways to Collaborate
 
-- **`/ui-library`** → UI Library
-  - Showcase of reusable UI components demonstrating technical skills
-  - Documentation of component architecture and accessibility features
-  - Positioned as technical reference
+> **Note:** The original plan included `/projects`, `/skills`, and `/experience` pages, but these were consolidated into `/curriculum` and `/cover-letter` pages to provide comprehensive professional information in a more focused structure.
 
 ### 2.2. Folder Structure
 
@@ -148,17 +130,18 @@ This project needs to clearly respond to the job posting:
 src/
   app/
     layout.tsx
-    globals.scss              # imports main.scss if you prefer it that way
+    globals.scss              # imports main.scss
     page.tsx                  # Landing /
-    components/
-      page.tsx                # /components
-    content/
-      page.tsx                # /content
-    about/
-      page.tsx                # /about
-    api/
-      content/
-        route.ts              # GET /api/content
+    this-project/
+      page.tsx                # /this-project
+      ui-library/
+        page.tsx              # /this-project/ui-library
+    curriculum/
+      page.tsx                # /curriculum
+    cover-letter/
+      page.tsx                # /cover-letter
+    contact/
+      page.tsx                # /contact
 
   components/
     layout/

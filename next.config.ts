@@ -18,15 +18,21 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // Enable source maps in production for better error tracking (optional)
-  // productionBrowserSourceMaps: false,
-
   // Compiler options
   compiler: {
     // Remove console logs in production
     removeConsole: process.env.NODE_ENV === "production" ? {
       exclude: ["error", "warn"],
     } : false,
+  },
+
+  // Performance optimizations
+  poweredByHeader: false,
+  compress: true,
+
+  // Experimental features for better performance
+  experimental: {
+    optimizePackageImports: ['@testing-library/react', '@testing-library/jest-dom'],
   },
 };
 

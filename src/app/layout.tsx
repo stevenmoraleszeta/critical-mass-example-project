@@ -1,21 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Roboto_Mono, Inter } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 import "../styles/main.scss";
 
 // Import Roboto Mono font (monospace) for code-like appearance
 // Using next/font/google for automatic optimization (Critical Mass performance requirement)
+// display: "swap" ensures text remains visible during font load (prevents FOIT)
+// preload: true enables font preloading for better performance
 const robotoMono = Roboto_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   display: "swap",
-});
-
-// Import Inter font for body text
-// Using next/font/google for automatic optimization (Critical Mass performance requirement)
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -55,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${robotoMono.variable} ${inter.variable}`} data-scroll-behavior="smooth">
+    <html lang="en" className={robotoMono.variable} data-scroll-behavior="smooth">
       <body>
         {children}
       </body>

@@ -1,0 +1,33 @@
+// ============================================================================
+// Animated Gradient Background Component Styles
+// Following Critical Mass requirements: BEM, Mobile-First, Accessibility
+// Component styles for AnimatedGradientBackground component
+// ============================================================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Animated Gradient Background Block (BEM)
+// ============================================================================
+
+.animated-gradient-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  @include animated-gradient-background;
+}
+
+.animated-gradient-background--static {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: var(--color-primary);
+}
+

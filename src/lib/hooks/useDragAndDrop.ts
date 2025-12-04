@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
+import { useLocalStorage } from './useLocalStorage';
 
 export interface DragAndDropItem {
   id: string;
@@ -42,51 +43,100 @@ export function useDragAndDrop<T extends DragAndDropItem>({
   storageKey,
   onOrderChange,
 }: UseDragAndDropOptions<T>): UseDragAndDropReturn<T> {
-  const [items, setItems] = useState<T[]>(initialItems);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
   const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
   const [showToast, setShowToast] = useState(false);
 
+  const { value: savedOrder, setValue: setSavedOrder } = useLocalStorage<string[]>(
+    storageKey || '', 
+    {
+      sync: !!storageKey, 
+    }
+  );
+
+  const initialItemsIds = useMemo(
+    () => initialItems.map((item) => item.id).join(','),
+    [initialItems]
+  );
+
+  const getOrderedItems = useCallback((order: string[] | null, items: T[]): T[] => {
+    if (!order || order.length === 0) {
+      return items;
+    }
+
+    const orderedItems = order
+      .map((id) => items.find((item) => item.id === id))
+      .filter((item): item is T => item !== undefined);
+    
+    const existingIds = new Set(order);
+    const newItems = items.filter((item) => !existingIds.has(item.id));
+    
+    return [...orderedItems, ...newItems];
+  }, []);
+
+  const [items, setItems] = useState<T[]>(() => {
+    if (typeof window === 'undefined') {
+      return initialItems;
+    }
+    
+    if (storageKey && enabled) {
+      try {
+        const saved = window.localStorage.getItem(storageKey);
+        if (saved) {
+          const savedOrder = JSON.parse(saved) as string[];
+          if (Array.isArray(savedOrder) && savedOrder.length > 0) {
+            const orderedItems = savedOrder
+              .map((id) => initialItems.find((item) => item.id === id))
+              .filter((item): item is T => item !== undefined);
+            
+            const existingIds = new Set(savedOrder);
+            const newItems = initialItems.filter((item) => !existingIds.has(item.id));
+            
+            return [...orderedItems, ...newItems];
+          }
+        }
+      } catch (error) {
+        console.warn('Error loading saved order from localStorage:', error);
+      }
+    }
+    
+    return initialItems;
+  });
+
+  const hasInitializedRef = useRef(false);
+  const previousInitialItemsIdsRef = useRef<string>('');
+  const lastSavedOrderRef = useRef<string | null>(null);
+
   useEffect(() => {
-    if (!enabled || !storageKey || typeof window === 'undefined') {
-      setItems(initialItems);
+    if (!storageKey || !enabled) {
       return;
     }
 
-    const savedOrder = localStorage.getItem(storageKey);
-    if (!savedOrder) {
-      setItems(initialItems);
+    const currentItemsIds = initialItems.map((item) => item.id).join(',');
+    const savedOrderString = savedOrder ? savedOrder.join(',') : null;
+    
+    if (currentItemsIds !== previousInitialItemsIdsRef.current) {
+      previousInitialItemsIdsRef.current = currentItemsIds;
+      hasInitializedRef.current = false;
+      lastSavedOrderRef.current = null;
+    }
+
+    if (savedOrderString === lastSavedOrderRef.current && hasInitializedRef.current) {
       return;
     }
 
-    try {
-      const order = JSON.parse(savedOrder) as string[];
-      const orderedItems = order
-        .map((id) => initialItems.find((item) => item.id === id))
-        .filter((item): item is T => item !== undefined);
-      
-      const existingIds = new Set(order);
-      const newItems = initialItems.filter((item) => !existingIds.has(item.id));
-      
-      const finalItems = [...orderedItems, ...newItems];
-      setItems(finalItems);
-    } catch {
-      setItems(initialItems);
-    }
-  }, [enabled, storageKey, initialItems]);
+    lastSavedOrderRef.current = savedOrderString;
 
-  useEffect(() => {
-    if (!enabled || !storageKey || typeof window === 'undefined' || items.length === 0) {
+    if (!savedOrder || savedOrder.length === 0) {
+      setItems(initialItems);
+      hasInitializedRef.current = true;
       return;
     }
 
-    try {
-      const order = items.map((item) => item.id);
-      localStorage.setItem(storageKey, JSON.stringify(order));
-    } catch {
-      // Silently fail if localStorage is unavailable
-    }
-  }, [items, enabled, storageKey]);
+    const orderedItems = getOrderedItems(savedOrder, initialItems);
+    setItems(orderedItems);
+    hasInitializedRef.current = true;
+  }, [storageKey, enabled, savedOrder, initialItems, getOrderedItems]);
 
   useEffect(() => {
     if (onOrderChange) {
@@ -122,18 +172,21 @@ export function useDragAndDrop<T extends DragAndDropItem>({
 
     const newItems = [...items];
     const draggedItem = newItems[draggedIndex];
+    const dropItem = newItems[dropIndex];
     
-    newItems.splice(draggedIndex, 1);
-    newItems.splice(dropIndex, 0, draggedItem);
+    newItems[draggedIndex] = dropItem;
+    newItems[dropIndex] = draggedItem;
     
     setItems(newItems);
     setDraggedIndex(null);
     setDragOverIndex(null);
     
-    if (storageKey) {
+    if (storageKey && enabled) {
+      const order = newItems.map((item) => item.id);
+      setSavedOrder(order);
       setShowToast(true);
     }
-  }, [enabled, draggedIndex, items, storageKey]);
+  }, [enabled, draggedIndex, items, storageKey, setSavedOrder]);
 
   const handleDragEnd = useCallback(() => {
     if (!enabled) return;
@@ -144,20 +197,15 @@ export function useDragAndDrop<T extends DragAndDropItem>({
   const handleReset = useCallback(() => {
     if (!enabled) return;
     
-    if (typeof window !== 'undefined' && storageKey) {
-      try {
-        localStorage.removeItem(storageKey);
-        setItems(initialItems);
-        setShowToast(false);
-      } catch {
-        setItems(initialItems);
-        setShowToast(false);
-      }
-    } else {
-      setItems(initialItems);
-      setShowToast(false);
+    if (storageKey) {
+      setSavedOrder(null);
     }
-  }, [enabled, storageKey, initialItems]);
+    
+    hasInitializedRef.current = false;
+    previousInitialItemsIdsRef.current = initialItemsIds;
+    setItems(initialItems);
+    setShowToast(false);
+  }, [enabled, storageKey, initialItems, initialItemsIds, setSavedOrder]);
 
   const dismissToast = useCallback(() => {
     setShowToast(false);
