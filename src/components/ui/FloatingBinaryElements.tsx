@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
+import { useMediaQuery, useWindowSize } from '@/lib/hooks';
 
 export interface FloatingBinaryElementsProps {
   count?: number;
@@ -32,57 +33,28 @@ export default function FloatingBinaryElements({
   minOpacity = 0.1,
   maxOpacity = 0.4,
 }: FloatingBinaryElementsProps) {
-  const [responsiveCount, setResponsiveCount] = useState(count);
   const [isMounted, setIsMounted] = useState(false);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const prefersReducedMotion = useMediaQuery({ query: '(prefers-reduced-motion: reduce)' });
+  const windowSize = useWindowSize({ debounceDelay: 250 });
   
   useEffect(() => {
     setIsMounted(true);
-    
-    if (typeof window !== 'undefined') {
-      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-      setPrefersReducedMotion(mediaQuery.matches);
-      
-      const handleChange = (e: MediaQueryListEvent) => {
-        setPrefersReducedMotion(e.matches);
-      };
-      
-      mediaQuery.addEventListener('change', handleChange);
-      return () => mediaQuery.removeEventListener('change', handleChange);
-    }
   }, []);
   
-  useEffect(() => {
-    if (!isMounted) return;
+  const responsiveCount = useMemo(() => {
+    if (!isMounted) return count;
     
-    const updateCount = () => {
-      const viewportWidth = window.innerWidth;
-      const minViewport = 320;
-      const maxViewport = 1920;
-      const minElements = 50;
-      const maxElements = count;
-      const clampedWidth = Math.max(minViewport, Math.min(maxViewport, viewportWidth));
-      const linearRatio = (clampedWidth - minViewport) / (maxViewport - minViewport);
-      const smoothRatio = Math.sqrt(linearRatio);
-      const calculatedCount = Math.round(minElements + (maxElements - minElements) * smoothRatio);
-      setResponsiveCount(Math.max(minElements, calculatedCount));
-    };
-    
-    updateCount();
-    
-    let timeoutId: NodeJS.Timeout;
-    const handleResize = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(updateCount, 250);
-    };
-    
-    window.addEventListener('resize', handleResize);
-    
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      clearTimeout(timeoutId);
-    };
-  }, [count, isMounted]);
+    const viewportWidth = windowSize.width;
+    const minViewport = 320;
+    const maxViewport = 1920;
+    const minElements = 50;
+    const maxElements = count;
+    const clampedWidth = Math.max(minViewport, Math.min(maxViewport, viewportWidth));
+    const linearRatio = (clampedWidth - minViewport) / (maxViewport - minViewport);
+    const smoothRatio = Math.sqrt(linearRatio);
+    const calculatedCount = Math.round(minElements + (maxElements - minElements) * smoothRatio);
+    return Math.max(minElements, calculatedCount);
+  }, [count, isMounted, windowSize.width]);
   
   const elements = useMemo(() => {
     if (!isMounted) return [];

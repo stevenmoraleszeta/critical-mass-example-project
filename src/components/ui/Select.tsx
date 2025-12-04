@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { useToggle, useClickOutside } from '@/lib/hooks';
 
 /**
  * Select Component
@@ -84,7 +85,7 @@ export default function Select({
   placeholder = 'Select an option',
   className = '',
 }: SelectProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const isOpen = useToggle(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [focusedIndex, setFocusedIndex] = useState(-1);
   
@@ -110,27 +111,27 @@ export default function Select({
 
   // Handle opening/closing modal
   const openModal = useCallback(() => {
-    setIsOpen(true);
+    isOpen.setTrue();
     setSearchQuery('');
     setFocusedIndex(-1);
-  }, []);
+  }, [isOpen]);
 
   // Focus search input when modal opens
   useEffect(() => {
-    if (isOpen && searchInputRef.current) {
+    if (isOpen.value && searchInputRef.current) {
       // Small delay to ensure modal is rendered
       setTimeout(() => {
         searchInputRef.current?.focus();
       }, 100);
     }
-  }, [isOpen]);
+  }, [isOpen.value]);
 
   const closeModal = useCallback(() => {
-    setIsOpen(false);
+    isOpen.setFalse();
     setSearchQuery('');
     setFocusedIndex(-1);
     triggerRef.current?.focus();
-  }, []);
+  }, [isOpen]);
 
   // Handle option selection
   const handleSelect = useCallback((optionValue: string) => {
@@ -150,9 +151,16 @@ export default function Select({
     closeModal();
   }, [onChange, closeModal, id]);
 
+  // Handle click outside to close
+  useClickOutside({
+    ref: modalRef,
+    handler: closeModal,
+    enabled: isOpen.value,
+  });
+
   // Handle keyboard navigation and focus trap
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen.value) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
       switch (e.key) {
@@ -251,7 +259,7 @@ export default function Select({
       window.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('focusin', handleFocusIn);
     };
-  }, [isOpen, filteredOptions, focusedIndex, handleSelect, closeModal]);
+  }, [isOpen.value, filteredOptions, focusedIndex, handleSelect, closeModal]);
 
   // Scroll focused option into view
   useEffect(() => {
@@ -266,24 +274,6 @@ export default function Select({
     }
   }, [focusedIndex]);
 
-  // Handle click outside to close
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const handleClickOutside = (e: MouseEvent) => {
-      if (
-        modalRef.current &&
-        !modalRef.current.contains(e.target as Node) &&
-        triggerRef.current &&
-        !triggerRef.current.contains(e.target as Node)
-      ) {
-        closeModal();
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isOpen, closeModal]);
 
   // Handle search input change and reset focused index
   const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -294,7 +284,7 @@ export default function Select({
   // Build BEM class names for trigger button
   const baseClass = 'select';
   const errorClass = error ? 'select--error' : '';
-  const openClass = isOpen ? 'select--open' : '';
+  const openClass = isOpen.value ? 'select--open' : '';
   
   const triggerClassNames = [
     `${baseClass}__trigger`,
@@ -331,8 +321,8 @@ export default function Select({
           className={triggerClassNames}
           onClick={openModal}
           aria-haspopup="listbox"
-          aria-expanded={isOpen}
-          aria-controls={isOpen ? modalId : undefined}
+          aria-expanded={isOpen.value}
+          aria-controls={isOpen.value ? modalId : undefined}
           aria-describedby={errorId}
           data-invalid={error ? 'true' : 'false'}
           data-required={required}
@@ -358,7 +348,7 @@ export default function Select({
       </div>
 
       {/* Modal Overlay */}
-      {isOpen && (
+      {isOpen.value && (
         <>
           <div 
             className={`${baseClass}__overlay`}

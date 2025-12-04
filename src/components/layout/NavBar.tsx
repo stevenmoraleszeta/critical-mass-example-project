@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useToggle, useClickOutside, useMediaQuery } from '@/lib/hooks';
 
 /**
  * NavBar Component
@@ -56,7 +57,8 @@ const navigationLinks: NavLink[] = [
  */
 export default function NavBar({ className = '' }: NavBarProps) {
   const pathname = usePathname();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const mobileMenu = useToggle(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuListRef = useRef<HTMLUListElement>(null);
   const previousPathnameRef = useRef<string>(pathname);
@@ -69,8 +71,8 @@ export default function NavBar({ className = '' }: NavBarProps) {
   // Using ref to track previous pathname to avoid unnecessary state updates
   useEffect(() => {
     if (previousPathnameRef.current !== pathname) {
-      if (isMobileMenuOpen) {
-        setIsMobileMenuOpen(false);
+      if (mobileMenu.value) {
+        mobileMenu.setFalse();
       }
       previousPathnameRef.current = pathname;
     }
@@ -81,8 +83,8 @@ export default function NavBar({ className = '' }: NavBarProps) {
   // Handle Escape key to close mobile menu and prevent body scroll
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isMobileMenuOpen) {
-        setIsMobileMenuOpen(false);
+      if (e.key === 'Escape' && mobileMenu.value) {
+        mobileMenu.setFalse();
         // Return focus to menu button after closing
         setTimeout(() => {
           menuButtonRef.current?.focus();
@@ -90,10 +92,10 @@ export default function NavBar({ className = '' }: NavBarProps) {
       }
     };
 
-    if (isMobileMenuOpen) {
+    if (mobileMenu.value) {
       document.addEventListener('keydown', handleEscape);
       // Prevent body scroll when menu is open (mobile only)
-      if (window.innerWidth < 768) {
+      if (isMobile) {
         document.body.style.overflow = 'hidden';
       }
     } else {
@@ -104,11 +106,11 @@ export default function NavBar({ className = '' }: NavBarProps) {
       document.removeEventListener('keydown', handleEscape);
       document.body.style.overflow = '';
     };
-  }, [isMobileMenuOpen]);
+  }, [mobileMenu.value, isMobile]);
 
   // Focus first link when menu opens (mobile only)
   useEffect(() => {
-    if (isMobileMenuOpen && menuListRef.current && window.innerWidth < 768) {
+    if (mobileMenu.value && menuListRef.current && isMobile) {
       // Small delay to ensure menu is rendered and visible
       const timeoutId = setTimeout(() => {
         const firstLink = menuListRef.current?.querySelector('a') as HTMLAnchorElement;
@@ -119,57 +121,33 @@ export default function NavBar({ className = '' }: NavBarProps) {
       
       return () => clearTimeout(timeoutId);
     }
-  }, [isMobileMenuOpen]);
-
-  // Toggle mobile menu
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prev) => !prev);
-  };
+  }, [mobileMenu.value, isMobile]);
 
   // Handle click outside to close menu (mobile only)
-  useEffect(() => {
-    if (!isMobileMenuOpen) return;
-
-    const handleClickOutside = (e: Event) => {
-      const target = e.target as Node;
-      const isMobile = window.innerWidth < 768;
-      
-      if (
-        isMobile &&
-        menuListRef.current &&
-        menuButtonRef.current &&
-        !menuListRef.current.contains(target) &&
-        !menuButtonRef.current.contains(target)
-      ) {
-        setIsMobileMenuOpen(false);
+  useClickOutside({
+    ref: menuListRef,
+    handler: () => {
+      if (isMobile && mobileMenu.value) {
+        mobileMenu.setFalse();
         menuButtonRef.current?.focus();
       }
-    };
-
-    const timeoutId = setTimeout(() => {
-      document.addEventListener('mousedown', handleClickOutside);
-      document.addEventListener('touchstart', handleClickOutside);
-    }, 100);
-
-    return () => {
-      clearTimeout(timeoutId);
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('touchstart', handleClickOutside);
-    };
-  }, [isMobileMenuOpen]);
+    },
+    enabled: isMobile && mobileMenu.value,
+    delay: 100,
+  });
 
   // Handle keyboard navigation for menu button
   const handleMenuButtonKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      toggleMobileMenu();
+      mobileMenu.toggle();
     }
   };
 
   // Handle link click to close menu on mobile
   const handleLinkClick = () => {
-    if (window.innerWidth < 768) {
-      setIsMobileMenuOpen(false);
+    if (isMobile) {
+      mobileMenu.setFalse();
       // Return focus to menu button after navigation
       setTimeout(() => {
         menuButtonRef.current?.focus();
@@ -210,17 +188,17 @@ export default function NavBar({ className = '' }: NavBarProps) {
         <button
           ref={menuButtonRef}
           className="navbar__menu-button"
-          aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          aria-expanded={isMobileMenuOpen}
+          aria-label={mobileMenu.value ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={mobileMenu.value}
           aria-controls="navbar-menu"
-          onClick={toggleMobileMenu}
+          onClick={mobileMenu.toggle}
           onKeyDown={handleMenuButtonKeyDown}
           type="button"
         >
           <span className="navbar__menu-icon" aria-hidden="true">
-            <span className={`navbar__menu-line ${isMobileMenuOpen ? 'navbar__menu-line--open' : ''}`} />
-            <span className={`navbar__menu-line ${isMobileMenuOpen ? 'navbar__menu-line--open' : ''}`} />
-            <span className={`navbar__menu-line ${isMobileMenuOpen ? 'navbar__menu-line--open' : ''}`} />
+            <span className={`navbar__menu-line ${mobileMenu.value ? 'navbar__menu-line--open' : ''}`} />
+            <span className={`navbar__menu-line ${mobileMenu.value ? 'navbar__menu-line--open' : ''}`} />
+            <span className={`navbar__menu-line ${mobileMenu.value ? 'navbar__menu-line--open' : ''}`} />
           </span>
         </button>
 
@@ -228,7 +206,7 @@ export default function NavBar({ className = '' }: NavBarProps) {
         <ul 
           ref={menuListRef}
           id="navbar-menu"
-          className={`navbar__list ${isMobileMenuOpen ? 'navbar__list--open' : ''}`}
+          className={`navbar__list ${mobileMenu.value ? 'navbar__list--open' : ''}`}
         >
           {navigationLinks.map((link) => {
             const isActive = isActiveLink(link.href);
