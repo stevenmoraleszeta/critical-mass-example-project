@@ -42,13 +42,13 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     border-radius: var(--radius-sm);
     border: var(--border-width-thin) solid var(--color-bg-light);
     transition: background-color var(--transition-base);
 
     &:hover {
-      background-color: var(--color-secondary);
+      background-color: var(--color-primary);
     }
 
     &:active {
@@ -64,7 +64,7 @@ body {
 // Firefox
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-primary) var(--color-bg-light);
+  scrollbar-color: var(--color-secondary) var(--color-bg-light);
 }
 
 // Ensure scrollbar respects reduced motion preference
