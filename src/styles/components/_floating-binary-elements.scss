@@ -4,7 +4,7 @@
 @use '../base/animations' as *;
 
 .floating-binary-elements {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -13,7 +13,9 @@
   pointer-events: none;
   z-index: 1;
   touch-action: none;
-  will-change: contents;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
   
   &__element {
     position: absolute;
@@ -22,51 +24,29 @@
     color: var(--color-white);
     user-select: none;
     white-space: nowrap;
-    will-change: transform, opacity, color;
     cursor: default;
     pointer-events: auto;
-    z-index: 10;
-    isolation: isolate;
+    z-index: 2;
     
-    transition: color var(--transition-base), opacity var(--transition-base), text-shadow var(--transition-base), filter var(--transition-base), transform var(--transition-base);
+    transform: translate3d(-50%, -50%, 0);
     transform-origin: center center;
-    --item-rotation: var(--initial-rotation, 0deg);
+    backface-visibility: hidden;
+    will-change: transform;
+    
+    transition: color 0.2s ease, opacity 0.2s ease, text-shadow 0.2s ease, filter 0.2s ease;
     
     @media (prefers-reduced-motion: reduce) {
       animation: none;
-      transition: color var(--transition-base), opacity var(--transition-base);
+      transition: color 0.2s ease, opacity 0.2s ease;
     }
     
-    &[data-value="0"] {
-      animation-name: float;
-      animation-timing-function: ease-in-out;
-      animation-iteration-count: infinite;
-      will-change: transform;
-      --float-y-1: -20px;
-      --float-x-1: 15px;
-      --float-rotate-1: 3deg;
-      --float-y-2: -30px;
-      --float-x-2: 20px;
-      --float-rotate-2: -2deg;
-      --float-y-3: -15px;
-      --float-x-3: 18px;
-      --float-rotate-3: 2deg;
-    }
-    
+    &[data-value="0"],
     &[data-value="1"] {
-      animation-name: float;
-      animation-timing-function: ease-in-out;
+      animation-name: float-binary;
+      animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
       animation-iteration-count: infinite;
-      will-change: transform;
-      --float-y-1: -18px;
-      --float-x-1: 20px;
-      --float-rotate-1: -3deg;
-      --float-y-2: -25px;
-      --float-x-2: 12px;
-      --float-rotate-2: 0deg;
-      --float-y-3: -12px;
-      --float-x-3: 16px;
-      --float-rotate-3: 3deg;
+      animation-fill-mode: both;
+      animation-direction: normal;
     }
     
     &[data-hover-color="blue"]:hover {
@@ -82,8 +62,8 @@
         0 0 35px var(--color-blue),
         0 0 50px var(--color-blue);
       filter: brightness(3) drop-shadow(0 0 5px var(--color-white)) drop-shadow(0 0 10px var(--color-blue));
-      transform: rotate(var(--initial-rotation, 0deg)) scale(1.15);
-      z-index: 20;
+      transform: translate3d(-50%, -50%, 0) scale(1.15);
+      z-index: 15;
     }
     
     &[data-hover-color="red"]:hover {
@@ -99,8 +79,8 @@
         0 0 35px var(--color-red),
         0 0 50px var(--color-red);
       filter: brightness(3) drop-shadow(0 0 5px var(--color-white)) drop-shadow(0 0 10px var(--color-red));
-      transform: rotate(var(--initial-rotation, 0deg)) scale(1.15);
-      z-index: 20;
+      transform: translate3d(-50%, -50%, 0) scale(1.15);
+      z-index: 15;
     }
     
     &[data-hover-color="yellow"]:hover {
@@ -116,8 +96,8 @@
         0 0 35px var(--color-yellow),
         0 0 50px var(--color-yellow);
       filter: brightness(3) drop-shadow(0 0 5px var(--color-white)) drop-shadow(0 0 10px var(--color-yellow));
-      transform: rotate(var(--initial-rotation, 0deg)) scale(1.15);
-      z-index: 20;
+      transform: translate3d(-50%, -50%, 0) scale(1.15);
+      z-index: 15;
     }
   }
 }
