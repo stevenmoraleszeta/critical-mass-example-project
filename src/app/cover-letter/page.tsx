@@ -4,12 +4,20 @@ import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
 import AnimatedGradientBackground from '@/components/ui/AnimatedGradientBackground';
+import FloatingBinaryElements from '@/components/ui/FloatingBinaryElements';
 
 export default function CoverLetter() {
   return (
     <MainLayout>
       <div className="cover-letter-page">
         <AnimatedGradientBackground />
+        <FloatingBinaryElements 
+          count={300}
+          minFontSize={0.4}
+          maxFontSize={2.5}
+          minOpacity={0.15}
+          maxOpacity={0.4}
+        />
         <div className="cover-letter-page__container">
           <section 
             className="cover-letter-page__hero" 

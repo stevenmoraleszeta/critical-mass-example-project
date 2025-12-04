@@ -20,7 +20,7 @@
 
   &__container {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     @include container;
     max-width: var(--container-xl);
     padding: var(--space-lg);
@@ -115,6 +115,7 @@
       
       .cover-letter-page__section-title {
         color: var(--color-white);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
       }
     }
   }
