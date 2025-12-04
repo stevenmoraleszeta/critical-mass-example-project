@@ -59,6 +59,7 @@
     line-height: var(--lh-tight);
     color: var(--color-primary);
     margin: 0;
+    @include levitate(-5px, 3s, ease-in-out, 0s);
 
     @include breakpoint-md {
       font-size: var(--fs-4xl);
@@ -109,6 +110,27 @@
   &__card {
     width: 100%;
     height: 100%;
+    @include shadow-lg;
+    @include transition-multiple(transform, box-shadow);
+    @include levitate(-10px, 4s, ease-in-out, 0s);
+
+    &:hover {
+      transform: translateY(calc(var(--space-xs) * -1));
+      @include shadow-xl;
+      animation-play-state: paused;
+    }
+
+    &:nth-child(1) {
+      @include levitate(-10px, 4s, ease-in-out, 0s);
+    }
+
+    &:nth-child(2) {
+      @include levitate(-12px, 5s, ease-in-out, 1s);
+    }
+
+    &:nth-child(3) {
+      @include levitate(-8px, 4.5s, ease-in-out, 0.5s);
+    }
 
     &--closing {
       .contact-page__card-content {
@@ -227,10 +249,34 @@
     display: inline-block;
     width: 100%;
     @include focus-visible;
+    @include levitate(-6px, 3.5s, ease-in-out, 0s);
+
+    &:nth-child(1) {
+      @include levitate(-6px, 3.5s, ease-in-out, 0s);
+    }
+
+    &:nth-child(2) {
+      @include levitate(-8px, 4s, ease-in-out, 1.2s);
+    }
+
+    &:nth-child(3) {
+      @include levitate(-5px, 3.8s, ease-in-out, 0.6s);
+    }
+
+    &:hover {
+      animation-play-state: paused;
+    }
   }
 
   &__profile-button {
     width: 100%;
+    @include transition-multiple(transform, box-shadow);
+    @include shadow-md;
+
+    &:hover {
+      transform: translateY(calc(var(--space-xs) * -1));
+      @include shadow-lg;
+    }
   }
 
   // ============================================================================
@@ -322,10 +368,19 @@
     @include flex;
     @include flex-column;
     gap: var(--space-sm);
+    @include shadow-md;
+    @include levitate(-8px, 4s, ease-in-out, 2s);
+    @include transition-multiple(transform, box-shadow);
 
     @include breakpoint-md {
       padding: var(--space-xl);
       margin: var(--space-2xl) 0;
+    }
+
+    &:hover {
+      transform: translateY(calc(var(--space-xs) * -1));
+      @include shadow-lg;
+      animation-play-state: paused;
     }
   }
 
