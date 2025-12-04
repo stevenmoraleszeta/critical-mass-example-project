@@ -17,7 +17,7 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "Steven Morales - Full Stack Software Engineer & Tech Leader | Critical Mass Portfolio",
   description: "Portfolio showcasing front-end development expertise for Critical Mass Developer position. Building high-quality, responsive, accessible full stack experiences with React, Next.js, TypeScript, and modern web technologies.",
-  keywords: ["Steven Morales", "Full Stack Developer", "Front End Developer", "React", "Next.js", "TypeScript", "Critical Mass", "Portfolio", "Web Development", "San Jose Costa Rica"],
+  keywords: ["Steven Morales", "Full Stack Developer", "Front End Developer", "React", "Next.js", "TypeScript", "Critical Mass", "Portfolio", "Web Development", "Costa Rica"],
   authors: [{ name: "Steven Morales" }],
   creator: "Steven Morales",
   publisher: "Steven Morales",

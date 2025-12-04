@@ -1,9 +1,7 @@
 # Steven Morales – Front-End Experience Portfolio for Critical Mass
 
 > Full Stack Software Engineer · Tech Leader · Product-Focused Developer  
-> San José, Costa Rica · Applying for **Developer, Front End – Critical Mass**
-
-> **⚠️ Project Simplification Note:** Due to time constraints, the project was simplified to ensure timely completion. The "Me & Skills" (`/me-and-skills`) and "Projects & Experience" (`/projects`) pages were removed from the final implementation. The portfolio focuses on the core pages: Home, This Project, and Contact, which demonstrate the essential skills and experience relevant to the Critical Mass Front-End Developer position.
+> Costa Rica · Applying for **Developer, Front End – Critical Mass**
 
 ---
 
@@ -153,11 +151,7 @@ From this page, link to:
   - Styles (SASS/SCSS, BEM structure).
   - Tests and basic CI config.
 - **UI Library** on `/this-project/ui-library` (component showcase and documentation).
----
 
-> **Note:** The "Projects & Experience" and "Me & Skills" pages were removed from the final implementation due to time constraints. The portfolio focuses on core pages that demonstrate essential skills and experience. Additional pages (`/curriculum` and `/cover-letter`) were added to provide comprehensive professional information.
-
----  
 ---
 
 ## `/curriculum` – Professional Curriculum
@@ -244,7 +238,7 @@ I'm excited about the opportunity to bring my full-stack expertise and leadershi
 ### Contact Information
 
 - **Name:** Steven Morales Fallas  
-- **Location:** San José, Costa Rica  
+- **Location:** Costa Rica  
 - **Phone / WhatsApp:** [+506 6130 4830](https://wa.me/50661304830)  
 - **Email:** [fallasmoraless@gmail.com](mailto:fallasmoraless@gmail.com)
 

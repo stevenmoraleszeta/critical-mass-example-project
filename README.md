@@ -1,9 +1,11 @@
 # Steven Morales – Professional Portfolio for Critical Mass
 
 > **Full Stack Software Engineer · Tech Leader · Product-Focused Developer**  
-> San José, Costa Rica · Applying for **Developer, Front End – Critical Mass**
+> Costa Rica · Applying for **Developer, Front End – Critical Mass**
 
-A professional portfolio prototype built to demonstrate front-end development skills and experience, specifically crafted for the **Critical Mass Front-End Developer** position in **San Jose, Costa Rica**. This project showcases real-world expertise in translating designs to code, building scalable component systems, and delivering production-ready applications.
+A professional portfolio prototype built to demonstrate front-end development skills and experience, specifically crafted for the **Critical Mass Front-End Developer** position in **Costa Rica**. This project showcases real-world expertise in translating designs to code, building scalable component systems, and delivering production-ready applications.
+
+**Project developed in December 2025.**
 
 **Version:** 0.1.0  
 **Status:** ✅ Complete and Production Ready  
@@ -67,8 +69,6 @@ This portfolio demonstrates my experience as a **Full Stack Developer and Tech L
 
 Based in **Costa Rica**, ready to work from office **3+ days a week** as required by Critical Mass.
 
-> **ℹ️ Project Scope Note:** The project focuses on core pages that demonstrate essential skills and experience relevant to the Critical Mass Front-End Developer position. The portfolio includes: Home, This Project (with UI Library), Curriculum, Cover Letter, and Contact pages. This focused approach ensures quality and completeness while showcasing the most relevant capabilities.
-
 ---
 
 ## 🎯 What This Portfolio Demonstrates
@@ -115,13 +115,12 @@ This portfolio is designed as a **live case study** demonstrating:
 
 **Before working on this project, read these files:**
 
-1. **[`docs/CONSIDERACIONES_DESARROLLO.md`](./docs/CONSIDERACIONES_DESARROLLO.md)** ⭐ **START HERE** – Complete development guidelines, standards, and Critical Mass requirements
-2. **[`docs/TODO.md`](./docs/TODO.md)** – Complete project checklist with all phases and tasks
-3. **[`docs/PROJECT-IDEA.md`](./docs/PROJECT-IDEA.md)** – Full project specifications, architecture, and requirements
-4. **[`docs/PROJECT-CONTENT.md`](./docs/PROJECT-CONTENT.md)** – **Official copy and content specifications for all pages** (single source of truth)
-5. **[`docs/BEM_METHODOLOGY_GUIDE.md`](./docs/BEM_METHODOLOGY_GUIDE.md)** – Complete BEM methodology guide and Critical Mass compliance review
-6. **[`docs/JOB-INFO.md`](./docs/JOB-INFO.md)** – Complete job posting information for Developer, Front End position at Critical Mass (San Jose, Costa Rica) – Role description, responsibilities, requirements, and benefits
-7. **[`docs/MY-PROFILE.md`](./docs/MY-PROFILE.md)** – Complete professional profile, tech stack, featured projects, professional experience, and CV summary
+1. **[`docs/TODO.md`](./docs/TODO.md)** – Complete project checklist with all phases and tasks
+2. **[`docs/PROJECT-IDEA.md`](./docs/PROJECT-IDEA.md)** – Full project specifications, architecture, and requirements
+3. **[`docs/PROJECT-CONTENT.md`](./docs/PROJECT-CONTENT.md)** – **Official copy and content specifications for all pages** (single source of truth)
+4. **[`docs/BEM_METHODOLOGY_GUIDE.md`](./docs/BEM_METHODOLOGY_GUIDE.md)** – Complete BEM methodology guide and Critical Mass compliance review
+5. **[`docs/JOB-INFO.md`](./docs/JOB-INFO.md)** – Complete job posting information for Developer, Front End position at Critical Mass (Costa Rica) – Role description, responsibilities, requirements, and benefits
+6. **[`docs/MY-PROFILE.md`](./docs/MY-PROFILE.md)** – Complete professional profile, tech stack, featured projects, professional experience, and CV summary
 
 ---
 
@@ -237,130 +236,38 @@ npm start
 ## 📁 Project Structure
 
 ```
-critical-mass-example-project/
-├── public/                          # Static assets
-│   ├── images/                     # Image assets
-│   │   └── hero-background.webp    # Hero background image
-│   └── Steven_Morales_Critical_Mass_CV.pdf  # CV PDF
-├── src/
-│   ├── app/                        # Next.js App Router (pages)
-│   │   ├── layout.tsx              # Root layout with font optimization and metadata
-│   │   ├── page.tsx                # Home page (/)
-│   │   ├── favicon.ico             # Site favicon
-│   │   ├── this-project/
-│   │   │   ├── page.tsx           # This Project page
-│   │   │   └── ui-library/
-│   │   │       └── page.tsx       # UI Library showcase
-│   │   ├── curriculum/
-│   │   │   └── page.tsx           # Professional Curriculum page
-│   │   ├── cover-letter/
-│   │   │   └── page.tsx           # Cover Letter page
-│   │   └── contact/
-│   │       └── page.tsx           # Contact page
-│   ├── components/                 # React components
-│   │   ├── ui/                     # UI components
-│   │   │   ├── Button.tsx         # Button component (variants, sizes, states)
-│   │   │   ├── Card.tsx           # Card component (variants, images, footer)
-│   │   │   ├── Tag.tsx            # Tag component (variants, sizes)
-│   │   │   ├── Badge.tsx          # Badge component (status indicators)
-│   │   │   ├── Input.tsx          # Input component (validation, error states)
-│   │   │   ├── Select.tsx         # Select component (dropdown)
-│   │   │   ├── Toggle.tsx         # Toggle switch component
-│   │   │   ├── FeatureCard.tsx    # Feature showcase card
-│   │   │   ├── AnimatedGradientBackground.tsx  # Animated gradient
-│   │   │   ├── FloatingBinaryElements.tsx      # Floating binary animation
-│   │   │   └── ScrollArrow.tsx    # Scroll indicator arrow
-│   │   ├── layout/                 # Layout components
-│   │   │   ├── MainLayout.tsx     # Main layout wrapper
-│   │   │   ├── NavBar.tsx         # Responsive navigation bar
-│   │   │   └── Footer.tsx         # Footer component
-│   │   ├── sections/               # Page sections
-│   │   │   ├── Hero.tsx           # Hero section
-│   │   │   ├── CardBoard.tsx      # Draggable card board
-│   │   │   ├── FeatureGridSection.tsx  # Feature grid section
-│   │   │   └── CTASection.tsx     # Call-to-action section
-│   │   └── feedback/               # Feedback components
-│   │       ├── Loader.tsx         # Loading spinner
-│   │       ├── ErrorMessage.tsx   # Error display
-│   │       └── Toast.tsx          # Toast notifications
-│   ├── lib/
-│   │   └── hooks/                  # Custom React hooks
-│   │       ├── index.ts           # Hooks barrel export
-│   │       ├── useClickOutside.ts # Click outside detection
-│   │       ├── useDebounce.ts     # Debounce utility
-│   │       ├── useDragAndDrop.ts  # Drag and drop functionality
-│   │       ├── useFocusTrap.ts    # Focus trap for modals
-│   │       ├── useLocalStorage.ts # Local storage hook
-│   │       ├── useMediaQuery.ts   # Media query hook
-│   │       ├── useToggle.ts       # Toggle state hook
-│   │       └── useWindowSize.ts   # Window size hook
-│   ├── styles/                     # SCSS styles (SMACSS architecture)
-│   │   ├── base/                   # Base styles
-│   │   │   ├── _variables.scss    # CSS variables (colors, spacing, typography)
-│   │   │   ├── _mixins.scss       # SCSS mixins (breakpoints, flexbox, grid)
-│   │   │   ├── _reset.scss        # CSS reset
-│   │   │   ├── _typography.scss   # Typography system
-│   │   │   ├── _layout.scss       # Layout utilities (container, grid)
-│   │   │   └── _animations.scss   # Animation utilities
-│   │   ├── components/            # Component styles (BEM methodology)
-│   │   │   ├── _buttons.scss      # Button styles
-│   │   │   ├── _cards.scss        # Card styles
-│   │   │   ├── _tags.scss         # Tag styles
-│   │   │   ├── _badges.scss       # Badge styles
-│   │   │   ├── _inputs.scss       # Input styles
-│   │   │   ├── _select.scss       # Select styles
-│   │   │   ├── _toggles.scss      # Toggle styles
-│   │   │   ├── _feature-card.scss # FeatureCard styles
-│   │   │   ├── _navbar.scss       # NavBar styles
-│   │   │   ├── _footer.scss       # Footer styles
-│   │   │   ├── _hero.scss         # Hero section styles
-│   │   │   ├── _card-board.scss   # CardBoard styles
-│   │   │   ├── _feature-grid-section.scss  # FeatureGridSection styles
-│   │   │   ├── _cta-section.scss   # CTASection styles
-│   │   │   ├── _loader.scss       # Loader styles
-│   │   │   ├── _error-message.scss # ErrorMessage styles
-│   │   │   ├── _toast.scss        # Toast styles
-│   │   │   └── ...                # Additional component styles
-│   │   ├── pages/                 # Page-specific styles
-│   │   │   ├── _home.scss         # Home page styles
-│   │   │   ├── _this-project.scss # This Project page styles
-│   │   │   ├── _curriculum.scss   # Curriculum page styles
-│   │   │   ├── _cover-letter.scss # Cover Letter page styles
-│   │   │   ├── _contact.scss      # Contact page styles
-│   │   │   └── _components.scss   # UI Library page styles
-│   │   └── main.scss              # Main SCSS import file
-│   └── tests/                      # Test files
-│       ├── setup.test.tsx         # Test setup verification
-│       ├── components/             # Component tests
-│       │   ├── ui/                # UI component tests
-│       │   ├── layout/            # Layout component tests
-│       │   ├── sections/          # Section component tests
-│       │   └── feedback/          # Feedback component tests
-│       └── utils/                 # Utility tests
-│           └── bem-naming.test.ts # BEM naming verification
-├── docs/                           # Documentation
-│   ├── CONSIDERACIONES_DESARROLLO.md  # Development guidelines (Spanish)
-│   ├── BEM_METHODOLOGY_GUIDE.md   # BEM methodology guide
-│   ├── TESTING.md                 # Testing documentation
-│   ├── TODO.md                    # Complete project checklist
-│   ├── PROJECT-IDEA.md            # Project specifications
-│   ├── PROJECT-CONTENT.md         # Content specifications
-│   ├── JOB-INFO.md                # Job posting information
-│   └── MY-PROFILE.md              # Professional profile
-├── __mocks__/                      # Jest mocks
-│   ├── fileMock.js                # File import mock
-│   └── styleMock.js               # Style import mock
-├── .gitignore                      # Git ignore rules
-├── jest.config.js                  # Jest configuration
-├── jest.setup.js                   # Jest setup file
-├── jest.d.ts                       # Jest type definitions
-├── next.config.ts                  # Next.js configuration
-├── tsconfig.json                   # TypeScript configuration
-├── eslint.config.mjs               # ESLint configuration
-├── package.json                    # Project dependencies and scripts
-├── package-lock.json               # Dependency lock file
-├── LICENSE                         # License file
-└── README.md                       # This file
+src/
+├── app/                      # Next.js App Router (pages)
+│   ├── layout.tsx           # Root layout with font optimization
+│   ├── page.tsx             # Home page (/)
+│   ├── this-project/
+│   │   ├── page.tsx         # This Project page
+│   │   └── ui-library/
+│   │       └── page.tsx     # UI Library showcase
+│   ├── contact/
+│   │   └── page.tsx         # Contact page
+│   ├── curriculum/
+│   │   └── page.tsx         # Professional Curriculum page
+│   └── cover-letter/
+│       └── page.tsx         # Cover Letter page
+├── components/              # React components
+│   ├── ui/                  # UI components (Button, Card, Tag, Badge, Input, Select, Toggle)
+│   ├── layout/              # Layout components (MainLayout, NavBar, Footer)
+│   ├── sections/            # Page sections (Hero, CardBoard, KeyHighlightsSection, CTASection)
+│   └── feedback/            # Feedback components (Loader, ErrorMessage, Toast)
+├── lib/
+│   ├── api/                 # API clients
+│   └── hooks/               # Custom React hooks
+├── styles/                  # SCSS styles (SMACSS architecture)
+│   ├── base/                # Variables, mixins, reset, typography, layout
+│   ├── components/          # Component styles (BEM methodology)
+│   ├── pages/               # Page-specific styles
+│   └── main.scss            # Main SCSS import file
+├── tests/                   # Test files
+│   ├── Button.test.tsx
+│   ├── Card.test.tsx
+│   └── ...
+└── types/                   # TypeScript type definitions
 ```
 
 ---
@@ -582,6 +489,22 @@ Contact page with:
 
 - **Contact Information** – Name, location, phone/WhatsApp, email
 - **Online Profiles** – GitHub, LinkedIn, Instagram links
+- **Closing Message** – Professional closing with quote
+
+### `/curriculum` – Professional Curriculum
+
+Professional curriculum page showcasing:
+
+- **CV Download** – PDF download of professional curriculum
+- **Professional Experience** – Detailed work history and achievements
+- **Education & Certifications** – Academic background and professional certifications
+
+### `/cover-letter` – Cover Letter
+
+Cover letter page with:
+
+- **Personalized Cover Letter** – Tailored message for the Critical Mass position
+- **Key Qualifications** – Highlighted skills and experience relevant to the role
 
 ---
 
@@ -791,7 +714,7 @@ Before submitting code, verify:
 - **Only** use comments when really necessary (complex logic, non-obvious design decisions)
 - Code should be **self-explanatory** through descriptive names
 
-See [`docs/CONSIDERACIONES_DESARROLLO.md`](./docs/CONSIDERACIONES_DESARROLLO.md) for complete development guidelines.
+See [`docs/BEM_METHODOLOGY_GUIDE.md`](./docs/BEM_METHODOLOGY_GUIDE.md) for complete development guidelines.
 
 ---
 
@@ -1047,73 +970,11 @@ Check for:
 
 ## 📚 Documentation
 
-### Essential Reading (Start Here)
-
-1. **[`docs/CONSIDERACIONES_DESARROLLO.md`](./docs/CONSIDERACIONES_DESARROLLO.md)** ⭐ **START HERE**
-   - Complete development guidelines and standards
-   - Critical Mass requirements and compliance
-   - Code quality checklist
-   - SCSS/Styles standards
-   - TypeScript standards
-   - Comment policy
-   - Language: Spanish
-
-2. **[`docs/PROJECT-CONTENT.md`](./docs/PROJECT-CONTENT.md)** ⭐ **CONTENT SOURCE OF TRUTH**
-   - Official copy and content specifications for all pages
-   - Single source of truth for all text content
-   - Page-by-page content breakdown
-   - UI Library component documentation
-
-### Architecture & Methodology
-
-3. **[`docs/BEM_METHODOLOGY_GUIDE.md`](./docs/BEM_METHODOLOGY_GUIDE.md)**
-   - Complete BEM methodology guide
-   - Critical Mass compliance review
-   - Naming conventions and rules
-   - Examples and best practices
-
-4. **[`docs/PROJECT-IDEA.md`](./docs/PROJECT-IDEA.md)**
-   - Full project specifications
-   - Architecture decisions
-   - Requirements and constraints
-   - Technical decisions
-
-### Development & Testing
-
-5. **[`docs/TESTING.md`](./docs/TESTING.md)**
-   - Testing guide and best practices
-   - Test structure and organization
-   - Writing effective tests
-   - Testing accessibility
-
-6. **[`docs/TODO.md`](./docs/TODO.md)**
-   - Complete project checklist with all phases
-   - Development history
-   - Task tracking
-   - Completion status
-
-### Professional Information
-
-7. **[`docs/JOB-INFO.md`](./docs/JOB-INFO.md)**
-   - Complete job posting information
-   - Developer, Front End position at Critical Mass
-   - Role description, responsibilities, requirements, and benefits
-   - San Jose, Costa Rica location details
-
-8. **[`docs/MY-PROFILE.md`](./docs/MY-PROFILE.md)**
-   - Complete professional profile
-   - Tech stack and expertise
-   - Featured projects
-   - Professional experience
-   - CV summary
-
-### Quick Reference
-
-- **Development Guidelines:** [`docs/CONSIDERACIONES_DESARROLLO.md`](./docs/CONSIDERACIONES_DESARROLLO.md)
-- **Content Specifications:** [`docs/PROJECT-CONTENT.md`](./docs/PROJECT-CONTENT.md)
-- **BEM Guide:** [`docs/BEM_METHODOLOGY_GUIDE.md`](./docs/BEM_METHODOLOGY_GUIDE.md)
-- **Testing Guide:** [`docs/TESTING.md`](./docs/TESTING.md)
-- **Project Checklist:** [`docs/TODO.md`](./docs/TODO.md)
+- **[`docs/BEM_METHODOLOGY_GUIDE.md`](./docs/BEM_METHODOLOGY_GUIDE.md)** – Complete BEM methodology guide and Critical Mass compliance review
+- **[`docs/TESTING.md`](./docs/TESTING.md)** – Testing guide and best practices
+- **[`docs/TODO.md`](./docs/TODO.md)** – Complete project checklist with all phases
+- **[`docs/PROJECT-IDEA.md`](./docs/PROJECT-IDEA.md)** – Full project specifications and requirements
+- **[`docs/PROJECT-CONTENT.md`](./docs/PROJECT-CONTENT.md)** – **Official copy and content specifications for all pages** (single source of truth
 
 ---
 
@@ -1227,7 +1088,7 @@ All phases have been completed. The project is production-ready and deployed.
 
 ## 💡 Project Philosophy
 
-This portfolio is a **professional demonstration** designed specifically for the **Developer, Front End position at Critical Mass (San Jose, Costa Rica)**. Every line of code reflects:
+This portfolio is a **professional demonstration** designed specifically for the **Developer, Front End position at Critical Mass (Costa Rica)**. Every line of code reflects:
 
 - **Technical Excellence** – Demonstrating real-world experience leading teams and building scalable applications
 - **Attention to Detail** – Reflecting experience with production projects (ERP systems, EdTech platforms, SaaS applications)
@@ -1243,6 +1104,8 @@ This portfolio is a **professional demonstration** designed specifically for the
 
 Copyright (c) 2025 Steven Morales. All rights reserved.
 
+**Project developed in December 2025.**
+
 This project is provided for evaluation purposes only. Permission is granted to view, use, and share this project with team members and technical staff solely for recruitment evaluation and technical assessment purposes.
 
 See [`LICENSE`](./LICENSE) file for full terms and conditions.
@@ -1253,11 +1116,12 @@ See [`LICENSE`](./LICENSE) file for full terms and conditions.
 
 **Steven Morales Fallas**
 
-- **Location:** San José, Costa Rica
+- **Location:** Costa Rica
 - **Phone / WhatsApp:** +506 6130 4830
 - **Email:** fallasmoraless@gmail.com
 - **GitHub:** [github.com/stevenmoraleszeta](https://github.com/stevenmoraleszeta)
 - **LinkedIn:** [linkedin.com/in/stevenmoralesfallas](https://linkedin.com/in/stevenmoralesfallas)
+- **Instagram:** [@stevenmorales.novaera](https://instagram.com/stevenmorales.novaera)
 
 ---
 

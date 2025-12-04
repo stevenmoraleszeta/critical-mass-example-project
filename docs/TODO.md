@@ -1,12 +1,10 @@
 # Project TODO Checklist
 
-Complete step-by-step checklist for building the Steven Morales Professional Portfolio prototype, specifically designed for the Critical Mass Front-End Developer position in San Jose, Costa Rica.
+Complete step-by-step checklist for building the Steven Morales Professional Portfolio prototype, specifically designed for the Critical Mass Front-End Developer position in Costa Rica.
 
 > **Note:** All official copy and content for pages is defined in `PROJECT-CONTENT.md`. Always refer to that file for exact copy, content structure, and page specifications.
 
-> **Important:** Follow the phases in order. Each phase builds upon the previous ones. Refer to `CONSIDERACIONES_DESARROLLO.md` for development standards, BEM methodology, accessibility requirements, and code quality guidelines.
-
-> **⚠️ Project Simplification Note:** Due to time constraints, the project was simplified to ensure timely completion. The "Me & Skills" (`/me-and-skills`) and "Projects & Experience" (`/projects-and-experience`) pages were removed from the final implementation. The portfolio focuses on the core pages: Home, This Project, and Contact, which demonstrate the essential skills and experience relevant to the Critical Mass Front-End Developer position.
+> **Important:** Follow the phases in order. Each phase builds upon the previous ones.
 
 ## Phase Overview
 
@@ -19,7 +17,6 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
   - Phase 11: Cover Letter (`/cover-letter`)
   - Phase 11: Contact (`/contact`)
   
-> **Note:** The "Me & Skills" and "Projects & Experience" pages were removed due to time constraints. The portfolio focuses on core pages that demonstrate essential skills and experience. Additional pages (`/curriculum` and `/cover-letter`) were added to provide comprehensive professional information.
 **Integration & Quality (Phases 13-16):** Navigation updates, style organization, content verification  
 **Optimization (Phases 17-19):** Accessibility, performance, and testing implementation  
 **Finalization (Phases 20-24):** Git workflow, documentation, polish, deployment, and presentation preparation
@@ -457,7 +454,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ### Remove/Archive Obsolete Sections
 - [x] Remove `UseCases` section (not in new structure)
-- [x] Remove `FeaturedProjects` section (removed due to project simplification)
+- [x] Remove `FeaturedProjects` section
 - [x] Remove `LeadershipSection` (content reorganized)
 - [x] Remove `PerformanceSection` (content reorganized)
 - [x] Remove `PricingSection` (not in new structure)
@@ -572,7 +569,6 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 
 ---
 
-> **Note:** Phase 8 (Projects & Experience) and Phase 9 (Me & Skills) were removed due to time constraints. The project was simplified to focus on core pages: Home, This Project, and Contact. All related tasks below have been removed as they are no longer part of the project scope.
 
 
 ---
@@ -636,7 +632,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 ### Contact Sections (from PROJECT-CONTENT.md)
 - [x] Create Contact Information section
   - [x] Add Name: Steven Morales Fallas
-  - [x] Add Location: San José, Costa Rica
+  - [x] Add Location: Costa Rica
   - [x] Add Phone / WhatsApp: +506 6130 4830 (with link)
   - [x] Add Email: fallasmoraless@gmail.com (with mailto link)
 - [x] Create Online Profiles section
@@ -746,7 +742,7 @@ Complete step-by-step checklist for building the Steven Morales Professional Por
 ### Contact Sections (from PROJECT-CONTENT.md)
 - [x] Create Contact Information section
   - [x] Add Name: Steven Morales Fallas
-  - [x] Add Location: San José, Costa Rica
+  - [x] Add Location: Costa Rica
   - [x] Add Phone / WhatsApp: +506 6130 4830 (with link)
   - [x] Add Email: fallasmoraless@gmail.com (with mailto link)
 - [x] Create Online Profiles section
