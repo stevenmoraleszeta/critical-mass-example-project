@@ -97,7 +97,7 @@ a {
   -webkit-tap-highlight-color: transparent;
   
   &:focus-visible {
-    outline: var(--border-width-base) solid var(--color-accent);
+    outline: var(--border-width-base) solid var(--color-secondary);
     outline-offset: var(--outline-offset-focus);
     border-radius: var(--radius-sm);
   }
@@ -118,7 +118,7 @@ button {
   -webkit-tap-highlight-color: transparent;
   
   &:focus-visible {
-    outline: var(--border-width-base) solid var(--color-accent);
+    outline: var(--border-width-base) solid var(--color-secondary);
     outline-offset: var(--outline-offset-focus);
     border-radius: var(--radius-sm);
   }
@@ -144,7 +144,7 @@ select {
   appearance: none;
   
   &:focus-visible {
-    outline: var(--border-width-base) solid var(--color-accent);
+    outline: var(--border-width-base) solid var(--color-secondary);
     outline-offset: var(--outline-offset-focus);
     border-radius: var(--radius-sm);
   }

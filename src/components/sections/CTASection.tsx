@@ -32,18 +32,18 @@ export default function CTASection() {
         </h2>
         
         <p className="cta-section__description">
-          Start with the <strong>"This Project"</strong> page – it's a focused breakdown of how I match this role, backed by real code and projects.
+          Start with the <strong>"Cover Letter"</strong> page – it's a focused breakdown of how I match this role, backed by real experience and projects.
         </p>
         
         <div className="cta-section__actions">
           <Button
             variant="highlight"
             size="lg"
-            href="/this-project"
-            ariaLabel="See This Project"
+            href="/cover-letter"
+            ariaLabel="See Cover Letter"
             prefetch={true}
           >
-            See This Project
+            See Cover Letter
           </Button>
           
           <Button

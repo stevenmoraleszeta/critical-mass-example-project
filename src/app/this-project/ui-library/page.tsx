@@ -12,6 +12,7 @@ import Toggle from "@/components/ui/Toggle";
 import Loader from "@/components/feedback/Loader";
 import ErrorMessage from "@/components/feedback/ErrorMessage";
 import Toast from "@/components/feedback/Toast";
+import FeatureCard from "@/components/ui/FeatureCard";
 // Styles are now in SCSS: src/styles/pages/_components.scss
 
 export default function UILibrary() {
@@ -89,17 +90,19 @@ export default function UILibrary() {
     <MainLayout className="components-page__main">
     <div className="components-page">
         <div className="components-page__content">
-          <h1 className="components-page__main-title">UI Library</h1>
-          <p className="components-page__intro">
-            A small set of reusable components used across this portfolio, documented with their intended usage and accessibility notes.
-          </p>
+          <section className="components-page__hero" aria-labelledby="ui-library-title">
+            <h1 id="ui-library-title" className="components-page__main-title">UI Library</h1>
+            <p className="components-page__intro">
+              A small set of reusable components used across this portfolio, documented with their intended usage and accessibility notes.
+            </p>
+          </section>
           
-          <section>
-            <h2>Button Component Showcase</h2>
+          <section aria-labelledby="button-showcase-title">
+            <h2 id="button-showcase-title">Button Component Showcase</h2>
           
           {/* Variants Section */}
           <section>
-            <h2>Variants</h2>
+            <h3>Variants</h3>
             <div className="components-page__button-group">
               <Button variant="primary" onClick={handleClick}>
                 Primary Button
@@ -118,7 +121,7 @@ export default function UILibrary() {
 
           {/* Sizes Section */}
           <section>
-            <h2>Sizes</h2>
+            <h3>Sizes</h3>
             <div className="components-page__button-group components-page__button-group--align-center">
               <Button size="sm" onClick={handleClick}>
                 Small Button
@@ -134,7 +137,7 @@ export default function UILibrary() {
 
           {/* All Variants with All Sizes */}
           <section>
-            <h2>All Variants × All Sizes</h2>
+            <h3>All Variants × All Sizes</h3>
             <div className="components-page__button-group components-page__button-group--vertical">
               <div>
                 <h3>Primary</h3>
@@ -173,7 +176,7 @@ export default function UILibrary() {
 
           {/* States Section */}
           <section>
-            <h2>States</h2>
+            <h3>States</h3>
             <div className="components-page__button-group">
               <Button onClick={handleClick}>Normal</Button>
               <Button disabled onClick={handleClick}>Disabled</Button>
@@ -183,7 +186,7 @@ export default function UILibrary() {
 
           {/* Link Buttons Section */}
           <section>
-            <h2>Link Buttons</h2>
+            <h3>Link Buttons</h3>
             <div className="components-page__button-group">
               <Button href="/" variant="primary">Link Primary</Button>
               <Button href="/" variant="secondary">Link Secondary</Button>
@@ -194,7 +197,7 @@ export default function UILibrary() {
 
           {/* Accessibility Section */}
           <section>
-            <h2>Accessibility</h2>
+            <h3>Accessibility</h3>
             <div className="components-page__button-group">
               <Button ariaLabel="Close dialog" onClick={handleClick}>
                 <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -216,12 +219,12 @@ export default function UILibrary() {
           </section>
 
           {/* Card Component Showcase */}
-          <section>
-            <h2 className="components-page__section-title">Card Component Showcase</h2>
+          <section aria-labelledby="card-showcase-title">
+            <h2 id="card-showcase-title" className="components-page__section-title">Card Component Showcase</h2>
             
             {/* Variants Section */}
             <section>
-              <h2>Variants</h2>
+              <h3>Variants</h3>
               <div className="components-page__card-group">
                 <Card 
                   variant="default" 
@@ -243,7 +246,7 @@ export default function UILibrary() {
 
             {/* Cards with Images */}
             <section>
-              <h2>Cards with Images</h2>
+              <h3>Cards with Images</h3>
               <div className="components-page__card-group">
                 <Card 
                   variant="default"
@@ -283,7 +286,7 @@ export default function UILibrary() {
 
             {/* Cards with Footer */}
             <section>
-              <h2>Cards with Footer</h2>
+              <h3>Cards with Footer</h3>
               <div className="components-page__card-group">
                 <Card 
                   variant="default"
@@ -320,7 +323,7 @@ export default function UILibrary() {
 
             {/* Cards with Children */}
             <section>
-              <h2>Cards with Custom Children</h2>
+              <h3>Cards with Custom Children</h3>
               <div className="components-page__card-group">
                 <Card variant="default">
                   <div className="components-page__card-custom-content">
@@ -347,7 +350,7 @@ export default function UILibrary() {
 
             {/* Complete Cards */}
             <section>
-              <h2>Complete Cards (All Features)</h2>
+              <h3>Complete Cards (All Features)</h3>
               <div className="components-page__card-group">
                 <Card 
                   variant="default"
@@ -389,12 +392,12 @@ export default function UILibrary() {
           </section>
 
           {/* Tag Component Showcase */}
-          <section>
-            <h1 className="components-page__section-title">Tag Component Showcase</h1>
+          <section aria-labelledby="tag-showcase-title">
+            <h2 id="tag-showcase-title" className="components-page__section-title">Tag Component Showcase</h2>
             
             {/* Variants Section */}
             <section>
-              <h2>Variants</h2>
+              <h3>Variants</h3>
               <div className="components-page__tag-group">
                 <Tag text="Default Tag" variant="default" />
                 <Tag text="Primary Tag" variant="primary" />
@@ -404,7 +407,7 @@ export default function UILibrary() {
 
             {/* Sizes Section */}
             <section>
-              <h2>Sizes</h2>
+              <h3>Sizes</h3>
               <div className="components-page__tag-group components-page__tag-group--align-center">
                 <Tag text="Small Tag" size="sm" />
                 <Tag text="Medium Tag" size="md" />
@@ -413,7 +416,7 @@ export default function UILibrary() {
 
             {/* All Variants with All Sizes */}
             <section>
-              <h2>All Variants × All Sizes</h2>
+              <h3>All Variants × All Sizes</h3>
               <div className="components-page__tag-group components-page__tag-group--vertical">
                 <div>
                   <h3>Default</h3>
@@ -441,7 +444,7 @@ export default function UILibrary() {
 
             {/* Usage Examples */}
             <section>
-              <h2>Usage Examples</h2>
+              <h3>Usage Examples</h3>
               <div className="components-page__tag-examples">
                 <div className="components-page__tag-example">
                   <h3>Categories</h3>
@@ -474,12 +477,12 @@ export default function UILibrary() {
           </section>
 
           {/* Badge Component Showcase */}
-          <section>
-            <h1 className="components-page__section-title">Badge Component Showcase</h1>
+          <section aria-labelledby="badge-showcase-title">
+            <h2 id="badge-showcase-title" className="components-page__section-title">Badge Component Showcase</h2>
             
             {/* Status Variants Section */}
             <section>
-              <h2>Status Variants</h2>
+              <h3>Status Variants</h3>
               <div className="components-page__badge-group">
                 <Badge text="Live" status="live" />
                 <Badge text="Upcoming" status="upcoming" />
@@ -489,7 +492,7 @@ export default function UILibrary() {
 
             {/* All Statuses Section */}
             <section>
-              <h2>All Status Types</h2>
+              <h3>All Status Types</h3>
               <div className="components-page__badge-group components-page__badge-group--align-center">
                 <Badge text="Live" status="live" />
                 <Badge text="Upcoming" status="upcoming" />
@@ -499,7 +502,7 @@ export default function UILibrary() {
 
             {/* Usage Examples */}
             <section>
-              <h2>Usage Examples</h2>
+              <h3>Usage Examples</h3>
               <div className="components-page__badge-examples">
                 <div className="components-page__badge-example">
                   <h3>Content Status</h3>
@@ -539,12 +542,12 @@ export default function UILibrary() {
           </section>
 
           {/* Input Component Showcase */}
-          <section>
-            <h1 className="components-page__section-title">Input Component Showcase</h1>
+          <section aria-labelledby="input-showcase-title">
+            <h2 id="input-showcase-title" className="components-page__section-title">Input Component Showcase</h2>
             
             {/* Input Types Section */}
             <section>
-              <h2>Input Types</h2>
+              <h3>Input Types</h3>
               <div className="components-page__input-group">
                 <Input
                   id="input-text"
@@ -584,7 +587,7 @@ export default function UILibrary() {
 
             {/* Required Inputs Section */}
             <section>
-              <h2>Required Inputs</h2>
+              <h3>Required Inputs</h3>
               <div className="components-page__input-group">
                 <Input
                   id="input-required"
@@ -610,7 +613,7 @@ export default function UILibrary() {
 
             {/* Error States Section */}
             <section>
-              <h2>Error States</h2>
+              <h3>Error States</h3>
               <div className="components-page__input-group">
                 <Input
                   id="input-error-1"
@@ -635,7 +638,7 @@ export default function UILibrary() {
 
             {/* All States Combined */}
             <section>
-              <h2>All States Combined</h2>
+              <h3>All States Combined</h3>
               <div className="components-page__input-group">
                 <Input
                   id="input-normal"
@@ -678,12 +681,12 @@ export default function UILibrary() {
           </section>
 
           {/* Select Component Showcase */}
-          <section>
-            <h1 className="components-page__section-title">Select Component Showcase</h1>
+          <section aria-labelledby="select-showcase-title">
+            <h2 id="select-showcase-title" className="components-page__section-title">Select Component Showcase</h2>
             
             {/* Basic Select Section */}
             <section>
-              <h2>Basic Select</h2>
+              <h3>Basic Select</h3>
               <div className="components-page__input-group">
                 <Select
                   id="select-category"
@@ -714,7 +717,7 @@ export default function UILibrary() {
 
             {/* Required Select Section */}
             <section>
-              <h2>Required Select</h2>
+              <h3>Required Select</h3>
               <div className="components-page__input-group">
                 <Select
                   id="select-required"
@@ -734,7 +737,7 @@ export default function UILibrary() {
 
             {/* Error States Section */}
             <section>
-              <h2>Error States</h2>
+              <h3>Error States</h3>
               <div className="components-page__input-group">
                 <Select
                   id="select-error"
@@ -766,7 +769,7 @@ export default function UILibrary() {
 
             {/* Usage Examples */}
             <section>
-              <h2>Usage Examples</h2>
+              <h3>Usage Examples</h3>
               <div className="components-page__input-group">
                 <Select
                   id="select-filter"
@@ -798,12 +801,12 @@ export default function UILibrary() {
           </section>
 
           {/* Toggle Component Showcase */}
-          <section>
-            <h1 className="components-page__section-title">Toggle Component Showcase</h1>
+          <section aria-labelledby="toggle-showcase-title">
+            <h2 id="toggle-showcase-title" className="components-page__section-title">Toggle Component Showcase</h2>
             
             {/* Basic Toggle Section */}
             <section>
-              <h2>Basic Toggle</h2>
+              <h3>Basic Toggle</h3>
               <div className="components-page__input-group">
                 <Toggle
                   id="toggle-dark-mode"
@@ -828,7 +831,7 @@ export default function UILibrary() {
 
             {/* Toggle States Section */}
             <section>
-              <h2>Toggle States</h2>
+              <h3>Toggle States</h3>
               <div className="components-page__input-group">
                 <Toggle
                   id="toggle-checked"
@@ -861,7 +864,7 @@ export default function UILibrary() {
 
             {/* Usage Examples */}
             <section>
-              <h2>Usage Examples</h2>
+              <h3>Usage Examples</h3>
               <div className="components-page__input-group">
                 <Toggle
                   id="toggle-show-live"
@@ -886,12 +889,12 @@ export default function UILibrary() {
           </section>
 
           {/* Loader Component Showcase */}
-          <section>
-            <h1 className="components-page__section-title">Loader Component Showcase</h1>
+          <section aria-labelledby="loader-showcase-title">
+            <h2 id="loader-showcase-title" className="components-page__section-title">Loader Component Showcase</h2>
             
             {/* Basic Loader Section */}
             <section>
-              <h2>Basic Loader</h2>
+              <h3>Basic Loader</h3>
               <div className="components-page__loader-group">
                 <Loader />
                 <Loader text="Loading..." />
@@ -901,7 +904,7 @@ export default function UILibrary() {
 
             {/* Loader Sizes Section */}
             <section>
-              <h2>Loader Sizes</h2>
+              <h3>Loader Sizes</h3>
               <div className="components-page__loader-group">
                 <Loader size="sm" text="Small loader" />
                 <Loader size="md" text="Medium loader" />
@@ -911,7 +914,7 @@ export default function UILibrary() {
 
             {/* Loader Without Text */}
             <section>
-              <h2>Loader Without Text</h2>
+              <h3>Loader Without Text</h3>
               <div className="components-page__loader-group">
                 <Loader size="sm" />
                 <Loader size="md" />
@@ -921,7 +924,7 @@ export default function UILibrary() {
 
             {/* Usage Examples */}
             <section>
-              <h2>Usage Examples</h2>
+              <h3>Usage Examples</h3>
               <div className="components-page__loader-examples">
                 <div className="components-page__loader-example">
                   <h3>Loading Content</h3>
@@ -940,12 +943,12 @@ export default function UILibrary() {
           </section>
 
           {/* ErrorMessage Component Showcase */}
-          <section>
-            <h1 className="components-page__section-title">ErrorMessage Component Showcase</h1>
+          <section aria-labelledby="error-showcase-title">
+            <h2 id="error-showcase-title" className="components-page__section-title">ErrorMessage Component Showcase</h2>
             
             {/* Basic Error Message Section */}
             <section>
-              <h2>Basic Error Message</h2>
+              <h3>Basic Error Message</h3>
               <div className="components-page__error-group">
                 <ErrorMessage message="Something went wrong" />
                 <ErrorMessage message="Failed to load content" />
@@ -955,7 +958,7 @@ export default function UILibrary() {
 
             {/* Error Message with Retry Section */}
             <section>
-              <h2>Error Message with Retry Button</h2>
+              <h3>Error Message with Retry Button</h3>
               <div className="components-page__error-group">
                 <ErrorMessage 
                   message="Failed to load data" 
@@ -976,7 +979,7 @@ export default function UILibrary() {
 
             {/* Error Message Sizes Section */}
             <section>
-              <h2>Error Message Sizes</h2>
+              <h3>Error Message Sizes</h3>
               <div className="components-page__error-group">
                 <ErrorMessage 
                   size="sm" 
@@ -998,7 +1001,7 @@ export default function UILibrary() {
 
             {/* Error Message Without Retry */}
             <section>
-              <h2>Error Message Without Retry</h2>
+              <h3>Error Message Without Retry</h3>
               <div className="components-page__error-group">
                 <ErrorMessage size="sm" message="Small error without retry" />
                 <ErrorMessage size="md" message="Medium error without retry" />
@@ -1008,7 +1011,7 @@ export default function UILibrary() {
 
             {/* Usage Examples */}
             <section>
-              <h2>Usage Examples</h2>
+              <h3>Usage Examples</h3>
               <div className="components-page__error-examples">
                 <div className="components-page__error-example">
                   <h3>API Error</h3>
@@ -1042,7 +1045,7 @@ export default function UILibrary() {
             
             {/* Toast Variants Section */}
             <section>
-              <h2>Toast Variants</h2>
+              <h3>Toast Variants</h3>
               <div className="components-page__toast-group">
                 <button
                   type="button"
@@ -1077,7 +1080,7 @@ export default function UILibrary() {
 
             {/* Toast Sizes Section */}
             <section>
-              <h2>Toast Sizes</h2>
+              <h3>Toast Sizes</h3>
               <div className="components-page__toast-group">
                 <button
                   type="button"
@@ -1105,7 +1108,7 @@ export default function UILibrary() {
 
             {/* Toast Positions Section */}
             <section>
-              <h2>Toast Positions</h2>
+              <h3>Toast Positions</h3>
               <div className="components-page__toast-group">
                 <button
                   type="button"
@@ -1140,7 +1143,7 @@ export default function UILibrary() {
 
             {/* Auto-Dismiss Section */}
             <section>
-              <h2>Auto-Dismiss Options</h2>
+              <h3>Auto-Dismiss Options</h3>
               <div className="components-page__toast-group">
                 <button
                   type="button"
@@ -1168,7 +1171,7 @@ export default function UILibrary() {
 
             {/* Usage Examples */}
             <section>
-              <h2>Usage Examples</h2>
+              <h3>Usage Examples</h3>
               <div className="components-page__toast-examples">
                 <div className="components-page__toast-example">
                   <h3>Success Notification</h3>
@@ -1203,6 +1206,31 @@ export default function UILibrary() {
               </div>
             </section>
           </section>
+
+          {/* FeatureCard Component Showcase */}
+          <section aria-labelledby="featurecard-showcase-title">
+            <h2 id="featurecard-showcase-title" className="components-page__section-title">FeatureCard Component Showcase</h2>
+            
+            {/* Basic FeatureCard Section */}
+            <section>
+              <h3>Basic FeatureCard</h3>
+              <div className="components-page__card-group">
+                <FeatureCard
+                  title="Design-to-Code Translation"
+                  description="Converts Figma and wireframes into clean, semantic HTML/CSS and reusable React components."
+                />
+                <FeatureCard
+                  title="Responsive & Mobile-First"
+                  description="Optimized for all breakpoints. Designed to behave nicely on phones your stakeholders actually use."
+                />
+                <FeatureCard
+                  title="API Integration Module"
+                  description="Speaks fluent REST, JSON and HTTP. Comfortable integrating with CMSs and external web services."
+                />
+              </div>
+            </section>
+          </section>
+
         </div>
 
         {/* Render all active toasts */}

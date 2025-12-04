@@ -124,6 +124,18 @@
     }
   }
   
+  &__action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: var(--space-xl) 0;
+    
+    @include breakpoint-md {
+      padding: var(--space-2xl) 0;
+    }
+  }
+  
   
   @media (max-width: 319px) {
     padding: var(--space-lg) var(--space-sm);

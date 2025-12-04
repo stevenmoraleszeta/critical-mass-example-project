@@ -223,12 +223,26 @@ export default function Curriculum() {
                       A professional portfolio prototype built specifically for the Critical Mass Front-End Developer role. Demonstrates design-to-code translation, responsive architecture, accessibility best practices (WCAG), API integration, SASS/SCSS preprocessing with BEM methodology, and component library development. Built with Next.js 14, TypeScript, and React Testing Library to showcase front-end expertise in an agency context.
                     </p>
                     <div className="curriculum-page__project-links">
-                      <a href="https://stevenmorales.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="View Critical Mass Portfolio Prototype live demo">
-                        <Button variant="secondary" size="sm">Live Demo</Button>
-                      </a>
-                      <a href="https://github.com/stevenmoraleszeta/critical-mass-example-project" target="_blank" rel="noopener noreferrer" aria-label="View Critical Mass Portfolio Prototype GitHub repository">
-                        <Button variant="secondary" size="sm">GitHub</Button>
-                      </a>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://stevenmorales.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View Critical Mass Portfolio Prototype live demo"
+                      >
+                        Live Demo
+                      </Button>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://github.com/stevenmoraleszeta/critical-mass-example-project"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View Critical Mass Portfolio Prototype GitHub repository"
+                      >
+                        GitHub
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -243,9 +257,16 @@ export default function Curriculum() {
                       Developed a complete ERP solution for a manufacturing company specializing in industrial parts. Implemented modules to manage resources and improve traceability and efficiency across operations through data and automation.
                     </p>
                     <div className="curriculum-page__project-links">
-                      <a href="https://precision-seas-erp.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="View Precision Seas ERP System live demo">
-                        <Button variant="secondary" size="sm">Live Demo</Button>
-                      </a>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://precision-seas-erp.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View Precision Seas ERP System live demo"
+                      >
+                        Live Demo
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -260,18 +281,46 @@ export default function Curriculum() {
                       Designed and co-developed an innovative SaaS ERP platform used by business clients. Integrated automation, analytics, and multi-module management with a strong focus on scalability and performance. Led a six-member engineering team ensuring code quality, maintainability, and clear technical documentation.
                     </p>
                     <div className="curriculum-page__project-links">
-                      <a href="https://novaera-saas-erp.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="View Novaera SaaS ERP live demo">
-                        <Button variant="secondary" size="sm">Live Demo</Button>
-                      </a>
-                      <a href="https://github.com/stevenmoraleszeta/novaera-saas-erp-web" target="_blank" rel="noopener noreferrer" aria-label="View Novaera SaaS ERP Web GitHub repository">
-                        <Button variant="secondary" size="sm">GitHub Web</Button>
-                      </a>
-                      <a href="https://github.com/stevenmoraleszeta/novaera-saas-erp-api" target="_blank" rel="noopener noreferrer" aria-label="View Novaera SaaS ERP API GitHub repository">
-                        <Button variant="secondary" size="sm">GitHub API</Button>
-                      </a>
-                      <a href="https://github.com/stevenmoraleszeta/novaera-saas-erp-db" target="_blank" rel="noopener noreferrer" aria-label="View Novaera SaaS ERP DB GitHub repository">
-                        <Button variant="secondary" size="sm">GitHub DB</Button>
-                      </a>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://novaera-saas-erp.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View Novaera SaaS ERP live demo"
+                      >
+                        Live Demo
+                      </Button>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://github.com/stevenmoraleszeta/novaera-saas-erp-web"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View Novaera SaaS ERP Web GitHub repository"
+                      >
+                        GitHub Web
+                      </Button>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://github.com/stevenmoraleszeta/novaera-saas-erp-api"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View Novaera SaaS ERP API GitHub repository"
+                      >
+                        GitHub API
+                      </Button>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://github.com/stevenmoraleszeta/novaera-saas-erp-db"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View Novaera SaaS ERP DB GitHub repository"
+                      >
+                        GitHub DB
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -286,15 +335,36 @@ export default function Curriculum() {
                       Founded and led ZETA Academia, an educational startup offering courses in Artificial Intelligence, Python, Java, Excel, and more. Led a five-person team to design and co-develop the learning platform, which supports over <strong>1,000 students</strong> and <strong>30+ courses</strong>. Focused on performance, accessibility, and scalability, integrating user analytics and responsive design.
                     </p>
                     <div className="curriculum-page__project-links">
-                      <a href="https://zetaacademia.com" target="_blank" rel="noopener noreferrer" aria-label="View ZETA Academia EdTech Platform live demo">
-                        <Button variant="secondary" size="sm">Live Demo</Button>
-                      </a>
-                      <a href="https://github.com/stevenmoraleszeta/novaera-academy-web" target="_blank" rel="noopener noreferrer" aria-label="View ZETA Academia EdTech Platform Web GitHub repository">
-                        <Button variant="secondary" size="sm">GitHub Web</Button>
-                      </a>
-                      <a href="https://github.com/stevenmoraleszeta/novaera-academy-api" target="_blank" rel="noopener noreferrer" aria-label="View ZETA Academia EdTech Platform API GitHub repository">
-                        <Button variant="secondary" size="sm">GitHub API</Button>
-                      </a>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://zetaacademia.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View ZETA Academia EdTech Platform live demo"
+                      >
+                        Live Demo
+                      </Button>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://github.com/stevenmoraleszeta/novaera-academy-web"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View ZETA Academia EdTech Platform Web GitHub repository"
+                      >
+                        GitHub Web
+                      </Button>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://github.com/stevenmoraleszeta/novaera-academy-api"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View ZETA Academia EdTech Platform API GitHub repository"
+                      >
+                        GitHub API
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -309,12 +379,26 @@ export default function Curriculum() {
                       A modern React timer app built with TypeScript and Vite. Includes Pomodoro focus cycles, ambient background sounds, statistics tracking, and dark/light themes. Designed for smooth productivity with a clean UI, animations, and persistent user preferences.
                     </p>
                     <div className="curriculum-page__project-links">
-                      <a href="https://timerchill.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="View TimerChill live demo">
-                        <Button variant="secondary" size="sm">Live Demo</Button>
-                      </a>
-                      <a href="https://github.com/stevenmoraleszeta/timer-chill-web" target="_blank" rel="noopener noreferrer" aria-label="View TimerChill GitHub repository">
-                        <Button variant="secondary" size="sm">GitHub</Button>
-                      </a>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://timerchill.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View TimerChill live demo"
+                      >
+                        Live Demo
+                      </Button>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://github.com/stevenmoraleszeta/timer-chill-web"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View TimerChill GitHub repository"
+                      >
+                        GitHub
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -329,12 +413,26 @@ export default function Curriculum() {
                       Built an ERP system to manage academic, financial, and operational processes for an educational institution. Integrated automation and reporting tools to simplify daily management.
                     </p>
                     <div className="curriculum-page__project-links">
-                      <a href="https://matematica-integral.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="View Matemática Integral ERP live demo">
-                        <Button variant="secondary" size="sm">Live Demo</Button>
-                      </a>
-                      <a href="https://github.com/stevenmoraleszeta/matematica-integral-web" target="_blank" rel="noopener noreferrer" aria-label="View Matemática Integral ERP GitHub repository">
-                        <Button variant="secondary" size="sm">GitHub</Button>
-                      </a>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://matematica-integral.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View Matemática Integral ERP live demo"
+                      >
+                        Live Demo
+                      </Button>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://github.com/stevenmoraleszeta/matematica-integral-web"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View Matemática Integral ERP GitHub repository"
+                      >
+                        GitHub
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -349,12 +447,26 @@ export default function Curriculum() {
                       Developed an IoT-based system for smart agriculture presented in a Nestlé innovation competition. Enabled real-time monitoring and automated irrigation using microcontrollers and sensors.
                     </p>
                     <div className="curriculum-page__project-links">
-                      <a href="https://demeter-prototype.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="View Demeter IoT Agriculture System live demo">
-                        <Button variant="secondary" size="sm">Live Demo</Button>
-                      </a>
-                      <a href="https://github.com/stevenmoraleszeta/demeter-prototype" target="_blank" rel="noopener noreferrer" aria-label="View Demeter IoT Agriculture System GitHub repository">
-                        <Button variant="secondary" size="sm">GitHub</Button>
-                      </a>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://demeter-prototype.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View Demeter IoT Agriculture System live demo"
+                      >
+                        Live Demo
+                      </Button>
+                      <Button 
+                        variant="secondary" 
+                        size="sm"
+                        href="https://github.com/stevenmoraleszeta/demeter-prototype"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ariaLabel="View Demeter IoT Agriculture System GitHub repository"
+                      >
+                        GitHub
+                      </Button>
                     </div>
                   </div>
                 </div>

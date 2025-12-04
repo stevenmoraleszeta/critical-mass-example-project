@@ -28,8 +28,12 @@ export interface ButtonProps {
   size?: 'sm' | 'md' | 'lg';
   /** Button content */
   children: React.ReactNode;
-  /** Optional href for link buttons (renders as Next.js Link) */
+  /** Optional href for link buttons (renders as Next.js Link for internal links, <a> for external) */
   href?: string;
+  /** Target for external links (e.g., '_blank') */
+  target?: string;
+  /** Rel attribute for external links (e.g., 'noopener noreferrer') */
+  rel?: string;
   /** Click handler for button actions */
   onClick?: () => void;
   /** Disabled state */
@@ -42,7 +46,7 @@ export interface ButtonProps {
   ariaLabel?: string;
   /** Additional CSS classes */
   className?: string;
-  /** Enable prefetch for Next.js Link (default: true) */
+  /** Enable prefetch for Next.js Link (default: true, only for internal links) */
   prefetch?: boolean;
 }
 
@@ -61,6 +65,8 @@ export default function Button({
   size = 'md',
   children,
   href,
+  target,
+  rel,
   onClick,
   disabled = false,
   loading = false,
@@ -96,8 +102,31 @@ export default function Button({
     }
   };
 
-  // If href is provided, render as Next.js Link
+  // Check if href is external (starts with http:// or https://)
+  const isExternalLink = href && (href.startsWith('http://') || href.startsWith('https://'));
+
+  // If href is provided, render as link (Next.js Link for internal, <a> for external)
   if (href && !disabled) {
+    // External links: render as <a>
+    if (isExternalLink) {
+      return (
+        <a
+          href={href}
+          target={target || '_blank'}
+          rel={rel || 'noopener noreferrer'}
+          className={classNames}
+          aria-label={ariaLabel}
+          tabIndex={disabled ? -1 : 0}
+          onKeyDown={handleKeyDown}
+          onClick={onClick}
+        >
+          {loading && <span className="btn__spinner" aria-hidden="true" />}
+          <span className="btn__text">{children}</span>
+        </a>
+      );
+    }
+    
+    // Internal links: render as Next.js Link
     return (
       <Link
         href={href}

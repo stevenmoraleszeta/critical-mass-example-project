@@ -70,41 +70,38 @@ export default function Contact() {
               </p>
               
               <div className="contact-page__profiles-actions">
-                <a
+                <Button
+                  variant="highlight"
+                  size="lg"
                   href="https://github.com/stevenmoraleszeta"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="contact-page__profiles-link"
-                  aria-label="Visit GitHub profile: github.com/stevenmoraleszeta"
+                  ariaLabel="Visit GitHub profile: github.com/stevenmoraleszeta"
                 >
-                  <Button variant="highlight" size="lg">
-                    GitHub
-                  </Button>
-                </a>
+                  GitHub
+                </Button>
                 
-                <a
+                <Button
+                  variant="primary"
+                  size="lg"
                   href="https://linkedin.com/in/stevenmoralesfallas"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="contact-page__profiles-link"
-                  aria-label="Visit LinkedIn profile: linkedin.com/in/stevenmoralesfallas"
+                  ariaLabel="Visit LinkedIn profile: linkedin.com/in/stevenmoralesfallas"
                 >
-                  <Button variant="primary" size="lg">
-                    LinkedIn
-                  </Button>
-                </a>
+                  LinkedIn
+                </Button>
                 
-                <a
+                <Button
+                  variant="secondary"
+                  size="lg"
                   href="https://instagram.com/stevenmorales.novaera"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="contact-page__profiles-link"
-                  aria-label="Visit Instagram profile: @stevenmorales.novaera"
+                  ariaLabel="Visit Instagram profile: @stevenmorales.novaera"
                 >
-                  <Button variant="secondary" size="lg">
-                    Instagram
-                  </Button>
-                </a>
+                  Instagram
+                </Button>
               </div>
             </div>
           </section>

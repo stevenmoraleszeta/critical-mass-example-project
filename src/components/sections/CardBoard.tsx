@@ -45,6 +45,8 @@ export interface CardBoardProps {
   className?: string;
   /** Custom render function for cards (optional) */
   renderCard?: (card: CardData, index: number, handlers: DragHandlers) => React.ReactNode;
+  /** Optional action element to render before scroll arrow */
+  action?: React.ReactNode;
 }
 
 interface DragHandlers {
@@ -65,6 +67,7 @@ export default function CardBoard({
   scrollTargetId,
   className = '',
   renderCard,
+  action,
 }: CardBoardProps) {
   const {
     items: cards,
@@ -152,6 +155,12 @@ export default function CardBoard({
             })}
           </div>
           
+          {action && (
+            <div className="card-board__action">
+              {action}
+            </div>
+          )}
+          
           {scrollTargetId && (
             <ScrollArrow
               targetId={scrollTargetId}
@@ -172,6 +181,7 @@ export default function CardBoard({
             onClick: dragHandlers.onReset,
           }}
           onDismiss={dragHandlers.dismissToast}
+          className="toast--floating"
         />
       )}
     </>

@@ -271,7 +271,7 @@
       }
 
       &:focus-within {
-        @include focus-visible-shadow(var(--color-primary));
+        @include focus-visible-shadow(var(--color-secondary));
       }
     }
 
@@ -297,7 +297,7 @@
       }
 
       &:focus-within {
-        @include focus-visible-shadow(var(--color-primary));
+        @include focus-visible-shadow(var(--color-secondary));
       }
     }
 

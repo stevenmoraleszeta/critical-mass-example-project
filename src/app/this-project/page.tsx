@@ -89,10 +89,10 @@ const projectOverviewCards: CardData[] = [
 export default function ThisProject() {
   return (
     <MainLayout>
-      <main className="this-project-page">
+      <div className="this-project-page">
         <div className="this-project-page__container">
-          <section className="this-project-page__hero">
-            <h1 className="this-project-page__title">This Project</h1>
+          <section className="this-project-page__hero" aria-labelledby="this-project-title">
+            <h1 id="this-project-title" className="this-project-page__title">This Project</h1>
             <p className="this-project-page__intro">
               This site is built as a <strong>portfolio prototype specifically for the Critical Mass Developer, Front End role</strong>, demonstrating front-end expertise, design-to-code translation, and modern web development practices.
             </p>
@@ -223,29 +223,27 @@ export default function ThisProject() {
               </p>
               
               <div className="this-project-page__review-actions">
-                <a
+                <Button
+                  variant="highlight"
+                  size="lg"
                   href="https://stevenmorales.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="this-project-page__review-link"
-                  aria-label="View live demo of portfolio site"
+                  ariaLabel="View live demo of portfolio site"
                 >
-                  <Button variant="highlight" size="lg">
-                    View Live Demo
-                  </Button>
-                </a>
+                  View Live Demo
+                </Button>
                 
-                <a
+                <Button
+                  variant="primary"
+                  size="lg"
                   href="https://github.com/stevenmoraleszeta/critical-mass-example-project"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="this-project-page__review-link"
-                  aria-label="View GitHub repository with front-end structure, styles, tests and CI config"
+                  ariaLabel="View GitHub repository with front-end structure, styles, tests and CI config"
                 >
-                  <Button variant="primary" size="lg">
-                    View Repository
-                  </Button>
-                </a>
+                  View Repository
+                </Button>
                 
                 <Button
                   variant="secondary"
@@ -259,7 +257,7 @@ export default function ThisProject() {
             </div>
           </section>
         </div>
-      </main>
+      </div>
     </MainLayout>
   );
 }
