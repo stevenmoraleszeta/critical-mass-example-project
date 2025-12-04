@@ -113,28 +113,20 @@ export default function Contact() {
             <Card variant="default" className="contact-page__card contact-page__card--closing">
               <div className="contact-page__card-content">
                 <h2 id="closing-title" className="contact-page__section-title">
-                  Let&apos;s Connect
+                  Ready to Contribute
                 </h2>
                 <div className="contact-page__closing-message">
                   <p className="contact-page__closing-text">
-                    If you&apos;re looking for a <strong>front-end developer</strong> who can:
+                    With <strong>3+ years</strong> of full-stack development experience and a proven track record of <strong>leading teams</strong> and building <strong>scalable applications</strong>, I bring a unique combination of technical expertise and leadership to the <strong>Developer, Front End</strong> role at Critical Mass.
                   </p>
-                  <ul className="contact-page__closing-list">
-                    <li className="contact-page__closing-item">
-                      Translate <strong>Figma designs</strong> into <strong>high-quality, responsive, accessible interfaces</strong>,
-                    </li>
-                    <li className="contact-page__closing-item">
-                      Own features <strong>end-to-end</strong> from concept to production,
-                    </li>
-                    <li className="contact-page__closing-item">
-                      Collaborate closely with <strong>creative, business, technology, and QA</strong> teams,
-                    </li>
-                    <li className="contact-page__closing-item">
-                      And bring a <strong>product-driven mindset</strong> amplified by <strong>teaching and leadership experience</strong>,
-                    </li>
-                  </ul>
                   <p className="contact-page__closing-text">
-                    I&apos;d be excited to talk and show how I can contribute to <strong>Critical Mass</strong>.
+                    As <strong>CEO & Lead Software Developer</strong> at Novaera, I&apos;ve led a team of 6+ developers and designers in building intelligent digital solutions. As <strong>CEO & Lead Tech Educator</strong> at ZETA Academia, I&apos;ve empowered <strong>1,000+ students</strong> through hands-on education. This dual experience has shaped my approach to <strong>collaboration, mentorship, and delivering high-quality code</strong> that meets both technical and business objectives.
+                  </p>
+                  <p className="contact-page__closing-text">
+                    I&apos;m ready to translate <strong>Figma designs into pixel-perfect, responsive, and accessible interfaces</strong>, integrate with <strong>REST/SOAP APIs and content management systems</strong>, and collaborate seamlessly with <strong>Creative, Business, Technology, and QA teams</strong> to deliver exceptional web experiences on time and with quality.
+                  </p>
+                  <p className="contact-page__closing-text">
+                    I&apos;d be excited to discuss how my experience in <strong>design-to-code translation</strong>, <strong>component-driven architecture</strong>, <strong>performance optimization</strong>, and <strong>cross-functional collaboration</strong> can contribute to Critical Mass&apos; mission of creating meaningful digital experiences.
                   </p>
                   <blockquote className="contact-page__quote">
                     <p className="contact-page__quote-text">
@@ -142,8 +134,17 @@ export default function Contact() {
                     </p>
                     <cite className="contact-page__quote-author">— Anne Frank</cite>
                   </blockquote>
+                  <blockquote className="contact-page__quote">
+                    <p className="contact-page__quote-text">
+                      &quot;It&apos;s the ones bold — or crazy — enough to think they can do it, who actually do.&quot;
+                    </p>
+                    <cite className="contact-page__quote-author">— Steve Jobs</cite>
+                  </blockquote>
                   <p className="contact-page__closing-text">
-                    I build technology with that urgency, and with the ambition to <strong>make a meaningful impact</strong> through code, design, and thoughtful experiences.
+                    I carry both ideas with me every day: <strong>the urgency to act, and the audacity to dream big</strong>. This philosophy drives how I approach every project — from translating <strong>Figma designs into pixel-perfect code</strong> to leading cross-functional teams in building <strong>scalable, accessible, and performant web experiences</strong>. I&apos;m not just looking for a job; I&apos;m seeking to join a team where I can contribute my technical expertise, leadership experience, and passion for creating <strong>meaningful digital experiences</strong> that make a real difference.
+                  </p>
+                  <p className="contact-page__closing-text">
+                    Let&apos;s build something great together at Critical Mass.
                   </p>
                 </div>
               </div>
