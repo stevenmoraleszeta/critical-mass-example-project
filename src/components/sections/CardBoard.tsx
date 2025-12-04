@@ -181,6 +181,7 @@ export default function CardBoard({
             onClick: dragHandlers.onReset,
           }}
           onDismiss={dragHandlers.dismissToast}
+          className="toast--floating"
         />
       )}
     </>

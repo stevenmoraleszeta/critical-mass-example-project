@@ -405,6 +405,15 @@
   }
   
   // ============================================================================
+  // Toast Floating Animation (BEM Modifier)
+  // For CardBoard toast that appears when order changes
+  // ============================================================================
+  
+  &--floating {
+    @include levitate(-8px, 3s, ease-in-out, 0s);
+  }
+  
+  // ============================================================================
   // Reduced Motion Support (Accessibility)
   // Following Critical Mass accessibility requirements
   // ============================================================================
@@ -413,6 +422,10 @@
     animation: none;
     
     &--exiting {
+      animation: none;
+    }
+    
+    &--floating {
       animation: none;
     }
   }
