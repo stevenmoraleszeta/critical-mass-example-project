@@ -62,6 +62,18 @@ export default function Curriculum() {
             <p className="curriculum-page__intro">
               Full Stack Software Engineer with more than <strong>3 years of experience</strong> building robust, scalable, and high-performance software across web, desktop, mobile, and hybrid platforms.
             </p>
+            <div className="curriculum-page__hero-actions">
+              <a 
+                href="/Steven_Morales_Critical_Mass_CV.pdf" 
+                download="Steven_Morales_Critical_Mass_CV.pdf"
+                className="curriculum-page__download-btn"
+                aria-label="Download CV as PDF"
+              >
+                <Button variant="highlight" size="lg">
+                  Download CV
+                </Button>
+              </a>
+            </div>
             <ScrollArrow targetId="professional-summary" />
           </section>
 

@@ -78,7 +78,7 @@
     font-size: var(--fs-base);
     line-height: var(--lh-relaxed);
     color: var(--color-white);
-    margin: 0;
+    margin: 0 0 var(--space-xl) 0;
     max-width: var(--container-md);
     margin-left: auto;
     margin-right: auto;
@@ -86,12 +86,29 @@
 
     @include breakpoint-md {
       font-size: var(--fs-lg);
+      margin-bottom: var(--space-2xl);
     }
 
     strong {
       font-weight: var(--fw-bold);
       color: var(--color-white);
     }
+  }
+
+  &__hero-actions {
+    @include flex;
+    @include justify-center;
+    @include align-center;
+    margin-bottom: var(--space-xl);
+
+    @include breakpoint-md {
+      margin-bottom: var(--space-2xl);
+    }
+  }
+
+  &__download-btn {
+    text-decoration: none;
+    display: inline-block;
   }
 
   // ============================================================================
