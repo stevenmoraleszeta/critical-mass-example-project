@@ -149,18 +149,15 @@
     border: var(--border-width-thin) solid var(--color-primary);
     border-radius: 0;
     @include shadow-sm;
-    @include transition-multiple(transform, box-shadow, border-width, background-color);
+    @include transition-multiple(transform);
     transform: translateZ(0);
+    transform-origin: center center;
     backface-visibility: hidden;
     @include levitate(-10px, 4s, ease-in-out, 0s);
 
     &:hover {
-      transform: translateY(-12px) scale(1.05) translateZ(0);
-      box-shadow: 0 12px 24px -6px rgba(0, 0, 255, 0.25),
-                  0 8px 16px -4px rgba(0, 0, 255, 0.15);
-      border-width: var(--border-width-base);
-      background-color: #FFFF33;
-      animation-play-state: paused;
+      transform: scale(1.15) translateZ(0) !important;
+      animation: none !important;
     }
 
     &--closing {
