@@ -78,32 +78,86 @@
   }
 
   &__social-link {
-    display: inline-block;
+    // Badge-style design
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    // Typography - badge style
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-normal);
+    text-align: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.05em;
+    
+    // Layout - badge style
+    border-radius: var(--radius-md);
     padding: var(--space-xs) var(--space-sm);
-    color: var(--color-text-primary);
+    min-height: 1.5rem;
+    
+    // Remove default link styles
     text-decoration: none;
-    font-size: var(--fs-base);
-    font-weight: var(--fw-medium);
-    border-radius: var(--radius-sm);
+    
+    // Transitions
     @include transition-base(all);
     outline: none;
     position: relative;
+    user-select: none;
 
     @include breakpoint-md {
-      padding: var(--space-sm) var(--space-md);
-      font-size: var(--fs-base);
+      padding: var(--space-xs) var(--space-md);
+      font-size: var(--fs-sm);
+      min-height: 1.75rem;
     }
 
-    &:hover {
+    // Primary color variant (blue)
+    &--primary {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border: var(--border-width-thin) solid var(--color-primary);
+      
+      &:hover {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        transform: translateY(-2px);
+        @include shadow-md;
+      }
+    }
+    
+    // Secondary color variant (red)
+    &--secondary {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      border: var(--border-width-thin) solid var(--color-secondary);
+      
+      &:hover {
+        background-color: var(--color-secondary);
+        color: var(--color-white);
+        transform: translateY(-2px);
+        @include shadow-md;
+      }
+    }
+    
+    // Accent color variant (yellow)
+    &--accent {
+      background-color: var(--color-accent);
       color: var(--color-primary);
-      background-color: var(--color-primary-rgba-5);
-      transform: translateY(-2px);
+      border: none;
+      
+      &:hover {
+        background-color: var(--color-accent);
+        color: var(--color-primary);
+        transform: translateY(-2px);
+        @include shadow-md;
+      }
     }
 
     &:focus-visible {
       outline: 3px solid var(--color-secondary);
       outline-offset: 4px;
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius-md);
     }
 
     &:focus:not(:focus-visible) {
@@ -112,17 +166,6 @@
 
     &:active {
       transform: translateY(0);
-    }
-
-    // External link indicator (optional visual cue)
-    &::after {
-      content: '';
-      display: inline-block;
-      width: 0;
-      height: 0;
-      margin-left: var(--space-xs);
-      opacity: 0;
-      @include transition-base(all);
     }
   }
 
@@ -154,33 +197,87 @@
   }
 
   &__contact-link {
-    display: inline-block;
+    // Badge-style design
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    // Typography - badge style
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-normal);
+    text-align: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.05em;
+    
+    // Layout - badge style
+    border-radius: var(--radius-md);
     padding: var(--space-xs) var(--space-sm);
-    color: var(--color-text-primary);
+    min-height: 1.5rem;
+    
+    // Remove default link styles
     text-decoration: none;
-    font-size: var(--fs-base);
-    font-weight: var(--fw-medium);
-    border-radius: var(--radius-sm);
+    word-break: break-word;
+    
+    // Transitions
     @include transition-base(all);
     outline: none;
-    word-break: break-word;
+    user-select: none;
 
     @include breakpoint-md {
-      padding: var(--space-sm) var(--space-md);
-      font-size: var(--fs-base);
+      padding: var(--space-xs) var(--space-md);
+      font-size: var(--fs-sm);
+      min-height: 1.75rem;
       word-break: normal;
     }
 
-    &:hover {
+    // Primary color variant (blue)
+    &--primary {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border: var(--border-width-thin) solid var(--color-primary);
+      
+      &:hover {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        transform: translateY(-2px);
+        @include shadow-md;
+      }
+    }
+    
+    // Secondary color variant (red)
+    &--secondary {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      border: var(--border-width-thin) solid var(--color-secondary);
+      
+      &:hover {
+        background-color: var(--color-secondary);
+        color: var(--color-white);
+        transform: translateY(-2px);
+        @include shadow-md;
+      }
+    }
+    
+    // Accent color variant (yellow)
+    &--accent {
+      background-color: var(--color-accent);
       color: var(--color-primary);
-      background-color: var(--color-primary-rgba-5);
-      transform: translateY(-2px);
+      border: none;
+      
+      &:hover {
+        background-color: var(--color-accent);
+        color: var(--color-primary);
+        transform: translateY(-2px);
+        @include shadow-md;
+      }
     }
 
     &:focus-visible {
       outline: 3px solid var(--color-secondary);
       outline-offset: 4px;
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius-md);
     }
 
     &:focus:not(:focus-visible) {

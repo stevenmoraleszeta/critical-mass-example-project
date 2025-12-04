@@ -34,6 +34,7 @@ interface SocialLink {
   ariaLabel: string;
   icon?: string;
   isExternal?: boolean;
+  badgeColor?: 'primary' | 'secondary' | 'accent';
 }
 
 /**
@@ -44,6 +45,7 @@ interface ContactLink {
   label: string;
   ariaLabel: string;
   type: 'email' | 'phone' | 'whatsapp';
+  badgeColor?: 'primary' | 'secondary' | 'accent';
 }
 
 const socialLinks: SocialLink[] = [
@@ -51,25 +53,29 @@ const socialLinks: SocialLink[] = [
     href: 'https://www.linkedin.com/in/stevenmoralesfallas/', 
     label: 'LinkedIn', 
     ariaLabel: 'Visit Steven Morales LinkedIn profile',
-    isExternal: true
+    isExternal: true,
+    badgeColor: 'primary'
   },
   { 
     href: 'https://github.com/stevenmoraleszeta', 
     label: 'GitHub', 
     ariaLabel: 'Visit Steven Morales GitHub profile',
-    isExternal: true
+    isExternal: true,
+    badgeColor: 'accent'
   },
   { 
     href: 'https://github.com/stevenmoraleszeta/critical-mass-example-project', 
     label: 'Project Repository', 
     ariaLabel: 'View Critical Mass example project repository on GitHub',
-    isExternal: true
+    isExternal: true,
+    badgeColor: 'accent'
   },
   { 
     href: 'https://www.instagram.com/stevenmorales.novaera/', 
     label: 'Instagram', 
     ariaLabel: 'Visit Steven Morales Instagram profile',
-    isExternal: true
+    isExternal: true,
+    badgeColor: 'secondary'
   },
 ];
 
@@ -78,13 +84,15 @@ const contactLinks: ContactLink[] = [
     href: 'mailto:fallasmoraless@gmail.com',
     label: 'fallasmoraless@gmail.com',
     ariaLabel: 'Send email to fallasmoraless@gmail.com',
-    type: 'email'
+    type: 'email',
+    badgeColor: 'primary'
   },
   {
     href: 'https://wa.me/50661304830?text=Hi!%20I%20came%20across%20your%20portfolio%20project%20and%20I%27d%20like%20to%20connect.',
     label: '+506 6130 4830',
     ariaLabel: 'Contact via WhatsApp at +506 6130 4830',
-    type: 'whatsapp'
+    type: 'whatsapp',
+    badgeColor: 'accent'
   },
 ];
 
@@ -137,7 +145,7 @@ export default function Footer({ className = '' }: FooterProps) {
                   {link.isExternal ? (
                     <a
                       href={link.href}
-                      className="footer__social-link"
+                      className={`footer__social-link footer__social-link--${link.badgeColor || 'primary'}`}
                       aria-label={link.ariaLabel}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -148,7 +156,7 @@ export default function Footer({ className = '' }: FooterProps) {
                   ) : (
                     <Link
                       href={link.href}
-                      className="footer__social-link"
+                      className={`footer__social-link footer__social-link--${link.badgeColor || 'primary'}`}
                       aria-label={link.ariaLabel}
                     >
                       {link.label}
@@ -170,7 +178,7 @@ export default function Footer({ className = '' }: FooterProps) {
                 <li key={link.href} className="footer__contact-item">
                   <a
                     href={link.href}
-                    className="footer__contact-link"
+                    className={`footer__contact-link footer__contact-link--${link.badgeColor || 'primary'}`}
                     aria-label={link.ariaLabel}
                     {...(link.type === 'email' ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
                     onKeyDown={(e) => {
