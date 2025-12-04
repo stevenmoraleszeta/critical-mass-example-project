@@ -3,11 +3,13 @@
 import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
+import AnimatedGradientBackground from '@/components/ui/AnimatedGradientBackground';
 
 export default function CoverLetter() {
   return (
     <MainLayout>
       <div className="cover-letter-page">
+        <AnimatedGradientBackground />
         <div className="cover-letter-page__container">
           <section 
             className="cover-letter-page__hero" 

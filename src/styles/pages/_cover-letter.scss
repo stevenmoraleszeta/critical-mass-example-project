@@ -12,11 +12,15 @@
 // ============================================================================
 
 .cover-letter-page {
+  position: relative;
   min-height: 100vh;
   width: 100%;
-  background-color: var(--color-white);
+  overflow-x: hidden;
+  overflow-y: visible;
 
   &__container {
+    position: relative;
+    z-index: 2;
     @include container;
     max-width: var(--container-xl);
     padding: var(--space-lg);
@@ -53,9 +57,9 @@
     font-size: var(--fs-3xl);
     font-weight: var(--fw-bold);
     line-height: var(--lh-tight);
-    color: var(--color-primary);
+    color: var(--color-white);
     margin: 0 0 var(--space-lg) 0;
-    @include levitate(-5px, 3s, ease-in-out, 0s);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 
     @include breakpoint-md {
       font-size: var(--fs-4xl);
@@ -71,11 +75,12 @@
   &__intro {
     font-size: var(--fs-base);
     line-height: var(--lh-relaxed);
-    color: var(--color-primary);
+    color: var(--color-white);
     margin: 0;
     max-width: var(--container-md);
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 
     @include breakpoint-md {
       font-size: var(--fs-lg);
@@ -83,7 +88,7 @@
 
     strong {
       font-weight: var(--fw-bold);
-      color: var(--color-primary);
+      color: var(--color-white);
     }
   }
 
@@ -107,6 +112,10 @@
     &--quotes {
       text-align: center;
       margin-bottom: var(--space-3xl);
+      
+      .cover-letter-page__section-title {
+        color: var(--color-white);
+      }
     }
   }
 
@@ -131,13 +140,19 @@
   &__card {
     width: 100%;
     height: 100%;
-    @include shadow-lg;
-    @include transition-multiple(transform, box-shadow);
+    background-color: var(--color-accent);
+    border: var(--border-width-thin) solid var(--color-primary);
+    border-radius: 0;
+    @include shadow-sm;
+    @include transition-multiple(transform, box-shadow, border-width, background-color);
     @include levitate(-10px, 4s, ease-in-out, 0s);
 
     &:hover {
-      transform: translateY(calc(var(--space-xs) * -1));
-      @include shadow-xl;
+      transform: translateY(-12px) scale(1.05);
+      box-shadow: 0 12px 24px -6px rgba(0, 0, 255, 0.25),
+                  0 8px 16px -4px rgba(0, 0, 255, 0.15);
+      border-width: var(--border-width-base);
+      background-color: #FFFF33;
       animation-play-state: paused;
     }
 
@@ -227,15 +242,15 @@
   &__quote {
     margin: 0;
     padding: var(--space-lg);
-    border-left: var(--border-width-base) solid var(--color-accent);
-    background-color: var(--color-accent-rgba-10);
-    border-radius: var(--radius-md);
+    background-color: var(--color-accent);
+    border: var(--border-width-thin) solid var(--color-primary);
+    border-radius: 0;
     @include flex;
     @include flex-column;
     gap: var(--space-sm);
-    @include shadow-md;
+    @include shadow-sm;
     @include levitate(-8px, 4s, ease-in-out, 0s);
-    @include transition-multiple(transform, box-shadow);
+    @include transition-multiple(transform, box-shadow, border-width, background-color);
     width: 100%;
 
     @include breakpoint-md {
@@ -244,8 +259,11 @@
     }
 
     &:hover {
-      transform: translateY(calc(var(--space-xs) * -1));
-      @include shadow-lg;
+      transform: translateY(-12px) scale(1.05);
+      box-shadow: 0 12px 24px -6px rgba(0, 0, 255, 0.25),
+                  0 8px 16px -4px rgba(0, 0, 255, 0.15);
+      border-width: var(--border-width-base);
+      background-color: #FFFF33;
       animation-play-state: paused;
     }
 
