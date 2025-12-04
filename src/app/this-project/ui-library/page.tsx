@@ -12,6 +12,10 @@ import Toggle from "@/components/ui/Toggle";
 import Loader from "@/components/feedback/Loader";
 import ErrorMessage from "@/components/feedback/ErrorMessage";
 import Toast from "@/components/feedback/Toast";
+import FeatureCard from "@/components/ui/FeatureCard";
+import StatCard from "@/components/ui/StatCard";
+import TestimonialCard from "@/components/ui/TestimonialCard";
+import UseCaseCard from "@/components/ui/UseCaseCard";
 // Styles are now in SCSS: src/styles/pages/_components.scss
 
 export default function UILibrary() {
@@ -1200,6 +1204,253 @@ export default function UILibrary() {
                     Show Info
                   </button>
                 </div>
+              </div>
+            </section>
+          </section>
+
+          {/* FeatureCard Component Showcase */}
+          <section>
+            <h2 className="components-page__section-title">FeatureCard Component Showcase</h2>
+            
+            {/* Basic FeatureCard Section */}
+            <section>
+              <h2>Basic FeatureCard</h2>
+              <div className="components-page__card-group">
+                <FeatureCard
+                  title="Design-to-Code Translation"
+                  description="Converts Figma and wireframes into clean, semantic HTML/CSS and reusable React components."
+                />
+                <FeatureCard
+                  title="Responsive & Mobile-First"
+                  description="Optimized for all breakpoints. Designed to behave nicely on phones your stakeholders actually use."
+                />
+                <FeatureCard
+                  title="API Integration Module"
+                  description="Speaks fluent REST, JSON and HTTP. Comfortable integrating with CMSs and external web services."
+                />
+              </div>
+            </section>
+
+            {/* FeatureCard with Icons Section */}
+            <section>
+              <h2>FeatureCard with Icons</h2>
+              <div className="components-page__card-group">
+                <FeatureCard
+                  icon={
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  }
+                  title="Component Architecture"
+                  description="Built with reusable components following BEM methodology and design system principles."
+                />
+                <FeatureCard
+                  icon={
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  }
+                  title="Performance Optimized"
+                  description="Focus on Lighthouse scores, lazy loading, image optimization and bundle awareness."
+                />
+                <FeatureCard
+                  icon={
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M9 11L12 14L22 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  }
+                  title="Accessibility First"
+                  description="Semantic HTML, ARIA attributes, keyboard navigation, and WCAG compliance built-in."
+                />
+              </div>
+            </section>
+
+            {/* Usage Examples */}
+            <section>
+              <h2>Usage Examples</h2>
+              <div className="components-page__card-group">
+                <FeatureCard
+                  icon={
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  }
+                  title="Front-End Expertise"
+                  description="Strong in HTML, CSS, JavaScript, TypeScript, React, Next.js, design systems and reusable components."
+                />
+                <FeatureCard
+                  icon={
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  }
+                  title="Leadership & Mentorship"
+                  description="CEO & Lead Developer at Novaera, leading a multi-developer engineering team."
+                />
+                <FeatureCard
+                  icon={
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  }
+                  title="Education & Impact"
+                  description="CEO & Lead Tech Educator at ZETA Academia, offering 30+ courses to 1,000+ students."
+                />
+              </div>
+            </section>
+          </section>
+
+          {/* StatCard Component Showcase */}
+          <section>
+            <h2 className="components-page__section-title">StatCard Component Showcase</h2>
+            
+            {/* Basic StatCard Section */}
+            <section>
+              <h2>Basic StatCard</h2>
+              <div className="components-page__card-group">
+                <StatCard
+                  title="Lighthouse Focus"
+                  description="Focus on Lighthouse scores & perceived performance."
+                />
+                <StatCard
+                  title="Optimization Built-In"
+                  description="Works with lazy loading, image optimization and bundle awareness."
+                />
+                <StatCard
+                  title="Data-Driven Approach"
+                  description="Approach: profile, measure, then optimize – not guess."
+                />
+              </div>
+            </section>
+
+            {/* Usage Examples */}
+            <section>
+              <h2>Usage Examples</h2>
+              <div className="components-page__card-group">
+                <StatCard
+                  title="Team Leadership"
+                  description="Leading 6+ developers at Novaera and 4+ educators at ZETA Academia. Establishing workflows, code reviews, CI/CD integration, and process improvement."
+                />
+                <StatCard
+                  title="Cross-Functional Collaboration"
+                  description="Working with Creative, Business, Technology, and QA teams to ensure delivery of high-quality, punctual web development."
+                />
+                <StatCard
+                  title="Communication & Transparency"
+                  description="Providing clear progress updates and realistic estimates to stakeholders. Ensuring transparency throughout development process."
+                />
+              </div>
+            </section>
+          </section>
+
+          {/* TestimonialCard Component Showcase */}
+          <section>
+            <h2 className="components-page__section-title">TestimonialCard Component Showcase</h2>
+            
+            {/* Basic TestimonialCard Section */}
+            <section>
+              <h2>Basic TestimonialCard</h2>
+              <div className="components-page__card-group">
+                <TestimonialCard
+                  quote="Working with Steven felt like plugging a specialized module into our team – fast to understand the brief, calm under pressure, and always pushing for cleaner code."
+                />
+                <TestimonialCard
+                  quote="Delivers on time, communicates clearly, and writes code that's easy to maintain. Exactly what you want in a front-end developer."
+                />
+                <TestimonialCard
+                  quote="Brought fresh ideas to our component architecture while respecting existing patterns. Great balance of innovation and pragmatism."
+                />
+              </div>
+            </section>
+
+            {/* TestimonialCard with Author Section */}
+            <section>
+              <h2>TestimonialCard with Author Information</h2>
+              <div className="components-page__card-group">
+                <TestimonialCard
+                  quote="Strong technical leadership with the ability to translate complex requirements into clean, maintainable code. Excellent collaboration skills and attention to detail."
+                  author="Sarah Johnson"
+                  role="Front-End Manager"
+                  company="Digital Agency"
+                />
+                <TestimonialCard
+                  quote="Outstanding problem-solving skills and deep understanding of modern web technologies. Consistently delivers high-quality work that exceeds expectations."
+                  author="Michael Chen"
+                  role="Tech Lead"
+                  company="Software Company"
+                />
+                <TestimonialCard
+                  quote="Exceptional ability to work with cross-functional teams. Brings both technical expertise and product mindset to every project."
+                  author="Emily Rodriguez"
+                  role="Product Manager"
+                  company="Tech Startup"
+                />
+              </div>
+            </section>
+
+            {/* Usage Examples */}
+            <section>
+              <h2>Usage Examples</h2>
+              <div className="components-page__card-group">
+                <TestimonialCard
+                  quote="Steven's approach to building scalable component libraries has significantly improved our development workflow. The code is clean, well-documented, and follows industry best practices."
+                  author="Team Lead"
+                  role="Engineering Manager"
+                />
+                <TestimonialCard
+                  quote="The attention to accessibility and performance in Steven's work is outstanding. Every component is built with users in mind, from keyboard navigation to screen reader support."
+                  author="UX Designer"
+                />
+              </div>
+            </section>
+          </section>
+
+          {/* UseCaseCard Component Showcase */}
+          <section>
+            <h2 className="components-page__section-title">UseCaseCard Component Showcase</h2>
+            
+            {/* Basic UseCaseCard Section */}
+            <section>
+              <h2>Basic UseCaseCard</h2>
+              <div className="components-page__card-group">
+                <UseCaseCard
+                  question="Need a pixel-perfect build from a Figma file?"
+                  answer="I've translated complex designs into production-ready code across multiple projects, including ERP systems and educational platforms. Built reusable component libraries that design teams love to work with."
+                />
+                <UseCaseCard
+                  question="Need scalable architecture for growing teams?"
+                  answer="Led development of modular SaaS ERP systems and EdTech platforms. Designed component systems that scale from prototypes to production applications serving 1,000+ users."
+                />
+                <UseCaseCard
+                  question="Need someone who understands both front-end and back-end?"
+                  answer="Full-stack experience building complete systems from database design to API development to responsive UIs. Comfortable with debugging, root cause analysis, and cross-browser compatibility."
+                />
+              </div>
+            </section>
+
+            {/* Usage Examples */}
+            <section>
+              <h2>Usage Examples</h2>
+              <div className="components-page__card-group">
+                <UseCaseCard
+                  question="Need a component library your design team actually likes?"
+                  answer="Can build accessible, reusable components and document them clearly. Components follow BEM methodology and are designed for maintainability and scalability."
+                />
+                <UseCaseCard
+                  question="Need someone to debug that weird layout in Safari?"
+                  answer="Comfortable with cross-browser issues and digging into root causes instead of patching symptoms. Experience with browser DevTools and systematic debugging approaches."
+                />
+                <UseCaseCard
+                  question="Need performance optimization without sacrificing code quality?"
+                  answer="Approach: profile, measure, then optimize – not guess. Experience with Lighthouse, Core Web Vitals, and performance optimization techniques that maintain code quality."
+                />
               </div>
             </section>
           </section>
