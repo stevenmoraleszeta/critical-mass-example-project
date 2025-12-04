@@ -29,91 +29,91 @@ export default function KeyHighlightsSection() {
         <div className="key-highlights__grid">
           <Card
             variant="feature"
-            title="Front-End Expertise"
+            title="3+ Years Front-End Experience"
             image={{
               src: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=300&fit=crop",
-              alt: "Front-end development technologies and frameworks",
+              alt: "Front-end development experience and expertise",
               width: 400,
               height: 300
             }}
           >
             <p>
-              Strong in <strong>HTML, CSS, JavaScript, TypeScript, React, Next.js</strong>, design systems and reusable components.
+              Full Stack Software Engineer with more than <strong>3 years of experience</strong> building robust, scalable, and high-performance software across web, desktop, mobile, and hybrid platforms. I work across the full development cycle—from design and architecture to deployment and optimization.
             </p>
           </Card>
           
           <Card
             variant="feature"
-            title="Product Mindset"
+            title="Modern Front-End Stack"
             image={{
-              src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-              alt: "Product strategy and user experience design",
+              src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
+              alt: "Modern front-end technologies and frameworks",
               width: 400,
               height: 300
             }}
           >
             <p>
-              I think in <strong>flows, user journeys, and product impact</strong>, not just isolated tasks.
+              Strong expertise in <strong>TypeScript, JavaScript, React, Next.js, HTML5, CSS3, SASS/SCSS</strong>, design systems, and reusable components. Experience with automation tools like Gulp, Vite, and modern bundlers for efficient front-end pipelines.
             </p>
           </Card>
           
           <Card
             variant="feature"
-            title="Performance & Quality"
+            title="Design-to-Code Translation"
             image={{
-              src: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
-              alt: "Performance metrics and quality assurance",
+              src: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=400&h=300&fit=crop",
+              alt: "Design to code translation and implementation",
               width: 400,
               height: 300
             }}
           >
             <p>
-              Experience with <strong>performance optimization, scalability, and maintainable architectures</strong>.
+              I translate <strong>Figma designs and wireframes</strong> into standard-compliant HTML5, semantic CSS3, and responsive React/Next.js components with pixel-perfect attention to detail. Experience ensuring cross-browser compatibility and mobile-first, performant code.
             </p>
           </Card>
           
           <Card
             variant="feature"
-            title="Leadership & Mentorship"
+            title="Full-Stack & API Integration"
+            image={{
+              src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
+              alt: "Full-stack development and API integration",
+              width: 400,
+              height: 300
+            }}
+          >
+            <p>
+              Experience with <strong>RESTful APIs, SOAP, JSON, XML, HTTP</strong>, and integrating web solutions with external services, CMS systems, and third-party applications. Full-stack exposure including databases (PostgreSQL, MongoDB), API design, and performance monitoring.
+            </p>
+          </Card>
+          
+          <Card
+            variant="feature"
+            title="Team Leadership & Collaboration"
             image={{
               src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop",
-              alt: "Team leadership and mentorship",
+              alt: "Team leadership and collaboration",
               width: 400,
               height: 300
             }}
           >
             <p>
-              CEO & Lead Developer at <strong>Novaera</strong>, leading a <strong>multi-developer engineering team</strong>.
+              CEO & Lead Developer at <strong>Novaera</strong>, leading a <strong>six-member development team</strong>. I coordinate with design, business, QA, and tech leads to deliver high-quality, punctual web development. Strong in communication, organization, and mentorship.
             </p>
           </Card>
           
           <Card
             variant="feature"
-            title="Education & Impact"
+            title="Performance & Problem Solving"
             image={{
-              src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop",
-              alt: "Education and teaching impact",
+              src: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
+              alt: "Performance optimization and problem solving",
               width: 400,
               height: 300
             }}
           >
             <p>
-              CEO & Lead Tech Educator at <strong>ZETA Academia</strong>, offering <strong>30+ courses</strong> to <strong>1,000+ students</strong> in Python, AI, Java, Excel, and more.
-            </p>
-          </Card>
-          
-          <Card
-            variant="feature"
-            title="Problem Solver"
-            image={{
-              src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop",
-              alt: "Problem solving and technical solutions",
-              width: 400,
-              height: 300
-            }}
-          >
-            <p>
-              Comfortable with <strong>debugging, root cause analysis, and reducing technical debt</strong>.
+              Expertise in <strong>performance optimization, scalability, debugging, and root cause analysis</strong>. I analyze and optimize code for quality, efficiency, and performance, identify and resolve scalability issues, and drive efforts to reduce technical debt.
             </p>
           </Card>
         </div>
