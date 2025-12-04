@@ -1,7 +1,7 @@
 ## Job Posting - Critical Mass
 
 **Position:** Developer, Front End  
-**Location:** San Jose, Costa Rica
+**Location:** Costa Rica
 
 ### Role Description
 

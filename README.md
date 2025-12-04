@@ -1,9 +1,11 @@
 # Steven Morales – Professional Portfolio for Critical Mass
 
 > **Full Stack Software Engineer · Tech Leader · Product-Focused Developer**  
-> San José, Costa Rica · Applying for **Developer, Front End – Critical Mass**
+> Costa Rica · Applying for **Developer, Front End – Critical Mass**
 
-A professional portfolio prototype built to demonstrate front-end development skills and experience, specifically crafted for the **Critical Mass Front-End Developer** position in **San Jose, Costa Rica**. This project showcases real-world expertise in translating designs to code, building scalable component systems, and delivering production-ready applications.
+A professional portfolio prototype built to demonstrate front-end development skills and experience, specifically crafted for the **Critical Mass Front-End Developer** position in **Costa Rica**. This project showcases real-world expertise in translating designs to code, building scalable component systems, and delivering production-ready applications.
+
+**Project developed in December 2025.**
 
 ---
 
@@ -15,8 +17,6 @@ This portfolio demonstrates my experience as a **Full Stack Developer and Tech L
 - **CEO & Lead Tech Educator** at [ZETA Academia](https://zetaacademia.com/) – Leading a team of **4+ educators** empowering **1,000+ students**
 
 Based in **Costa Rica**, ready to work from office **3+ days a week** as required by Critical Mass.
-
-> **⚠️ Project Simplification Note:** Due to time constraints, the project was simplified to ensure timely completion. The "Me & Skills" (`/me-and-skills`) and "Projects & Experience" (`/projects`) pages were removed from the final implementation. The portfolio focuses on the core pages: Home, This Project, and Contact, which demonstrate the essential skills and experience relevant to the Critical Mass Front-End Developer position.
 
 ---
 
@@ -40,13 +40,12 @@ This portfolio is designed as a **live case study** demonstrating:
 
 **Before working on this project, read these files:**
 
-1. **[`docs/CONSIDERACIONES_DESARROLLO.md`](./docs/CONSIDERACIONES_DESARROLLO.md)** ⭐ **START HERE** – Complete development guidelines, standards, and Critical Mass requirements
-2. **[`docs/TODO.md`](./docs/TODO.md)** – Complete project checklist with all phases and tasks
-3. **[`docs/PROJECT-IDEA.md`](./docs/PROJECT-IDEA.md)** – Full project specifications, architecture, and requirements
-4. **[`docs/PROJECT-CONTENT.md`](./docs/PROJECT-CONTENT.md)** – **Official copy and content specifications for all pages** (single source of truth)
-5. **[`docs/BEM_METHODOLOGY_GUIDE.md`](./docs/BEM_METHODOLOGY_GUIDE.md)** – Complete BEM methodology guide and Critical Mass compliance review
-6. **[`docs/JOB-INFO.md`](./docs/JOB-INFO.md)** – Complete job posting information for Developer, Front End position at Critical Mass (San Jose, Costa Rica) – Role description, responsibilities, requirements, and benefits
-7. **[`docs/MY-PROFILE.md`](./docs/MY-PROFILE.md)** – Complete professional profile, tech stack, featured projects, professional experience, and CV summary
+1. **[`docs/TODO.md`](./docs/TODO.md)** – Complete project checklist with all phases and tasks
+2. **[`docs/PROJECT-IDEA.md`](./docs/PROJECT-IDEA.md)** – Full project specifications, architecture, and requirements
+3. **[`docs/PROJECT-CONTENT.md`](./docs/PROJECT-CONTENT.md)** – **Official copy and content specifications for all pages** (single source of truth)
+4. **[`docs/BEM_METHODOLOGY_GUIDE.md`](./docs/BEM_METHODOLOGY_GUIDE.md)** – Complete BEM methodology guide and Critical Mass compliance review
+5. **[`docs/JOB-INFO.md`](./docs/JOB-INFO.md)** – Complete job posting information for Developer, Front End position at Critical Mass (Costa Rica) – Role description, responsibilities, requirements, and benefits
+6. **[`docs/MY-PROFILE.md`](./docs/MY-PROFILE.md)** – Complete professional profile, tech stack, featured projects, professional experience, and CV summary
 
 ---
 
@@ -73,8 +72,12 @@ src/
 │   │   ├── page.tsx         # This Project page
 │   │   └── ui-library/
 │   │       └── page.tsx     # UI Library showcase
-│   └── contact/             # Contact page (in progress)
-│       └── page.tsx
+│   ├── contact/
+│   │   └── page.tsx         # Contact page
+│   ├── curriculum/
+│   │   └── page.tsx         # Professional Curriculum page
+│   └── cover-letter/
+│       └── page.tsx         # Cover Letter page
 ├── components/              # React components
 │   ├── ui/                  # UI components (Button, Card, Tag, Badge, Input, Select, Toggle)
 │   ├── layout/              # Layout components (MainLayout, NavBar, Footer)
@@ -208,7 +211,20 @@ Contact page with:
 - **Online Profiles** – GitHub, LinkedIn, Instagram links
 - **Closing Message** – Professional closing with quote
 
-> **Note:** Contact page is in progress. See [`docs/TODO.md`](./docs/TODO.md) Phase 11 for details.
+### `/curriculum` – Professional Curriculum
+
+Professional curriculum page showcasing:
+
+- **CV Download** – PDF download of professional curriculum
+- **Professional Experience** – Detailed work history and achievements
+- **Education & Certifications** – Academic background and professional certifications
+
+### `/cover-letter` – Cover Letter
+
+Cover letter page with:
+
+- **Personalized Cover Letter** – Tailored message for the Critical Mass position
+- **Key Qualifications** – Highlighted skills and experience relevant to the role
 
 ---
 
@@ -414,7 +430,7 @@ Before submitting code, verify:
 - **Only** use comments when really necessary (complex logic, non-obvious design decisions)
 - Code should be **self-explanatory** through descriptive names
 
-See [`docs/CONSIDERACIONES_DESARROLLO.md`](./docs/CONSIDERACIONES_DESARROLLO.md) for complete development guidelines.
+See [`docs/BEM_METHODOLOGY_GUIDE.md`](./docs/BEM_METHODOLOGY_GUIDE.md) for complete development guidelines.
 
 ---
 
@@ -436,12 +452,11 @@ See [`docs/CONSIDERACIONES_DESARROLLO.md`](./docs/CONSIDERACIONES_DESARROLLO.md)
 
 ## 📚 Documentation
 
-- **[`docs/CONSIDERACIONES_DESARROLLO.md`](./docs/CONSIDERACIONES_DESARROLLO.md)** ⭐ – Development guidelines and standards (Spanish)
 - **[`docs/BEM_METHODOLOGY_GUIDE.md`](./docs/BEM_METHODOLOGY_GUIDE.md)** – Complete BEM methodology guide and Critical Mass compliance review
 - **[`docs/TESTING.md`](./docs/TESTING.md)** – Testing guide and best practices
 - **[`docs/TODO.md`](./docs/TODO.md)** – Complete project checklist with all phases
 - **[`docs/PROJECT-IDEA.md`](./docs/PROJECT-IDEA.md)** – Full project specifications and requirements
-- **[`docs/PROJECT-CONTENT.md`](./docs/PROJECT-CONTENT.md)** – **Official copy and content specifications for all pages** (single source of truth)
+- **[`docs/PROJECT-CONTENT.md`](./docs/PROJECT-CONTENT.md)** – **Official copy and content specifications for all pages** (single source of truth
 
 ---
 
@@ -490,7 +505,7 @@ See [`TODO.md`](./TODO.md) for the complete development checklist organized by p
 
 ## 💡 Project Philosophy
 
-This portfolio is a **professional demonstration** designed specifically for the **Developer, Front End position at Critical Mass (San Jose, Costa Rica)**. Every line of code reflects:
+This portfolio is a **professional demonstration** designed specifically for the **Developer, Front End position at Critical Mass (Costa Rica)**. Every line of code reflects:
 
 - **Technical Excellence** – Demonstrating real-world experience leading teams and building scalable applications
 - **Attention to Detail** – Reflecting experience with production projects (ERP systems, EdTech platforms, SaaS applications)
@@ -506,6 +521,8 @@ This portfolio is a **professional demonstration** designed specifically for the
 
 Copyright (c) 2025 Steven Morales. All rights reserved.
 
+**Project developed in December 2025.**
+
 This project is provided for evaluation purposes only. Permission is granted to view, use, and share this project with team members and technical staff solely for recruitment evaluation and technical assessment purposes.
 
 See [`LICENSE`](./LICENSE) file for full terms and conditions.
@@ -516,11 +533,12 @@ See [`LICENSE`](./LICENSE) file for full terms and conditions.
 
 **Steven Morales Fallas**
 
-- **Location:** San José, Costa Rica
+- **Location:** Costa Rica
 - **Phone / WhatsApp:** +506 6130 4830
 - **Email:** fallasmoraless@gmail.com
 - **GitHub:** [github.com/stevenmoraleszeta](https://github.com/stevenmoraleszeta)
 - **LinkedIn:** [linkedin.com/in/stevenmoralesfallas](https://linkedin.com/in/stevenmoralesfallas)
+- **Instagram:** [@stevenmorales.novaera](https://instagram.com/stevenmorales.novaera)
 
 ---
 

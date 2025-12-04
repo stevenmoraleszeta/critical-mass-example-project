@@ -40,7 +40,7 @@
 
 ### Core Idea
 
-A professional portfolio showcasing my experience as a Full Stack Software Engineer and Tech Leader, specifically designed for the **Developer, Front End** position at **Critical Mass** in **San Jose, Costa Rica**.
+A professional portfolio showcasing my experience as a Full Stack Software Engineer and Tech Leader, specifically designed for the **Developer, Front End** position at **Critical Mass** in **Costa Rica**.
 
 **About Me:**
 - **CEO & Lead Software Developer** at Novaera - Leading a team of 6+ developers building intelligent and scalable digital solutions
@@ -259,7 +259,7 @@ public/
   - I'm **Steven Morales**, a **Full Stack Software Engineer & Tech Leader** focused on building **high-quality, responsive, accessible front-end experiences** that connect technology, creativity, and real human needs.
 - **Key Identity Line:**
   - **Full Stack Software Engineer | Tech Leader | Product-Driven Developer | Creative Technologist**
-  - Based in **San José, Costa Rica**, applying for **Developer, Front End at Critical Mass**.
+  - Based in **Costa Rica**, applying for **Developer, Front End at Critical Mass**.
 - **Short Value Intro:**
   - I have **3+ years of experience** building robust, scalable, high-performance software across **web, desktop, mobile, and hybrid platforms**, working through the full development cycle: from **design and architecture** to **deployment and optimization**. I enjoy creating **clean, efficient solutions** that connect technology with real user needs, combining strong technical skills with **leadership, teamwork, and problem-solving**.
 - **CTAs:**
@@ -404,7 +404,7 @@ I'll render it as cards or timeline, haven't decided yet.
 
 **Copy:**
 
-- "I'm actively seeking a full-time Front-End Developer position at Critical Mass in San Jose, Costa Rica. I'm ready to bring my experience in leading teams, building scalable applications, and delivering high-quality code to your projects. Let's discuss how I can contribute to your team."
+- "I'm actively seeking a full-time Front-End Developer position at Critical Mass in Costa Rica. I'm ready to bring my experience in leading teams, building scalable applications, and delivering high-quality code to your projects. Let's discuss how I can contribute to your team."
 
 #### 3.1.4. "Primary Call To Action" Section
 
@@ -1294,7 +1294,7 @@ This reflects good version control practices as requested in the job posting.
 2–3 paragraphs explaining:
 
 - Professional portfolio showcasing my experience as Full Stack Developer and Tech Leader
-- Built specifically for the Developer, Front End position at Critical Mass in San Jose, Costa Rica
+- Built specifically for the Developer, Front End position at Critical Mass in Costa Rica
 - Demonstrates real-world experience: Leading teams at Novaera and ZETA Academia, building scalable applications, empowering 1,000+ students
 
 #### Objectives
@@ -1343,7 +1343,7 @@ When I have it deployed on Vercel:
 
 **In the interview or by email, I can say:**
 
-"I've built a professional portfolio prototype to demonstrate my skills and approach for the Front-End Developer position at Critical Mass. This portfolio showcases my real-world experience leading teams at Novaera and ZETA Academia, building scalable applications that serve 1,000+ users. The code demonstrates design-to-code translation, component architecture, API integration, accessibility best practices, and performance optimization - all aligned with Critical Mass requirements. I'm excited about the opportunity to bring my full-stack expertise and leadership experience to your team in San Jose, Costa Rica."
+"I've built a professional portfolio prototype to demonstrate my skills and approach for the Front-End Developer position at Critical Mass. This portfolio showcases my real-world experience leading teams at Novaera and ZETA Academia, building scalable applications that serve 1,000+ users. The code demonstrates design-to-code translation, component architecture, API integration, accessibility best practices, and performance optimization - all aligned with Critical Mass requirements. I'm excited about the opportunity to bring my full-stack expertise and leadership experience to your team in Costa Rica."
 
 **Send:**
 
@@ -1358,7 +1358,7 @@ When I have it deployed on Vercel:
 > **Note:** The complete and official job posting information is now available in [`JOB-INFO.md`](./JOB-INFO.md). This section provides a reference copy. Always refer to `JOB-INFO.md` for the most up-to-date job posting details.
 
 **Position:** Developer, Front End  
-**Location:** San Jose, Costa Rica
+**Location:** Costa Rica
 
 ### Role Description
 
