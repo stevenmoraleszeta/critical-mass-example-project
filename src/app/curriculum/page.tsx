@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
+import Tag from '@/components/ui/Tag';
 import CardBoard, { CardData } from '@/components/sections/CardBoard';
 import AnimatedGradientBackground from '@/components/ui/AnimatedGradientBackground';
 import FloatingBinaryElements from '@/components/ui/FloatingBinaryElements';
@@ -109,8 +110,8 @@ export default function Curriculum() {
                 <div className="curriculum-page__card-content">
                   <h3 className="curriculum-page__experience-title">CEO & Lead Software Developer</h3>
                   <div className="curriculum-page__experience-meta">
-                    <span className="curriculum-page__experience-company">Novaera</span>
-                    <span className="curriculum-page__experience-period">May 2024 - Present</span>
+                    <Tag text="Novaera" variant="secondary" size="md" />
+                    <Tag text="May 2024 - Present" variant="secondary" size="md" />
                   </div>
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
@@ -127,8 +128,8 @@ export default function Curriculum() {
                 <div className="curriculum-page__card-content">
                   <h3 className="curriculum-page__experience-title">Freelance Software Developer</h3>
                   <div className="curriculum-page__experience-meta">
-                    <span className="curriculum-page__experience-company">Self-Employed</span>
-                    <span className="curriculum-page__experience-period">Aug 2022 - Present</span>
+                    <Tag text="Self-Employed" variant="secondary" size="md" />
+                    <Tag text="Aug 2022 - Present" variant="secondary" size="md" />
                   </div>
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
@@ -142,8 +143,8 @@ export default function Curriculum() {
                 <div className="curriculum-page__card-content">
                   <h3 className="curriculum-page__experience-title">Software Developer (Intern)</h3>
                   <div className="curriculum-page__experience-meta">
-                    <span className="curriculum-page__experience-company">INFOCOOP</span>
-                    <span className="curriculum-page__experience-period">Aug 2023 - Nov 2023</span>
+                    <Tag text="INFOCOOP" variant="secondary" size="md" />
+                    <Tag text="Aug 2023 - Nov 2023" variant="secondary" size="md" />
                   </div>
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
@@ -157,8 +158,8 @@ export default function Curriculum() {
                 <div className="curriculum-page__card-content">
                   <h3 className="curriculum-page__experience-title">Software Developer</h3>
                   <div className="curriculum-page__experience-meta">
-                    <span className="curriculum-page__experience-company">TI Recursos CR</span>
-                    <span className="curriculum-page__experience-period">Dec 2022 - Feb 2023</span>
+                    <Tag text="TI Recursos CR" variant="secondary" size="md" />
+                    <Tag text="Dec 2022 - Feb 2023" variant="secondary" size="md" />
                   </div>
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
@@ -182,7 +183,7 @@ export default function Curriculum() {
               <Card variant="default" className="curriculum-page__card">
                 <div className="curriculum-page__card-content">
                   <h3 className="curriculum-page__project-title">Novaera SaaS ERP</h3>
-                  <span className="curriculum-page__project-period">2024 - 2025</span>
+                  <Tag text="2024 - 2025" variant="secondary" size="md" />
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
                       Designed and co-developed an innovative SaaS ERP platform used by business clients. Integrated automation, analytics, and multi-module management with a strong focus on scalability and performance. Led a six-member engineering team ensuring code quality, maintainability, and clear technical documentation.
@@ -194,7 +195,7 @@ export default function Curriculum() {
               <Card variant="default" className="curriculum-page__card">
                 <div className="curriculum-page__card-content">
                   <h3 className="curriculum-page__project-title">Precision Seas ERP System</h3>
-                  <span className="curriculum-page__project-period">2025</span>
+                  <Tag text="2025" variant="secondary" size="md" />
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
                       Developed a complete ERP solution for a manufacturing company specializing in industrial parts. Implemented modules to manage resources and improve traceability and efficiency across operations through data and automation.
@@ -206,7 +207,7 @@ export default function Curriculum() {
               <Card variant="default" className="curriculum-page__card">
                 <div className="curriculum-page__card-content">
                   <h3 className="curriculum-page__project-title">ZETA Academia EdTech Platform</h3>
-                  <span className="curriculum-page__project-period">2024 - 2025</span>
+                  <Tag text="2024 - 2025" variant="secondary" size="md" />
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
                       Founded and led ZETA Academia, an educational startup offering courses in Artificial Intelligence, Python, Java, Excel, and more. Led a five-person team to design and co-develop the learning platform, which supports over <strong>1,000 students</strong> and <strong>30+ courses</strong>. Focused on performance, accessibility, and scalability, integrating user analytics and responsive design.
@@ -218,7 +219,7 @@ export default function Curriculum() {
               <Card variant="default" className="curriculum-page__card">
                 <div className="curriculum-page__card-content">
                   <h3 className="curriculum-page__project-title">Matemática Integral ERP & Automation System</h3>
-                  <span className="curriculum-page__project-period">2024</span>
+                  <Tag text="2024" variant="secondary" size="md" />
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
                       Built an ERP system to manage academic, financial, and operational processes for an educational institution. Integrated automation and reporting tools to simplify daily management.
@@ -230,7 +231,7 @@ export default function Curriculum() {
               <Card variant="default" className="curriculum-page__card">
                 <div className="curriculum-page__card-content">
                   <h3 className="curriculum-page__project-title">Demeter IoT Agriculture System</h3>
-                  <span className="curriculum-page__project-period">2024</span>
+                  <Tag text="2024" variant="secondary" size="md" />
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
                       Developed an IoT-based system for smart agriculture presented in a Nestlé innovation competition. Enabled real-time monitoring and automated irrigation using microcontrollers and sensors.
@@ -242,7 +243,7 @@ export default function Curriculum() {
               <Card variant="default" className="curriculum-page__card">
                 <div className="curriculum-page__card-content">
                   <h3 className="curriculum-page__project-title">INFOCOOP Education Platform Enhancement</h3>
-                  <span className="curriculum-page__project-period">2023</span>
+                  <Tag text="2023" variant="secondary" size="md" />
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
                       Improved the performance and usability of the institutional e-learning platform. Redesigned modules and applied optimization techniques to improve the user experience.
@@ -254,7 +255,7 @@ export default function Curriculum() {
               <Card variant="default" className="curriculum-page__card">
                 <div className="curriculum-page__card-content">
                   <h3 className="curriculum-page__project-title">Assistive Robotics Project for Elderly Care</h3>
-                  <span className="curriculum-page__project-period">2022</span>
+                  <Tag text="2022" variant="secondary" size="md" />
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
                       Led and collaborated with a 3-member team to design and program a robotic system that assists elderly and rehabilitation patients, presented at the World Robotics Olympiad. Focused on automation, safety, and human interaction through embedded systems.

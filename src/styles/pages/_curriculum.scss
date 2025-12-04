@@ -173,7 +173,9 @@
   &__card-content {
     @include flex;
     @include flex-column;
+    @include align-center;
     gap: var(--space-lg);
+    text-align: center;
 
     @include breakpoint-md {
       gap: var(--space-xl);
@@ -202,11 +204,10 @@
     line-height: var(--lh-relaxed);
     color: var(--color-primary);
     margin: 0;
-    text-align: left;
+    text-align: center;
 
     @include breakpoint-md {
       font-size: var(--fs-lg);
-      text-align: center;
     }
 
     strong {
@@ -285,6 +286,7 @@
     line-height: var(--lh-tight);
     color: var(--color-primary);
     margin: 0 0 var(--space-sm) 0;
+    text-align: center;
 
     @include breakpoint-md {
       font-size: var(--fs-2xl);
@@ -295,12 +297,13 @@
   &__experience-meta {
     @include flex;
     @include flex-column;
+    @include align-center;
     gap: var(--space-xs);
     margin-bottom: var(--space-md);
 
     @include breakpoint-md {
       @include flex-row;
-      @include justify-between;
+      @include justify-center;
       @include align-center;
       gap: var(--space-md);
     }
@@ -315,6 +318,7 @@
     border: var(--border-width-thin) solid var(--color-primary);
     border-radius: var(--radius-md);
     display: inline-block;
+    text-align: center;
 
     @include breakpoint-md {
       font-size: var(--fs-lg);
@@ -335,16 +339,19 @@
     font-size: var(--fs-sm);
     line-height: var(--lh-relaxed);
     color: var(--color-primary);
-    margin: var(--space-md) 0 0;
+    margin: var(--space-md) auto 0;
     padding: var(--space-md);
     background-color: var(--color-white);
     border-left: var(--border-width-base) solid var(--color-primary);
     border-radius: var(--radius-sm);
     font-style: italic;
+    text-align: center;
+    max-width: 100%;
 
     @include breakpoint-md {
       font-size: var(--fs-base);
       padding: var(--space-lg);
+      max-width: 90%;
     }
   }
 
@@ -368,6 +375,7 @@
     line-height: var(--lh-tight);
     color: var(--color-primary);
     margin: 0 0 var(--space-sm) 0;
+    text-align: center;
 
     @include breakpoint-md {
       font-size: var(--fs-xl);
@@ -384,7 +392,8 @@
     border: var(--border-width-thin) solid var(--color-primary);
     border-radius: var(--radius-md);
     display: inline-block;
-    margin-bottom: var(--space-md);
+    margin: 0 auto var(--space-md);
+    text-align: center;
 
     @include breakpoint-md {
       font-size: var(--fs-base);
