@@ -571,10 +571,10 @@
     }
 
     &:hover:not(:disabled) {
-      background-color: var(--color-button-primary-hover);
-      border-color: var(--color-button-primary-hover);
-      transform: translateY(calc(var(--space-xs) * -1));
-      @include shadow-lg;
+      background-color: var(--color-primary);
+      border-color: var(--color-primary);
+      transform: translateY(-1px);
+      @include shadow-md;
     }
 
     &:active:not(:disabled) {
