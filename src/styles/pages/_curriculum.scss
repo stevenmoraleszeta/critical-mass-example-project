@@ -406,6 +406,21 @@
     }
   }
 
+  &__project-links {
+    @include flex;
+    @include flex-row;
+    @include justify-center;
+    @include align-center;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+    flex-wrap: wrap;
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+    }
+  }
+
   &__project-period {
     font-size: var(--fs-sm);
     color: var(--color-primary);
