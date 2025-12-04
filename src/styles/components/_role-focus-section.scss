@@ -17,3 +17,14 @@
   }
 }
 
+// Role Focus Action Button
+.card-board.role-focus .card-board__action {
+  .role-focus__button {
+    min-width: 200px;
+
+    @include breakpoint-md {
+      min-width: 240px;
+    }
+  }
+}
+

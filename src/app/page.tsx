@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/sections/Hero';
 import CardBoard, { CardData } from '@/components/sections/CardBoard';
+import Button from '@/components/ui/Button';
 
 // Lazy load non-critical sections for better initial page load performance
 const KeyHighlightsSection = lazy(() => import('@/components/sections/KeyHighlightsSection'));
@@ -80,6 +81,18 @@ export default function Home() {
           storageKey="role-focus-cards-order"
           scrollTargetId="key-highlights"
           className="role-focus"
+          action={
+            <Button
+              variant="exit"
+              size="lg"
+              href="/this-project"
+              ariaLabel="View This Project"
+              prefetch={true}
+              className="role-focus__button"
+            >
+              View This Project
+            </Button>
+          }
         />
         <Suspense fallback={null}>
         <KeyHighlightsSection />
