@@ -103,14 +103,32 @@ export function useLocalStorage<T>(
     }
 
     const handleStorageChange = (e: StorageEvent) => {
-      if (e.key === key && e.newValue !== null) {
-        try {
-          setStoredValue(JSON.parse(e.newValue) as T);
-        } catch (error) {
-          console.warn(`Error parsing localStorage value for key "${key}":`, error);
+      if (e.key !== key) {
+        return;
+      }
+
+      try {
+        let newValue: T | null = null;
+        
+        if (e.newValue !== null) {
+          newValue = JSON.parse(e.newValue) as T;
+        } else {
+          newValue = defaultValue ?? null;
         }
-      } else if (e.key === key && e.newValue === null) {
-        setStoredValue(defaultValue ?? null);
+
+        // Only update if the value actually changed to prevent infinite loops
+        setStoredValue((currentValue) => {
+          const currentString = currentValue === null ? null : JSON.stringify(currentValue);
+          const newString = newValue === null ? null : JSON.stringify(newValue);
+          
+          if (currentString === newString) {
+            return currentValue;
+          }
+          
+          return newValue;
+        });
+      } catch (error) {
+        console.warn(`Error parsing localStorage value for key "${key}":`, error);
       }
     };
 
