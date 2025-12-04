@@ -40,11 +40,13 @@ This portfolio is designed as a **live case study** demonstrating:
 
 **Before working on this project, read these files:**
 
-1. **[`CONSIDERACIONES_DESARROLLO.md`](./CONSIDERACIONES_DESARROLLO.md)** ⭐ **START HERE** – Complete development guidelines, standards, and Critical Mass requirements
-2. **[`TODO.md`](./TODO.md)** – Complete project checklist with all phases and tasks
-3. **[`PROJECT-IDEA.md`](./PROJECT-IDEA.md)** – Full project specifications, architecture, and requirements
-4. **[`PROJECT-CONTENT.md`](./PROJECT-CONTENT.md)** – **Official copy and content specifications for all pages** (single source of truth)
-5. **[`BEM_METHODOLOGY_GUIDE.md`](./BEM_METHODOLOGY_GUIDE.md)** – Complete BEM methodology guide and Critical Mass compliance review
+1. **[`docs/CONSIDERACIONES_DESARROLLO.md`](./docs/CONSIDERACIONES_DESARROLLO.md)** ⭐ **START HERE** – Complete development guidelines, standards, and Critical Mass requirements
+2. **[`docs/TODO.md`](./docs/TODO.md)** – Complete project checklist with all phases and tasks
+3. **[`docs/PROJECT-IDEA.md`](./docs/PROJECT-IDEA.md)** – Full project specifications, architecture, and requirements
+4. **[`docs/PROJECT-CONTENT.md`](./docs/PROJECT-CONTENT.md)** – **Official copy and content specifications for all pages** (single source of truth)
+5. **[`docs/BEM_METHODOLOGY_GUIDE.md`](./docs/BEM_METHODOLOGY_GUIDE.md)** – Complete BEM methodology guide and Critical Mass compliance review
+6. **[`docs/JOB-INFO.md`](./docs/JOB-INFO.md)** – Complete job posting information for Developer, Front End position at Critical Mass (San Jose, Costa Rica) – Role description, responsibilities, requirements, and benefits
+7. **[`docs/MY-PROFILE.md`](./docs/MY-PROFILE.md)** – Complete professional profile, tech stack, featured projects, professional experience, and CV summary
 
 ---
 
@@ -206,7 +208,7 @@ Contact page with:
 - **Online Profiles** – GitHub, LinkedIn, Instagram links
 - **Closing Message** – Professional closing with quote
 
-> **Note:** Contact page is in progress. See [`TODO.md`](./TODO.md) Phase 11 for details.
+> **Note:** Contact page is in progress. See [`docs/TODO.md`](./docs/TODO.md) Phase 11 for details.
 
 ---
 
@@ -261,7 +263,7 @@ All component styles follow **BEM (Block Element Modifier)** naming conventions:
 - Never nest blocks inside blocks (avoid `.card .button`, use `.card__button`)
 - Modifiers are independent: `.btn.btn--primary` (not just `.btn--primary`)
 
-See [`BEM_METHODOLOGY_GUIDE.md`](./BEM_METHODOLOGY_GUIDE.md) for complete documentation.
+See [`docs/BEM_METHODOLOGY_GUIDE.md`](./docs/BEM_METHODOLOGY_GUIDE.md) for complete documentation.
 
 ### SMACSS Architecture
 
@@ -326,7 +328,7 @@ The project includes comprehensive tests:
 
 Test files are located in `src/tests/` and `src/__tests__/`.
 
-See [`TESTING.md`](./TESTING.md) for detailed testing documentation.
+See [`docs/TESTING.md`](./docs/TESTING.md) for detailed testing documentation.
 
 ---
 
@@ -388,8 +390,8 @@ Before submitting code, verify:
 - [ ] ✅ No **console.logs** or debug code
 - [ ] ✅ No **unnecessary comments** (only when really needed)
 - [ ] ✅ Code is **clean and well-organized**
-- [ ] ✅ Follows exact specifications from `PROJECT-IDEA.md` and `PROJECT-CONTENT.md`
-- [ ] ✅ Verified against `TODO.md` for current status
+- [ ] ✅ Follows exact specifications from `docs/PROJECT-IDEA.md` and `docs/PROJECT-CONTENT.md`
+- [ ] ✅ Verified against `docs/TODO.md` for current status
 
 ### SCSS/Styles Standards
 
@@ -412,7 +414,7 @@ Before submitting code, verify:
 - **Only** use comments when really necessary (complex logic, non-obvious design decisions)
 - Code should be **self-explanatory** through descriptive names
 
-See [`CONSIDERACIONES_DESARROLLO.md`](./CONSIDERACIONES_DESARROLLO.md) for complete development guidelines.
+See [`docs/CONSIDERACIONES_DESARROLLO.md`](./docs/CONSIDERACIONES_DESARROLLO.md) for complete development guidelines.
 
 ---
 
@@ -434,12 +436,12 @@ See [`CONSIDERACIONES_DESARROLLO.md`](./CONSIDERACIONES_DESARROLLO.md) for compl
 
 ## 📚 Documentation
 
-- **[`CONSIDERACIONES_DESARROLLO.md`](./CONSIDERACIONES_DESARROLLO.md)** ⭐ – Development guidelines and standards (Spanish)
-- **[`BEM_METHODOLOGY_GUIDE.md`](./BEM_METHODOLOGY_GUIDE.md)** – Complete BEM methodology guide and Critical Mass compliance review
-- **[`TESTING.md`](./TESTING.md)** – Testing guide and best practices
-- **[`TODO.md`](./TODO.md)** – Complete project checklist with all phases
-- **[`PROJECT-IDEA.md`](./PROJECT-IDEA.md)** – Full project specifications and requirements
-- **[`PROJECT-CONTENT.md`](./PROJECT-CONTENT.md)** – **Official copy and content specifications for all pages** (single source of truth)
+- **[`docs/CONSIDERACIONES_DESARROLLO.md`](./docs/CONSIDERACIONES_DESARROLLO.md)** ⭐ – Development guidelines and standards (Spanish)
+- **[`docs/BEM_METHODOLOGY_GUIDE.md`](./docs/BEM_METHODOLOGY_GUIDE.md)** – Complete BEM methodology guide and Critical Mass compliance review
+- **[`docs/TESTING.md`](./docs/TESTING.md)** – Testing guide and best practices
+- **[`docs/TODO.md`](./docs/TODO.md)** – Complete project checklist with all phases
+- **[`docs/PROJECT-IDEA.md`](./docs/PROJECT-IDEA.md)** – Full project specifications and requirements
+- **[`docs/PROJECT-CONTENT.md`](./docs/PROJECT-CONTENT.md)** – **Official copy and content specifications for all pages** (single source of truth)
 
 ---
 
@@ -470,7 +472,7 @@ See [`CONSIDERACIONES_DESARROLLO.md`](./CONSIDERACIONES_DESARROLLO.md) for compl
 - Additional sections for This Project page (How This Portfolio Is Built, Accessibility/Performance, Tooling/Testing)
 - Additional testing coverage
 
-See [`TODO.md`](./TODO.md) for complete development checklist.
+See [`docs/TODO.md`](./docs/TODO.md) for complete development checklist.
 
 ---
 

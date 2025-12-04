@@ -1,0 +1,359 @@
+// ============================================================================
+// Cover Letter Page Styles
+// Following SMACSS pages layer and BEM methodology
+// Styles for /cover-letter page
+// ============================================================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ============================================================================
+// Cover Letter Page Container
+// ============================================================================
+
+.cover-letter-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: auto;
+
+  &__container {
+    position: relative;
+    z-index: 3;
+    @include container;
+    max-width: var(--container-xl);
+    padding: var(--space-lg);
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakpoint-md {
+      padding: var(--space-xl);
+    }
+
+    @include breakpoint-lg {
+      padding: var(--space-2xl);
+    }
+  }
+
+  // ============================================================================
+  // Hero Section
+  // ============================================================================
+
+  &__hero {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    padding-top: var(--space-2xl);
+    scroll-margin-top: calc(var(--navbar-height-mobile) + var(--space-md));
+
+    @include breakpoint-md {
+      margin-bottom: var(--space-3xl);
+      padding-top: var(--space-3xl);
+      scroll-margin-top: calc(var(--navbar-height-desktop) + var(--space-md));
+    }
+  }
+
+  &__title {
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    color: var(--color-white);
+    margin: 0 0 var(--space-lg) 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    @include breakpoint-md {
+      font-size: var(--fs-4xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    @include breakpoint-lg {
+      font-size: var(--fs-40);
+      line-height: var(--lh-48);
+    }
+  }
+
+  &__intro {
+    font-size: var(--fs-base);
+    line-height: var(--lh-relaxed);
+    color: var(--color-white);
+    margin: 0;
+    max-width: var(--container-md);
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+    @include breakpoint-md {
+      font-size: var(--fs-lg);
+    }
+
+    strong {
+      font-weight: var(--fw-bold);
+      color: var(--color-white);
+    }
+  }
+
+  // ============================================================================
+  // Section Styles
+  // ============================================================================
+
+  &__section {
+    margin-bottom: var(--space-2xl);
+    scroll-margin-top: calc(var(--navbar-height-mobile) + var(--space-md));
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+
+    @include breakpoint-md {
+      margin-bottom: var(--space-3xl);
+      scroll-margin-top: calc(var(--navbar-height-desktop) + var(--space-md));
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--quotes {
+      text-align: center;
+      margin-bottom: var(--space-3xl);
+      
+      .cover-letter-page__section-title {
+        color: var(--color-white);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  &__section-title {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    color: var(--color-primary);
+    margin: 0 0 var(--space-lg) 0;
+    text-align: center;
+
+    @include breakpoint-md {
+      font-size: var(--fs-2xl);
+      margin-bottom: var(--space-xl);
+    }
+  }
+
+  // ============================================================================
+  // Card Styles
+  // ============================================================================
+
+  &__card {
+    width: 100%;
+    min-height: auto;
+    background-color: var(--color-accent);
+    border: var(--border-width-thin) solid var(--color-primary);
+    border-radius: 0;
+    @include shadow-sm;
+    @include transition-multiple(transform, box-shadow, border-width, background-color);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    @include levitate(-10px, 4s, ease-in-out, 0s);
+
+    &:hover {
+      transform: translateY(-12px) scale(1.05) translateZ(0);
+      box-shadow: 0 12px 24px -6px rgba(0, 0, 255, 0.25),
+                  0 8px 16px -4px rgba(0, 0, 255, 0.15);
+      border-width: var(--border-width-base);
+      background-color: #FFFF33;
+      animation-play-state: paused;
+    }
+
+    &--closing {
+      .cover-letter-page__card-content {
+        text-align: center;
+      }
+    }
+  }
+
+  &__card-content {
+    @include flex;
+    @include flex-column;
+    gap: var(--space-lg);
+    width: 100%;
+
+    @include breakpoint-md {
+      gap: var(--space-xl);
+    }
+  }
+
+  // ============================================================================
+  // Content Styles
+  // ============================================================================
+
+  &__content {
+    @include flex;
+    @include flex-column;
+    gap: var(--space-lg);
+    width: 100%;
+    max-width: var(--container-md);
+    margin: 0 auto;
+
+    @include breakpoint-md {
+      gap: var(--space-xl);
+    }
+  }
+
+  &__text {
+    font-size: var(--fs-base);
+    line-height: var(--lh-relaxed);
+    color: var(--color-primary);
+    margin: 0;
+    text-align: left;
+
+    @include breakpoint-md {
+      font-size: var(--fs-lg);
+      text-align: center;
+    }
+
+    strong {
+      font-weight: var(--fw-bold);
+      color: var(--color-primary);
+    }
+
+    &--closing {
+      font-size: var(--fs-lg);
+      font-weight: var(--fw-medium);
+      margin-top: var(--space-md);
+
+      @include breakpoint-md {
+        font-size: var(--fs-xl);
+      }
+    }
+  }
+
+  // ============================================================================
+  // Quotes Section
+  // ============================================================================
+
+  &__quotes-container {
+    @include flex;
+    @include flex-column;
+    gap: var(--space-xl);
+    width: 100%;
+    max-width: var(--container-lg);
+    margin: 0 auto;
+
+    @include breakpoint-md {
+      gap: var(--space-2xl);
+      @include flex-row;
+      @include justify-center;
+      @include align-stretch;
+    }
+  }
+
+  &__quote {
+    margin: 0;
+    padding: var(--space-lg);
+    background-color: var(--color-accent);
+    border: var(--border-width-thin) solid var(--color-primary);
+    border-radius: 0;
+    @include flex;
+    @include flex-column;
+    gap: var(--space-sm);
+    @include shadow-sm;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    @include levitate(-8px, 4s, ease-in-out, 0s);
+    @include transition-multiple(transform, box-shadow, border-width, background-color);
+    width: 100%;
+
+    @include breakpoint-md {
+      padding: var(--space-xl);
+      max-width: 500px;
+    }
+
+    &:hover {
+      transform: translateY(-12px) scale(1.05) translateZ(0);
+      box-shadow: 0 12px 24px -6px rgba(0, 0, 255, 0.25),
+                  0 8px 16px -4px rgba(0, 0, 255, 0.15);
+      border-width: var(--border-width-base);
+      background-color: #FFFF33;
+      animation-play-state: paused;
+    }
+
+    &:nth-child(2) {
+      @include levitate(-8px, 4s, ease-in-out, 1s);
+    }
+  }
+
+  &__quote-text {
+    font-size: var(--fs-lg);
+    font-style: italic;
+    line-height: var(--lh-relaxed);
+    color: var(--color-primary);
+    margin: 0;
+    font-weight: var(--fw-medium);
+
+    @include breakpoint-md {
+      font-size: var(--fs-xl);
+    }
+  }
+
+  &__quote-author {
+    font-size: var(--fs-base);
+    font-style: normal;
+    line-height: var(--lh-relaxed);
+    color: var(--color-primary);
+    margin: 0;
+    text-align: right;
+    font-weight: var(--fw-normal);
+
+    @include breakpoint-md {
+      font-size: var(--fs-lg);
+    }
+  }
+}
+
+// ============================================================================
+// Accessibility Enhancements
+// ============================================================================
+
+.cover-letter-page {
+  &__section {
+    &:focus-within {
+      outline: none;
+    }
+  }
+}
+
+// ============================================================================
+// Responsive Adjustments
+// ============================================================================
+
+@include breakpoint-max-sm {
+  .cover-letter-page {
+    &__container {
+      padding: var(--space-md);
+    }
+
+    &__section {
+      margin-bottom: var(--space-xl);
+    }
+  }
+}
+
+// ============================================================================
+// Print Styles
+// ============================================================================
+
+@media print {
+  .cover-letter-page {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+
+    &__section {
+      margin-bottom: var(--space-lg);
+      page-break-inside: avoid;
+    }
+
+    &__quotes-container {
+      @include flex-column;
+      gap: var(--space-sm);
+    }
+  }
+}
+

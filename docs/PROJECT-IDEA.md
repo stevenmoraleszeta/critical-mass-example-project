@@ -49,6 +49,8 @@ A professional portfolio showcasing my experience as a Full Stack Software Engin
 - **Full Stack** expertise: Front-end, Back-end, Databases, APIs, Cloud deployment
 - Based in **Costa Rica**, ready to work from office 3+ days a week
 
+> **Note:** For complete professional profile, tech stack, featured projects, professional experience, and CV summary, see [`MY-PROFILE.md`](./MY-PROFILE.md).
+
 ### What I Want to Demonstrate
 
 **My Real-World Experience:**
@@ -1352,6 +1354,8 @@ When I have it deployed on Vercel:
 ---
 
 ## 11. Job Posting - Critical Mass
+
+> **Note:** The complete and official job posting information is now available in [`JOB-INFO.md`](./JOB-INFO.md). This section provides a reference copy. Always refer to `JOB-INFO.md` for the most up-to-date job posting details.
 
 **Position:** Developer, Front End  
 **Location:** San Jose, Costa Rica

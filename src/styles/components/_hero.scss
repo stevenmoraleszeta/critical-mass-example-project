@@ -44,10 +44,11 @@
   
   &__container {
     position: relative;
-    z-index: 3;
+    z-index: 4;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
+    pointer-events: none;
     @include flex;
     @include flex-column;
     @include align-center;
@@ -66,6 +67,7 @@
     width: 100%;
     max-width: 100%;
     text-align: center;
+    pointer-events: auto;
     
     @include breakpoint-lg {
       text-align: center;
@@ -176,6 +178,7 @@
     position: relative;
     width: 100%;
     max-width: 100%;
+    pointer-events: auto;
     @include flex;
     @include align-center;
     @include justify-center;
