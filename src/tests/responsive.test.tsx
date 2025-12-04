@@ -60,7 +60,6 @@ describe('Responsive Design Tests', () => {
         </Card>
       );
       expect(container).toBeTruthy();
-      // Card should have base class for responsive styling
       const card = screen.getByText('Responsive Card').closest('.card');
       expect(card).toBeTruthy();
     });

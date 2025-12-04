@@ -47,12 +47,11 @@ export function useDragAndDrop<T extends DragAndDropItem>({
   const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
   const [showToast, setShowToast] = useState(false);
 
-  // Always enable sync if we have a storageKey, even if enabled is false initially
-  // This ensures we can read the saved order
+  
   const { value: savedOrder, setValue: setSavedOrder } = useLocalStorage<string[]>(
     storageKey || '', 
     {
-      sync: !!storageKey, // Always sync if we have a key
+      sync: !!storageKey, 
     }
   );
 
@@ -61,7 +60,6 @@ export function useDragAndDrop<T extends DragAndDropItem>({
     [initialItems]
   );
 
-  // Helper function to order items based on saved order
   const getOrderedItems = useCallback((order: string[] | null, items: T[]): T[] => {
     if (!order || order.length === 0) {
       return items;
@@ -77,21 +75,17 @@ export function useDragAndDrop<T extends DragAndDropItem>({
     return [...orderedItems, ...newItems];
   }, []);
 
-  // Initialize items state - on client, try to load from localStorage
   const [items, setItems] = useState<T[]>(() => {
-    // On server, always use initial items
     if (typeof window === 'undefined') {
       return initialItems;
     }
     
-    // On client, if we have storage key and enabled, try to load saved order
     if (storageKey && enabled) {
       try {
         const saved = window.localStorage.getItem(storageKey);
         if (saved) {
           const savedOrder = JSON.parse(saved) as string[];
           if (Array.isArray(savedOrder) && savedOrder.length > 0) {
-            // Apply the same ordering logic inline to avoid dependency issues
             const orderedItems = savedOrder
               .map((id) => initialItems.find((item) => item.id === id))
               .filter((item): item is T => item !== undefined);
@@ -115,46 +109,27 @@ export function useDragAndDrop<T extends DragAndDropItem>({
   const skipSaveRef = useRef(false);
   const previousInitialItemsIdsRef = useRef<string>('');
 
-  // Mark component as mounted after initial render to prevent hydration mismatch
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  // Sync with savedOrder from useLocalStorage after mount
   useEffect(() => {
     if (!isMounted || !storageKey || !enabled) {
       return;
     }
 
-    // If no saved order, ensure we're using initial items
     if (!savedOrder || savedOrder.length === 0) {
-      const currentItemsOrder = items.map((item) => item.id).join(',');
-      const initialItemsOrder = initialItems.map((item) => item.id).join(',');
-      
-      // Only update if current order is different from initial
-      if (currentItemsOrder !== initialItemsOrder) {
-        isInitializingRef.current = true;
-        skipSaveRef.current = true;
+      if (initialItemsIds !== previousInitialItemsIdsRef.current) {
         previousInitialItemsIdsRef.current = initialItemsIds;
-        
         setItems(initialItems);
-        
-        setTimeout(() => {
-          isInitializingRef.current = false;
-          skipSaveRef.current = false;
-        }, 0);
-      } else if (initialItemsIds !== previousInitialItemsIdsRef.current) {
-        previousInitialItemsIdsRef.current = initialItemsIds;
       }
       return;
     }
 
-    // Apply the saved order
     const orderedItems = getOrderedItems(savedOrder, initialItems);
     const orderedItemsOrder = orderedItems.map((item) => item.id).join(',');
     const currentItemsOrder = items.map((item) => item.id).join(',');
 
-    // Only update if the order is different
     if (orderedItemsOrder !== currentItemsOrder) {
       isInitializingRef.current = true;
       skipSaveRef.current = true;
@@ -169,8 +144,6 @@ export function useDragAndDrop<T extends DragAndDropItem>({
     }
   }, [isMounted, enabled, storageKey, savedOrder, initialItems, initialItemsIds, getOrderedItems, items]);
 
-  // Save order to localStorage, but only if not initializing and order actually changed
-  // Note: This effect is a fallback. Primary saving happens in handleDrop
   useEffect(() => {
     if (!isMounted || !enabled || !storageKey || items.length === 0 || isInitializingRef.current || skipSaveRef.current) {
       return;
@@ -181,8 +154,6 @@ export function useDragAndDrop<T extends DragAndDropItem>({
     const currentSavedOrder = savedOrder || [];
     const currentSavedOrderString = currentSavedOrder.join(',');
 
-    // Only update if order actually changed
-    // This handles cases where items change outside of drag and drop
     if (orderString !== currentSavedOrderString) {
       setSavedOrder(order);
     }
@@ -230,7 +201,6 @@ export function useDragAndDrop<T extends DragAndDropItem>({
     setDraggedIndex(null);
     setDragOverIndex(null);
     
-    // Save order immediately after drop
     if (storageKey && enabled) {
       const order = newItems.map((item) => item.id);
       setSavedOrder(order);
@@ -247,12 +217,10 @@ export function useDragAndDrop<T extends DragAndDropItem>({
   const handleReset = useCallback(() => {
     if (!enabled) return;
     
-    // Clear saved order from localStorage
     if (storageKey) {
       setSavedOrder(null);
     }
     
-    // Reset items to initial order immediately
     isInitializingRef.current = true;
     skipSaveRef.current = true;
     previousInitialItemsIdsRef.current = initialItemsIds;
@@ -260,7 +228,6 @@ export function useDragAndDrop<T extends DragAndDropItem>({
     setItems(initialItems);
     setShowToast(false);
     
-    // Allow saving again after a brief delay
     setTimeout(() => {
       isInitializingRef.current = false;
       skipSaveRef.current = false;

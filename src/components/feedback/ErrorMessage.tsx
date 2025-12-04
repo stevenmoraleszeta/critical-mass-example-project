@@ -3,52 +3,14 @@
 import React from 'react';
 import Button from '@/components/ui/Button';
 
-/**
- * ErrorMessage Component
- * 
- * A reusable error message component for displaying error states.
- * Supports error message display with optional retry button.
- * 
- * @example
- * ```tsx
- * <ErrorMessage message="Something went wrong" />
- * 
- * <ErrorMessage 
- *   message="Failed to load content" 
- *   onRetry={() => refetch()} 
- * />
- * 
- * <ErrorMessage 
- *   message="Network error" 
- *   onRetry={() => retry()} 
- *   retryLabel="Try Again"
- * />
- * ```
- */
-
 export interface ErrorMessageProps {
-  /** Error message to display */
   message: string;
-  /** Optional retry button click handler */
   onRetry?: () => void;
-  /** Optional custom label for retry button (default: "Retry") */
   retryLabel?: string;
-  /** Error message size: sm, md, or lg */
   size?: 'sm' | 'md' | 'lg';
-  /** Additional CSS classes */
   className?: string;
 }
 
-/**
- * ErrorMessage Component Implementation
- * 
- * Displays an error message with optional retry functionality.
- * Follows Critical Mass accessibility requirements:
- * - Semantic HTML with proper ARIA attributes
- * - Role="alert" for error announcements
- * - Proper heading hierarchy
- * - Keyboard accessible retry button
- */
 export default function ErrorMessage({
   message,
   onRetry,
@@ -56,7 +18,6 @@ export default function ErrorMessage({
   size = 'md',
   className = '',
 }: ErrorMessageProps) {
-  // Build BEM class names
   const baseClass = 'error-message';
   const sizeClass = `error-message--${size}`;
   
@@ -93,7 +54,7 @@ export default function ErrorMessage({
         {onRetry && (
           <div className="error-message__actions">
             <Button
-              variant="highlight"
+              variant="primary"
               size={size === 'sm' ? 'sm' : size === 'lg' ? 'lg' : 'md'}
               onClick={onRetry}
               aria-label={`${retryLabel}: ${message}`}

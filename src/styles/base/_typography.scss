@@ -102,7 +102,7 @@ $line-height-loose: 2;
 // Fallback to SASS variable $font-family-mono ensures Roboto Mono is used throughout
 html {
   font-family: var(--font-mono, #{$font-family-mono});
-  font-size: 16px; // Base font size for rem calculations
+  font-size: 16px; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

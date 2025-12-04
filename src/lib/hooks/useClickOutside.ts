@@ -1,18 +1,18 @@
 import { useEffect, RefObject } from 'react';
 
-export interface UseClickOutsideOptions {
-  ref: RefObject<HTMLElement>;
+export interface UseClickOutsideOptions<T extends HTMLElement = HTMLElement> {
+  ref: RefObject<T | null>;
   handler: (event: MouseEvent | TouchEvent) => void;
   enabled?: boolean;
   delay?: number;
 }
 
-export function useClickOutside({
+export function useClickOutside<T extends HTMLElement = HTMLElement>({
   ref,
   handler,
   enabled = true,
   delay = 0,
-}: UseClickOutsideOptions): void {
+}: UseClickOutsideOptions<T>): void {
   useEffect(() => {
     if (!enabled) return;
 

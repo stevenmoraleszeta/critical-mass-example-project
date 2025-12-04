@@ -13,14 +13,12 @@ import Loader from "@/components/feedback/Loader";
 import ErrorMessage from "@/components/feedback/ErrorMessage";
 import Toast from "@/components/feedback/Toast";
 import FeatureCard from "@/components/ui/FeatureCard";
-// Styles are now in SCSS: src/styles/pages/_components.scss
 
 export default function UILibrary() {
   const handleClick = () => {
     alert("Button clicked!");
   };
 
-  // Input state management
   const [textValue, setTextValue] = React.useState('');
   const [emailValue, setEmailValue] = React.useState('');
   const [searchValue, setSearchValue] = React.useState('');
@@ -28,27 +26,22 @@ export default function UILibrary() {
   const [emailError, setEmailError] = React.useState('');
   const [requiredValue, setRequiredValue] = React.useState('');
 
-  // Select state management
   const [categoryValue, setCategoryValue] = React.useState('all');
   const [statusValue, setStatusValue] = React.useState('live');
   const [requiredSelectValue, setRequiredSelectValue] = React.useState('');
 
-  // Toggle state management
   const [darkMode, setDarkMode] = React.useState(false);
   const [notifications, setNotifications] = React.useState(true);
   const [autoSave, setAutoSave] = React.useState(false);
   
-  // Usage examples toggle states
   const [showLive, setShowLive] = React.useState(false);
   const [emailAlerts, setEmailAlerts] = React.useState(true);
   const [publicProfile, setPublicProfile] = React.useState(false);
 
-  // Error message handlers
   const handleRetry = () => {
     alert("Retry clicked!");
   };
 
-  // Toast state management
   const [toasts, setToasts] = React.useState<{
     id: string;
     message: string;
@@ -78,7 +71,6 @@ export default function UILibrary() {
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setEmailValue(value);
-    // Simple email validation
     if (value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
       setEmailError('Please enter a valid email address');
     } else {
@@ -100,7 +92,6 @@ export default function UILibrary() {
           <section aria-labelledby="button-showcase-title">
             <h2 id="button-showcase-title">Button Component Showcase</h2>
           
-          {/* Variants Section */}
           <section>
             <h3>Variants</h3>
             <div className="components-page__button-group">
@@ -119,7 +110,6 @@ export default function UILibrary() {
             </div>
           </section>
 
-          {/* Sizes Section */}
           <section>
             <h3>Sizes</h3>
             <div className="components-page__button-group components-page__button-group--align-center">
@@ -135,7 +125,6 @@ export default function UILibrary() {
             </div>
           </section>
 
-          {/* All Variants with All Sizes */}
           <section>
             <h3>All Variants × All Sizes</h3>
             <div className="components-page__button-group components-page__button-group--vertical">
@@ -174,7 +163,6 @@ export default function UILibrary() {
             </div>
           </section>
 
-          {/* States Section */}
           <section>
             <h3>States</h3>
             <div className="components-page__button-group">
@@ -184,7 +172,6 @@ export default function UILibrary() {
             </div>
           </section>
 
-          {/* Link Buttons Section */}
           <section>
             <h3>Link Buttons</h3>
             <div className="components-page__button-group">
@@ -195,7 +182,6 @@ export default function UILibrary() {
             </div>
           </section>
 
-          {/* Accessibility Section */}
           <section>
             <h3>Accessibility</h3>
             <div className="components-page__button-group">
@@ -218,11 +204,9 @@ export default function UILibrary() {
           </section>
           </section>
 
-          {/* Card Component Showcase */}
           <section aria-labelledby="card-showcase-title">
             <h2 id="card-showcase-title" className="components-page__section-title">Card Component Showcase</h2>
             
-            {/* Variants Section */}
             <section>
               <h3>Variants</h3>
               <div className="components-page__card-group">
@@ -244,7 +228,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Cards with Images */}
             <section>
               <h3>Cards with Images</h3>
               <div className="components-page__card-group">
@@ -284,7 +267,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Cards with Footer */}
             <section>
               <h3>Cards with Footer</h3>
               <div className="components-page__card-group">
@@ -321,7 +303,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Cards with Children */}
             <section>
               <h3>Cards with Custom Children</h3>
               <div className="components-page__card-group">
@@ -348,7 +329,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Complete Cards */}
             <section>
               <h3>Complete Cards (All Features)</h3>
               <div className="components-page__card-group">
@@ -391,11 +371,9 @@ export default function UILibrary() {
             </section>
           </section>
 
-          {/* Tag Component Showcase */}
           <section aria-labelledby="tag-showcase-title">
             <h2 id="tag-showcase-title" className="components-page__section-title">Tag Component Showcase</h2>
             
-            {/* Variants Section */}
             <section>
               <h3>Variants</h3>
               <div className="components-page__tag-group">
@@ -405,7 +383,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Sizes Section */}
             <section>
               <h3>Sizes</h3>
               <div className="components-page__tag-group components-page__tag-group--align-center">
@@ -414,7 +391,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* All Variants with All Sizes */}
             <section>
               <h3>All Variants × All Sizes</h3>
               <div className="components-page__tag-group components-page__tag-group--vertical">
@@ -442,7 +418,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Usage Examples */}
             <section>
               <h3>Usage Examples</h3>
               <div className="components-page__tag-examples">
@@ -476,11 +451,9 @@ export default function UILibrary() {
             </section>
           </section>
 
-          {/* Badge Component Showcase */}
           <section aria-labelledby="badge-showcase-title">
             <h2 id="badge-showcase-title" className="components-page__section-title">Badge Component Showcase</h2>
             
-            {/* Status Variants Section */}
             <section>
               <h3>Status Variants</h3>
               <div className="components-page__badge-group">
@@ -490,7 +463,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* All Statuses Section */}
             <section>
               <h3>All Status Types</h3>
               <div className="components-page__badge-group components-page__badge-group--align-center">
@@ -500,7 +472,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Usage Examples */}
             <section>
               <h3>Usage Examples</h3>
               <div className="components-page__badge-examples">
@@ -541,11 +512,9 @@ export default function UILibrary() {
             </section>
           </section>
 
-          {/* Input Component Showcase */}
           <section aria-labelledby="input-showcase-title">
             <h2 id="input-showcase-title" className="components-page__section-title">Input Component Showcase</h2>
             
-            {/* Input Types Section */}
             <section>
               <h3>Input Types</h3>
               <div className="components-page__input-group">
@@ -585,7 +554,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Required Inputs Section */}
             <section>
               <h3>Required Inputs</h3>
               <div className="components-page__input-group">
@@ -610,8 +578,7 @@ export default function UILibrary() {
                 />
               </div>
             </section>
-
-            {/* Error States Section */}
+            
             <section>
               <h3>Error States</h3>
               <div className="components-page__input-group">
@@ -636,7 +603,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* All States Combined */}
             <section>
               <h3>All States Combined</h3>
               <div className="components-page__input-group">
@@ -680,11 +646,9 @@ export default function UILibrary() {
             </section>
           </section>
 
-          {/* Select Component Showcase */}
           <section aria-labelledby="select-showcase-title">
             <h2 id="select-showcase-title" className="components-page__section-title">Select Component Showcase</h2>
             
-            {/* Basic Select Section */}
             <section>
               <h3>Basic Select</h3>
               <div className="components-page__input-group">
@@ -715,7 +679,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Required Select Section */}
             <section>
               <h3>Required Select</h3>
               <div className="components-page__input-group">
@@ -735,7 +698,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Error States Section */}
             <section>
               <h3>Error States</h3>
               <div className="components-page__input-group">
@@ -767,7 +729,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Usage Examples */}
             <section>
               <h3>Usage Examples</h3>
               <div className="components-page__input-group">
@@ -800,11 +761,9 @@ export default function UILibrary() {
             </section>
           </section>
 
-          {/* Toggle Component Showcase */}
           <section aria-labelledby="toggle-showcase-title">
             <h2 id="toggle-showcase-title" className="components-page__section-title">Toggle Component Showcase</h2>
             
-            {/* Basic Toggle Section */}
             <section>
               <h3>Basic Toggle</h3>
               <div className="components-page__input-group">
@@ -829,7 +788,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Toggle States Section */}
             <section>
               <h3>Toggle States</h3>
               <div className="components-page__input-group">
@@ -862,7 +820,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Usage Examples */}
             <section>
               <h3>Usage Examples</h3>
               <div className="components-page__input-group">
@@ -888,11 +845,9 @@ export default function UILibrary() {
             </section>
           </section>
 
-          {/* Loader Component Showcase */}
           <section aria-labelledby="loader-showcase-title">
             <h2 id="loader-showcase-title" className="components-page__section-title">Loader Component Showcase</h2>
             
-            {/* Basic Loader Section */}
             <section>
               <h3>Basic Loader</h3>
               <div className="components-page__loader-group">
@@ -902,7 +857,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Loader Sizes Section */}
             <section>
               <h3>Loader Sizes</h3>
               <div className="components-page__loader-group">
@@ -912,7 +866,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Loader Without Text */}
             <section>
               <h3>Loader Without Text</h3>
               <div className="components-page__loader-group">
@@ -922,7 +875,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Usage Examples */}
             <section>
               <h3>Usage Examples</h3>
               <div className="components-page__loader-examples">
@@ -942,11 +894,9 @@ export default function UILibrary() {
             </section>
           </section>
 
-          {/* ErrorMessage Component Showcase */}
           <section aria-labelledby="error-showcase-title">
             <h2 id="error-showcase-title" className="components-page__section-title">ErrorMessage Component Showcase</h2>
             
-            {/* Basic Error Message Section */}
             <section>
               <h3>Basic Error Message</h3>
               <div className="components-page__error-group">
@@ -956,7 +906,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Error Message with Retry Section */}
             <section>
               <h3>Error Message with Retry Button</h3>
               <div className="components-page__error-group">
@@ -977,7 +926,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Error Message Sizes Section */}
             <section>
               <h3>Error Message Sizes</h3>
               <div className="components-page__error-group">
@@ -999,7 +947,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Error Message Without Retry */}
             <section>
               <h3>Error Message Without Retry</h3>
               <div className="components-page__error-group">
@@ -1009,7 +956,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Usage Examples */}
             <section>
               <h3>Usage Examples</h3>
               <div className="components-page__error-examples">
@@ -1039,11 +985,9 @@ export default function UILibrary() {
             </section>
           </section>
 
-          {/* Toast Component Showcase */}
           <section>
             <h2 className="components-page__section-title">Toast Component Showcase</h2>
             
-            {/* Toast Variants Section */}
             <section>
               <h3>Toast Variants</h3>
               <div className="components-page__toast-group">
@@ -1078,7 +1022,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Toast Sizes Section */}
             <section>
               <h3>Toast Sizes</h3>
               <div className="components-page__toast-group">
@@ -1106,7 +1049,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Toast Positions Section */}
             <section>
               <h3>Toast Positions</h3>
               <div className="components-page__toast-group">
@@ -1141,7 +1083,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Auto-Dismiss Section */}
             <section>
               <h3>Auto-Dismiss Options</h3>
               <div className="components-page__toast-group">
@@ -1169,7 +1110,6 @@ export default function UILibrary() {
               </div>
             </section>
 
-            {/* Usage Examples */}
             <section>
               <h3>Usage Examples</h3>
               <div className="components-page__toast-examples">
@@ -1207,11 +1147,9 @@ export default function UILibrary() {
             </section>
           </section>
 
-          {/* FeatureCard Component Showcase */}
           <section aria-labelledby="featurecard-showcase-title">
             <h2 id="featurecard-showcase-title" className="components-page__section-title">FeatureCard Component Showcase</h2>
             
-            {/* Basic FeatureCard Section */}
             <section>
               <h3>Basic FeatureCard</h3>
               <div className="components-page__card-group">
@@ -1233,7 +1171,6 @@ export default function UILibrary() {
 
         </div>
 
-        {/* Render all active toasts */}
         {toasts.map((toast) => (
           <Toast
             key={toast.id}

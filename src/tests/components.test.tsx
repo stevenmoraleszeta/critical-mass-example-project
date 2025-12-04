@@ -16,7 +16,6 @@
 
 import { render, screen, fireEvent } from '@testing-library/react';
 
-// Import all components
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import Tag from '../components/ui/Tag';
@@ -58,7 +57,6 @@ describe('Component Rendering Tests', () => {
       button.focus();
       expect(button).toHaveFocus();
       
-      // Simulate Enter key press
       fireEvent.keyDown(button, { key: 'Enter', code: 'Enter' });
       fireEvent.click(button);
       expect(handleClick).toHaveBeenCalled();
@@ -176,7 +174,6 @@ describe('Component Rendering Tests', () => {
       input.focus();
       expect(input).toHaveFocus();
       
-      // Simulate typing
       fireEvent.change(input, { target: { value: 'test' } });
       expect(handleChange).toHaveBeenCalled();
     });
@@ -250,7 +247,6 @@ describe('Component Rendering Tests', () => {
       select.focus();
       expect(select).toHaveFocus();
       
-      // Simulate selection
       fireEvent.change(select, { target: { value: 'option1' } });
       expect(handleChange).toHaveBeenCalled();
     });
@@ -304,7 +300,6 @@ describe('Component Rendering Tests', () => {
 
     it('should be keyboard accessible', () => {
       const handleChange = jest.fn((e) => {
-        // Handler implementation
       });
       render(
         <Toggle
@@ -319,8 +314,6 @@ describe('Component Rendering Tests', () => {
       toggle.focus();
       expect(toggle).toHaveFocus();
       
-      // Verify the toggle can receive focus (keyboard accessible)
-      // The actual onChange will be called when the user interacts with it
       expect(toggle).not.toHaveAttribute('tabIndex', '-1');
       expect(toggle).toHaveAttribute('aria-checked', 'false');
     });
@@ -391,7 +384,6 @@ describe('Component Rendering Tests', () => {
       retryButton.focus();
       expect(retryButton).toHaveFocus();
       
-      // Simulate Enter key press
       fireEvent.keyDown(retryButton, { key: 'Enter', code: 'Enter' });
       fireEvent.click(retryButton);
       expect(handleRetry).toHaveBeenCalled();
@@ -445,13 +437,9 @@ describe('Component Rendering Tests', () => {
       dismissButton.focus();
       expect(dismissButton).toHaveFocus();
       
-      // Verify button is keyboard accessible
       expect(dismissButton).not.toHaveAttribute('tabIndex', '-1');
       expect(dismissButton).toHaveAttribute('type', 'button');
       
-      // The onClick handler is attached to the button
-      // In a real scenario, clicking or pressing Enter/Space would trigger it
-      // For testing purposes, we verify the button is accessible
       expect(dismissButton).toBeInTheDocument();
     });
 
@@ -517,7 +505,6 @@ describe('Component Rendering Tests', () => {
       linkedInLink.focus();
       expect(linkedInLink).toHaveFocus();
       
-      // Verify external links have proper attributes
       expect(linkedInLink).toHaveAttribute('target', '_blank');
       expect(linkedInLink).toHaveAttribute('rel', 'noopener noreferrer');
     });

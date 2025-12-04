@@ -78,7 +78,6 @@ export default function Hero({
       className="hero" 
       aria-labelledby="hero-title"
     >
-      {/* Optimized background image using next/image */}
       {backgroundImage && (
         <div className="hero__background-image" aria-hidden="true">
           <Image
@@ -148,12 +147,10 @@ export default function Hero({
         )}
       </div>
       
-      {/* Background image overlay for better text readability */}
       {backgroundImage && (
         <div className="hero__background-overlay" aria-hidden="true" />
       )}
       
-      {/* Floating binary elements (0s and 1s) */}
       <FloatingBinaryElements 
         count={250}
         minFontSize={1}

@@ -3,31 +3,10 @@
 import React from 'react';
 import Link from 'next/link';
 
-/**
- * Footer Component
- * 
- * A semantic footer component with social links and contact information.
- * Follows Critical Mass accessibility requirements:
- * - Semantic HTML (<footer>)
- * - ARIA labels for navigation and links
- * - Keyboard navigation support
- * - Responsive design
- * - External links with proper attributes (target="_blank", rel="noopener noreferrer")
- * 
- * @example
- * ```tsx
- * <Footer />
- * ```
- */
-
 export interface FooterProps {
-  /** Additional CSS classes */
   className?: string;
 }
 
-/**
- * Social link configuration
- */
 interface SocialLink {
   href: string;
   label: string;
@@ -37,9 +16,6 @@ interface SocialLink {
   badgeColor?: 'primary' | 'secondary' | 'accent';
 }
 
-/**
- * Contact link configuration
- */
 interface ContactLink {
   href: string;
   label: string;
@@ -109,11 +85,9 @@ const contactLinks: ContactLink[] = [
  * - Responsive layout (mobile-first)
  */
 export default function Footer({ className = '' }: FooterProps) {
-  // Build BEM class names
   const baseClass = 'footer';
   const classNames = [baseClass, className].filter(Boolean).join(' ');
 
-  // Handle keyboard navigation for external links
   const handleExternalLinkKeyDown = (
     e: React.KeyboardEvent<HTMLAnchorElement>,
     href: string
@@ -131,9 +105,7 @@ export default function Footer({ className = '' }: FooterProps) {
       aria-label="Site footer"
     >
       <div className="footer__container">
-        {/* Footer Content */}
         <div className="footer__content">
-          {/* Social Links Section */}
           <nav 
             className="footer__social"
             aria-label="Social media links"
@@ -167,7 +139,6 @@ export default function Footer({ className = '' }: FooterProps) {
             </ul>
           </nav>
 
-          {/* Contact Section */}
           <div 
             className="footer__contact"
             aria-label="Contact information"
@@ -195,7 +166,6 @@ export default function Footer({ className = '' }: FooterProps) {
           </div>
         </div>
 
-        {/* Copyright Notice */}
         <div className="footer__copyright">
           <p className="footer__copyright-text">
             © {new Date().getFullYear()} Steven Morales. All rights reserved.

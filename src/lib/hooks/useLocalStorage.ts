@@ -49,7 +49,6 @@ export function useLocalStorage<T>(
 ): UseLocalStorageReturn<T> {
   const { defaultValue = null, sync = true } = options;
 
-  // Initialize state with value from localStorage or default
   const [storedValue, setStoredValue] = useState<T | null>(() => {
     if (typeof window === 'undefined' || !sync) {
       return defaultValue ?? null;
@@ -67,7 +66,6 @@ export function useLocalStorage<T>(
     }
   });
 
-  // Update localStorage when value changes
   const setValue = useCallback(
     (value: T | null) => {
       try {
@@ -91,44 +89,24 @@ export function useLocalStorage<T>(
     [key, sync]
   );
 
-  // Remove value from localStorage
   const removeValue = useCallback(() => {
     setValue(null);
   }, [setValue]);
-
-  // Sync with localStorage changes from other tabs/windows
+  
   useEffect(() => {
     if (typeof window === 'undefined' || !sync) {
       return;
     }
 
     const handleStorageChange = (e: StorageEvent) => {
-      if (e.key !== key) {
-        return;
-      }
-
-      try {
-        let newValue: T | null = null;
-        
-        if (e.newValue !== null) {
-          newValue = JSON.parse(e.newValue) as T;
-        } else {
-          newValue = defaultValue ?? null;
+      if (e.key === key && e.newValue !== null) {
+        try {
+          setStoredValue(JSON.parse(e.newValue) as T);
+        } catch (error) {
+          console.warn(`Error parsing localStorage value for key "${key}":`, error);
         }
-
-        // Only update if the value actually changed to prevent infinite loops
-        setStoredValue((currentValue) => {
-          const currentString = currentValue === null ? null : JSON.stringify(currentValue);
-          const newString = newValue === null ? null : JSON.stringify(newValue);
-          
-          if (currentString === newString) {
-            return currentValue;
-          }
-          
-          return newValue;
-        });
-      } catch (error) {
-        console.warn(`Error parsing localStorage value for key "${key}":`, error);
+      } else if (e.key === key && e.newValue === null) {
+        setStoredValue(defaultValue ?? null);
       }
     };
 
