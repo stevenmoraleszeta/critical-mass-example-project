@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Card from '@/components/ui/Card';
+import Button from '@/components/ui/Button';
 import ScrollArrow from '@/components/ui/ScrollArrow';
 
 /**
@@ -116,6 +117,19 @@ export default function KeyHighlightsSection() {
               Expertise in <strong>performance optimization, scalability, debugging, and root cause analysis</strong>. I analyze and optimize code for quality, efficiency, and performance, identify and resolve scalability issues, and drive efforts to reduce technical debt.
             </p>
           </Card>
+        </div>
+        
+        <div className="key-highlights__action">
+          <Button
+            variant="exit"
+            size="lg"
+            href="/curriculum"
+            ariaLabel="View Currículum"
+            prefetch={true}
+            className="key-highlights__button"
+          >
+            View Currículum
+          </Button>
         </div>
         
         <ScrollArrow
