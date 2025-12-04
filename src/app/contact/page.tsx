@@ -28,14 +28,10 @@ export default function Contact() {
                     <dd className="contact-page__info-value">Steven Morales Fallas</dd>
                   </div>
                   <div className="contact-page__info-item">
-                    <dt className="contact-page__info-label">Location</dt>
-                    <dd className="contact-page__info-value">Costa Rica</dd>
-                  </div>
-                  <div className="contact-page__info-item">
                     <dt className="contact-page__info-label">Phone / WhatsApp</dt>
                     <dd className="contact-page__info-value">
                       <a
-                        href="https://wa.me/50661304830"
+                        href="https://wa.me/50661304830?text=Hi!%20I%20came%20across%20your%20portfolio%20project%20and%20I%27d%20like%20to%20connect."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="contact-page__link"
