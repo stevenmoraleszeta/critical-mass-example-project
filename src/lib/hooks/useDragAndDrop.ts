@@ -47,7 +47,6 @@ export function useDragAndDrop<T extends DragAndDropItem>({
   const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
   const [showToast, setShowToast] = useState(false);
 
-  
   const { value: savedOrder, setValue: setSavedOrder } = useLocalStorage<string[]>(
     storageKey || '', 
     {
@@ -104,60 +103,40 @@ export function useDragAndDrop<T extends DragAndDropItem>({
     return initialItems;
   });
 
-  const [isMounted, setIsMounted] = useState(false);
-  const isInitializingRef = useRef(false);
-  const skipSaveRef = useRef(false);
+  const hasInitializedRef = useRef(false);
   const previousInitialItemsIdsRef = useRef<string>('');
+  const lastSavedOrderRef = useRef<string | null>(null);
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isMounted || !storageKey || !enabled) {
+    if (!storageKey || !enabled) {
       return;
     }
 
+    const currentItemsIds = initialItems.map((item) => item.id).join(',');
+    const savedOrderString = savedOrder ? savedOrder.join(',') : null;
+    
+    if (currentItemsIds !== previousInitialItemsIdsRef.current) {
+      previousInitialItemsIdsRef.current = currentItemsIds;
+      hasInitializedRef.current = false;
+      lastSavedOrderRef.current = null;
+    }
+
+    if (savedOrderString === lastSavedOrderRef.current && hasInitializedRef.current) {
+      return;
+    }
+
+    lastSavedOrderRef.current = savedOrderString;
+
     if (!savedOrder || savedOrder.length === 0) {
-      if (initialItemsIds !== previousInitialItemsIdsRef.current) {
-        previousInitialItemsIdsRef.current = initialItemsIds;
-        setItems(initialItems);
-      }
+      setItems(initialItems);
+      hasInitializedRef.current = true;
       return;
     }
 
     const orderedItems = getOrderedItems(savedOrder, initialItems);
-    const orderedItemsOrder = orderedItems.map((item) => item.id).join(',');
-    const currentItemsOrder = items.map((item) => item.id).join(',');
-
-    if (orderedItemsOrder !== currentItemsOrder) {
-      isInitializingRef.current = true;
-      skipSaveRef.current = true;
-      previousInitialItemsIdsRef.current = initialItemsIds;
-      
-      setItems(orderedItems);
-      
-      setTimeout(() => {
-        isInitializingRef.current = false;
-        skipSaveRef.current = false;
-      }, 0);
-    }
-  }, [isMounted, enabled, storageKey, savedOrder, initialItems, initialItemsIds, getOrderedItems, items]);
-
-  useEffect(() => {
-    if (!isMounted || !enabled || !storageKey || items.length === 0 || isInitializingRef.current || skipSaveRef.current) {
-      return;
-    }
-
-    const order = items.map((item) => item.id);
-    const orderString = order.join(',');
-    const currentSavedOrder = savedOrder || [];
-    const currentSavedOrderString = currentSavedOrder.join(',');
-
-    if (orderString !== currentSavedOrderString) {
-      setSavedOrder(order);
-    }
-  }, [isMounted, items, enabled, storageKey, setSavedOrder, savedOrder]);
+    setItems(orderedItems);
+    hasInitializedRef.current = true;
+  }, [storageKey, enabled, savedOrder, initialItems, getOrderedItems]);
 
   useEffect(() => {
     if (onOrderChange) {
@@ -193,9 +172,10 @@ export function useDragAndDrop<T extends DragAndDropItem>({
 
     const newItems = [...items];
     const draggedItem = newItems[draggedIndex];
+    const dropItem = newItems[dropIndex];
     
-    newItems.splice(draggedIndex, 1);
-    newItems.splice(dropIndex, 0, draggedItem);
+    newItems[draggedIndex] = dropItem;
+    newItems[dropIndex] = draggedItem;
     
     setItems(newItems);
     setDraggedIndex(null);
@@ -221,17 +201,10 @@ export function useDragAndDrop<T extends DragAndDropItem>({
       setSavedOrder(null);
     }
     
-    isInitializingRef.current = true;
-    skipSaveRef.current = true;
+    hasInitializedRef.current = false;
     previousInitialItemsIdsRef.current = initialItemsIds;
-    
     setItems(initialItems);
     setShowToast(false);
-    
-    setTimeout(() => {
-      isInitializingRef.current = false;
-      skipSaveRef.current = false;
-    }, 0);
   }, [enabled, storageKey, initialItems, initialItemsIds, setSavedOrder]);
 
   const dismissToast = useCallback(() => {
