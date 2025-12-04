@@ -90,13 +90,15 @@ export default function UILibrary() {
     <MainLayout className="components-page__main">
     <div className="components-page">
         <div className="components-page__content">
-          <h1 className="components-page__main-title">UI Library</h1>
-          <p className="components-page__intro">
-            A small set of reusable components used across this portfolio, documented with their intended usage and accessibility notes.
-          </p>
+          <section className="components-page__hero" aria-labelledby="ui-library-title">
+            <h1 id="ui-library-title" className="components-page__main-title">UI Library</h1>
+            <p className="components-page__intro">
+              A small set of reusable components used across this portfolio, documented with their intended usage and accessibility notes.
+            </p>
+          </section>
           
-          <section>
-            <h2>Button Component Showcase</h2>
+          <section aria-labelledby="button-showcase-title">
+            <h2 id="button-showcase-title">Button Component Showcase</h2>
           
           {/* Variants Section */}
           <section>
@@ -217,8 +219,8 @@ export default function UILibrary() {
           </section>
 
           {/* Card Component Showcase */}
-          <section>
-            <h2 className="components-page__section-title">Card Component Showcase</h2>
+          <section aria-labelledby="card-showcase-title">
+            <h2 id="card-showcase-title" className="components-page__section-title">Card Component Showcase</h2>
             
             {/* Variants Section */}
             <section>
@@ -390,8 +392,8 @@ export default function UILibrary() {
           </section>
 
           {/* Tag Component Showcase */}
-          <section>
-            <h1 className="components-page__section-title">Tag Component Showcase</h1>
+          <section aria-labelledby="tag-showcase-title">
+            <h2 id="tag-showcase-title" className="components-page__section-title">Tag Component Showcase</h2>
             
             {/* Variants Section */}
             <section>
@@ -475,8 +477,8 @@ export default function UILibrary() {
           </section>
 
           {/* Badge Component Showcase */}
-          <section>
-            <h1 className="components-page__section-title">Badge Component Showcase</h1>
+          <section aria-labelledby="badge-showcase-title">
+            <h2 id="badge-showcase-title" className="components-page__section-title">Badge Component Showcase</h2>
             
             {/* Status Variants Section */}
             <section>
@@ -540,8 +542,8 @@ export default function UILibrary() {
           </section>
 
           {/* Input Component Showcase */}
-          <section>
-            <h1 className="components-page__section-title">Input Component Showcase</h1>
+          <section aria-labelledby="input-showcase-title">
+            <h2 id="input-showcase-title" className="components-page__section-title">Input Component Showcase</h2>
             
             {/* Input Types Section */}
             <section>
@@ -679,8 +681,8 @@ export default function UILibrary() {
           </section>
 
           {/* Select Component Showcase */}
-          <section>
-            <h1 className="components-page__section-title">Select Component Showcase</h1>
+          <section aria-labelledby="select-showcase-title">
+            <h2 id="select-showcase-title" className="components-page__section-title">Select Component Showcase</h2>
             
             {/* Basic Select Section */}
             <section>
@@ -799,8 +801,8 @@ export default function UILibrary() {
           </section>
 
           {/* Toggle Component Showcase */}
-          <section>
-            <h1 className="components-page__section-title">Toggle Component Showcase</h1>
+          <section aria-labelledby="toggle-showcase-title">
+            <h2 id="toggle-showcase-title" className="components-page__section-title">Toggle Component Showcase</h2>
             
             {/* Basic Toggle Section */}
             <section>
@@ -887,8 +889,8 @@ export default function UILibrary() {
           </section>
 
           {/* Loader Component Showcase */}
-          <section>
-            <h1 className="components-page__section-title">Loader Component Showcase</h1>
+          <section aria-labelledby="loader-showcase-title">
+            <h2 id="loader-showcase-title" className="components-page__section-title">Loader Component Showcase</h2>
             
             {/* Basic Loader Section */}
             <section>
@@ -941,8 +943,8 @@ export default function UILibrary() {
           </section>
 
           {/* ErrorMessage Component Showcase */}
-          <section>
-            <h1 className="components-page__section-title">ErrorMessage Component Showcase</h1>
+          <section aria-labelledby="error-showcase-title">
+            <h2 id="error-showcase-title" className="components-page__section-title">ErrorMessage Component Showcase</h2>
             
             {/* Basic Error Message Section */}
             <section>
@@ -1206,8 +1208,8 @@ export default function UILibrary() {
           </section>
 
           {/* FeatureCard Component Showcase */}
-          <section>
-            <h2 className="components-page__section-title">FeatureCard Component Showcase</h2>
+          <section aria-labelledby="featurecard-showcase-title">
+            <h2 id="featurecard-showcase-title" className="components-page__section-title">FeatureCard Component Showcase</h2>
             
             {/* Basic FeatureCard Section */}
             <section>

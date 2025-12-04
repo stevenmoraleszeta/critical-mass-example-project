@@ -89,10 +89,10 @@ const projectOverviewCards: CardData[] = [
 export default function ThisProject() {
   return (
     <MainLayout>
-      <main className="this-project-page">
+      <div className="this-project-page">
         <div className="this-project-page__container">
-          <section className="this-project-page__hero">
-            <h1 className="this-project-page__title">This Project</h1>
+          <section className="this-project-page__hero" aria-labelledby="this-project-title">
+            <h1 id="this-project-title" className="this-project-page__title">This Project</h1>
             <p className="this-project-page__intro">
               This site is built as a <strong>portfolio prototype specifically for the Critical Mass Developer, Front End role</strong>, demonstrating front-end expertise, design-to-code translation, and modern web development practices.
             </p>
@@ -259,7 +259,7 @@ export default function ThisProject() {
             </div>
           </section>
         </div>
-      </main>
+      </div>
     </MainLayout>
   );
 }
