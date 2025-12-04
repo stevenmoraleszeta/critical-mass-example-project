@@ -39,11 +39,11 @@ export default function CTASection() {
           <Button
             variant="highlight"
             size="lg"
-            href="/this-project"
-            ariaLabel="See This Project"
+            href="/cover-letter"
+            ariaLabel="See Cover Letter"
             prefetch={true}
           >
-            See This Project
+            See Cover Letter
           </Button>
           
           <Button
