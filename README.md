@@ -45,6 +45,8 @@ This portfolio is designed as a **live case study** demonstrating:
 3. **[`PROJECT-IDEA.md`](./PROJECT-IDEA.md)** – Full project specifications, architecture, and requirements
 4. **[`PROJECT-CONTENT.md`](./PROJECT-CONTENT.md)** – **Official copy and content specifications for all pages** (single source of truth)
 5. **[`BEM_METHODOLOGY_GUIDE.md`](./BEM_METHODOLOGY_GUIDE.md)** – Complete BEM methodology guide and Critical Mass compliance review
+6. **[`JOB-INFO.md`](./JOB-INFO.md)** – Complete job posting information for Developer, Front End position at Critical Mass (San Jose, Costa Rica) – Role description, responsibilities, requirements, and benefits
+7. **[`MY-PROFILE.md`](./MY-PROFILE.md)** – Complete professional profile, tech stack, featured projects, professional experience, and CV summary
 
 ---
 
