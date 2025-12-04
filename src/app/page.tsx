@@ -3,8 +3,8 @@ import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/sections/Hero';
 import CardBoard, { CardData } from '@/components/sections/CardBoard';
 import Button from '@/components/ui/Button';
+import Loader from '@/components/feedback/Loader';
 
-// Lazy load non-critical sections for better initial page load performance
 const KeyHighlightsSection = lazy(() => import('@/components/sections/KeyHighlightsSection'));
 const CTASection = lazy(() => import('@/components/sections/CTASection'));
 
@@ -94,11 +94,11 @@ export default function Home() {
             </Button>
           }
         />
-        <Suspense fallback={null}>
-        <KeyHighlightsSection />
+        <Suspense fallback={<Loader size="sm" />}>
+          <KeyHighlightsSection />
         </Suspense>
-        <Suspense fallback={null}>
-        <CTASection />
+        <Suspense fallback={<Loader size="sm" />}>
+          <CTASection />
         </Suspense>
       </div>
     </MainLayout>
