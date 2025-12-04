@@ -11,7 +11,6 @@
 @use 'components/tags' as *;
 @use 'components/badges' as *;
 @use 'components/inputs' as *;
-@use 'components/selects' as *;
 @use 'components/select' as *;
 @use 'components/toggles' as *;
 @use 'components/loader' as *;
@@ -28,8 +27,6 @@
 @use 'components/cta-section' as *;
 @use 'components/floating-binary-elements' as *;
 @use 'components/scroll-arrow' as *;
-// @use 'components/content' as *;
-
 
 @use 'pages/components' as *;
 @use 'pages/home' as *;

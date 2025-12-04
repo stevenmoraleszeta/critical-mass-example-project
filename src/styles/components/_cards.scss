@@ -304,29 +304,6 @@
     }
   }
   
-  // ============================================================================
-  // Focus States (Accessibility)
-  // Cards should be focusable if they're interactive (links, buttons)
-  // This is for cards that might be wrapped in links or buttons
-  // ============================================================================
-  
-  // If card is interactive (wrapped in link/button), it should have focus styles
-  // This is typically handled by the wrapper element, not the card itself
-  // But we provide a modifier for interactive cards
-  &--interactive {
-    cursor: pointer;
-    outline: none;
-    
-    &:focus-visible {
-      outline: 3px solid var(--color-secondary);
-      outline-offset: 4px;
-      border-radius: var(--radius-sm);
-    }
-    
-    &:focus:not(:focus-visible) {
-      outline: none;
-    }
-  }
 }
 
 
