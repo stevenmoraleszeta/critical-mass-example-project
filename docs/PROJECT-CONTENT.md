@@ -17,17 +17,28 @@
 
 2. `/this-project` – **This Project**
    - Project Overview
-   - How This Portfolio Is Built for Critical Mass
    - Design-to-Code Workflow (Figma → HTML/CSS/JS/React)
-   - Accessibility, Performance & Responsiveness
-   - Tooling, Testing & Automation
    - What You Can Review Here (Code, Live Demo, Repo Links)
    - `/this-project/ui-library` – **UI Library** (submenu)
 
-3. `/contact` – **Let's Build Something Great**
+3. `/curriculum` – **Professional Curriculum**
+   - Professional Summary
+   - Core Skills
+   - Professional Experience
+   - Project Highlights
+   - Education
+   - Languages
+   - CV Download
+
+4. `/cover-letter` – **Cover Letter**
+   - Professional Experience
+   - Technical Expertise
+   - Alignment with Role
+   - Closing Statement
+
+5. `/contact` – **Let's Build Something Great**
    - Contact Details
    - Social Links
-   - Availability & Ways to Collaborate
 
 ---
 
@@ -144,9 +155,88 @@ From this page, link to:
 - **UI Library** on `/this-project/ui-library` (component showcase and documentation).
 ---
 
-> **Note:** The "Projects & Experience" and "Me & Skills" pages were removed from the final implementation due to time constraints. The portfolio focuses on core pages that demonstrate essential skills and experience.
+> **Note:** The "Projects & Experience" and "Me & Skills" pages were removed from the final implementation due to time constraints. The portfolio focuses on core pages that demonstrate essential skills and experience. Additional pages (`/curriculum` and `/cover-letter`) were added to provide comprehensive professional information.
 
 ---  
+---
+
+## `/curriculum` – Professional Curriculum
+
+### Professional Summary
+
+Full Stack Software Engineer with more than **3 years of experience** building robust, scalable, and high-performance software across web, desktop, mobile, and hybrid platforms.
+
+### Core Skills
+
+- **Languages & Frameworks:** TypeScript, JavaScript, Node.js, Python, Java, C#, PHP, React, Next.js, HTML5, CSS3
+- **Databases:** PostgreSQL, SQL, MongoDB (NoSQL), Firebase
+- **DevOps & Cloud:** Git, Docker, AWS, CI/CD Pipelines, Render, Vercel
+- **Architecture & Engineering:** RESTful APIs, Microservices, Performance Optimization, Scalability, Systems Design, Agile/Scrum, UX/UI Collaboration
+- **Soft Skills:** Leadership, Communication, Organization, Adaptability, Creativity, Mentorship, Tenacity, Ambition, Learning
+
+### Professional Experience
+
+- **CEO & Lead Software Developer** – Novaera (May 2024 - Present)
+- **CEO & Lead Tech Educator** – ZETA Academia (2024 - Present)
+- **Freelance Software Developer** – Self-Employed (Aug 2022 - Present)
+- **Software Developer (Intern)** – INFOCOOP (Aug 2023 - Nov 2023)
+- **Software Developer** – TI Recursos CR (Dec 2022 - Feb 2023)
+
+### Project Highlights
+
+- Novaera SaaS ERP
+- Precision Seas ERP System
+- ZETA Academia EdTech Platform
+- Matemática Integral ERP & Automation System
+- Demeter IoT Agriculture System
+- INFOCOOP Education Platform Enhancement
+- Assistive Robotics Project for Elderly Care
+
+### Education
+
+**Technical Degree in Software Development** — CTP de Orosi (2023)  
+Graduated with highest GPA and honors.
+
+### Languages
+
+- **Spanish** — Native
+- **English** — Professional Working Proficiency
+
+### CV Download
+
+PDF download option available for complete curriculum.
+
+---
+
+## `/cover-letter` – Cover Letter
+
+### Professional Experience
+
+With **3+ years** of full-stack development experience and a proven track record of **leading teams** and building **scalable applications**, I bring a unique combination of technical expertise and leadership to the **Developer, Front End** role at Critical Mass.
+
+As **CEO & Lead Software Developer** at Novaera, I've led a team of 6+ developers and designers in building intelligent digital solutions. As **CEO & Lead Tech Educator** at ZETA Academia, I've empowered **1,000+ students** through hands-on education. This dual experience has shaped my approach to **collaboration, mentorship, and delivering high-quality code** that meets both technical and business objectives.
+
+### Technical Expertise
+
+I have extensive experience translating Figma designs into responsive, accessible code using modern front-end technologies including React, Next.js, TypeScript, and SASS/SCSS. I've built scalable component libraries following BEM methodology and SMACSS architecture, ensuring maintainable and performant code.
+
+### Alignment with Role
+
+My experience aligns perfectly with Critical Mass requirements:
+- **Design-to-code translation** – Proven experience across multiple production projects
+- **Responsive & mobile-first** – Applications serving 1,000+ users across all devices
+- **Accessibility** – WCAG-compliant implementations with semantic HTML and ARIA
+- **API integration** – Full-stack experience with REST, GraphQL, and third-party services
+- **Performance optimization** – Experience optimizing applications for scale and performance
+- **Testing practices** – Jest + React Testing Library for quality assurance
+- **Leadership and collaboration** – Leading teams, working with cross-functional teams
+
+### Closing Statement
+
+I'm excited about the opportunity to bring my full-stack expertise and leadership experience to Critical Mass in San Jose, Costa Rica. I'm ready to work from the office 3+ days a week and contribute to your team's success.
+
+> _"We don't need to wait a single moment to start changing the world."_ – Anne Frank
+
 ---
 
 ## `/contact` – Let's Build Something Great

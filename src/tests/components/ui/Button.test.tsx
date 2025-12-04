@@ -13,7 +13,7 @@
  */
 
 import { render, screen, fireEvent } from '@testing-library/react';
-import Button from '../components/ui/Button';
+import Button from '@/components/ui/Button';
 
 describe('Button Component', () => {
   // ============================================================================
@@ -128,11 +128,9 @@ describe('Button Component', () => {
       
       const button = screen.getByRole('button');
       button.focus();
-      // Simulate Enter key press - buttons respond to Enter by default
       fireEvent.keyDown(button, { key: 'Enter', code: 'Enter', keyCode: 13 });
       fireEvent.keyPress(button, { key: 'Enter', code: 'Enter', keyCode: 13 });
       
-      // Note: In real browser, Enter triggers click, but in tests we verify the button is focusable
       expect(button).toHaveFocus();
     });
 
@@ -142,11 +140,9 @@ describe('Button Component', () => {
       
       const button = screen.getByRole('button');
       button.focus();
-      // Simulate Space key press - buttons respond to Space by default
       fireEvent.keyDown(button, { key: ' ', code: 'Space', keyCode: 32 });
       fireEvent.keyPress(button, { key: ' ', code: 'Space', keyCode: 32 });
       
-      // Note: In real browser, Space triggers click, but in tests we verify the button is focusable
       expect(button).toHaveFocus();
     });
   });
@@ -178,7 +174,6 @@ describe('Button Component', () => {
     it('should render as button when disabled even with href', () => {
       render(<Button href="/about" disabled>Disabled Link</Button>);
       
-      // When disabled, Button component renders as <button>, not <Link>
       const button = screen.getByRole('button');
       expect(button).toBeDisabled();
       expect(button).toHaveClass('btn--disabled');
@@ -227,14 +222,11 @@ describe('Button Component', () => {
       
       const button = screen.getByRole('button');
       
-      // Focus button (simulating Tab navigation)
       button.focus();
       expect(button).toHaveFocus();
       
-      // Verify button can receive focus (keyboard accessible)
       expect(button).not.toHaveAttribute('tabIndex', '-1');
       
-      // Click works (keyboard users can activate with Enter/Space)
       fireEvent.click(button);
       expect(handleClick).toHaveBeenCalledTimes(1);
     });
@@ -284,12 +276,10 @@ describe('Button Component', () => {
     it('should render as button when disabled (not as link)', () => {
       render(<Button href="/about" disabled>Disabled Link</Button>);
       
-      // When disabled, Button renders as <button>, not <Link>
       const button = screen.getByRole('button');
       expect(button).toBeDisabled();
       expect(button).toHaveClass('btn--disabled');
       
-      // Should not be a link
       expect(screen.queryByRole('link')).not.toBeInTheDocument();
     });
 
@@ -297,8 +287,7 @@ describe('Button Component', () => {
       render(<Button href="/about">Go to About</Button>);
       
       const link = screen.getByRole('link');
-      
-      // Focus link (simulating Tab navigation)
+        
       link.focus();
       expect(link).toHaveFocus();
     });

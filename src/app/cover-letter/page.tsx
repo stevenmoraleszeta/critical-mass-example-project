@@ -98,13 +98,13 @@ export default function CoverLetter() {
                 <p className="cover-letter-page__quote-text">
                   &quot;We don&apos;t need to wait a single moment to start changing the world.&quot;
                 </p>
-                <cite className="cover-letter-page__quote-author">— Anne Frank</cite>
+                <cite className="cover-letter-page__quote-author">Anne Frank</cite>
               </blockquote>
               <blockquote className="cover-letter-page__quote">
                 <p className="cover-letter-page__quote-text">
                   &quot;It&apos;s the ones bold — or crazy — enough to think they can do it, who actually do.&quot;
                 </p>
-                <cite className="cover-letter-page__quote-author">— Steve Jobs</cite>
+                <cite className="cover-letter-page__quote-author">Steve Jobs</cite>
               </blockquote>
             </div>
           </section>

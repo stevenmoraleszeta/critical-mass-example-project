@@ -2,56 +2,15 @@
 
 import React from 'react';
 
-/**
- * Toggle Component
- * 
- * A reusable toggle/switch component with full accessibility support.
- * Supports checked/unchecked states with proper label association.
- * 
- * @example
- * ```tsx
- * <Toggle
- *   id="dark-mode"
- *   label="Dark Mode"
- *   checked={isDarkMode}
- *   onChange={(e) => setIsDarkMode(e.target.checked)}
- * />
- * 
- * <Toggle
- *   id="notifications"
- *   label="Enable Notifications"
- *   checked={notificationsEnabled}
- *   onChange={(e) => setNotificationsEnabled(e.target.checked)}
- *   disabled
- * />
- * ```
- */
-
 export interface ToggleProps {
-  /** Toggle ID (must be unique) */
   id: string;
-  /** Label text for the toggle */
   label: string;
-  /** Checked state (controlled component) */
   checked: boolean;
-  /** Change handler */
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  /** Whether the toggle is disabled */
   disabled?: boolean;
-  /** Additional CSS classes */
   className?: string;
 }
 
-/**
- * Toggle Component Implementation
- * 
- * Handles toggle functionality with full accessibility support.
- * Follows Critical Mass accessibility requirements:
- * - Label association using htmlFor and id
- * - Keyboard navigation support (Space, Enter)
- * - Visible focus states
- * - ARIA attributes for screen readers
- */
 export default function Toggle({
   id,
   label,
@@ -60,7 +19,6 @@ export default function Toggle({
   disabled = false,
   className = '',
 }: ToggleProps) {
-  // Build BEM class names
   const baseClass = 'toggle';
   const checkedClass = checked ? 'toggle--checked' : '';
   const disabledClass = disabled ? 'toggle--disabled' : '';
@@ -74,14 +32,11 @@ export default function Toggle({
     .filter(Boolean)
     .join(' ');
 
-  // Handle keyboard events for accessibility (Enter and Space)
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (disabled) return;
     
-    // Allow Enter and Space to toggle
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      // Create a synthetic change event
       const syntheticEvent = {
         target: { checked: !checked },
       } as React.ChangeEvent<HTMLInputElement>;

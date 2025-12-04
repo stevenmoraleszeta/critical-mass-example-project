@@ -22,7 +22,7 @@ const projectOverviewCards: CardData[] = [
   {
     id: '3',
     title: 'API Integration & Web Services',
-    description: 'The projects page demonstrates API integration patterns with client-side data filtering and state management using React hooks. This showcases readiness to integrate with REST APIs, CMS systems, and handle JSON data structures as required.',
+    description: 'This portfolio focuses on front-end demonstration without external API integration. However, I have extensive experience building production projects that integrate REST and SOAP APIs, CMS systems, and handle JSON data structures—visible in my public GitHub repositories.',
   },
   {
     id: '4',

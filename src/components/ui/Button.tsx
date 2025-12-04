@@ -3,63 +3,23 @@
 import React from 'react';
 import Link from 'next/link';
 
-/**
- * Button Component
- * 
- * A reusable button component with multiple variants, sizes, and states.
- * Supports both button and link functionality with full accessibility.
- * 
- * @example
- * ```tsx
- * <Button variant="primary" size="md" onClick={handleClick}>
- *   Click Me
- * </Button>
- * 
- * <Button variant="secondary" href="/about" size="lg">
- *   Go to About
- * </Button>
- * ```
- */
-
 export interface ButtonProps {
-  /** Button variant: primary, secondary, ghost, highlight, or exit */
   variant?: 'primary' | 'secondary' | 'ghost' | 'highlight' | 'exit';
-  /** Button size: sm, md, or lg */
   size?: 'sm' | 'md' | 'lg';
-  /** Button content */
   children: React.ReactNode;
-  /** Optional href for link buttons (renders as Next.js Link for internal links, <a> for external) */
   href?: string;
-  /** Target for external links (e.g., '_blank') */
   target?: string;
-  /** Rel attribute for external links (e.g., 'noopener noreferrer') */
   rel?: string;
-  /** Click handler for button actions */
+  download?: string | boolean;
   onClick?: () => void;
-  /** Disabled state */
   disabled?: boolean;
-  /** Loading state (optional) */
   loading?: boolean;
-  /** Button type (for form buttons) */
   type?: 'button' | 'submit' | 'reset';
-  /** ARIA label for accessibility (required for icon-only buttons) */
   ariaLabel?: string;
-  /** Additional CSS classes */
   className?: string;
-  /** Enable prefetch for Next.js Link (default: true, only for internal links) */
   prefetch?: boolean;
 }
 
-/**
- * Button Component Implementation
- * 
- * Handles both button and link rendering based on href prop.
- * Follows Critical Mass accessibility requirements:
- * - Semantic HTML (<button> or <a>)
- * - ARIA labels support
- * - Keyboard navigation
- * - Focus states
- */
 export default function Button({
   variant = 'primary',
   size = 'md',
@@ -67,6 +27,7 @@ export default function Button({
   href,
   target,
   rel,
+  download,
   onClick,
   disabled = false,
   loading = false,
@@ -75,7 +36,6 @@ export default function Button({
   className = '',
   prefetch = true,
 }: ButtonProps) {
-  // Build BEM class names
   const baseClass = 'btn';
   const variantClass = `btn--${variant}`;
   const sizeClass = `btn--${size}`;
@@ -93,27 +53,24 @@ export default function Button({
     .filter(Boolean)
     .join(' ');
 
-  // Handle keyboard events for accessibility
   const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
-    // Allow Enter and Space to trigger click
     if ((e.key === 'Enter' || e.key === ' ') && !disabled && !loading && onClick) {
       e.preventDefault();
       onClick();
     }
   };
 
-  // Check if href is external (starts with http:// or https://)
   const isExternalLink = href && (href.startsWith('http://') || href.startsWith('https://'));
+  const shouldUseNativeLink = download !== undefined || isExternalLink;
 
-  // If href is provided, render as link (Next.js Link for internal, <a> for external)
   if (href && !disabled) {
-    // External links: render as <a>
-    if (isExternalLink) {
+    if (shouldUseNativeLink) {
       return (
         <a
           href={href}
-          target={target || '_blank'}
-          rel={rel || 'noopener noreferrer'}
+          target={target || (isExternalLink ? '_blank' : undefined)}
+          rel={rel || (isExternalLink ? 'noopener noreferrer' : undefined)}
+          download={download}
           className={classNames}
           aria-label={ariaLabel}
           tabIndex={disabled ? -1 : 0}
@@ -126,7 +83,6 @@ export default function Button({
       );
     }
     
-    // Internal links: render as Next.js Link
     return (
       <Link
         href={href}
@@ -144,7 +100,6 @@ export default function Button({
     );
   }
 
-  // Otherwise, render as button
   return (
     <button
       type={type}
