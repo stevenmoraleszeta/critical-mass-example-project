@@ -74,6 +74,26 @@ export default function Curriculum() {
                 </Button>
               </a>
             </div>
+            <nav className="curriculum-page__index" aria-label="Curriculum sections navigation">
+              <a href="#professional-summary" className="curriculum-page__index-link">
+                Summary
+              </a>
+              <a href="#core-skills" className="curriculum-page__index-link">
+                Skills
+              </a>
+              <a href="#professional-experience" className="curriculum-page__index-link">
+                Experience
+              </a>
+              <a href="#project-highlights" className="curriculum-page__index-link">
+                Projects
+              </a>
+              <a href="#education" className="curriculum-page__index-link">
+                Education
+              </a>
+              <a href="#languages" className="curriculum-page__index-link">
+                Languages
+              </a>
+            </nav>
             <ScrollArrow targetId="professional-summary" />
           </section>
 

@@ -111,6 +111,57 @@
     display: inline-block;
   }
 
+  &__index {
+    @include flex;
+    @include flex-row;
+    @include justify-center;
+    @include align-center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+
+    @include breakpoint-md {
+      gap: var(--space-md);
+      margin-bottom: var(--space-2xl);
+    }
+  }
+
+  &__index-link {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-normal);
+    color: var(--color-primary);
+    background-color: var(--color-accent);
+    border: none;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    @include transition-multiple(transform, box-shadow);
+    cursor: pointer;
+
+    @include breakpoint-md {
+      padding: var(--space-sm) var(--space-lg);
+      font-size: var(--fs-base);
+    }
+
+    &:hover {
+      transform: translateY(-1px);
+      @include shadow-md;
+    }
+
+    &:active {
+      transform: translateY(0);
+      @include shadow-sm;
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-secondary);
+      outline-offset: 4px;
+      border-radius: var(--radius-md);
+    }
+  }
+
   // ============================================================================
   // Section Styles
   // ============================================================================
