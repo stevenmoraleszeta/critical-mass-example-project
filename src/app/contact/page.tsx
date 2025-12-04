@@ -4,6 +4,7 @@ import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
+import AnimatedGradientBackground from '@/components/ui/AnimatedGradientBackground';
 
 export default function Contact() {
   return (
@@ -58,61 +59,54 @@ export default function Contact() {
             </Card>
           </section>
 
-          <section className="contact-page__section" aria-labelledby="profiles-title">
-            <Card variant="default" className="contact-page__card">
-              <div className="contact-page__card-content">
-                <h2 id="profiles-title" className="contact-page__section-title">
-                  Online Profiles
-                </h2>
-                <div className="contact-page__profiles-grid">
-                  <a
-                    href="https://github.com/stevenmoraleszeta"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-page__profile-link"
-                    aria-label="Visit GitHub profile: github.com/stevenmoraleszeta"
-                  >
-                    <Button
-                      variant="primary"
-                      size="md"
-                      className="contact-page__profile-button"
-                    >
-                      GitHub
-                    </Button>
-                  </a>
-                  <a
-                    href="https://linkedin.com/in/stevenmoralesfallas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-page__profile-link"
-                    aria-label="Visit LinkedIn profile: linkedin.com/in/stevenmoralesfallas"
-                  >
-                    <Button
-                      variant="secondary"
-                      size="md"
-                      className="contact-page__profile-button"
-                    >
-                      LinkedIn
-                    </Button>
-                  </a>
-                  <a
-                    href="https://instagram.com/stevenmorales.novaera"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-page__profile-link"
-                    aria-label="Visit Instagram profile: @stevenmorales.novaera"
-                  >
-                    <Button
-                      variant="highlight"
-                      size="md"
-                      className="contact-page__profile-button"
-                    >
-                      Instagram
-                    </Button>
-                  </a>
-                </div>
+          <section className="contact-page__section contact-page__section--profiles" id="profiles" aria-labelledby="profiles-title">
+            <AnimatedGradientBackground />
+            <div className="contact-page__profiles-container">
+              <h2 id="profiles-title" className="contact-page__profiles-title">
+                Online Profiles
+              </h2>
+              <p className="contact-page__profiles-description">
+                Connect with me on social media:
+              </p>
+              
+              <div className="contact-page__profiles-actions">
+                <a
+                  href="https://github.com/stevenmoraleszeta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-page__profiles-link"
+                  aria-label="Visit GitHub profile: github.com/stevenmoraleszeta"
+                >
+                  <Button variant="highlight" size="lg">
+                    GitHub
+                  </Button>
+                </a>
+                
+                <a
+                  href="https://linkedin.com/in/stevenmoralesfallas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-page__profiles-link"
+                  aria-label="Visit LinkedIn profile: linkedin.com/in/stevenmoralesfallas"
+                >
+                  <Button variant="primary" size="lg">
+                    LinkedIn
+                  </Button>
+                </a>
+                
+                <a
+                  href="https://instagram.com/stevenmorales.novaera"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-page__profiles-link"
+                  aria-label="Visit Instagram profile: @stevenmorales.novaera"
+                >
+                  <Button variant="secondary" size="lg">
+                    Instagram
+                  </Button>
+                </a>
               </div>
-            </Card>
+            </div>
           </section>
 
           <section className="contact-page__section" aria-labelledby="closing-title">

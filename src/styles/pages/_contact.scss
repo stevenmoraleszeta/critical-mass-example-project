@@ -87,6 +87,42 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    &--profiles {
+      position: relative;
+      width: 100%;
+      max-width: var(--container-xl);
+      margin: 0 auto var(--space-3xl) auto;
+      overflow-x: hidden;
+      overflow-y: visible;
+      padding: var(--space-2xl) var(--space-md);
+      text-align: center;
+      border-radius: var(--radius-lg);
+
+      @include breakpoint-md {
+        margin-bottom: var(--space-3xl);
+        padding: var(--space-3xl) var(--space-lg);
+        border-radius: var(--radius-xl);
+      }
+
+      @include breakpoint-lg {
+        margin-bottom: var(--space-3xl);
+        padding: var(--space-3xl) var(--space-xl);
+      }
+
+      @media (max-width: 319px) {
+        padding: var(--space-lg) var(--space-sm);
+        margin-bottom: var(--space-2xl);
+
+        .contact-page__profiles-title {
+          font-size: var(--fs-lg);
+        }
+
+        .contact-page__profiles-description {
+          font-size: var(--fs-xs);
+        }
+      }
+    }
   }
 
   &__section-title {
@@ -232,51 +268,139 @@
   // Online Profiles Section
   // ============================================================================
 
-  &__profiles-grid {
-    @include grid;
+  &__profiles-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    @include flex;
+    @include flex-column;
+    @include align-center;
+    gap: var(--space-xl);
+    @include levitate(-10px, 6s, ease-in-out, 0s);
+
+    @include breakpoint-md {
+      gap: var(--space-2xl);
+    }
+  }
+
+  &__profiles-title {
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    color: var(--color-white);
+    margin: 0;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    @include levitate(-5px, 4s, ease-in-out, 0.2s);
+
+    @media (max-width: 639px) {
+      font-size: var(--fs-xl);
+    }
+
+    @include breakpoint-md {
+      font-size: var(--fs-3xl);
+    }
+
+    @include breakpoint-lg {
+      font-size: var(--fs-40);
+      line-height: var(--lh-48);
+    }
+  }
+
+  &__profiles-description {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-relaxed);
+    color: var(--color-white);
+    margin: 0;
+    text-align: center;
+    max-width: 800px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    @include levitate(-3px, 5s, ease-in-out, 0.4s);
+
+    @media (max-width: 639px) {
+      font-size: var(--fs-sm);
+    }
+
+    @include breakpoint-md {
+      font-size: var(--fs-lg);
+    }
+
+    @include breakpoint-lg {
+      font-size: var(--fs-lg);
+      max-width: 700px;
+    }
+  }
+
+  &__profiles-actions {
+    position: relative;
+    z-index: 3;
+    display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-md);
     width: 100%;
+    max-width: 100%;
+    @include levitate(-8px, 7s, ease-in-out, 0.6s);
 
     @include breakpoint-md {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @include breakpoint-lg {
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-lg);
+      max-width: 900px;
+    }
+
+    .btn {
+      width: 100%;
+
+      @include breakpoint-md {
+        width: 100%;
+      }
+    }
+
+    .btn--primary {
+      border: var(--border-width-base) solid var(--color-accent);
+
+      &:hover:not(:disabled):not(.btn--disabled) {
+        border-color: var(--color-accent);
+      }
+
+      &:active:not(:disabled):not(.btn--disabled) {
+        border-color: var(--color-accent);
+      }
+    }
+
+    .btn--secondary {
+      border: var(--border-width-base) solid var(--color-accent);
+
+      &:hover:not(:disabled):not(.btn--disabled) {
+        border-color: var(--color-accent);
+      }
+
+      &:active:not(:disabled):not(.btn--disabled) {
+        border-color: var(--color-accent);
+      }
+    }
+
+    @media (max-width: 319px) {
+      @include flex-column;
+      width: 100%;
+
+      .btn {
+        width: 100%;
+        min-width: auto;
+      }
     }
   }
 
-  &__profile-link {
+  &__profiles-link {
     text-decoration: none;
     display: inline-block;
-    width: 100%;
-    @include focus-visible;
-    @include levitate(-6px, 3.5s, ease-in-out, 0s);
-
-    &:nth-child(1) {
-      @include levitate(-6px, 3.5s, ease-in-out, 0s);
-    }
-
-    &:nth-child(2) {
-      @include levitate(-8px, 4s, ease-in-out, 1.2s);
-    }
-
-    &:nth-child(3) {
-      @include levitate(-5px, 3.8s, ease-in-out, 0.6s);
-    }
-
-    &:hover {
-      animation-play-state: paused;
-    }
-  }
-
-  &__profile-button {
-    width: 100%;
-    @include transition-multiple(transform, box-shadow);
-    @include shadow-md;
-
-    &:hover {
-      transform: translateY(calc(var(--space-xs) * -1));
-      @include shadow-lg;
-    }
   }
 
   // ============================================================================
@@ -417,9 +541,14 @@
 // ============================================================================
 
 .contact-page {
-  &__link,
-  &__profile-button {
+  &__link {
     @include focus-visible;
+  }
+
+  &__profiles-actions {
+    .btn {
+      @include focus-visible;
+    }
   }
 
   &__section {
@@ -463,7 +592,7 @@
       page-break-inside: avoid;
     }
 
-    &__profiles-grid {
+    &__profiles-actions {
       @include flex-column;
       gap: var(--space-sm);
     }
