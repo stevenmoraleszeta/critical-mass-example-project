@@ -273,6 +273,8 @@
     gap: var(--space-xl);
 
     @include breakpoint-md {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: var(--space-2xl);
     }
   }
@@ -362,6 +364,8 @@
     gap: var(--space-xl);
 
     @include breakpoint-md {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: var(--space-2xl);
     }
   }

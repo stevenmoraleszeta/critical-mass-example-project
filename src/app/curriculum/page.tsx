@@ -115,11 +115,8 @@ export default function Curriculum() {
                   </div>
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
-                      Lead a six-member development team creating automation tools, ERP systems, and AI-powered platforms. Design and implement full-stack architectures, APIs, and modular components for scalable solutions. Collaborate with designers and clients to ensure usability, performance, and consistency across products. Establish workflows for code reviews, CI/CD integration, and process improvement.
+                      Lead a six-member development team creating automation tools, ERP systems, websites, and AI-powered platforms. Design and implement full-stack architectures, APIs, and modular components for scalable solutions. Collaborate with designers and clients to ensure usability, performance, and consistency. Novaera integrates technology solutions with design and marketing services, helping clients build strong digital identities and unified brand experiences.
                     </p>
-                    <blockquote className="curriculum-page__experience-note">
-                      In addition to software development, Novaera integrates technology solutions with design and marketing services, helping clients build strong digital identities and unified brand experiences.
-                    </blockquote>
                   </div>
                 </div>
               </Card>
@@ -133,7 +130,7 @@ export default function Curriculum() {
                   </div>
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
-                      Develop custom ERP and automation systems for small and medium-sized companies. Integrate modern front-end frameworks with efficient and secure backend architectures. Work closely with clients to translate business needs into clean, functional, and maintainable code.
+                      Develop custom ERP systems, websites, and automation platforms for small and medium-sized companies. Create websites using CMS platforms including Odoo and WordPress. Integrate modern front-end frameworks with efficient and secure backend architectures. Work closely with clients to translate business needs into clean, functional, and maintainable code.
                     </p>
                   </div>
                 </div>
@@ -163,7 +160,7 @@ export default function Curriculum() {
                   </div>
                   <div className="curriculum-page__content">
                     <p className="curriculum-page__text">
-                      Implemented custom Odoo ERP modules tailored to client requirements. Improved integrations, performance, and documentation for long-term maintainability.
+                      Implemented custom Odoo ERP modules and created websites using Odoo CMS tailored to client requirements. Improved integrations, performance, and documentation for long-term maintainability.
                     </p>
                   </div>
                 </div>
