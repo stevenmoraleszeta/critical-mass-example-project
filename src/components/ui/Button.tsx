@@ -18,6 +18,10 @@ import Link from 'next/link';
  * <Button variant="secondary" href="/about" size="lg">
  *   Go to About
  * </Button>
+ * 
+ * <Button variant="highlight" href="/file.pdf" download="file.pdf">
+ *   Download File
+ * </Button>
  * ```
  */
 
@@ -34,6 +38,8 @@ export interface ButtonProps {
   target?: string;
   /** Rel attribute for external links (e.g., 'noopener noreferrer') */
   rel?: string;
+  /** Download attribute for links (forces download of the linked file) */
+  download?: string | boolean;
   /** Click handler for button actions */
   onClick?: () => void;
   /** Disabled state */
@@ -67,6 +73,7 @@ export default function Button({
   href,
   target,
   rel,
+  download,
   onClick,
   disabled = false,
   loading = false,
@@ -104,16 +111,20 @@ export default function Button({
 
   // Check if href is external (starts with http:// or https://)
   const isExternalLink = href && (href.startsWith('http://') || href.startsWith('https://'));
+  
+  // If download is specified, always render as <a> (not Next.js Link)
+  const shouldUseNativeLink = download !== undefined || isExternalLink;
 
-  // If href is provided, render as link (Next.js Link for internal, <a> for external)
+  // If href is provided, render as link (Next.js Link for internal, <a> for external or download)
   if (href && !disabled) {
-    // External links: render as <a>
-    if (isExternalLink) {
+    // External links or download links: render as <a>
+    if (shouldUseNativeLink) {
       return (
         <a
           href={href}
-          target={target || '_blank'}
-          rel={rel || 'noopener noreferrer'}
+          target={target || (isExternalLink ? '_blank' : undefined)}
+          rel={rel || (isExternalLink ? 'noopener noreferrer' : undefined)}
+          download={download}
           className={classNames}
           aria-label={ariaLabel}
           tabIndex={disabled ? -1 : 0}
