@@ -51,7 +51,7 @@ This portfolio is designed as a **live case study** demonstrating:
 
 ## 🛠️ Tech Stack
 
-- **Next.js** 16.0.5 (App Router) – Server components, optimized routing, automatic code splitting
+- **Next.js** 16.0.7 (App Router) – Server components, optimized routing, automatic code splitting
 - **React** 19.2.0 – Modern React features with hooks and server components
 - **TypeScript** 5.x – Type safety and enhanced developer experience
 - **SASS/SCSS** 1.94.2 – Advanced styling with variables, mixins, and BEM methodology
